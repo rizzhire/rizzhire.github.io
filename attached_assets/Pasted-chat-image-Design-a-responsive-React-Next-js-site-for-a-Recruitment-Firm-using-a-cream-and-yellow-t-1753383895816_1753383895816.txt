@@ -1,0 +1,83 @@
+chat image
+Design a responsive React/Next.js site for a Recruitment Firm using a cream and yellow theme rounded cormers buttons cards and aspects. Use GSAP/Framer Motion for smooth fade-in animations, scroll triggers, and interactive hover effects. Include sticky navbar with blur, scroll snapping testimonial section, and micro-interactions on buttons and cards. Optimize animations for 60FPS performance and mobile-first design. NOTE- This is not for finding jobs but for viewers and connect both Clients and Candidates.
+
+Website Theme & Colors
+Tone: Professional, trustworthy, clean
+Primary Colors Extracted:
+
+Cream (#F5F3EB) – background base
+
+Sun Yellow (#FFDC57) – highlights, buttons
+
+Pure White (#FFFFFF) – cards, content areas
+
+Jet Black (#000000) – text, icons
+
+🗂 Website Pages
+Page Name	Purpose
+🏠 Home	First impression with hero section & call-to-action
+🧑‍💼 For Candidates	Job search, upload CV, testimonials
+🏢 For Employers	Post jobs, see services, schedule a call
+🧠 Our Expertise	Recruitment areas, industry experience
+🧾 About Us	Vision, team, mission, testimonials
+📞 Contact	Embedded form, map, email/chat option
+📰 Blog/Insights	Hiring trends, career tips, success stories
+
+⚙️ Animations & Effects (with dev terms)
+1. Hero Section
+parallax-scroll: Slow background scroll on hero image
+
+fade-in-up: Tagline text and CTA buttons enter with fade-up on load
+
+GSAP pin-scroll: Sticky hero headline stays pinned for 2 seconds
+
+2. Navigation Bar
+glassmorphism: Translucent navbar with blur
+
+hover scale + underline swipe: Links slightly scale and get an underline from left on hover
+
+3. Call-to-Action Buttons
+hover-pulse: Smooth scale on hover (0.95 → 1.05)
+
+micro-interaction ripple: Subtle ripple effect from click position
+
+transition: all 0.3s ease-in-out
+
+4. Section Transitions
+scroll-triggered fade-in: Content reveals smoothly as user scrolls (using IntersectionObserver or Framer Motion)
+
+translateY animation: Cards and icons enter from 40px below
+
+5. Job Listings / Cards
+hover elevation: Shadow depth increases on hover
+
+lazy-loading with fade-in: Cards load as they enter viewport
+
+6. Testimonial Carousel
+infinite loop carousel: Smooth horizontal auto-scroll using Swiper.js
+
+smooth-snap: Snapping effect with CSS scroll-snap
+
+7. Page Transitions
+bar loader: Top-loading bar (like YouTube) between pages
+
+opacity + scale exit: Fade out & scale down before routing (React Router + Framer Motion)
+
+🖱 Hover Effects (Microinteractions)
+Element	Effect Name	Description
+Buttons	ripple on click	Water ripple animation at click point
+Links	slide underline	Line grows from left to right below text
+Icons	rotate-on-hover	Slight 5–10° tilt or bounce effect
+Cards	elevate on hover	Shadow increases + upward movement
+Images	zoom-in subtle	1.02x zoom on hover with smooth ease-out
+
+🧠 Tech Stack & Tools
+Frontend: React.js + TailwindCSS / Next.js
+
+Animations: Framer Motion, GSAP, Swiper.js
+
+Forms: React Hook Form + EmailJS
+
+Hosting: Vercel or Netlify
+
+CMS (optional): Sanity.io or Strapi for blog
