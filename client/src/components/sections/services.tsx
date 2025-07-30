@@ -57,31 +57,95 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Service Cards - Landscape Layout */}
+        <div className="space-y-8">
           {services.map((service, index) => (
             <Card 
               key={index}
-              className={`${service.bgColor} p-8 rounded-2xl border-0 shadow-sm hover:shadow-md transition-shadow duration-300`}
+              className={`${service.bgColor} p-8 rounded-2xl border-0 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}
             >
               <CardContent className="p-0">
-                <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
-                  <service.icon className="h-6 w-6 text-gray-700" />
+                <div className="flex items-center justify-between">
+                  {/* Content Section */}
+                  <div className="flex-1 pr-8">
+                    <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
+                      <service.icon className="h-6 w-6 text-gray-700" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 text-base leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="grid grid-cols-2 gap-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm">
+                          <CheckCircle className="h-4 w-4 text-yellow mr-3 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Illustration Section */}
+                  <div className="flex-shrink-0 w-80 h-64 relative">
+                    <div className={`w-full h-full rounded-2xl ${index === 0 ? 'bg-gradient-to-br from-blue-400 to-blue-600' : index === 1 ? 'bg-gradient-to-br from-purple-400 to-purple-600' : 'bg-gradient-to-br from-green-400 to-green-600'} flex items-center justify-center overflow-hidden`}>
+                      {/* Manpower Supply Illustration */}
+                      {index === 0 && (
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <div className="absolute inset-4 bg-white/20 rounded-xl"></div>
+                          <div className="absolute top-8 left-8 w-16 h-12 bg-white/30 rounded-lg flex items-center justify-center">
+                            <Users className="h-6 w-6 text-white" />
+                          </div>
+                          <div className="absolute bottom-8 right-8 w-20 h-16 bg-white/30 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                              <CheckCircle className="h-5 w-5 text-blue-600" />
+                            </div>
+                          </div>
+                          <div className="w-24 h-24 bg-white/40 rounded-2xl flex items-center justify-center">
+                            <Users className="h-12 w-12 text-white" />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Management Consultancy Illustration */}
+                      {index === 1 && (
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <div className="absolute inset-4 bg-white/20 rounded-xl"></div>
+                          <div className="absolute top-8 left-8 w-16 h-12 bg-white/30 rounded-lg flex items-center justify-center">
+                            <TrendingUp className="h-6 w-6 text-white" />
+                          </div>
+                          <div className="absolute bottom-8 right-8 w-20 h-16 bg-white/30 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
+                              <CheckCircle className="h-5 w-5 text-purple-600" />
+                            </div>
+                          </div>
+                          <div className="w-24 h-24 bg-white/40 rounded-2xl flex items-center justify-center">
+                            <TrendingUp className="h-12 w-12 text-white" />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Recruitment Consultancy Illustration */}
+                      {index === 2 && (
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <div className="absolute inset-4 bg-white/20 rounded-xl"></div>
+                          <div className="absolute top-8 left-8 w-16 h-12 bg-white/30 rounded-lg flex items-center justify-center">
+                            <UserCheck className="h-6 w-6 text-white" />
+                          </div>
+                          <div className="absolute bottom-8 right-8 w-20 h-16 bg-white/30 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                              <CheckCircle className="h-5 w-5 text-green-600" />
+                            </div>
+                          </div>
+                          <div className="w-24 h-24 bg-white/40 rounded-2xl flex items-center justify-center">
+                            <UserCheck className="h-12 w-12 text-white" />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900 leading-tight">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm">
-                      <CheckCircle className="h-4 w-4 text-yellow mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </CardContent>
             </Card>
           ))}
