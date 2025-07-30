@@ -10,42 +10,43 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
 
   return (
     <div 
-      className={`relative cursor-pointer group ${className}`}
+      className={`relative inline-flex items-center cursor-pointer group ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ width: 'fit-content' }}
     >
-      {/* Main pill-shaped button */}
+      {/* Main pill-shaped button - default connected state */}
       <div className={`
-        relative
+        relative flex items-center
         bg-yellow text-black
-        px-8 py-4 font-semibold text-lg
-        rounded-full
+        font-semibold text-lg
         shadow-lg hover:shadow-xl
-        transition-all duration-500 ease-out
+        transition-all duration-600 ease-out
         transform hover:scale-[1.02]
+        ${isHovered 
+          ? 'rounded-full px-8 py-4 pr-8' 
+          : 'rounded-l-full rounded-r-none px-8 py-4 pr-6'
+        }
       `}>
         <span className="relative z-10">Schedule Consultation</span>
       </div>
       
-      {/* Separated circle with arrow - creates the "i" shape */}
+      {/* Circle with arrow - connected by default, separates on hover */}
       <div className={`
-        absolute top-1/2 -translate-y-1/2
-        bg-yellow
         flex items-center justify-center
+        bg-yellow
         w-16 h-16 rounded-full
         shadow-lg hover:shadow-xl
         transition-all duration-600 ease-out
         transform hover:scale-105
         ${isHovered 
-          ? 'right-0 translate-x-20 opacity-100' 
-          : 'right-0 translate-x-6 opacity-100'
+          ? 'ml-4 translate-x-0' 
+          : 'ml-0 -translate-x-2'
         }
       `}>
         <ArrowUpRight 
           className={`
             text-black transition-all duration-400 ease-out
-            ${isHovered ? 'w-6 h-6 opacity-100 rotate-0' : 'w-5 h-5 opacity-80 rotate-0'}
+            ${isHovered ? 'w-6 h-6 opacity-100 rotate-0' : 'w-5 h-5 opacity-90 rotate-0'}
           `} 
         />
       </div>
