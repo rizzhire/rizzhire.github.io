@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, TrendingUp, UserCheck, CheckCircle } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
 
 export default function Services() {
   const services = [
@@ -44,6 +45,8 @@ export default function Services() {
     }
   ];
 
+  const { containerRef, visibleItems } = useStaggeredAnimation(services.length, 150);
+
   return (
     <section id="services" className="py-20 cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,9 +57,20 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div ref={containerRef} className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className={`${service.bgColor} p-8 rounded-3xl card-hover border-0 shadow-lg`}>
+            <Card 
+              key={index} 
+              className={`
+                ${service.bgColor} p-8 rounded-3xl card-hover border-0 shadow-lg
+                transition-all duration-700 ease-out
+                ${visibleItems.includes(index) 
+                  ? 'animate-slide-up-fade opacity-100' 
+                  : 'opacity-0 transform translate-y-8'
+                }
+              `}
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <CardContent className="p-0">
                 <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
                   <service.icon className="h-6 w-6 text-gray-700" />

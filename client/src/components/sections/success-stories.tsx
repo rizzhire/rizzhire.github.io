@@ -2,12 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
 import type { Testimonial } from "@shared/schema";
 
 export default function SuccessStories() {
   const { data: testimonials, isLoading } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
   });
+
+  const { containerRef, visibleItems } = useStaggeredAnimation(testimonials?.length || 3, 200);
 
   return (
     <section className="py-20 cream">
@@ -19,7 +22,7 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div ref={containerRef} className="grid md:grid-cols-3 gap-8">
           {isLoading ? (
             Array(3).fill(0).map((_, index) => (
               <Card key={index} className="bg-white p-8 rounded-3xl border-0">
@@ -35,8 +38,19 @@ export default function SuccessStories() {
               </Card>
             ))
           ) : (
-            testimonials?.map((testimonial) => (
-              <Card key={testimonial.id} className="bg-white p-8 rounded-3xl border-0">
+            testimonials?.map((testimonial, index) => (
+              <Card 
+                key={testimonial.id} 
+                className={`
+                  bg-white p-8 rounded-3xl border-0 card-hover
+                  transition-all duration-700 ease-out
+                  ${visibleItems.includes(index) 
+                    ? 'animate-bounce-in opacity-100' 
+                    : 'opacity-0 transform translate-y-8'
+                  }
+                `}
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
                 <CardContent className="p-0">
                   <div className="flex text-yellow mb-6">
                     {Array(testimonial.rating).fill(0).map((_, i) => (

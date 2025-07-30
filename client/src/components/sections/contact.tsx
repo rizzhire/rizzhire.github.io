@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,6 +36,9 @@ export default function Contact() {
     }));
   };
 
+  const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation();
+  const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation();
+
   return (
     <section id="contact" className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -46,7 +50,16 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div>
+          <div 
+            ref={infoRef}
+            className={`
+              transition-all duration-700 ease-out
+              ${infoVisible 
+                ? 'animate-slide-in-left opacity-100' 
+                : 'opacity-0 transform -translate-x-8'
+              }
+            `}
+          >
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             
             <div className="space-y-6">
@@ -82,7 +95,16 @@ export default function Contact() {
             </div>
           </div>
 
-          <Card className="border-2 border-gray-100">
+          <Card 
+            ref={formRef}
+            className={`
+              border-2 border-gray-100 transition-all duration-700 ease-out
+              ${formVisible 
+                ? 'animate-slide-in-right opacity-100' 
+                : 'opacity-0 transform translate-x-8'
+              }
+            `}
+          >
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
               

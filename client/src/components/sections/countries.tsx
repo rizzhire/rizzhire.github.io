@@ -1,4 +1,5 @@
 import CountryFlag from "@/components/ui/country-flag";
+import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
 
 export default function Countries() {
   const countries = [
@@ -11,6 +12,8 @@ export default function Countries() {
     { name: "Maldives", code: "mv" }
   ];
 
+  const { containerRef, visibleItems } = useStaggeredAnimation(countries.length, 80);
+
   return (
     <section id="countries" className="py-20 cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,9 +24,21 @@ export default function Countries() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+        <div ref={containerRef} className="flex flex-wrap justify-center items-center gap-8">
           {countries.map((country, index) => (
-            <CountryFlag key={index} country={country.name} code={country.code} />
+            <div
+              key={index}
+              className={`
+                transition-all duration-500 ease-out
+                ${visibleItems.includes(index) 
+                  ? 'animate-wave-slide opacity-100' 
+                  : 'opacity-0 transform translate-y-4'
+                }
+              `}
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              <CountryFlag country={country.name} code={country.code} />
+            </div>
           ))}
         </div>
       </div>

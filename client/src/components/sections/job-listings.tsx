@@ -4,8 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, DollarSign, Clock } from "lucide-react";
 import { jobs } from "@/lib/data";
+import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
 
 export default function JobListings() {
+  const { containerRef, visibleItems } = useStaggeredAnimation(jobs.length, 100);
+
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -16,9 +19,19 @@ export default function JobListings() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {jobs.map((job) => (
-            <Card key={job.id} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-yellow">
+        <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {jobs.map((job, index) => (
+            <Card 
+              key={job.id} 
+              className={`
+                group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow
+                ${visibleItems.includes(index) 
+                  ? 'animate-flip-in opacity-100' 
+                  : 'opacity-0 transform rotateY-90'
+                }
+              `}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <CardContent className="p-6">
                 <div className="mb-4">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-yellow transition-colors">
