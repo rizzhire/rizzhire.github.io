@@ -299,4 +299,20 @@ html {
   scroll-snap-stop: always;
 }
 
-/* Clean up old consultation button styles */
+/* Consultation button - seamless dumbbell connection */
+.consultation-dumbbell {
+  background: #FFD63F; /* yellow */
+  border-radius: 50px 64px 64px 50px; /* pill left, circle right */
+}
+
+.consultation-dumbbell::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 32px; /* Half of circle width */
+  transform: translateY(-50%);
+  width: 8px;
+  height: 32px;
+  background: #FFD63F; /* yellow connection bridge */
+  z-index: 1;
+}
