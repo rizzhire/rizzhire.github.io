@@ -36,9 +36,9 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
       >
         <span className="relative z-10">Schedule Consultation</span>
         
-        {/* Arrow circle - positioned absolutely */}
+        {/* Arrow circle - positioned at the end of pill */}
         <div className={`
-          absolute right-0 top-1/2 -translate-y-1/2
+          absolute top-1/2 -translate-y-1/2
           bg-yellow
           w-16 h-16 rounded-full
           flex items-center justify-center
@@ -46,8 +46,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           transition-all duration-600 ease-out
           transform hover:scale-105
           ${isHovered 
-            ? 'translate-x-20' 
-            : '-translate-x-8'
+            ? 'right-0 translate-x-20' 
+            : 'right-0 translate-x-8'
           }
         `}>
           <ArrowUpRight 

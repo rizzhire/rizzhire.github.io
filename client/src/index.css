@@ -308,11 +308,11 @@ html {
 .consultation-connected-shape::after {
   content: '';
   position: absolute;
-  right: -32px;
+  right: -24px;
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   background: #F5F3EB; /* cream background to create inverted curve cutout */
   border-radius: 50%;
   z-index: 1;
