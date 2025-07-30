@@ -1,0 +1,92 @@
+Create a scroll-driven section where three service cards are:
+
+Scrolled and stacked one at a time on top of each other.
+
+Each scroll is treated as a single step, like a carousel.
+
+The cards scale down gradually to simulate moving back in depth.
+
+The cards are always centered vertically, and only become smaller on scroll (they never slide away or fade out).
+
+Edges of previous cards remain slightly visible behind the current card to show stacking.
+
+🔁 Scroll Behavior:
+User enters this section through normal scroll.
+
+When the first card reaches center, it becomes fixed.
+
+Scrolling down triggers step-by-step stacking animation:
+
+Card 1 scales down slightly, moves back.
+
+Card 2 scales up into center, stacking on top of Card 1.
+
+Each scroll increment moves current card into place (e.g., 3 steps to full center).
+
+Same for Card 3.
+
+After Card 3 stacks, normal scrolling resumes, revealing the rest of the site.
+
+🔁 Scroll Up Behavior:
+Reverse the animation stack:
+
+Card 3 scales out.
+
+Card 2 comes forward.
+
+Card 1 returns to center.
+
+Always stack/unstack with visual clarity.
+
+⚙️ Technical Instructions:
+Use the following:
+
+HTML: Structure three .card elements inside a section.scroll-stack-container.
+
+CSS:
+
+position: fixed or sticky to pin cards in center.
+
+Use transform: scale() to simulate depth.
+
+Use z-index to show card layers.
+
+transition: transform 0.3s ease for smooth scaling.
+
+JavaScript Logic:
+
+Use wheel or scroll event with debounce or throttle.
+
+Track animation state with a currentStep or activeCardIndex.
+
+For each scroll tick, increase/decrease a step counter.
+
+On each step:
+
+Scale the current card slightly (e.g., 1 → 0.95 → 0.9).
+
+Scale in the next card (e.g., 0.9 → 1).
+
+Update z-index.
+
+Lock scroll during transition to prevent over-scrolling.
+
+Optional: Use GSAP ScrollTrigger with snap: 1 and scrub: true, if animations need timeline control.
+
+💡 Design Notes:
+Only one card is in full center at any time.
+
+Previous cards stay visible partially behind, slightly scaled down.
+
+Entire section is 100vh, scroll-locked until all cards are stacked.
+
+After stacking is complete, unlock scroll to continue to next section.
+
+📁 Output:
+index.html — contains 3 cards in a scroll-lock section.
+
+style.css — for fixed card centering, scale transitions, and layering.
+
+script.js — handles scroll control, card stacking, and animation states.
+
+Ensure the animation works on desktop and mobile. Avoid unnecessary dependencies unless GSAP helps improve control.

@@ -45,17 +45,14 @@ export default function Services() {
     }
   ];
 
-  const [currentCard, setCurrentCard] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0); // 0-8 steps (3 steps per card)
+  const [isInStackingZone, setIsInStackingZone] = useState(false);
   const [isScrollLocked, setIsScrollLocked] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const lastScrollY = useRef(0);
-  const scrollDirection = useRef<'up' | 'down'>('down');
-
-  const [isInStackingZone, setIsInStackingZone] = useState(false);
   const scrollDebounceRef = useRef<NodeJS.Timeout>();
   const isAnimatingRef = useRef(false);
+  const totalSteps = 9; // 3 cards × 3 steps each
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,17 +61,20 @@ export default function Services() {
       const sectionRect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Check if section center is near viewport center (trigger zone)
-      const sectionCenter = sectionRect.top + sectionRect.height / 2;
+      // Check if first card should be centered and stacking should begin
+      const sectionTop = sectionRect.top;
+      const sectionCenter = sectionTop + sectionRect.height / 2;
       const viewportCenter = windowHeight / 2;
-      const inZone = Math.abs(sectionCenter - viewportCenter) < windowHeight * 0.3;
+      const shouldEnterZone = sectionCenter <= viewportCenter && sectionRect.bottom > viewportCenter;
 
-      if (inZone && !isInStackingZone) {
+      if (shouldEnterZone && !isInStackingZone) {
         setIsInStackingZone(true);
-        setCurrentCard(0); // Show first card when entering zone
-      } else if (!inZone && isInStackingZone) {
-        setIsInStackingZone(false);
-        setCurrentCard(0); // Reset when leaving zone
+        setIsScrollLocked(true);
+        setCurrentStep(0);
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.top = `-${window.scrollY}px`;
       }
     };
 
@@ -84,48 +84,59 @@ export default function Services() {
       e.preventDefault();
       e.stopPropagation();
 
-      // Clear existing timeout
       if (scrollDebounceRef.current) {
         clearTimeout(scrollDebounceRef.current);
       }
 
-      // Debounce wheel events to prevent multiple triggers
       scrollDebounceRef.current = setTimeout(() => {
         const direction = e.deltaY > 0 ? 'down' : 'up';
-        
         isAnimatingRef.current = true;
 
         if (direction === 'down') {
-          if (currentCard < services.length - 1) {
-            setCurrentCard(prev => prev + 1);
+          if (currentStep < totalSteps - 1) {
+            setCurrentStep(prev => prev + 1);
           } else {
-            // All cards stacked - exit stacking mode and continue scroll
+            // All steps complete - unlock and continue scroll
+            const scrollY = document.body.style.top;
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            
             setIsInStackingZone(false);
-            setCurrentCard(0);
-            // Allow normal scroll to continue
+            setIsScrollLocked(false);
+            setCurrentStep(0);
+            
             setTimeout(() => {
-              window.scrollBy({ top: 300, behavior: 'smooth' });
+              window.scrollBy({ top: 200, behavior: 'smooth' });
             }, 100);
           }
         } else {
-          if (currentCard > 0) {
-            setCurrentCard(prev => prev - 1);
+          if (currentStep > 0) {
+            setCurrentStep(prev => prev - 1);
           } else {
-            // All cards unstacked - exit stacking mode and continue scroll
+            // All steps reversed - unlock and continue scroll up
+            const scrollY = document.body.style.top;
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            
             setIsInStackingZone(false);
-            setCurrentCard(0);
-            // Allow normal scroll to continue upward
+            setIsScrollLocked(false);
+            
             setTimeout(() => {
-              window.scrollBy({ top: -300, behavior: 'smooth' });
+              window.scrollBy({ top: -200, behavior: 'smooth' });
             }, 100);
           }
         }
 
-        // Reset animation flag after transition
         setTimeout(() => {
           isAnimatingRef.current = false;
-        }, 600);
-      }, 50);
+        }, 300);
+      }, 80);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -139,8 +150,13 @@ export default function Services() {
       if (scrollDebounceRef.current) {
         clearTimeout(scrollDebounceRef.current);
       }
+      // Cleanup scroll lock
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
     };
-  }, [isInStackingZone, currentCard]);
+  }, [isInStackingZone, currentStep]);
 
   const getCardStyle = (index: number) => {
     const baseTransform = 'translateX(-50%) translateY(-50%)';
@@ -148,45 +164,57 @@ export default function Services() {
     if (!isInStackingZone) {
       // Hide all cards when not in stacking zone
       return {
-        transform: `${baseTransform} scale(0.8)`,
+        transform: `${baseTransform} scale(0)`,
         opacity: 0,
         zIndex: 10,
-        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'transform 0.3s ease, opacity 0.3s ease'
       };
     }
+
+    // Calculate which card should be active based on current step
+    const cardStep = Math.floor(currentStep / 3); // Which card is being focused (0, 1, 2)
+    const subStep = currentStep % 3; // Sub-step within that card (0, 1, 2)
     
-    if (index <= currentCard) {
-      // Card is visible and stacked
-      const stackDepth = currentCard - index;
-      const isActive = index === currentCard;
+    if (index < cardStep) {
+      // Previous cards - fully stacked behind
+      const stackDepth = cardStep - index;
+      const baseScale = 1 - (stackDepth * 0.1);
       
-      if (isActive) {
-        // Active card - full size on top
-        return {
-          transform: `${baseTransform} scale(1)`,
-          opacity: 1,
-          zIndex: 100 + index,
-          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        };
-      } else {
-        // Stacked card - smaller and behind
-        const scaleReduction = stackDepth * 0.08;
-        const opacityReduction = stackDepth * 0.3;
-        
-        return {
-          transform: `${baseTransform} scale(${1 - scaleReduction})`,
-          opacity: Math.max(0.4, 1 - opacityReduction),
-          zIndex: 100 - stackDepth,
-          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        };
-      }
-    } else {
-      // Card waiting to be revealed
       return {
-        transform: `${baseTransform} scale(0.8)`,
+        transform: `${baseTransform} scale(${Math.max(0.7, baseScale)})`,
+        opacity: Math.max(0.3, 1 - (stackDepth * 0.2)),
+        zIndex: 50 - stackDepth,
+        transition: 'transform 0.3s ease, opacity 0.3s ease'
+      };
+    } else if (index === cardStep) {
+      // Current active card - scaling up through sub-steps
+      const scaleProgress = (subStep + 1) / 3; // 0.33, 0.66, 1.0
+      const scale = 0.7 + (scaleProgress * 0.3); // Scale from 0.7 to 1.0
+      
+      return {
+        transform: `${baseTransform} scale(${scale})`,
+        opacity: scaleProgress,
+        zIndex: 100 + index,
+        transition: 'transform 0.3s ease, opacity 0.3s ease'
+      };
+    } else if (index === cardStep + 1 && subStep > 0) {
+      // Next card - starting to appear behind current card
+      const appearProgress = subStep / 3;
+      const scale = 0.5 + (appearProgress * 0.2); // Scale from 0.5 to 0.7
+      
+      return {
+        transform: `${baseTransform} scale(${scale})`,
+        opacity: appearProgress * 0.5,
+        zIndex: 90 + index,
+        transition: 'transform 0.3s ease, opacity 0.3s ease'
+      };
+    } else {
+      // Future cards - hidden
+      return {
+        transform: `${baseTransform} scale(0.5)`,
         opacity: 0,
-        zIndex: 50,
-        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        zIndex: 10,
+        transition: 'transform 0.3s ease, opacity 0.3s ease'
       };
     }
   };
@@ -239,19 +267,19 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Progress Indicator */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex space-x-2">
-          {services.map((_, index) => (
+      {/* Step Progress Indicators */}
+      {isInStackingZone && (
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-1 z-[200]">
+          {Array.from({ length: totalSteps }, (_, index) => (
             <div
               key={index}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                currentCard >= index ? 'bg-yellow' : 'bg-gray-300'
+              className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                index <= currentStep ? 'bg-yellow' : 'bg-gray-300'
               }`}
             />
           ))}
         </div>
-      </div>
+      )}
     </section>
   );
 }
