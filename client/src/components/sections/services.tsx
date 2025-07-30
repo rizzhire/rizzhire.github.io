@@ -13,9 +13,8 @@ export default function Services() {
         "Quality assurance",
         "24/7 support"
       ],
-      bgColor: "bg-gradient-to-br from-cream to-yellow/10",
-      iconBg: "bg-yellow/20",
-      illustrationBg: "bg-gradient-to-br from-yellow/30 to-yellow/60"
+      bgColor: "bg-white",
+      iconBg: "bg-gray-100"
     },
     {
       icon: Target,
@@ -27,9 +26,8 @@ export default function Services() {
         "Cost reduction",
         "Strategic planning"
       ],
-      bgColor: "bg-gradient-to-br from-yellow/5 to-cream",
-      iconBg: "bg-yellow/20",
-      illustrationBg: "bg-gradient-to-br from-yellow/40 to-yellow/70"
+      bgColor: "bg-gradient-to-br from-purple-100 to-purple-200",
+      iconBg: "bg-purple-200"
     },
     {
       icon: Search,
@@ -41,9 +39,8 @@ export default function Services() {
         "Background verification",
         "Onboarding support"
       ],
-      bgColor: "bg-gradient-to-br from-cream to-yellow/10",
-      iconBg: "bg-yellow/20",
-      illustrationBg: "bg-gradient-to-br from-yellow/30 to-yellow/60"
+      bgColor: "bg-white",
+      iconBg: "bg-gray-100"
     }
   ];
 
@@ -65,23 +62,23 @@ export default function Services() {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className={`${service.bgColor} p-8 rounded-[3rem] border border-yellow/20 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
+              className={`${service.bgColor} p-6 rounded-2xl border-0 shadow-sm hover:shadow-md transition-shadow duration-300`}
             >
               <CardContent className="p-0">
-                <div className={`w-16 h-16 ${service.iconBg} rounded-[2rem] flex items-center justify-center mb-6 border border-yellow/30`}>
-                  <service.icon className="h-8 w-8 text-gray-800" />
+                <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
+                  <service.icon className="h-6 w-6 text-gray-700" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                   {service.description}
                 </p>
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-yellow mr-3 flex-shrink-0" />
-                      <span className="text-gray-800 font-medium">{feature}</span>
+                      <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
