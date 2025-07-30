@@ -18,16 +18,16 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         transition-all duration-600 ease-out
         ${isHovered ? 'flex gap-4 items-center' : 'relative flex items-center'}
       `}>
-        {/* Connected button shape joined with circle */}
+        {/* Connected button shape joined from tip */}
         {!isHovered && (
           <div className="relative flex items-center">
-            {/* Main rectangular button with rounded ends */}
-            <div className="bg-yellow text-black font-semibold text-lg px-8 py-4 rounded-l-full rounded-r-full relative">
+            {/* Main rectangular button with modified right end for tip connection */}
+            <div className="bg-yellow text-black font-semibold text-lg px-8 py-4 rounded-l-full rounded-r-none relative">
               Schedule Consultation
             </div>
             
-            {/* Connected circular element touching the button */}
-            <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center -ml-8 relative z-10">
+            {/* Connected circular element from the tip */}
+            <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center relative">
               <ArrowUpRight className="w-5 h-5 text-black" />
             </div>
           </div>
