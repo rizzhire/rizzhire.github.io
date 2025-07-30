@@ -299,22 +299,21 @@ html {
   scroll-snap-stop: always;
 }
 
-/* Consultation button - continuous shape with curved bridge */
-.consultation-button-connected {
-  background: #FFD63F;
-  border-radius: 32px;
-  position: relative;
-  overflow: visible;
+/* Consultation button - attractive gradient with animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-.consultation-button-connected::after {
-  content: '';
-  position: absolute;
-  right: 32px;
-  top: 0;
-  width: 32px;
-  height: 100%;
-  background: #FFD63F;
-  border-radius: 0 32px 32px 0;
-  z-index: 1;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.consultation-button-shine {
+  animation: shimmer 2s infinite;
+}
+
+.consultation-button-float {
+  animation: float 3s ease-in-out infinite;
 }
