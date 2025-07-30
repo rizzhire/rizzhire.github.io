@@ -299,38 +299,11 @@ html {
   scroll-snap-stop: always;
 }
 
-/* Consultation button - exact mockup shape with CSS */
-.consultation-button-connected {
-  position: relative;
-  padding-right: 72px !important; /* Make space for circle */
+/* Consultation button SVG styling */
+.consultation-button svg {
+  transition: all 0.6s ease-out;
 }
 
-.consultation-button-connected::before {
-  content: '';
-  position: absolute;
-  right: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 80px;
-  height: 64px;
-  background: #FFD63F;
-  border-radius: 50%;
-  z-index: -1;
-}
-
-.consultation-button-connected::after {
-  content: '';
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background: #F5F3EB; /* cream background to create indent */
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.consultation-button-separated {
-  border-radius: 50px;
+.consultation-button:hover svg {
+  transform: scale(1.02);
 }
