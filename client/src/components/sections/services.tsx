@@ -56,14 +56,24 @@ export default function Services() {
       const windowHeight = window.innerHeight;
       const sectionTop = sectionRect.top;
       const sectionHeight = sectionRect.height;
-
-      // Professional stacking calculation
-      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight * 0.8)));
-      const cardsToStack = Math.floor(scrollProgress * services.length);
       
+      // Calculate scroll progress through the section
+      const startTrigger = windowHeight * 0.7; // Start when section is 70% in view
+      const scrolled = startTrigger - sectionTop;
+      const totalScrollDistance = sectionHeight - windowHeight * 0.3;
+      const scrollProgress = Math.max(0, Math.min(1, scrolled / totalScrollDistance));
+      
+      // Stack cards sequentially based on scroll progress
       const newStackedCards: number[] = [];
-      for (let i = 0; i < Math.min(cardsToStack, services.length); i++) {
-        newStackedCards.push(i);
+      
+      // Card 1 moves to stack position when scroll progress > 0.2
+      if (scrollProgress > 0.2) {
+        newStackedCards.push(1); // Second card moves first
+      }
+      
+      // Card 2 moves to stack position when scroll progress > 0.5  
+      if (scrollProgress > 0.5) {
+        newStackedCards.push(2); // Third card moves second
       }
       
       setStackedCards(newStackedCards);
@@ -89,8 +99,37 @@ export default function Services() {
 
         <div className="relative" style={{ height: '1200px' }}>
           {services.map((service, index) => {
-            const isStacked = stackedCards.includes(index);
-            const stackOrder = stackedCards.indexOf(index);
+            // Determine card positioning
+            let cardTop, cardTransform, cardZIndex;
+            
+            if (index === 0) {
+              // First card stays in original position (becomes the base)
+              cardTop = 200;
+              cardTransform = 'translateX(-50%) translateY(0px) scale(1)';
+              cardZIndex = 10;
+            } else if (index === 1) {
+              // Second card - either in original position or stacked on first
+              if (stackedCards.includes(1)) {
+                cardTop = 200; // Move to same position as first card
+                cardTransform = 'translateX(-50%) translateY(-12px) scale(0.98) rotateX(1deg)';
+                cardZIndex = 15;
+              } else {
+                cardTop = 200 + 350; // Original position
+                cardTransform = 'translateX(-50%) translateY(0px) scale(1)';
+                cardZIndex = 10;
+              }
+            } else if (index === 2) {
+              // Third card - either in original position or stacked on top of both
+              if (stackedCards.includes(2)) {
+                cardTop = 200; // Move to same position as others
+                cardTransform = 'translateX(-50%) translateY(-24px) scale(0.96) rotateX(2deg)';
+                cardZIndex = 20;
+              } else {
+                cardTop = 200 + 700; // Original position
+                cardTransform = 'translateX(-50%) translateY(0px) scale(1)';
+                cardZIndex = 10;
+              }
+            }
             
             return (
               <Card 
@@ -98,18 +137,15 @@ export default function Services() {
                 className={`
                   ${service.bgColor} p-8 rounded-2xl border-0 shadow-xl
                   absolute w-full max-w-lg mx-auto left-1/2 
-                  transition-all duration-500 ease-in-out
-                  backdrop-blur-sm
+                  transition-all duration-800 cubic-bezier(0.25, 0.46, 0.45, 0.94)
                 `}
                 style={{
-                  transform: isStacked 
-                    ? `translateX(-50%) translateY(${stackOrder * 40}px) scale(${1 - stackOrder * 0.03}) rotateX(${stackOrder * 1}deg)`
-                    : `translateX(-50%) translateY(0px) scale(1) rotateX(0deg)`,
-                  zIndex: isStacked ? 30 - stackOrder : 10,
-                  top: isStacked ? `${160 + stackOrder * 15}px` : `${index * 320}px`,
-                  boxShadow: isStacked 
-                    ? `0 ${20 + stackOrder * 10}px ${40 + stackOrder * 20}px rgba(0,0,0,0.1)` 
-                    : '0 10px 25px rgba(0,0,0,0.1)'
+                  top: `${cardTop}px`,
+                  transform: cardTransform,
+                  zIndex: cardZIndex,
+                  boxShadow: stackedCards.includes(index)
+                    ? `0 ${20 + index * 8}px ${40 + index * 16}px rgba(0,0,0,0.15)` 
+                    : '0 10px 30px rgba(0,0,0,0.1)'
                 }}
               >
                 <CardContent className="p-0">
