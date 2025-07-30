@@ -10,53 +10,41 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
 
   return (
     <div 
-      className={`relative inline-block cursor-pointer group ${className}`}
+      className={`relative flex items-center cursor-pointer group ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Single connected shape using CSS mask for inverted curve */}
+      {/* Main pill button */}
       <div className={`
-        relative bg-yellow text-black font-semibold text-lg flex items-center
+        relative bg-yellow text-black font-semibold text-lg
+        px-8 py-4 rounded-full
         shadow-lg hover:shadow-xl
-        transition-all duration-600 ease-out
+        transition-all duration-500 ease-out
         transform hover:scale-[1.02]
-        ${isHovered 
-          ? 'rounded-full' 
-          : 'consultation-connected-shape'
-        }
-      `}
-      style={isHovered ? {
-        padding: '16px 32px'
-      } : {
-        paddingLeft: '32px',
-        paddingRight: '80px',
-        paddingTop: '16px', 
-        paddingBottom: '16px'
-      }}
-      >
+        z-10
+      `}>
         <span className="relative z-10">Schedule Consultation</span>
-        
-        {/* Arrow circle - positioned at the end of pill */}
-        <div className={`
-          absolute top-1/2 -translate-y-1/2
-          bg-yellow
-          w-16 h-16 rounded-full
-          flex items-center justify-center
-          shadow-lg hover:shadow-xl
-          transition-all duration-600 ease-out
-          transform hover:scale-105
-          ${isHovered 
-            ? 'right-0 translate-x-20' 
-            : 'right-0 translate-x-8'
-          }
-        `}>
-          <ArrowUpRight 
-            className={`
-              text-black transition-all duration-400 ease-out
-              ${isHovered ? 'w-6 h-6 opacity-100 rotate-0' : 'w-5 h-5 opacity-90 rotate-0'}
-            `} 
-          />
-        </div>
+      </div>
+      
+      {/* Arrow circle - connects to pill, separates on hover */}
+      <div className={`
+        bg-yellow
+        w-16 h-16 rounded-full
+        flex items-center justify-center
+        shadow-lg hover:shadow-xl
+        transition-all duration-600 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+        transform hover:scale-105
+        ${isHovered 
+          ? 'ml-4' 
+          : '-ml-8'
+        }
+      `}>
+        <ArrowUpRight 
+          className={`
+            text-black transition-all duration-400 ease-out
+            ${isHovered ? 'w-6 h-6 opacity-100 rotate-0' : 'w-5 h-5 opacity-90 rotate-0'}
+          `} 
+        />
       </div>
       
       {/* Subtle glow effect */}

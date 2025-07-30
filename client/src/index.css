@@ -299,21 +299,4 @@ html {
   scroll-snap-stop: always;
 }
 
-/* Consultation button connected shape with inverted curve */
-.consultation-connected-shape {
-  border-radius: 50px;
-  position: relative;
-}
-
-.consultation-connected-shape::after {
-  content: '';
-  position: absolute;
-  right: -24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background: #F5F3EB; /* cream background to create inverted curve cutout */
-  border-radius: 50%;
-  z-index: 1;
-}
+/* Clean up old consultation button styles */
