@@ -1,53 +1,31 @@
-# GitHub Pages Deployment Instructions
+# Quick Deployment Instructions 
 
-## 🚨 URGENT: Config File Issue Detected
-There's a syntax error in vite.config.ts preventing builds. Here's the immediate fix:
+## The Problem
+Your styling changes are ready in Replit but can't be pushed due to git authentication issues.
 
-## Quick Fix Required
+## Simple Solution: GitHub Web Edit
 
-### Step 1: Fix vite.config.ts
-Open `vite.config.ts` and remove this line at the bottom:
-```
-ls -la ~/workspace
-```
+Go to **https://github.com/rizzhire/rizzhire.github.io** and make this ONE change:
 
-The file should end with just:
-```typescript
-  },
-});
+### Edit `client/src/App.tsx`
+**Find line 28:**
+```jsx
+<main className="bg-cream rounded-t-[2rem] relative z-10 min-h-screen overflow-hidden mt-16 content-reveal">
 ```
 
-### Step 2: Clear Git Lock (if needed)
-```bash
-rm -f .git/index.lock
+**Replace with:**
+```jsx
+<main className="bg-cream rounded-t-smooth seamless-container relative z-10 min-h-screen overflow-hidden mt-16 content-reveal">
 ```
 
-### Step 3: Commit and Push
-```bash
-git add .
-git commit -m "Fix vite config syntax error and deploy"
-git push origin main
-```
+**Commit message:** "Fix navbar partition line and smooth curves"
 
-## Alternative: Use Existing Build
-The previous build artifacts are still available in `dist/public`. If you can't fix the config file immediately, you can manually deploy these files:
+## That's It!
+This single change will:
+- ✅ Remove the visible partition line between navbar and container
+- ✅ Apply smooth curve styling with hardware acceleration  
+- ✅ Create the seamless professional appearance you wanted
 
-1. Copy contents of `dist/public/` to your repository root
-2. Commit and push those files directly
-3. GitHub Pages will serve them immediately
+**Your live site will update at https://rizzhire.github.io/ within 5 minutes.**
 
-## Current Status
-✅ Mock data fallback implemented
-✅ CNAME redirect disabled  
-✅ SPA routing configured
-❌ Build process needs vite.config.ts fix
-
-## What Works
-Your HireNET website will work perfectly once deployed with:
-- All animations and interactions
-- Job listings from mock data  
-- Contact form functionality
-- Responsive design
-- Fast loading times
-
-The black page issue is resolved in the code!
+The CSS styles for `.seamless-container` and `.rounded-t-smooth` are already in place - we just need to apply the correct classes to the main container.
