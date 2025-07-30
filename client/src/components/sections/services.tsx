@@ -53,82 +53,146 @@ export default function Services() {
   const lastScrollY = useRef(0);
   const scrollDirection = useRef<'up' | 'down'>('down');
 
+  const [isInStackingZone, setIsInStackingZone] = useState(false);
+  const scrollDebounceRef = useRef<NodeJS.Timeout>();
+  const isAnimatingRef = useRef(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!sectionRef.current || isAnimatingRef.current) return;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
       
-      // Calculate how far we've scrolled into the section
-      const scrolledIntoSection = Math.max(0, -sectionTop);
-      const maxScroll = sectionHeight - windowHeight;
-      const scrollProgress = Math.min(scrolledIntoSection / maxScroll, 1);
-      
-      setScrollProgress(scrollProgress);
+      // Check if section center is near viewport center (trigger zone)
+      const sectionCenter = sectionRect.top + sectionRect.height / 2;
+      const viewportCenter = windowHeight / 2;
+      const inZone = Math.abs(sectionCenter - viewportCenter) < windowHeight * 0.3;
 
-      // Update current card based on scroll progress - reveal cards sequentially
-      if (scrollProgress < 0.33) {
-        setCurrentCard(0); // Only first card visible
-      } else if (scrollProgress < 0.66) {
-        setCurrentCard(1); // Second card on top, first card stacked behind
-      } else {
-        setCurrentCard(2); // Third card on top, first two stacked behind
+      if (inZone && !isInStackingZone) {
+        setIsInStackingZone(true);
+        setCurrentCard(0); // Show first card when entering zone
+      } else if (!inZone && isInStackingZone) {
+        setIsInStackingZone(false);
+        setCurrentCard(0); // Reset when leaving zone
       }
     };
 
+    const handleWheel = (e: WheelEvent) => {
+      if (!isInStackingZone || isAnimatingRef.current) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Clear existing timeout
+      if (scrollDebounceRef.current) {
+        clearTimeout(scrollDebounceRef.current);
+      }
+
+      // Debounce wheel events to prevent multiple triggers
+      scrollDebounceRef.current = setTimeout(() => {
+        const direction = e.deltaY > 0 ? 'down' : 'up';
+        
+        isAnimatingRef.current = true;
+
+        if (direction === 'down') {
+          if (currentCard < services.length - 1) {
+            setCurrentCard(prev => prev + 1);
+          } else {
+            // All cards stacked - exit stacking mode and continue scroll
+            setIsInStackingZone(false);
+            setCurrentCard(0);
+            // Allow normal scroll to continue
+            setTimeout(() => {
+              window.scrollBy({ top: 300, behavior: 'smooth' });
+            }, 100);
+          }
+        } else {
+          if (currentCard > 0) {
+            setCurrentCard(prev => prev - 1);
+          } else {
+            // All cards unstacked - exit stacking mode and continue scroll
+            setIsInStackingZone(false);
+            setCurrentCard(0);
+            // Allow normal scroll to continue upward
+            setTimeout(() => {
+              window.scrollBy({ top: -300, behavior: 'smooth' });
+            }, 100);
+          }
+        }
+
+        // Reset animation flag after transition
+        setTimeout(() => {
+          isAnimatingRef.current = false;
+        }, 600);
+      }, 50);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleWheel);
+      if (scrollDebounceRef.current) {
+        clearTimeout(scrollDebounceRef.current);
+      }
     };
-  }, []);
+  }, [isInStackingZone, currentCard]);
 
   const getCardStyle = (index: number) => {
-    // All cards stay perfectly centered
     const baseTransform = 'translateX(-50%) translateY(-50%)';
     
+    if (!isInStackingZone) {
+      // Hide all cards when not in stacking zone
+      return {
+        transform: `${baseTransform} scale(0.8)`,
+        opacity: 0,
+        zIndex: 10,
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      };
+    }
+    
     if (index <= currentCard) {
-      // Card is visible - either active or stacked
-      const isActive = index === currentCard;
+      // Card is visible and stacked
       const stackDepth = currentCard - index;
+      const isActive = index === currentCard;
       
       if (isActive) {
         // Active card - full size on top
         return {
           transform: `${baseTransform} scale(1)`,
           opacity: 1,
-          zIndex: 50,
-          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+          zIndex: 100 + index,
+          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         };
       } else {
-        // Stacked card - smaller and behind, but stays centered
-        const scaleReduction = stackDepth * 0.05;
+        // Stacked card - smaller and behind
+        const scaleReduction = stackDepth * 0.08;
         const opacityReduction = stackDepth * 0.3;
         
         return {
           transform: `${baseTransform} scale(${1 - scaleReduction})`,
-          opacity: Math.max(0.3, 1 - opacityReduction),
-          zIndex: 30 - stackDepth,
-          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+          opacity: Math.max(0.4, 1 - opacityReduction),
+          zIndex: 100 - stackDepth,
+          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         };
       }
     } else {
-      // Card is not revealed yet - hidden
+      // Card waiting to be revealed
       return {
         transform: `${baseTransform} scale(0.8)`,
         opacity: 0,
-        zIndex: 10,
-        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        zIndex: 50,
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
 
   return (
-    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '300vh' }}>
+    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '200vh' }}>
       {/* Header */}
       <div className="py-20 text-center relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +203,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Stacking Container */}
+      {/* Stacking Container - Fixed positioning for true centering */}
       <div 
         ref={containerRef}
         className="sticky top-0 left-0 w-full h-screen flex items-center justify-center overflow-hidden"
