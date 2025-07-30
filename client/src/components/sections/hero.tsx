@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import ConsultationButton from "@/components/ui/consultation-button";
 import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 
@@ -26,13 +27,8 @@ export default function Hero() {
             Elite recruitment solutions connecting exceptional talent with 
             industry-leading organizations across the Middle East and beyond.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg btn-hover ripple">
-              Get Started Today
-            </Button>
-            <Button variant="outline" className="border-2 border-dark-gray text-dark-gray px-8 py-4 rounded-full font-semibold hover:bg-dark-gray hover:text-white transition-all duration-300 btn-hover ripple">
-              Schedule Consultation
-            </Button>
+          <div className="flex justify-center items-center pt-8">
+            <ConsultationButton className="animate-fade-in-up" />
           </div>
         </div>
 
