@@ -1,0 +1,53 @@
+Here’s a complete Replit prompt you can use to generate your animation. This uses **HTML, CSS, and JavaScript** with terminology and logic explained clearly so Replit can implement it precisely.
+
+---
+
+**🧠 Prompt for Replit:**
+
+> Build an interactive scroll-based animation in a webpage. Here's how it should behave:
+>
+> ### Functionality:
+>
+> * **Three service cards**, placed one after another in the DOM.
+> * **Scroll-triggered stacking animation**:
+>
+>   1. **Default view**: Only the **first card** is visible and centered.
+>   2. When the user **scrolls down**, the scroll should be **locked temporarily** (using something like `overflow: hidden` or a full-screen section), and only the **second card animates in**, stacking **above** the first one with a smooth **translateY** or **scale** effect.
+>   3. On further scroll, the **third card** appears and stacks above both previous cards.
+>   4. After all 3 cards are stacked, the scroll should resume **normal page scroll behavior**.
+>
+> ### Reverse Behavior:
+>
+> * On **scrolling upward**, the cards should unstack in **reverse** order with reverse animation.
+>
+> ### Visual Logic / Effects:
+>
+> * Use **CSS transforms** (e.g. `translateY`, `scale`, or `z-index`) for stacking.
+> * Use **`position: fixed`** or **`sticky`** to control the stacking region.
+> * Use **JavaScript** to **detect scroll direction** and **which card is currently visible**.
+> * Use **GSAP ScrollTrigger** or plain **IntersectionObserver + scroll listeners** for precision control.
+>
+> ### Technologies:
+>
+> * HTML for structure
+> * CSS (Flexbox + Transforms + Animations)
+> * JavaScript for scroll control
+>
+> ### Optional:
+>
+> * Make cards semi-transparent as they layer up for a beautiful effect.
+> * Smooth animation duration (300ms–500ms).
+>
+> ### Output:
+>
+> Provide a full working example in Replit with:
+>
+> * `index.html`
+> * `style.css`
+> * `script.js`
+>
+> Make sure it's mobile responsive.
+
+---
+
+Let me know if you want this in a working code template right here instead of Replit.
