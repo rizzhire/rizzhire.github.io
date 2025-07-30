@@ -91,7 +91,7 @@ export default function Services() {
                   </div>
 
                   {/* Clear Illustration Section */}
-                  <div className="flex-shrink-0 w-72 h-72 relative">
+                  <div className="flex-shrink-0 w-64 h-80 relative">
                     <div className={`w-full h-full rounded-[2.5rem] bg-white/90 border-2 border-yellow/30 flex items-center justify-center overflow-hidden relative shadow-inner`}>
                       {/* Manpower Supply Illustration */}
                       {index === 0 && (
