@@ -1,4 +1,4 @@
-import { Users, Building2, Search, CheckCircle, BriefcaseIcon, UserCog, Target, TrendingUp, UserCheck } from "lucide-react";
+import { Users, Building2, Search, CheckCircle, BriefcaseIcon, UserCog, Target, TrendingUp, UserCheck, Clock, Award, HeadphonesIcon, Zap, BarChart3, DollarSign, FileCheck, ShieldCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Services() {
@@ -65,14 +65,14 @@ export default function Services() {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className={`${service.bgColor} p-10 rounded-3xl border border-yellow/20 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
+              className={`${service.bgColor} p-12 rounded-[2rem] border border-yellow/20 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
             >
               <CardContent className="p-0">
                 <div className="flex items-center justify-between">
                   {/* Content Section */}
-                  <div className="flex-1 pr-10">
-                    <div className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center mb-8 border border-yellow/30`}>
-                      <service.icon className="h-8 w-8 text-gray-800" />
+                  <div className="flex-1 pr-12">
+                    <div className={`w-20 h-20 ${service.iconBg} rounded-[1.5rem] flex items-center justify-center mb-8 border border-yellow/30`}>
+                      <service.icon className="h-10 w-10 text-gray-800" />
                     </div>
                     <h3 className="text-3xl font-bold mb-6 text-gray-900 leading-tight">
                       {service.title}
@@ -91,29 +91,38 @@ export default function Services() {
                   </div>
 
                   {/* Illustration Section */}
-                  <div className="flex-shrink-0 w-96 h-72 relative">
-                    <div className={`w-full h-full rounded-3xl ${service.illustrationBg} flex items-center justify-center overflow-hidden relative`}>
+                  <div className="flex-shrink-0 w-96 h-80 relative">
+                    <div className={`w-full h-full rounded-[2rem] ${service.illustrationBg} flex items-center justify-center overflow-hidden relative`}>
                       {/* Manpower Supply Illustration */}
                       {index === 0 && (
                         <div className="relative w-full h-full flex items-center justify-center">
                           {/* Background pattern */}
-                          <div className="absolute inset-6 bg-white/10 rounded-2xl"></div>
-                          <div className="absolute inset-12 bg-white/5 rounded-xl"></div>
+                          <div className="absolute inset-8 bg-white/8 rounded-[1.5rem]"></div>
+                          <div className="absolute inset-16 bg-white/4 rounded-[1rem]"></div>
                           
-                          {/* Main elements */}
-                          <div className="absolute top-12 left-12 w-20 h-16 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                            <Users className="h-8 w-8 text-white" />
+                          {/* Recruitment focused elements */}
+                          <div className="absolute top-10 left-10 w-24 h-18 bg-white/25 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <div className="flex items-center space-x-2">
+                              <Users className="h-6 w-6 text-white" />
+                              <Clock className="h-5 w-5 text-white opacity-80" />
+                            </div>
                           </div>
-                          <div className="absolute top-12 right-12 w-16 h-16 bg-white/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                            <BriefcaseIcon className="h-7 w-7 text-white" />
+                          <div className="absolute top-10 right-10 w-20 h-20 bg-white/30 rounded-[1.2rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <Award className="h-8 w-8 text-white" />
                           </div>
-                          <div className="absolute bottom-12 left-12 w-24 h-20 bg-white/25 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                            <Building2 className="h-10 w-10 text-white" />
+                          <div className="absolute bottom-10 left-10 w-28 h-22 bg-white/25 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <div className="flex items-center space-x-2">
+                              <Building2 className="h-7 w-7 text-white" />
+                              <HeadphonesIcon className="h-6 w-6 text-white opacity-80" />
+                            </div>
+                          </div>
+                          <div className="absolute bottom-10 right-10 w-22 h-16 bg-white/35 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <Zap className="h-7 w-7 text-white" />
                           </div>
                           
                           {/* Central element */}
-                          <div className="w-32 h-32 bg-white/30 rounded-3xl flex items-center justify-center backdrop-blur-sm border border-white/20">
-                            <Users className="h-16 w-16 text-white" />
+                          <div className="w-36 h-36 bg-white/35 rounded-[2rem] flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-lg">
+                            <BriefcaseIcon className="h-18 w-18 text-white" />
                           </div>
                         </div>
                       )}
@@ -122,23 +131,32 @@ export default function Services() {
                       {index === 1 && (
                         <div className="relative w-full h-full flex items-center justify-center">
                           {/* Background pattern */}
-                          <div className="absolute inset-6 bg-white/10 rounded-2xl"></div>
-                          <div className="absolute inset-12 bg-white/5 rounded-xl"></div>
+                          <div className="absolute inset-8 bg-white/8 rounded-[1.5rem]"></div>
+                          <div className="absolute inset-16 bg-white/4 rounded-[1rem]"></div>
                           
-                          {/* Main elements */}
-                          <div className="absolute top-12 left-12 w-20 h-16 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                            <Target className="h-8 w-8 text-white" />
+                          {/* Management focused elements */}
+                          <div className="absolute top-10 left-10 w-24 h-18 bg-white/25 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <div className="flex items-center space-x-2">
+                              <BarChart3 className="h-6 w-6 text-white" />
+                              <TrendingUp className="h-5 w-5 text-white opacity-80" />
+                            </div>
                           </div>
-                          <div className="absolute top-12 right-12 w-16 h-16 bg-white/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                            <UserCog className="h-7 w-7 text-white" />
+                          <div className="absolute top-10 right-10 w-20 h-20 bg-white/30 rounded-[1.2rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <UserCog className="h-8 w-8 text-white" />
                           </div>
-                          <div className="absolute bottom-12 right-12 w-24 h-20 bg-white/25 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                            <Building2 className="h-10 w-10 text-white" />
+                          <div className="absolute bottom-10 left-10 w-22 h-16 bg-white/35 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <DollarSign className="h-7 w-7 text-white" />
+                          </div>
+                          <div className="absolute bottom-10 right-10 w-28 h-22 bg-white/25 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <div className="flex items-center space-x-2">
+                              <Building2 className="h-7 w-7 text-white" />
+                              <Target className="h-6 w-6 text-white opacity-80" />
+                            </div>
                           </div>
                           
                           {/* Central element */}
-                          <div className="w-32 h-32 bg-white/30 rounded-3xl flex items-center justify-center backdrop-blur-sm border border-white/20">
-                            <Target className="h-16 w-16 text-white" />
+                          <div className="w-36 h-36 bg-white/35 rounded-[2rem] flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-lg">
+                            <Target className="h-18 w-18 text-white" />
                           </div>
                         </div>
                       )}
@@ -147,23 +165,32 @@ export default function Services() {
                       {index === 2 && (
                         <div className="relative w-full h-full flex items-center justify-center">
                           {/* Background pattern */}
-                          <div className="absolute inset-6 bg-white/10 rounded-2xl"></div>
-                          <div className="absolute inset-12 bg-white/5 rounded-xl"></div>
+                          <div className="absolute inset-8 bg-white/8 rounded-[1.5rem]"></div>
+                          <div className="absolute inset-16 bg-white/4 rounded-[1rem]"></div>
                           
-                          {/* Main elements */}
-                          <div className="absolute top-12 left-12 w-20 h-16 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                            <Search className="h-8 w-8 text-white" />
+                          {/* Recruitment focused elements */}
+                          <div className="absolute top-10 left-10 w-24 h-18 bg-white/25 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <div className="flex items-center space-x-2">
+                              <Search className="h-6 w-6 text-white" />
+                              <Users className="h-5 w-5 text-white opacity-80" />
+                            </div>
                           </div>
-                          <div className="absolute top-12 right-12 w-16 h-16 bg-white/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                            <UserCheck className="h-7 w-7 text-white" />
+                          <div className="absolute top-10 right-10 w-20 h-20 bg-white/30 rounded-[1.2rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <UserCheck className="h-8 w-8 text-white" />
                           </div>
-                          <div className="absolute bottom-12 left-12 w-24 h-20 bg-white/25 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                            <Users className="h-10 w-10 text-white" />
+                          <div className="absolute bottom-10 left-10 w-28 h-22 bg-white/25 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <div className="flex items-center space-x-2">
+                              <ShieldCheck className="h-7 w-7 text-white" />
+                              <FileCheck className="h-6 w-6 text-white opacity-80" />
+                            </div>
+                          </div>
+                          <div className="absolute bottom-10 right-10 w-22 h-16 bg-white/35 rounded-[1rem] flex items-center justify-center backdrop-blur-sm border border-white/20">
+                            <BriefcaseIcon className="h-7 w-7 text-white" />
                           </div>
                           
                           {/* Central element */}
-                          <div className="w-32 h-32 bg-white/30 rounded-3xl flex items-center justify-center backdrop-blur-sm border border-white/20">
-                            <Search className="h-16 w-16 text-white" />
+                          <div className="w-36 h-36 bg-white/35 rounded-[2rem] flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-lg">
+                            <Search className="h-18 w-18 text-white" />
                           </div>
                         </div>
                       )}
