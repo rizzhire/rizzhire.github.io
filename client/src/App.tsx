@@ -25,7 +25,7 @@ function App() {
       <TooltipProvider>
         <div className="min-h-screen bg-black">
           <Navbar />
-          <main className="bg-cream rounded-t-[60px] relative z-10 min-h-screen overflow-hidden mt-16 shadow-none border-none content-reveal">
+          <main className="bg-cream rounded-t-smooth seamless-container relative z-10 min-h-screen overflow-hidden mt-16 content-reveal">
             <Router />
           </main>
           <Footer />

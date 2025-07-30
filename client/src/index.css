@@ -74,6 +74,23 @@
     background-color: #F5F3EB;
   }
   
+  /* Smooth rounded corners for container */
+  .rounded-t-smooth {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    /* Add anti-aliasing for smoother curves */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Remove any potential borders/outlines on container */
+  .seamless-container {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  
   .text-cream {
     color: #F5F3EB;
   }
