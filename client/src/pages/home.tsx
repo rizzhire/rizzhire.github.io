@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/hero";
+import Services from "@/components/sections/services";
 import PartnerLogos from "@/components/sections/partner-logos";
 import Countries from "@/components/sections/countries";
 import Testimonials from "@/components/sections/testimonials";
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
+      <Services />
       <PartnerLogos />
       <Countries />
       <Testimonials />
