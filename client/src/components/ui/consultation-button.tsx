@@ -18,26 +18,26 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         transition-all duration-600 ease-out
         ${isHovered ? 'flex gap-4 items-center' : 'relative inline-block'}
       `}>
-        {/* Connected dumbbell shape using SVG */}
+        {/* Connected dumbbell shape - circle touches pill top/bottom */}
         {!isHovered && (
           <svg 
-            width="400" 
+            width="384" 
             height="64" 
-            viewBox="0 0 400 64" 
+            viewBox="0 0 384 64" 
             className="drop-shadow-lg"
           >
-            <defs>
-              <path 
-                id="dumbbellShape" 
-                d="M 32 0 L 300 0 C 320 0 336 16 336 32 C 336 32 344 20 356 20 C 372 20 384 28 384 32 C 384 36 372 44 356 44 C 344 44 336 32 336 32 C 336 48 320 64 300 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z"
-              />
-            </defs>
             <path 
-              d="M 32 0 L 300 0 C 320 0 336 16 336 32 C 336 32 344 20 356 20 C 372 20 384 28 384 32 C 384 36 372 44 356 44 C 344 44 336 32 336 32 C 336 48 320 64 300 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z" 
+              d="M 32 0 L 288 0 C 300 0 320 0 320 0 C 320 0 352 0 352 32 C 352 64 320 64 320 64 C 300 64 288 64 288 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z" 
               fill="#FFD63F" 
             />
+            <circle 
+              cx="352" 
+              cy="32" 
+              r="32" 
+              fill="#FFD63F"
+            />
             <text 
-              x="140" 
+              x="160" 
               y="38" 
               textAnchor="middle" 
               className="fill-black font-semibold text-lg"
@@ -45,9 +45,9 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             >
               Schedule Consultation
             </text>
-            <g transform="translate(356, 32)">
+            <g transform="translate(352, 32)">
               <path 
-                d="M7 7l10 10m0-10l-10 10" 
+                d="M-6 -6l12 12m0-12l-12 12" 
                 stroke="black" 
                 strokeWidth="2" 
                 strokeLinecap="round" 
