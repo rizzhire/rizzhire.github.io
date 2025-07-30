@@ -61,7 +61,7 @@ export default function Services() {
         </div>
 
         {/* Service Cards - Landscape Layout */}
-        <div className="space-y-8">
+        <div className="space-y-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index}
@@ -70,7 +70,7 @@ export default function Services() {
               <CardContent className="p-0">
                 <div className="flex items-center justify-between">
                   {/* Content Section */}
-                  <div className="flex-1 pr-8">
+                  <div className="flex-1 pr-6">
                     <div className={`w-16 h-16 ${service.iconBg} rounded-[2rem] flex items-center justify-center mb-6 border border-yellow/30`}>
                       <service.icon className="h-8 w-8 text-gray-800" />
                     </div>
