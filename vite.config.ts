@@ -36,4 +36,3 @@ export default defineConfig({
     },
   },
 });
-ls -la ~/workspace
