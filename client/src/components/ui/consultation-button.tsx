@@ -11,7 +11,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
 
   const handleClick = () => {
     setIsClicked(true);
-    setTimeout(() => setIsClicked(false), 300);
+    setTimeout(() => setIsClicked(false), 600);
   };
 
   return (
@@ -21,126 +21,130 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      {/* Super animated yellow button */}
-      <div className={`
-        relative overflow-hidden
-        bg-yellow text-black font-semibold text-lg
-        px-8 py-4 rounded-full
-        shadow-lg hover:shadow-2xl hover:shadow-yellow/60
-        transform transition-all duration-300 ease-out
-        ${isHovered ? 'scale-110 -translate-y-2 rotate-1' : 'scale-100'}
-        ${isClicked ? 'scale-95 translate-y-0' : ''}
-        hover:bg-yellow/90
-      `}>
+      {/* Main button with water drop detachment effect */}
+      <div className="relative flex items-center">
         
-        {/* Multiple animated shine effects */}
+        {/* Main button body */}
         <div className={`
-          absolute inset-0 w-full h-full
-          bg-gradient-to-r from-transparent via-white/40 to-transparent
-          transform transition-transform duration-500 ease-out
-          ${isHovered ? 'translate-x-full animate-pulse' : '-translate-x-full'}
-          skew-x-12
-        `} />
-        
-        <div className={`
-          absolute inset-0 w-1/3 h-full
-          bg-gradient-to-r from-white/30 to-transparent
-          transform transition-all duration-700 ease-out
-          ${isHovered ? 'translate-x-96 scale-150' : '-translate-x-32'}
-          rotate-12
-        `} />
-        
-        {/* Button content with micro animations */}
-        <div className="relative z-10 flex items-center justify-center gap-3">
-          <span className={`
-            transition-all duration-300 ease-out
-            ${isHovered ? 'tracking-wider text-shadow-sm' : ''}
-            ${isClicked ? 'scale-95' : ''}
-          `}>
-            Schedule Consultation
-          </span>
+          relative overflow-hidden
+          bg-yellow text-black font-semibold text-lg
+          px-8 py-4 rounded-full
+          shadow-lg hover:shadow-2xl hover:shadow-yellow/50
+          transform transition-all duration-500 ease-out
+          ${isHovered ? 'scale-105 -translate-y-1' : 'scale-100'}
+          ${isClicked ? 'scale-98' : ''}
+        `}>
           
-          {/* Super animated arrow */}
+          {/* Animated shine sweep */}
           <div className={`
-            transition-all duration-300 ease-out
-            ${isHovered ? 'translate-x-2 scale-125 rotate-45' : ''}
-            ${isClicked ? 'translate-x-4 scale-150 rotate-90' : ''}
-          `}>
-            <ArrowUpRight className={`
-              w-5 h-5 transition-all duration-300
-              ${isHovered ? 'animate-bounce' : ''}
-            `} />
+            absolute inset-0 w-full h-full
+            bg-gradient-to-r from-transparent via-white/60 to-transparent
+            transform transition-transform duration-800 ease-out
+            ${isHovered ? 'translate-x-full' : '-translate-x-full'}
+            skew-x-12
+          `} />
+          
+          {/* Button text */}
+          <div className="relative z-10">
+            <span className={`
+              transition-all duration-300 ease-out
+              ${isHovered ? 'tracking-wide' : ''}
+            `}>
+              Schedule Consultation
+            </span>
           </div>
         </div>
         
-        {/* Ripple effect on click */}
-        {isClicked && (
-          <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-        )}
-        
-        {/* Rotating border effect */}
+        {/* Water drop arrow - detaches on hover */}
         <div className={`
-          absolute inset-0 rounded-full
-          bg-gradient-to-r from-yellow via-white/20 to-yellow
-          transition-all duration-500
-          ${isHovered ? 'animate-spin opacity-30 scale-110' : 'opacity-0 scale-100'}
-          blur-sm
-        `} />
+          relative bg-yellow w-12 h-12 rounded-full
+          flex items-center justify-center
+          shadow-lg transition-all duration-500 ease-out
+          ${isHovered 
+            ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-yellow/40' 
+            : '-ml-6 scale-100'
+          }
+          ${isClicked ? 'scale-125 translate-y-4' : ''}
+        `}>
+          
+          {/* Water drop connection bridge */}
+          <div className={`
+            absolute left-0 top-1/2 -translate-y-1/2
+            w-6 h-1 bg-yellow
+            transform transition-all duration-500 ease-out origin-left
+            ${isHovered 
+              ? 'scale-x-0 opacity-0' 
+              : 'scale-x-100 opacity-100'
+            }
+          `} />
+          
+          {/* Water drop tail effect */}
+          <div className={`
+            absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2
+            w-4 h-6 bg-yellow
+            transform transition-all duration-500 ease-out
+            ${isHovered 
+              ? 'scale-0 opacity-0 rotate-45' 
+              : 'scale-100 opacity-100'
+            }
+            clip-path-tear-drop
+          `} style={{
+            clipPath: isHovered ? 'circle(0% at 50% 50%)' : 'ellipse(50% 70% at 80% 50%)'
+          }} />
+          
+          {/* Arrow icon */}
+          <ArrowUpRight className={`
+            w-5 h-5 text-black relative z-10
+            transition-all duration-300 ease-out
+            ${isHovered ? 'rotate-12 scale-110' : ''}
+            ${isClicked ? 'rotate-45 scale-125' : ''}
+          `} />
+          
+          {/* Ripple effect on detachment */}
+          {isHovered && (
+            <div className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+          )}
+        </div>
       </div>
       
-      {/* Floating animated particles */}
+      {/* Floating droplets effect */}
       <div className={`
         absolute inset-0 pointer-events-none
         transition-opacity duration-300
         ${isHovered ? 'opacity-100' : 'opacity-0'}
       `}>
-        {[...Array(12)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className={`
-              absolute w-2 h-2 bg-yellow rounded-full
-              ${isHovered ? 'animate-ping' : ''}
+              absolute w-1 h-1 bg-yellow rounded-full
+              animate-float-up opacity-60
             `}
             style={{
-              left: `${10 + i * 8}%`,
-              top: `${15 + (i % 3) * 30}%`,
-              animationDelay: `${i * 150}ms`,
-              animationDuration: `${1 + i * 0.1}s`
+              left: `${60 + i * 5}%`,
+              top: `${30 + (i % 2) * 40}%`,
+              animationDelay: `${i * 200}ms`,
+              animationDuration: '2s'
             }}
           />
         ))}
       </div>
       
-      {/* Expanding rings on hover */}
+      {/* Main glow effect */}
       <div className={`
-        absolute inset-0 rounded-full border-2 border-yellow/40
-        transition-all duration-500
-        ${isHovered ? 'scale-150 opacity-0' : 'scale-100 opacity-100'}
-        animate-pulse
-      `} />
-      
-      <div className={`
-        absolute inset-0 rounded-full border border-yellow/20
-        transition-all duration-700
-        ${isHovered ? 'scale-200 opacity-0' : 'scale-110 opacity-100'}
-        animate-pulse
-      `} style={{ animationDelay: '200ms' }} />
-      
-      {/* Dynamic glow effect */}
-      <div className={`
-        absolute inset-0 bg-yellow/40 rounded-full blur-xl
+        absolute inset-0 bg-yellow/30 rounded-full blur-xl
         transition-all duration-500 ease-out
-        ${isHovered ? 'opacity-100 scale-150 animate-pulse' : 'opacity-0 scale-100'}
-        ${isClicked ? 'scale-200 opacity-80' : ''}
+        ${isHovered ? 'opacity-70 scale-125' : 'opacity-0 scale-100'}
         -z-10
       `} />
       
-      {/* Background wave effect */}
+      {/* Detached droplet glow */}
       <div className={`
-        absolute inset-0 bg-gradient-radial from-yellow/20 to-transparent
-        rounded-full transition-all duration-1000
-        ${isHovered ? 'scale-300 opacity-50 animate-spin' : 'scale-100 opacity-0'}
-        -z-20
+        absolute right-0 top-1/2 -translate-y-1/2 translate-x-8
+        w-12 h-12 bg-yellow/40 rounded-full blur-lg
+        transition-all duration-500 ease-out
+        ${isHovered ? 'opacity-60 scale-150' : 'opacity-0 scale-50'}
+        -z-10
       `} />
     </div>
   );
