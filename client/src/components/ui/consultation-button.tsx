@@ -22,9 +22,23 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         {!isHovered && (
           <div className="relative">
             <svg width="380" height="64" viewBox="0 0 380 64" className="drop-shadow-lg">
-              {/* Main connected shape with perfect circle */}
+              {/* Pill shape */}
               <path
-                d="M 32 0 L 284 0 C 302 0 316 10 324 20 C 332 10 342 0 348 0 C 364 0 380 16 380 32 C 380 48 364 64 348 64 C 342 64 332 54 324 44 C 316 54 302 64 284 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z"
+                d="M 32 0 L 280 0 C 298 0 312 14 312 32 C 312 50 298 64 280 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z"
+                fill="#FFD63F"
+              />
+              
+              {/* Perfect circle connected to pill */}
+              <circle
+                cx="348"
+                cy="32"
+                r="32"
+                fill="#FFD63F"
+              />
+              
+              {/* Connection bridge */}
+              <path
+                d="M 312 20 C 320 16 328 16 316 32 C 328 48 320 48 312 44"
                 fill="#FFD63F"
               />
               
