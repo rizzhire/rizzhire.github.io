@@ -39,3 +39,4 @@ function App() {
 }
 
 export default App;
+// Ready to deploy navbar partition fix and smooth curves
