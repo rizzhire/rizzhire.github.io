@@ -1,29 +1,64 @@
-// This file can be used for any static data that doesn't need to be in the database
-// Currently all data is managed through the storage layer
 
-export const partnerLogos = [
-  "Emirates", "ADNOC", "Qatar Airways", "Aramco", "DP World", "Etisalat"
+// Static data for GitHub Pages deployment
+export const jobs = [
+  {
+    id: 1,
+    title: "Senior Software Engineer",
+    company: "TechCorp",
+    location: "Dubai, UAE",
+    salary: "$80,000 - $120,000",
+    type: "Full-time",
+    description: "We are looking for a senior software engineer to join our team.",
+    requirements: ["5+ years experience", "React expertise", "Node.js knowledge"]
+  },
+  {
+    id: 2,
+    title: "Product Manager",
+    company: "InnovateCo",
+    location: "Riyadh, Saudi Arabia",
+    salary: "$70,000 - $100,000",
+    type: "Full-time",
+    description: "Lead product development and strategy.",
+    requirements: ["3+ years PM experience", "Agile methodology", "Technical background"]
+  },
+  {
+    id: 3,
+    title: "Data Scientist",
+    company: "DataFlow",
+    location: "Kuwait City, Kuwait",
+    salary: "$60,000 - $90,000",
+    type: "Contract",
+    description: "Analyze complex datasets and build ML models.",
+    requirements: ["Python/R expertise", "Machine Learning", "Statistics background"]
+  }
 ];
 
-export const benefits = [
+export const testimonials = [
   {
-    icon: "🌍",
-    title: "Global Placement Opportunities",
-    description: "Access to premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives."
+    id: 1,
+    name: "Sarah Ahmed",
+    position: "Data Engineer",
+    company: "TechFlow Solutions",
+    quote: "HireNET found me the perfect role that matched my skills and career goals. Their personalized approach made all the difference.",
+    rating: 5,
+    initials: "SA"
   },
   {
-    icon: "👔",
-    title: "Personalized Career Guidance",
-    description: "One-on-one consultation with industry experts to accelerate your career growth."
+    id: 2,
+    name: "Mohamed Al-Rashid",
+    position: "Product Manager",
+    company: "Digital Dynamics",
+    quote: "The recruitment process was seamless and professional. HireNET truly understands the Middle East market.",
+    rating: 5,
+    initials: "MR"
   },
   {
-    icon: "📄",
-    title: "Free Resume Review",
-    description: "Professional resume optimization to increase your chances of landing interviews."
-  },
-  {
-    icon: "🎧",
-    title: "Priority Support",
-    description: "Dedicated support throughout your job search journey with 24/7 assistance."
+    id: 3,
+    name: "Fatima Hassan",
+    position: "Marketing Director",
+    company: "Growth Partners",
+    quote: "Exceptional service and results. They helped us find top talent quickly and efficiently.",
+    rating: 5,
+    initials: "FH"
   }
 ];
