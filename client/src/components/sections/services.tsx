@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, TrendingUp, UserCheck, CheckCircle } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 export default function Services() {
   const services = [
@@ -45,39 +45,27 @@ export default function Services() {
     }
   ];
 
-  const [currentCard, setCurrentCard] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isInStackingArea, setIsInStackingArea] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const wheelTimeoutRef = useRef<NodeJS.Timeout>();
 
+  // Detect when user enters/exits stacking area
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || !containerRef.current) return;
+      if (!sectionRef.current) return;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
-      const containerRect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const sectionTop = sectionRect.top;
       
-      // When container reaches the middle of screen, start the stacking sequence
-      const containerCenter = containerRect.top + containerRect.height / 2;
+      // Enter stacking area when section is centered
+      const sectionCenter = sectionRect.top + sectionRect.height / 2;
       const screenCenter = windowHeight / 2;
+      const isNearCenter = Math.abs(sectionCenter - screenCenter) < windowHeight * 0.3;
       
-      // Container is in position when it's centered on screen
-      const isContainerCentered = Math.abs(containerCenter - screenCenter) < 100;
-      
-      if (!isContainerCentered && sectionTop > -windowHeight * 0.5) {
-        // Still scrolling to center position
-        setCurrentCard(0);
-        return;
-      }
-      
-      // Once centered, calculate stacking progress based on how much we've scrolled past center
-      const scrollPastCenter = Math.max(0, -sectionTop - windowHeight * 0.5);
-      const cardHeight = 400; // Approximate card transition distance
-      
-      // Each card appears after scrolling one card height
-      const cardIndex = Math.floor(scrollPastCenter / cardHeight);
-      setCurrentCard(Math.min(cardIndex, services.length - 1));
+      setIsInStackingArea(isNearCenter && sectionRect.top <= 0 && sectionRect.bottom >= windowHeight);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -88,41 +76,88 @@ export default function Services() {
     };
   }, []);
 
+  // Handle wheel events for step-by-step stacking
+  const handleWheel = useCallback((e: WheelEvent) => {
+    if (!isInStackingArea || isAnimating) {
+      return;
+    }
+
+    e.preventDefault();
+    setIsAnimating(true);
+
+    const direction = e.deltaY > 0 ? 'down' : 'up';
+    
+    if (direction === 'down' && activeIndex < services.length - 1) {
+      setActiveIndex(prev => prev + 1);
+    } else if (direction === 'up' && activeIndex > 0) {
+      setActiveIndex(prev => prev - 1);
+    }
+
+    // Clear existing timeout
+    if (wheelTimeoutRef.current) {
+      clearTimeout(wheelTimeoutRef.current);
+    }
+
+    // Reset animation lock after transition
+    wheelTimeoutRef.current = setTimeout(() => {
+      setIsAnimating(false);
+    }, 400);
+  }, [isInStackingArea, isAnimating, activeIndex, services.length]);
+
+  // Add wheel event listener when in stacking area
+  useEffect(() => {
+    if (isInStackingArea) {
+      window.addEventListener('wheel', handleWheel, { passive: false });
+    } else {
+      window.removeEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (wheelTimeoutRef.current) {
+        clearTimeout(wheelTimeoutRef.current);
+      }
+    };
+  }, [isInStackingArea, handleWheel]);
+
   const getCardStyle = (index: number) => {
-    if (index < currentCard) {
-      // Previously active cards - stay stacked and visible in SAME position
-      const stackDepth = currentCard - index;
-      const yOffset = stackDepth * -5; // Small offset for depth perception
-      const scaleReduction = stackDepth * 0.03; // Minimal scale reduction
-      const opacityReduction = stackDepth * 0.2; // Keep visible
+    if (index < activeIndex) {
+      // Previously stacked cards - scale down progressively
+      const stackDepth = activeIndex - index;
+      const scale = 1 - (stackDepth * 0.05); // Each stack level scales down by 5%
+      const yOffset = stackDepth * -8; // Slight vertical offset for depth
+      const opacity = Math.max(0.6, 1 - (stackDepth * 0.15)); // Maintain visibility
       
       return {
-        transform: `translateY(${yOffset}px) scale(${1 - scaleReduction})`,
-        opacity: Math.max(0.7, 1 - opacityReduction),
-        zIndex: 90 - stackDepth,
-        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transform: `translateY(${yOffset}px) scale(${scale})`,
+        opacity,
+        zIndex: 100 - stackDepth,
+        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        pointerEvents: 'none' as const
       };
-    } else if (index === currentCard) {
-      // Currently active card - STAYS IN SAME FIXED POSITION
+    } else if (index === activeIndex) {
+      // Active card - full size and centered
       return {
         transform: 'translateY(0) scale(1)',
         opacity: 1,
         zIndex: 100,
-        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        pointerEvents: 'auto' as const
       };
     } else {
-      // Future cards - waiting below the container
+      // Future cards - hidden below
       return {
         transform: 'translateY(100%) scale(0.9)',
         opacity: 0,
         zIndex: 50,
-        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        pointerEvents: 'none' as const
       };
     }
   };
 
   return (
-    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '500vh' }}>
+    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '400vh' }}>
       {/* Header */}
       <div className="py-16 text-center relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,14 +165,19 @@ export default function Services() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive workforce solutions designed to accelerate your business growth and operational excellence.
           </p>
+          {isInStackingArea && (
+            <div className="mt-4 text-sm text-gray-500 animate-pulse">
+              Scroll to stack cards • {activeIndex + 1} of {services.length}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Sticky Card Container - STAYS FIXED IN CENTER */}
+      {/* Fixed Stacking Container */}
       <div 
         ref={containerRef}
-        className="sticky top-1/2 left-1/2 w-full max-w-lg mx-auto h-96 transform -translate-x-1/2 -translate-y-1/2"
-        style={{ zIndex: 50 }}
+        className="fixed top-1/2 left-1/2 w-full max-w-lg h-80 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{ zIndex: isInStackingArea ? 100 : 10 }}
       >
         {services.map((service, index) => (
           <Card 
@@ -169,17 +209,26 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Card Progress Indicators */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-[200]">
-        {services.map((_, index) => (
-          <div
-            key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index <= currentCard ? 'bg-yellow' : 'bg-gray-300'
-            }`}
-          />
-        ))}
-      </div>
+      {/* Progress Indicators - Only show in stacking area */}
+      {isInStackingArea && (
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-[200]">
+          {services.map((_, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index <= activeIndex ? 'bg-yellow scale-110' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Scroll Lock Indicator */}
+      {isInStackingArea && (
+        <div className="fixed top-8 right-8 text-sm bg-black/80 text-white px-3 py-2 rounded-lg z-[200]">
+          Scroll Lock Active
+        </div>
+      )}
     </section>
   );
 }

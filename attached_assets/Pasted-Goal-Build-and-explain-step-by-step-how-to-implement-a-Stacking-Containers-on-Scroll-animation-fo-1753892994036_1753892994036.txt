@@ -1,0 +1,74 @@
+Goal:
+Build and explain step-by-step how to implement a “Stacking Containers on Scroll” animation for a website using HTML, CSS, and JavaScript. The scroll behavior must mimic scroll-by-scroll stacking where each section (container/card) scrolls into place one at a time, stacks on top of the previous, and shows a layered z-index-based stack as the user scrolls down.
+
+🎯 Desired Scroll Behavior:
+The user scrolls normally, but when they reach the stacking section:
+
+Each scroll action does not scroll the page normally.
+
+Instead, it triggers a controlled animation that:
+
+Scales down the previous container slightly.
+
+Brings in the next container to the center.
+
+Visually stacks them with slight size difference and z-index layering.
+
+The previous containers stay partially visible, creating a clean stack effect.
+
+The transition happens in scroll-based steps — one scroll = one stacking step.
+
+After the last (e.g. 3rd) container is stacked, the scroll behavior resumes normally and page continues.
+
+🔁 Scroll Up Behavior:
+On reverse scroll:
+
+The topmost card scales down and moves out.
+
+The next card beneath becomes active.
+
+The stack reverses cleanly, with animations playing backward.
+
+📦 Technical Implementation:
+Build this with:
+
+HTML: Structure 3 or more .stack-card containers inside a wrapper <section class="stacking-area">.
+
+CSS:
+
+Use position: fixed or sticky to keep cards in the center of the viewport.
+
+Apply transform: scale() and z-index to manage stacking and depth.
+
+Add smooth transition: transform 0.3s ease or similar.
+
+JavaScript:
+
+Detect scroll direction and amount using the wheel event.
+
+Track activeIndex (current card).
+
+On scroll down:
+
+Scale down current card.
+
+Bring in next card to full scale.
+
+Update z-index layering.
+
+On scroll up:
+
+Reverse animation logic.
+
+Use throttle() or debounce() to avoid rapid firing.
+
+Lock scroll when animation is in progress.
+
+Optional: Use GSAP ScrollTrigger with snapping logic if needed.
+
+📁 Required Files:
+index.html → 3 stacking containers inside a scroll-locked section.
+
+style.css → styling for fixed layout, card centering, scaling.
+
+script.js → scroll manager to control stacking animations.
