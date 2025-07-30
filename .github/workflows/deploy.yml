@@ -31,8 +31,15 @@ jobs:
       run: |
         mkdir -p deploy
         cp -r dist/public/* deploy/
-        cp client/public/_redirects deploy/ 2>/dev/null || true
-        cp client/public/404.html deploy/ 2>/dev/null || true
+        cp _redirects deploy/ 2>/dev/null || true
+        cp 404.html deploy/ 2>/dev/null || true
+        # Ensure proper asset paths for GitHub Pages
+        sed -i 's|src="/assets/|src="./assets/|g' deploy/index.html
+        sed -i 's|href="/assets/|href="./assets/|g' deploy/index.html
+        # Ensure assets are in the right place
+        if [ -d "assets" ]; then
+          cp -r assets deploy/
+        fi
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
