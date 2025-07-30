@@ -8,6 +8,20 @@ HireNET is a modern recruitment platform designed to connect talent with opportu
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes (July 30, 2025)
+
+### Deployment System Implementation
+- Added comprehensive deployment system with multiple methods
+- Created `/deploy` route with beautiful deployment interface
+- Built automatic deployment scripts (`deploy.sh`, `scripts/deploy.js`)
+- Enhanced GitHub Actions workflow with manual triggering
+- Added auto-deploy watcher for file changes
+- Implemented fallback options for git authentication issues
+
+### Outstanding Issues
+- Navbar partition line and curve smoothing fixes ready for deployment
+- Git authentication blocked in Replit environment (user needs manual deployment)
+
 ## System Architecture
 
 The application follows a full-stack architecture with:
