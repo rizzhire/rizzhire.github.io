@@ -54,111 +54,70 @@ export default function Services() {
   const scrollDirection = useRef<'up' | 'down'>('down');
 
   useEffect(() => {
-    let animationFrameId: number;
-    
     const handleScroll = () => {
-      animationFrameId = requestAnimationFrame(() => {
-        if (!sectionRef.current || !containerRef.current) return;
+      if (!sectionRef.current) return;
 
-        const currentScrollY = window.scrollY;
-        const direction = currentScrollY > lastScrollY.current ? 'down' : 'up';
-        scrollDirection.current = direction;
-        lastScrollY.current = currentScrollY;
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = sectionRect.top;
+      const sectionHeight = sectionRect.height;
+      
+      // Calculate how far we've scrolled into the section
+      const scrolledIntoSection = Math.max(0, -sectionTop);
+      const maxScroll = sectionHeight - windowHeight;
+      const scrollProgress = Math.min(scrolledIntoSection / maxScroll, 1);
+      
+      setScrollProgress(scrollProgress);
 
-        const sectionRect = sectionRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Check if we're in the stacking zone
-        const sectionTop = sectionRect.top;
-        const sectionBottom = sectionRect.bottom;
-        const inStackingZone = sectionTop <= 0 && sectionBottom >= windowHeight;
-
-        if (inStackingZone) {
-          // Lock scroll and handle stacking animation
-          if (!isScrollLocked) {
-            setIsScrollLocked(true);
-            document.body.style.overflow = 'hidden';
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${currentScrollY}px`;
-            document.body.style.width = '100%';
-          }
-
-          // Calculate progress through the stacking sequence
-          const sectionHeight = sectionRect.height;
-          const scrolled = Math.abs(sectionTop);
-          const progress = Math.min(scrolled / (sectionHeight * 0.6), 1);
-          
-          setScrollProgress(progress);
-
-          // Determine current card based on scroll progress
-          if (progress < 0.33) {
-            setCurrentCard(0);
-          } else if (progress < 0.66) {
-            setCurrentCard(1);
-          } else {
-            setCurrentCard(2);
-          }
-        } else {
-          // Unlock scroll when leaving stacking zone
-          if (isScrollLocked) {
-            setIsScrollLocked(false);
-            const scrollY = document.body.style.top;
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-          }
-        }
-      });
+      // Update current card based on scroll progress
+      if (scrollProgress < 0.25) {
+        setCurrentCard(0);
+      } else if (scrollProgress < 0.6) {
+        setCurrentCard(1);
+      } else {
+        setCurrentCard(2);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: false });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      
-      // Clean up scroll lock
-      if (isScrollLocked) {
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-      }
     };
-  }, [isScrollLocked]);
+  }, []);
 
   const getCardStyle = (index: number) => {
     const baseTransform = 'translateX(-50%) translateY(-50%)';
-    const stackOffset = index * -8;
-    const scaleReduction = index * 0.02;
-    const opacityReduction = index * 0.1;
-
+    
     if (currentCard >= index) {
-      // Card is stacked
+      // Card is visible and stacked
+      const stackOffset = index * -12;
+      const scaleReduction = index * 0.03;
+      const opacityReduction = index * 0.15;
+      
       return {
-        transform: `${baseTransform} translateY(${stackOffset}px) scale(${1 - scaleReduction})`,
-        opacity: Math.max(0.7, 1 - opacityReduction),
+        transform: `${baseTransform} translateY(${stackOffset}px) scale(${1 - scaleReduction}) rotateX(${index * 1}deg)`,
+        opacity: Math.max(0.6, 1 - opacityReduction),
         zIndex: 20 + index,
-        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        filter: index > 0 ? `blur(${index * 0.5}px)` : 'none'
       };
     } else {
-      // Card is hidden/waiting
+      // Card is waiting to be revealed
       return {
-        transform: `${baseTransform} translateY(100px) scale(0.9)`,
+        transform: `${baseTransform} translateY(50px) scale(0.8)`,
         opacity: 0,
         zIndex: 10,
-        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
 
   return (
-    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '400vh' }}>
+    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '300vh' }}>
       {/* Header */}
-      <div className="py-20 text-center">
+      <div className="py-20 text-center relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our <span className="text-yellow">Services</span></h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -171,7 +130,7 @@ export default function Services() {
       <div 
         ref={containerRef}
         className="sticky top-0 left-0 w-full h-screen flex items-center justify-center"
-        style={{ zIndex: 100 }}
+        style={{ zIndex: 50 }}
       >
         {services.map((service, index) => (
           <Card 
