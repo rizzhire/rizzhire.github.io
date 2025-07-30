@@ -18,16 +18,18 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         transition-all duration-600 ease-out
         ${isHovered ? 'flex gap-4 items-center' : 'relative flex items-center'}
       `}>
-        {/* Connected button shape joined from tip */}
+        {/* Single continuous button with rectangular body and circular end cap */}
         {!isHovered && (
-          <div className="relative flex items-center">
-            {/* Main rectangular button with modified right end for tip connection */}
-            <div className="bg-yellow text-black font-semibold text-lg px-8 py-4 rounded-l-full rounded-r-none relative">
+          <div className="relative inline-flex items-center bg-yellow">
+            {/* Rectangular body with asymmetric border-radius */}
+            <div className="text-black font-semibold text-lg px-8 py-4 relative z-10" 
+                 style={{ borderRadius: '32px 0 0 32px' }}>
               Schedule Consultation
             </div>
             
-            {/* Connected circular element from the tip */}
-            <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center relative">
+            {/* Circular end cap with curved bridge transition */}
+            <div className="w-16 h-16 flex items-center justify-center relative z-10" 
+                 style={{ borderRadius: '0 32px 32px 0' }}>
               <ArrowUpRight className="w-5 h-5 text-black" />
             </div>
           </div>
