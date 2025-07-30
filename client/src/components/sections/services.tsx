@@ -45,182 +45,75 @@ export default function Services() {
     }
   ];
 
-  const [currentStep, setCurrentStep] = useState(0); // 0-8 steps (3 steps per card)
-  const [isInStackingZone, setIsInStackingZone] = useState(false);
-  const [isScrollLocked, setIsScrollLocked] = useState(false);
+  const [currentCard, setCurrentCard] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollDebounceRef = useRef<NodeJS.Timeout>();
-  const isAnimatingRef = useRef(false);
-  const totalSteps = 9; // 3 cards × 3 steps each
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || isAnimatingRef.current) return;
+      if (!sectionRef.current) return;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
-      // Check if first card should be centered and stacking should begin
       const sectionTop = sectionRect.top;
-      const sectionCenter = sectionTop + sectionRect.height / 2;
-      const viewportCenter = windowHeight / 2;
-      const shouldEnterZone = sectionCenter <= viewportCenter && sectionRect.bottom > viewportCenter;
-
-      if (shouldEnterZone && !isInStackingZone) {
-        setIsInStackingZone(true);
-        setIsScrollLocked(true);
-        setCurrentStep(0);
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.top = `-${window.scrollY}px`;
-      }
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (!isInStackingZone || isAnimatingRef.current) return;
-
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (scrollDebounceRef.current) {
-        clearTimeout(scrollDebounceRef.current);
-      }
-
-      scrollDebounceRef.current = setTimeout(() => {
-        const direction = e.deltaY > 0 ? 'down' : 'up';
-        isAnimatingRef.current = true;
-
-        if (direction === 'down') {
-          if (currentStep < totalSteps - 1) {
-            setCurrentStep(prev => prev + 1);
-          } else {
-            // All steps complete - unlock and continue scroll
-            const scrollY = document.body.style.top;
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            
-            setIsInStackingZone(false);
-            setIsScrollLocked(false);
-            setCurrentStep(0);
-            
-            setTimeout(() => {
-              window.scrollBy({ top: 200, behavior: 'smooth' });
-            }, 100);
-          }
-        } else {
-          if (currentStep > 0) {
-            setCurrentStep(prev => prev - 1);
-          } else {
-            // All steps reversed - unlock and continue scroll up
-            const scrollY = document.body.style.top;
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            
-            setIsInStackingZone(false);
-            setIsScrollLocked(false);
-            
-            setTimeout(() => {
-              window.scrollBy({ top: -200, behavior: 'smooth' });
-            }, 100);
-          }
-        }
-
-        setTimeout(() => {
-          isAnimatingRef.current = false;
-        }, 300);
-      }, 80);
+      const sectionHeight = sectionRect.height;
+      
+      // Calculate scroll progress through the section
+      const scrollProgress = Math.max(0, Math.min(1, -sectionTop / (sectionHeight - windowHeight)));
+      
+      // Determine which card should be active based on scroll progress
+      const cardIndex = Math.floor(scrollProgress * services.length);
+      setCurrentCard(Math.min(cardIndex, services.length - 1));
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleWheel);
-      if (scrollDebounceRef.current) {
-        clearTimeout(scrollDebounceRef.current);
-      }
-      // Cleanup scroll lock
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
     };
-  }, [isInStackingZone, currentStep]);
+  }, []);
 
   const getCardStyle = (index: number) => {
-    const baseTransform = 'translateX(-50%) translateY(-50%)';
-    
-    if (!isInStackingZone) {
-      // Hide all cards when not in stacking zone
-      return {
-        transform: `${baseTransform} scale(0)`,
-        opacity: 0,
-        zIndex: 10,
-        transition: 'transform 0.3s ease, opacity 0.3s ease'
-      };
-    }
-
-    // Calculate which card should be active based on current step
-    const cardStep = Math.floor(currentStep / 3); // Which card is being focused (0, 1, 2)
-    const subStep = currentStep % 3; // Sub-step within that card (0, 1, 2)
-    
-    if (index < cardStep) {
-      // Previous cards - fully stacked behind
-      const stackDepth = cardStep - index;
-      const baseScale = 1 - (stackDepth * 0.1);
+    if (index <= currentCard) {
+      // Card is visible and stacked
+      const stackDepth = currentCard - index;
+      const isActive = index === currentCard;
       
-      return {
-        transform: `${baseTransform} scale(${Math.max(0.7, baseScale)})`,
-        opacity: Math.max(0.3, 1 - (stackDepth * 0.2)),
-        zIndex: 50 - stackDepth,
-        transition: 'transform 0.3s ease, opacity 0.3s ease'
-      };
-    } else if (index === cardStep) {
-      // Current active card - scaling up through sub-steps
-      const scaleProgress = (subStep + 1) / 3; // 0.33, 0.66, 1.0
-      const scale = 0.7 + (scaleProgress * 0.3); // Scale from 0.7 to 1.0
-      
-      return {
-        transform: `${baseTransform} scale(${scale})`,
-        opacity: scaleProgress,
-        zIndex: 100 + index,
-        transition: 'transform 0.3s ease, opacity 0.3s ease'
-      };
-    } else if (index === cardStep + 1 && subStep > 0) {
-      // Next card - starting to appear behind current card
-      const appearProgress = subStep / 3;
-      const scale = 0.5 + (appearProgress * 0.2); // Scale from 0.5 to 0.7
-      
-      return {
-        transform: `${baseTransform} scale(${scale})`,
-        opacity: appearProgress * 0.5,
-        zIndex: 90 + index,
-        transition: 'transform 0.3s ease, opacity 0.3s ease'
-      };
+      if (isActive) {
+        // Active card on top
+        return {
+          transform: 'translateX(-50%) translateY(-50%) scale(1)',
+          opacity: 1,
+          zIndex: 100 + index,
+          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        };
+      } else {
+        // Stacked card behind
+        const yOffset = stackDepth * -6; // Slight vertical offset for depth
+        const scaleReduction = stackDepth * 0.05;
+        const opacityReduction = stackDepth * 0.2;
+        
+        return {
+          transform: `translateX(-50%) translateY(calc(-50% + ${yOffset}px)) scale(${1 - scaleReduction})`,
+          opacity: Math.max(0.4, 1 - opacityReduction),
+          zIndex: 100 - stackDepth,
+          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        };
+      }
     } else {
-      // Future cards - hidden
+      // Card not revealed yet
       return {
-        transform: `${baseTransform} scale(0.5)`,
+        transform: 'translateX(-50%) translateY(-50%) scale(0.8)',
         opacity: 0,
-        zIndex: 10,
-        transition: 'transform 0.3s ease, opacity 0.3s ease'
+        zIndex: 50,
+        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
 
   return (
-    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '200vh' }}>
+    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '400vh' }}>
       {/* Header */}
       <div className="py-20 text-center relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -231,10 +124,10 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Stacking Container - Fixed positioning for true centering */}
+      {/* Sticky Card Container */}
       <div 
         ref={containerRef}
-        className="sticky top-0 left-0 w-full h-screen flex items-center justify-center overflow-hidden"
+        className="sticky top-0 left-0 w-full h-screen flex items-center justify-center"
         style={{ zIndex: 50 }}
       >
         {services.map((service, index) => (
@@ -267,19 +160,17 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Step Progress Indicators */}
-      {isInStackingZone && (
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-1 z-[200]">
-          {Array.from({ length: totalSteps }, (_, index) => (
-            <div
-              key={index}
-              className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
-                index <= currentStep ? 'bg-yellow' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
-      )}
+      {/* Card Progress Indicators */}
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-[200]">
+        {services.map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index <= currentCard ? 'bg-yellow' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
     </section>
   );
 }
