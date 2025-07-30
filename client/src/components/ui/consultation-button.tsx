@@ -18,7 +18,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         transition-all duration-600 ease-out
         ${isHovered ? 'flex gap-4 items-center' : 'relative flex items-center'}
       `}>
-        {/* Connected button shape with waist bridge */}
+        {/* Connected button shape joined with circle */}
         {!isHovered && (
           <div className="relative flex items-center">
             {/* Main rectangular button with rounded ends */}
@@ -26,13 +26,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
               Schedule Consultation
             </div>
             
-            {/* Waist bridge connector */}
-            <div className="bg-yellow h-12 w-4 relative" 
-                 style={{clipPath: 'polygon(0% 25%, 100% 40%, 100% 60%, 0% 75%)'}}>
-            </div>
-            
-            {/* Connected circular element with arrow */}
-            <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center -ml-4 relative z-10">
+            {/* Connected circular element touching the button */}
+            <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center -ml-8 relative z-10">
               <ArrowUpRight className="w-5 h-5 text-black" />
             </div>
           </div>
