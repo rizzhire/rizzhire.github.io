@@ -69,15 +69,13 @@ export default function Services() {
       
       setScrollProgress(scrollProgress);
 
-      // Update current card based on scroll progress - each card slides up from below
-      if (scrollProgress < 0.2) {
-        setCurrentCard(0);
-      } else if (scrollProgress < 0.5) {
-        setCurrentCard(1);
-      } else if (scrollProgress < 0.8) {
-        setCurrentCard(2);
+      // Update current card based on scroll progress
+      if (scrollProgress < 0.3) {
+        setCurrentCard(0); // First card active
+      } else if (scrollProgress < 0.65) {
+        setCurrentCard(1); // Second card active, first card stacked behind
       } else {
-        setCurrentCard(3); // All cards stacked
+        setCurrentCard(2); // Third card active, first two stacked behind
       }
     };
 
@@ -90,27 +88,36 @@ export default function Services() {
   }, []);
 
   const getCardStyle = (index: number) => {
-    const baseTransform = 'translateX(-50%)';
+    const baseTransform = 'translateX(-50%) translateY(-50%)';
     
-    if (currentCard >= index) {
-      // Card is visible and moves up as it stacks
-      const stackPosition = (currentCard - index) * -80; // Each card pushes previous ones up
-      const scaleReduction = (currentCard - index) * 0.04;
-      const opacityReduction = (currentCard - index) * 0.2;
+    if (currentCard > index) {
+      // Card is stacked (pushed back)
+      const stackDepth = currentCard - index;
+      const stackOffset = -stackDepth * 8; // Slight upward offset for stacking depth
+      const scaleReduction = stackDepth * 0.06;
+      const opacityReduction = stackDepth * 0.25;
       
       return {
-        transform: `${baseTransform} translateY(${-50 + stackPosition}%) scale(${1 - scaleReduction})`,
-        opacity: Math.max(0.5, 1 - opacityReduction),
-        zIndex: 30 - (currentCard - index), // Newest card has highest z-index
-        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transform: `${baseTransform} translateY(${stackOffset}px) scale(${1 - scaleReduction})`,
+        opacity: Math.max(0.4, 1 - opacityReduction),
+        zIndex: 30 - stackDepth,
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      };
+    } else if (currentCard === index) {
+      // Current active card (fully visible on top)
+      return {
+        transform: `${baseTransform} scale(1)`,
+        opacity: 1,
+        zIndex: 50,
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     } else {
-      // Card is waiting below the screen
+      // Card is waiting to come up from below
       return {
-        transform: `${baseTransform} translateY(calc(-50% + 100vh))`,
+        transform: `${baseTransform} translateY(200px) scale(0.9)`,
         opacity: 0,
         zIndex: 10,
-        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
