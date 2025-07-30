@@ -83,39 +83,39 @@ export default function Services() {
       if (isActive) {
         // Active card on top
         return {
-          transform: 'translateX(-50%) translateY(-50%) scale(1)',
+          transform: 'translateX(-50%) translateY(0) scale(1)',
           opacity: 1,
           zIndex: 100 + index,
-          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         };
       } else {
         // Stacked card behind
-        const yOffset = stackDepth * -6; // Slight vertical offset for depth
-        const scaleReduction = stackDepth * 0.05;
-        const opacityReduction = stackDepth * 0.2;
+        const yOffset = stackDepth * -8; // Vertical offset for depth
+        const scaleReduction = stackDepth * 0.06;
+        const opacityReduction = stackDepth * 0.3;
         
         return {
-          transform: `translateX(-50%) translateY(calc(-50% + ${yOffset}px)) scale(${1 - scaleReduction})`,
-          opacity: Math.max(0.4, 1 - opacityReduction),
+          transform: `translateX(-50%) translateY(${yOffset}px) scale(${1 - scaleReduction})`,
+          opacity: Math.max(0.3, 1 - opacityReduction),
           zIndex: 100 - stackDepth,
-          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         };
       }
     } else {
-      // Card not revealed yet
+      // Card waiting to come from below
       return {
-        transform: 'translateX(-50%) translateY(-50%) scale(0.8)',
+        transform: 'translateX(-50%) translateY(100px) scale(0.9)',
         opacity: 0,
         zIndex: 50,
-        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
 
   return (
-    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '400vh' }}>
+    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '300vh' }}>
       {/* Header */}
-      <div className="py-20 text-center relative z-10">
+      <div className="py-16 text-center relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our <span className="text-yellow">Services</span></h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -127,7 +127,7 @@ export default function Services() {
       {/* Sticky Card Container */}
       <div 
         ref={containerRef}
-        className="sticky top-0 left-0 w-full h-screen flex items-center justify-center"
+        className="sticky top-16 w-full h-screen flex items-start justify-center pt-20"
         style={{ zIndex: 50 }}
       >
         {services.map((service, index) => (
@@ -135,7 +135,7 @@ export default function Services() {
             key={index}
             className={`
               ${service.bgColor} p-6 md:p-8 rounded-2xl border-0 shadow-2xl
-              absolute w-full max-w-sm md:max-w-lg mx-auto left-1/2 top-1/2
+              absolute w-full max-w-sm md:max-w-lg mx-auto left-1/2 top-0
             `}
             style={getCardStyle(index)}
           >
