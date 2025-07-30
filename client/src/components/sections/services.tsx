@@ -69,13 +69,15 @@ export default function Services() {
       
       setScrollProgress(scrollProgress);
 
-      // Update current card based on scroll progress
-      if (scrollProgress < 0.25) {
+      // Update current card based on scroll progress - each card slides up from below
+      if (scrollProgress < 0.2) {
         setCurrentCard(0);
-      } else if (scrollProgress < 0.6) {
+      } else if (scrollProgress < 0.5) {
         setCurrentCard(1);
-      } else {
+      } else if (scrollProgress < 0.8) {
         setCurrentCard(2);
+      } else {
+        setCurrentCard(3); // All cards stacked
       }
     };
 
@@ -88,28 +90,27 @@ export default function Services() {
   }, []);
 
   const getCardStyle = (index: number) => {
-    const baseTransform = 'translateX(-50%) translateY(-50%)';
+    const baseTransform = 'translateX(-50%)';
     
     if (currentCard >= index) {
-      // Card is visible and stacked
-      const stackOffset = index * -12;
-      const scaleReduction = index * 0.03;
-      const opacityReduction = index * 0.15;
+      // Card is visible and moves up as it stacks
+      const stackPosition = (currentCard - index) * -80; // Each card pushes previous ones up
+      const scaleReduction = (currentCard - index) * 0.04;
+      const opacityReduction = (currentCard - index) * 0.2;
       
       return {
-        transform: `${baseTransform} translateY(${stackOffset}px) scale(${1 - scaleReduction}) rotateX(${index * 1}deg)`,
-        opacity: Math.max(0.6, 1 - opacityReduction),
-        zIndex: 20 + index,
-        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        filter: index > 0 ? `blur(${index * 0.5}px)` : 'none'
+        transform: `${baseTransform} translateY(${-50 + stackPosition}%) scale(${1 - scaleReduction})`,
+        opacity: Math.max(0.5, 1 - opacityReduction),
+        zIndex: 30 - (currentCard - index), // Newest card has highest z-index
+        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     } else {
-      // Card is waiting to be revealed
+      // Card is waiting below the screen
       return {
-        transform: `${baseTransform} translateY(50px) scale(0.8)`,
+        transform: `${baseTransform} translateY(calc(-50% + 100vh))`,
         opacity: 0,
         zIndex: 10,
-        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
@@ -129,7 +130,7 @@ export default function Services() {
       {/* Stacking Container */}
       <div 
         ref={containerRef}
-        className="sticky top-0 left-0 w-full h-screen flex items-center justify-center"
+        className="sticky top-0 left-0 w-full h-screen flex items-center justify-center overflow-hidden"
         style={{ zIndex: 50 }}
       >
         {services.map((service, index) => (
@@ -137,8 +138,7 @@ export default function Services() {
             key={index}
             className={`
               ${service.bgColor} p-6 md:p-8 rounded-2xl border-0 shadow-2xl
-              absolute w-full max-w-sm md:max-w-lg mx-auto
-              backdrop-blur-sm
+              absolute w-full max-w-sm md:max-w-lg mx-auto left-1/2 top-1/2
             `}
             style={getCardStyle(index)}
           >
