@@ -21,8 +21,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         {/* Connected button shape with waist bridge */}
         {!isHovered && (
           <div className="relative flex items-center">
-            {/* Main rectangular button with significant right curve */}
-            <div className="bg-yellow text-black font-semibold text-lg px-8 py-4 rounded-l-full rounded-r-[32px] relative">
+            {/* Main rectangular button with significant curves on both ends */}
+            <div className="bg-yellow text-black font-semibold text-lg px-8 py-4 rounded-l-[40px] rounded-r-[32px] relative">
               Schedule Consultation
             </div>
             
