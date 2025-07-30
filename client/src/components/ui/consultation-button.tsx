@@ -21,9 +21,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         {/* Connected button shape with waist bridge */}
         {!isHovered && (
           <div className="relative flex items-center">
-            {/* Main rectangular button with arrow on left */}
-            <div className="bg-yellow text-black font-semibold text-lg pl-12 pr-8 py-4 rounded-l-full rounded-r-[8px] relative">
-              <ArrowUpRight className="w-5 h-5 text-black absolute left-4 top-1/2 transform -translate-y-1/2" />
+            {/* Main rectangular button with significant right curve */}
+            <div className="bg-yellow text-black font-semibold text-lg px-8 py-4 rounded-l-full rounded-r-[32px] relative">
               Schedule Consultation
             </div>
             
@@ -32,9 +31,9 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
                  style={{clipPath: 'polygon(0% 25%, 100% 40%, 100% 60%, 0% 75%)'}}>
             </div>
             
-            {/* Connected circular element with increased curve */}
+            {/* Connected circular element with arrow */}
             <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center -ml-4 relative z-10">
-              <div className="w-2 h-2 bg-black rounded-full"></div>
+              <ArrowUpRight className="w-5 h-5 text-black" />
             </div>
           </div>
         )}
@@ -42,12 +41,11 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         {/* Separated state on hover */}
         {isHovered && (
           <>
-            <div className="bg-yellow pl-12 pr-8 py-4 rounded-full transform hover:scale-105 transition-transform duration-300 relative">
-              <ArrowUpRight className="w-5 h-5 text-black absolute left-4 top-1/2 transform -translate-y-1/2" />
+            <div className="bg-yellow px-8 py-4 rounded-full transform hover:scale-105 transition-transform duration-300">
               <span className="text-black font-semibold text-lg">Schedule Consultation</span>
             </div>
             <div className="bg-yellow w-16 h-16 rounded-full flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-              <div className="w-2 h-2 bg-black rounded-full"></div>
+              <ArrowUpRight className="w-5 h-5 text-black" />
             </div>
           </>
         )}
