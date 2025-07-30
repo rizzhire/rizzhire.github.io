@@ -58,12 +58,23 @@ export default function Services() {
       const sectionTop = sectionRect.top;
       const sectionHeight = sectionRect.height;
       
-      // Calculate scroll progress through the section
-      const scrollProgress = Math.max(0, Math.min(1, -sectionTop / (sectionHeight - windowHeight)));
+      // Only start stacking when section is properly visible
+      if (sectionTop > windowHeight * 0.1) {
+        setCurrentCard(0);
+        return;
+      }
       
-      // Determine which card should be active based on scroll progress
-      const cardIndex = Math.floor(scrollProgress * services.length);
-      setCurrentCard(Math.min(cardIndex, services.length - 1));
+      // Calculate scroll progress - start when section header has passed
+      const scrolledPastHeader = Math.max(0, -sectionTop - windowHeight * 0.2);
+      const totalScrollDistance = sectionHeight - windowHeight * 1.2;
+      const scrollProgress = Math.min(1, scrolledPastHeader / totalScrollDistance);
+      
+      // Each card needs more scroll progress to appear
+      let newCard = 0;
+      if (scrollProgress > 0.4) newCard = 1;
+      if (scrollProgress > 0.7) newCard = 2;
+      
+      setCurrentCard(newCard);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -75,39 +86,34 @@ export default function Services() {
   }, []);
 
   const getCardStyle = (index: number) => {
-    if (index <= currentCard) {
-      // Card is visible and stacked
+    if (index < currentCard) {
+      // Previously active cards - stay stacked and visible
       const stackDepth = currentCard - index;
-      const isActive = index === currentCard;
+      const yOffset = stackDepth * -10; // More offset for better visibility
+      const scaleReduction = stackDepth * 0.04; // Less scale reduction
+      const opacityReduction = stackDepth * 0.15; // Less opacity reduction
       
-      if (isActive) {
-        // Active card on top
-        return {
-          transform: 'translateX(-50%) translateY(0) scale(1)',
-          opacity: 1,
-          zIndex: 100 + index,
-          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        };
-      } else {
-        // Stacked card behind
-        const yOffset = stackDepth * -8; // Vertical offset for depth
-        const scaleReduction = stackDepth * 0.06;
-        const opacityReduction = stackDepth * 0.3;
-        
-        return {
-          transform: `translateX(-50%) translateY(${yOffset}px) scale(${1 - scaleReduction})`,
-          opacity: Math.max(0.3, 1 - opacityReduction),
-          zIndex: 100 - stackDepth,
-          transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        };
-      }
-    } else {
-      // Card waiting to come from below
       return {
-        transform: 'translateX(-50%) translateY(100px) scale(0.9)',
+        transform: `translateX(-50%) translateY(${yOffset}px) scale(${1 - scaleReduction})`,
+        opacity: Math.max(0.6, 1 - opacityReduction), // Keep more visible
+        zIndex: 90 - stackDepth,
+        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      };
+    } else if (index === currentCard) {
+      // Currently active card
+      return {
+        transform: 'translateX(-50%) translateY(0) scale(1)',
+        opacity: 1,
+        zIndex: 100,
+        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      };
+    } else {
+      // Future cards - hidden below
+      return {
+        transform: 'translateX(-50%) translateY(150px) scale(0.85)',
         opacity: 0,
         zIndex: 50,
-        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
