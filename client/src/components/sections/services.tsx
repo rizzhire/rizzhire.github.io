@@ -54,26 +54,31 @@ export default function Services() {
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
       
-      // Calculate scroll progress through the section
-      const startTrigger = windowHeight * 0.7; // Start when section is 70% in view
-      const scrolled = startTrigger - sectionTop;
-      const totalScrollDistance = sectionHeight - windowHeight * 0.3;
-      const scrollProgress = Math.max(0, Math.min(1, scrolled / totalScrollDistance));
-      
-      // Stack cards sequentially based on scroll progress
       const newStackedCards: number[] = [];
       
-      // Card 1 moves to stack position when scroll progress > 0.2
-      if (scrollProgress > 0.2) {
-        newStackedCards.push(1); // Second card moves first
+      // Calculate absolute positions of cards
+      const card1Top = sectionRect.top + 200;
+      const card1Bottom = card1Top + 320;
+      const card2Top = sectionRect.top + 550; 
+      const card2Bottom = card2Top + 320;
+      const card3Top = sectionRect.top + 900;
+      const card3Bottom = card3Top + 320;
+      
+      // Check if second card is fully visible and ready to stack
+      const card2FullyVisible = card2Top >= 0 && card2Bottom <= windowHeight;
+      const shouldStackCard2 = card2FullyVisible && card2Bottom < windowHeight * 0.8;
+      
+      // Check if third card is fully visible and ready to stack  
+      const card3FullyVisible = card3Top >= 0 && card3Bottom <= windowHeight;
+      const shouldStackCard3 = card3FullyVisible && card3Bottom < windowHeight * 0.8;
+      
+      if (shouldStackCard2) {
+        newStackedCards.push(1);
       }
       
-      // Card 2 moves to stack position when scroll progress > 0.5  
-      if (scrollProgress > 0.5) {
-        newStackedCards.push(2); // Third card moves second
+      if (shouldStackCard3) {
+        newStackedCards.push(2);
       }
       
       setStackedCards(newStackedCards);
@@ -88,7 +93,7 @@ export default function Services() {
   }, [services.length]);
 
   return (
-    <section ref={sectionRef} id="services" className="py-20 cream relative" style={{ minHeight: '120vh' }}>
+    <section ref={sectionRef} id="services" className="py-20 cream relative" style={{ minHeight: '150vh' }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our <span className="text-yellow">Services</span></h2>
@@ -97,7 +102,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="relative" style={{ height: '1200px' }}>
+        <div className="relative" style={{ height: '1400px' }}>
           {services.map((service, index) => {
             // Determine card positioning
             let cardTop, cardTransform, cardZIndex;
