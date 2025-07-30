@@ -22,9 +22,9 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         {!isHovered && (
           <div className="relative">
             <svg width="380" height="64" viewBox="0 0 380 64" className="drop-shadow-lg">
-              {/* Main connected shape */}
+              {/* Main connected shape with perfect circle */}
               <path
-                d="M 32 0 L 284 0 C 306 0 320 8 328 16 C 336 8 350 0 364 0 C 372 0 380 8 380 16 L 380 48 C 380 56 372 64 364 64 C 350 64 336 56 328 48 C 320 56 306 64 284 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z"
+                d="M 32 0 L 284 0 C 302 0 316 10 324 20 C 332 10 342 0 348 0 C 364 0 380 16 380 32 C 380 48 364 64 348 64 C 342 64 332 54 324 44 C 316 54 302 64 284 64 L 32 64 C 14 64 0 50 0 32 C 0 14 14 0 32 0 Z"
                 fill="#FFD63F"
               />
               
