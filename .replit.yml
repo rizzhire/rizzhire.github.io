@@ -1,0 +1,14 @@
+# Auto-deployment configuration for HireNET
+onBoot:
+  - npm install
+  - node scripts/setup-github-auth.js
+
+run:
+  - npm run dev
+  
+# Background processes for auto-deployment
+backgroundProcesses:
+  auto-deploy:
+    cmd: node scripts/auto-push.js
+    description: "Auto-deploys changes to GitHub Pages"
+    restartOnFileChange: false
