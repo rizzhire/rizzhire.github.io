@@ -1,4 +1,4 @@
-import { Users, Building2, Search, CheckCircle, BriefcaseIcon, UserCog, Target, TrendingUp, UserCheck, Clock, Award, HeadphonesIcon, Zap, BarChart3, DollarSign, FileCheck, ShieldCheck } from "lucide-react";
+import { Users, TrendingUp, UserCheck, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Services() {
@@ -17,7 +17,7 @@ export default function Services() {
       iconBg: "bg-gray-100"
     },
     {
-      icon: Target,
+      icon: TrendingUp,
       title: "Management Consultancy Services",
       description: "Strategic guidance to structure your workforce, reduce attrition, and boost operational output.",
       features: [
@@ -30,7 +30,7 @@ export default function Services() {
       iconBg: "bg-purple-200"
     },
     {
-      icon: Search,
+      icon: UserCheck,
       title: "Recruitment Consultancy Services",
       description: "End-to-end hiring assistance powered by expert sourcing, screening, and onboarding.",
       features: [
