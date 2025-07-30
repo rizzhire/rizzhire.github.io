@@ -28,7 +28,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
-  base: process.env.NODE_ENV === 'production' ? '/rizzhire.github.io/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
   server: {
     fs: {
       strict: true,
