@@ -51,30 +51,33 @@ export default function Services() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!sectionRef.current || !containerRef.current) return;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
+      const containerRect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
       
-      // Only start stacking when section is properly visible
-      if (sectionTop > windowHeight * 0.1) {
+      // When container reaches the middle of screen, start the stacking sequence
+      const containerCenter = containerRect.top + containerRect.height / 2;
+      const screenCenter = windowHeight / 2;
+      
+      // Container is in position when it's centered on screen
+      const isContainerCentered = Math.abs(containerCenter - screenCenter) < 100;
+      
+      if (!isContainerCentered && sectionTop > -windowHeight * 0.5) {
+        // Still scrolling to center position
         setCurrentCard(0);
         return;
       }
       
-      // Calculate scroll progress - start when section header has passed
-      const scrolledPastHeader = Math.max(0, -sectionTop - windowHeight * 0.2);
-      const totalScrollDistance = sectionHeight - windowHeight * 1.2;
-      const scrollProgress = Math.min(1, scrolledPastHeader / totalScrollDistance);
+      // Once centered, calculate stacking progress based on how much we've scrolled past center
+      const scrollPastCenter = Math.max(0, -sectionTop - windowHeight * 0.5);
+      const cardHeight = 400; // Approximate card transition distance
       
-      // Each card needs more scroll progress to appear
-      let newCard = 0;
-      if (scrollProgress > 0.4) newCard = 1;
-      if (scrollProgress > 0.7) newCard = 2;
-      
-      setCurrentCard(newCard);
+      // Each card appears after scrolling one card height
+      const cardIndex = Math.floor(scrollPastCenter / cardHeight);
+      setCurrentCard(Math.min(cardIndex, services.length - 1));
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -87,39 +90,39 @@ export default function Services() {
 
   const getCardStyle = (index: number) => {
     if (index < currentCard) {
-      // Previously active cards - stay stacked and visible
+      // Previously active cards - stay stacked and visible in SAME position
       const stackDepth = currentCard - index;
-      const yOffset = stackDepth * -10; // More offset for better visibility
-      const scaleReduction = stackDepth * 0.04; // Less scale reduction
-      const opacityReduction = stackDepth * 0.15; // Less opacity reduction
+      const yOffset = stackDepth * -5; // Small offset for depth perception
+      const scaleReduction = stackDepth * 0.03; // Minimal scale reduction
+      const opacityReduction = stackDepth * 0.2; // Keep visible
       
       return {
-        transform: `translateX(-50%) translateY(${yOffset}px) scale(${1 - scaleReduction})`,
-        opacity: Math.max(0.6, 1 - opacityReduction), // Keep more visible
+        transform: `translateY(${yOffset}px) scale(${1 - scaleReduction})`,
+        opacity: Math.max(0.7, 1 - opacityReduction),
         zIndex: 90 - stackDepth,
-        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     } else if (index === currentCard) {
-      // Currently active card
+      // Currently active card - STAYS IN SAME FIXED POSITION
       return {
-        transform: 'translateX(-50%) translateY(0) scale(1)',
+        transform: 'translateY(0) scale(1)',
         opacity: 1,
         zIndex: 100,
-        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     } else {
-      // Future cards - hidden below
+      // Future cards - waiting below the container
       return {
-        transform: 'translateX(-50%) translateY(150px) scale(0.85)',
+        transform: 'translateY(100%) scale(0.9)',
         opacity: 0,
         zIndex: 50,
-        transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       };
     }
   };
 
   return (
-    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '300vh' }}>
+    <section ref={sectionRef} id="services" className="relative cream" style={{ height: '500vh' }}>
       {/* Header */}
       <div className="py-16 text-center relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,10 +133,10 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Sticky Card Container */}
+      {/* Sticky Card Container - STAYS FIXED IN CENTER */}
       <div 
         ref={containerRef}
-        className="sticky top-16 w-full h-screen flex items-start justify-center pt-20"
+        className="sticky top-1/2 left-1/2 w-full max-w-lg mx-auto h-96 transform -translate-x-1/2 -translate-y-1/2"
         style={{ zIndex: 50 }}
       >
         {services.map((service, index) => (
@@ -141,7 +144,7 @@ export default function Services() {
             key={index}
             className={`
               ${service.bgColor} p-6 md:p-8 rounded-2xl border-0 shadow-2xl
-              absolute w-full max-w-sm md:max-w-lg mx-auto left-1/2 top-0
+              absolute w-full h-full left-0 top-0
             `}
             style={getCardStyle(index)}
           >
