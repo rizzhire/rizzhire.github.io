@@ -34,54 +34,70 @@ export default function Hero() {
         </div>
 
         {/* Stats Section */}
-        <div className="flex justify-between items-center max-w-6xl mx-auto mt-20 animate-fade-in-up px-4" style={{animationDelay: '0.3s'}}>
-          <div className="text-center flex-1">
-            <div 
-              ref={placements.ref}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
-            >
-              {placements.count.toLocaleString()}
+        <div className="mt-20 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="grid grid-cols-5 gap-4 max-w-5xl mx-auto px-4">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+              <div 
+                ref={placements.ref}
+                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none"
+              >
+                {placements.count.toLocaleString()}
+              </div>
+              <div className="text-gray-600 text-sm font-medium leading-tight">
+                Successful<br/>Placements
+              </div>
             </div>
-            <div className="text-gray-600 mt-3 text-xs sm:text-sm font-medium">Successful<br/>Placements</div>
-          </div>
-          <div className="text-center flex-1">
-            <div 
-              ref={database.ref}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
-            >
-              {database.count.toLocaleString()}
-              <Plus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
+            
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+              <div 
+                ref={database.ref}
+                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none flex items-center justify-center gap-1"
+              >
+                {database.count.toLocaleString()}
+                <Plus className="w-5 h-5 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
+              </div>
+              <div className="text-gray-600 text-sm font-medium leading-tight">
+                Database
+              </div>
             </div>
-            <div className="text-gray-600 mt-3 text-xs sm:text-sm font-medium">Database</div>
-          </div>
-          <div className="text-center flex-1">
-            <div 
-              ref={companies.ref}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
-            >
-              {companies.count}
-              <Plus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
+            
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+              <div 
+                ref={companies.ref}
+                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none flex items-center justify-center gap-1"
+              >
+                {companies.count}
+                <Plus className="w-5 h-5 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
+              </div>
+              <div className="text-gray-600 text-sm font-medium leading-tight">
+                Partnered<br/>Companies
+              </div>
             </div>
-            <div className="text-gray-600 mt-3 text-xs sm:text-sm font-medium">Partnered<br/>Companies</div>
-          </div>
-          <div className="text-center flex-1">
-            <div 
-              ref={countries.ref}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
-            >
-              {countries.count}
-              <Plus className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
+            
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+              <div 
+                ref={countries.ref}
+                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none flex items-center justify-center gap-1"
+              >
+                {countries.count}
+                <Plus className="w-5 h-5 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
+              </div>
+              <div className="text-gray-600 text-sm font-medium leading-tight">
+                Countries<br/>Served
+              </div>
             </div>
-            <div className="text-gray-600 mt-3 text-xs sm:text-sm font-medium">Countries<br/>Served</div>
-          </div>
-          <div className="text-center flex-1">
-            <div 
-              ref={satisfaction.ref}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
-            >
-              {satisfaction.count}%
+            
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+              <div 
+                ref={satisfaction.ref}
+                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none"
+              >
+                {satisfaction.count}%
+              </div>
+              <div className="text-gray-600 text-sm font-medium leading-tight">
+                Success<br/>Rate
+              </div>
             </div>
-            <div className="text-gray-600 mt-3 text-xs sm:text-sm font-medium">Success<br/>Rate</div>
           </div>
         </div>
       </div>
