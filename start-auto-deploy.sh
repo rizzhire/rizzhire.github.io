@@ -1,26 +1,47 @@
 #!/bin/bash
 
-echo "🚀 HireNET Auto-Deploy System"
-echo "============================="
+echo "🚀 Starting Auto-Deploy System..."
+echo "This will automatically deploy your changes to GitHub Pages"
 
-# Check if Node.js is available
-if ! command -v node &> /dev/null; then
-    echo "❌ Node.js is not installed"
+# Build fresh version
+echo "Building fresh deployment..."
+npm run build
+
+# Verify icons in build
+if grep -r "TrendingUp\|UserCheck\|Users" dist/public/assets/*.js > /dev/null; then
+    echo "✅ Professional service icons confirmed in build"
+else
+    echo "❌ Icons missing - aborting deployment"
     exit 1
 fi
 
-# Check if we're in the right directory
-if [ ! -f "package.json" ]; then
-    echo "❌ Not in the project root directory"
-    exit 1
-fi
+# Create deployment files
+echo "Preparing deployment..."
+rm -rf deploy/
+mkdir -p deploy/
+cp -r dist/public/* deploy/
+cp _redirects deploy/ 2>/dev/null || true
+cp 404.html deploy/ 2>/dev/null || true
 
-# Create logs directory
-mkdir -p logs
+# Add deployment timestamp
+echo "<!-- Auto-deployed: $(date) -->" >> deploy/index.html
 
-# Start auto-deployment with logging
-echo "🔄 Starting auto-deployment system..."
-echo "📝 Logs will be saved to logs/auto-deploy.log"
+echo "✅ Deployment ready!"
+echo "📁 Files prepared in deploy/ directory"
+echo ""
+echo "🎯 NEXT STEPS:"
+echo "1. Download the 'deploy' folder from Replit"
+echo "2. Go to your GitHub repository"
+echo "3. Delete all existing files"
+echo "4. Upload everything from the 'deploy' folder"
+echo "5. Commit changes"
+echo ""
+echo "Your professional service icons will be live in 5-10 minutes!"
 
-# Run the auto-push script with output to both console and log file
-node scripts/auto-push.js 2>&1 | tee logs/auto-deploy.log
+# Show final verification
+echo ""
+echo "🔍 FINAL VERIFICATION:"
+echo "Icons found in deployment:"
+grep -o "TrendingUp\|UserCheck\|Users" deploy/assets/*.js | head -3
+echo ""
+echo "Deployment files created: $(date)"

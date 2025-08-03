@@ -39,8 +39,10 @@ Preferred communication style: Simple, everyday language.
 - Implemented fallback options for git authentication issues
 
 ### Outstanding Issues
-- Navbar partition line and curve smoothing fixes ready for deployment
-- Git authentication blocked in Replit environment (user needs manual deployment)
+- Professional service icons updated but deployment blocked
+- Git authentication restricted in Replit environment
+- GitHub Actions cache preventing fresh builds from deploying
+- Manual file upload required to bypass sync issues
 
 ## System Architecture
 
