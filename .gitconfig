@@ -1,0 +1,32 @@
+[user]
+    name = rizzhire
+    email = contact.khanrizwan@gmail.com
+
+[core]
+    filemode = false
+    autocrlf = false
+    safecrlf = false
+    repositoryformatversion = 0
+    bare = false
+    logallrefupdates = true
+
+[push]
+    default = simple
+
+[pull]
+    rebase = false
+
+[credential]
+    helper = store
+
+[remote "origin"]
+    url = https://github.com/rizzhire/rizzhire.github.io
+    fetch = +refs/heads/*:refs/remotes/origin/*
+
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+
+[gc]
+    auto = 0
+    autopacklimit = 0
