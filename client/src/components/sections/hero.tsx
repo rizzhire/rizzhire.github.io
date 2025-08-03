@@ -35,11 +35,11 @@ export default function Hero() {
 
         {/* Stats Section */}
         <div className="mt-20 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-          <div className="grid grid-cols-5 gap-4 max-w-5xl mx-auto px-4">
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+          <div className="grid grid-cols-5 gap-8 max-w-6xl mx-auto px-4">
+            <div className="text-center">
               <div 
                 ref={placements.ref}
-                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none"
+                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none"
               >
                 {placements.count.toLocaleString()}
               </div>
@@ -48,49 +48,49 @@ export default function Hero() {
               </div>
             </div>
             
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+            <div className="text-center">
               <div 
                 ref={database.ref}
-                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none flex items-center justify-center gap-1"
+                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
               >
                 {database.count.toLocaleString()}
-                <Plus className="w-5 h-5 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
               <div className="text-gray-600 text-sm font-medium leading-tight">
                 Database
               </div>
             </div>
             
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+            <div className="text-center">
               <div 
                 ref={companies.ref}
-                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none flex items-center justify-center gap-1"
+                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
               >
                 {companies.count}
-                <Plus className="w-5 h-5 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
               <div className="text-gray-600 text-sm font-medium leading-tight">
                 Partnered<br/>Companies
               </div>
             </div>
             
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+            <div className="text-center">
               <div 
                 ref={countries.ref}
-                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none flex items-center justify-center gap-1"
+                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
               >
                 {countries.count}
-                <Plus className="w-5 h-5 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
               <div className="text-gray-600 text-sm font-medium leading-tight">
                 Countries<br/>Served
               </div>
             </div>
             
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20">
+            <div className="text-center">
               <div 
                 ref={satisfaction.ref}
-                className="text-3xl md:text-4xl font-bold text-yellow mb-2 leading-none"
+                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none"
               >
                 {satisfaction.count}%
               </div>
