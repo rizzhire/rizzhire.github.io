@@ -23,22 +23,37 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Clear cache and build fresh
+    - name: Fresh deployment with icon verification
       run: |
-        rm -rf dist/ node_modules/.cache/
+        # Complete clean slate
+        rm -rf dist/ node_modules/.cache/ deploy/
+        
+        # Fresh build
         NODE_ENV=production npm run build
-      
-    - name: Copy built files to deployment directory
-      run: |
+        
+        # Verify icons are in build
+        echo "Checking for service icons..."
+        if grep -r "TrendingUp\|UserCheck\|Users" dist/public/assets/*.js; then
+          echo "✅ Service icons verified in build"
+        else
+          echo "❌ Service icons missing in build"
+          exit 1
+        fi
+        
+        # Create deployment
         mkdir -p deploy
         cp -r dist/public/* deploy/
         cp _redirects deploy/ 2>/dev/null || true
         cp 404.html deploy/ 2>/dev/null || true
-        # Add timestamp to force update
-        echo "<!-- Build: $(date) -->" >> deploy/index.html
-        # Show what we're deploying
-        echo "Deploying assets:"
+        
+        # Force browser cache refresh
+        echo "<!-- Forced update: $(date +%s) -->" >> deploy/index.html
+        
+        # Show deployment verification
+        echo "=== DEPLOYMENT CONTENTS ==="
         ls -la deploy/assets/
+        echo "=== ICON VERIFICATION ==="
+        grep -o "TrendingUp\|UserCheck\|Users" deploy/assets/*.js | head -5
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4

@@ -4,55 +4,65 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-console.log('🚀 Starting deployment to GitHub Pages...');
+console.log('🚀 Starting fresh deployment...');
 
+// Clean everything
+console.log('🧹 Cleaning old builds...');
 try {
-  // Check if we're in a git repository
-  execSync('git status', { stdio: 'pipe' });
-  
-  // Stage all changes
-  console.log('📦 Staging changes...');
-  execSync('git add .', { stdio: 'inherit' });
-  
-  // Check if there are changes to commit
-  try {
-    const status = execSync('git status --porcelain', { encoding: 'utf8' });
-    if (status.trim()) {
-      // Commit changes with timestamp
-      const timestamp = new Date().toISOString().split('T')[0];
-      console.log('💾 Committing changes...');
-      execSync(`git commit -m "Auto-deploy: Update website - ${timestamp}"`, { stdio: 'inherit' });
-    } else {
-      console.log('✅ No changes to commit');
-    }
-  } catch (error) {
-    console.log('ℹ️  No changes to commit or already committed');
+  execSync('rm -rf dist/ node_modules/.cache/', { stdio: 'inherit' });
+} catch (e) {
+  console.log('Clean completed');
+}
+
+// Fresh build
+console.log('🏗️ Building fresh...');
+execSync('NODE_ENV=production npm run build', { stdio: 'inherit' });
+
+// Verify our build has the new icons
+console.log('🔍 Verifying new icons in build...');
+const jsFiles = fs.readdirSync('dist/public/assets').filter(f => f.endsWith('.js'));
+let iconFound = false;
+
+for (const jsFile of jsFiles) {
+  const content = fs.readFileSync(`dist/public/assets/${jsFile}`, 'utf8');
+  if (content.includes('TrendingUp') && content.includes('UserCheck') && content.includes('Users')) {
+    console.log(`✅ New service icons found in: ${jsFile}`);
+    iconFound = true;
+    break;
   }
-  
-  // Push to GitHub
-  console.log('🌐 Pushing to GitHub...');
-  execSync('git push origin main', { stdio: 'inherit' });
-  
-  console.log('✅ Successfully deployed to GitHub Pages!');
-  console.log('🌍 Your site will be live at: https://rizzhire.github.io/');
-  console.log('⏱️  Updates typically take 2-5 minutes to appear');
-  
-} catch (error) {
-  console.error('❌ Deployment failed:', error.message);
-  
-  // Provide helpful error messages
-  if (error.message.includes('Authentication failed')) {
-    console.log('\n🔑 Git authentication issue detected.');
-    console.log('💡 Try these solutions:');
-    console.log('   1. Use the "Deploy" button in Replit');
-    console.log('   2. Use the GitHub web interface to edit files');
-    console.log('   3. Set up a GitHub Personal Access Token');
-  }
-  
-  if (error.message.includes('not a git repository')) {
-    console.log('\n📁 This directory is not a git repository.');
-    console.log('💡 Please run: git init && git remote add origin https://github.com/rizzhire/rizzhire.github.io');
-  }
-  
+}
+
+if (!iconFound) {
+  console.error('❌ Icons not found in build files!');
   process.exit(1);
 }
+
+// Create deployment directory
+console.log('📦 Preparing deployment files...');
+execSync('rm -rf deploy && mkdir -p deploy', { stdio: 'inherit' });
+execSync('cp -r dist/public/* deploy/', { stdio: 'inherit' });
+
+// Copy additional files
+try {
+  fs.copyFileSync('_redirects', 'deploy/_redirects');
+  fs.copyFileSync('404.html', 'deploy/404.html');
+} catch (e) {
+  console.log('Additional files copied where available');
+}
+
+// Add unique timestamp to force update
+const timestamp = new Date().toISOString();
+const indexPath = 'deploy/index.html';
+let indexContent = fs.readFileSync(indexPath, 'utf8');
+indexContent += `\n<!-- Force Update: ${timestamp} -->`;
+fs.writeFileSync(indexPath, indexContent);
+
+console.log('✅ Deployment files ready in deploy/ directory');
+console.log('📁 Contents:');
+execSync('ls -la deploy/', { stdio: 'inherit' });
+
+console.log('\n🎯 Manual deployment steps:');
+console.log('1. Commit and push these changes');
+console.log('2. Trigger GitHub Actions workflow manually');
+console.log('3. Wait 5-10 minutes for deployment');
+console.log('4. Hard refresh browser (Ctrl+F5)');
