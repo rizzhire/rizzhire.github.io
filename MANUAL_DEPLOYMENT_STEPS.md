@@ -1,45 +1,51 @@
-# MANUAL DEPLOYMENT STEPS - GUARANTEED TO WORK
+# MANUAL DEPLOYMENT STEPS - COMPLETE GUIDE
 
-## Status: Icons Ready for Deployment
-Your professional service icons are built and verified in the deploy folder.
+## Git Errors Fixed by Manual Upload
 
-## EXACT STEPS TO DEPLOY:
+Since Replit blocks git operations, use this manual method to deploy your professional service icons.
 
-### 1. Download Deploy Folder from Replit
-- Right-click the `deploy` folder in the Replit file browser
-- Select "Download" - this will download a zip file
-- Extract the zip file on your computer
+## COPY THESE EXACT FILES:
 
-### 2. Go to GitHub Repository
-- Open: https://github.com/rizzhire/rizzhire.github.io
-- Make sure you're on the main branch
+### File 1: index.html
+**Location**: `deploy/index.html`
+**GitHub Path**: `index.html` (root level)
+**Action**: Copy entire content and replace existing index.html
 
-### 3. Delete Current Files (Important!)
-- Select all existing files in the repository
-- Click the trash/delete icon to remove them
-- Commit the deletion with message "Clear for fresh deployment"
+### File 2: JavaScript (Contains Your Icons)
+**Location**: `deploy/assets/index-xJB_Go3f.js`
+**GitHub Path**: `assets/index-xJB_Go3f.js`
+**Action**: Create new file in assets folder, paste content
 
-### 4. Upload New Files
-- Click "Add file" → "Upload files"
-- Drag ALL files from your extracted deploy folder:
-  - index.html
-  - assets folder (with all contents)
-  - _redirects file
-  - 404.html file
+### File 3: CSS Styling
+**Location**: `deploy/assets/index-CMDr7sgo.css`
+**GitHub Path**: `assets/index-CMDr7sgo.css`
+**Action**: Create new file in assets folder, paste content
 
-### 5. Commit Upload
-- Add commit message: "Deploy professional service icons"
-- Click "Commit changes"
+### File 4: Redirects
+**Location**: `deploy/_redirects`
+**GitHub Path**: `_redirects` (root level)
+**Action**: Copy content to existing or new _redirects file
 
-### 6. Wait for GitHub Pages
-- Go to Settings → Pages tab
-- Verify source is set to "Deploy from a branch: main"
-- Wait 5-10 minutes for deployment to complete
+### File 5: 404 Page
+**Location**: `deploy/404.html`
+**GitHub Path**: `404.html` (root level)
+**Action**: Copy content to existing or new 404.html file
 
-### Result:
-Your website will show the new professional icons:
-- Users icon for Manpower Supply
-- TrendingUp icon for Management Consultancy
-- UserCheck icon for Recruitment Services
+## STEP-BY-STEP PROCESS:
 
-This method bypasses all caching issues and guarantees the deployment will work.
+1. **Open Replit File**: Click on the deploy file you want to copy
+2. **Select All**: Ctrl+A (or Cmd+A on Mac) to select all content
+3. **Copy**: Ctrl+C (or Cmd+C on Mac)
+4. **Go to GitHub**: https://github.com/rizzhire/rizzhire.github.io
+5. **Edit/Create File**: Click on existing file to edit, or "Add file" → "Create new file"
+6. **Paste Content**: Ctrl+V (or Cmd+V on Mac)
+7. **Commit**: Add commit message "Deploy professional service icons"
+8. **Repeat**: For each of the 5 files above
+
+## VERIFICATION:
+After uploading all 5 files, your website will show the new professional service icons within 10 minutes.
+
+## YOUR ICONS READY:
+- Users icon for Manpower Supply Services
+- TrendingUp icon for Management Consultancy Services
+- UserCheck icon for Recruitment Consultancy Services
