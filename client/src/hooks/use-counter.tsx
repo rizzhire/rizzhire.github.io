@@ -10,12 +10,19 @@ interface UseCounterProps {
 export function useCounter({ end, start = 0, duration = 2000, delay = 0 }: UseCounterProps) {
   const [count, setCount] = useState(start);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
+        if (entry.isIntersecting && !isVisible && !hasStarted) {
           setIsVisible(true);
         }
       },
@@ -23,26 +30,34 @@ export function useCounter({ end, start = 0, duration = 2000, delay = 0 }: UseCo
     );
 
     if (ref.current) {
-      observer.observe(ref.current);
+      observerRef.current.observe(ref.current);
     }
 
-    return () => observer.disconnect();
-  }, [isVisible]);
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []); // Remove isVisible from dependency to prevent infinite loop
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || hasStarted) return;
 
+    setHasStarted(true);
     const startTime = Date.now() + delay;
     const startValue = start;
     const endValue = end;
 
-    const timer = setInterval(() => {
+    const animateCounter = () => {
       const now = Date.now();
       const progress = Math.max(0, Math.min(1, (now - startTime) / duration));
 
       if (progress === 1) {
         setCount(endValue);
-        clearInterval(timer);
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+          timerRef.current = null;
+        }
         return;
       }
 
@@ -50,10 +65,17 @@ export function useCounter({ end, start = 0, duration = 2000, delay = 0 }: UseCo
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.floor(startValue + (endValue - startValue) * easeOut);
       setCount(currentValue);
-    }, 16);
+    };
 
-    return () => clearInterval(timer);
-  }, [isVisible, start, end, duration, delay]);
+    timerRef.current = setInterval(animateCounter, 16);
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [isVisible, hasStarted, start, end, duration, delay]);
 
   return { count, ref };
 }
