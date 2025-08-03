@@ -4,10 +4,11 @@ import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 
 export default function Hero() {
-  const placements = useCounter({ end: 10000, duration: 2500 });
-  const companies = useCounter({ end: 500, duration: 2200, delay: 200 });
-  const countries = useCounter({ end: 15, duration: 1800, delay: 400 });
-  const satisfaction = useCounter({ end: 98, duration: 2000, delay: 600 });
+  const placements = useCounter({ end: 18000, duration: 2500 });
+  const database = useCounter({ end: 35000, duration: 2200, delay: 200 });
+  const companies = useCounter({ end: 500, duration: 1800, delay: 400 });
+  const countries = useCounter({ end: 7, duration: 1600, delay: 600 });
+  const satisfaction = useCounter({ end: 98, duration: 2000, delay: 800 });
 
   return (
     <section id="home" className="relative min-h-screen cream overflow-hidden">
@@ -33,16 +34,25 @@ export default function Hero() {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-20 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
           <div className="text-center">
             <div 
               ref={placements.ref}
               className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
             >
               {placements.count.toLocaleString()}
-              <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: placements.count >= 10000 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
             <div className="text-gray-600 mt-2">Successful Placements</div>
+          </div>
+          <div className="text-center">
+            <div 
+              ref={database.ref}
+              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
+            >
+              {database.count.toLocaleString()}
+              <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
+            </div>
+            <div className="text-gray-600 mt-2">Database</div>
           </div>
           <div className="text-center">
             <div 
@@ -52,7 +62,7 @@ export default function Hero() {
               {companies.count}
               <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
-            <div className="text-gray-600 mt-2">Partner Companies</div>
+            <div className="text-gray-600 mt-2">Partnered Companies</div>
           </div>
           <div className="text-center">
             <div 
@@ -60,7 +70,7 @@ export default function Hero() {
               className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
             >
               {countries.count}
-              <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 15 ? 1 : 0, transition: 'opacity 0.3s'}} />
+              <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
             <div className="text-gray-600 mt-2">Countries Served</div>
           </div>
@@ -70,7 +80,6 @@ export default function Hero() {
               className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
             >
               {satisfaction.count}%
-              <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '3.1s', opacity: satisfaction.count >= 98 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
             <div className="text-gray-600 mt-2">Success Rate</div>
           </div>
