@@ -34,54 +34,54 @@ export default function Hero() {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-20 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-          <div className="text-center">
+        <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-16 mt-20 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="text-center min-w-[140px]">
             <div 
               ref={placements.ref}
-              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
+              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
             >
               {placements.count.toLocaleString()}
             </div>
-            <div className="text-gray-600 mt-2">Successful Placements</div>
+            <div className="text-gray-600 mt-3 text-sm font-medium whitespace-nowrap">Successful Placements</div>
           </div>
-          <div className="text-center">
+          <div className="text-center min-w-[140px]">
             <div 
               ref={database.ref}
-              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
+              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
             >
               {database.count.toLocaleString()}
               <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
-            <div className="text-gray-600 mt-2">Database</div>
+            <div className="text-gray-600 mt-3 text-sm font-medium whitespace-nowrap">Database</div>
           </div>
-          <div className="text-center">
+          <div className="text-center min-w-[140px]">
             <div 
               ref={companies.ref}
-              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
+              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
             >
               {companies.count}
               <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
-            <div className="text-gray-600 mt-2">Partnered Companies</div>
+            <div className="text-gray-600 mt-3 text-sm font-medium whitespace-nowrap">Partnered Companies</div>
           </div>
-          <div className="text-center">
+          <div className="text-center min-w-[140px]">
             <div 
               ref={countries.ref}
-              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
+              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
             >
               {countries.count}
               <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
             </div>
-            <div className="text-gray-600 mt-2">Countries Served</div>
+            <div className="text-gray-600 mt-3 text-sm font-medium whitespace-nowrap">Countries Served</div>
           </div>
-          <div className="text-center">
+          <div className="text-center min-w-[140px]">
             <div 
               ref={satisfaction.ref}
-              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1"
+              className="text-4xl md:text-5xl font-bold text-yellow flex items-center justify-center gap-1 h-16"
             >
               {satisfaction.count}%
             </div>
-            <div className="text-gray-600 mt-2">Success Rate</div>
+            <div className="text-gray-600 mt-3 text-sm font-medium whitespace-nowrap">Success Rate</div>
           </div>
         </div>
       </div>
