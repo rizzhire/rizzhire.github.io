@@ -62,59 +62,66 @@ export default function PartnerLogos() {
   const { elementRef: logosRef, isVisible: logosVisible } = useScrollAnimation({ rootMargin: '0px 0px -50px 0px' });
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [scrollX, setScrollX] = useState(0);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
+  const autoScrollRef = useRef<number | null>(null);
+  const lastScrollTimeRef = useRef<number>(0);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
-    if (!container || isUserScrolling) return;
+    if (!container) return;
 
     const scrollWidth = container.scrollWidth;
-    const clientWidth = container.clientWidth;
     const maxScroll = scrollWidth / 2; // Half because we duplicate logos
+    const scrollSpeed = 0.5; // pixels per frame (smooth auto-scroll)
 
-    let animationId: number;
-    let startTime: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const elapsed = currentTime - startTime;
-      
-      // 30 seconds for full cycle (same speed as before)
-      const progress = (elapsed / 30000) % 1;
-      const newScrollX = progress * maxScroll;
-      
-      setScrollX(newScrollX);
-      container.scrollLeft = newScrollX;
-
-      if (newScrollX >= maxScroll - 1) {
-        container.scrollLeft = 0;
-        setScrollX(0);
-        startTime = currentTime;
+    const animate = () => {
+      if (!isUserScrolling && container) {
+        const currentScroll = container.scrollLeft;
+        const newScroll = currentScroll + scrollSpeed;
+        
+        // Seamless loop: when we reach halfway point, reset to beginning
+        if (newScroll >= maxScroll) {
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft = newScroll;
+        }
       }
-
-      animationId = requestAnimationFrame(animate);
+      
+      autoScrollRef.current = requestAnimationFrame(animate);
     };
 
-    animationId = requestAnimationFrame(animate);
+    autoScrollRef.current = requestAnimationFrame(animate);
 
     return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
+      if (autoScrollRef.current) {
+        cancelAnimationFrame(autoScrollRef.current);
       }
     };
   }, [isUserScrolling]);
 
   const handleScroll = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
     setIsUserScrolling(true);
+    lastScrollTimeRef.current = Date.now();
     
     if (scrollTimeout) {
       clearTimeout(scrollTimeout);
     }
 
+    // Handle seamless looping during manual scroll
+    const scrollWidth = container.scrollWidth;
+    const maxScroll = scrollWidth / 2;
+    
+    if (container.scrollLeft >= maxScroll - 10) {
+      container.scrollLeft = container.scrollLeft - maxScroll;
+    }
+
     const newTimeout = setTimeout(() => {
       setIsUserScrolling(false);
+      // Auto-scroll will continue from current position
     }, 2000);
     
     setScrollTimeout(newTimeout);
