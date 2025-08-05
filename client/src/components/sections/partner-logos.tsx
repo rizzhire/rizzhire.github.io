@@ -1,10 +1,10 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useRef, useEffect, useState } from "react";
 import emaarLogo from "@assets/Emaar_logo.svg_1754407618459.png";
-import nayaraLogo from "@assets/Logo_Nayara_Energy_1754407618460.jpg";
+import nayaraLogo from "@assets/Picsart_25-08-05_22-04-26-334_1754411861150.png";
 import etisalatLogo from "@assets/Etisalat_Logo-595x700_1754407618460.png";
 import sodexoLogo from "@assets/Sodexo_logo.svg_1754407618461.png";
-import uccLogo from "@assets/ucc-logo_1754407618462.jpg";
+import uccLogo from "@assets/Picsart_25-08-05_22-06-20-594_1754411861151.png";
 import dpWorldLogo from "@assets/DP_World_2021_logo_1754407618463.png";
 
 export default function PartnerLogos() {
@@ -18,20 +18,10 @@ export default function PartnerLogos() {
   ];
 
   const getLogoFilter = (logoName: string, isHover: boolean) => {
-    switch (logoName) {
-      case 'Nayara Energy':
-        return isHover 
-          ? 'grayscale(70%) contrast(3) brightness(1) saturate(0) invert(0.1)' 
-          : 'grayscale(100%) contrast(3.5) brightness(0.3) saturate(0) invert(0.2)';
-      case 'UCC':
-        return isHover 
-          ? 'grayscale(70%) contrast(1.8) brightness(0.8) saturate(0)' 
-          : 'grayscale(100%) contrast(2) brightness(0.5) saturate(0)';
-      default:
-        return isHover 
-          ? 'grayscale(70%) contrast(1) brightness(0.6)' 
-          : 'grayscale(100%) contrast(1.2) brightness(0.3)';
-    }
+    // Default: Black & white when not hovered, original colors on hover
+    return isHover 
+      ? 'grayscale(0%) contrast(1) brightness(1) saturate(1)' // Original colors on hover
+      : 'grayscale(100%) contrast(1.2) brightness(0.3)'; // Black & white by default
   };
 
   const getLogoSpacing = (currentLogo: string, nextLogo: string) => {
