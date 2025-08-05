@@ -43,7 +43,7 @@ export default function PartnerLogos() {
       return `${baseSpacing - 48}px`; // Maximum overlapping for perfect uniformity
     }
     if (currentLogo === 'Etisalat' && nextLogo === 'Sodexo') {
-      return `${baseSpacing + 8}px`; // Slightly more space
+      return `${baseSpacing - 8}px`; // Closer spacing for better balance
     }
     if (currentLogo === 'UCC' && nextLogo === 'DP World') {
       return `${baseSpacing + 16}px`; // More space before DP World
