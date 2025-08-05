@@ -132,13 +132,15 @@ export default function PartnerLogos() {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="w-36 h-12 flex items-center justify-center cursor-pointer transition-all duration-300 group"
+                className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
+                  partner.name === 'DP World' ? 'w-48 h-16' : 'w-36 h-12'
+                }`}
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'max-w-full max-h-full scale-[3.5]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[1.8]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
@@ -160,13 +162,15 @@ export default function PartnerLogos() {
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
-                className="w-36 h-12 flex items-center justify-center cursor-pointer transition-all duration-300 group"
+                className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
+                  partner.name === 'DP World' ? 'w-48 h-16' : 'w-36 h-12'
+                }`}
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'max-w-full max-h-full scale-[3.5]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[1.8]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
