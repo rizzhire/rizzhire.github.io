@@ -49,7 +49,7 @@ export default function PartnerLogos() {
       return `${baseSpacing - 48}px`; // Maximum overlapping spacing before DP World
     }
     if (currentLogo === 'DP World' && nextLogo === 'Emaar') {
-      return `${baseSpacing}px`; // Closer spacing after DP World
+      return `${baseSpacing - 12}px`; // Much closer spacing after DP World
     }
     
     return `${baseSpacing}px`;
