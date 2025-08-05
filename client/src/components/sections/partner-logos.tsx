@@ -133,18 +133,22 @@ export default function PartnerLogos() {
               <div 
                 key={index} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-48 h-16' : 'w-36 h-12'
+                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-36 h-12'
                 }`}
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'w-full h-full scale-[1.8]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[2.5]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
-                    transform: partner.name === 'Sodexo' ? 'translateY(-4px)' : 'none',
+                    transform: partner.name === 'Sodexo' 
+                      ? 'translateY(-4px)' 
+                      : partner.name === 'DP World' 
+                        ? 'translateY(-6px)' 
+                        : 'none',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.filter = getLogoFilter(partner.name, true);
@@ -163,18 +167,22 @@ export default function PartnerLogos() {
               <div 
                 key={`duplicate-${index}`} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-48 h-16' : 'w-36 h-12'
+                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-36 h-12'
                 }`}
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'w-full h-full scale-[1.8]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[2.5]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
-                    transform: partner.name === 'Sodexo' ? 'translateY(-4px)' : 'none',
+                    transform: partner.name === 'Sodexo' 
+                      ? 'translateY(-4px)' 
+                      : partner.name === 'DP World' 
+                        ? 'translateY(-6px)' 
+                        : 'none',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.filter = getLogoFilter(partner.name, true);
