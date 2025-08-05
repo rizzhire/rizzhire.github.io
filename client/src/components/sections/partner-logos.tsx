@@ -20,6 +20,9 @@ export default function PartnerLogos() {
   const getLogoFilter = (logoName: string, isHover: boolean) => {
     switch (logoName) {
       case 'Nayara Energy':
+        return isHover 
+          ? 'grayscale(70%) contrast(3) brightness(1) saturate(0) invert(0.1)' 
+          : 'grayscale(100%) contrast(3.5) brightness(0.3) saturate(0) invert(0.2)';
       case 'UCC':
         return isHover 
           ? 'grayscale(70%) contrast(1.8) brightness(0.8) saturate(0)' 
