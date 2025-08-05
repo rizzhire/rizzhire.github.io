@@ -46,7 +46,7 @@ export default function PartnerLogos() {
       return `${baseSpacing - 8}px`; // Closer spacing for better balance
     }
     if (currentLogo === 'UCC' && nextLogo === 'DP World') {
-      return `${baseSpacing - 24}px`; // Much closer spacing before DP World
+      return `${baseSpacing - 36}px`; // Extremely close spacing before DP World
     }
     if (currentLogo === 'DP World' && nextLogo === 'Emaar') {
       return `${baseSpacing + 12}px`; // Space after DP World
