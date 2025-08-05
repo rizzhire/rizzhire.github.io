@@ -81,9 +81,9 @@ export default function PartnerLogos() {
       const currentScroll = container.scrollLeft;
       const scrollStep = 1; // 1px per interval for smooth motion
       
-      if (currentScroll >= maxScroll - 2) {
-        // Ultra-smooth seamless loop - reset to exact beginning of duplicate
-        container.scrollLeft = currentScroll - maxScroll + scrollStep;
+      if (currentScroll >= maxScroll - 100) {
+        // Smooth reset much earlier to avoid any visible transition
+        container.scrollLeft = 0;
       } else {
         container.scrollLeft = currentScroll + scrollStep;
       }
@@ -100,13 +100,11 @@ export default function PartnerLogos() {
     const scrollWidth = container.scrollWidth;
     const maxScroll = scrollWidth / 2;
     
-    // Ultra-smooth seamless looping for manual scroll
-    if (container.scrollLeft >= maxScroll - 50) {
-      // Gradually transition to duplicate section
-      container.scrollLeft = container.scrollLeft - maxScroll;
-    } else if (container.scrollLeft <= 2) {
-      // Loop from beginning to duplicate end
-      container.scrollLeft = container.scrollLeft + maxScroll;
+    // Simple seamless looping for manual scroll
+    if (container.scrollLeft >= maxScroll - 100) {
+      container.scrollLeft = 0;
+    } else if (container.scrollLeft <= 50) {
+      container.scrollLeft = maxScroll - 50;
     }
     
     if (scrollTimeout) {
