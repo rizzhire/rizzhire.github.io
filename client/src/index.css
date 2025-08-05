@@ -156,7 +156,7 @@
   }
   
   .animate-scroll-infinite {
-    animation: scrollInfinite 40s linear infinite;
+    animation: scrollInfinite 20s linear infinite;
   }
   
   .animate-fade-in-up {

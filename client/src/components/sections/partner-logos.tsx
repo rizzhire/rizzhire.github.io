@@ -66,7 +66,23 @@ export default function PartnerLogos() {
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const handleScroll = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
     setIsUserScrolling(true);
+    
+    // Handle seamless infinite scrolling during manual interaction
+    const scrollWidth = container.scrollWidth;
+    const maxScroll = scrollWidth / 2; // Half because we duplicate logos
+    
+    // When user scrolls to the end, seamlessly loop back to beginning
+    if (container.scrollLeft >= maxScroll - 10) {
+      container.scrollLeft = container.scrollLeft - maxScroll;
+    }
+    // When user scrolls backwards past beginning, loop to end
+    else if (container.scrollLeft <= 10) {
+      container.scrollLeft = container.scrollLeft + maxScroll;
+    }
     
     if (scrollTimeout) {
       clearTimeout(scrollTimeout);
@@ -74,7 +90,7 @@ export default function PartnerLogos() {
 
     const newTimeout = setTimeout(() => {
       setIsUserScrolling(false);
-    }, 3000); // Resume auto-scroll after 3 seconds of no manual interaction
+    }, 2500); // Resume auto-scroll after 2.5 seconds of no manual interaction
     
     setScrollTimeout(newTimeout);
   };
@@ -107,7 +123,7 @@ export default function PartnerLogos() {
       >
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-hidden"
+          className="flex overflow-x-auto scrollbar-hide"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none'
