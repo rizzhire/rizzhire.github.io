@@ -17,6 +17,20 @@ export default function PartnerLogos() {
     { name: "DP World", image: dpWorldLogo }
   ];
 
+  const getLogoFilter = (logoName: string, isHover: boolean) => {
+    switch (logoName) {
+      case 'Nayara Energy':
+      case 'UCC':
+        return isHover 
+          ? 'grayscale(70%) contrast(1.8) brightness(0.8) saturate(0)' 
+          : 'grayscale(100%) contrast(2) brightness(0.5) saturate(0)';
+      default:
+        return isHover 
+          ? 'grayscale(70%) contrast(1) brightness(0.6)' 
+          : 'grayscale(100%) contrast(1.2) brightness(0.3)';
+    }
+  };
+
   const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { elementRef: logosRef, isVisible: logosVisible } = useScrollAnimation({ rootMargin: '0px 0px -50px 0px' });
   
@@ -115,26 +129,22 @@ export default function PartnerLogos() {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="w-48 h-24 flex items-center justify-center cursor-pointer transition-all duration-300 group"
+                className="w-36 h-12 flex items-center justify-center cursor-pointer transition-all duration-300 group"
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-w-full max-h-16 object-contain transition-all duration-300 group-hover:scale-105"
+                  className={`object-contain transition-all duration-300 group-hover:scale-105 ${
+                    partner.name === 'DP World' ? 'max-w-28 max-h-8' : 'max-w-full max-h-full'
+                  }`}
                   style={{
-                    filter: partner.name === 'Nayara Energy' 
-                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)' 
-                      : 'grayscale(100%) contrast(1.2) brightness(0.3)',
+                    filter: getLogoFilter(partner.name, false),
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
-                      ? 'grayscale(70%) contrast(1.2) brightness(0.7)'
-                      : 'grayscale(70%) contrast(1) brightness(0.6)';
+                    e.currentTarget.style.filter = getLogoFilter(partner.name, true);
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
-                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)'
-                      : 'grayscale(100%) contrast(1.2) brightness(0.3)';
+                    e.currentTarget.style.filter = getLogoFilter(partner.name, false);
                   }}
                 />
               </div>
@@ -146,26 +156,22 @@ export default function PartnerLogos() {
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
-                className="w-48 h-24 flex items-center justify-center cursor-pointer transition-all duration-300 group"
+                className="w-36 h-12 flex items-center justify-center cursor-pointer transition-all duration-300 group"
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-w-full max-h-16 object-contain transition-all duration-300 group-hover:scale-105"
+                  className={`object-contain transition-all duration-300 group-hover:scale-105 ${
+                    partner.name === 'DP World' ? 'max-w-28 max-h-8' : 'max-w-full max-h-full'
+                  }`}
                   style={{
-                    filter: partner.name === 'Nayara Energy' 
-                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)' 
-                      : 'grayscale(100%) contrast(1.2) brightness(0.3)',
+                    filter: getLogoFilter(partner.name, false),
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
-                      ? 'grayscale(70%) contrast(1.2) brightness(0.7)'
-                      : 'grayscale(70%) contrast(1) brightness(0.6)';
+                    e.currentTarget.style.filter = getLogoFilter(partner.name, true);
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
-                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)'
-                      : 'grayscale(100%) contrast(1.2) brightness(0.3)';
+                    e.currentTarget.style.filter = getLogoFilter(partner.name, false);
                   }}
                 />
               </div>
