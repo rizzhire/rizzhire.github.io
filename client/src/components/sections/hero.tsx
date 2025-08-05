@@ -4,8 +4,8 @@ import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 
 export default function Hero() {
-  const placements = useCounter({ end: 18000, duration: 2500 });
-  const database = useCounter({ end: 35000, duration: 2200, delay: 200 });
+  const placements = useCounter({ end: 18, duration: 2500 });
+  const database = useCounter({ end: 35, duration: 2200, delay: 200 });
   const companies = useCounter({ end: 500, duration: 1800, delay: 400 });
   const countries = useCounter({ end: 7, duration: 1600, delay: 600 });
   const satisfaction = useCounter({ end: 98, duration: 2000, delay: 800 });
@@ -41,7 +41,7 @@ export default function Hero() {
                 ref={placements.ref}
                 className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none"
               >
-                {placements.count.toLocaleString()}
+                {placements.count}k
               </div>
               <div className="text-gray-600 text-sm font-medium leading-tight">
                 Successful<br/>Placements
@@ -53,8 +53,8 @@ export default function Hero() {
                 ref={database.ref}
                 className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
               >
-                {database.count.toLocaleString()}
-                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35000 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                {database.count}k
+                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
               <div className="text-gray-600 text-sm font-medium leading-tight">
                 Database
