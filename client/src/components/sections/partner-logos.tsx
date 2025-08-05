@@ -48,8 +48,9 @@ export default function PartnerLogos() {
     if (currentLogo === 'UCC' && nextLogo === 'DP World') {
       return `${baseSpacing - 48}px`; // Maximum overlapping spacing before DP World
     }
-    if (currentLogo === 'DP World' && nextLogo === 'Emaar') {
-      return `${baseSpacing - 36}px`; // Maximum overlapping spacing after DP World
+    // Handle DP World to Emaar (carousel wraps around)
+    if (currentLogo === 'DP World' && (nextLogo === 'Emaar' || !nextLogo)) {
+      return `${baseSpacing - 48}px`; // Maximum overlapping spacing after DP World to Emaar
     }
     
     return `${baseSpacing}px`;
@@ -157,7 +158,9 @@ export default function PartnerLogos() {
                   partner.name === 'DP World' ? 'w-64 h-24' : 'w-48 h-16'
                 }`}
                 style={{
-                  marginRight: index < partners.length - 1 ? getLogoSpacing(partner.name, partners[index + 1]?.name) : '0px'
+                  marginRight: index < partners.length - 1 
+                    ? getLogoSpacing(partner.name, partners[index + 1]?.name) 
+                    : getLogoSpacing(partner.name, partners[0]?.name) // Handle wraparound to first logo
                 }}
               >
                 <img
@@ -194,7 +197,9 @@ export default function PartnerLogos() {
                   partner.name === 'DP World' ? 'w-64 h-24' : 'w-48 h-16'
                 }`}
                 style={{
-                  marginRight: index < partners.length - 1 ? getLogoSpacing(partner.name, partners[index + 1]?.name) : '0px'
+                  marginRight: index < partners.length - 1 
+                    ? getLogoSpacing(partner.name, partners[index + 1]?.name) 
+                    : getLogoSpacing(partner.name, partners[0]?.name) // Handle wraparound to first logo
                 }}
               >
                 <img
