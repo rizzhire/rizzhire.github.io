@@ -46,7 +46,7 @@ export default function PartnerLogos() {
       return `${baseSpacing - 8}px`; // Closer spacing for better balance
     }
     if (currentLogo === 'UCC' && nextLogo === 'DP World') {
-      return `${baseSpacing + 16}px`; // More space before DP World
+      return `${baseSpacing - 4}px`; // Closer spacing before DP World
     }
     if (currentLogo === 'DP World' && nextLogo === 'Emaar') {
       return `${baseSpacing + 12}px`; // Space after DP World
@@ -171,7 +171,7 @@ export default function PartnerLogos() {
                     transform: partner.name === 'Sodexo' 
                       ? 'translateY(-4px)' 
                       : partner.name === 'DP World' 
-                        ? 'translateY(-16px)' 
+                        ? 'translateY(-8px)' 
                         : 'none',
                   }}
                   onMouseEnter={(e) => {
@@ -208,7 +208,7 @@ export default function PartnerLogos() {
                     transform: partner.name === 'Sodexo' 
                       ? 'translateY(-4px)' 
                       : partner.name === 'DP World' 
-                        ? 'translateY(-16px)' 
+                        ? 'translateY(-8px)' 
                         : 'none',
                   }}
                   onMouseEnter={(e) => {
