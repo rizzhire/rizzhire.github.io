@@ -128,12 +128,12 @@ export default function PartnerLogos() {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           onScroll={handleScroll}
         >
-          <div className="flex space-x-12 flex-shrink-0 px-6">
+          <div className="flex space-x-8 flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={index} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-36 h-12'
+                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-48 h-16'
                 }`}
               >
                 <img
@@ -162,12 +162,12 @@ export default function PartnerLogos() {
           </div>
           
           {/* Duplicate set for seamless loop */}
-          <div className="flex space-x-12 flex-shrink-0 px-6">
+          <div className="flex space-x-8 flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-36 h-12'
+                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-48 h-16'
                 }`}
               >
                 <img
