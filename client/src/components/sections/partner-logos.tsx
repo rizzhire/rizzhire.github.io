@@ -87,7 +87,7 @@ export default function PartnerLogos() {
       } else {
         container.scrollLeft = currentScroll + scrollStep;
       }
-    }, 16); // ~60fps for smooth animation
+    }, 12); // Faster speed with ~83fps for smooth animation
   };
 
   const handleScroll = () => {
