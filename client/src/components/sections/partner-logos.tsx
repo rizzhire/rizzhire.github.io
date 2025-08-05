@@ -79,15 +79,15 @@ export default function PartnerLogos() {
       const scrollWidth = container.scrollWidth;
       const maxScroll = scrollWidth / 2;
       const currentScroll = container.scrollLeft;
-      const scrollStep = 1; // 1px per interval for smooth motion
+      const scrollStep = 1;
       
-      if (currentScroll >= maxScroll - 100) {
-        // Smooth reset much earlier to avoid any visible transition
-        container.scrollLeft = 0;
+      // True seamless infinite loop
+      if (currentScroll >= maxScroll) {
+        container.scrollLeft = currentScroll - maxScroll;
       } else {
         container.scrollLeft = currentScroll + scrollStep;
       }
-    }, 12); // Faster speed with ~83fps for smooth animation
+    }, 12);
   };
 
   const handleScroll = () => {
@@ -100,11 +100,11 @@ export default function PartnerLogos() {
     const scrollWidth = container.scrollWidth;
     const maxScroll = scrollWidth / 2;
     
-    // Simple seamless looping for manual scroll
-    if (container.scrollLeft >= maxScroll - 100) {
-      container.scrollLeft = 0;
-    } else if (container.scrollLeft <= 50) {
-      container.scrollLeft = maxScroll - 50;
+    // True infinite manual scrolling
+    if (container.scrollLeft >= maxScroll) {
+      container.scrollLeft = container.scrollLeft - maxScroll;
+    } else if (container.scrollLeft < 0) {
+      container.scrollLeft = container.scrollLeft + maxScroll;
     }
     
     if (scrollTimeout) {
@@ -113,7 +113,6 @@ export default function PartnerLogos() {
 
     const newTimeout = setTimeout(() => {
       setIsUserScrolling(false);
-      // Auto-scroll will continue from current position
     }, 2000);
     
     setScrollTimeout(newTimeout);
