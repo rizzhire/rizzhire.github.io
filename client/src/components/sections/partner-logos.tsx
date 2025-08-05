@@ -154,7 +154,7 @@ export default function PartnerLogos() {
               <div 
                 key={index} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-48 h-16'
+                  partner.name === 'DP World' ? 'w-64 h-24' : 'w-48 h-16'
                 }`}
                 style={{
                   marginRight: index < partners.length - 1 ? getLogoSpacing(partner.name, partners[index + 1]?.name) : '0px'
@@ -164,7 +164,7 @@ export default function PartnerLogos() {
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'w-full h-full scale-[3.2]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[4.0]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
@@ -191,7 +191,7 @@ export default function PartnerLogos() {
               <div 
                 key={`duplicate-${index}`} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-56 h-20' : 'w-48 h-16'
+                  partner.name === 'DP World' ? 'w-64 h-24' : 'w-48 h-16'
                 }`}
                 style={{
                   marginRight: index < partners.length - 1 ? getLogoSpacing(partner.name, partners[index + 1]?.name) : '0px'
@@ -201,7 +201,7 @@ export default function PartnerLogos() {
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'w-full h-full scale-[3.2]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[4.0]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
