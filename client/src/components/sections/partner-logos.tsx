@@ -64,65 +64,17 @@ export default function PartnerLogos() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
-  const autoScrollRef = useRef<number | null>(null);
-  const lastScrollTimeRef = useRef<number>(0);
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const scrollWidth = container.scrollWidth;
-    const maxScroll = scrollWidth / 2; // Half because we duplicate logos
-
-    let scrollInterval: NodeJS.Timeout;
-
-    if (!isUserScrolling) {
-      scrollInterval = setInterval(() => {
-        const currentScroll = container.scrollLeft;
-        const scrollStep = 1; // Smooth 1px per interval
-        
-        // Seamless loop: when we reach halfway point, reset to beginning
-        if (currentScroll >= maxScroll - scrollStep) {
-          container.scrollLeft = 0;
-        } else {
-          container.scrollTo({
-            left: currentScroll + scrollStep,
-            behavior: 'auto' // Use 'auto' for instant positioning, CSS handles smoothness
-          });
-        }
-      }, 16); // ~60fps for smooth animation
-    }
-
-    return () => {
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-      }
-    };
-  }, [isUserScrolling]);
 
   const handleScroll = () => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-    
     setIsUserScrolling(true);
-    lastScrollTimeRef.current = Date.now();
     
     if (scrollTimeout) {
       clearTimeout(scrollTimeout);
     }
 
-    // Handle seamless looping during manual scroll
-    const scrollWidth = container.scrollWidth;
-    const maxScroll = scrollWidth / 2;
-    
-    if (container.scrollLeft >= maxScroll - 10) {
-      container.scrollLeft = container.scrollLeft - maxScroll;
-    }
-
     const newTimeout = setTimeout(() => {
       setIsUserScrolling(false);
-      // Auto-scroll will continue from current position
-    }, 2000);
+    }, 3000); // Resume auto-scroll after 3 seconds of no manual interaction
     
     setScrollTimeout(newTimeout);
   };
@@ -155,15 +107,21 @@ export default function PartnerLogos() {
       >
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto scrollbar-hide"
+          className="flex overflow-hidden"
           style={{ 
             scrollbarWidth: 'none', 
-            msOverflowStyle: 'none',
-            scrollBehavior: 'auto' // Remove scroll-smooth class interference
+            msOverflowStyle: 'none'
           }}
           onScroll={handleScroll}
         >
-          <div className="flex items-center flex-shrink-0 px-6">
+          <div 
+            className={`flex items-center flex-shrink-0 px-6 ${
+              !isUserScrolling ? 'animate-scroll-infinite' : ''
+            }`}
+            style={{
+              animationPlayState: isUserScrolling ? 'paused' : 'running'
+            }}
+          >
             {partners.map((partner, index) => (
               <div 
                 key={index} 
