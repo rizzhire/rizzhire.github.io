@@ -74,6 +74,15 @@
     background-color: #F5F3EB;
   }
   
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
   /* Smooth rounded corners for container */
   .rounded-t-smooth {
     border-top-left-radius: 60px;

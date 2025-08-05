@@ -1,12 +1,83 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useRef, useEffect, useState } from "react";
+import emaarLogo from "@assets/Emaar_logo.svg_1754407618459.png";
+import nayaraLogo from "@assets/Logo_Nayara_Energy_1754407618460.jpg";
+import etisalatLogo from "@assets/Etisalat_Logo-595x700_1754407618460.png";
+import sodexoLogo from "@assets/Sodexo_logo.svg_1754407618461.png";
+import uccLogo from "@assets/ucc-logo_1754407618462.jpg";
+import dpWorldLogo from "@assets/DP_World_2021_logo_1754407618463.png";
 
 export default function PartnerLogos() {
   const partners = [
-    "SABIC", "Etisalat", "Dubai Airports", "Majid Al Futtaim", "Emaar Properties", "DP World"
+    { name: "Emaar", image: emaarLogo },
+    { name: "Nayara Energy", image: nayaraLogo },
+    { name: "Etisalat", image: etisalatLogo },
+    { name: "Sodexo", image: sodexoLogo },
+    { name: "UCC", image: uccLogo },
+    { name: "DP World", image: dpWorldLogo }
   ];
 
   const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { elementRef: logosRef, isVisible: logosVisible } = useScrollAnimation({ rootMargin: '0px 0px -50px 0px' });
+  
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [scrollX, setScrollX] = useState(0);
+  const [isUserScrolling, setIsUserScrolling] = useState(false);
+  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container || isUserScrolling) return;
+
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    const maxScroll = scrollWidth / 2; // Half because we duplicate logos
+
+    let animationId: number;
+    let startTime: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      
+      // 30 seconds for full cycle (same speed as before)
+      const progress = (elapsed / 30000) % 1;
+      const newScrollX = progress * maxScroll;
+      
+      setScrollX(newScrollX);
+      container.scrollLeft = newScrollX;
+
+      if (newScrollX >= maxScroll - 1) {
+        container.scrollLeft = 0;
+        setScrollX(0);
+        startTime = currentTime;
+      }
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, [isUserScrolling]);
+
+  const handleScroll = () => {
+    setIsUserScrolling(true);
+    
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+
+    const newTimeout = setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 2000);
+    
+    setScrollTimeout(newTimeout);
+  };
 
   return (
     <section className="py-16 bg-white overflow-hidden">
@@ -34,25 +105,57 @@ export default function PartnerLogos() {
           }
         `}
       >
-        <div className="flex animate-scroll">
-          <div className="flex space-x-12 flex-shrink-0">
+        <div 
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto scrollbar-hide scroll-smooth"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onScroll={handleScroll}
+        >
+          <div className="flex space-x-12 flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="w-36 h-12 bg-gray-100 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer shadow-sm border border-gray-200 hover:shadow-lg hover:scale-105 hover:bg-yellow/10"
+                className="w-48 h-24 bg-white rounded-xl flex items-center justify-center cursor-pointer shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
               >
-                <span className="font-medium text-gray-600 text-sm hover:text-black transition-colors">{partner}</span>
+                <img
+                  src={partner.image}
+                  alt={partner.name}
+                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  style={{
+                    filter: 'grayscale(100%) contrast(1.2) brightness(0.3)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'grayscale(70%) contrast(1) brightness(0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'grayscale(100%) contrast(1.2) brightness(0.3)';
+                  }}
+                />
               </div>
             ))}
           </div>
-          {/* Duplicate for seamless loop */}
-          <div className="flex space-x-12 flex-shrink-0">
+          
+          {/* Duplicate set for seamless loop */}
+          <div className="flex space-x-12 flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
-                className="w-36 h-12 bg-gray-100 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer shadow-sm border border-gray-200 hover:shadow-lg hover:scale-105 hover:bg-yellow/10"
+                className="w-48 h-24 bg-white rounded-xl flex items-center justify-center cursor-pointer shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
               >
-                <span className="font-medium text-gray-600 text-sm hover:text-black transition-colors">{partner}</span>
+                <img
+                  src={partner.image}
+                  alt={partner.name}
+                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  style={{
+                    filter: 'grayscale(100%) contrast(1.2) brightness(0.3)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'grayscale(70%) contrast(1) brightness(0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'grayscale(100%) contrast(1.2) brightness(0.3)';
+                  }}
+                />
               </div>
             ))}
           </div>
