@@ -21,7 +21,7 @@ export default function PartnerLogos() {
     if (logoName === 'Nayara Energy') {
       return isHover 
         ? 'grayscale(0%) contrast(1) brightness(1) saturate(1)' // Original colors on hover
-        : 'grayscale(100%) contrast(1.2) brightness(1.1)'; // Much lighter to blend with white like original
+        : 'grayscale(100%) contrast(1.5) brightness(0.7)'; // Lighter black & white to preserve logo shape
     }
     
     // Default for all other logos
