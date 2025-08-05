@@ -147,7 +147,7 @@ export default function PartnerLogos() {
                     transform: partner.name === 'Sodexo' 
                       ? 'translateY(-4px)' 
                       : partner.name === 'DP World' 
-                        ? 'translateY(-6px)' 
+                        ? 'translateY(-12px)' 
                         : 'none',
                   }}
                   onMouseEnter={(e) => {
@@ -181,7 +181,7 @@ export default function PartnerLogos() {
                     transform: partner.name === 'Sodexo' 
                       ? 'translateY(-4px)' 
                       : partner.name === 'DP World' 
-                        ? 'translateY(-6px)' 
+                        ? 'translateY(-12px)' 
                         : 'none',
                   }}
                   onMouseEnter={(e) => {
