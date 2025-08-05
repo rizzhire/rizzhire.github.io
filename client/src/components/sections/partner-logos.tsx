@@ -40,7 +40,7 @@ export default function PartnerLogos() {
     
     // Special spacing adjustments based on logo combinations
     if (currentLogo === 'Nayara Energy' && nextLogo === 'Etisalat') {
-      return `${baseSpacing + 24}px`; // Extra space for visual balance
+      return `${baseSpacing + 8}px`; // Reduced spacing for better balance
     }
     if (currentLogo === 'Etisalat' && nextLogo === 'Sodexo') {
       return `${baseSpacing + 8}px`; // Slightly more space
