@@ -115,20 +115,26 @@ export default function PartnerLogos() {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="w-48 h-24 bg-white rounded-xl flex items-center justify-center cursor-pointer shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="w-48 h-24 flex items-center justify-center cursor-pointer transition-all duration-300 group"
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  className="max-w-full max-h-16 object-contain transition-all duration-300 group-hover:scale-105"
                   style={{
-                    filter: 'grayscale(100%) contrast(1.2) brightness(0.3)',
+                    filter: partner.name === 'Nayara Energy' 
+                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)' 
+                      : 'grayscale(100%) contrast(1.2) brightness(0.3)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = 'grayscale(70%) contrast(1) brightness(0.6)';
+                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
+                      ? 'grayscale(70%) contrast(1.2) brightness(0.7)'
+                      : 'grayscale(70%) contrast(1) brightness(0.6)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = 'grayscale(100%) contrast(1.2) brightness(0.3)';
+                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
+                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)'
+                      : 'grayscale(100%) contrast(1.2) brightness(0.3)';
                   }}
                 />
               </div>
@@ -140,20 +146,26 @@ export default function PartnerLogos() {
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
-                className="w-48 h-24 bg-white rounded-xl flex items-center justify-center cursor-pointer shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="w-48 h-24 flex items-center justify-center cursor-pointer transition-all duration-300 group"
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  className="max-w-full max-h-16 object-contain transition-all duration-300 group-hover:scale-105"
                   style={{
-                    filter: 'grayscale(100%) contrast(1.2) brightness(0.3)',
+                    filter: partner.name === 'Nayara Energy' 
+                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)' 
+                      : 'grayscale(100%) contrast(1.2) brightness(0.3)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = 'grayscale(70%) contrast(1) brightness(0.6)';
+                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
+                      ? 'grayscale(70%) contrast(1.2) brightness(0.7)'
+                      : 'grayscale(70%) contrast(1) brightness(0.6)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = 'grayscale(100%) contrast(1.2) brightness(0.3)';
+                    e.currentTarget.style.filter = partner.name === 'Nayara Energy'
+                      ? 'grayscale(100%) contrast(1.5) brightness(0.4)'
+                      : 'grayscale(100%) contrast(1.2) brightness(0.3)';
                   }}
                 />
               </div>
