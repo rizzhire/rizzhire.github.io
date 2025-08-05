@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useRef, useEffect, useState } from "react";
 import emaarLogo from "@assets/Emaar_logo.svg_1754407618459.png";
-import nayaraLogo from "@assets/Picsart_25-08-05_22-04-26-334_1754411861150.png";
+import nayaraLogo from "@assets/Picsart_25-08-05_22-18-08-535_1754412566927.png";
 import etisalatLogo from "@assets/Etisalat_Logo-595x700_1754407618460.png";
 import sodexoLogo from "@assets/Sodexo_logo.svg_1754407618461.png";
 import uccLogo from "@assets/Picsart_25-08-05_22-06-20-594_1754411861151.png";
