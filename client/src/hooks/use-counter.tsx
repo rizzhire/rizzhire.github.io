@@ -9,73 +9,45 @@ interface UseCounterProps {
 
 export function useCounter({ end, start = 0, duration = 2000, delay = 0 }: UseCounterProps) {
   const [count, setCount] = useState(start);
-  const [isVisible, setIsVisible] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (observerRef.current) {
-      observerRef.current.disconnect();
-    }
+    // Start animation immediately when component mounts
+    const startAnimation = () => {
+      if (hasStarted) return;
+      setHasStarted(true);
 
-    observerRef.current = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible && !hasStarted) {
-          setIsVisible(true);
+      const startTime = Date.now();
+      const startValue = start;
+      const endValue = end;
+
+      const animateCounter = () => {
+        const now = Date.now();
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        if (progress >= 1) {
+          setCount(endValue);
+          return;
         }
-      },
-      { threshold: 0.1 }
-    );
 
-    if (ref.current) {
-      observerRef.current.observe(ref.current);
-    }
+        // Ease-out animation
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(startValue + (endValue - startValue) * easeOut);
+        setCount(currentValue);
 
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []); // Remove isVisible from dependency to prevent infinite loop
+        requestAnimationFrame(animateCounter);
+      };
 
-  useEffect(() => {
-    if (!isVisible || hasStarted) return;
-
-    setHasStarted(true);
-    const startTime = Date.now() + delay;
-    const startValue = start;
-    const endValue = end;
-
-    const animateCounter = () => {
-      const now = Date.now();
-      const progress = Math.max(0, Math.min(1, (now - startTime) / duration));
-
-      if (progress === 1) {
-        setCount(endValue);
-        if (timerRef.current) {
-          clearInterval(timerRef.current);
-          timerRef.current = null;
-        }
-        return;
-      }
-
-      // Ease-out animation
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const currentValue = Math.floor(startValue + (endValue - startValue) * easeOut);
-      setCount(currentValue);
+      requestAnimationFrame(animateCounter);
     };
 
-    timerRef.current = setInterval(animateCounter, 16);
+    // Start with delay
+    const timer = setTimeout(startAnimation, delay);
 
-    return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
-    };
-  }, [isVisible, hasStarted, start, end, duration, delay]);
+    return () => clearTimeout(timer);
+  }, [start, end, duration, delay, hasStarted]);
 
   return { count, ref };
 }
