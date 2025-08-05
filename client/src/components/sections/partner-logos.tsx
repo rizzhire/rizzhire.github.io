@@ -64,6 +64,31 @@ export default function PartnerLogos() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
+  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Continuous auto-scroll using JavaScript for true infinite behavior
+  const startAutoScroll = () => {
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+    }
+    
+    autoScrollIntervalRef.current = setInterval(() => {
+      const container = scrollContainerRef.current;
+      if (!container || isUserScrolling) return;
+      
+      const scrollWidth = container.scrollWidth;
+      const maxScroll = scrollWidth / 2;
+      const currentScroll = container.scrollLeft;
+      const scrollStep = 1; // 1px per interval for smooth motion
+      
+      if (currentScroll >= maxScroll - scrollStep) {
+        // Seamless loop back to beginning
+        container.scrollLeft = 0;
+      } else {
+        container.scrollLeft = currentScroll + scrollStep;
+      }
+    }, 16); // ~60fps for smooth animation
+  };
 
   const handleScroll = () => {
     const container = scrollContainerRef.current;
@@ -73,14 +98,12 @@ export default function PartnerLogos() {
     
     // Handle seamless infinite scrolling during manual interaction
     const scrollWidth = container.scrollWidth;
-    const maxScroll = scrollWidth / 2; // Half because we duplicate logos
+    const maxScroll = scrollWidth / 2;
     
-    // When user scrolls to the end, seamlessly loop back to beginning
+    // Seamless looping for manual scroll
     if (container.scrollLeft >= maxScroll - 10) {
       container.scrollLeft = container.scrollLeft - maxScroll;
-    }
-    // When user scrolls backwards past beginning, loop to end
-    else if (container.scrollLeft <= 10) {
+    } else if (container.scrollLeft <= 10) {
       container.scrollLeft = container.scrollLeft + maxScroll;
     }
     
@@ -90,10 +113,32 @@ export default function PartnerLogos() {
 
     const newTimeout = setTimeout(() => {
       setIsUserScrolling(false);
-    }, 2500); // Resume auto-scroll after 2.5 seconds of no manual interaction
+      // Auto-scroll will continue from current position
+    }, 2000);
     
     setScrollTimeout(newTimeout);
   };
+
+  // Start auto-scroll on component mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      startAutoScroll();
+    }, 100); // Small delay to ensure component is mounted
+    
+    return () => {
+      clearTimeout(timer);
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+    };
+  }, []);
+
+  // Restart auto-scroll when user stops interacting
+  useEffect(() => {
+    if (!isUserScrolling) {
+      startAutoScroll();
+    }
+  }, [isUserScrolling]);
 
   return (
     <section className="py-16 bg-white overflow-hidden">
@@ -130,14 +175,7 @@ export default function PartnerLogos() {
           }}
           onScroll={handleScroll}
         >
-          <div 
-            className={`flex items-center flex-shrink-0 px-6 ${
-              !isUserScrolling ? 'animate-scroll-infinite' : ''
-            }`}
-            style={{
-              animationPlayState: isUserScrolling ? 'paused' : 'running'
-            }}
-          >
+          <div className="flex items-center flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={index} 
