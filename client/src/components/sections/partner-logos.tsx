@@ -73,29 +73,29 @@ export default function PartnerLogos() {
 
     const scrollWidth = container.scrollWidth;
     const maxScroll = scrollWidth / 2; // Half because we duplicate logos
-    const scrollSpeed = 0.5; // pixels per frame (smooth auto-scroll)
 
-    const animate = () => {
-      if (!isUserScrolling && container) {
+    let scrollInterval: NodeJS.Timeout;
+
+    if (!isUserScrolling) {
+      scrollInterval = setInterval(() => {
         const currentScroll = container.scrollLeft;
-        const newScroll = currentScroll + scrollSpeed;
+        const scrollStep = 1; // Smooth 1px per interval
         
         // Seamless loop: when we reach halfway point, reset to beginning
-        if (newScroll >= maxScroll) {
+        if (currentScroll >= maxScroll - scrollStep) {
           container.scrollLeft = 0;
         } else {
-          container.scrollLeft = newScroll;
+          container.scrollTo({
+            left: currentScroll + scrollStep,
+            behavior: 'auto' // Use 'auto' for instant positioning, CSS handles smoothness
+          });
         }
-      }
-      
-      autoScrollRef.current = requestAnimationFrame(animate);
-    };
-
-    autoScrollRef.current = requestAnimationFrame(animate);
+      }, 16); // ~60fps for smooth animation
+    }
 
     return () => {
-      if (autoScrollRef.current) {
-        cancelAnimationFrame(autoScrollRef.current);
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
       }
     };
   }, [isUserScrolling]);
@@ -155,8 +155,12 @@ export default function PartnerLogos() {
       >
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto scrollbar-hide scroll-smooth"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex overflow-x-auto scrollbar-hide"
+          style={{ 
+            scrollbarWidth: 'none', 
+            msOverflowStyle: 'none',
+            scrollBehavior: 'auto' // Remove scroll-smooth class interference
+          }}
           onScroll={handleScroll}
         >
           <div className="flex items-center flex-shrink-0 px-6">
