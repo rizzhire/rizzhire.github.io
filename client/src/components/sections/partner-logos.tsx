@@ -142,6 +142,7 @@ export default function PartnerLogos() {
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
+                    transform: partner.name === 'Sodexo' ? 'translateY(-4px)' : 'none',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.filter = getLogoFilter(partner.name, true);
@@ -169,6 +170,7 @@ export default function PartnerLogos() {
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
+                    transform: partner.name === 'Sodexo' ? 'translateY(-4px)' : 'none',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.filter = getLogoFilter(partner.name, true);
