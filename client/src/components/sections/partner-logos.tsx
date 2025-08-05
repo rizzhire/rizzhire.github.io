@@ -135,7 +135,7 @@ export default function PartnerLogos() {
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'max-w-32 max-h-10' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'max-w-36 max-h-12' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
@@ -162,7 +162,7 @@ export default function PartnerLogos() {
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'max-w-32 max-h-10' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'max-w-36 max-h-12' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
