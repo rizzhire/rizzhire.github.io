@@ -34,6 +34,27 @@ export default function PartnerLogos() {
     }
   };
 
+  const getLogoSpacing = (currentLogo: string, nextLogo: string) => {
+    // Base spacing
+    const baseSpacing = 32;
+    
+    // Special spacing adjustments based on logo combinations
+    if (currentLogo === 'Nayara Energy' && nextLogo === 'Etisalat') {
+      return `${baseSpacing + 24}px`; // Extra space for visual balance
+    }
+    if (currentLogo === 'Etisalat' && nextLogo === 'Sodexo') {
+      return `${baseSpacing + 8}px`; // Slightly more space
+    }
+    if (currentLogo === 'UCC' && nextLogo === 'DP World') {
+      return `${baseSpacing + 16}px`; // More space before DP World
+    }
+    if (currentLogo === 'DP World' && nextLogo === 'Emaar') {
+      return `${baseSpacing + 12}px`; // Space after DP World
+    }
+    
+    return `${baseSpacing}px`;
+  };
+
   const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { elementRef: logosRef, isVisible: logosVisible } = useScrollAnimation({ rootMargin: '0px 0px -50px 0px' });
   
@@ -128,13 +149,16 @@ export default function PartnerLogos() {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           onScroll={handleScroll}
         >
-          <div className="flex space-x-8 flex-shrink-0 px-6">
+          <div className="flex items-center flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={index} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
                   partner.name === 'DP World' ? 'w-56 h-20' : 'w-48 h-16'
                 }`}
+                style={{
+                  marginRight: index < partners.length - 1 ? getLogoSpacing(partner.name, partners[index + 1]?.name) : '0px'
+                }}
               >
                 <img
                   src={partner.image}
@@ -162,13 +186,16 @@ export default function PartnerLogos() {
           </div>
           
           {/* Duplicate set for seamless loop */}
-          <div className="flex space-x-8 flex-shrink-0 px-6">
+          <div className="flex items-center flex-shrink-0 px-6">
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
                   partner.name === 'DP World' ? 'w-56 h-20' : 'w-48 h-16'
                 }`}
+                style={{
+                  marginRight: index < partners.length - 1 ? getLogoSpacing(partner.name, partners[index + 1]?.name) : '0px'
+                }}
               >
                 <img
                   src={partner.image}
