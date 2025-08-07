@@ -6,9 +6,9 @@ export default function Testimonials() {
     <section className="py-20 px-4 bg-cream">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Success Stories</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Client <span className="text-yellow">Testimonials</span></h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear from professionals who found their dream careers through HireNET's expert recruitment services.
+            Trusted by leading organizations across the Middle East for our exceptional recruitment solutions and dedicated service excellence.
           </p>
         </div>
 
