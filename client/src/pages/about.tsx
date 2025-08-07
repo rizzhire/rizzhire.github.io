@@ -77,7 +77,7 @@ export default function About() {
         </div>
       </section>
       {/* Values Section */}
-      <section className="py-20 px-4 bg-cream">
+      <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
