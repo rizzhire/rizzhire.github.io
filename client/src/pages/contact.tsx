@@ -23,25 +23,25 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["Dubai Business Bay", "Sheikh Zayed Road", "UAE"],
+      details: ["6/7A, AJC Bose Road, Padatik Theatre", "(Near Trimurti Petrol Pump, Opp.Kia Motors)", "Kolkata-700017, West Bengal, INDIA"],
       color: "text-blue-600"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+971 4 XXX XXXX", "+971 50 XXX XXXX", "Available 24/7"],
+      details: ["+91 333 508 5038", "+91 9007906531"],
       color: "text-green-600"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@hirenet.com", "careers@hirenet.com", "support@hirenet.com"],
+      details: ["contact@hirenet.in"],
       color: "text-purple-600"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Fri: 9AM - 6PM", "Saturday: 10AM - 4PM", "Sunday: Closed"],
+      details: ["Mon - Saturday: 10:30 AM - 6PM", "Sunday: Closed"],
       color: "text-orange-600"
     }
   ];
@@ -217,18 +217,26 @@ export default function Contact() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Find <span className="text-yellow">Us</span>
             </h2>
-            <p className="text-xl text-gray-600">Located in the heart of Dubai's business district</p>
+            <p className="text-xl text-gray-600">Located in the heart of Kolkata's business district</p>
           </div>
           
           <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-12 text-center">
             <div className="w-20 h-20 bg-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <MapPin className="w-10 h-10 text-yellow" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">Dubai Office</h3>
+            <h3 className="text-2xl font-bold mb-4">Main Office - Kolkata</h3>
             <p className="text-gray-600 text-lg mb-6">
-              Business Bay, Sheikh Zayed Road<br />
-              Dubai, United Arab Emirates
+              6/7A, AJC Bose Road, Padatik Theatre<br />
+              Kolkata-700017, West Bengal, INDIA
             </p>
+            <div className="mt-8 pt-6 border-t border-yellow/20">
+              <h4 className="text-xl font-semibold mb-3 text-gray-800">Branch Office - Siliguri</h4>
+              <p className="text-gray-600">
+                4th-floor Nevidita Road, Kidzee School<br />
+                Near Post Office Pradhan Nagar<br />
+                Siliguri 734003
+              </p>
+            </div>
             <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl">
               Get Directions
             </Button>
