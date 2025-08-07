@@ -8,26 +8,40 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="cream p-8 rounded-3xl border-0">
+    <Card className="cream p-6 rounded-3xl border-0">
       <CardContent className="p-0">
-        <div className="flex items-center mb-6">
-          <div className="w-16 h-16 mr-4 overflow-hidden rounded-2xl border-2 border-yellow/20 relative">
-            <div className="w-full h-full bg-yellow flex items-center justify-center">
-              <span className="text-black font-bold text-xl">{testimonial.initials}</span>
+        <div className="flex items-center mb-4">
+          <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 relative">
+            {testimonial.photo ? (
+              <img 
+                src={`attached_assets/${testimonial.photo}`}
+                alt={testimonial.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+            ) : null}
+            <div className="w-full h-full bg-yellow flex items-center justify-center" style={{ display: testimonial.photo ? 'none' : 'flex' }}>
+              <span className="text-black font-bold text-lg">{testimonial.initials}</span>
             </div>
           </div>
           <div className="flex text-yellow">
             {Array(testimonial.rating).fill(0).map((_, i) => (
-              <Star key={i} className="h-5 w-5 fill-current" />
+              <Star key={i} className="h-4 w-4 fill-current" />
             ))}
           </div>
         </div>
-        <blockquote className="text-gray-700 mb-6 italic">
+        <blockquote className="text-gray-700 mb-4 italic text-sm">
           "{testimonial.quote}"
         </blockquote>
-        <div>
+        <div className="text-sm">
           <div className="font-bold">{testimonial.name}</div>
-          <div className="text-gray-600">{testimonial.position} at {testimonial.company}</div>
+          <div className="text-gray-600">{testimonial.position}</div>
+          <div className="text-gray-600">{testimonial.company}</div>
         </div>
       </CardContent>
     </Card>
