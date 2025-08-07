@@ -15,7 +15,7 @@ export default function Countries() {
   const { containerRef, visibleItems } = useStaggeredAnimation(countries.length, 80);
 
   return (
-    <section id="countries" className="py-20 bg-gradient-to-b from-cream via-yellow/10 to-cream">
+    <section id="countries" className="py-20 cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Countries We <span className="text-yellow">Serve</span></h2>

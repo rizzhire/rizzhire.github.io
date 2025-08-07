@@ -30,7 +30,7 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cream">
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-cream to-yellow/10 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">

@@ -11,7 +11,7 @@ export default function Hero() {
   const satisfaction = useCounter({ end: 98, duration: 2000, delay: 800 });
 
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-cream via-yellow/5 to-cream overflow-hidden">
+    <section id="home" className="relative min-h-screen cream overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-yellow rounded-full animate-float"></div>

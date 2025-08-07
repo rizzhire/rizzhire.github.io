@@ -45,7 +45,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative bg-gradient-to-b from-white via-cream/30 to-white pt-2 pb-20">
+    <section id="services" className="relative cream pt-2 pb-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
