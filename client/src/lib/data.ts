@@ -36,29 +36,35 @@ export const jobs = [
 export const testimonials = [
   {
     id: 1,
-    name: "Sarah Ahmed",
-    position: "Data Engineer",
-    company: "TechFlow Solutions",
-    quote: "HireNET found me the perfect role that matched my skills and career goals. Their personalized approach made all the difference.",
+    name: "Fatima Almasi",
+    position: "Head of Human Resources",
+    company: "Al Safwa Enterprises",
+    location: "Dubai, UAE",
+    quote: "HireNET transformed our hiring process. Their deep understanding of Middle East talent markets helped us secure exceptional candidates for our senior positions. Their professional approach and cultural awareness are unmatched.",
     rating: 5,
-    initials: "SA"
+    initials: "FA",
+    photo: "1690380156319_1754556183000.jfif"
   },
   {
     id: 2,
-    name: "Mohamed Al-Rashid",
-    position: "Product Manager",
-    company: "Digital Dynamics",
-    quote: "The recruitment process was seamless and professional. HireNET truly understands the Middle East market.",
+    name: "Hamdaad Hakimi",
+    position: "HR Director",
+    company: "Gulf Bridge Holdings",
+    location: "Doha, Qatar",
+    quote: "Working with HireNET has been a game-changer for our recruitment strategy. They consistently deliver high-quality candidates who fit perfectly with our company culture and requirements. Truly professional service.",
     rating: 5,
-    initials: "MR"
+    initials: "HH",
+    photo: "1745582043221_1754556183001.jfif"
   },
   {
     id: 3,
-    name: "Fatima Hassan",
-    position: "Marketing Director",
-    company: "Growth Partners",
-    quote: "Exceptional service and results. They helped us find top talent quickly and efficiently.",
+    name: "Alaa Mahmoud",
+    position: "Chief People Officer",
+    company: "Meridian Business Solutions",
+    location: "Riyadh, Saudi Arabia",
+    quote: "HireNET's expertise in executive search within the GCC region is remarkable. They helped us build our leadership team with outstanding professionals. Their attention to detail and market knowledge sets them apart.",
     rating: 5,
-    initials: "FH"
+    initials: "AM",
+    photo: "1730798849991_1754556183001.jfif"
   }
 ];
