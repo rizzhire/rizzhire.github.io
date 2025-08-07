@@ -6,7 +6,7 @@ export default function Testimonials() {
     <section className="py-20 px-4 bg-cream">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <div className="center-heading">
+          <div className="flex justify-start">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 relative">
               Client <span className="text-yellow">Testimonials</span>
               <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-yellow via-yellow to-transparent rounded-full"></div>
