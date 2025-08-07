@@ -1,14 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Award, Users, Globe, Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function About() {
-  const stats = [
-    { number: "15+", label: "Years Experience", icon: Award },
-    { number: "1000+", label: "Successful Placements", icon: Users },
-    { number: "50+", label: "Partner Companies", icon: Globe },
-    { number: "95%", label: "Success Rate", icon: Target }
-  ];
 
   const values = [
     {
@@ -42,21 +36,9 @@ export default function About() {
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             About <span className="text-yellow">HireNET</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Transforming careers and businesses through strategic talent acquisition across the Middle East and beyond.
           </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-yellow/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-yellow" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
