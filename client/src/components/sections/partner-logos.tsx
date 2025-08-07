@@ -151,7 +151,7 @@ export default function PartnerLogos() {
           }
         `}
       >
-        <h3 className="text-center text-2xl font-bold mb-6">Our <span className="text-yellow">Partners</span></h3>
+        <h2 className="text-center text-4xl md:text-5xl font-bold mb-6">Our <span className="text-yellow">Partners</span></h2>
         <p className="text-center text-gray-600">Trusted by leading organizations across the Middle East and beyond.</p>
       </div>
       
