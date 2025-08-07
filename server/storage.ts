@@ -127,7 +127,7 @@ export class MemStorage implements IStorage {
         quote: "Working with HireNET has been a game-changer for our recruitment strategy. They consistently deliver high-quality candidates who fit perfectly with our company culture and requirements. Truly professional service.",
         rating: 5,
         initials: "HH",
-        photo: "1745582043221_1754557397106.jfif"
+        photo: "1690380156319_1754558242108.jfif"
       },
       {
         name: "Alaa Mahmoud",
