@@ -43,7 +43,7 @@ export const testimonials = [
     quote: "HireNET transformed our hiring process. Their deep understanding of Middle East talent markets helped us secure exceptional candidates for our senior positions. Their professional approach and cultural awareness are unmatched.",
     rating: 5,
     initials: "FA",
-    photo: "1690380156319_1754556183000.jfif"
+    photo: "1690380156319_1754556663346.jfif"
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ export const testimonials = [
     quote: "Working with HireNET has been a game-changer for our recruitment strategy. They consistently deliver high-quality candidates who fit perfectly with our company culture and requirements. Truly professional service.",
     rating: 5,
     initials: "HH",
-    photo: "1745582043221_1754556183001.jfif"
+    photo: "1745582043221_1754556669368.jfif"
   },
   {
     id: 3,
@@ -62,9 +62,9 @@ export const testimonials = [
     position: "Chief People Officer",
     company: "Meridian Business Solutions",
     location: "Riyadh, Saudi Arabia",
-    quote: "HireNET's expertise in executive search within the GCC region is remarkable. They helped us build our leadership team with outstanding professionals. Their attention to detail and market knowledge sets them apart.",
+    quote: "HireNET's expertise in operational recruitment within the GCC region is remarkable. They helped us fill our entry-level and mid-tier positions with qualified professionals. Their attention to detail and market knowledge sets them apart.",
     rating: 5,
     initials: "AM",
-    photo: "1730798849991_1754556183001.jfif"
+    photo: "1730798849991_1754556656594.jfif"
   }
 ];

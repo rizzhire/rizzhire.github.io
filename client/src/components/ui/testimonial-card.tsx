@@ -11,7 +11,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
     <Card className="cream p-8 rounded-3xl border-0">
       <CardContent className="p-0">
         <div className="flex items-center mb-6">
-          <div className="w-16 h-16 mr-4 overflow-hidden rounded-full border-2 border-yellow/20">
+          <div className="w-16 h-16 mr-4 overflow-hidden rounded-2xl border-2 border-yellow/20">
             {testimonial.photo ? (
               <img 
                 src={`/attached_assets/${testimonial.photo}`}
