@@ -110,31 +110,34 @@ export class MemStorage implements IStorage {
     // Sample testimonials
     const sampleTestimonials: InsertTestimonial[] = [
       {
-        name: "Sarah Ahmed",
-        position: "Data Engineer",
-        company: "Emirates Group",
+        name: "Fatima Almasi",
+        position: "Head of Human Resources",
+        company: "Al Safwa Enterprises",
         location: "Dubai, UAE",
-        quote: "HireNET transformed my career. Within 3 weeks, I landed my dream job in Dubai with a 40% salary increase.",
+        quote: "HireNET transformed our hiring process. Their deep understanding of Middle East talent markets helped us secure exceptional candidates for our senior positions. Their professional approach and cultural awareness are unmatched.",
         rating: 5,
-        initials: "SA"
+        initials: "FA",
+        photo: "1690380156319_1754557393041.jfif"
       },
       {
-        name: "Mohammed Al-Rashid",
-        position: "Project Manager",
-        company: "Qatar Airways",
-        location: "Doha, Qatar",
-        quote: "The personalized guidance and resume review helped me stand out. Excellent service throughout the process.",
-        rating: 5,
-        initials: "MA"
-      },
-      {
-        name: "Priya Sharma",
+        name: "Hamdaad Hakimi",
         position: "HR Director",
-        company: "ADNOC",
-        location: "Abu Dhabi, UAE",
-        quote: "Professional, efficient, and results-driven. HireNET exceeded all my expectations for career advancement.",
+        company: "Gulf Bridge Holdings",
+        location: "Doha, Qatar",
+        quote: "Working with HireNET has been a game-changer for our recruitment strategy. They consistently deliver high-quality candidates who fit perfectly with our company culture and requirements. Truly professional service.",
         rating: 5,
-        initials: "PS"
+        initials: "HH",
+        photo: "1745582043221_1754557397106.jfif"
+      },
+      {
+        name: "Alaa Mahmoud",
+        position: "Chief People Officer",
+        company: "Meridian Business Solutions",
+        location: "Riyadh, Saudi Arabia",
+        quote: "HireNET's expertise in operational recruitment within the GCC region is remarkable. They helped us fill our entry-level and mid-tier positions with qualified professionals. Their attention to detail and market knowledge sets them apart.",
+        rating: 5,
+        initials: "AM",
+        photo: "1730012710886_1754557387527.jfif"
       }
     ];
 

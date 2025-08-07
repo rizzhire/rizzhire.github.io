@@ -47,7 +47,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Hamdaad Hakimi",
+    name: "Hamdaad Hakimi", 
     position: "HR Director",
     company: "Gulf Bridge Holdings",
     location: "Doha, Qatar",
@@ -59,7 +59,7 @@ export const testimonials = [
   {
     id: 3,
     name: "Alaa Mahmoud",
-    position: "Chief People Officer",
+    position: "Chief People Officer", 
     company: "Meridian Business Solutions",
     location: "Riyadh, Saudi Arabia",
     quote: "HireNET's expertise in operational recruitment within the GCC region is remarkable. They helped us fill our entry-level and mid-tier positions with qualified professionals. Their attention to detail and market knowledge sets them apart.",
