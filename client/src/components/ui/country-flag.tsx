@@ -12,7 +12,7 @@ interface CountryFlagProps {
 }
 
 export default function CountryFlag({ country, code }: CountryFlagProps) {
-  const baseClass = "w-20 h-14 md:w-28 md:h-20 rounded-2xl border border-white/20 cursor-pointer hover:scale-105 transition-transform duration-200 relative overflow-hidden" 
+  const baseClass = "w-20 h-14 md:w-24 md:h-16 rounded-2xl border border-white/20 cursor-pointer hover:scale-105 transition-transform duration-200 relative overflow-hidden" 
     + " shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20";
 
   const getFlagImage = () => {
