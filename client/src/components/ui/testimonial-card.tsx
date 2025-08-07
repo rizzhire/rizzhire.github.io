@@ -8,8 +8,8 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="cream p-6 rounded-3xl border-0">
-      <CardContent className="p-0">
+    <Card className="cream p-6 rounded-3xl border-0 h-full">
+      <CardContent className="p-0 h-full flex flex-col">
         <div className="flex items-center mb-4">
           <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 relative">
             <img 
@@ -34,10 +34,10 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             ))}
           </div>
         </div>
-        <blockquote className="text-gray-700 mb-4 italic text-sm min-h-[120px] flex items-end">
-          <span>"{testimonial.quote}"</span>
+        <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
+          "{testimonial.quote}"
         </blockquote>
-        <div className="text-sm">
+        <div className="text-sm mt-auto">
           <div className="font-bold">{testimonial.name}</div>
           <div className="text-gray-600">{testimonial.position}</div>
           <div className="text-gray-600">{testimonial.company}</div>
