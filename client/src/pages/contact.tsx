@@ -69,7 +69,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-cream to-yellow/10 relative overflow-hidden">
+      <section className="py-20 px-4 cream relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 right-10 w-40 h-40 bg-yellow rounded-full animate-float"></div>
           <div className="absolute bottom-20 left-20 w-32 h-32 bg-gray-400 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
@@ -90,7 +90,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="bg-white p-6 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-0 text-center">
                   <div className={`w-16 h-16 ${info.color.replace('text-', 'bg-').replace('-600', '-100')} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <info.icon className={`w-8 h-8 ${info.color}`} />

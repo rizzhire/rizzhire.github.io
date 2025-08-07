@@ -32,7 +32,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-cream to-yellow/10 relative overflow-hidden">
+      <section className="py-20 px-4 cream relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-40 h-40 bg-yellow rounded-full animate-float"></div>
           <div className="absolute bottom-20 right-20 w-32 h-32 bg-gray-400 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
