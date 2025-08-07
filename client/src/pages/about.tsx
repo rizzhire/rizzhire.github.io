@@ -101,12 +101,12 @@ export default function About() {
         </div>
       </section>
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-black text-white">
+      <section className="py-20 px-4 bg-cream">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
             Our <span className="text-yellow">Mission</span>
           </h2>
-          <p className="text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto mb-12">
+          <p className="text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto mb-12 text-gray-600">
             To be the catalyst for career transformation and organizational growth by connecting 
             exceptional talent with visionary companies across the Middle East and beyond.
           </p>
