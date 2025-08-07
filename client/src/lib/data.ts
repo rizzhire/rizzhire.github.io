@@ -43,7 +43,7 @@ export const testimonials = [
     quote: "HireNET transformed our hiring process. Their deep understanding of Middle East talent markets helped us secure exceptional candidates for our senior positions. Their professional approach and cultural awareness are unmatched.",
     rating: 5,
     initials: "FA",
-    photo: "1690380156319_1754557043857.jfif"
+    photo: "1690380156319_1754557393041.jfif"
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ export const testimonials = [
     quote: "Working with HireNET has been a game-changer for our recruitment strategy. They consistently deliver high-quality candidates who fit perfectly with our company culture and requirements. Truly professional service.",
     rating: 5,
     initials: "HH",
-    photo: "1745582043221_1754557049061.jfif"
+    photo: "1745582043221_1754557397106.jfif"
   },
   {
     id: 3,
@@ -65,6 +65,6 @@ export const testimonials = [
     quote: "HireNET's expertise in operational recruitment within the GCC region is remarkable. They helped us fill our entry-level and mid-tier positions with qualified professionals. Their attention to detail and market knowledge sets them apart.",
     rating: 5,
     initials: "AM",
-    photo: "1737806836994_1754557004440.jfif"
+    photo: "1730012710886_1754557387527.jfif"
   }
 ];
