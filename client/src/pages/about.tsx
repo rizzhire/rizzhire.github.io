@@ -41,7 +41,6 @@ export default function About() {
           </p>
         </div>
       </section>
-
       {/* Our Story Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -70,14 +69,13 @@ export default function About() {
                 <div className="relative z-10 text-center">
                   <div className="text-5xl font-bold text-yellow mb-4">2010</div>
                   <div className="text-gray-700 font-semibold text-xl mb-2">Founded</div>
-                  <div className="text-gray-600">Started our journey in Dubai</div>
+                  <div className="text-gray-600">Started our journey from UAE</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Values Section */}
       <section className="py-20 px-4 bg-cream">
         <div className="max-w-6xl mx-auto">
@@ -102,7 +100,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Mission Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="max-w-6xl mx-auto text-center">
