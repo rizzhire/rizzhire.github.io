@@ -30,6 +30,16 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const navigateToAbout = () => {
+    setLocation('/about');
+    setIsMenuOpen(false);
+  };
+
+  const navigateToContact = () => {
+    setLocation('/contact');
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black navbar-slide-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +66,7 @@ export default function Navbar() {
                 Industries we serve
               </button>
               <button 
-                onClick={() => scrollToSection('about')}
+                onClick={navigateToAbout}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
                 About
@@ -68,7 +78,7 @@ export default function Navbar() {
                 Blog
               </button>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={navigateToContact}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Contact

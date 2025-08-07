@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="cream p-6 rounded-3xl border-0 h-full">
+    <Card className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full group">
       <CardContent className="p-0 h-full flex flex-col">
         <div className="flex items-center mb-4">
           <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 relative">

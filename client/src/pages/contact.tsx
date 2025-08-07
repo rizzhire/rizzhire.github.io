@@ -1,0 +1,240 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: ""
+  });
+  const { toast } = useToast();
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      details: ["Dubai Business Bay", "Sheikh Zayed Road", "UAE"],
+      color: "text-blue-600"
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: ["+971 4 XXX XXXX", "+971 50 XXX XXXX", "Available 24/7"],
+      color: "text-green-600"
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: ["info@hirenet.com", "careers@hirenet.com", "support@hirenet.com"],
+      color: "text-purple-600"
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      details: ["Mon - Fri: 9AM - 6PM", "Saturday: 10AM - 4PM", "Sunday: Closed"],
+      color: "text-orange-600"
+    }
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We'll get back to you soon.",
+    });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      service: "",
+      message: ""
+    });
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-cream to-yellow/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-10 w-40 h-40 bg-yellow rounded-full animate-float"></div>
+          <div className="absolute bottom-20 left-20 w-32 h-32 bg-gray-400 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto text-center relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            Get In <span className="text-yellow">Touch</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Ready to transform your career or find the perfect talent? Let's start a conversation.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {contactInfo.map((info, index) => (
+              <Card key={index} className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-0 text-center">
+                  <div className={`w-16 h-16 ${info.color.replace('text-', 'bg-').replace('-600', '-100')} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                    <info.icon className={`w-8 h-8 ${info.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{info.title}</h3>
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-600 text-sm mb-1">{detail}</p>
+                  ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-20 px-4 bg-cream">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Send Us a <span className="text-yellow">Message</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Whether you're looking for your next opportunity or seeking top talent, we're here to help.
+            </p>
+          </div>
+
+          <Card className="bg-white p-8 md:p-12 rounded-3xl border-0 shadow-lg">
+            <CardContent className="p-0">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-gray-700 font-semibold">Full Name *</Label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange("name", e.target.value)}
+                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-gray-700 font-semibold">Email Address *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-gray-700 font-semibold">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="company" className="text-gray-700 font-semibold">Company</Label>
+                    <Input
+                      id="company"
+                      value={formData.company}
+                      onChange={(e) => handleInputChange("company", e.target.value)}
+                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      placeholder="Enter your company name"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="service" className="text-gray-700 font-semibold">Service Interest</Label>
+                  <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
+                    <SelectTrigger className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50">
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="recruitment">Recruitment Consultancy</SelectItem>
+                      <SelectItem value="manpower">Manpower Supply</SelectItem>
+                      <SelectItem value="consultancy">Management Consultancy</SelectItem>
+                      <SelectItem value="jobseeker">Job Seeker Services</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-gray-700 font-semibold">Message *</Label>
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={(e) => handleInputChange("message", e.target.value)}
+                    className="bg-gray-50 border-0 rounded-xl p-4 min-h-32 focus:ring-2 focus:ring-yellow/50 resize-none"
+                    placeholder="Tell us about your requirements or inquiry..."
+                    required
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-105"
+                >
+                  Send Message <Send className="w-5 h-5 ml-2" />
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-20 px-4 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Find <span className="text-yellow">Us</span>
+            </h2>
+            <p className="text-xl text-gray-600">Located in the heart of Dubai's business district</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-12 text-center">
+            <div className="w-20 h-20 bg-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <MapPin className="w-10 h-10 text-yellow" />
+            </div>
+            <h3 className="text-2xl font-bold mb-4">Dubai Office</h3>
+            <p className="text-gray-600 text-lg mb-6">
+              Business Bay, Sheikh Zayed Road<br />
+              Dubai, United Arab Emirates
+            </p>
+            <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl">
+              Get Directions
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

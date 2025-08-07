@@ -40,7 +40,7 @@ export default function Contact() {
   const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation();
 
   return (
-    <section id="contact" className="py-20 px-4 bg-white">
+    <section id="contact" className="py-20 px-4 bg-gradient-to-b from-white via-cream/20 to-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>

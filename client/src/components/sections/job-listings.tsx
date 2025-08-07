@@ -10,7 +10,7 @@ export default function JobListings() {
   const { containerRef, visibleItems } = useStaggeredAnimation(jobs.length, 100);
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-gradient-to-b from-white via-gray-50/30 to-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Latest Opportunities</h2>

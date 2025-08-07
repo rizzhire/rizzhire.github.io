@@ -45,7 +45,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative cream pt-2 pb-20">
+    <section id="services" className="relative bg-gradient-to-b from-white via-cream/30 to-white pt-2 pb-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -62,7 +62,7 @@ export default function Services() {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className={`${service.bgColor} p-6 rounded-2xl border-0 shadow-sm hover:shadow-md transition-shadow duration-300`}
+              className={`${service.bgColor} p-6 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group`}
             >
               <CardContent className="p-0">
                 <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
