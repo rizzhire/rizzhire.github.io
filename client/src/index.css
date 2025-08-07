@@ -74,6 +74,14 @@
     background-color: #F5F3EB;
   }
   
+  .center-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+  
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -214,7 +222,6 @@
     opacity: 0.3;
     transition: 0s;
   }
-}
 
 @keyframes float {
   0%, 100% {
