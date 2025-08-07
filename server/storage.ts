@@ -137,7 +137,7 @@ export class MemStorage implements IStorage {
         quote: "HireNET's expertise in operational recruitment within the GCC region is remarkable. They helped us fill our entry-level and mid-tier positions with qualified professionals. Their attention to detail and market knowledge sets them apart.",
         rating: 5,
         initials: "AM",
-        photo: "1730012710886_1754557387527.jfif"
+        photo: "1745582043221_1754558272295.jfif"
       }
     ];
 
