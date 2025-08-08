@@ -134,21 +134,21 @@ export default function Services() {
             </defs>
             
             <path 
-              d="M-50,120 C200,100 350,140 550,130 C750,120 900,100 1050,110" 
+              d="M-150,120 C-50,110 100,140 300,130 C500,120 700,100 900,105 C1000,108 1100,110 1150,110" 
               stroke="url(#servicesPageWavy1)" 
               strokeWidth="1.3" 
               fill="none"
               className="animate-wavyTravel1"
-              style={{animationDelay: '1s'}}
+              style={{animationDelay: '2s'}}
             />
             
             <path 
-              d="M1050,320 C800,300 650,350 450,340 C250,330 150,320 -50,310" 
+              d="M1150,320 C1050,310 900,350 700,340 C500,330 300,320 150,315 C50,312 -50,310 -150,310" 
               stroke="url(#servicesPageWavy2)" 
               strokeWidth="1.0" 
               fill="none"
               className="animate-wavyTravel2"
-              style={{animationDelay: '4s'}}
+              style={{animationDelay: '5s'}}
             />
           </svg>
         </div>

@@ -61,21 +61,21 @@ export default function About() {
             </defs>
             
             <path 
-              d="M-50,100 C250,80 450,120 700,110 C850,105 950,95 1050,90" 
+              d="M-150,100 C-50,90 100,120 350,110 C600,105 800,95 950,92 C1050,90 1100,88 1150,90" 
               stroke="url(#aboutWavy1)" 
               strokeWidth="1.2" 
               fill="none"
               className="animate-wavyTravel3"
-              style={{animationDelay: '2s'}}
+              style={{animationDelay: '3s'}}
             />
             
             <path 
-              d="M1050,280 C750,300 550,250 350,260 C200,265 100,285 -50,290" 
+              d="M1150,280 C1050,290 900,250 650,260 C400,265 250,285 100,288 C0,290 -50,291 -150,290" 
               stroke="url(#aboutWavy2)" 
               strokeWidth="1.0" 
               fill="none"
               className="animate-wavyTravel4"
-              style={{animationDelay: '6s'}}
+              style={{animationDelay: '7s'}}
             />
           </svg>
         </div>

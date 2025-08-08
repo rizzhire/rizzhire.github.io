@@ -63,42 +63,42 @@ export default function Hero() {
           
           {/* Smooth Wavy Path 1: Flowing diagonal wave */}
           <path 
-            d="M-50,100 C150,80 200,120 350,110 C500,100 650,140 800,130 C900,125 950,135 1050,180" 
+            d="M-150,100 C-50,90 50,120 200,110 C350,100 500,140 650,130 C800,125 900,135 1150,180" 
             stroke="url(#wavyGradient1)" 
             strokeWidth="1.5" 
             fill="none"
             className="animate-wavyTravel1"
-            style={{animationDelay: '2s'}}
+            style={{animationDelay: '3s'}}
           />
           
           {/* Smooth Wavy Path 2: Elegant S-curve */}
           <path 
-            d="M1050,250 C900,230 800,270 650,260 C500,250 350,290 200,280 C100,275 50,285 -50,320" 
+            d="M1150,250 C1050,240 950,270 800,260 C650,250 500,290 350,280 C200,275 100,285 -150,320" 
             stroke="url(#wavyGradient2)" 
             strokeWidth="1.2" 
             fill="none"
             className="animate-wavyTravel2"
-            style={{animationDelay: '6s'}}
+            style={{animationDelay: '7s'}}
           />
           
           {/* Smooth Wavy Path 3: Curved bottom flow */}
           <path 
-            d="M1050,480 C850,470 750,420 550,430 C350,440 250,400 150,410 C75,415 25,405 -50,380" 
+            d="M1150,480 C1000,470 900,420 700,430 C500,440 350,400 200,410 C100,415 0,405 -150,380" 
             stroke="url(#wavyGradient3)" 
             strokeWidth="1.4" 
             fill="none"
             className="animate-wavyTravel3"
-            style={{animationDelay: '10s'}}
+            style={{animationDelay: '11s'}}
           />
           
           {/* Smooth Wavy Path 4: Gentle middle wave */}
           <path 
-            d="M-50,350 C100,340 200,380 350,370 C500,360 650,390 800,380 C900,375 975,385 1050,395" 
+            d="M-150,350 C-50,340 50,380 200,370 C350,360 500,390 650,380 C800,375 900,385 1150,395" 
             stroke="url(#wavyGradient4)" 
             strokeWidth="1.1" 
             fill="none"
             className="animate-wavyTravel4"
-            style={{animationDelay: '14s'}}
+            style={{animationDelay: '15s'}}
           />
         </svg>
         

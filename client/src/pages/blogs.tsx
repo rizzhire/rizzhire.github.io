@@ -123,21 +123,21 @@ export default function Blogs() {
             </defs>
             
             <path 
-              d="M-50,110 C250,90 450,130 700,120 C850,115 950,105 1050,100" 
+              d="M-150,110 C-50,100 100,130 350,120 C600,115 800,105 950,102 C1050,100 1100,98 1150,100" 
               stroke="url(#blogsWavy1)" 
               strokeWidth="1.3" 
               fill="none"
               className="animate-wavyTravel1"
-              style={{animationDelay: '4s'}}
+              style={{animationDelay: '5s'}}
             />
             
             <path 
-              d="M1050,290 C750,310 550,260 350,270 C200,275 100,295 -50,300" 
+              d="M1150,290 C1050,300 900,260 650,270 C400,275 250,295 100,298 C0,300 -50,301 -150,300" 
               stroke="url(#blogsWavy2)" 
               strokeWidth="1.0" 
               fill="none"
               className="animate-wavyTravel2"
-              style={{animationDelay: '7s'}}
+              style={{animationDelay: '8s'}}
             />
           </svg>
         </div>

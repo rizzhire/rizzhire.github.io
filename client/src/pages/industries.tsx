@@ -95,21 +95,21 @@ export default function Industries() {
             </defs>
             
             <path 
-              d="M-50,150 C200,130 350,170 550,160 C750,150 900,130 1050,140" 
+              d="M-150,150 C-50,140 100,170 300,160 C500,150 700,130 900,135 C1000,138 1100,140 1150,140" 
               stroke="url(#industriesWavy1)" 
               strokeWidth="1.4" 
               fill="none"
               className="animate-wavyTravel1"
-              style={{animationDelay: '3s'}}
+              style={{animationDelay: '4s'}}
             />
             
             <path 
-              d="M1050,450 C800,430 650,470 450,460 C250,450 150,440 -50,440" 
+              d="M1150,450 C1050,440 900,470 700,460 C500,450 300,440 150,438 C50,437 -50,438 -150,440" 
               stroke="url(#industriesWavy2)" 
               strokeWidth="1.1" 
               fill="none"
               className="animate-wavyTravel2"
-              style={{animationDelay: '8s'}}
+              style={{animationDelay: '9s'}}
             />
           </svg>
           

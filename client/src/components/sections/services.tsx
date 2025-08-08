@@ -82,21 +82,21 @@ export default function Services() {
           </defs>
           
           <path 
-            d="M-50,80 C200,60 300,100 500,90 C700,80 850,70 1050,90" 
+            d="M-150,80 C-50,70 100,100 300,90 C500,80 700,70 900,80 C1000,85 1100,90 1150,90" 
             stroke="url(#servicesWavy1)" 
             strokeWidth="1.2" 
             fill="none"
             className="animate-wavyTravel1"
-            style={{animationDelay: '3s'}}
+            style={{animationDelay: '4s'}}
           />
           
           <path 
-            d="M1050,300 C800,280 650,320 450,310 C250,300 150,290 -50,280" 
+            d="M1150,300 C1050,290 950,320 750,310 C550,300 350,290 200,285 C100,282 0,278 -150,280" 
             stroke="url(#servicesWavy2)" 
             strokeWidth="1.0" 
             fill="none"
             className="animate-wavyTravel2"
-            style={{animationDelay: '7s'}}
+            style={{animationDelay: '8s'}}
           />
         </svg>
       </div>

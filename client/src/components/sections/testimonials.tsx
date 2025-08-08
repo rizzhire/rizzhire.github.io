@@ -39,21 +39,21 @@ export default function Testimonials() {
           </defs>
           
           <path 
-            d="M-50,220 C250,200 400,250 650,240 C800,235 900,210 1050,200" 
+            d="M-150,220 C-50,210 100,250 350,240 C600,235 800,210 950,205 C1050,202 1100,198 1150,200" 
             stroke="url(#testimonialsWavy1)" 
             strokeWidth="1.1" 
             fill="none"
             className="animate-wavyTravel3"
-            style={{animationDelay: '5s'}}
+            style={{animationDelay: '6s'}}
           />
           
           <path 
-            d="M1050,60 C750,80 550,40 350,50 C200,55 100,70 -50,80" 
+            d="M1150,60 C1050,70 900,40 650,50 C400,55 250,70 100,75 C0,78 -50,80 -150,80" 
             stroke="url(#testimonialsWavy2)" 
             strokeWidth="0.9" 
             fill="none"
             className="animate-wavyTravel4"
-            style={{animationDelay: '9s'}}
+            style={{animationDelay: '10s'}}
           />
         </svg>
       </div>
