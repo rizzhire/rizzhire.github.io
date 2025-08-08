@@ -113,88 +113,65 @@ export default function Blogs() {
             <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
           
-          {/* Infinite Looping DNA-like Graphics */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 1800 400" style={{animationDuration: '18s'}}>
+          {/* Infinite Intersecting Curved Lines - No Endpoints */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 2400 400" style={{animationDuration: '25s'}}>
             <defs>
-              <linearGradient id="blogsDNAGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.15"/>
+              <linearGradient id="blogsInfiniteCurve1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2"/>
               </linearGradient>
-              <linearGradient id="blogsDNAGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.25"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.12"/>
-              </linearGradient>
-              <linearGradient id="blogsDNAGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.26"/>
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-              </linearGradient>
-              <linearGradient id="blogsDNAGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
-                <stop offset="0%" stopColor="#f97316" stopOpacity="0.11"/>
-                <stop offset="50%" stopColor="#f97316" stopOpacity="0.22"/>
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0.11"/>
+              <linearGradient id="blogsInfiniteCurve2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.18"/>
+                <stop offset="25%" stopColor="#3b82f6" stopOpacity="0.35"/>
+                <stop offset="75%" stopColor="#3b82f6" stopOpacity="0.35"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.18"/>
               </linearGradient>
             </defs>
             
-            {/* DNA Helix Pattern 1 - Upper flowing wave */}
+            {/* First Infinite Curved Line - Upper Wave */}
             <path 
-              d="M0,100 C150,85 300,115 450,100 C600,85 750,115 900,100 C1050,85 1200,115 1350,100 C1500,85 1650,115 1800,100" 
-              stroke="url(#blogsDNAGradient1)" 
-              strokeWidth="1.7" 
+              d="M0,120 Q120,80 240,120 T480,120 T720,120 T960,120 T1200,120 T1440,120 T1680,120 T1920,120 T2160,120 T2400,120 T2640,120" 
+              stroke="url(#blogsInfiniteCurve1)" 
+              strokeWidth="2.3" 
               fill="none"
             />
             
-            {/* DNA Helix Pattern 2 - Complementary wave */}
+            {/* Second Infinite Curved Line - Lower Intersecting Wave */}
             <path 
-              d="M0,180 C150,195 300,165 450,180 C600,195 750,165 900,180 C1050,195 1200,165 1350,180 C1500,195 1650,165 1800,180" 
-              stroke="url(#blogsDNAGradient2)" 
-              strokeWidth="1.5" 
+              d="M0,280 Q120,320 240,280 T480,280 T720,280 T960,280 T1200,280 T1440,280 T1680,280 T1920,280 T2160,280 T2400,280 T2640,280" 
+              stroke="url(#blogsInfiniteCurve2)" 
+              strokeWidth="2.0" 
               fill="none"
             />
             
-            {/* DNA Helix Pattern 3 - Lower flowing wave */}
+            {/* Third Infinite Curved Line - Middle Intersecting Wave */}
             <path 
-              d="M0,250 C150,235 300,265 450,250 C600,235 750,265 900,250 C1050,235 1200,265 1350,250 C1500,235 1650,265 1800,250" 
-              stroke="url(#blogsDNAGradient3)" 
-              strokeWidth="1.3" 
+              d="M0,200 Q80,140 160,200 Q240,260 320,200 Q400,140 480,200 Q560,260 640,200 Q720,140 800,200 Q880,260 960,200 Q1040,140 1120,200 Q1200,260 1280,200 Q1360,140 1440,200 Q1520,260 1600,200 Q1680,140 1760,200 Q1840,260 1920,200 Q2000,140 2080,200 Q2160,260 2240,200 Q2320,140 2400,200" 
+              stroke="url(#blogsInfiniteCurve1)" 
+              strokeWidth="1.6" 
               fill="none"
+              opacity="0.8"
             />
             
-            {/* DNA Helix Pattern 4 - Connecting strands */}
+            {/* Fourth Infinite Curved Line - Counter Wave */}
             <path 
-              d="M0,320 C150,335 300,305 450,320 C600,335 750,305 900,320 C1050,335 1200,305 1350,320 C1500,335 1650,305 1800,320" 
-              stroke="url(#blogsDNAGradient4)" 
-              strokeWidth="1.1" 
+              d="M0,100 Q80,160 160,100 Q240,40 320,100 Q400,160 480,100 Q560,40 640,100 Q720,160 800,100 Q880,40 960,100 Q1040,160 1120,100 Q1200,40 1280,100 Q1360,160 1440,100 Q1520,40 1600,100 Q1680,160 1760,100 Q1840,40 1920,100 Q2000,160 2080,100 Q2160,40 2240,100 Q2320,160 2400,100" 
+              stroke="url(#blogsInfiniteCurve2)" 
+              strokeWidth="1.4" 
               fill="none"
+              opacity="0.7"
             />
             
-            {/* Vertical connecting lines - DNA base pairs */}
-            <g stroke="url(#blogsDNAGradient1)" strokeWidth="0.7" opacity="0.4">
-              <line x1="75" y1="110" x2="75" y2="170" />
-              <line x1="225" y1="110" x2="225" y2="170" />
-              <line x1="375" y1="110" x2="375" y2="170" />
-              <line x1="525" y1="110" x2="525" y2="170" />
-              <line x1="675" y1="110" x2="675" y2="170" />
-              <line x1="825" y1="110" x2="825" y2="170" />
-              <line x1="975" y1="110" x2="975" y2="170" />
-              <line x1="1125" y1="110" x2="1125" y2="170" />
-              <line x1="1275" y1="110" x2="1275" y2="170" />
-              <line x1="1425" y1="110" x2="1425" y2="170" />
-            </g>
-            
-            <g stroke="url(#blogsDNAGradient3)" strokeWidth="0.7" opacity="0.3">
-              <line x1="125" y1="260" x2="125" y2="310" />
-              <line x1="275" y1="260" x2="275" y2="310" />
-              <line x1="425" y1="260" x2="425" y2="310" />
-              <line x1="575" y1="260" x2="575" y2="310" />
-              <line x1="725" y1="260" x2="725" y2="310" />
-              <line x1="875" y1="260" x2="875" y2="310" />
-              <line x1="1025" y1="260" x2="1025" y2="310" />
-              <line x1="1175" y1="260" x2="1175" y2="310" />
-              <line x1="1325" y1="260" x2="1325" y2="310" />
-            </g>
+            {/* Fifth Infinite Curved Line - Large Amplitude Wave */}
+            <path 
+              d="M0,350 Q160,250 320,350 T640,350 T960,350 T1280,350 T1600,350 T1920,350 T2240,350 T2560,350" 
+              stroke="url(#blogsInfiniteCurve2)" 
+              strokeWidth="1.2" 
+              fill="none"
+              opacity="0.6"
+            />
           </svg>
         </div>
         

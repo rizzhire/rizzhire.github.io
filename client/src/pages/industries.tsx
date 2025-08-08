@@ -79,88 +79,65 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Infinite Looping DNA-like Graphics */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 2000 600" style={{animationDuration: '20s'}}>
+          {/* Infinite Intersecting Curved Lines - No Endpoints */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 3000 600" style={{animationDuration: '30s'}}>
             <defs>
-              <linearGradient id="industriesDNAGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.15"/>
+              <linearGradient id="industriesInfiniteCurve1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2"/>
               </linearGradient>
-              <linearGradient id="industriesDNAGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.25"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.12"/>
-              </linearGradient>
-              <linearGradient id="industriesDNAGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.26"/>
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-              </linearGradient>
-              <linearGradient id="industriesDNAGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
-                <stop offset="0%" stopColor="#f97316" stopOpacity="0.11"/>
-                <stop offset="50%" stopColor="#f97316" stopOpacity="0.22"/>
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0.11"/>
+              <linearGradient id="industriesInfiniteCurve2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.18"/>
+                <stop offset="25%" stopColor="#3b82f6" stopOpacity="0.35"/>
+                <stop offset="75%" stopColor="#3b82f6" stopOpacity="0.35"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.18"/>
               </linearGradient>
             </defs>
             
-            {/* DNA Helix Pattern 1 - Upper flowing wave */}
+            {/* First Infinite Curved Line - Sine Wave Pattern */}
             <path 
-              d="M0,150 C200,130 400,170 600,150 C800,130 1000,170 1200,150 C1400,130 1600,170 1800,150 C2000,130 2200,170 2400,150" 
-              stroke="url(#industriesDNAGradient1)" 
+              d="M0,200 Q150,120 300,200 T600,200 T900,200 T1200,200 T1500,200 T1800,200 T2100,200 T2400,200 T2700,200 T3000,200 T3300,200 T3600,200" 
+              stroke="url(#industriesInfiniteCurve1)" 
+              strokeWidth="2.5" 
+              fill="none"
+            />
+            
+            {/* Second Infinite Curved Line - Complementary Intersecting Wave */}
+            <path 
+              d="M0,400 Q150,480 300,400 T600,400 T900,400 T1200,400 T1500,400 T1800,400 T2100,400 T2400,400 T2700,400 T3000,400 T3300,400 T3600,400" 
+              stroke="url(#industriesInfiniteCurve2)" 
+              strokeWidth="2.2" 
+              fill="none"
+            />
+            
+            {/* Third Infinite Curved Line - Middle Intersecting Wave */}
+            <path 
+              d="M0,300 Q100,220 200,300 Q300,380 400,300 Q500,220 600,300 Q700,380 800,300 Q900,220 1000,300 Q1100,380 1200,300 Q1300,220 1400,300 Q1500,380 1600,300 Q1700,220 1800,300 Q1900,380 2000,300 Q2100,220 2200,300 Q2300,380 2400,300 Q2500,220 2600,300 Q2700,380 2800,300 Q2900,220 3000,300" 
+              stroke="url(#industriesInfiniteCurve1)" 
               strokeWidth="1.8" 
               fill="none"
+              opacity="0.8"
             />
             
-            {/* DNA Helix Pattern 2 - Complementary wave */}
+            {/* Fourth Infinite Curved Line - Counter Wave */}
             <path 
-              d="M0,250 C200,270 400,230 600,250 C800,270 1000,230 1200,250 C1400,270 1600,230 1800,250 C2000,270 2200,230 2400,250" 
-              stroke="url(#industriesDNAGradient2)" 
+              d="M0,150 Q100,230 200,150 Q300,70 400,150 Q500,230 600,150 Q700,70 800,150 Q900,230 1000,150 Q1100,70 1200,150 Q1300,230 1400,150 Q1500,70 1600,150 Q1700,230 1800,150 Q1900,70 2000,150 Q2100,230 2200,150 Q2300,70 2400,150 Q2500,230 2600,150 Q2700,70 2800,150 Q2900,230 3000,150" 
+              stroke="url(#industriesInfiniteCurve2)" 
               strokeWidth="1.6" 
               fill="none"
+              opacity="0.7"
             />
             
-            {/* DNA Helix Pattern 3 - Lower flowing wave */}
+            {/* Fifth Infinite Curved Line - Large Amplitude Wave */}
             <path 
-              d="M0,350 C200,330 400,370 600,350 C800,330 1000,370 1200,350 C1400,330 1600,370 1800,350 C2000,330 2200,370 2400,350" 
-              stroke="url(#industriesDNAGradient3)" 
+              d="M0,450 Q200,350 400,450 T800,450 T1200,450 T1600,450 T2000,450 T2400,450 T2800,450 T3200,450 T3600,450" 
+              stroke="url(#industriesInfiniteCurve2)" 
               strokeWidth="1.4" 
               fill="none"
+              opacity="0.6"
             />
-            
-            {/* DNA Helix Pattern 4 - Connecting strands */}
-            <path 
-              d="M0,450 C200,470 400,430 600,450 C800,470 1000,430 1200,450 C1400,470 1600,430 1800,450 C2000,470 2200,430 2400,450" 
-              stroke="url(#industriesDNAGradient4)" 
-              strokeWidth="1.2" 
-              fill="none"
-            />
-            
-            {/* Vertical connecting lines - DNA base pairs */}
-            <g stroke="url(#industriesDNAGradient1)" strokeWidth="0.8" opacity="0.4">
-              <line x1="100" y1="160" x2="100" y2="240" />
-              <line x1="300" y1="160" x2="300" y2="240" />
-              <line x1="500" y1="160" x2="500" y2="240" />
-              <line x1="700" y1="160" x2="700" y2="240" />
-              <line x1="900" y1="160" x2="900" y2="240" />
-              <line x1="1100" y1="160" x2="1100" y2="240" />
-              <line x1="1300" y1="160" x2="1300" y2="240" />
-              <line x1="1500" y1="160" x2="1500" y2="240" />
-              <line x1="1700" y1="160" x2="1700" y2="240" />
-              <line x1="1900" y1="160" x2="1900" y2="240" />
-            </g>
-            
-            <g stroke="url(#industriesDNAGradient3)" strokeWidth="0.8" opacity="0.3">
-              <line x1="150" y1="360" x2="150" y2="440" />
-              <line x1="350" y1="360" x2="350" y2="440" />
-              <line x1="550" y1="360" x2="550" y2="440" />
-              <line x1="750" y1="360" x2="750" y2="440" />
-              <line x1="950" y1="360" x2="950" y2="440" />
-              <line x1="1150" y1="360" x2="1150" y2="440" />
-              <line x1="1350" y1="360" x2="1350" y2="440" />
-              <line x1="1550" y1="360" x2="1550" y2="440" />
-              <line x1="1750" y1="360" x2="1750" y2="440" />
-            </g>
           </svg>
           
           {/* Geometric Lines */}
