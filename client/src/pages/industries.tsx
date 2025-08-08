@@ -79,81 +79,69 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Moving Wavy Lines - Exact Copy from Homepage Hero */}
+          {/* Exact DNA-like Moving Graphics from Homepage */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
             <defs>
-              <linearGradient id="industriesHeroWavy1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="industriesWavyGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-                <stop offset="15%" stopColor="#f59e0b" stopOpacity="0.05"/>
-                <stop offset="30%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="70%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="85%" stopColor="#f59e0b" stopOpacity="0.05"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="industriesHeroWavy2" x1="100%" y1="0%" x2="0%" y2="0%">
+              <linearGradient id="industriesWavyGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-                <stop offset="15%" stopColor="#3b82f6" stopOpacity="0.04"/>
-                <stop offset="30%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="70%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="85%" stopColor="#3b82f6" stopOpacity="0.04"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
                 <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="industriesHeroWavy3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="industriesWavyGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="15%" stopColor="#8b5cf6" stopOpacity="0.05"/>
-                <stop offset="30%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-                <stop offset="70%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-                <stop offset="85%" stopColor="#8b5cf6" stopOpacity="0.05"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
                 <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="industriesHeroWavy4" x1="100%" y1="0%" x2="0%" y2="0%">
+              <linearGradient id="industriesWavyGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
                 <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
-                <stop offset="15%" stopColor="#f97316" stopOpacity="0.03"/>
-                <stop offset="30%" stopColor="#f97316" stopOpacity="0.10"/>
-                <stop offset="70%" stopColor="#f97316" stopOpacity="0.10"/>
-                <stop offset="85%" stopColor="#f97316" stopOpacity="0.03"/>
+                <stop offset="50%" stopColor="#f97316" stopOpacity="0.11"/>
                 <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
-            {/* Wavy Path 1: Main flowing diagonal */}
+            {/* Smooth Wavy Path 1: Flowing diagonal wave */}
             <path 
-              d="M-150,180 C-50,170 50,200 200,190 C350,180 500,220 650,210 C800,205 900,215 1150,220" 
-              stroke="url(#industriesHeroWavy1)" 
-              strokeWidth="1.4" 
+              d="M-150,100 C-50,90 50,120 200,110 C350,100 500,140 650,130 C800,125 900,135 1150,180" 
+              stroke="url(#industriesWavyGradient1)" 
+              strokeWidth="1.5" 
               fill="none"
               className="animate-wavyTravel1"
-              style={{animationDelay: '2s'}}
+              style={{animationDelay: '3s'}}
             />
             
-            {/* Wavy Path 2: Elegant reverse S-curve */}
+            {/* Smooth Wavy Path 2: Elegant S-curve */}
             <path 
-              d="M1150,380 C1050,370 950,400 800,390 C650,380 500,420 350,410 C200,405 100,415 -150,420" 
-              stroke="url(#industriesHeroWavy2)" 
-              strokeWidth="1.1" 
+              d="M1150,250 C1050,240 950,270 800,260 C650,250 500,290 350,280 C200,275 100,285 -150,320" 
+              stroke="url(#industriesWavyGradient2)" 
+              strokeWidth="1.2" 
               fill="none"
               className="animate-wavyTravel2"
               style={{animationDelay: '7s'}}
             />
             
-            {/* Wavy Path 3: Upper curved flow */}
+            {/* Smooth Wavy Path 3: Curved bottom flow */}
             <path 
-              d="M1150,120 C1000,110 900,140 700,130 C500,120 350,160 200,150 C100,145 0,135 -150,130" 
-              stroke="url(#industriesHeroWavy3)" 
-              strokeWidth="1.3" 
+              d="M1150,480 C1000,470 900,420 700,430 C500,440 350,400 200,410 C100,415 0,405 -150,380" 
+              stroke="url(#industriesWavyGradient3)" 
+              strokeWidth="1.4" 
               fill="none"
               className="animate-wavyTravel3"
-              style={{animationDelay: '12s'}}
+              style={{animationDelay: '11s'}}
             />
             
-            {/* Wavy Path 4: Central gentle wave */}
+            {/* Smooth Wavy Path 4: Gentle middle wave */}
             <path 
-              d="M-150,300 C-50,290 50,320 200,310 C350,300 500,330 650,320 C800,315 900,325 1150,330" 
-              stroke="url(#industriesHeroWavy4)" 
-              strokeWidth="1.0" 
+              d="M-150,350 C-50,340 50,380 200,370 C350,360 500,390 650,380 C800,375 900,385 1150,395" 
+              stroke="url(#industriesWavyGradient4)" 
+              strokeWidth="1.1" 
               fill="none"
               className="animate-wavyTravel4"
-              style={{animationDelay: '17s'}}
+              style={{animationDelay: '15s'}}
             />
           </svg>
           
