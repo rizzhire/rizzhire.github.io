@@ -102,13 +102,13 @@ export default function Services() {
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Floating Circles */}
-          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg"></div>
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
+          {/* Live Moving Floating Circles */}
+          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-floatMove"></div>
+          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg animate-pulse-slow"></div>
+          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl animate-rotate"></div>
           
-          {/* Geometric Lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 1000 400">
+          {/* Live Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 400">
             <defs>
               <linearGradient id="servicesHeroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
@@ -155,10 +155,10 @@ export default function Services() {
             </svg>
           </div>
           
-          {/* Very Light Floating Elements */}
-          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm"></div>
-          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md"></div>
-          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm"></div>
+          {/* Live Moving Floating Elements */}
+          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
+          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm animate-rotate" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto">

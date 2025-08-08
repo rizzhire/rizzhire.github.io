@@ -48,14 +48,14 @@ export default function Services() {
     <section id="services" className="relative cream pt-2 pb-20 overflow-hidden">
       {/* Light Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Very Light Floating Elements */}
-        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm"></div>
-        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md"></div>
-        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm"></div>
-        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/4 to-emerald-300/6 rounded-lg rotate-45 blur-sm"></div>
+        {/* Live Moving Floating Elements */}
+        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
+        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm animate-floatMove" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/4 to-emerald-300/6 rounded-lg rotate-45 blur-sm animate-rotate"></div>
         
-        {/* Very Light Wave Pattern */}
-        <svg className="absolute bottom-0 left-0 w-full h-16 opacity-3" viewBox="0 0 1200 100">
+        {/* Live Moving Wave Pattern */}
+        <svg className="absolute bottom-0 left-0 w-full h-16 opacity-3 animate-waveFlow" viewBox="0 0 1200 100">
           <defs>
             <linearGradient id="servicesWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>

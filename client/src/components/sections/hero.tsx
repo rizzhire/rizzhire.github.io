@@ -14,14 +14,14 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen cream overflow-hidden">
       {/* Enhanced Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Very Light Floating Circles */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/8 to-yellow-300/12 rounded-full blur-xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200/8 to-cyan-200/12 rounded-full blur-lg animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/6 to-yellow-200/10 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/8 to-pink-200/12 rounded-full blur-xl animate-float" style={{animationDelay: '1.5s'}}></div>
+        {/* Live Moving Floating Circles */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/8 to-yellow-300/12 rounded-full blur-xl animate-floatMove"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200/8 to-cyan-200/12 rounded-full blur-lg animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/6 to-yellow-200/10 rounded-full blur-2xl animate-floatMove" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/8 to-pink-200/12 rounded-full blur-xl animate-rotate" style={{animationDelay: '1.5s'}}></div>
         
-        {/* Very Light Geometric Lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-3" viewBox="0 0 1000 600">
+        {/* Live Moving Geometric Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-3 animate-waveFlow" viewBox="0 0 1000 600">
           <defs>
             <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.08"/>

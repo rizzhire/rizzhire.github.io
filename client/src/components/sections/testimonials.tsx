@@ -6,13 +6,13 @@ export default function Testimonials() {
     <section className="relative py-20 px-4 bg-cream overflow-hidden">
       {/* Light Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Very Light Floating Circles */}
-        <div className="absolute top-16 left-16 w-24 h-24 bg-gradient-to-r from-yellow-200/8 to-orange-200/12 rounded-full blur-xl"></div>
-        <div className="absolute bottom-16 right-16 w-32 h-32 bg-gradient-to-r from-blue-200/6 to-cyan-200/10 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-8 w-16 h-16 bg-gradient-to-r from-purple-200/6 to-pink-200/10 rounded-full blur-lg"></div>
+        {/* Live Moving Floating Circles */}
+        <div className="absolute top-16 left-16 w-24 h-24 bg-gradient-to-r from-yellow-200/8 to-orange-200/12 rounded-full blur-xl animate-pulse-slow"></div>
+        <div className="absolute bottom-16 right-16 w-32 h-32 bg-gradient-to-r from-blue-200/6 to-cyan-200/10 rounded-full blur-2xl animate-floatMove"></div>
+        <div className="absolute top-1/2 left-8 w-16 h-16 bg-gradient-to-r from-purple-200/6 to-pink-200/10 rounded-full blur-lg animate-rotate"></div>
         
-        {/* Very Light Wave Pattern */}
-        <svg className="absolute top-0 right-0 w-full h-16 opacity-2" viewBox="0 0 1200 100">
+        {/* Live Moving Wave Pattern */}
+        <svg className="absolute top-0 right-0 w-full h-16 opacity-2 animate-waveFlow" viewBox="0 0 1200 100">
           <defs>
             <linearGradient id="testimonialsWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
