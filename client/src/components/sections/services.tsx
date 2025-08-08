@@ -48,11 +48,16 @@ export default function Services() {
     <section id="services" className="relative cream pt-2 pb-20 overflow-hidden">
       {/* Light Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Live Moving Floating Elements */}
-        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
-        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm animate-floatMove" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/4 to-emerald-300/6 rounded-lg rotate-45 blur-sm animate-rotate"></div>
+        {/* Enhanced Live Moving Floating Elements */}
+        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/6 to-orange-300/8 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
+        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/6 to-cyan-300/8 rounded-full blur-md animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/6 to-pink-300/8 rounded-full blur-sm animate-floatMove" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/6 to-emerald-300/8 rounded-lg rotate-45 blur-sm animate-rotate"></div>
+        
+        {/* Additional Floating Elements */}
+        <div className="absolute top-60 left-1/3 w-10 h-10 bg-gradient-to-r from-rose-300/5 to-red-300/7 rounded-full blur-sm animate-floatMove" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-20 left-40 w-18 h-18 bg-gradient-to-r from-indigo-300/5 to-blue-300/7 rounded-lg rotate-30 blur-md animate-pulse-slow" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-80 right-1/4 w-8 h-8 bg-gradient-to-r from-teal-300/5 to-cyan-300/7 rounded-full blur-sm animate-rotate" style={{animationDelay: '1s'}}></div>
         
         {/* Live Moving Wave Pattern */}
         <svg className="absolute bottom-0 left-0 w-full h-16 opacity-3 animate-waveFlow" viewBox="0 0 1200 100">

@@ -79,7 +79,7 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Wavy Abstract Traveling Lines */}
+          {/* Enhanced Wavy Abstract Traveling Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
             <defs>
               <linearGradient id="industriesWavy1" x1="0%" y1="50%" x2="100%" y2="50%">
@@ -91,6 +91,16 @@ export default function Industries() {
                 <stop offset="0%" stopColor="#f43f5e" stopOpacity="0"/>
                 <stop offset="50%" stopColor="#f43f5e" stopOpacity="0.1"/>
                 <stop offset="100%" stopColor="#f43f5e" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="industriesWavy3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.11"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="industriesWavy4" x1="100%" y1="50%" x2="0%" y2="50%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.09"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
@@ -110,6 +120,25 @@ export default function Industries() {
               fill="none"
               className="animate-wavyTravel2"
               style={{animationDelay: '9s'}}
+            />
+            
+            {/* Additional Traveling Lines */}
+            <path 
+              d="M-150,280 C-50,270 100,300 350,290 C600,285 850,275 1150,280" 
+              stroke="url(#industriesWavy3)" 
+              strokeWidth="1.2" 
+              fill="none"
+              className="animate-wavyTravel3"
+              style={{animationDelay: '13s'}}
+            />
+            
+            <path 
+              d="M1150,350 C1000,360 800,330 550,340 C300,345 150,365 -150,350" 
+              stroke="url(#industriesWavy4)" 
+              strokeWidth="1.0" 
+              fill="none"
+              className="animate-wavyTravel4"
+              style={{animationDelay: '17s'}}
             />
           </svg>
           
