@@ -129,9 +129,9 @@ export default function Industries() {
           <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/10 to-pink-300/15 rounded-full blur-sm"></div>
         </div>
         
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           <motion.div
-            className="grid md:grid-cols-2 gap-8 lg:gap-12"
+            className="grid md:grid-cols-2 gap-6 lg:gap-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -154,36 +154,36 @@ export default function Industries() {
                   {/* Inner Glow Effect */}
                   <div className={`absolute inset-x-0 top-0 h-20 bg-gradient-to-b ${industry.accentColor} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
                   
-                  <div className="relative p-8 lg:p-12">
+                  <div className="relative p-6 lg:p-8">
                     {/* Enhanced Title Section */}
-                    <div className="mb-8">
-                      <div className="flex items-center mb-6">
-                        <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${industry.accentColor} mr-4 group-hover:scale-125 transition-transform duration-300`}></div>
-                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight group-hover:text-gray-800 transition-colors duration-300">
+                    <div className="mb-6">
+                      <div className="flex items-center mb-4">
+                        <div className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${industry.accentColor} mr-3 group-hover:scale-125 transition-transform duration-300`}></div>
+                        <h3 className="text-xl lg:text-2xl font-bold text-gray-900 tracking-tight group-hover:text-gray-800 transition-colors duration-300">
                           {industry.title}
                         </h3>
                       </div>
-                      <div className={`w-20 h-1.5 bg-gradient-to-r ${industry.accentColor} rounded-full group-hover:w-32 transition-all duration-700`}></div>
+                      <div className={`w-16 h-1 bg-gradient-to-r ${industry.accentColor} rounded-full group-hover:w-24 transition-all duration-700`}></div>
                     </div>
 
                     {/* Improved Description Typography */}
-                    <p className="text-gray-600 text-base leading-relaxed mb-8 font-normal">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-normal">
                       {industry.description}
                     </p>
 
                     {/* Enhanced Key Achievements Section */}
-                    <div className="space-y-5">
+                    <div className="space-y-4">
                       <div className="flex items-center">
-                        <div className={`w-8 h-px bg-gradient-to-r ${industry.accentColor} mr-3`}></div>
+                        <div className={`w-6 h-px bg-gradient-to-r ${industry.accentColor} mr-2`}></div>
                         <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest">
                           Key Achievements
                         </h4>
                       </div>
-                      <div className="space-y-4 pl-2">
+                      <div className="space-y-3 pl-1">
                         {industry.keyStats.map((stat, idx) => (
                           <div key={idx} className="flex items-start group/item">
-                            <div className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${industry.accentColor} mr-4 flex-shrink-0 mt-2 group-hover/item:scale-110 transition-transform duration-300`}></div>
-                            <span className="text-gray-700 text-sm leading-relaxed font-medium">
+                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${industry.accentColor} mr-3 flex-shrink-0 mt-1.5 group-hover/item:scale-110 transition-transform duration-300`}></div>
+                            <span className="text-gray-700 text-xs leading-relaxed font-medium">
                               {stat}
                             </span>
                           </div>
@@ -192,8 +192,8 @@ export default function Industries() {
                     </div>
 
                     {/* Enhanced Bottom Effects */}
-                    <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r ${industry.accentColor} opacity-30 group-hover:opacity-50 transition-opacity duration-500`}></div>
-                    <div className={`absolute bottom-8 right-8 w-8 h-8 bg-gradient-to-r ${industry.accentColor} opacity-5 rounded-full group-hover:scale-150 group-hover:opacity-10 transition-all duration-500`}></div>
+                    <div className={`absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r ${industry.accentColor} opacity-30 group-hover:opacity-50 transition-opacity duration-500`}></div>
+                    <div className={`absolute bottom-6 right-6 w-6 h-6 bg-gradient-to-r ${industry.accentColor} opacity-5 rounded-full group-hover:scale-150 group-hover:opacity-10 transition-all duration-500`}></div>
                   </div>
                 </div>
               </motion.div>
