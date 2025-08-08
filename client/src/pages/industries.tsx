@@ -145,16 +145,33 @@ export default function Industries() {
             />
           </svg>
           
-          {/* Geometric Lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 600">
+          {/* Moving Wavy Geometric Lines - Same as Homepage Services */}
+          <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlow" viewBox="0 0 1000 600">
             <defs>
-              <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.3"/>
+              <linearGradient id="industriesWaveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
+              <linearGradient id="industriesWaveGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              </linearGradient>
             </defs>
-            <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#lineGradient1)" strokeWidth="2" fill="none"/>
-            <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#lineGradient1)" strokeWidth="1" fill="none"/>
+            <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#industriesWaveGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#industriesWaveGradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M0,450 Q200,250 400,450 T1000,450" stroke="url(#industriesWaveGradient2)" strokeWidth="1.2" fill="none"/>
+          </svg>
+          
+          {/* Live Moving Wave Pattern */}
+          <svg className="absolute bottom-0 left-0 w-full h-16 opacity-4 animate-waveFlow" viewBox="0 0 1200 100">
+            <defs>
+              <linearGradient id="industriesBottomWave" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,50 Q300,10 600,50 T1200,50" stroke="url(#industriesBottomWave)" strokeWidth="3" fill="none"/>
           </svg>
         </div>
         

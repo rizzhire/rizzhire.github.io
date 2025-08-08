@@ -101,16 +101,33 @@ export default function Blogs() {
           <div className="absolute top-1/2 left-8 w-18 h-18 bg-gradient-to-r from-emerald-200/20 to-green-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
           <div className="absolute top-60 right-12 w-14 h-14 bg-gradient-to-r from-rose-200/18 to-red-200/26 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
           
-          {/* Enhanced Moving Geometric Lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-10 animate-waveFlow" viewBox="0 0 1000 400">
+          {/* Moving Wavy Geometric Lines - Same as Homepage Services */}
+          <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlow" viewBox="0 0 1000 400">
             <defs>
-              <linearGradient id="blogsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="blogsWaveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
+              <linearGradient id="blogsWaveGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              </linearGradient>
             </defs>
-            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsGradient)" strokeWidth="2" fill="none"/>
-            <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsGradient)" strokeWidth="1.5" fill="none"/>
+            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsWaveGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsWaveGradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M0,320 Q200,280 400,320 T1000,320" stroke="url(#blogsWaveGradient2)" strokeWidth="1.2" fill="none"/>
+          </svg>
+          
+          {/* Live Moving Wave Pattern */}
+          <svg className="absolute bottom-0 left-0 w-full h-16 opacity-4 animate-waveFlow" viewBox="0 0 1200 100">
+            <defs>
+              <linearGradient id="blogsBottomWave" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,50 Q300,10 600,50 T1200,50" stroke="url(#blogsBottomWave)" strokeWidth="3" fill="none"/>
           </svg>
           
           {/* Moving Wavy Lines - Exact Copy from Homepage Hero */}
