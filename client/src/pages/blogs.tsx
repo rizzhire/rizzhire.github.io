@@ -89,9 +89,6 @@ export default function Blogs() {
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
-        {/* DNA Animation Canvas */}
-        <DNACanvas className="z-0" />
-        
         {/* Enhanced Light Background Graphics with Homepage Blurred Abstract Colors */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
           {/* Enhanced Live Moving Floating Circles - Homepage Style */}
