@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import DNACanvas from "@/components/ui/dna-canvas";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -89,8 +90,11 @@ export default function Blogs() {
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
+        {/* DNA Animation Canvas */}
+        <DNACanvas className="z-0" />
+        
         {/* Enhanced Light Background Graphics with Homepage Blurred Abstract Colors */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
           {/* Enhanced Live Moving Floating Circles - Homepage Style */}
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-floatMoveEnhanced"></div>
           <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200/18 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
