@@ -106,6 +106,40 @@ export default function Blogs() {
             </defs>
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsGradient)" strokeWidth="2" fill="none"/>
           </svg>
+          
+          {/* Wavy Abstract Traveling Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="blogsWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#10b981" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#10b981" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#10b981" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="blogsWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            <path 
+              d="M-50,110 Q300,70 600,140 T1050,100" 
+              stroke="url(#blogsWavy1)" 
+              strokeWidth="1.6" 
+              fill="none"
+              className="animate-wavyTravel1"
+              style={{animationDelay: '4s'}}
+            />
+            
+            <path 
+              d="M1050,290 Q650,330 350,260 T-50,300" 
+              stroke="url(#blogsWavy2)" 
+              strokeWidth="1.3" 
+              fill="none"
+              className="animate-wavyTravel2"
+              style={{animationDelay: '7s'}}
+            />
+          </svg>
         </div>
         
         <motion.div 

@@ -740,37 +740,71 @@ html {
   }
 }
 
-/* Traveling line animations */
-@keyframes travelAcross {
+/* Wavy Abstract Traveling Line Animations */
+@keyframes wavyTravel1 {
   0% {
-    transform: translateX(-100%);
+    stroke-dasharray: 0 1000;
     opacity: 0;
   }
-  10% {
+  5% {
     opacity: 1;
   }
-  90% {
+  95% {
     opacity: 1;
   }
   100% {
-    transform: translateX(100%);
+    stroke-dasharray: 1000 0;
     opacity: 0;
   }
 }
 
-@keyframes travelVertical {
+@keyframes wavyTravel2 {
   0% {
-    transform: translateY(-100%);
+    stroke-dasharray: 0 800;
     opacity: 0;
   }
-  10% {
+  8% {
     opacity: 1;
   }
-  90% {
+  92% {
     opacity: 1;
   }
   100% {
-    transform: translateY(100%);
+    stroke-dasharray: 800 0;
+    opacity: 0;
+  }
+}
+
+@keyframes wavyTravel3 {
+  0% {
+    stroke-dasharray: 0 1200;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 1200 0;
+    opacity: 0;
+  }
+}
+
+@keyframes wavyTravel4 {
+  0% {
+    stroke-dasharray: 0 900;
+    opacity: 0;
+  }
+  7% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 900 0;
     opacity: 0;
   }
 }
@@ -820,12 +854,20 @@ html {
   animation: rotateEnhanced 20s linear infinite;
 }
 
-.animate-travelAcross {
-  animation: travelAcross 8s ease-in-out infinite;
+.animate-wavyTravel1 {
+  animation: wavyTravel1 10s ease-in-out infinite;
 }
 
-.animate-travelVertical {
-  animation: travelVertical 10s ease-in-out infinite;
+.animate-wavyTravel2 {
+  animation: wavyTravel2 12s ease-in-out infinite;
+}
+
+.animate-wavyTravel3 {
+  animation: wavyTravel3 14s ease-in-out infinite;
+}
+
+.animate-wavyTravel4 {
+  animation: wavyTravel4 8s ease-in-out infinite;
 }
 
 .animate-waveFlow {

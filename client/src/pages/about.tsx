@@ -45,9 +45,39 @@ export default function About() {
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#aboutGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
           
-          {/* Traveling Lines */}
-          <div className="absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-travelAcross" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-0 left-24 w-0.5 h-full bg-gradient-to-b from-transparent via-green-400/25 to-transparent animate-travelVertical" style={{animationDelay: '6s'}}></div>
+          {/* Wavy Abstract Traveling Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="aboutWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#7c3aed" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#7c3aed" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#7c3aed" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="aboutWavy2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#059669" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#059669" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="#059669" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            <path 
+              d="M-50,100 Q300,60 600,130 T1050,90" 
+              stroke="url(#aboutWavy1)" 
+              strokeWidth="1.5" 
+              fill="none"
+              className="animate-wavyTravel3"
+              style={{animationDelay: '2s'}}
+            />
+            
+            <path 
+              d="M1050,280 Q650,320 350,250 T-50,290" 
+              stroke="url(#aboutWavy2)" 
+              strokeWidth="1.2" 
+              fill="none"
+              className="animate-wavyTravel4"
+              style={{animationDelay: '6s'}}
+            />
+          </svg>
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">

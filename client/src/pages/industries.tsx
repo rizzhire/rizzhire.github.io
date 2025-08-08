@@ -79,9 +79,39 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Traveling Lines */}
-          <div className="absolute top-14 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-travelAcross" style={{animationDelay: '3s'}}></div>
-          <div className="absolute top-0 right-16 w-0.5 h-full bg-gradient-to-b from-transparent via-rose-400/25 to-transparent animate-travelVertical" style={{animationDelay: '8s'}}></div>
+          {/* Wavy Abstract Traveling Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
+            <defs>
+              <linearGradient id="industriesWavy1" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="industriesWavy2" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stopColor="#f43f5e" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f43f5e" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="#f43f5e" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            <path 
+              d="M-50,150 Q250,100 500,180 T1050,140" 
+              stroke="url(#industriesWavy1)" 
+              strokeWidth="1.7" 
+              fill="none"
+              className="animate-wavyTravel1"
+              style={{animationDelay: '3s'}}
+            />
+            
+            <path 
+              d="M1050,450 Q700,400 400,480 T-50,440" 
+              stroke="url(#industriesWavy2)" 
+              strokeWidth="1.4" 
+              fill="none"
+              className="animate-wavyTravel2"
+              style={{animationDelay: '8s'}}
+            />
+          </svg>
           
           {/* Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 600">

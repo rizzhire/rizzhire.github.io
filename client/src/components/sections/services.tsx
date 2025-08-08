@@ -66,9 +66,39 @@ export default function Services() {
           <path d="M0,50 Q300,30 600,50 T1200,50" stroke="url(#servicesWaveGradient)" strokeWidth="1" fill="none"/>
         </svg>
         
-        {/* Traveling Lines */}
-        <div className="absolute top-10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent animate-travelAcross" style={{animationDelay: '3s'}}></div>
-        <div className="absolute top-0 right-10 w-0.5 h-full bg-gradient-to-b from-transparent via-blue-400/25 to-transparent animate-travelVertical" style={{animationDelay: '7s'}}></div>
+        {/* Wavy Abstract Traveling Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
+          <defs>
+            <linearGradient id="servicesWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#fbbf24" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#fbbf24" stopOpacity="0.3"/>
+              <stop offset="100%" stopColor="#fbbf24" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="servicesWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
+              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.25"/>
+              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+          
+          <path 
+            d="M-50,80 Q250,30 500,120 T1050,90" 
+            stroke="url(#servicesWavy1)" 
+            strokeWidth="1.5" 
+            fill="none"
+            className="animate-wavyTravel1"
+            style={{animationDelay: '3s'}}
+          />
+          
+          <path 
+            d="M1050,300 Q700,250 400,320 T-50,280" 
+            stroke="url(#servicesWavy2)" 
+            strokeWidth="1.2" 
+            fill="none"
+            className="animate-wavyTravel2"
+            style={{animationDelay: '7s'}}
+          />
+        </svg>
       </div>
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

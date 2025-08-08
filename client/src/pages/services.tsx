@@ -118,9 +118,39 @@ export default function Services() {
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#servicesHeroGradient)" strokeWidth="2" fill="none"/>
           </svg>
           
-          {/* Traveling Lines */}
-          <div className="absolute top-16 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent animate-travelAcross" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-0 right-20 w-0.5 h-full bg-gradient-to-b from-transparent via-blue-400/25 to-transparent animate-travelVertical" style={{animationDelay: '4s'}}></div>
+          {/* Wavy Abstract Traveling Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="servicesPageWavy1" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#eab308" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#eab308" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#eab308" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="servicesPageWavy2" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stopColor="#2563eb" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#2563eb" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="#2563eb" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            <path 
+              d="M-50,120 Q200,80 450,150 T1050,110" 
+              stroke="url(#servicesPageWavy1)" 
+              strokeWidth="1.6" 
+              fill="none"
+              className="animate-wavyTravel1"
+              style={{animationDelay: '1s'}}
+            />
+            
+            <path 
+              d="M1050,320 Q700,280 400,350 T-50,310" 
+              stroke="url(#servicesPageWavy2)" 
+              strokeWidth="1.3" 
+              fill="none"
+              className="animate-wavyTravel2"
+              style={{animationDelay: '4s'}}
+            />
+          </svg>
         </div>
         
         <motion.div 

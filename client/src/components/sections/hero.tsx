@@ -36,13 +36,71 @@ export default function Hero() {
           <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#heroGradient1)" strokeWidth="1.5" fill="none"/>
         </svg>
         
-        {/* Traveling Lines - Horizontal */}
-        <div className="absolute top-20 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent animate-travelAcross" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-40 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent animate-travelAcross" style={{animationDelay: '6s'}}></div>
-        
-        {/* Traveling Lines - Vertical */}
-        <div className="absolute top-0 left-20 w-0.5 h-full bg-gradient-to-b from-transparent via-purple-400/30 to-transparent animate-travelVertical" style={{animationDelay: '4s'}}></div>
-        <div className="absolute top-0 right-32 w-0.5 h-full bg-gradient-to-b from-transparent via-orange-400/30 to-transparent animate-travelVertical" style={{animationDelay: '8s'}}></div>
+        {/* Wavy Abstract Traveling Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
+          <defs>
+            <linearGradient id="wavyGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.4"/>
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="wavyGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.3"/>
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="wavyGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.35"/>
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="wavyGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#f97316" stopOpacity="0.3"/>
+              <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+          
+          {/* Wavy Path 1: Diagonal wave from top-left to bottom-right */}
+          <path 
+            d="M-50,100 Q200,50 400,150 T800,120 Q900,100 1050,180" 
+            stroke="url(#wavyGradient1)" 
+            strokeWidth="2" 
+            fill="none"
+            className="animate-wavyTravel1"
+            style={{animationDelay: '2s'}}
+          />
+          
+          {/* Wavy Path 2: S-curve from right to left */}
+          <path 
+            d="M1050,250 Q800,200 600,320 T200,280 Q100,260 -50,350" 
+            stroke="url(#wavyGradient2)" 
+            strokeWidth="1.5" 
+            fill="none"
+            className="animate-wavyTravel2"
+            style={{animationDelay: '6s'}}
+          />
+          
+          {/* Wavy Path 3: Curved from bottom-right to top-left */}
+          <path 
+            d="M1050,500 Q700,450 500,380 T100,420 Q50,400 -50,300" 
+            stroke="url(#wavyGradient3)" 
+            strokeWidth="1.8" 
+            fill="none"
+            className="animate-wavyTravel3"
+            style={{animationDelay: '10s'}}
+          />
+          
+          {/* Wavy Path 4: Complex wave from middle-left to middle-right */}
+          <path 
+            d="M-50,350 Q150,300 300,400 Q500,450 700,350 T1050,380" 
+            stroke="url(#wavyGradient4)" 
+            strokeWidth="1.3" 
+            fill="none"
+            className="animate-wavyTravel4"
+            style={{animationDelay: '14s'}}
+          />
+        </svg>
         
         {/* Very Light Dots Pattern */}
         <div className="absolute inset-0 opacity-2">
