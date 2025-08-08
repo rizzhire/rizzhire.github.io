@@ -70,6 +70,28 @@ export default function Industries() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-gray-100/30"></div>
+        
+        {/* Light Background Graphics */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating Circles */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg"></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
+          
+          {/* Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 600">
+            <defs>
+              <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#lineGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#lineGradient1)" strokeWidth="1" fill="none"/>
+          </svg>
+        </div>
+        
         <div className="relative max-w-6xl mx-auto text-center">
           <motion.div
             initial="initial"
@@ -88,8 +110,26 @@ export default function Industries() {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        {/* Background Graphics */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
+              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#d1d5db" strokeWidth="1"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
+          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
+          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/10 to-pink-300/15 rounded-full blur-sm"></div>
+        </div>
+        
+        <div className="relative max-w-6xl mx-auto">
           <motion.div
             className="grid md:grid-cols-2 gap-8 lg:gap-12"
             initial="initial"
@@ -103,36 +143,47 @@ export default function Industries() {
                 variants={fadeInUp}
                 className="group"
               >
-                <Card className="relative overflow-hidden bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 rounded-2xl">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${industry.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}></div>
+                <div className="relative overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 rounded-3xl group-hover:border-gray-200">
+                  {/* Enhanced Background Effects */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${industry.gradient} opacity-0 group-hover:opacity-3 transition-opacity duration-700`}></div>
                   
-                  {/* Accent Border */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${industry.accentColor} opacity-60`}></div>
+                  {/* Multiple Accent Lines */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${industry.accentColor} opacity-70`}></div>
+                  <div className={`absolute top-1 left-0 right-0 h-px bg-gradient-to-r ${industry.accentColor} opacity-40`}></div>
                   
-                  <CardContent className="relative p-8 lg:p-10">
-                    {/* Title with Professional Typography */}
+                  {/* Inner Glow Effect */}
+                  <div className={`absolute inset-x-0 top-0 h-20 bg-gradient-to-b ${industry.accentColor} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                  
+                  <div className="relative p-8 lg:p-12">
+                    {/* Enhanced Title Section */}
                     <div className="mb-8">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-gray-800 transition-colors duration-300">
-                        {industry.title}
-                      </h3>
-                      <div className={`w-16 h-1 bg-gradient-to-r ${industry.accentColor} rounded-full group-hover:w-24 transition-all duration-500`}></div>
+                      <div className="flex items-center mb-6">
+                        <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${industry.accentColor} mr-4 group-hover:scale-125 transition-transform duration-300`}></div>
+                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight group-hover:text-gray-800 transition-colors duration-300">
+                          {industry.title}
+                        </h3>
+                      </div>
+                      <div className={`w-20 h-1.5 bg-gradient-to-r ${industry.accentColor} rounded-full group-hover:w-32 transition-all duration-700`}></div>
                     </div>
 
-                    {/* Description with Professional Spacing */}
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
+                    {/* Improved Description Typography */}
+                    <p className="text-gray-600 text-base leading-relaxed mb-8 font-normal">
                       {industry.description}
                     </p>
 
-                    {/* Key Achievements - Corporate Style */}
-                    <div className="space-y-4">
-                      <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-100 pb-2 mb-4">
-                        Key Achievements
-                      </h4>
-                      <div className="space-y-3">
+                    {/* Enhanced Key Achievements Section */}
+                    <div className="space-y-5">
+                      <div className="flex items-center">
+                        <div className={`w-8 h-px bg-gradient-to-r ${industry.accentColor} mr-3`}></div>
+                        <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest">
+                          Key Achievements
+                        </h4>
+                      </div>
+                      <div className="space-y-4 pl-2">
                         {industry.keyStats.map((stat, idx) => (
                           <div key={idx} className="flex items-start group/item">
-                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${industry.accentColor} mr-4 flex-shrink-0 mt-2.5 group-hover/item:scale-125 transition-transform duration-300`}></div>
-                            <span className="text-gray-700 leading-relaxed font-medium">
+                            <div className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${industry.accentColor} mr-4 flex-shrink-0 mt-2 group-hover/item:scale-110 transition-transform duration-300`}></div>
+                            <span className="text-gray-700 text-sm leading-relaxed font-medium">
                               {stat}
                             </span>
                           </div>
@@ -140,10 +191,11 @@ export default function Industries() {
                       </div>
                     </div>
 
-                    {/* Subtle Bottom Accent */}
-                    <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r ${industry.accentColor} opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
-                  </CardContent>
-                </Card>
+                    {/* Enhanced Bottom Effects */}
+                    <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r ${industry.accentColor} opacity-30 group-hover:opacity-50 transition-opacity duration-500`}></div>
+                    <div className={`absolute bottom-8 right-8 w-8 h-8 bg-gradient-to-r ${industry.accentColor} opacity-5 rounded-full group-hover:scale-150 group-hover:opacity-10 transition-all duration-500`}></div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -153,6 +205,26 @@ export default function Industries() {
       {/* Call to Action */}
       <section className="relative py-24 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50/30 to-gray-100/20"></div>
+        
+        {/* CTA Background Graphics */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-16 right-16 w-24 h-24 bg-gradient-to-r from-yellow-200/20 to-orange-200/30 rounded-full blur-xl"></div>
+          <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-r from-blue-200/15 to-cyan-200/25 rounded-full blur-2xl"></div>
+          
+          {/* Decorative Lines */}
+          <svg className="absolute bottom-0 left-0 w-full h-32 opacity-10" viewBox="0 0 1200 200">
+            <defs>
+              <linearGradient id="ctaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.4"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,100 Q300,50 600,100 T1200,100" stroke="url(#ctaGradient)" strokeWidth="3" fill="none"/>
+            <path d="M0,120 Q400,80 800,120 T1200,120" stroke="url(#ctaGradient)" strokeWidth="2" fill="none"/>
+          </svg>
+        </div>
+        
         <motion.div 
           className="relative max-w-5xl mx-auto text-center"
           initial="initial"
@@ -170,9 +242,11 @@ export default function Industries() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="group relative bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-black font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
               <span className="relative z-10">Discuss Your Requirements</span>
+              <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             <button className="group border-2 border-gray-300 hover:border-yellow-400 text-gray-700 hover:text-gray-900 font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:scale-[1.02] bg-white hover:bg-gray-50">
               View Case Studies
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-50/50 to-orange-50/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </div>
         </motion.div>
