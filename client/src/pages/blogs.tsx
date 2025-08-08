@@ -88,7 +88,7 @@ export default function Blogs() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
+      <section className="relative pt-24 pb-12 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         {/* Enhanced Light Background Graphics with Homepage Blurred Abstract Colors */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
           {/* Enhanced Live Moving Floating Circles - Homepage Style */}
@@ -178,7 +178,7 @@ export default function Blogs() {
       </section>
 
       {/* Featured Post */}
-      <section className="relative py-16 px-4 bg-white overflow-hidden">
+      <section className="relative py-8 px-4 bg-white overflow-hidden">
         {/* Light Background Graphics */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-32 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
@@ -255,7 +255,7 @@ export default function Blogs() {
       </section>
 
       {/* Blog Grid */}
-      <section className="py-16 px-4" style={{backgroundColor: '#F5F3EB'}}>
+      <section className="py-8 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div className="max-w-7xl mx-auto">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -323,7 +323,7 @@ export default function Blogs() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 px-4 bg-white">
+<section className="py-8 px-4 bg-white">
         <motion.div 
           className="max-w-4xl mx-auto text-center"
           initial="initial"
