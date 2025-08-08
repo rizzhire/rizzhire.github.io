@@ -26,10 +26,24 @@ export default function About() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Section */}
-      <section className="py-20 px-4 cream relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-40 h-40 bg-yellow rounded-full animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-32 h-32 bg-gray-400 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+      <section className="relative py-20 px-4 cream overflow-hidden">
+        {/* Enhanced Background Graphics */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating Circles */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-20 right-20 w-28 h-28 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg animate-float" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-purple-200/15 to-pink-200/25 rounded-full blur-lg animate-float" style={{animationDelay: '2s'}}></div>
+          
+          {/* Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#aboutGradient)" strokeWidth="1.5" fill="none"/>
+          </svg>
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
@@ -42,8 +56,14 @@ export default function About() {
         </div>
       </section>
       {/* Our Story Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4 bg-white overflow-hidden">
+        {/* Light Background Graphics */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-32 right-20 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
+          <div className="absolute bottom-40 left-32 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
+        </div>
+        
+        <div className="relative max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">

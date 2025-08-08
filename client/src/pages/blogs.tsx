@@ -88,9 +88,28 @@ export default function Blogs() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4" style={{backgroundColor: '#F5F3EB'}}>
+      <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
+        {/* Light Background Graphics */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating Circles */}
+          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg"></div>
+          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
+          
+          {/* Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="blogsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsGradient)" strokeWidth="2" fill="none"/>
+          </svg>
+        </div>
+        
         <motion.div 
-          className="max-w-6xl mx-auto text-center"
+          className="relative max-w-6xl mx-auto text-center"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
@@ -127,8 +146,14 @@ export default function Blogs() {
       </section>
 
       {/* Featured Post */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-16 px-4 bg-white overflow-hidden">
+        {/* Light Background Graphics */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-32 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
+          <div className="absolute bottom-32 left-20 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial="initial"
             whileInView="animate"
