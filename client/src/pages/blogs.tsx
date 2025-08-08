@@ -194,9 +194,9 @@ export default function Blogs() {
           >
             <Card className="bg-gradient-to-r from-gray-50 to-white rounded-2xl border-0 shadow-md overflow-hidden">
               <CardContent className="p-0">
-                <div className="flex">
-                  {/* Content Section - Expanded to left, more space */}
-                  <div className="flex-1 p-6 lg:p-8 lg:pr-4">
+                <div className="flex items-stretch">
+                  {/* Content Section - Balanced spacing */}
+                  <div className="flex-1 p-6 lg:p-8 lg:pr-6">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="px-3 py-1 bg-yellow/20 text-yellow-700 rounded-full text-xs font-semibold">
                         Featured
@@ -240,8 +240,8 @@ export default function Blogs() {
                     </Button>
                   </div>
                   
-                  {/* Featured Badge Section - Smaller, compact */}
-                  <div className="w-32 lg:w-40 bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-4">
+                  {/* Featured Badge Section - Square container at the end */}
+                  <div className="w-32 h-32 lg:w-36 lg:h-36 bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center self-end">
                     <div className="text-center">
                       <div className="w-10 h-10 bg-yellow/30 rounded-full flex items-center justify-center mb-2 mx-auto">
                         <User className="w-5 h-5 text-yellow-700" />
