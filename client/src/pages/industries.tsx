@@ -113,13 +113,13 @@ export default function Industries() {
       <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
         {/* Background Graphics */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
-              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#d1d5db" strokeWidth="1"/>
+          {/* Very Light Dots Pattern */}
+          <div className="absolute inset-0 opacity-2">
+            <svg width="45" height="45" viewBox="0 0 45 45" className="w-full h-full">
+              <pattern id="industriesDots" width="45" height="45" patternUnits="userSpaceOnUse">
+                <circle cx="22.5" cy="22.5" r="0.7" fill="#f59e0b" opacity="0.1"/>
               </pattern>
-              <rect width="100%" height="100%" fill="url(#grid)" />
+              <rect width="100%" height="100%" fill="url(#industriesDots)" />
             </svg>
           </div>
           

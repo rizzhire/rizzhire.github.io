@@ -48,22 +48,22 @@ export default function Services() {
     <section id="services" className="relative cream pt-2 pb-20 overflow-hidden">
       {/* Light Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Floating Elements */}
-        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
-        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
-        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/10 to-pink-300/15 rounded-full blur-sm"></div>
-        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/10 to-emerald-300/15 rounded-lg rotate-45 blur-sm"></div>
+        {/* Very Light Floating Elements */}
+        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm"></div>
+        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md"></div>
+        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm"></div>
+        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/4 to-emerald-300/6 rounded-lg rotate-45 blur-sm"></div>
         
-        {/* Geometric Patterns */}
-        <svg className="absolute bottom-0 left-0 w-full h-32 opacity-8" viewBox="0 0 1200 200">
+        {/* Very Light Wave Pattern */}
+        <svg className="absolute bottom-0 left-0 w-full h-16 opacity-3" viewBox="0 0 1200 100">
           <defs>
-            <linearGradient id="servicesGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="servicesWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.3"/>
+              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.1"/>
               <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
             </linearGradient>
           </defs>
-          <path d="M0,100 Q300,50 600,100 T1200,100" stroke="url(#servicesGradient)" strokeWidth="2" fill="none"/>
+          <path d="M0,50 Q300,30 600,50 T1200,50" stroke="url(#servicesWaveGradient)" strokeWidth="1" fill="none"/>
         </svg>
       </div>
       

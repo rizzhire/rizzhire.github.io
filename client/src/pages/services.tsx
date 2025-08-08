@@ -145,20 +145,20 @@ export default function Services() {
       <section className="relative py-20 px-4 bg-white overflow-hidden">
         {/* Light Background Graphics */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-3">
-            <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
-              <pattern id="servicesGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#d1d5db" strokeWidth="1"/>
+          {/* Very Light Dots Pattern */}
+          <div className="absolute inset-0 opacity-2">
+            <svg width="50" height="50" viewBox="0 0 50 50" className="w-full h-full">
+              <pattern id="servicesDots" width="50" height="50" patternUnits="userSpaceOnUse">
+                <circle cx="25" cy="25" r="0.8" fill="#f59e0b" opacity="0.08"/>
               </pattern>
-              <rect width="100%" height="100%" fill="url(#servicesGrid)" />
+              <rect width="100%" height="100%" fill="url(#servicesDots)" />
             </svg>
           </div>
           
-          {/* Floating Elements */}
-          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
-          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
-          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/10 to-pink-300/15 rounded-full blur-sm"></div>
+          {/* Very Light Floating Elements */}
+          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm"></div>
+          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md"></div>
+          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto">
