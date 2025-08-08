@@ -177,7 +177,7 @@ export default function Blogs() {
             
             {/* Wavy Path 3: Upper curved flow */}
             <path 
-              d="M1150,80 C1000,70 900,100 700,90 C500,80 350,120 200,110 C100,105 25,95 -150,90" 
+              d="M1150,80 C1000,70 900,100 700,90 C500,80 350,120 200,110 C100,105 0,95 -150,90" 
               stroke="url(#blogsHeroWavy3)" 
               strokeWidth="1.3" 
               fill="none"

@@ -126,7 +126,7 @@ export default function Industries() {
             
             {/* Wavy Path 3: Upper curved flow */}
             <path 
-              d="M1150,120 C1000,110 900,140 700,130 C500,120 350,160 200,150 C100,145 25,135 -150,130" 
+              d="M1150,120 C1000,110 900,140 700,130 C500,120 350,160 200,150 C100,145 0,135 -150,130" 
               stroke="url(#industriesHeroWavy3)" 
               strokeWidth="1.3" 
               fill="none"

@@ -747,11 +747,17 @@ html {
     stroke-dashoffset: 0;
     opacity: 0;
   }
-  10% {
+  8% {
+    opacity: 0.3;
+  }
+  15% {
     opacity: 1;
   }
-  90% {
+  85% {
     opacity: 1;
+  }
+  92% {
+    opacity: 0.3;
   }
   100% {
     stroke-dasharray: 1000 0;
@@ -766,11 +772,17 @@ html {
     stroke-dashoffset: 0;
     opacity: 0;
   }
+  6% {
+    opacity: 0.2;
+  }
   12% {
     opacity: 1;
   }
   88% {
     opacity: 1;
+  }
+  94% {
+    opacity: 0.2;
   }
   100% {
     stroke-dasharray: 1200 0;
@@ -785,11 +797,17 @@ html {
     stroke-dashoffset: 0;
     opacity: 0;
   }
-  8% {
+  5% {
+    opacity: 0.3;
+  }
+  10% {
     opacity: 1;
   }
-  92% {
+  90% {
     opacity: 1;
+  }
+  95% {
+    opacity: 0.3;
   }
   100% {
     stroke-dasharray: 1400 0;
@@ -804,11 +822,17 @@ html {
     stroke-dashoffset: 0;
     opacity: 0;
   }
-  9% {
+  6% {
+    opacity: 0.2;
+  }
+  12% {
     opacity: 1;
   }
-  91% {
+  88% {
     opacity: 1;
+  }
+  94% {
+    opacity: 0.2;
   }
   100% {
     stroke-dasharray: 1100 0;
