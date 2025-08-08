@@ -112,29 +112,29 @@ export default function Blogs() {
             <defs>
               <linearGradient id="blogsWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#10b981" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#10b981" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#10b981" stopOpacity="0.12"/>
                 <stop offset="100%" stopColor="#10b981" stopOpacity="0"/>
               </linearGradient>
               <linearGradient id="blogsWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
                 <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.25"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1"/>
                 <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
             <path 
-              d="M-50,110 Q300,70 600,140 T1050,100" 
+              d="M-50,110 C250,90 450,130 700,120 C850,115 950,105 1050,100" 
               stroke="url(#blogsWavy1)" 
-              strokeWidth="1.6" 
+              strokeWidth="1.3" 
               fill="none"
               className="animate-wavyTravel1"
               style={{animationDelay: '4s'}}
             />
             
             <path 
-              d="M1050,290 Q650,330 350,260 T-50,300" 
+              d="M1050,290 C750,310 550,260 350,270 C200,275 100,295 -50,300" 
               stroke="url(#blogsWavy2)" 
-              strokeWidth="1.3" 
+              strokeWidth="1.0" 
               fill="none"
               className="animate-wavyTravel2"
               style={{animationDelay: '7s'}}

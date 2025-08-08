@@ -41,61 +41,61 @@ export default function Hero() {
           <defs>
             <linearGradient id="wavyGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.4"/>
+              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
               <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
             </linearGradient>
             <linearGradient id="wavyGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.3"/>
+              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
               <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
             </linearGradient>
             <linearGradient id="wavyGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.35"/>
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
               <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
             </linearGradient>
             <linearGradient id="wavyGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
               <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#f97316" stopOpacity="0.3"/>
+              <stop offset="50%" stopColor="#f97316" stopOpacity="0.11"/>
               <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
             </linearGradient>
           </defs>
           
-          {/* Wavy Path 1: Diagonal wave from top-left to bottom-right */}
+          {/* Smooth Wavy Path 1: Flowing diagonal wave */}
           <path 
-            d="M-50,100 Q200,50 400,150 T800,120 Q900,100 1050,180" 
+            d="M-50,100 C150,80 200,120 350,110 C500,100 650,140 800,130 C900,125 950,135 1050,180" 
             stroke="url(#wavyGradient1)" 
-            strokeWidth="2" 
+            strokeWidth="1.5" 
             fill="none"
             className="animate-wavyTravel1"
             style={{animationDelay: '2s'}}
           />
           
-          {/* Wavy Path 2: S-curve from right to left */}
+          {/* Smooth Wavy Path 2: Elegant S-curve */}
           <path 
-            d="M1050,250 Q800,200 600,320 T200,280 Q100,260 -50,350" 
+            d="M1050,250 C900,230 800,270 650,260 C500,250 350,290 200,280 C100,275 50,285 -50,320" 
             stroke="url(#wavyGradient2)" 
-            strokeWidth="1.5" 
+            strokeWidth="1.2" 
             fill="none"
             className="animate-wavyTravel2"
             style={{animationDelay: '6s'}}
           />
           
-          {/* Wavy Path 3: Curved from bottom-right to top-left */}
+          {/* Smooth Wavy Path 3: Curved bottom flow */}
           <path 
-            d="M1050,500 Q700,450 500,380 T100,420 Q50,400 -50,300" 
+            d="M1050,480 C850,470 750,420 550,430 C350,440 250,400 150,410 C75,415 25,405 -50,380" 
             stroke="url(#wavyGradient3)" 
-            strokeWidth="1.8" 
+            strokeWidth="1.4" 
             fill="none"
             className="animate-wavyTravel3"
             style={{animationDelay: '10s'}}
           />
           
-          {/* Wavy Path 4: Complex wave from middle-left to middle-right */}
+          {/* Smooth Wavy Path 4: Gentle middle wave */}
           <path 
-            d="M-50,350 Q150,300 300,400 Q500,450 700,350 T1050,380" 
+            d="M-50,350 C100,340 200,380 350,370 C500,360 650,390 800,380 C900,375 975,385 1050,395" 
             stroke="url(#wavyGradient4)" 
-            strokeWidth="1.3" 
+            strokeWidth="1.1" 
             fill="none"
             className="animate-wavyTravel4"
             style={{animationDelay: '14s'}}

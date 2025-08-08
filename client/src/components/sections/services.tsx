@@ -71,29 +71,29 @@ export default function Services() {
           <defs>
             <linearGradient id="servicesWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#fbbf24" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#fbbf24" stopOpacity="0.3"/>
+              <stop offset="50%" stopColor="#fbbf24" stopOpacity="0.12"/>
               <stop offset="100%" stopColor="#fbbf24" stopOpacity="0"/>
             </linearGradient>
             <linearGradient id="servicesWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
               <stop offset="0%" stopColor="#06b6d4" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.25"/>
+              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.1"/>
               <stop offset="100%" stopColor="#06b6d4" stopOpacity="0"/>
             </linearGradient>
           </defs>
           
           <path 
-            d="M-50,80 Q250,30 500,120 T1050,90" 
+            d="M-50,80 C200,60 300,100 500,90 C700,80 850,70 1050,90" 
             stroke="url(#servicesWavy1)" 
-            strokeWidth="1.5" 
+            strokeWidth="1.2" 
             fill="none"
             className="animate-wavyTravel1"
             style={{animationDelay: '3s'}}
           />
           
           <path 
-            d="M1050,300 Q700,250 400,320 T-50,280" 
+            d="M1050,300 C800,280 650,320 450,310 C250,300 150,290 -50,280" 
             stroke="url(#servicesWavy2)" 
-            strokeWidth="1.2" 
+            strokeWidth="1.0" 
             fill="none"
             className="animate-wavyTravel2"
             style={{animationDelay: '7s'}}

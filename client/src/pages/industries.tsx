@@ -84,29 +84,29 @@ export default function Industries() {
             <defs>
               <linearGradient id="industriesWavy1" x1="0%" y1="50%" x2="100%" y2="50%">
                 <stop offset="0%" stopColor="#06b6d4" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.12"/>
                 <stop offset="100%" stopColor="#06b6d4" stopOpacity="0"/>
               </linearGradient>
               <linearGradient id="industriesWavy2" x1="100%" y1="100%" x2="0%" y2="0%">
                 <stop offset="0%" stopColor="#f43f5e" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f43f5e" stopOpacity="0.25"/>
+                <stop offset="50%" stopColor="#f43f5e" stopOpacity="0.1"/>
                 <stop offset="100%" stopColor="#f43f5e" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
             <path 
-              d="M-50,150 Q250,100 500,180 T1050,140" 
+              d="M-50,150 C200,130 350,170 550,160 C750,150 900,130 1050,140" 
               stroke="url(#industriesWavy1)" 
-              strokeWidth="1.7" 
+              strokeWidth="1.4" 
               fill="none"
               className="animate-wavyTravel1"
               style={{animationDelay: '3s'}}
             />
             
             <path 
-              d="M1050,450 Q700,400 400,480 T-50,440" 
+              d="M1050,450 C800,430 650,470 450,460 C250,450 150,440 -50,440" 
               stroke="url(#industriesWavy2)" 
-              strokeWidth="1.4" 
+              strokeWidth="1.1" 
               fill="none"
               className="animate-wavyTravel2"
               style={{animationDelay: '8s'}}

@@ -50,29 +50,29 @@ export default function About() {
             <defs>
               <linearGradient id="aboutWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#7c3aed" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#7c3aed" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#7c3aed" stopOpacity="0.12"/>
                 <stop offset="100%" stopColor="#7c3aed" stopOpacity="0"/>
               </linearGradient>
               <linearGradient id="aboutWavy2" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#059669" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#059669" stopOpacity="0.25"/>
+                <stop offset="50%" stopColor="#059669" stopOpacity="0.1"/>
                 <stop offset="100%" stopColor="#059669" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
             <path 
-              d="M-50,100 Q300,60 600,130 T1050,90" 
+              d="M-50,100 C250,80 450,120 700,110 C850,105 950,95 1050,90" 
               stroke="url(#aboutWavy1)" 
-              strokeWidth="1.5" 
+              strokeWidth="1.2" 
               fill="none"
               className="animate-wavyTravel3"
               style={{animationDelay: '2s'}}
             />
             
             <path 
-              d="M1050,280 Q650,320 350,250 T-50,290" 
+              d="M1050,280 C750,300 550,250 350,260 C200,265 100,285 -50,290" 
               stroke="url(#aboutWavy2)" 
-              strokeWidth="1.2" 
+              strokeWidth="1.0" 
               fill="none"
               className="animate-wavyTravel4"
               style={{animationDelay: '6s'}}

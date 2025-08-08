@@ -28,29 +28,29 @@ export default function Testimonials() {
           <defs>
             <linearGradient id="testimonialsWavy1" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#a855f7" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#a855f7" stopOpacity="0.3"/>
+              <stop offset="50%" stopColor="#a855f7" stopOpacity="0.12"/>
               <stop offset="100%" stopColor="#a855f7" stopOpacity="0"/>
             </linearGradient>
             <linearGradient id="testimonialsWavy2" x1="100%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#f97316" stopOpacity="0.25"/>
+              <stop offset="50%" stopColor="#f97316" stopOpacity="0.1"/>
               <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
             </linearGradient>
           </defs>
           
           <path 
-            d="M-50,220 Q300,180 600,240 T1050,200" 
+            d="M-50,220 C250,200 400,250 650,240 C800,235 900,210 1050,200" 
             stroke="url(#testimonialsWavy1)" 
-            strokeWidth="1.4" 
+            strokeWidth="1.1" 
             fill="none"
             className="animate-wavyTravel3"
             style={{animationDelay: '5s'}}
           />
           
           <path 
-            d="M1050,60 Q650,100 350,40 T-50,80" 
+            d="M1050,60 C750,80 550,40 350,50 C200,55 100,70 -50,80" 
             stroke="url(#testimonialsWavy2)" 
-            strokeWidth="1.1" 
+            strokeWidth="0.9" 
             fill="none"
             className="animate-wavyTravel4"
             style={{animationDelay: '9s'}}
