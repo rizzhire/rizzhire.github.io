@@ -89,17 +89,34 @@ export default function Blogs() {
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
-        {/* Enhanced Light Background Graphics */}
+        {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Moving Floating Circles */}
-          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/22 to-yellow-300/32 rounded-full blur-xl animate-floatMoveEnhanced"></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/18 to-yellow-200/26 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-gradient-to-r from-purple-200/18 to-pink-200/26 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
+          {/* Subtle Floating Circles */}
+          <div className="absolute top-16 left-8 w-24 h-24 bg-gradient-to-r from-yellow-200/8 to-yellow-300/12 rounded-full blur-xl"></div>
+          <div className="absolute top-32 right-16 w-18 h-18 bg-gradient-to-r from-blue-200/7 to-cyan-200/10 rounded-full blur-lg"></div>
+          <div className="absolute bottom-24 left-1/5 w-28 h-28 bg-gradient-to-r from-orange-200/6 to-yellow-200/9 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 right-1/4 w-20 h-20 bg-gradient-to-r from-purple-200/7 to-pink-200/10 rounded-full blur-xl"></div>
           
-          {/* Additional Enhanced Elements */}
-          <div className="absolute top-1/2 left-8 w-18 h-18 bg-gradient-to-r from-emerald-200/20 to-green-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
-          <div className="absolute top-60 right-12 w-14 h-14 bg-gradient-to-r from-rose-200/18 to-red-200/26 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+          {/* Additional Light Elements */}
+          <div className="absolute top-1/3 left-6 w-16 h-16 bg-gradient-to-r from-emerald-200/6 to-green-200/9 rounded-full blur-lg"></div>
+          <div className="absolute top-48 right-10 w-12 h-12 bg-gradient-to-r from-rose-200/6 to-red-200/8 rounded-full blur-md"></div>
+          <div className="absolute bottom-16 left-1/3 w-22 h-22 bg-gradient-to-r from-indigo-200/6 to-blue-200/9 rounded-full blur-lg"></div>
+          <div className="absolute top-20 left-1/2 w-14 h-14 bg-gradient-to-r from-amber-200/7 to-yellow-200/10 rounded-full blur-md"></div>
+          
+          {/* Very Light Grid Pattern */}
+          <div className="absolute inset-0 opacity-1">
+            <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
+              <pattern id="blogsLightGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="1" fill="#f59e0b" opacity="0.03"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#blogsLightGrid)" />
+            </svg>
+          </div>
+          
+          {/* Subtle Geometric Shapes */}
+          <div className="absolute top-1/4 right-1/5 w-8 h-8 bg-gradient-to-r from-yellow-200/4 to-orange-200/6 rotate-45 blur-sm"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-6 h-6 bg-gradient-to-r from-blue-200/4 to-purple-200/6 rotate-12 blur-sm"></div>
+          <div className="absolute top-2/3 right-1/3 w-10 h-2 bg-gradient-to-r from-green-200/4 to-emerald-200/6 rotate-45 blur-sm"></div>
           
 
           {/* Exact Homepage Moving Geometric Lines */}
