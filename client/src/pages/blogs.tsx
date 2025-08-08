@@ -113,69 +113,69 @@ export default function Blogs() {
             <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
           
-          {/* Enhanced Wavy Abstract Traveling Lines - More Movement */}
+          {/* Moving Wavy Lines - Exact Copy from Homepage Hero */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
             <defs>
-              <linearGradient id="blogsWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#10b981" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#10b981" stopOpacity="0.13"/>
-                <stop offset="100%" stopColor="#10b981" stopOpacity="0"/>
-              </linearGradient>
-              <linearGradient id="blogsWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.11"/>
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
-              </linearGradient>
-              <linearGradient id="blogsWavy3" x1="0%" y1="100%" x2="100%" y2="0%">
+              <linearGradient id="blogsHeroWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.12"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="blogsWavy4" x1="100%" y1="0%" x2="0%" y2="100%">
+              <linearGradient id="blogsHeroWavy2" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.10"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
                 <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="blogsHeroWavy3" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="blogsHeroWavy4" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f97316" stopOpacity="0.10"/>
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
-            {/* Smooth Wavy Path 1: Flowing top wave */}
+            {/* Wavy Path 1: Main flowing diagonal */}
             <path 
-              d="M-150,110 C-50,100 100,130 350,120 C600,115 800,105 950,102 C1050,100 1100,98 1150,100" 
-              stroke="url(#blogsWavy1)" 
-              strokeWidth="1.3" 
+              d="M-150,120 C-50,110 50,140 200,130 C350,120 500,160 650,150 C800,145 900,155 1150,160" 
+              stroke="url(#blogsHeroWavy1)" 
+              strokeWidth="1.4" 
               fill="none"
               className="animate-wavyTravel1"
-              style={{animationDelay: '5s'}}
+              style={{animationDelay: '2s'}}
             />
             
-            {/* Smooth Wavy Path 2: Flowing bottom wave */}
+            {/* Wavy Path 2: Elegant reverse S-curve */}
             <path 
-              d="M1150,290 C1050,300 900,260 650,270 C400,275 250,295 100,298 C0,300 -50,301 -150,300" 
-              stroke="url(#blogsWavy2)" 
-              strokeWidth="1.0" 
+              d="M1150,280 C1050,270 950,300 800,290 C650,280 500,320 350,310 C200,305 100,315 -150,320" 
+              stroke="url(#blogsHeroWavy2)" 
+              strokeWidth="1.1" 
               fill="none"
               className="animate-wavyTravel2"
-              style={{animationDelay: '8s'}}
+              style={{animationDelay: '7s'}}
             />
             
-            {/* Additional Wavy Path 3: Middle diagonal flow */}
+            {/* Wavy Path 3: Upper curved flow */}
             <path 
-              d="M-150,180 C-50,170 50,200 200,190 C350,180 500,200 650,195 C800,190 900,185 1150,190" 
-              stroke="url(#blogsWavy3)" 
-              strokeWidth="1.1" 
+              d="M1150,80 C1000,70 900,100 700,90 C500,80 350,120 200,110 C100,105 25,95 -150,90" 
+              stroke="url(#blogsHeroWavy3)" 
+              strokeWidth="1.3" 
               fill="none"
               className="animate-wavyTravel3"
               style={{animationDelay: '12s'}}
             />
             
-            {/* Additional Wavy Path 4: Reverse flow */}
+            {/* Wavy Path 4: Central gentle wave */}
             <path 
-              d="M1150,240 C1000,250 850,220 650,230 C450,235 250,250 100,245 C50,243 0,242 -150,240" 
-              stroke="url(#blogsWavy4)" 
-              strokeWidth="0.9" 
+              d="M-150,200 C-50,190 50,220 200,210 C350,200 500,230 650,220 C800,215 900,225 1150,230" 
+              stroke="url(#blogsHeroWavy4)" 
+              strokeWidth="1.0" 
               fill="none"
               className="animate-wavyTravel4"
-              style={{animationDelay: '16s'}}
+              style={{animationDelay: '17s'}}
             />
           </svg>
         </div>
