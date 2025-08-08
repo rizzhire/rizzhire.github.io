@@ -79,65 +79,16 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Infinite Intersecting Curved Lines - No Endpoints */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 3000 600" style={{animationDuration: '30s'}}>
+          {/* Exact Homepage Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 600">
             <defs>
-              <linearGradient id="industriesInfiniteCurve1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
-                <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.4"/>
-                <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.4"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2"/>
-              </linearGradient>
-              <linearGradient id="industriesInfiniteCurve2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.18"/>
-                <stop offset="25%" stopColor="#3b82f6" stopOpacity="0.35"/>
-                <stop offset="75%" stopColor="#3b82f6" stopOpacity="0.35"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.18"/>
+              <linearGradient id="industriesHeroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
             </defs>
-            
-            {/* First Infinite Curved Line - Sine Wave Pattern */}
-            <path 
-              d="M0,200 Q150,120 300,200 T600,200 T900,200 T1200,200 T1500,200 T1800,200 T2100,200 T2400,200 T2700,200 T3000,200 T3300,200 T3600,200" 
-              stroke="url(#industriesInfiniteCurve1)" 
-              strokeWidth="2.5" 
-              fill="none"
-            />
-            
-            {/* Second Infinite Curved Line - Complementary Intersecting Wave */}
-            <path 
-              d="M0,400 Q150,480 300,400 T600,400 T900,400 T1200,400 T1500,400 T1800,400 T2100,400 T2400,400 T2700,400 T3000,400 T3300,400 T3600,400" 
-              stroke="url(#industriesInfiniteCurve2)" 
-              strokeWidth="2.2" 
-              fill="none"
-            />
-            
-            {/* Third Infinite Curved Line - Middle Intersecting Wave */}
-            <path 
-              d="M0,300 Q100,220 200,300 Q300,380 400,300 Q500,220 600,300 Q700,380 800,300 Q900,220 1000,300 Q1100,380 1200,300 Q1300,220 1400,300 Q1500,380 1600,300 Q1700,220 1800,300 Q1900,380 2000,300 Q2100,220 2200,300 Q2300,380 2400,300 Q2500,220 2600,300 Q2700,380 2800,300 Q2900,220 3000,300" 
-              stroke="url(#industriesInfiniteCurve1)" 
-              strokeWidth="1.8" 
-              fill="none"
-              opacity="0.8"
-            />
-            
-            {/* Fourth Infinite Curved Line - Counter Wave */}
-            <path 
-              d="M0,150 Q100,230 200,150 Q300,70 400,150 Q500,230 600,150 Q700,70 800,150 Q900,230 1000,150 Q1100,70 1200,150 Q1300,230 1400,150 Q1500,70 1600,150 Q1700,230 1800,150 Q1900,70 2000,150 Q2100,230 2200,150 Q2300,70 2400,150 Q2500,230 2600,150 Q2700,70 2800,150 Q2900,230 3000,150" 
-              stroke="url(#industriesInfiniteCurve2)" 
-              strokeWidth="1.6" 
-              fill="none"
-              opacity="0.7"
-            />
-            
-            {/* Fifth Infinite Curved Line - Large Amplitude Wave */}
-            <path 
-              d="M0,450 Q200,350 400,450 T800,450 T1200,450 T1600,450 T2000,450 T2400,450 T2800,450 T3200,450 T3600,450" 
-              stroke="url(#industriesInfiniteCurve2)" 
-              strokeWidth="1.4" 
-              fill="none"
-              opacity="0.6"
-            />
+            <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#industriesHeroGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#industriesHeroGradient1)" strokeWidth="1.5" fill="none"/>
           </svg>
           
           {/* Geometric Lines */}

@@ -113,65 +113,16 @@ export default function Blogs() {
             <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
           
-          {/* Infinite Intersecting Curved Lines - No Endpoints */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 2400 400" style={{animationDuration: '25s'}}>
+          {/* Exact Homepage Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 400">
             <defs>
-              <linearGradient id="blogsInfiniteCurve1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
-                <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.4"/>
-                <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.4"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2"/>
-              </linearGradient>
-              <linearGradient id="blogsInfiniteCurve2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.18"/>
-                <stop offset="25%" stopColor="#3b82f6" stopOpacity="0.35"/>
-                <stop offset="75%" stopColor="#3b82f6" stopOpacity="0.35"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.18"/>
+              <linearGradient id="blogsHeroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
             </defs>
-            
-            {/* First Infinite Curved Line - Upper Wave */}
-            <path 
-              d="M0,120 Q120,80 240,120 T480,120 T720,120 T960,120 T1200,120 T1440,120 T1680,120 T1920,120 T2160,120 T2400,120 T2640,120" 
-              stroke="url(#blogsInfiniteCurve1)" 
-              strokeWidth="2.3" 
-              fill="none"
-            />
-            
-            {/* Second Infinite Curved Line - Lower Intersecting Wave */}
-            <path 
-              d="M0,280 Q120,320 240,280 T480,280 T720,280 T960,280 T1200,280 T1440,280 T1680,280 T1920,280 T2160,280 T2400,280 T2640,280" 
-              stroke="url(#blogsInfiniteCurve2)" 
-              strokeWidth="2.0" 
-              fill="none"
-            />
-            
-            {/* Third Infinite Curved Line - Middle Intersecting Wave */}
-            <path 
-              d="M0,200 Q80,140 160,200 Q240,260 320,200 Q400,140 480,200 Q560,260 640,200 Q720,140 800,200 Q880,260 960,200 Q1040,140 1120,200 Q1200,260 1280,200 Q1360,140 1440,200 Q1520,260 1600,200 Q1680,140 1760,200 Q1840,260 1920,200 Q2000,140 2080,200 Q2160,260 2240,200 Q2320,140 2400,200" 
-              stroke="url(#blogsInfiniteCurve1)" 
-              strokeWidth="1.6" 
-              fill="none"
-              opacity="0.8"
-            />
-            
-            {/* Fourth Infinite Curved Line - Counter Wave */}
-            <path 
-              d="M0,100 Q80,160 160,100 Q240,40 320,100 Q400,160 480,100 Q560,40 640,100 Q720,160 800,100 Q880,40 960,100 Q1040,160 1120,100 Q1200,40 1280,100 Q1360,160 1440,100 Q1520,40 1600,100 Q1680,160 1760,100 Q1840,40 1920,100 Q2000,160 2080,100 Q2160,40 2240,100 Q2320,160 2400,100" 
-              stroke="url(#blogsInfiniteCurve2)" 
-              strokeWidth="1.4" 
-              fill="none"
-              opacity="0.7"
-            />
-            
-            {/* Fifth Infinite Curved Line - Large Amplitude Wave */}
-            <path 
-              d="M0,350 Q160,250 320,350 T640,350 T960,350 T1280,350 T1600,350 T1920,350 T2240,350 T2560,350" 
-              stroke="url(#blogsInfiniteCurve2)" 
-              strokeWidth="1.2" 
-              fill="none"
-              opacity="0.6"
-            />
+            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsHeroGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsHeroGradient1)" strokeWidth="1.5" fill="none"/>
           </svg>
         </div>
         
