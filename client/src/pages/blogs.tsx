@@ -89,39 +89,56 @@ export default function Blogs() {
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
-        {/* Light Background Graphics */}
+        {/* Enhanced Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Floating Circles */}
-          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg"></div>
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
+          {/* Moving Floating Circles */}
+          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/22 to-yellow-300/32 rounded-full blur-xl animate-floatMoveEnhanced"></div>
+          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/18 to-yellow-200/26 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-gradient-to-r from-purple-200/18 to-pink-200/26 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
           
-          {/* Geometric Lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 1000 400">
+          {/* Additional Enhanced Elements */}
+          <div className="absolute top-1/2 left-8 w-18 h-18 bg-gradient-to-r from-emerald-200/20 to-green-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-60 right-12 w-14 h-14 bg-gradient-to-r from-rose-200/18 to-red-200/26 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+          
+          {/* Enhanced Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-10 animate-waveFlow" viewBox="0 0 1000 400">
             <defs>
               <linearGradient id="blogsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2"/>
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
             </defs>
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsGradient)" strokeWidth="2" fill="none"/>
+            <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
           
-          {/* Wavy Abstract Traveling Lines */}
+          {/* Enhanced Wavy Abstract Traveling Lines - More Movement */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
             <defs>
               <linearGradient id="blogsWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#10b981" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#10b981" stopOpacity="0.12"/>
+                <stop offset="50%" stopColor="#10b981" stopOpacity="0.13"/>
                 <stop offset="100%" stopColor="#10b981" stopOpacity="0"/>
               </linearGradient>
               <linearGradient id="blogsWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
                 <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.11"/>
                 <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="blogsWavy3" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="blogsWavy4" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.10"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
+            {/* Smooth Wavy Path 1: Flowing top wave */}
             <path 
               d="M-150,110 C-50,100 100,130 350,120 C600,115 800,105 950,102 C1050,100 1100,98 1150,100" 
               stroke="url(#blogsWavy1)" 
@@ -131,6 +148,7 @@ export default function Blogs() {
               style={{animationDelay: '5s'}}
             />
             
+            {/* Smooth Wavy Path 2: Flowing bottom wave */}
             <path 
               d="M1150,290 C1050,300 900,260 650,270 C400,275 250,295 100,298 C0,300 -50,301 -150,300" 
               stroke="url(#blogsWavy2)" 
@@ -138,6 +156,26 @@ export default function Blogs() {
               fill="none"
               className="animate-wavyTravel2"
               style={{animationDelay: '8s'}}
+            />
+            
+            {/* Additional Wavy Path 3: Middle diagonal flow */}
+            <path 
+              d="M-150,180 C-50,170 50,200 200,190 C350,180 500,200 650,195 C800,190 900,185 1150,190" 
+              stroke="url(#blogsWavy3)" 
+              strokeWidth="1.1" 
+              fill="none"
+              className="animate-wavyTravel3"
+              style={{animationDelay: '12s'}}
+            />
+            
+            {/* Additional Wavy Path 4: Reverse flow */}
+            <path 
+              d="M1150,240 C1000,250 850,220 650,230 C450,235 250,250 100,245 C50,243 0,242 -150,240" 
+              stroke="url(#blogsWavy4)" 
+              strokeWidth="0.9" 
+              fill="none"
+              className="animate-wavyTravel4"
+              style={{animationDelay: '16s'}}
             />
           </svg>
         </div>
