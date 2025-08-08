@@ -130,6 +130,16 @@ export default function Blogs() {
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsHeroGradient1)" strokeWidth="2" fill="none"/>
             <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsHeroGradient1)" strokeWidth="1.5" fill="none"/>
           </svg>
+          
+          {/* Very Light Dots Pattern from Homepage */}
+          <div className="absolute inset-0 opacity-2">
+            <svg width="40" height="40" viewBox="0 0 40 40" className="w-full h-full">
+              <pattern id="blogsDotsPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="20" cy="20" r="1" fill="#f59e0b" opacity="0.1"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#blogsDotsPattern)" />
+            </svg>
+          </div>
         </div>
         
         <motion.div 
