@@ -843,10 +843,19 @@ html {
 
 @keyframes waveFlow {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0%) scale(1);
+  }
+  25% {
+    transform: translateX(-25%) scale(1.02);
+  }
+  50% {
+    transform: translateX(-50%) scale(1);
+  }
+  75% {
+    transform: translateX(-75%) scale(0.98);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%) scale(1);
   }
 }
 
