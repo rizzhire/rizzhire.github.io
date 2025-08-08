@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import DNACanvas from "@/components/ui/dna-canvas";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
