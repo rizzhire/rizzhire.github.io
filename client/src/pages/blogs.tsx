@@ -185,69 +185,66 @@ export default function Blogs() {
           <div className="absolute bottom-32 left-20 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
         </div>
         
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <Card className="bg-gradient-to-r from-gray-50 to-white rounded-2xl border-0 shadow-md overflow-hidden">
+            <Card className="bg-gradient-to-r from-gray-50 to-white rounded-3xl border-0 shadow-lg overflow-hidden">
               <CardContent className="p-0">
-                <div className="flex">
-                  {/* Content Section - Expanded to left, more space */}
-                  <div className="flex-1 p-6 lg:p-8 lg:pr-4">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="px-3 py-1 bg-yellow/20 text-yellow-700 rounded-full text-xs font-semibold">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="flex items-center mb-4">
+                      <span className="px-3 py-1 bg-yellow/20 text-yellow-700 rounded-full text-sm font-medium">
                         Featured
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
-                        {blogPosts[0].category}
-                      </span>
+                      <span className="ml-3 text-gray-500 text-sm">{blogPosts[0].category}</span>
                     </div>
-                    <h2 className="text-xl lg:text-2xl font-bold mb-3 text-gray-900 leading-tight">
+                    <h2 className="fluid-text-3xl font-bold mb-4 text-gray-900 leading-tight">
                       {blogPosts[0].title}
                     </h2>
-                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                       {blogPosts[0].excerpt}
                     </p>
                     
-                    <div className="flex items-center mb-4">
-                      <div className="w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center mr-3">
-                        <span className="text-xs font-semibold text-gray-700">SK</span>
-                      </div>
+                    <div className="flex items-center mb-6">
+                      <img 
+                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(blogPosts[0].author)}&size=80&background=F5F3EB&color=1F2937&rounded=true`}
+                        alt={`${blogPosts[0].author} profile`}
+                        className="w-12 h-12 rounded-xl mr-4"
+                      />
                       <div>
-                        <p className="font-semibold text-gray-900 text-sm">{blogPosts[0].author}</p>
-                        <p className="text-xs text-gray-600">{blogPosts[0].role}</p>
+                        <p className="font-semibold text-gray-900">{blogPosts[0].author}</p>
+                        <p className="text-sm text-gray-600">{blogPosts[0].role}</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center text-xs text-gray-500 mb-4">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      <span className="mr-3">{blogPosts[0].date}</span>
-                      <Clock className="w-3 h-3 mr-1" />
+                    <div className="flex items-center text-sm text-gray-500 mb-6">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span className="mr-4">{blogPosts[0].date}</span>
+                      <Clock className="w-4 h-4 mr-2" />
                       <span>{blogPosts[0].readTime}</span>
                     </div>
                     
                     <Button 
                       asChild
-                      size="sm"
-                      className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-300"
+                      className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-[1.03] w-fit"
                     >
                       <Link href={`/blog/${blogPosts[0].id}`}>
-                        Read Full Article <ArrowRight className="w-3 h-3 ml-1" />
+                        Read Full Article <ArrowRight className="w-5 h-5 ml-2" />
                       </Link>
                     </Button>
                   </div>
                   
-                  {/* Featured Badge Section - Smaller, compact */}
-                  <div className="w-32 lg:w-40 bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-4">
+                  <div className="bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-8">
                     <div className="text-center">
-                      <div className="w-10 h-10 bg-yellow/30 rounded-full flex items-center justify-center mb-2 mx-auto">
-                        <User className="w-5 h-5 text-yellow-700" />
+                      <div className="w-32 h-32 bg-yellow/30 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <User className="w-16 h-16 text-yellow-700" />
                       </div>
-                      <p className="text-sm font-semibold text-gray-900 mb-1">Featured Insight</p>
-                      <p className="text-xs text-gray-600">Industry Expert Analysis</p>
+                      <p className="text-lg font-semibold text-gray-900">Featured Insight</p>
+                      <p className="text-gray-600">Industry Expert Analysis</p>
                     </div>
                   </div>
                 </div>
