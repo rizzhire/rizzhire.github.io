@@ -23,99 +23,35 @@ export default function Services() {
       icon: Users,
       title: "Manpower Supply Services",
       description: "Comprehensive workforce solutions tailored to meet your organization's specific requirements across all skill levels and industries.",
-      features: [
-        "Skilled & Semi-skilled Labor Supply",
-        "Professional Staff Deployment",
-        "Temporary & Permanent Placements",
-        "Multi-country Workforce Solutions",
-        "Compliance & Documentation Support",
-        "Training & Onboarding Programs"
-      ],
-      benefits: [
-        "Reduced hiring costs and time-to-fill",
-        "Access to pre-screened talent pool",
-        "Flexible workforce scaling solutions",
-        "Full regulatory compliance assurance"
-      ],
-      color: "from-blue-500/20 to-blue-600/20",
+      detailedDescription: "Our manpower supply service goes beyond traditional staffing by providing comprehensive workforce solutions tailored to your organization's unique operational needs. We maintain an extensive database of over 10,000 pre-screened professionals across various skill levels, from entry-level positions to highly specialized technical roles.",
+      approach: "Our systematic approach includes rigorous candidate screening, skills assessment, background verification, and cultural fit evaluation. We ensure all our supplied workforce meets international standards and local regulatory requirements, providing you with peace of mind and operational continuity.",
+      outcomes: "Organizations partnering with us typically experience 60% faster hiring cycles, 40% reduction in recruitment costs, and 95% candidate retention rates within the first year of placement.",
+      color: "from-blue-50 to-blue-100",
       iconColor: "text-blue-600"
     },
     {
       icon: TrendingUp,
       title: "Management Consultancy Services",
       description: "Strategic business consulting to optimize your operations, enhance organizational efficiency, and drive sustainable growth in competitive markets.",
-      features: [
-        "Organizational Development & Restructuring",
-        "Process Optimization & Automation",
-        "Strategic Planning & Implementation",
-        "Change Management Programs",
-        "Performance Management Systems",
-        "Leadership Development Initiatives"
-      ],
-      benefits: [
-        "Enhanced operational efficiency",
-        "Strategic competitive advantage",
-        "Improved organizational culture",
-        "Measurable ROI on investments"
-      ],
-      color: "from-green-500/20 to-green-600/20",
+      detailedDescription: "Our management consultancy services focus on transforming your business operations through strategic planning, process optimization, and organizational development. We work closely with your leadership team to identify inefficiencies, streamline workflows, and implement best practices that drive measurable results.",
+      approach: "We employ a data-driven methodology that combines industry best practices with innovative solutions tailored to your specific market conditions. Our consultants bring deep expertise in change management, helping organizations navigate complex transformations while maintaining operational stability.",
+      outcomes: "Clients typically achieve 40% improvement in operational efficiency, 25% reduction in operational costs, and measurable ROI within 6 months of implementation.",
+      color: "from-green-50 to-green-100",
       iconColor: "text-green-600"
     },
     {
       icon: UserCheck,
       title: "Recruitment Consultancy Services",
       description: "End-to-end recruitment solutions connecting top talent with leading organizations across the Middle East and South Asia regions.",
-      features: [
-        "Executive Search & Selection",
-        "Technical & Specialized Recruitment",
-        "Bulk Hiring & Mass Recruitment",
-        "Talent Acquisition Strategy",
-        "Candidate Assessment & Evaluation",
-        "Reference Checks & Background Verification"
-      ],
-      benefits: [
-        "Access to exclusive talent networks",
-        "Reduced time-to-hire by 60%",
-        "Quality assurance guarantee",
-        "Industry expertise across sectors"
-      ],
-      color: "from-yellow-500/20 to-yellow-600/20",
+      detailedDescription: "Our recruitment consultancy service provides comprehensive talent acquisition solutions, from executive search for C-level positions to large-scale recruitment campaigns for operational roles. We leverage our extensive network and deep market knowledge to identify, attract, and secure the best talent for your organization.",
+      approach: "We utilize advanced recruitment technologies, comprehensive market research, and personalized consultation to ensure perfect candidate-role alignment. Our process includes detailed job analysis, targeted sourcing strategies, rigorous assessment protocols, and ongoing support throughout the onboarding process.",
+      outcomes: "We maintain a 97% successful placement rate with 6-month placement warranty, reduce average time-to-hire by 60%, and provide access to exclusive talent networks across 15+ industries.",
+      color: "from-yellow-50 to-yellow-100",
       iconColor: "text-yellow-600"
     }
   ];
 
-  const industries = [
-    {
-      title: "Oil & Gas",
-      description: "Specialized recruitment for upstream, downstream, and midstream operations across the Middle East energy sector.",
-      roles: ["Petroleum Engineers", "Drilling Specialists", "Safety Managers", "Project Engineers"],
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&q=80"
-    },
-    {
-      title: "Construction",
-      description: "Comprehensive staffing solutions for mega projects, infrastructure development, and commercial construction.",
-      roles: ["Project Managers", "Civil Engineers", "Site Supervisors", "Quantity Surveyors"],
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=250&fit=crop&q=80"
-    },
-    {
-      title: "IT & Technology",
-      description: "Connecting innovative tech talent with leading digital transformation initiatives across the region.",
-      roles: ["Software Developers", "Data Scientists", "Cybersecurity Experts", "Cloud Architects"],
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop&q=80"
-    },
-    {
-      title: "Healthcare",
-      description: "Specialized medical and healthcare recruitment ensuring quality patient care across diverse healthcare facilities.",
-      roles: ["Doctors & Specialists", "Nurses", "Healthcare Administrators", "Medical Technicians"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&q=80"
-    },
-    {
-      title: "Hospitality",
-      description: "Premium hospitality recruitment for luxury hotels, resorts, and tourism industry leaders in the Middle East.",
-      roles: ["Hotel Managers", "Chefs", "Guest Relations", "Tourism Specialists"],
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=250&fit=crop&q=80"
-    }
-  ];
+
 
   const blogPosts = [
     {
@@ -216,26 +152,20 @@ export default function Services() {
                 
                 <div className={`order-${index % 2 === 0 ? '2' : '1'} space-y-8`}>
                   <div>
-                    <h3 className="fluid-text-2xl font-semibold mb-4 text-gray-900">Key Features</h3>
-                    <div className="grid gap-3">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h3 className="fluid-text-2xl font-semibold mb-4 text-gray-900">Key Benefits</h3>
-                    <div className="grid gap-3">
-                      {service.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-center">
-                          <CheckCircle className="w-5 h-5 text-yellow-500 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">{benefit}</span>
-                        </div>
-                      ))}
+                    <h3 className="fluid-text-2xl font-semibold mb-6 text-gray-900">Our Approach</h3>
+                    <div className="space-y-6">
+                      <p className="text-gray-700 leading-relaxed text-lg">
+                        {service.detailedDescription}
+                      </p>
+                      <p className="text-gray-700 leading-relaxed text-lg">
+                        {service.approach}
+                      </p>
+                      <div className="bg-yellow/10 border-l-4 border-yellow p-6 rounded-r-lg">
+                        <h4 className="font-semibold text-gray-900 mb-2">Expected Outcomes</h4>
+                        <p className="text-gray-700 leading-relaxed">
+                          {service.outcomes}
+                        </p>
+                      </div>
                     </div>
                   </div>
                   
@@ -247,63 +177,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Industries We Serve Section */}
-      <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="fluid-text-4xl font-bold mb-6 text-gray-900">
-              Industries We <span className="text-yellow">Serve</span>
-            </h2>
-            <p className="fluid-text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Specialized expertise across key sectors driving the Middle East and South Asian economies.
-            </p>
-          </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {industries.map((industry, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card className="group bg-white rounded-3xl border-0 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={industry.image} 
-                      alt={`${industry.title} industry professionals`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      style={{filter: 'saturate(0.8) brightness(0.9)'}}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">{industry.title}</h3>
-                  </div>
-                  <CardContent className="p-6">
-                    <p className="text-gray-600 mb-4 leading-relaxed">{industry.description}</p>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-900">Key Roles:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {industry.roles.map((role, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-yellow/20 text-gray-700 rounded-full text-sm">
-                            {role}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
 
 

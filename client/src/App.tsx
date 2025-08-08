@@ -10,6 +10,7 @@ import DeployPage from "@/pages/deploy";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Services from "@/pages/services";
+import Industries from "@/pages/industries";
 import Blogs from "@/pages/blogs";
 import BlogDetail from "@/pages/blog-detail";
 import Navbar from "@/components/layout/navbar";
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
+      <Route path="/industries" component={Industries} />
       <Route path="/blogs" component={Blogs} />
       <Route path="/blog/:id" component={BlogDetail} />
       <Route path="/contact" component={Contact} />
