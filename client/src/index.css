@@ -695,6 +695,86 @@ html {
   }
 }
 
+/* Enhanced home page animations */
+@keyframes floatMoveEnhanced {
+  0% {
+    transform: translateX(0px) translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateX(25px) translateY(-20px) scale(1.1);
+  }
+  50% {
+    transform: translateX(-15px) translateY(-35px) scale(0.9);
+  }
+  75% {
+    transform: translateX(-20px) translateY(-15px) scale(1.05);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px) scale(1);
+  }
+}
+
+@keyframes pulseEnhanced {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15) rotate(5deg);
+  }
+}
+
+@keyframes rotateEnhanced {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Traveling line animations */
+@keyframes travelAcross {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes travelVertical {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
 @keyframes waveFlow {
   0% {
     transform: translateX(0%);
@@ -726,6 +806,26 @@ html {
 
 .animate-floatMove {
   animation: floatMove 8s ease-in-out infinite;
+}
+
+.animate-floatMoveEnhanced {
+  animation: floatMoveEnhanced 6s ease-in-out infinite;
+}
+
+.animate-pulseEnhanced {
+  animation: pulseEnhanced 3s ease-in-out infinite;
+}
+
+.animate-rotateEnhanced {
+  animation: rotateEnhanced 20s linear infinite;
+}
+
+.animate-travelAcross {
+  animation: travelAcross 8s ease-in-out infinite;
+}
+
+.animate-travelVertical {
+  animation: travelVertical 10s ease-in-out infinite;
 }
 
 .animate-waveFlow {

@@ -79,6 +79,10 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
+          {/* Traveling Lines */}
+          <div className="absolute top-14 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-travelAcross" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-0 right-16 w-0.5 h-full bg-gradient-to-b from-transparent via-rose-400/25 to-transparent animate-travelVertical" style={{animationDelay: '8s'}}></div>
+          
           {/* Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 600">
             <defs>

@@ -44,6 +44,10 @@ export default function About() {
             </defs>
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#aboutGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
+          
+          {/* Traveling Lines */}
+          <div className="absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-travelAcross" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-0 left-24 w-0.5 h-full bg-gradient-to-b from-transparent via-green-400/25 to-transparent animate-travelVertical" style={{animationDelay: '6s'}}></div>
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">

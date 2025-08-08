@@ -117,6 +117,10 @@ export default function Services() {
             </defs>
             <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#servicesHeroGradient)" strokeWidth="2" fill="none"/>
           </svg>
+          
+          {/* Traveling Lines */}
+          <div className="absolute top-16 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent animate-travelAcross" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-0 right-20 w-0.5 h-full bg-gradient-to-b from-transparent via-blue-400/25 to-transparent animate-travelVertical" style={{animationDelay: '4s'}}></div>
         </div>
         
         <motion.div 

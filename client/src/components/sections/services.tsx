@@ -65,6 +65,10 @@ export default function Services() {
           </defs>
           <path d="M0,50 Q300,30 600,50 T1200,50" stroke="url(#servicesWaveGradient)" strokeWidth="1" fill="none"/>
         </svg>
+        
+        {/* Traveling Lines */}
+        <div className="absolute top-10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent animate-travelAcross" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-0 right-10 w-0.5 h-full bg-gradient-to-b from-transparent via-blue-400/25 to-transparent animate-travelVertical" style={{animationDelay: '7s'}}></div>
       </div>
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

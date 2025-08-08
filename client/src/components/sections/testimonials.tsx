@@ -22,6 +22,10 @@ export default function Testimonials() {
           </defs>
           <path d="M0,25 Q400,50 800,25 T1200,25" stroke="url(#testimonialsWaveGradient)" strokeWidth="1" fill="none"/>
         </svg>
+        
+        {/* Traveling Lines */}
+        <div className="absolute bottom-10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-travelAcross" style={{animationDelay: '5s'}}></div>
+        <div className="absolute top-0 left-16 w-0.5 h-full bg-gradient-to-b from-transparent via-orange-400/25 to-transparent animate-travelVertical" style={{animationDelay: '9s'}}></div>
       </div>
       
       <div className="relative max-w-6xl mx-auto">

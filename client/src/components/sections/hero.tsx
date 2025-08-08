@@ -14,23 +14,35 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen cream overflow-hidden">
       {/* Enhanced Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Live Moving Floating Circles */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/8 to-yellow-300/12 rounded-full blur-xl animate-floatMove"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200/8 to-cyan-200/12 rounded-full blur-lg animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/6 to-yellow-200/10 rounded-full blur-2xl animate-floatMove" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/8 to-pink-200/12 rounded-full blur-xl animate-rotate" style={{animationDelay: '1.5s'}}></div>
+        {/* Enhanced Live Moving Floating Circles - More Visible */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-floatMoveEnhanced"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200/18 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/18 to-pink-200/28 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
         
-        {/* Live Moving Geometric Lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-3 animate-waveFlow" viewBox="0 0 1000 600">
+        {/* Additional Enhanced Elements */}
+        <div className="absolute top-1/2 left-8 w-20 h-20 bg-gradient-to-r from-emerald-200/20 to-green-200/30 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-60 right-12 w-16 h-16 bg-gradient-to-r from-rose-200/18 to-red-200/28 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+        
+        {/* Enhanced Moving Geometric Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 600">
           <defs>
             <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.08"/>
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
               <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
             </linearGradient>
           </defs>
-          <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#heroGradient1)" strokeWidth="1" fill="none"/>
-          <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#heroGradient1)" strokeWidth="0.5" fill="none"/>
+          <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#heroGradient1)" strokeWidth="2" fill="none"/>
+          <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#heroGradient1)" strokeWidth="1.5" fill="none"/>
         </svg>
+        
+        {/* Traveling Lines - Horizontal */}
+        <div className="absolute top-20 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent animate-travelAcross" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-40 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent animate-travelAcross" style={{animationDelay: '6s'}}></div>
+        
+        {/* Traveling Lines - Vertical */}
+        <div className="absolute top-0 left-20 w-0.5 h-full bg-gradient-to-b from-transparent via-purple-400/30 to-transparent animate-travelVertical" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-0 right-32 w-0.5 h-full bg-gradient-to-b from-transparent via-orange-400/30 to-transparent animate-travelVertical" style={{animationDelay: '8s'}}></div>
         
         {/* Very Light Dots Pattern */}
         <div className="absolute inset-0 opacity-2">
