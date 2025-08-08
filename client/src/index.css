@@ -81,6 +81,43 @@
     align-items: center;
     width: 100%;
   }
+
+  /* Responsive Typography */
+  .fluid-text-xl {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  .fluid-text-2xl {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+  
+  .fluid-text-3xl {
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
+  }
+  
+  .fluid-text-4xl {
+    font-size: clamp(1.875rem, 5vw, 2.25rem);
+  }
+  
+  .fluid-text-5xl {
+    font-size: clamp(2.25rem, 6vw, 3rem);
+  }
+
+  /* BEM-style utilities */
+  .card {
+    border-radius: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .card--hover-lift:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Button hover animations */
+  .btn--scale-hover:hover {
+    transform: scale(1.03);
+  }
   
   .glass-effect {
     backdrop-filter: blur(10px);

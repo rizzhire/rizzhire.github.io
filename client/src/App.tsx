@@ -9,6 +9,7 @@ import JobSeekerPage from "@/pages/job-seeker";
 import DeployPage from "@/pages/deploy";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import Services from "@/pages/services";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
@@ -17,6 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/services" component={Services} />
       <Route path="/contact" component={Contact} />
       <Route path="/job-seeker" component={JobSeekerPage} />
       <Route path="/deploy" component={DeployPage} />

@@ -1,0 +1,80 @@
+Industries We Serve – Redesign
+Heading: "Industries We Serve"
+
+Add detailed subsections covering relevant job markets & corporate sectors in the Middle East.
+
+Suggested industries: Oil & Gas, Construction, IT & Technology, Healthcare, Hospitality, Education.
+
+Layout:
+
+Use CSS Grid (3 columns desktop, 2 columns tablet, 1 column mobile).
+
+Each industry block: Image banner (object-fit: cover, border-radius: 8px), title, 3–4 bullet points highlighting sector demands & hiring trends.
+
+Imagery:
+
+Use optimized WebP images (under 200KB) with corporate styling filters (desaturated, slight gradient overlay).
+
+Ensure alt attributes for accessibility.
+
+3. Blog Section – Middle East Job Markets
+Add 4–5 blog cards dynamically under a "Latest Insights" section.
+
+Each blog post should have:
+
+Title (H4)
+
+Short description (max 30 words)
+
+Author name (fictional, corporate-style like Sarah Khan – Senior Recruitment Analyst)
+
+Profile avatar (circular, 60px, placeholder from https://ui-avatars.com)
+
+Publish date
+
+Read more link (dummy)
+
+Layout:
+
+Use Masonry or Card Grid style.
+
+Responsive typography (clamp(1rem, 2vw, 1.2rem)).
+
+4. Animation & Interaction
+Use Framer Motion or GSAP for smooth corporate animations:
+
+Fade-in + slight upward translate on scroll into view (opacity: 0 → 1, transform: translateY(30px) → 0).
+
+Button hover: subtle background color shift and scale-up by 1.03.
+
+Animations should be ease-out cubic-bezier(.25, .1, .25, 1) and under 0.5s duration.
+
+Avoid parallax overload—keep motion minimal for professional feel.
+
+5. Mobile Optimization
+Audit and fix layout issues:
+
+Ensure all homepage and service page sections use CSS Grid/Flexbox wrap for responsive stacking.
+
+Optimize typography using fluid typography with clamp().
+
+Minimize vertical padding so key visuals appear above the fold.
+
+Ensure tap targets follow 44px × 44px guideline.
+
+Compress images for faster load (use srcset and sizes for responsive images).
+
+6. General Improvements
+Use semantic HTML5 (section, article, header, footer, nav).
+
+Follow BEM CSS naming convention for maintainable styling.
+
+Apply consistent spacing system (8px grid system).
+
+Optimize Lighthouse score for:
+
+Performance > 90
+
+Accessibility > 95
+
+SEO > 90

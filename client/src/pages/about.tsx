@@ -101,7 +101,7 @@ export default function About() {
         </div>
       </section>
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-cream">
+      <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
             Our <span className="text-yellow">Mission</span>

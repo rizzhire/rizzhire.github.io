@@ -40,6 +40,11 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const navigateToServices = () => {
+    setLocation('/services');
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black navbar-slide-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +59,7 @@ export default function Navbar() {
                 Home
               </button>
               <button 
-                onClick={() => scrollToSection('services')}
+                onClick={navigateToServices}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Services
@@ -63,7 +68,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection('countries')}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
-                Industries we serve
+                Industries We Serve
               </button>
               <button 
                 onClick={navigateToAbout}
@@ -113,7 +118,7 @@ export default function Navbar() {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('services')}
+              onClick={navigateToServices}
               className="block text-gray-300 hover:text-white transition-colors duration-200"
             >
               Services
@@ -122,10 +127,10 @@ export default function Navbar() {
               onClick={() => scrollToSection('countries')}
               className="block text-gray-300 hover:text-white transition-colors duration-200"
             >
-              Industries we serve
+              Industries We Serve
             </button>
             <button 
-              onClick={() => scrollToSection('about')}
+              onClick={navigateToAbout}
               className="block text-gray-300 hover:text-white transition-colors duration-200"
             >
               About
@@ -137,7 +142,7 @@ export default function Navbar() {
               Blog
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={navigateToContact}
               className="block text-gray-300 hover:text-white transition-colors duration-200"
             >
               Contact
