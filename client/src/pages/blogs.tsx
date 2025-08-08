@@ -117,16 +117,16 @@ export default function Blogs() {
           <div className="absolute top-2/3 right-1/3 w-10 h-2 bg-gradient-to-r from-green-200/4 to-emerald-200/6 rotate-45 blur-sm"></div>
           
 
-          {/* Exact Homepage Moving Geometric Lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 400">
+          {/* Infinite Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1800 400" style={{animationDuration: '18s'}}>
             <defs>
               <linearGradient id="blogsHeroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
             </defs>
-            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#blogsHeroGradient1)" strokeWidth="2" fill="none"/>
-            <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsHeroGradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M0,200 Q250,100 500,200 T1000,200 T1400,200 T1800,200" stroke="url(#blogsHeroGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,150 Q300,250 600,150 T1000,150 T1300,150 T1600,150 T1900,150" stroke="url(#blogsHeroGradient1)" strokeWidth="1.5" fill="none"/>
           </svg>
           
           {/* Very Light Dots Pattern from Homepage */}

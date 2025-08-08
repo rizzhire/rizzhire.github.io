@@ -79,16 +79,16 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Exact Homepage Moving Geometric Lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 600">
+          {/* Infinite Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 2000 600" style={{animationDuration: '20s'}}>
             <defs>
               <linearGradient id="industriesHeroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
             </defs>
-            <path d="M0,300 Q250,100 500,300 T1000,300" stroke="url(#industriesHeroGradient1)" strokeWidth="2" fill="none"/>
-            <path d="M0,200 Q300,400 600,200 T1000,200" stroke="url(#industriesHeroGradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M0,300 Q250,100 500,300 T1000,300 T1500,300 T2000,300" stroke="url(#industriesHeroGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,200 Q300,400 600,200 T1000,200 T1400,200 T1800,200 T2200,200" stroke="url(#industriesHeroGradient1)" strokeWidth="1.5" fill="none"/>
           </svg>
           
           {/* Geometric Lines */}
