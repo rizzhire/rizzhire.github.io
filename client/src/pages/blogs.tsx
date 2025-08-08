@@ -113,70 +113,88 @@ export default function Blogs() {
             <path d="M0,150 Q300,250 600,150 T1000,150" stroke="url(#blogsGradient)" strokeWidth="1.5" fill="none"/>
           </svg>
           
-          {/* Exact DNA-like Moving Graphics from Homepage */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
+          {/* Infinite Looping DNA-like Graphics */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 1800 400" style={{animationDuration: '18s'}}>
             <defs>
-              <linearGradient id="blogsWavyGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              <linearGradient id="blogsDNAGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.15"/>
               </linearGradient>
-              <linearGradient id="blogsWavyGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              <linearGradient id="blogsDNAGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.12"/>
               </linearGradient>
-              <linearGradient id="blogsWavyGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              <linearGradient id="blogsDNAGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.26"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.13"/>
               </linearGradient>
-              <linearGradient id="blogsWavyGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
-                <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f97316" stopOpacity="0.11"/>
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
+              <linearGradient id="blogsDNAGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#f97316" stopOpacity="0.11"/>
+                <stop offset="50%" stopColor="#f97316" stopOpacity="0.22"/>
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0.11"/>
               </linearGradient>
             </defs>
             
-            {/* Smooth Wavy Path 1: Flowing diagonal wave */}
+            {/* DNA Helix Pattern 1 - Upper flowing wave */}
             <path 
-              d="M-150,80 C-50,70 50,100 200,90 C350,80 500,120 650,110 C800,105 900,115 1150,160" 
-              stroke="url(#blogsWavyGradient1)" 
+              d="M0,100 C150,85 300,115 450,100 C600,85 750,115 900,100 C1050,85 1200,115 1350,100 C1500,85 1650,115 1800,100" 
+              stroke="url(#blogsDNAGradient1)" 
+              strokeWidth="1.7" 
+              fill="none"
+            />
+            
+            {/* DNA Helix Pattern 2 - Complementary wave */}
+            <path 
+              d="M0,180 C150,195 300,165 450,180 C600,195 750,165 900,180 C1050,195 1200,165 1350,180 C1500,195 1650,165 1800,180" 
+              stroke="url(#blogsDNAGradient2)" 
               strokeWidth="1.5" 
               fill="none"
-              className="animate-wavyTravel1"
-              style={{animationDelay: '3s'}}
             />
             
-            {/* Smooth Wavy Path 2: Elegant S-curve */}
+            {/* DNA Helix Pattern 3 - Lower flowing wave */}
             <path 
-              d="M1150,200 C1050,190 950,220 800,210 C650,200 500,240 350,230 C200,225 100,235 -150,270" 
-              stroke="url(#blogsWavyGradient2)" 
-              strokeWidth="1.2" 
+              d="M0,250 C150,235 300,265 450,250 C600,235 750,265 900,250 C1050,235 1200,265 1350,250 C1500,235 1650,265 1800,250" 
+              stroke="url(#blogsDNAGradient3)" 
+              strokeWidth="1.3" 
               fill="none"
-              className="animate-wavyTravel2"
-              style={{animationDelay: '7s'}}
             />
             
-            {/* Smooth Wavy Path 3: Curved bottom flow */}
+            {/* DNA Helix Pattern 4 - Connecting strands */}
             <path 
-              d="M1150,360 C1000,350 900,320 700,330 C500,340 350,300 200,310 C100,315 0,305 -150,280" 
-              stroke="url(#blogsWavyGradient3)" 
-              strokeWidth="1.4" 
-              fill="none"
-              className="animate-wavyTravel3"
-              style={{animationDelay: '11s'}}
-            />
-            
-            {/* Smooth Wavy Path 4: Gentle middle wave */}
-            <path 
-              d="M-150,250 C-50,240 50,280 200,270 C350,260 500,290 650,280 C800,275 900,285 1150,295" 
-              stroke="url(#blogsWavyGradient4)" 
+              d="M0,320 C150,335 300,305 450,320 C600,335 750,305 900,320 C1050,335 1200,305 1350,320 C1500,335 1650,305 1800,320" 
+              stroke="url(#blogsDNAGradient4)" 
               strokeWidth="1.1" 
               fill="none"
-              className="animate-wavyTravel4"
-              style={{animationDelay: '15s'}}
             />
+            
+            {/* Vertical connecting lines - DNA base pairs */}
+            <g stroke="url(#blogsDNAGradient1)" strokeWidth="0.7" opacity="0.4">
+              <line x1="75" y1="110" x2="75" y2="170" />
+              <line x1="225" y1="110" x2="225" y2="170" />
+              <line x1="375" y1="110" x2="375" y2="170" />
+              <line x1="525" y1="110" x2="525" y2="170" />
+              <line x1="675" y1="110" x2="675" y2="170" />
+              <line x1="825" y1="110" x2="825" y2="170" />
+              <line x1="975" y1="110" x2="975" y2="170" />
+              <line x1="1125" y1="110" x2="1125" y2="170" />
+              <line x1="1275" y1="110" x2="1275" y2="170" />
+              <line x1="1425" y1="110" x2="1425" y2="170" />
+            </g>
+            
+            <g stroke="url(#blogsDNAGradient3)" strokeWidth="0.7" opacity="0.3">
+              <line x1="125" y1="260" x2="125" y2="310" />
+              <line x1="275" y1="260" x2="275" y2="310" />
+              <line x1="425" y1="260" x2="425" y2="310" />
+              <line x1="575" y1="260" x2="575" y2="310" />
+              <line x1="725" y1="260" x2="725" y2="310" />
+              <line x1="875" y1="260" x2="875" y2="310" />
+              <line x1="1025" y1="260" x2="1025" y2="310" />
+              <line x1="1175" y1="260" x2="1175" y2="310" />
+              <line x1="1325" y1="260" x2="1325" y2="310" />
+            </g>
           </svg>
         </div>
         

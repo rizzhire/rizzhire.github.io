@@ -79,70 +79,88 @@ export default function Industries() {
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl"></div>
           <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-xl"></div>
           
-          {/* Exact DNA-like Moving Graphics from Homepage */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
+          {/* Infinite Looping DNA-like Graphics */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none animate-waveFlow" viewBox="0 0 2000 600" style={{animationDuration: '20s'}}>
             <defs>
-              <linearGradient id="industriesWavyGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              <linearGradient id="industriesDNAGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.15"/>
               </linearGradient>
-              <linearGradient id="industriesWavyGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              <linearGradient id="industriesDNAGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.12"/>
               </linearGradient>
-              <linearGradient id="industriesWavyGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              <linearGradient id="industriesDNAGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.26"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.13"/>
               </linearGradient>
-              <linearGradient id="industriesWavyGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
-                <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f97316" stopOpacity="0.11"/>
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
+              <linearGradient id="industriesDNAGradient4" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#f97316" stopOpacity="0.11"/>
+                <stop offset="50%" stopColor="#f97316" stopOpacity="0.22"/>
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0.11"/>
               </linearGradient>
             </defs>
             
-            {/* Smooth Wavy Path 1: Flowing diagonal wave */}
+            {/* DNA Helix Pattern 1 - Upper flowing wave */}
             <path 
-              d="M-150,100 C-50,90 50,120 200,110 C350,100 500,140 650,130 C800,125 900,135 1150,180" 
-              stroke="url(#industriesWavyGradient1)" 
-              strokeWidth="1.5" 
+              d="M0,150 C200,130 400,170 600,150 C800,130 1000,170 1200,150 C1400,130 1600,170 1800,150 C2000,130 2200,170 2400,150" 
+              stroke="url(#industriesDNAGradient1)" 
+              strokeWidth="1.8" 
               fill="none"
-              className="animate-wavyTravel1"
-              style={{animationDelay: '3s'}}
             />
             
-            {/* Smooth Wavy Path 2: Elegant S-curve */}
+            {/* DNA Helix Pattern 2 - Complementary wave */}
             <path 
-              d="M1150,250 C1050,240 950,270 800,260 C650,250 500,290 350,280 C200,275 100,285 -150,320" 
-              stroke="url(#industriesWavyGradient2)" 
-              strokeWidth="1.2" 
+              d="M0,250 C200,270 400,230 600,250 C800,270 1000,230 1200,250 C1400,270 1600,230 1800,250 C2000,270 2200,230 2400,250" 
+              stroke="url(#industriesDNAGradient2)" 
+              strokeWidth="1.6" 
               fill="none"
-              className="animate-wavyTravel2"
-              style={{animationDelay: '7s'}}
             />
             
-            {/* Smooth Wavy Path 3: Curved bottom flow */}
+            {/* DNA Helix Pattern 3 - Lower flowing wave */}
             <path 
-              d="M1150,480 C1000,470 900,420 700,430 C500,440 350,400 200,410 C100,415 0,405 -150,380" 
-              stroke="url(#industriesWavyGradient3)" 
+              d="M0,350 C200,330 400,370 600,350 C800,330 1000,370 1200,350 C1400,330 1600,370 1800,350 C2000,330 2200,370 2400,350" 
+              stroke="url(#industriesDNAGradient3)" 
               strokeWidth="1.4" 
               fill="none"
-              className="animate-wavyTravel3"
-              style={{animationDelay: '11s'}}
             />
             
-            {/* Smooth Wavy Path 4: Gentle middle wave */}
+            {/* DNA Helix Pattern 4 - Connecting strands */}
             <path 
-              d="M-150,350 C-50,340 50,380 200,370 C350,360 500,390 650,380 C800,375 900,385 1150,395" 
-              stroke="url(#industriesWavyGradient4)" 
-              strokeWidth="1.1" 
+              d="M0,450 C200,470 400,430 600,450 C800,470 1000,430 1200,450 C1400,470 1600,430 1800,450 C2000,470 2200,430 2400,450" 
+              stroke="url(#industriesDNAGradient4)" 
+              strokeWidth="1.2" 
               fill="none"
-              className="animate-wavyTravel4"
-              style={{animationDelay: '15s'}}
             />
+            
+            {/* Vertical connecting lines - DNA base pairs */}
+            <g stroke="url(#industriesDNAGradient1)" strokeWidth="0.8" opacity="0.4">
+              <line x1="100" y1="160" x2="100" y2="240" />
+              <line x1="300" y1="160" x2="300" y2="240" />
+              <line x1="500" y1="160" x2="500" y2="240" />
+              <line x1="700" y1="160" x2="700" y2="240" />
+              <line x1="900" y1="160" x2="900" y2="240" />
+              <line x1="1100" y1="160" x2="1100" y2="240" />
+              <line x1="1300" y1="160" x2="1300" y2="240" />
+              <line x1="1500" y1="160" x2="1500" y2="240" />
+              <line x1="1700" y1="160" x2="1700" y2="240" />
+              <line x1="1900" y1="160" x2="1900" y2="240" />
+            </g>
+            
+            <g stroke="url(#industriesDNAGradient3)" strokeWidth="0.8" opacity="0.3">
+              <line x1="150" y1="360" x2="150" y2="440" />
+              <line x1="350" y1="360" x2="350" y2="440" />
+              <line x1="550" y1="360" x2="550" y2="440" />
+              <line x1="750" y1="360" x2="750" y2="440" />
+              <line x1="950" y1="360" x2="950" y2="440" />
+              <line x1="1150" y1="360" x2="1150" y2="440" />
+              <line x1="1350" y1="360" x2="1350" y2="440" />
+              <line x1="1550" y1="360" x2="1550" y2="440" />
+              <line x1="1750" y1="360" x2="1750" y2="440" />
+            </g>
           </svg>
           
           {/* Geometric Lines */}

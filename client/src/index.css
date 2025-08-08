@@ -846,16 +846,16 @@ html {
     transform: translateX(0%) scale(1);
   }
   25% {
-    transform: translateX(-25%) scale(1.02);
+    transform: translateX(-12.5%) scale(1.01);
   }
   50% {
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-25%) scale(1);
   }
   75% {
-    transform: translateX(-75%) scale(0.98);
+    transform: translateX(-37.5%) scale(0.99);
   }
   100% {
-    transform: translateX(-100%) scale(1);
+    transform: translateX(-50%) scale(1);
   }
 }
 
