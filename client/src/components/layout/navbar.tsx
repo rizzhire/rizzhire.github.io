@@ -45,6 +45,11 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const navigateToBlogs = () => {
+    setLocation('/blogs');
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black navbar-slide-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,16 +76,22 @@ export default function Navbar() {
                 Industries We Serve
               </button>
               <button 
+                onClick={navigateToBlogs}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                Blogs
+              </button>
+              <button 
                 onClick={navigateToAbout}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
                 About
               </button>
               <button 
-                onClick={() => scrollToSection('testimonials')}
+                onClick={navigateToBlogs}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
-                Blog
+                Blogs
               </button>
               <button 
                 onClick={navigateToContact}
@@ -136,10 +147,10 @@ export default function Navbar() {
               About
             </button>
             <button 
-              onClick={() => scrollToSection('testimonials')}
+              onClick={navigateToBlogs}
               className="block text-gray-300 hover:text-white transition-colors duration-200"
             >
-              Blog
+              Blogs
             </button>
             <button 
               onClick={navigateToContact}

@@ -239,9 +239,7 @@ export default function Services() {
                     </div>
                   </div>
                   
-                  <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-[1.03]">
-                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
+
                 </div>
               </motion.div>
             ))}
@@ -307,67 +305,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Latest Insights Blog Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="fluid-text-4xl font-bold mb-6 text-gray-900">
-              Latest <span className="text-yellow">Insights</span>
-            </h2>
-            <p className="fluid-text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Stay informed with expert analysis and market insights from our recruitment specialists.
-            </p>
-          </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {blogPosts.map((post, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card className="group bg-white rounded-3xl border-0 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-yellow transition-colors duration-300">
-                      {post.title}
-                    </h4>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{post.description}</p>
-                    
-                    <div className="flex items-center mb-4">
-                      <img 
-                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(post.author)}&size=60&background=F5F3EB&color=1F2937&rounded=true`}
-                        alt={`${post.author} profile`}
-                        className="w-12 h-12 rounded-xl mr-3"
-                      />
-                      <div>
-                        <p className="font-semibold text-gray-900">{post.author}</p>
-                        <p className="text-sm text-gray-600">{post.role}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    
-                    <Button variant="ghost" className="w-full text-yellow hover:bg-yellow/10 font-semibold transition-all duration-300 group-hover:bg-yellow group-hover:text-black">
-                      Read More <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>

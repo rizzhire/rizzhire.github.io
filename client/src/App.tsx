@@ -10,6 +10,8 @@ import DeployPage from "@/pages/deploy";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Services from "@/pages/services";
+import Blogs from "@/pages/blogs";
+import BlogDetail from "@/pages/blog-detail";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
+      <Route path="/blogs" component={Blogs} />
+      <Route path="/blog/:id" component={BlogDetail} />
       <Route path="/contact" component={Contact} />
       <Route path="/job-seeker" component={JobSeekerPage} />
       <Route path="/deploy" component={DeployPage} />

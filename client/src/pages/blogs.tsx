@@ -1,0 +1,306 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Clock, Calendar, User } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+export default function Blogs() {
+  const blogPosts = [
+    {
+      id: 1,
+      title: "The Future of Middle East Recruitment: Digital Transformation in Talent Acquisition",
+      excerpt: "As the Middle East continues its rapid economic diversification, the recruitment landscape is undergoing a revolutionary transformation. Digital technologies are reshaping how organizations identify, attract, and retain top talent across the region.",
+      author: "Sarah Khan",
+      role: "Senior Recruitment Analyst",
+      date: "January 8, 2025",
+      readTime: "8 min read",
+      category: "Technology",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Oil & Gas Sector Recovery: The Great Talent Resurgence",
+      excerpt: "The energy sector's remarkable rebound is creating unprecedented demand for specialized professionals. From petroleum engineers to project managers, discover the roles driving this industry renaissance.",
+      author: "Ahmed Al-Rashid",
+      role: "Energy Sector Specialist", 
+      date: "January 5, 2025",
+      readTime: "7 min read",
+      category: "Energy"
+    },
+    {
+      id: 3,
+      title: "UAE's Vision 2071: Building Tomorrow's Workforce Today",
+      excerpt: "The Emirates' ambitious vision requires a fundamental shift in talent strategy. Explore how organizations are preparing for the jobs of the future in this comprehensive analysis.",
+      author: "Priya Sharma",
+      role: "Technology Recruitment Lead",
+      date: "January 3, 2025", 
+      readTime: "6 min read",
+      category: "Strategy"
+    },
+    {
+      id: 4,
+      title: "Healthcare Recruitment in the Post-Pandemic Era: New Realities",
+      excerpt: "The healthcare landscape has been permanently altered. Understanding the new dynamics of medical staffing and the evolving expectations of healthcare professionals across the region.",
+      author: "Dr. Fatima Al-Zahra",
+      role: "Healthcare Recruitment Director",
+      date: "December 30, 2024",
+      readTime: "9 min read",
+      category: "Healthcare"
+    },
+    {
+      id: 5,
+      title: "Construction Mega Projects: Strategic Workforce Planning for Success",
+      excerpt: "From NEOM to Dubai Creek Harbour, mega construction projects are reshaping the region. Learn the workforce strategies that determine project success or failure.",
+      author: "Mohammad Hassan",
+      role: "Construction Sector Head",
+      date: "December 28, 2024",
+      readTime: "10 min read",
+      category: "Construction"
+    },
+    {
+      id: 6,
+      title: "Remote Work Revolution: How Gulf Companies Are Adapting",
+      excerpt: "The shift to hybrid and remote work models is transforming corporate culture across the GCC. Discover how leading organizations are reimagining their talent strategies.",
+      author: "Layla Abdulla",
+      role: "Workplace Innovation Specialist",
+      date: "December 25, 2024",
+      readTime: "5 min read",
+      category: "Workplace"
+    }
+  ];
+
+  const categories = ["All", "Technology", "Energy", "Strategy", "Healthcare", "Construction", "Workplace"];
+
+  return (
+    <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 px-4" style={{backgroundColor: '#F5F3EB'}}>
+        <motion.div 
+          className="max-w-6xl mx-auto text-center"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
+          <motion.h1 
+            className="fluid-text-5xl font-bold mb-6 text-gray-900"
+            variants={fadeInUp}
+          >
+            Industry <span className="text-yellow">Insights</span>
+          </motion.h1>
+          <motion.p 
+            className="fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8"
+            variants={fadeInUp}
+          >
+            Expert analysis, market trends, and strategic insights from Middle East recruitment leaders
+          </motion.p>
+          
+          {/* Category Filter */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-3 mt-8"
+            variants={fadeInUp}
+          >
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant="outline"
+                className="px-6 py-2 rounded-full border-2 border-gray-300 hover:border-yellow hover:bg-yellow/10 transition-all duration-300"
+              >
+                {category}
+              </Button>
+            ))}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Featured Post */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <Card className="bg-gradient-to-r from-gray-50 to-white rounded-3xl border-0 shadow-lg overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="flex items-center mb-4">
+                      <span className="px-3 py-1 bg-yellow/20 text-yellow-700 rounded-full text-sm font-medium">
+                        Featured
+                      </span>
+                      <span className="ml-3 text-gray-500 text-sm">{blogPosts[0].category}</span>
+                    </div>
+                    <h2 className="fluid-text-3xl font-bold mb-4 text-gray-900 leading-tight">
+                      {blogPosts[0].title}
+                    </h2>
+                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                      {blogPosts[0].excerpt}
+                    </p>
+                    
+                    <div className="flex items-center mb-6">
+                      <img 
+                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(blogPosts[0].author)}&size=80&background=F5F3EB&color=1F2937&rounded=true`}
+                        alt={`${blogPosts[0].author} profile`}
+                        className="w-12 h-12 rounded-xl mr-4"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-900">{blogPosts[0].author}</p>
+                        <p className="text-sm text-gray-600">{blogPosts[0].role}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center text-sm text-gray-500 mb-6">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span className="mr-4">{blogPosts[0].date}</span>
+                      <Clock className="w-4 h-4 mr-2" />
+                      <span>{blogPosts[0].readTime}</span>
+                    </div>
+                    
+                    <Button 
+                      asChild
+                      className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-[1.03] w-fit"
+                    >
+                      <Link href={`/blog/${blogPosts[0].id}`}>
+                        Read Full Article <ArrowRight className="w-5 h-5 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-8">
+                    <div className="text-center">
+                      <div className="w-32 h-32 bg-yellow/30 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <User className="w-16 h-16 text-yellow-700" />
+                      </div>
+                      <p className="text-lg font-semibold text-gray-900">Featured Insight</p>
+                      <p className="text-gray-600">Industry Expert Analysis</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Grid */}
+      <section className="py-16 px-4" style={{backgroundColor: '#F5F3EB'}}>
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {blogPosts.slice(1).map((post, index) => (
+              <motion.div key={post.id} variants={fadeInUp}>
+                <Card className="group bg-white rounded-3xl border-0 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                        {post.category}
+                      </span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-yellow transition-colors duration-300 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-4 leading-relaxed flex-1 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center mb-4">
+                      <img 
+                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(post.author)}&size=60&background=F5F3EB&color=1F2937&rounded=true`}
+                        alt={`${post.author} profile`}
+                        className="w-10 h-10 rounded-xl mr-3"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">{post.author}</p>
+                        <p className="text-xs text-gray-600">{post.role}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        <span>{post.date}</span>
+                      </div>
+                      
+                      <Button 
+                        asChild
+                        variant="ghost" 
+                        className="text-yellow hover:bg-yellow/10 font-semibold transition-all duration-300 group-hover:bg-yellow group-hover:text-black p-2"
+                      >
+                        <Link href={`/blog/${post.id}`}>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 px-4 bg-white">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="fluid-text-4xl font-bold mb-6 text-gray-900"
+            variants={fadeInUp}
+          >
+            Stay <span className="text-yellow">Informed</span>
+          </motion.h2>
+          <motion.p 
+            className="fluid-text-xl text-gray-600 mb-8 leading-relaxed"
+            variants={fadeInUp}
+          >
+            Get the latest recruitment insights and industry analysis delivered directly to your inbox.
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+            variants={fadeInUp}
+          >
+            <input 
+              type="email" 
+              placeholder="Enter your email"
+              className="flex-1 px-6 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow/50"
+            />
+            <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-[1.03]">
+              Subscribe
+            </Button>
+          </motion.div>
+        </motion.div>
+      </section>
+    </div>
+  );
+}
