@@ -82,24 +82,36 @@ export default function Industries() {
           {/* Moving Wavy Lines - Exact Copy from Homepage Hero */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
             <defs>
-              <linearGradient id="industriesHeroWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="industriesHeroWavy1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="15%" stopColor="#f59e0b" stopOpacity="0.05"/>
+                <stop offset="30%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="70%" stopColor="#f59e0b" stopOpacity="0.15"/>
+                <stop offset="85%" stopColor="#f59e0b" stopOpacity="0.05"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="industriesHeroWavy2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <linearGradient id="industriesHeroWavy2" x1="100%" y1="0%" x2="0%" y2="0%">
                 <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="15%" stopColor="#3b82f6" stopOpacity="0.04"/>
+                <stop offset="30%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="70%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="85%" stopColor="#3b82f6" stopOpacity="0.04"/>
                 <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="industriesHeroWavy3" x1="100%" y1="0%" x2="0%" y2="100%">
+              <linearGradient id="industriesHeroWavy3" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                <stop offset="15%" stopColor="#8b5cf6" stopOpacity="0.05"/>
+                <stop offset="30%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                <stop offset="70%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                <stop offset="85%" stopColor="#8b5cf6" stopOpacity="0.05"/>
                 <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="industriesHeroWavy4" x1="0%" y1="50%" x2="100%" y2="50%">
+              <linearGradient id="industriesHeroWavy4" x1="100%" y1="0%" x2="0%" y2="0%">
                 <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
-                <stop offset="50%" stopColor="#f97316" stopOpacity="0.10"/>
+                <stop offset="15%" stopColor="#f97316" stopOpacity="0.03"/>
+                <stop offset="30%" stopColor="#f97316" stopOpacity="0.10"/>
+                <stop offset="70%" stopColor="#f97316" stopOpacity="0.10"/>
+                <stop offset="85%" stopColor="#f97316" stopOpacity="0.03"/>
                 <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
               </linearGradient>
             </defs>
