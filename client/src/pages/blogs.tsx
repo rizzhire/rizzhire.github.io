@@ -192,64 +192,77 @@ export default function Blogs() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <Card className="bg-gradient-to-r from-gray-50 to-white rounded-3xl border-0 shadow-lg overflow-hidden">
-              <CardContent className="p-0">
-                <div className="grid lg:grid-cols-2 gap-0">
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="flex items-center mb-4">
-                      <span className="px-3 py-1 bg-yellow/20 text-yellow-700 rounded-full text-sm font-medium">
-                        Featured
-                      </span>
-                      <span className="ml-3 text-gray-500 text-sm">{blogPosts[0].category}</span>
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Left Content Container */}
+              <Card className="flex-1 bg-gradient-to-r from-gray-50 to-white rounded-3xl border-0 shadow-lg overflow-hidden">
+                <CardContent className="p-8 lg:p-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="px-4 py-2 bg-yellow text-black rounded-full font-semibold text-sm">
+                      Featured
+                    </span>
+                    <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm">
+                      {blogPosts[0].category}
+                    </span>
+                  </div>
+                  
+                  <h2 className="fluid-text-3xl font-bold mb-6 text-gray-900 leading-tight">
+                    {blogPosts[0].title}
+                  </h2>
+                  
+                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                    {blogPosts[0].excerpt}
+                  </p>
+                  
+                  <div className="flex items-center mb-8">
+                    <img 
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(blogPosts[0].author)}&size=80&background=F5F3EB&color=1F2937&rounded=true`}
+                      alt={`${blogPosts[0].author} profile`}
+                      className="w-12 h-12 rounded-xl mr-4"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-900">{blogPosts[0].author}</p>
+                      <p className="text-sm text-gray-600">{blogPosts[0].role}</p>
                     </div>
-                    <h2 className="fluid-text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                      {blogPosts[0].title}
-                    </h2>
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                      {blogPosts[0].excerpt}
-                    </p>
-                    
-                    <div className="flex items-center mb-6">
-                      <img 
-                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(blogPosts[0].author)}&size=80&background=F5F3EB&color=1F2937&rounded=true`}
-                        alt={`${blogPosts[0].author} profile`}
-                        className="w-12 h-12 rounded-xl mr-4"
-                      />
-                      <div>
-                        <p className="font-semibold text-gray-900">{blogPosts[0].author}</p>
-                        <p className="text-sm text-gray-600">{blogPosts[0].role}</p>
+                  </div>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-6 text-sm text-gray-500">
+                      <div className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        <span>{blogPosts[0].date}</span>
                       </div>
-                    </div>
-                    
-                    <div className="flex items-center text-sm text-gray-500 mb-6">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{blogPosts[0].date}</span>
-                      <Clock className="w-4 h-4 mr-2" />
-                      <span>{blogPosts[0].readTime}</span>
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-2" />
+                        <span>{blogPosts[0].readTime}</span>
+                      </div>
                     </div>
                     
                     <Button 
                       asChild
-                      className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-[1.03] w-fit"
+                      className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-[1.03]"
                     >
                       <Link href={`/blog/${blogPosts[0].id}`}>
-                        Read Full Article <ArrowRight className="w-5 h-5 ml-2" />
+                        Read Full Article
+                        <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
                     </Button>
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-8">
-                    <div className="text-center">
-                      <div className="w-32 h-32 bg-yellow/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <User className="w-16 h-16 text-yellow-700" />
-                      </div>
-                      <p className="text-lg font-semibold text-gray-900">Featured Insight</p>
-                      <p className="text-gray-600">Industry Expert Analysis</p>
-                    </div>
+                </CardContent>
+              </Card>
+              
+              {/* Right Square Container - Featured Badge */}
+              <Card className="w-64 h-64 bg-gradient-to-br from-yellow/20 to-orange/20 rounded-3xl border-0 shadow-lg flex-shrink-0">
+                <CardContent className="p-0 h-full flex flex-col items-center justify-center text-center">
+                  <div className="mb-4">
+                    <User className="w-16 h-16 text-yellow mx-auto" />
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Featured Insight</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed px-4">
+                    Industry Expert Analysis
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </motion.div>
         </div>
       </section>
