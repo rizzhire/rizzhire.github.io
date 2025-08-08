@@ -174,22 +174,105 @@ export default function Industries() {
 
       {/* Industries Grid */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-        {/* Background Graphics */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Light Background Graphics - Enhanced */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Moving Floating Circles */}
+          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/18 to-yellow-300/25 rounded-full blur-xl animate-floatMoveEnhanced"></div>
+          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/16 to-cyan-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/12 to-yellow-200/18 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-gradient-to-r from-purple-200/16 to-pink-200/22 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
+          
+          {/* Additional Enhanced Elements */}
+          <div className="absolute top-1/2 left-8 w-18 h-18 bg-gradient-to-r from-emerald-200/18 to-green-200/24 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-60 right-12 w-14 h-14 bg-gradient-to-r from-rose-200/16 to-red-200/22 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+          
+          {/* Enhanced Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 800">
+            <defs>
+              <linearGradient id="industriesMainGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,400 Q250,200 500,400 T1000,400" stroke="url(#industriesMainGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,300 Q300,500 600,300 T1000,300" stroke="url(#industriesMainGradient1)" strokeWidth="1.5" fill="none"/>
+          </svg>
+          
+          {/* Wavy Abstract Traveling Lines - Similar to Hero */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 800">
+            <defs>
+              <linearGradient id="industriesSectionWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.13"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="industriesSectionWavy2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.11"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="industriesSectionWavy3" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="industriesSectionWavy4" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f97316" stopOpacity="0.10"/>
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            {/* Smooth Wavy Path 1: Flowing diagonal wave */}
+            <path 
+              d="M-150,200 C-50,190 50,220 200,210 C350,200 500,240 650,230 C800,225 900,235 1150,280" 
+              stroke="url(#industriesSectionWavy1)" 
+              strokeWidth="1.4" 
+              fill="none"
+              className="animate-wavyTravel1"
+              style={{animationDelay: '5s'}}
+            />
+            
+            {/* Smooth Wavy Path 2: Elegant S-curve */}
+            <path 
+              d="M1150,350 C1050,340 950,370 800,360 C650,350 500,390 350,380 C200,375 100,385 -150,420" 
+              stroke="url(#industriesSectionWavy2)" 
+              strokeWidth="1.1" 
+              fill="none"
+              className="animate-wavyTravel2"
+              style={{animationDelay: '9s'}}
+            />
+            
+            {/* Smooth Wavy Path 3: Curved bottom flow */}
+            <path 
+              d="M1150,580 C1000,570 900,520 700,530 C500,540 350,500 200,510 C100,515 25,505 -150,480" 
+              stroke="url(#industriesSectionWavy3)" 
+              strokeWidth="1.3" 
+              fill="none"
+              className="animate-wavyTravel3"
+              style={{animationDelay: '13s'}}
+            />
+            
+            {/* Smooth Wavy Path 4: Gentle middle wave */}
+            <path 
+              d="M-150,450 C-50,440 50,480 200,470 C350,460 500,490 650,480 C800,475 900,485 1150,495" 
+              stroke="url(#industriesSectionWavy4)" 
+              strokeWidth="1.0" 
+              fill="none"
+              className="animate-wavyTravel4"
+              style={{animationDelay: '17s'}}
+            />
+          </svg>
+          
           {/* Very Light Dots Pattern */}
           <div className="absolute inset-0 opacity-2">
-            <svg width="45" height="45" viewBox="0 0 45 45" className="w-full h-full">
-              <pattern id="industriesDots" width="45" height="45" patternUnits="userSpaceOnUse">
-                <circle cx="22.5" cy="22.5" r="0.7" fill="#f59e0b" opacity="0.1"/>
+            <svg width="40" height="40" viewBox="0 0 40 40" className="w-full h-full">
+              <pattern id="industriesDotsPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="20" cy="20" r="1" fill="#f59e0b" opacity="0.08"/>
               </pattern>
-              <rect width="100%" height="100%" fill="url(#industriesDots)" />
+              <rect width="100%" height="100%" fill="url(#industriesDotsPattern)" />
             </svg>
           </div>
-          
-          {/* Floating Elements */}
-          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
-          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md"></div>
-          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/10 to-pink-300/15 rounded-full blur-sm"></div>
         </div>
         
         <div className="relative max-w-5xl mx-auto">
