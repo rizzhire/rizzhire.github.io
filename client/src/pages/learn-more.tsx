@@ -189,60 +189,39 @@ export default function LearnMore() {
           <div className="absolute bottom-1/3 left-1/4 w-6 h-6 bg-gradient-to-r from-blue-200/6 to-purple-200/8 rotate-12 blur-sm"></div>
           <div className="absolute top-2/3 right-1/3 w-10 h-2 bg-gradient-to-r from-green-200/6 to-emerald-200/8 rotate-45 blur-sm"></div>
           
-          {/* Infinite Moving Geometric Lines - Enhanced */}
-          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 2000 600" style={{animationDuration: '20s'}}>
+          {/* Infinite Moving Geometric Lines - Full Coverage */}
+          <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlow" viewBox="0 0 2000 1000" style={{animationDuration: '22s'}}>
             <defs>
               <linearGradient id="timelineBgGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.08"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
-              </linearGradient>
-              <linearGradient id="timelineBgGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.06"/>
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
-              </linearGradient>
-              <linearGradient id="timelineBgGradient3" x1="0%" y1="50%" x2="100%" y2="50%">
-                <stop offset="0%" stopColor="#10b981" stopOpacity="0.10"/>
-                <stop offset="50%" stopColor="#10b981" stopOpacity="0.05"/>
-                <stop offset="100%" stopColor="#10b981" stopOpacity="0"/>
-              </linearGradient>
-            </defs>
-            
-            {/* Primary flowing waves */}
-            <path d="M0,300 Q250,150 500,300 T1000,300 T1500,300 T2000,300" stroke="url(#timelineBgGradient1)" strokeWidth="2" fill="none"/>
-            <path d="M0,200 Q300,350 600,200 T1200,200 T1800,200 T2400,200" stroke="url(#timelineBgGradient2)" strokeWidth="1.8" fill="none"/>
-            
-            {/* Secondary wave patterns */}
-            <path d="M0,450 Q400,300 800,450 T1600,450 T2400,450" stroke="url(#timelineBgGradient1)" strokeWidth="1.5" fill="none" opacity="0.7"/>
-            <path d="M0,100 Q350,250 700,100 T1400,100 T2100,100" stroke="url(#timelineBgGradient3)" strokeWidth="1.2" fill="none" opacity="0.8"/>
-            
-            {/* Subtle background flows */}
-            <path d="M0,380 Q500,200 1000,380 T2000,380" stroke="url(#timelineBgGradient2)" strokeWidth="1" fill="none" opacity="0.5"/>
-            <path d="M0,150 Q600,400 1200,150 T2400,150" stroke="url(#timelineBgGradient1)" strokeWidth="1" fill="none" opacity="0.6"/>
-            
-            {/* Additional flowing elements */}
-            <path d="M0,520 Q450,350 900,520 T1800,520" stroke="url(#timelineBgGradient3)" strokeWidth="0.8" fill="none" opacity="0.4"/>
-            <path d="M0,80 Q550,300 1100,80 T2200,80" stroke="url(#timelineBgGradient2)" strokeWidth="0.8" fill="none" opacity="0.5"/>
-          </svg>
-          
-          {/* Additional Moving Lines Layer */}
-          <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlowReverse" viewBox="0 0 1800 500" style={{animationDuration: '25s'}}>
-            <defs>
-              <linearGradient id="timelineBgGradient4" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="timelineBgGradient5" x1="100%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.10"/>
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              <linearGradient id="timelineBgGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.10"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
               </linearGradient>
             </defs>
             
-            {/* Reverse flowing waves */}
-            <path d="M1800,250 Q1500,100 1200,250 T600,250 T0,250" stroke="url(#timelineBgGradient4)" strokeWidth="1.5" fill="none"/>
-            <path d="M1800,350 Q1400,200 1000,350 T200,350" stroke="url(#timelineBgGradient5)" strokeWidth="1.2" fill="none" opacity="0.8"/>
-            <path d="M1800,150 Q1300,300 800,150 T0,150" stroke="url(#timelineBgGradient4)" strokeWidth="1" fill="none" opacity="0.6"/>
+            {/* Top level flows */}
+            <path d="M0,100 Q400,50 800,100 T1600,100 T2400,100" stroke="url(#timelineBgGradient1)" strokeWidth="1.5" fill="none"/>
+            <path d="M0,800 Q500,750 1000,800 T2000,800" stroke="url(#timelineBgGradient2)" strokeWidth="1.2" fill="none"/>
+            
+            {/* Middle level flows */}
+            <path d="M0,400 Q600,300 1200,400 T2400,400" stroke="url(#timelineBgGradient1)" strokeWidth="1" fill="none" opacity="0.7"/>
+            <path d="M0,600 Q300,500 600,600 T1200,600 T1800,600" stroke="url(#timelineBgGradient2)" strokeWidth="1" fill="none" opacity="0.8"/>
+          </svg>
+          
+          {/* Reverse Moving Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-5 animate-waveFlowReverse" viewBox="0 0 1800 1000" style={{animationDuration: '28s'}}>
+            <defs>
+              <linearGradient id="timelineBgGradient3" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.10"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            <path d="M1800,200 Q1200,150 600,200 T0,200" stroke="url(#timelineBgGradient3)" strokeWidth="1" fill="none"/>
+            <path d="M1800,700 Q1000,650 200,700" stroke="url(#timelineBgGradient3)" strokeWidth="0.8" fill="none" opacity="0.8"/>
           </svg>
         </div>
         
