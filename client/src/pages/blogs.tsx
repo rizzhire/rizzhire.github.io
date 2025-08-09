@@ -206,7 +206,7 @@ export default function Blogs() {
                     <h2 className="fluid-text-3xl font-bold mb-4 text-gray-900 leading-tight">
                       {blogPosts[0].title}
                     </h2>
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                       {blogPosts[0].excerpt}
                     </p>
                     
@@ -369,7 +369,7 @@ export default function Blogs() {
                       {post.title}
                     </h3>
                     
-                    <p className="text-gray-600 mb-4 leading-relaxed flex-1 line-clamp-3">
+                    <p className="text-gray-600 mb-4 leading-relaxed flex-1 line-clamp-3 text-sm">
                       {post.excerpt}
                     </p>
                     
