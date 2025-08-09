@@ -107,7 +107,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-20 px-4 bg-black">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -118,7 +118,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <Card className="bg-white p-8 md:p-12 rounded-3xl border-0 shadow-lg">
+          <Card className="bg-white p-8 md:p-12 rounded-[2rem] border-0 shadow-lg">
             <CardContent className="p-0">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -128,7 +128,7 @@ export default function Contact() {
                       id="name"
                       value={formData.name}
                       onChange={(e) => handleInputChange("name", e.target.value)}
-                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      className="bg-gray-50 border-0 rounded-2xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
                       placeholder="Enter your full name"
                       required
                     />
@@ -140,7 +140,7 @@ export default function Contact() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
-                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      className="bg-gray-50 border-0 rounded-2xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
                       placeholder="Enter your email"
                       required
                     />
@@ -154,7 +154,7 @@ export default function Contact() {
                       id="phone"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      className="bg-gray-50 border-0 rounded-2xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -164,7 +164,7 @@ export default function Contact() {
                       id="company"
                       value={formData.company}
                       onChange={(e) => handleInputChange("company", e.target.value)}
-                      className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
+                      className="bg-gray-50 border-0 rounded-2xl p-4 h-12 focus:ring-2 focus:ring-yellow/50"
                       placeholder="Enter your company name"
                     />
                   </div>
@@ -173,7 +173,7 @@ export default function Contact() {
                 <div className="space-y-2">
                   <Label htmlFor="service" className="text-gray-700 font-semibold">Service Interest</Label>
                   <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                    <SelectTrigger className="bg-gray-50 border-0 rounded-xl p-4 h-12 focus:ring-2 focus:ring-yellow/50">
+                    <SelectTrigger className="bg-gray-50 border-0 rounded-2xl p-4 h-12 focus:ring-2 focus:ring-yellow/50">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -192,7 +192,7 @@ export default function Contact() {
                     id="message"
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
-                    className="bg-gray-50 border-0 rounded-xl p-4 min-h-32 focus:ring-2 focus:ring-yellow/50 resize-none"
+                    className="bg-gray-50 border-0 rounded-2xl p-4 min-h-32 focus:ring-2 focus:ring-yellow/50 resize-none"
                     placeholder="Tell us about your requirements or inquiry..."
                     required
                   />
@@ -200,7 +200,7 @@ export default function Contact() {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-105"
+                  className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-4 px-8 rounded-2xl text-lg transition-all duration-300 hover:scale-105"
                 >
                   Send Message <Send className="w-5 h-5 ml-2" />
                 </Button>
