@@ -94,7 +94,6 @@ export default function About() {
       <section className="relative py-20 px-4 bg-white overflow-hidden">
         {/* Light Background Graphics */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-32 right-20 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
           <div className="absolute bottom-40 left-32 w-20 h-20 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md animate-pulse-slow"></div>
         </div>
         
