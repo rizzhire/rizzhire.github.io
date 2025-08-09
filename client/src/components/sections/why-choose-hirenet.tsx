@@ -157,7 +157,7 @@ export default function WhyChooseHireNet() {
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
             {/* Icon with clean styling - positioned lower */}
-            <div className="mb-4 mt-4">
+            <div className="mb-4 mt-8">
               <div className="w-16 h-16 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
                 <Globe className="w-8 h-8 text-black stroke-[1.5]" />
               </div>
