@@ -139,10 +139,85 @@
   border: 1px solid #e5e7eb !important;
 }
 
-.uppy-Dashboard-AddFiles {
+.uppy-Dashboard-AddFiles,
+.uppy-Dashboard-AddFiles-info,
+.uppy-Dashboard-AddFiles-list,
+.uppy-Dashboard-AddFiles-title {
   background: white !important;
   border: 2px dashed #d1d5db !important;
   border-radius: 16px !important;
+}
+
+/* Force override any blue backgrounds */
+.uppy-Dashboard-AddFiles,
+.uppy-Dashboard-AddFiles *,
+.uppy-Dashboard-dropFilesHereHint,
+.uppy-Dashboard-AddFiles-info,
+[class*="uppy-Dashboard-AddFiles"] {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Remove any blue styling and replace with white */
+.uppy-u-reset.uppy-Dashboard-AddFiles {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Ultimate override for blue upload area */
+.uppy-DashboardModal .uppy-Dashboard-AddFiles,
+.uppy-DashboardModal .uppy-Dashboard-AddFiles-info,
+.uppy-DashboardModal .uppy-Dashboard-dropFilesHereHint,
+.uppy-Dashboard-AddFiles[style*="background"],
+.uppy-Dashboard-AddFiles[style*="background-color"] {
+  background: white !important;
+  background-color: white !important;
+  border: 2px dashed #d1d5db !important;
+  border-radius: 16px !important;
+}
+
+/* Target the specific div that might have inline blue styling */
+.uppy-Dashboard-AddFiles > div,
+.uppy-Dashboard-AddFiles-info > div,
+.uppy-Dashboard-AddFiles .uppy-Dashboard-dropFilesHereHint {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Override any CSS variables that might be setting blue */
+.uppy-Dashboard-AddFiles {
+  --uppy-c-blue: white !important;
+  --uppy-c-blue-light: white !important;
+  background: white !important;
+}
+
+/* Nuclear option: override ALL possible blue styling in Uppy */
+div[class*="uppy-Dashboard-AddFiles"],
+div[class*="uppy-Dashboard-dropFilesHereHint"],
+.uppy-Dashboard-AddFiles,
+.uppy-Dashboard-AddFiles-info,
+.uppy-Dashboard-dropFilesHereHint {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Override inline styles that might set blue background */
+[style*="background-color: rgb(21, 155, 240)"],
+[style*="background-color: #159bf0"],
+[style*="background: rgb(21, 155, 240)"],
+[style*="background: #159bf0"],
+[style*="background-color: blue"],
+[style*="background: blue"] {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Specifically target Uppy's default blue */
+.uppy-DashboardModal [style*="rgb(21, 155, 240)"],
+.uppy-DashboardModal [style*="#159bf0"] {
+  background: white !important;
+  background-color: white !important;
 }
 
 .uppy-Dashboard-AddFiles:hover,
