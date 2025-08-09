@@ -67,10 +67,10 @@ export default function Industries() {
   ];
 
   return (
-    <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
+    <div className="min-h-screen" style={{backgroundColor: '#F2F0E8'}}>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-gray-100/30"></div>
+      <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{backgroundColor: '#F2F0E8'}}>
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/20 via-transparent to-yellow-200/15"></div>
         
         {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -107,7 +107,7 @@ export default function Industries() {
             variants={fadeInUp}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 tracking-tight">
-              Industries We <span className="text-yellow bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">Serve</span>
+              Industries We <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 bg-clip-text text-transparent">Serve</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
               Specialized workforce solutions across the Middle East's most critical sectors. 
