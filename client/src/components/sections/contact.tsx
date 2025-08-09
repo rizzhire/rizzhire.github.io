@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { motion } from "framer-motion";
 
@@ -39,6 +39,45 @@ export default function Contact() {
 
   const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation();
   const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation();
+
+  // Typewriter hook
+  const useTypewriter = (text: string, speed: number = 50, startDelay: number = 0) => {
+    const [displayText, setDisplayText] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+
+    useEffect(() => {
+      if (!infoVisible) {
+        setDisplayText('');
+        setIsTyping(false);
+        return;
+      }
+
+      const timer = setTimeout(() => {
+        setIsTyping(true);
+        let i = 0;
+        const typing = setInterval(() => {
+          if (i < text.length) {
+            setDisplayText(text.slice(0, i + 1));
+            i++;
+          } else {
+            setIsTyping(false);
+            clearInterval(typing);
+          }
+        }, speed);
+
+        return () => clearInterval(typing);
+      }, startDelay);
+
+      return () => clearTimeout(timer);
+    }, [text, speed, startDelay, infoVisible]);
+
+    return { displayText, isTyping };
+  };
+
+  // Typewriter effects for each contact detail
+  const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
+  const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 1400);
+  const officeTypewriter = useTypewriter('Dubai International Financial Centre\nDubai, United Arab Emirates', 60, 2000);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -143,7 +182,12 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-600">contact@hirenet.in</p>
+                  <p className="text-gray-600 font-mono">
+                    {emailTypewriter.displayText}
+                    {emailTypewriter.isTyping && (
+                      <span className="animate-pulse text-yellow">|</span>
+                    )}
+                  </p>
                 </div>
               </motion.div>
 
@@ -168,7 +212,12 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-gray-600">+91 333 508 5038</p>
+                  <p className="text-gray-600 font-mono">
+                    {phoneTypewriter.displayText}
+                    {phoneTypewriter.isTyping && (
+                      <span className="animate-pulse text-yellow">|</span>
+                    )}
+                  </p>
                 </div>
               </motion.div>
 
@@ -193,7 +242,12 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Office</h4>
-                  <p className="text-gray-600">Dubai International Financial Centre<br />Dubai, United Arab Emirates</p>
+                  <p className="text-gray-600 font-mono whitespace-pre-line">
+                    {officeTypewriter.displayText}
+                    {officeTypewriter.isTyping && (
+                      <span className="animate-pulse text-yellow">|</span>
+                    )}
+                  </p>
                 </div>
               </motion.div>
             </div>
