@@ -61,45 +61,7 @@ export default function Hero() {
             </linearGradient>
           </defs>
           
-          {/* Smooth Wavy Path 1: Flowing diagonal wave */}
-          <path 
-            d="M-150,100 C-50,90 50,120 200,110 C350,100 500,140 650,130 C800,125 900,135 1150,180" 
-            stroke="url(#wavyGradient1)" 
-            strokeWidth="1.5" 
-            fill="none"
-            className="animate-wavyTravel1"
-            style={{animationDelay: '3s'}}
-          />
-          
-          {/* Smooth Wavy Path 2: Elegant S-curve */}
-          <path 
-            d="M1150,250 C1050,240 950,270 800,260 C650,250 500,290 350,280 C200,275 100,285 -150,320" 
-            stroke="url(#wavyGradient2)" 
-            strokeWidth="1.2" 
-            fill="none"
-            className="animate-wavyTravel2"
-            style={{animationDelay: '7s'}}
-          />
-          
-          {/* Smooth Wavy Path 3: Curved bottom flow */}
-          <path 
-            d="M1150,480 C1000,470 900,420 700,430 C500,440 350,400 200,410 C100,415 0,405 -150,380" 
-            stroke="url(#wavyGradient3)" 
-            strokeWidth="1.4" 
-            fill="none"
-            className="animate-wavyTravel3"
-            style={{animationDelay: '11s'}}
-          />
-          
-          {/* Smooth Wavy Path 4: Gentle middle wave */}
-          <path 
-            d="M-150,350 C-50,340 50,380 200,370 C350,360 500,390 650,380 C800,375 900,385 1150,395" 
-            stroke="url(#wavyGradient4)" 
-            strokeWidth="1.1" 
-            fill="none"
-            className="animate-wavyTravel4"
-            style={{animationDelay: '15s'}}
-          />
+
         </svg>
         
         {/* Very Light Dots Pattern */}
