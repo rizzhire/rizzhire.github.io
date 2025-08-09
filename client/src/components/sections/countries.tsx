@@ -94,19 +94,37 @@ export default function Countries() {
 
         <div ref={containerRef} className="flex flex-wrap justify-center items-center gap-8">
           {countries.map((country, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`
-                transition-all duration-500 ease-out
-                ${visibleItems.includes(index) 
-                  ? 'animate-wave-slide opacity-100' 
-                  : 'opacity-0 transform translate-y-4'
-                }
-              `}
-              style={{ animationDelay: `${index * 80}ms` }}
+              initial={{ 
+                opacity: 0, 
+                y: 60,
+                scale: 0.7,
+                rotateY: -30
+              }}
+              animate={visibleItems.includes(index) ? {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotateY: 0
+              } : {}}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotateY: 5,
+                transition: { duration: 0.3 }
+              }}
+              className="perspective-1000"
             >
               <CountryFlag country={country.name} code={country.code} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
