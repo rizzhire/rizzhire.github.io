@@ -3,16 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { 
-  ArrowRight, 
-  Users, 
-  Globe, 
-  Award, 
-  TrendingUp, 
-  Building, 
-  CheckCircle,
-  Target,
-  Star,
-  Calendar
+  ArrowRight
 } from "lucide-react";
 
 const fadeInUp = {
@@ -32,14 +23,9 @@ const staggerContainer = {
 export default function LearnMore() {
   const milestones = [
     {
-      year: "2010",
-      title: "Founded",
-      description: "Started our journey from UAE with a vision to transform recruitment"
-    },
-    {
       year: "2015",
       title: "Regional Expansion",
-      description: "Extended operations across GCC countries"
+      description: "Extended operations across GCC countries with strategic partnerships"
     },
     {
       year: "2018",
@@ -63,55 +49,7 @@ export default function LearnMore() {
     }
   ];
 
-  const achievements = [
-    {
-      icon: Users,
-      number: "15,000+",
-      title: "Successful Placements",
-      description: "Professionals placed across Middle East markets"
-    },
-    {
-      icon: Building,
-      number: "500+",
-      title: "Partner Companies",
-      description: "Leading organizations trust our recruitment expertise"
-    },
-    {
-      icon: Globe,
-      number: "7",
-      title: "Countries Served",
-      description: "Comprehensive coverage across GCC and MENA region"
-    },
-    {
-      icon: Award,
-      number: "98%",
-      title: "Client Satisfaction",
-      description: "Consistently exceeding client expectations and requirements"
-    }
-  ];
 
-  const values = [
-    {
-      icon: Target,
-      title: "Excellence",
-      description: "We pursue the highest standards in every placement, ensuring perfect matches between talent and opportunities."
-    },
-    {
-      icon: CheckCircle,
-      title: "Integrity",
-      description: "Transparent, honest relationships built on trust form the foundation of our long-term partnerships."
-    },
-    {
-      icon: Star,
-      title: "Innovation",
-      description: "Leveraging cutting-edge technology and data analytics to revolutionize recruitment processes."
-    },
-    {
-      icon: TrendingUp,
-      title: "Growth",
-      description: "Committed to the continuous development of both our clients and the professionals we place."
-    }
-  ];
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F2F0E8'}}>
@@ -193,125 +131,95 @@ export default function LearnMore() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <motion.div variants={fadeInUp}>
-                <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Mission</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+            <motion.div variants={fadeInUp} className="max-w-5xl mx-auto">
+              <h3 className="text-3xl font-bold mb-8 text-gray-900">Our Mission</h3>
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
                   Our journey began with a simple belief: every organization deserves access to world-class talent, 
                   and every professional deserves opportunities that match their ambitions. This philosophy has guided 
-                  us through over a decade of growth and success.
+                  us through over a decade of growth and success in the dynamic Middle Eastern market.
                 </p>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p>
                   We specialize in connecting exceptional professionals with leading organizations across the Middle East, 
                   focusing on industries that drive regional economic growth including oil & gas, construction, healthcare, 
-                  and emerging technology sectors.
+                  technology, and emerging sectors that shape the future of the region.
                 </p>
-                <Button asChild className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl">
-                  <Link href="/contact">
-                    Partner With Us <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-              </motion.div>
-
-              <motion.div variants={fadeInUp}>
-                <Card className="bg-gradient-to-br from-yellow-50 to-orange-50 border-0 shadow-lg">
-                  <CardContent className="p-8">
-                    <div className="text-center">
-                      <div className="text-6xl font-bold text-yellow mb-2">2010</div>
-                      <div className="text-xl font-semibold text-gray-900 mb-2">Founded</div>
-                      <p className="text-gray-600">Started our journey from UAE</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
+                <p>
+                  At HireNET, we understand that successful recruitment goes beyond matching skills to job descriptions. 
+                  We focus on cultural alignment, career aspirations, and long-term organizational goals to create 
+                  partnerships that drive sustainable growth for both employers and professionals.
+                </p>
+                <p>
+                  Our comprehensive approach combines deep market knowledge with innovative recruitment technologies, 
+                  ensuring we deliver not just candidates, but the right talent solutions that transform businesses 
+                  and accelerate career trajectories across diverse industries and markets.
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 px-4" style={{backgroundColor: '#F2F0E8'}}>
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4" style={{backgroundColor: '#F2F0E8'}}>
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
+            <motion.div variants={fadeInUp} className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
                 Our <span className="text-yellow">Evolution</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                From startup to industry leader, discover the key milestones that shaped our journey
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Key milestones that shaped our journey to industry leadership
               </p>
             </motion.div>
 
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-yellow h-full"></div>
-              
-              <div className="space-y-12">
-                {milestones.map((milestone, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                  >
-                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
-                      <Card className="bg-white border-2 border-yellow/20 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <CardContent className="p-6">
-                          <div className="text-2xl font-bold text-yellow mb-2">{milestone.year}</div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                          <p className="text-gray-600">{milestone.description}</p>
-                        </CardContent>
-                      </Card>
-                    </div>
+            <div className="grid md:grid-cols-5 gap-6">
+              {milestones.map((milestone, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.1,
+                    ease: [0.25, 0.1, 0.25, 1]
+                  }}
+                  whileHover={{ 
+                    y: -8, 
+                    transition: { duration: 0.2 } 
+                  }}
+                  className="group"
+                >
+                  <div className="relative">
+                    {/* Connecting Line */}
+                    {index < milestones.length - 1 && (
+                      <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-yellow via-yellow/50 to-transparent z-0"></div>
+                    )}
                     
-                    <div className="w-2 md:w-2/12 flex justify-center">
-                      <div className="w-4 h-4 bg-yellow rounded-full border-4 border-white shadow-lg"></div>
-                    </div>
-                    
-                    <div className="w-full md:w-5/12"></div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Our <span className="text-yellow">Impact</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Numbers that reflect our commitment to excellence and the trust our clients place in us
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {achievements.map((achievement, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="text-center h-full bg-gradient-to-br from-gray-50 to-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <CardContent className="p-8">
-                      <div className="inline-flex p-4 rounded-2xl bg-yellow/10 mb-4">
-                        <achievement.icon className="w-8 h-8 text-yellow" />
+                    <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group-hover:bg-white group-hover:border-yellow/30">
+                      {/* Year Badge */}
+                      <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow to-yellow/80 text-black font-bold text-lg rounded-xl mb-4 shadow-md">
+                        {milestone.year.slice(-2)}
                       </div>
-                      <div className="text-3xl font-bold text-gray-900 mb-2">{achievement.number}</div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{achievement.title}</h3>
-                      <p className="text-gray-600 text-sm">{achievement.description}</p>
-                    </CardContent>
-                  </Card>
+                      
+                      {/* Content */}
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-yellow transition-colors duration-300">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {milestone.description}
+                      </p>
+                      
+                      {/* Hover Accent */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -319,46 +227,7 @@ export default function LearnMore() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 px-4" style={{backgroundColor: '#F2F0E8'}}>
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Our <span className="text-yellow">Values</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                The principles that guide every decision and shape our relationships with clients and candidates
-              </p>
-            </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {values.map((value, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <CardContent className="p-8">
-                      <div className="flex items-start space-x-4">
-                        <div className="inline-flex p-3 rounded-xl bg-yellow/10 flex-shrink-0">
-                          <value.icon className="w-6 h-6 text-yellow" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                          <p className="text-gray-600 leading-relaxed">{value.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-white">
