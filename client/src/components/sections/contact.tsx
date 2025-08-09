@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Circle } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 
 export default function Contact() {
@@ -37,8 +37,14 @@ export default function Contact() {
     }));
   };
 
-  const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation();
-  const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation();
+  const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation({
+    threshold: 0.8,
+    rootMargin: '0px 0px -300px 0px'
+  });
+  const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation({
+    threshold: 0.8,
+    rootMargin: '0px 0px -300px 0px'
+  });
 
   // Typewriter hook
   const useTypewriter = (text: string, speed: number = 50, startDelay: number = 0) => {

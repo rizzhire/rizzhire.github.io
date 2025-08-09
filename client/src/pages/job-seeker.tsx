@@ -129,8 +129,8 @@ export default function JobSeekerPage() {
   
   // Scroll animations for different sections
   const { elementRef: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation({
-    threshold: 0.5,
-    rootMargin: '0px 0px -200px 0px'
+    threshold: 0.8,
+    rootMargin: '0px 0px -300px 0px'
   });
 
   const form = useForm<ResumeFormData>({
