@@ -177,6 +177,24 @@
   background-color: transparent !important;
 }
 
+/* Frosted dialog content styling */
+.frosted-dialog-content {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(25px) saturate(180%) brightness(110%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(110%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.frosted-dialog-content * {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.frosted-dialog-content .bg-white,
+.frosted-dialog-content .bg-background {
+  background: transparent !important;
+}
+
 /* Re-apply necessary backgrounds with transparency */
 [data-radix-dialog-content] .bg-green-50 {
   background: rgba(34, 197, 94, 0.1) !important;
