@@ -216,33 +216,7 @@ export default function Contact() {
                 />
               </div>
               
-              {/* Office Selector Tabs */}
-              <div className="flex bg-gray-100 rounded-xl p-1 mt-6 mb-4">
-                <button 
-                  onClick={() => {
-                    const iframe = document.querySelector('iframe[title*="HireNET"]') as HTMLIFrameElement;
-                    if (iframe) {
-                      iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3945899999996!2d88.35046!3d22.56148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771346ae015d%3A0x1234567890abcdef!2s6%2F7A%2C%20AJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus";
-                      iframe.title = "HireNET Main Office - 6/7A, AJC Bose Road, Kolkata";
-                    }
-                  }}
-                  className="flex-1 py-2 px-4 bg-yellow-400 text-black font-semibold rounded-lg transition-all duration-200 hover:bg-yellow-500"
-                >
-                  Main Office - Kolkata
-                </button>
-                <button 
-                  onClick={() => {
-                    const iframe = document.querySelector('iframe[title*="HireNET"]') as HTMLIFrameElement;
-                    if (iframe) {
-                      iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.123456789012!2d88.39530!3d26.72710!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441c123456789%3A0xabcdef1234567890!2sNevidita%20Road%2C%20Siliguri%2C%20West%20Bengal%20734003%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus";
-                      iframe.title = "HireNET Branch Office - Nevidita Road, Siliguri";
-                    }
-                  }}
-                  className="flex-1 py-2 px-4 bg-white text-gray-700 font-semibold rounded-lg transition-all duration-200 hover:bg-gray-50 ml-1"
-                >
-                  Branch Office - Siliguri
-                </button>
-              </div>
+
               
               {/* Location Buttons */}
               <div className="grid md:grid-cols-2 gap-4 mt-6">
