@@ -196,7 +196,58 @@ export default function Contact() {
             </div>
           </div>
 
-
+          {/* Google Maps Section */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Find Us on Map</h3>
+              <p className="text-gray-600">Locate our offices easily with interactive map</p>
+            </div>
+            
+            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg">
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-gray-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.4282837442995!2d88.35286!3d22.560864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277f5a5deccfb%3A0x5e7f2b5b5b5b5b5b!2sAJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus&maptype=roadmap&style=feature:all%7Celement:geometry%7Ccolor:0xf5f5f5&style=feature:all%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:all%7Celement:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'sepia(10%) saturate(80%) hue-rotate(15deg)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="HireNET Office Location"
+                />
+              </div>
+              
+              {/* Location Buttons */}
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                <a
+                  href="https://maps.google.com/?q=6/7A,+AJC+Bose+Road,+Padatik+Theatre,+Kolkata-700017,+West+Bengal,+INDIA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group"
+                >
+                  <MapPin className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                  View Main Office on Google Maps
+                </a>
+                
+                <a
+                  href="https://maps.google.com/?q=4th-floor+Nevidita+Road,+Kidzee+School,+Siliguri+734003,+West+Bengal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group border border-gray-300"
+                >
+                  <MapPin className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                  View Branch Office on Google Maps
+                </a>
+              </div>
+              
+              {/* Map Theme Notice */}
+              <div className="mt-4 text-center">
+                <p className="text-xs text-gray-500">
+                  Map styled to match our website theme • Click buttons above for directions
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       {/* Contact Form */}
