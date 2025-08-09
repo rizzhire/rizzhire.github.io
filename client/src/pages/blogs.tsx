@@ -239,65 +239,101 @@ export default function Blogs() {
                     </Button>
                   </div>
                   
-                  {/* Right Feature Badge - Enhanced Illustration */}
-                  <div className="lg:col-span-3 bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-8 relative overflow-hidden">
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <svg className="w-full h-full" viewBox="0 0 200 200">
-                        <defs>
-                          <pattern id="featuredPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <circle cx="20" cy="20" r="2" fill="#f59e0b" opacity="0.3"/>
-                          </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#featuredPattern)" />
-                      </svg>
-                    </div>
+                  {/* Right Feature Badge - Full Container Illustration */}
+                  <div className="lg:col-span-3 bg-gradient-to-br from-yellow/20 to-yellow/5 relative overflow-hidden">
+                    {/* Full Container SVG Illustration */}
+                    <svg className="w-full h-full absolute inset-0" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+                      {/* Background Gradient */}
+                      <defs>
+                        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#fef3c7" stopOpacity="0.8"/>
+                          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.3"/>
+                        </linearGradient>
+                        <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#f59e0b"/>
+                          <stop offset="100%" stopColor="#d97706"/>
+                        </linearGradient>
+                      </defs>
+                      
+                      {/* Background */}
+                      <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+                      
+                      {/* Floating Geometric Elements */}
+                      <circle cx="50" cy="60" r="8" fill="#f59e0b" opacity="0.2"/>
+                      <circle cx="250" cy="120" r="12" fill="#d97706" opacity="0.15"/>
+                      <circle cx="280" cy="300" r="6" fill="#f59e0b" opacity="0.3"/>
+                      <circle cx="30" cy="350" r="10" fill="#d97706" opacity="0.2"/>
+                      
+                      {/* Main Building Complex */}
+                      <g transform="translate(80, 120)">
+                        {/* Main Building */}
+                        <rect x="0" y="60" width="140" height="180" fill="url(#buildingGradient)" rx="8"/>
+                        
+                        {/* Building Windows Pattern */}
+                        <g fill="#fef3c7">
+                          <rect x="15" y="80" width="20" height="20" rx="2"/>
+                          <rect x="45" y="80" width="20" height="20" rx="2"/>
+                          <rect x="75" y="80" width="20" height="20" rx="2"/>
+                          <rect x="105" y="80" width="20" height="20" rx="2"/>
+                          
+                          <rect x="15" y="115" width="20" height="20" rx="2"/>
+                          <rect x="45" y="115" width="20" height="20" rx="2"/>
+                          <rect x="75" y="115" width="20" height="20" rx="2"/>
+                          <rect x="105" y="115" width="20" height="20" rx="2"/>
+                          
+                          <rect x="15" y="150" width="20" height="20" rx="2"/>
+                          <rect x="45" y="150" width="20" height="20" rx="2"/>
+                          <rect x="75" y="150" width="20" height="20" rx="2"/>
+                          <rect x="105" y="150" width="20" height="20" rx="2"/>
+                        </g>
+                        
+                        {/* Building Entrance */}
+                        <rect x="55" y="200" width="30" height="40" fill="#d97706" rx="4"/>
+                        <rect x="60" y="210" width="20" height="30" fill="#fef3c7" rx="2"/>
+                        
+                        {/* Rooftop Elements */}
+                        <rect x="20" y="50" width="100" height="20" fill="#f59e0b" rx="4"/>
+                        <rect x="60" y="30" width="20" height="30" fill="#d97706" rx="2"/>
+                      </g>
+                      
+                      {/* Candidate Icons */}
+                      <g transform="translate(30, 180)">
+                        <circle cx="0" cy="0" r="15" fill="#d97706"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#d97706" rx="5"/>
+                        <circle cx="0" cy="-5" r="8" fill="#fef3c7"/>
+                      </g>
+                      
+                      <g transform="translate(240, 200)">
+                        <circle cx="0" cy="0" r="15" fill="#d97706"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#d97706" rx="5"/>
+                        <circle cx="0" cy="-5" r="8" fill="#fef3c7"/>
+                      </g>
+                      
+                      <g transform="translate(40, 300)">
+                        <circle cx="0" cy="0" r="15" fill="#d97706"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#d97706" rx="5"/>
+                        <circle cx="0" cy="-5" r="8" fill="#fef3c7"/>
+                      </g>
+                      
+                      {/* Connection Lines */}
+                      <path d="M45 195 Q100 160 150 180" stroke="#f59e0b" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      <path d="M225 215 Q180 180 150 200" stroke="#f59e0b" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      <path d="M55 315 Q100 280 150 280" stroke="#f59e0b" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      
+                      {/* Success Indicators */}
+                      <circle cx="150" cy="100" r="20" fill="#22c55e"/>
+                      <path d="M140 100 L147 107 L160 90" stroke="white" strokeWidth="4" fill="none"/>
+                      
+                      {/* HireNET Logo/Badge */}
+                      <circle cx="150" cy="50" r="25" fill="#f59e0b"/>
+                      <text x="150" y="58" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">H</text>
+                    </svg>
                     
-                    <div className="text-center relative z-10">
-                      {/* Custom Recruitment Illustration */}
-                      <div className="w-24 h-24 mx-auto mb-4 relative">
-                        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-                          {/* Background Circle */}
-                          <circle cx="50" cy="50" r="48" fill="#fef3c7" stroke="#f59e0b" strokeWidth="2"/>
-                          
-                          {/* Building/Company Icon */}
-                          <rect x="30" y="35" width="40" height="35" fill="#f59e0b" rx="2"/>
-                          <rect x="32" y="37" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="40" y="37" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="54" y="37" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="62" y="37" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="32" y="45" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="40" y="45" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="54" y="45" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="62" y="45" width="6" height="6" fill="#fef3c7"/>
-                          <rect x="40" y="53" width="20" height="17" fill="#d97706" rx="1"/>
-                          <rect x="45" y="58" width="10" height="12" fill="#fef3c7"/>
-                          
-                          {/* People Icons */}
-                          <circle cx="20" cy="25" r="4" fill="#d97706"/>
-                          <rect x="16" y="29" width="8" height="8" fill="#d97706" rx="2"/>
-                          
-                          <circle cx="80" cy="25" r="4" fill="#d97706"/>
-                          <rect x="76" y="29" width="8" height="8" fill="#d97706" rx="2"/>
-                          
-                          {/* Connection Lines */}
-                          <path d="M24 29 L46 40" stroke="#f59e0b" strokeWidth="2" strokeDasharray="2,2"/>
-                          <path d="M76 29 L54 40" stroke="#f59e0b" strokeWidth="2" strokeDasharray="2,2"/>
-                          
-                          {/* Success Indicator */}
-                          <circle cx="50" cy="20" r="6" fill="#22c55e"/>
-                          <path d="M47 20 L49 22 L53 18" stroke="white" strokeWidth="2" fill="none"/>
-                        </svg>
-                      </div>
-                      
-                      <p className="text-lg font-semibold text-gray-900 mb-2">Featured Insight</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">Industry Expert Analysis</p>
-                      
-                      {/* Decorative Elements */}
-                      <div className="mt-4 flex justify-center space-x-2">
-                        <div className="w-2 h-2 bg-yellow/60 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow/40 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow/60 rounded-full"></div>
+                    {/* Text Overlay */}
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 bg-black/10">
+                      <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl">
+                        <p className="text-lg font-semibold text-gray-900 mb-1">Featured Insight</p>
+                        <p className="text-gray-600 text-sm">Industry Expert Analysis</p>
                       </div>
                     </div>
                   </div>
