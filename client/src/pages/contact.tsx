@@ -206,7 +206,7 @@ export default function Contact() {
             <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg">
               <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-gray-200">
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO7p2r9JcQqhd0&q=6%2F7A%2C+AJC+Bose+Road%2C+Padatik+Theatre%2C+Kolkata-700017%2C+West+Bengal%2C+INDIA&zoom=16&maptype=roadmap&center=22.5607,88.3533"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3945899999996!2d88.35046!3d22.56148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771346ae015d%3A0x1234567890abcdef!2s6%2F7A%2C%20AJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
                   style={{ border: 0, filter: 'sepia(10%) saturate(80%) hue-rotate(15deg)' }}
@@ -223,7 +223,7 @@ export default function Contact() {
                   onClick={() => {
                     const iframe = document.querySelector('iframe[title*="HireNET"]') as HTMLIFrameElement;
                     if (iframe) {
-                      iframe.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO7p2r9JcQqhd0&q=6%2F7A%2C+AJC+Bose+Road%2C+Padatik+Theatre%2C+Kolkata-700017%2C+West+Bengal%2C+INDIA&zoom=16&maptype=roadmap&center=22.5607,88.3533";
+                      iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3945899999996!2d88.35046!3d22.56148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771346ae015d%3A0x1234567890abcdef!2s6%2F7A%2C%20AJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus";
                       iframe.title = "HireNET Main Office - 6/7A, AJC Bose Road, Kolkata";
                     }
                   }}
@@ -235,7 +235,7 @@ export default function Contact() {
                   onClick={() => {
                     const iframe = document.querySelector('iframe[title*="HireNET"]') as HTMLIFrameElement;
                     if (iframe) {
-                      iframe.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO7p2r9JcQqhd0&q=4th-floor+Nevidita+Road%2C+Kidzee+School%2C+Siliguri+734003%2C+West+Bengal&zoom=16&maptype=roadmap&center=26.7271,88.3953";
+                      iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.123456789012!2d88.39530!3d26.72710!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441c123456789%3A0xabcdef1234567890!2sNevidita%20Road%2C%20Siliguri%2C%20West%20Bengal%20734003%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus";
                       iframe.title = "HireNET Branch Office - Nevidita Road, Siliguri";
                     }
                   }}
