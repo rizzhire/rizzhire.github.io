@@ -93,21 +93,14 @@ export default function Contact() {
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      x: -60,
-      scale: 0.8,
-      rotateY: -20
+      y: 20
     },
     visible: {
       opacity: 1,
-      x: 0,
-      scale: 1,
-      rotateY: 0,
+      y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        type: "spring",
-        stiffness: 120,
-        damping: 18
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -115,22 +108,15 @@ export default function Contact() {
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      x: 60,
-      scale: 0.9,
-      rotateY: 20
+      y: 30
     },
     visible: {
       opacity: 1,
-      x: 0,
-      scale: 1,
-      rotateY: 0,
+      y: 0,
       transition: {
-        duration: 0.9,
-        delay: 0.3,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        type: "spring",
-        stiffness: 100,
-        damping: 15
+        duration: 0.7,
+        delay: 0.2,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -165,17 +151,15 @@ export default function Contact() {
                 className="flex items-center group cursor-pointer"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.02,
-                  x: 8,
-                  transition: { duration: 0.3 }
+                  x: 4,
+                  transition: { duration: 0.2 }
                 }}
               >
                 <motion.div 
                   className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
                   whileHover={{ 
-                    scale: 1.1,
-                    rotate: 5,
-                    boxShadow: "0 8px 25px rgba(245, 215, 66, 0.4)"
+                    scale: 1.05,
+                    boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
                   }}
                 >
                   <Mail className="h-6 w-6 text-black" />
@@ -195,17 +179,15 @@ export default function Contact() {
                 className="flex items-center group cursor-pointer"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.02,
-                  x: 8,
-                  transition: { duration: 0.3 }
+                  x: 4,
+                  transition: { duration: 0.2 }
                 }}
               >
                 <motion.div 
                   className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
                   whileHover={{ 
-                    scale: 1.1,
-                    rotate: 5,
-                    boxShadow: "0 8px 25px rgba(245, 215, 66, 0.4)"
+                    scale: 1.05,
+                    boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
                   }}
                 >
                   <Phone className="h-6 w-6 text-black" />
@@ -225,17 +207,15 @@ export default function Contact() {
                 className="flex items-center group cursor-pointer"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.02,
-                  x: 8,
-                  transition: { duration: 0.3 }
+                  x: 4,
+                  transition: { duration: 0.2 }
                 }}
               >
                 <motion.div 
                   className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
                   whileHover={{ 
-                    scale: 1.1,
-                    rotate: 5,
-                    boxShadow: "0 8px 25px rgba(245, 215, 66, 0.4)"
+                    scale: 1.05,
+                    boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
                   }}
                 >
                   <MapPin className="h-6 w-6 text-black" />
