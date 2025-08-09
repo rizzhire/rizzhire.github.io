@@ -24,27 +24,41 @@ export default function Contact() {
       icon: MapPin,
       title: "Visit Us",
       details: [
-        "Head Office: 6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal, INDIA",
-        "Branch Office: 4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal, INDIA"
+        {
+          subheading: "Head Office:",
+          items: ["6/7A, AJC Bose Road, Padatik Theatre", "Kolkata-700017, West Bengal, INDIA"]
+        },
+        {
+          subheading: "Branch Office:",
+          items: ["4th-floor Nevidita Road, Kidzee School", "Siliguri 734003, West Bengal, INDIA"]
+        }
       ],
       color: "text-blue-600"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 333 508 5038", "+91 9007906531"],
+      details: [
+        { text: "+91 333 508 5038" },
+        { text: "+91 9007906531" }
+      ],
       color: "text-green-600"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["contact@hirenet.in"],
+      details: [
+        { text: "contact@hirenet.in" }
+      ],
       color: "text-purple-600"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Saturday: 10:30 AM - 6PM", "Sunday: <span class='text-red-600 font-semibold'>Closed</span>"],
+      details: [
+        { text: "Mon - Saturday: 10:30 AM - 6PM" },
+        { text: "Sunday: <span class='text-red-600 font-semibold'>Closed</span>" }
+      ],
       color: "text-orange-600"
     }
   ];
@@ -158,12 +172,27 @@ export default function Contact() {
                     <info.icon className="w-6 h-6" />
                   </div>
                   <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
-                  <div className="space-y-1">
+                  <div className="space-y-3">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm" 
-                         dangerouslySetInnerHTML={typeof detail === 'string' ? { __html: detail } : undefined}>
-                        {typeof detail === 'string' ? undefined : detail}
-                      </p>
+                      <div key={idx}>
+                        {typeof detail === 'object' && detail.subheading ? (
+                          <div className="text-left">
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">{detail.subheading}</h4>
+                            <ul className="space-y-0.5">
+                              {detail.items.map((item, itemIdx) => (
+                                <li key={itemIdx} className="text-gray-600 text-xs flex items-start">
+                                  <span className="text-gray-400 mr-1.5 mt-1">•</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : (
+                          <p className="text-gray-600 text-sm" 
+                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                          </p>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </CardContent>
