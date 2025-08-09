@@ -76,29 +76,13 @@ export default function Services() {
             </linearGradient>
           </defs>
           
-          <path 
-            d="M-150,80 C-50,70 100,100 300,90 C500,80 700,70 900,80 C1000,85 1100,90 1150,90" 
-            stroke="url(#servicesWavy1)" 
-            strokeWidth="1.2" 
-            fill="none"
-            className="animate-wavyTravel1"
-            style={{animationDelay: '4s'}}
-          />
-          
-          <path 
-            d="M1150,300 C1050,290 950,320 750,310 C550,300 350,290 200,285 C100,282 0,278 -150,280" 
-            stroke="url(#servicesWavy2)" 
-            strokeWidth="1.0" 
-            fill="none"
-            className="animate-wavyTravel2"
-            style={{animationDelay: '8s'}}
-          />
+
         </svg>
       </div>
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 mt-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-yellow">Services</span>
           </h2>
