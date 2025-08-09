@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Circle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { motion } from "framer-motion";
@@ -77,7 +77,7 @@ export default function Contact() {
   // Typewriter effects for each contact detail
   const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
   const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 1400);
-  const officeTypewriter = useTypewriter('MAIN OFFICE\n6/7A, AJC Bose Road,\nPadatik Theatre\nKolkata-700017, West Bengal\n\nBRANCH OFFICE\n4th-floor Nevidita Road,\nKidzee School\nSiliguri 734003, West Bengal', 60, 2000);
+  const officeTypewriter = useTypewriter('', 60, 2000);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -212,7 +212,7 @@ export default function Contact() {
                 }}
               >
                 <motion.div 
-                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4 mt-1"
+                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4 mt-1 flex-shrink-0"
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
@@ -220,14 +220,38 @@ export default function Contact() {
                 >
                   <MapPin className="h-6 w-6 text-black" />
                 </motion.div>
-                <div>
-                  <h4 className="font-semibold">Office Locations</h4>
-                  <p className="text-gray-600 whitespace-pre-line">
-                    {officeTypewriter.displayText}
-                    {officeTypewriter.isTyping && (
-                      <span className="animate-pulse text-yellow">|</span>
-                    )}
-                  </p>
+                <div className="flex-1 max-w-md">
+                  <h4 className="font-semibold mb-4">Office Locations</h4>
+                  
+                  {/* Main Office */}
+                  <div className="mb-6">
+                    <div className="flex items-center mb-2">
+                      <Circle className="h-2 w-2 text-gray-400 fill-current mr-3 flex-shrink-0" />
+                      <h5 className="font-semibold text-gray-800">MAIN OFFICE</h5>
+                    </div>
+                    <div className="ml-5">
+                      <p className="text-gray-600 leading-relaxed">
+                        6/7A, AJC Bose Road,<br/>
+                        Padatik Theatre<br/>
+                        Kolkata-700017, West Bengal
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Branch Office */}
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <Circle className="h-2 w-2 text-gray-400 fill-current mr-3 flex-shrink-0" />
+                      <h5 className="font-semibold text-gray-800">BRANCH OFFICE</h5>
+                    </div>
+                    <div className="ml-5">
+                      <p className="text-gray-600 leading-relaxed">
+                        4th-floor Nevidita Road,<br/>
+                        Kidzee School<br/>
+                        Siliguri 734003, West Bengal
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
