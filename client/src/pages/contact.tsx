@@ -88,11 +88,11 @@ export default function Contact() {
       {/* Contact Info Cards */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
+              <Card key={index} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
                 <CardContent className="p-0 text-center relative z-10">
-                  <div className="relative mb-6">
+                  <div className="relative mb-4">
                     {/* Unique geometric icon container based on index */}
                     {index === 0 && (
                       <div className="relative w-12 h-12 mx-auto">
@@ -134,7 +134,7 @@ export default function Contact() {
                   </div>
 
                   {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600 text-sm mb-1">{detail}</p>
+                    <p key={idx} className="text-gray-600 text-xs leading-relaxed mb-1">{detail}</p>
                   ))}
                 </CardContent>
               </Card>
