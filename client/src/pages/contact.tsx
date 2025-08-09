@@ -123,7 +123,7 @@ export default function Contact() {
             {/* Locations */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#F5C842] to-[#E6B73A] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5C842]/25 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#F5D742] to-[#F5C842] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5D742]/25 group-hover:scale-105 transition-transform duration-300">
                   <MapPin className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Locations</h3>
@@ -157,7 +157,7 @@ export default function Contact() {
             {/* Phone */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#F5C842] to-[#E6B73A] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5C842]/25 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#F5D742] to-[#F5C842] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5D742]/25 group-hover:scale-105 transition-transform duration-300">
                   <Phone className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Phone</h3>
@@ -175,7 +175,7 @@ export default function Contact() {
             {/* Email */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#F5C842] to-[#E6B73A] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5C842]/25 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#F5D742] to-[#F5C842] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5D742]/25 group-hover:scale-105 transition-transform duration-300">
                   <Mail className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Email</h3>
@@ -190,7 +190,7 @@ export default function Contact() {
             {/* Hours */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#F5C842] to-[#E6B73A] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5C842]/25 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#F5D742] to-[#F5C842] rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-[#F5D742]/25 group-hover:scale-105 transition-transform duration-300">
                   <Clock className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Hours</h3>
