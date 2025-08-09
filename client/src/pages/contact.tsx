@@ -172,6 +172,35 @@ export default function Contact() {
               </Card>
             ))}
           </div>
+
+          {/* Find Us Section - Moved here */}
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Find <span className="text-yellow">Us</span>
+              </h2>
+              <p className="text-xl text-gray-600">Located in the heart of Kolkata's business district</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-12 text-center">
+              <div className="w-20 h-20 bg-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <MapPin className="w-10 h-10 text-yellow" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Location</h3>
+              <p className="text-gray-600 text-lg mb-6">
+                6/7A, AJC Bose Road, Padatik Theatre<br />
+                Kolkata-700017, West Bengal, INDIA
+              </p>
+              <div className="mt-8 pt-6 border-t border-yellow/20">
+                <h4 className="text-xl font-semibold mb-3 text-gray-800">Branch Office</h4>
+                <p className="text-gray-600">
+                  4th-floor Nevidita Road, Kidzee School<br />
+                  Near Post Office Pradhan Nagar<br />
+                  Siliguri 734003
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -279,39 +308,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 px-4 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Find <span className="text-yellow">Us</span>
-            </h2>
-            <p className="text-xl text-gray-600">Located in the heart of Kolkata's business district</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-12 text-center">
-            <div className="w-20 h-20 bg-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <MapPin className="w-10 h-10 text-yellow" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">Main Office - Kolkata</h3>
-            <p className="text-gray-600 text-lg mb-6">
-              6/7A, AJC Bose Road, Padatik Theatre<br />
-              Kolkata-700017, West Bengal, INDIA
-            </p>
-            <div className="mt-8 pt-6 border-t border-yellow/20">
-              <h4 className="text-xl font-semibold mb-3 text-gray-800">Branch Office - Siliguri</h4>
-              <p className="text-gray-600">
-                4th-floor Nevidita Road, Kidzee School<br />
-                Near Post Office Pradhan Nagar<br />
-                Siliguri 734003
-              </p>
-            </div>
-            <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-3 rounded-xl">
-              Get Directions
-            </Button>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }
