@@ -50,7 +50,7 @@ export default function Contact() {
       icon: Clock,
       title: "Business Hours",
       details: [
-        { text: "Mon - Saturday: 10:30 AM - 6PM" },
+        { text: "Mon - Saturday:<br/>10:30 AM - 6PM" },
         { text: "Sunday: <span class='text-red-600 font-semibold'>Closed</span>" }
       ],
       color: "text-orange-600"
