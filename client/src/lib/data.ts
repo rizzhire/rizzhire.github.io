@@ -5,7 +5,7 @@ export const jobs = [
     id: 1,
     title: "BLOCK/PASTER MASON",
     experience: "GOOD EXPERIENCE REQUIRED",
-    salary: "1300 AED",
+    salary: "1200 AED",
     location: "DUBAI",
     postedDate: "2025-01-15"
   },
@@ -13,7 +13,7 @@ export const jobs = [
     id: 2,
     title: "SHUTTERING CARPENTER",
     experience: "GOOD EXPERIENCE REQUIRED",
-    salary: "240 KWD",
+    salary: "140 KWD",
     location: "KUWAIT",
     postedDate: "2025-01-12"
   },
@@ -21,7 +21,7 @@ export const jobs = [
     id: 3,
     title: "LABOUR",
     experience: "Minimum 3 to 4 years of Experience",
-    salary: "900 SAR",
+    salary: "800 SAR",
     location: "RIYADH",
     postedDate: "2025-01-18"
   },
@@ -29,7 +29,7 @@ export const jobs = [
     id: 4,
     title: "ASST. MASON / SHUTTERING CAPENTER / STEEL FIXER",
     experience: "Minimum 3 to 4 years of Experience",
-    salary: "1100 QAR",
+    salary: "1000 QAR",
     location: "DOHA",
     postedDate: "2025-01-10"
   },
@@ -37,7 +37,7 @@ export const jobs = [
     id: 5,
     title: "STEEL FIXER",
     experience: "Minimum 3 to 4 years of Experience",
-    salary: "1400 AED",
+    salary: "1300 AED",
     location: "DUBAI",
     postedDate: "2025-01-20"
   },
@@ -45,7 +45,7 @@ export const jobs = [
     id: 6,
     title: "FURNITURE CARPENTER",
     experience: "Minimum 3 to 4 years of Experience",
-    salary: "280 KWD",
+    salary: "160 KWD",
     location: "KUWAIT",
     postedDate: "2025-01-08"
   }
