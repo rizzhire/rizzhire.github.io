@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -349,6 +349,12 @@ export default function JobSeekerPage() {
                   display: 'flex',
                   flexDirection: 'column'
                 }}>
+                  <DialogHeader className="sr-only">
+                    <DialogTitle>Submit Your Resume</DialogTitle>
+                    <DialogDescription>
+                      Join thousands of professionals who found their dream careers through HireNET
+                    </DialogDescription>
+                  </DialogHeader>
                   <div className="flex-1 overflow-y-auto overflow-x-hidden dialog-scroll-container" style={{ 
                     borderRadius: '40px',
                     background: 'transparent'

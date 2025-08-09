@@ -133,6 +133,101 @@
   transform: scale(1.05) !important;
 }
 
+/* Change Uppy Dashboard from blue to white theme */
+.uppy-Dashboard-inner {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.uppy-Dashboard-AddFiles {
+  background: white !important;
+  border: 2px dashed #d1d5db !important;
+  border-radius: 16px !important;
+}
+
+.uppy-Dashboard-AddFiles:hover,
+.uppy-Dashboard-AddFiles:focus {
+  background: #f9fafb !important;
+  border-color: #f59e0b !important;
+}
+
+.uppy-Dashboard-AddFiles-info {
+  color: #374151 !important;
+}
+
+.uppy-Dashboard-browse {
+  color: #f59e0b !important;
+  background: transparent !important;
+  border: none !important;
+  text-decoration: underline !important;
+}
+
+.uppy-Dashboard-browse:hover,
+.uppy-Dashboard-browse:focus {
+  color: #d97706 !important;
+}
+
+.uppy-Dashboard-AddFiles-title {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+.uppy-Dashboard-note {
+  color: #6b7280 !important;
+}
+
+/* Upload progress and file items */
+.uppy-Dashboard-files {
+  background: white !important;
+}
+
+.uppy-Dashboard-Item {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+}
+
+.uppy-Dashboard-Item:hover {
+  background: #f9fafb !important;
+}
+
+.uppy-ProgressBar {
+  background: #f3f4f6 !important;
+}
+
+.uppy-ProgressBar-fill {
+  background: #f59e0b !important;
+}
+
+/* Action buttons */
+.uppy-StatusBar {
+  background: white !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+.uppy-StatusBar-actions .uppy-button {
+  background: #f59e0b !important;
+  color: black !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
+.uppy-StatusBar-actions .uppy-button:hover {
+  background: #d97706 !important;
+}
+
+.uppy-StatusBar-actions .uppy-button--cancel {
+  background: white !important;
+  color: #6b7280 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.uppy-StatusBar-actions .uppy-button--cancel:hover {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
 /* Make form content transparent/frosted */
 [data-radix-dialog-content] .bg-white,
 [data-radix-dialog-content] .bg-green-50,
