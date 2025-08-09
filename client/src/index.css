@@ -202,6 +202,21 @@
   -webkit-backdrop-filter: blur(30px) !important;
 }
 
+/* Ultimate glass effect override - targets all possible selectors */
+[data-radix-dialog-content][style*="border-radius: 40px"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Force all dialog content to be glass */
+[role="dialog"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+}
+
 /* Re-apply necessary backgrounds with transparency */
 [data-radix-dialog-content] .bg-green-50 {
   background: rgba(34, 197, 94, 0.1) !important;

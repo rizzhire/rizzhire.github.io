@@ -337,12 +337,14 @@ export default function JobSeekerPage() {
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden" style={{ 
+                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden glass-dialog" style={{ 
                   borderRadius: '40px',
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  backdropFilter: 'blur(30px)',
-                  WebkitBackdropFilter: 'blur(30px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                  background: 'rgba(255, 255, 255, 0.08) !important',
+                  backdropFilter: 'blur(30px) !important',
+                  WebkitBackdropFilter: 'blur(30px) !important',
+                  border: '1px solid rgba(255, 255, 255, 0.2) !important',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  zIndex: 9999
                 }}>
                   <div className="h-full overflow-y-auto" style={{ 
                     borderRadius: '40px',
