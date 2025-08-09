@@ -318,8 +318,8 @@ export default function Blogs() {
                     </svg>
                     
                     {/* Text Overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 bg-black/10">
-                      <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10">
+                      <div className="bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-black/10">
                         <p className="text-lg font-semibold text-gray-900 mb-1">Featured Insight</p>
                         <p className="text-gray-600 text-sm">Industry Expert Analysis</p>
                       </div>
