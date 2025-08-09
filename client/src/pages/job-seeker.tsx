@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { ObjectUploader } from "@/components/ObjectUploader";
-import { Upload, CheckCircle, Star } from "lucide-react";
+import { Upload, CheckCircle, Star, User, Briefcase } from "lucide-react";
 import JobListings from "@/components/sections/job-listings";
 import SuccessStories from "@/components/sections/success-stories";
 import WhyChooseHireNet from "@/components/sections/why-choose-hirenet";
@@ -23,11 +23,15 @@ import { useToast } from "@/hooks/use-toast";
 import type { UploadResult } from "@uppy/core";
 
 const resumeFormSchema = insertResumeSchema.extend({
-  name: z.string().min(1, "Name is required"),
+  fullName: z.string().min(1, "Full name is required"),
   email: z.string().email("Valid email is required"),
   phone: z.string().optional(),
-  position: z.string().optional(),
+  currentLocation: z.string().optional(),
   experience: z.string().optional(),
+  currentSalary: z.string().optional(),
+  industry: z.string().optional(),
+  jobTitle: z.string().optional(),
+  resume: z.string().optional(),
 });
 
 type ResumeFormData = z.infer<typeof resumeFormSchema>;
@@ -119,16 +123,21 @@ const jobSeekerTestimonials = [
 export default function JobSeekerPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<ResumeFormData>({
     resolver: zodResolver(resumeFormSchema),
     defaultValues: {
-      name: "",
+      fullName: "",
       email: "",
       phone: "",
-      position: "",
+      currentLocation: "",
       experience: "",
+      currentSalary: "",
+      industry: "",
+      jobTitle: "",
+      resume: "",
       fileName: "",
       filePath: "",
     },
@@ -148,6 +157,7 @@ export default function JobSeekerPage() {
       setIsDialogOpen(false);
       form.reset();
       setUploadedFile(null);
+      setIsSubmitting(false);
     },
     onError: () => {
       toast({
@@ -155,8 +165,11 @@ export default function JobSeekerPage() {
         description: "Failed to submit resume. Please try again.",
         variant: "destructive",
       });
+      setIsSubmitting(false);
     },
   });
+
+
 
   const handleGetUploadParameters = async () => {
     const result = await uploadMutation.mutateAsync();
@@ -369,10 +382,12 @@ export default function JobSeekerPage() {
                                   };
                                 }}
                                 onComplete={(result) => {
-                                  const uploadedFiles = result.successful.map(f => f.name);
-                                  if (uploadedFiles.length > 0) {
-                                    setUploadedFile(uploadedFiles[0]);
-                                    form.setValue('resume', uploadedFiles[0]);
+                                  if (result.successful && result.successful.length > 0) {
+                                    const fileName = result.successful[0].name;
+                                    if (fileName) {
+                                      setUploadedFile(fileName);
+                                      form.setValue('resume', fileName);
+                                    }
                                   }
                                 }}
                                 buttonClassName="w-full h-24 border-2 border-dashed border-gray-300 rounded-2xl hover:border-yellow-400 bg-gray-50 hover:bg-yellow-50/50 transition-all duration-200"
