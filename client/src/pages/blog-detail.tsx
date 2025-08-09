@@ -312,54 +312,54 @@ export default function BlogDetail() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Header */}
-      <section className="pt-32 pb-8 px-4" style={{backgroundColor: '#F5F3EB'}}>
+      <section className="pt-20 pb-4 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="initial"
             animate="animate"
             variants={fadeInUp}
           >
-            <Button asChild variant="ghost" className="mb-6 text-gray-600 hover:text-gray-900">
+            <Button asChild variant="ghost" className="mb-4 text-gray-600 hover:text-gray-900">
               <Link href="/blogs">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Insights
               </Link>
             </Button>
             
-            <div className="mb-6">
+            <div className="mb-3">
               <span className="px-3 py-1 bg-yellow/20 text-yellow-700 rounded-full text-sm font-medium">
                 {blogPost.category}
               </span>
             </div>
             
-            <h1 className="fluid-text-4xl font-bold mb-6 text-gray-900 leading-tight">
+            <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900 leading-tight">
               {blogPost.title}
             </h1>
             
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center">
                 <img 
                   src={`https://ui-avatars.com/api/?name=${encodeURIComponent(blogPost.author)}&size=80&background=F5F3EB&color=1F2937&rounded=true`}
                   alt={`${blogPost.author} profile`}
-                  className="w-12 h-12 rounded-xl mr-4"
+                  className="w-10 h-10 rounded-xl mr-3"
                 />
                 <div>
-                  <p className="font-semibold text-gray-900">{blogPost.author}</p>
-                  <p className="text-sm text-gray-600">{blogPost.role}</p>
+                  <p className="font-semibold text-gray-900 text-sm">{blogPost.author}</p>
+                  <p className="text-xs text-gray-600">{blogPost.role}</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 text-sm text-gray-500">
+              <div className="flex items-center space-x-3 text-xs text-gray-500">
                 <div className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-1" />
+                  <Calendar className="w-3 h-3 mr-1" />
                   <span>{blogPost.date}</span>
                 </div>
                 <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-1" />
+                  <Clock className="w-3 h-3 mr-1" />
                   <span>{blogPost.readTime}</span>
                 </div>
-                <Button variant="ghost" size="sm" className="text-gray-500 hover:text-gray-700">
-                  <Share2 className="w-4 h-4" />
+                <Button variant="ghost" size="sm" className="text-gray-500 hover:text-gray-700 p-1">
+                  <Share2 className="w-3 h-3" />
                 </Button>
               </div>
             </div>
