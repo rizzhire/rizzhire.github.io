@@ -161,6 +161,22 @@
   -webkit-backdrop-filter: blur(15px) !important;
 }
 
+/* Override CSS variables for dialog content */
+[data-radix-dialog-content] {
+  --background: transparent !important;
+  --card: transparent !important;
+  --popover: transparent !important;
+  --muted: transparent !important;
+  --secondary: transparent !important;
+  --accent: transparent !important;
+}
+
+/* Force bg-background class to be transparent in dialog */
+[data-radix-dialog-content] .bg-background {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 /* Re-apply necessary backgrounds with transparency */
 [data-radix-dialog-content] .bg-green-50 {
   background: rgba(34, 197, 94, 0.1) !important;
