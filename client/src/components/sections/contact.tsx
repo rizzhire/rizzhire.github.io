@@ -77,7 +77,7 @@ export default function Contact() {
   // Typewriter effects for each contact detail
   const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
   const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 1400);
-  const officeTypewriter = useTypewriter('Dubai International Financial Centre\nDubai, United Arab Emirates', 60, 2000);
+  const officeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre,\nKolkata-700017, West Bengal', 60, 2000);
 
   const containerVariants = {
     hidden: { opacity: 0 },
