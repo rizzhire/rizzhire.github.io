@@ -90,15 +90,46 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-gradient-to-br from-white via-gray-50/50 to-white p-6 rounded-3xl border border-gray-200/60 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group backdrop-blur-sm">
-                <CardContent className="p-0 text-center">
-                  <div className="relative w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-all duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 rounded-2xl opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/20 rounded-2xl"></div>
-                    <div className="absolute inset-0.5 bg-gradient-to-br from-white/30 via-transparent to-transparent rounded-2xl"></div>
-                    <div className="relative w-full h-full flex items-center justify-center">
-                      <info.icon className="w-7 h-7 text-white drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />
-                    </div>
+              <Card key={index} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
+                <CardContent className="p-0 text-center relative z-10">
+                  <div className="relative mb-6">
+                    {/* Unique geometric icon container based on index */}
+                    {index === 0 && (
+                      <div className="relative w-12 h-12 mx-auto">
+                        <div className="absolute inset-0 border-2 border-gray-200 rotate-45 rounded-lg group-hover:border-yellow-400 transition-colors duration-300"></div>
+                        <div className="absolute inset-2 bg-gray-50 rotate-45 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                    )}
+                    {index === 1 && (
+                      <div className="relative w-12 h-12 mx-auto">
+                        <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:border-yellow-400 transition-colors duration-300"></div>
+                        <div className="absolute inset-1 border border-gray-100 rounded-full group-hover:border-yellow-200 transition-colors duration-300"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                    )}
+                    {index === 2 && (
+                      <div className="relative w-12 h-12 mx-auto">
+                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300" style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}></div>
+                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300" style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                    )}
+                    {index === 3 && (
+                      <div className="relative w-12 h-12 mx-auto">
+                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300" style={{transform: 'skew(-15deg)'}}></div>
+                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300" style={{transform: 'skew(-15deg)'}}></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-gray-900">{info.title}</h3>
                   {info.details.map((detail, idx) => (
