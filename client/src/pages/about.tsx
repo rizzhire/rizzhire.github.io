@@ -166,7 +166,7 @@ export default function About() {
           </p>
           
           <div className="bg-gradient-to-r from-yellow/10 to-transparent rounded-3xl p-8 max-w-4xl mx-auto">
-            <p className="text-lg text-gray-600 leading-relaxed italic" style={{fontFamily: '"Kalam", "Caveat", cursive'}}>
+            <p className="text-lg text-gray-600 leading-relaxed italic" style={{fontFamily: '"Shadows Into Light Two", "Permanent Marker", "Indie Flower", cursive'}}>
               "We believe that the right person in the right role can transform not just careers, 
               but entire organizations. Our mission is to make those transformative connections happen."
             </p>
