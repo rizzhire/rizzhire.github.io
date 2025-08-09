@@ -265,8 +265,8 @@ export default function LearnMore() {
                       milestone.title.includes("Industry Leadership") || 
                       milestone.title.includes("Innovation Hub") || 
                       milestone.title.includes("Future Vision")) && (
-                      <svg className="absolute inset-0 w-full h-full opacity-2 pointer-events-none" viewBox="0 0 800 200">
-                        <path d="M0,100 Q200,80 400,100 T800,100" stroke="#f59e0b" strokeWidth="0.5" fill="none" className="animate-waveFlow" style={{animationDuration: '25s'}} opacity="0.3"/>
+                      <svg className="absolute inset-0 w-full h-full opacity-1 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,100 Q200,80 400,100 T800,100" stroke="#8B7355" strokeWidth="0.4" fill="none" className="animate-waveFlow" style={{animationDuration: '30s'}} opacity="0.15"/>
                       </svg>
                     )}
                     
