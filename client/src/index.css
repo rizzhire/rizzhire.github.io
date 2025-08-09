@@ -133,6 +133,34 @@
   transform: scale(1.05) !important;
 }
 
+/* Make form content transparent/frosted */
+[data-radix-dialog-content] .bg-white,
+[data-radix-dialog-content] .bg-green-50,
+[data-radix-dialog-content] .bg-green-100,
+[data-radix-dialog-content] .bg-yellow\/20 {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Override any solid backgrounds in form */
+[data-radix-dialog-content] * {
+  background-color: transparent !important;
+}
+
+/* Re-apply necessary backgrounds with transparency */
+[data-radix-dialog-content] .bg-green-50 {
+  background: rgba(34, 197, 94, 0.1) !important;
+}
+
+[data-radix-dialog-content] .bg-green-100 {
+  background: rgba(34, 197, 94, 0.2) !important;
+}
+
+[data-radix-dialog-content] .bg-yellow\/20 {
+  background: rgba(245, 158, 11, 0.2) !important;
+}
+
 /* Sacramento font specific styling */
 .sacramento-quote {
   font-family: 'Sacramento', cursive !important;
