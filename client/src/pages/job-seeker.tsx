@@ -483,14 +483,20 @@ export default function JobSeekerPage() {
           </div>
 
           <div className="relative">
-            {/* Left fade gradient */}
-            <div className="absolute left-0 top-0 bottom-4 w-12 bg-gradient-to-r from-[#F2F0E8] to-transparent z-10 pointer-events-none"></div>
+            {/* Left fade gradient with shadow effect */}
+            <div className="absolute left-0 top-0 bottom-4 w-24 z-10 pointer-events-none">
+              <div className="w-full h-full bg-gradient-to-r from-[#F2F0E8] via-[#F2F0E8]/90 via-[#F2F0E8]/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-black/2 to-transparent"></div>
+            </div>
             
-            {/* Right fade gradient */}
-            <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#F2F0E8] to-transparent z-10 pointer-events-none"></div>
+            {/* Right fade gradient with shadow effect */}
+            <div className="absolute right-0 top-0 bottom-4 w-24 z-10 pointer-events-none">
+              <div className="w-full h-full bg-gradient-to-l from-[#F2F0E8] via-[#F2F0E8]/90 via-[#F2F0E8]/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-black/5 via-black/2 to-transparent"></div>
+            </div>
             
             <div className="overflow-x-auto pb-4 scrollbar-hide">
-              <div className="flex gap-6 w-max px-3">
+              <div className="flex gap-6 w-max px-8 py-2">
                 {jobSeekerTestimonials.map((testimonial, index) => (
                 <Card 
                   key={testimonial.id} 
