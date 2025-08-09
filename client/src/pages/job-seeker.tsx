@@ -334,8 +334,8 @@ export default function JobSeekerPage() {
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       {/* Premium File Upload Section */}
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-2">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-2">
                           <div className="w-2 h-2 bg-yellow rounded-full"></div>
                           <Label className="text-base font-semibold text-gray-800">Resume Upload</Label>
                         </div>
