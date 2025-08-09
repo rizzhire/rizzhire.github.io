@@ -220,6 +220,18 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   background-color: white !important;
 }
 
+/* Override Button component styling for upload button */
+[data-testid="button-upload-resume"] {
+  background: white !important;
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+[data-testid="button-upload-resume"]:hover {
+  background: #f9fafb !important;
+  background-color: #f9fafb !important;
+}
+
 .uppy-Dashboard-AddFiles:hover,
 .uppy-Dashboard-AddFiles:focus {
   background: #f9fafb !important;

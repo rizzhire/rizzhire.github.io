@@ -410,7 +410,7 @@ export default function JobSeekerPage() {
                                     }
                                   }
                                 }}
-                                buttonClassName="w-full h-24 border-2 border-dashed border-gray-300 rounded-2xl hover:border-yellow-400 hover:bg-yellow-50/50 transition-all duration-200"
+                                buttonClassName="w-full h-24 bg-white border-2 border-dashed border-gray-300 rounded-2xl hover:border-yellow-400 hover:bg-yellow-50/50 transition-all duration-200"
                               >
                                 <div className="text-center space-y-2">
                                   <div className="text-gray-600 font-medium">Click to upload or drag and drop</div>
