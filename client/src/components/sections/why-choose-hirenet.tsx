@@ -149,90 +149,90 @@ export default function WhyChooseHireNet() {
           </p>
         </div>
 
-        {/* Premium Feature Cards - Compact Square Masonry Layout */}
-        <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
-          {/* Left Side - Compact Card (Global Placement Opportunities) */}
-          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center overflow-hidden">
+        {/* Premium Feature Cards - Square Masonry Layout */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
+          {/* Left Side - Square Card (Global Placement Opportunities) */}
+          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center overflow-hidden aspect-square">
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
             {/* Background Icon - Corner to Corner */}
             <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
-              <Globe className="w-64 h-64 text-yellow stroke-[1]" />
+              <Globe className="w-56 h-56 text-yellow stroke-[1]" />
             </div>
             
             {/* Content - Overlaid on background icon */}
             <div className="text-center relative z-10">
-              <h3 className="text-xl font-bold mb-4 text-gray-800">
+              <h3 className="text-lg font-bold mb-3 text-gray-800">
                 Global Placement Opportunities
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Access to premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives with guaranteed placement assistance.
+              <p className="text-gray-600 leading-relaxed text-sm">
+                Premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives with guaranteed placement assistance.
               </p>
             </div>
           </div>
 
-          {/* Right Side - 3 Cards in Grid Layout */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Right Side - Square Grid Layout */}
+          <div className="grid grid-cols-2 gap-3 aspect-square">
             {/* Top - Full Width Card (Personalized Career Guidance) */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-5 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2 overflow-hidden flex flex-col justify-center">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2 overflow-hidden flex flex-col justify-center">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
               <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
-                <Users className="w-32 h-32 text-yellow stroke-[1]" />
+                <Users className="w-24 h-24 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
               <div className="text-center relative z-10">
-                <h3 className="text-lg font-bold mb-2 text-gray-800">
-                  Personalized Career Guidance
+                <h3 className="text-sm font-bold mb-1 text-gray-800">
+                  Career Guidance
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  One-on-one consultation with industry experts to accelerate your career growth and strategic planning.
+                <p className="text-gray-600 leading-relaxed text-xs">
+                  Expert consultation for career growth and strategic planning.
                 </p>
               </div>
             </div>
 
             {/* Bottom Left - Free Resume Review */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-5 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
               <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
-                <FileText className="w-28 h-28 text-yellow stroke-[1]" />
+                <FileText className="w-20 h-20 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
               <div className="text-center relative z-10">
-                <h3 className="text-base font-bold mb-2 text-gray-800">
-                  Free Resume Review
+                <h3 className="text-xs font-bold mb-1 text-gray-800">
+                  Resume Review
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-xs">
-                  Professional resume optimization with expert formatting and ATS-friendly content enhancement.
+                <p className="text-gray-600 leading-tight text-xs">
+                  Professional optimization with ATS-friendly formatting.
                 </p>
               </div>
             </div>
 
             {/* Bottom Right - Priority Support */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-5 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
               <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
-                <Headphones className="w-28 h-28 text-yellow stroke-[1]" />
+                <Headphones className="w-20 h-20 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
               <div className="text-center relative z-10">
-                <h3 className="text-base font-bold mb-2 text-gray-800">
+                <h3 className="text-xs font-bold mb-1 text-gray-800">
                   Priority Support
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-xs">
-                  Dedicated 24/7 support throughout your job search journey with personalized career consultation.
+                <p className="text-gray-600 leading-tight text-xs">
+                  24/7 dedicated support throughout your job search journey.
                 </p>
               </div>
             </div>
