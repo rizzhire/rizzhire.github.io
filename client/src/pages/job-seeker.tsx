@@ -316,13 +316,17 @@ export default function JobSeekerPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
-                  <Button className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg btn-hover ripple" data-testid="button-open-upload-dialog">
+                  <Button 
+                    className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg" 
+                    data-testid="button-open-upload-dialog"
+                    onClick={() => setIsDialogOpen(true)}
+                  >
                     <Upload className="mr-2 h-5 w-5" />
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white via-cream/50 to-yellow/5 border-0 shadow-2xl p-8 relative" style={{ borderRadius: '50px' }}>
-                  <DialogHeader className="space-y-3 pb-6 border-b border-gray-100 mt-8 pr-8">
+                <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-white border shadow-2xl" style={{ borderRadius: '50px' }}>
+                  <DialogHeader className="space-y-3 pb-6 border-b border-gray-100 mt-4 pr-8">
                     <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                       Submit Your Resume
                     </DialogTitle>
