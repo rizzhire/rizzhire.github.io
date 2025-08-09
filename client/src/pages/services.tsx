@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, TrendingUp, UserCheck, ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -274,9 +275,11 @@ export default function Services() {
             Partner with HireNET to unlock your organization's full potential through strategic talent solutions.
           </motion.p>
           <motion.div variants={fadeInUp}>
-            <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-12 py-4 rounded-xl text-lg transition-all duration-300 hover:scale-[1.03]">
-              Get Started Today <ArrowRight className="w-6 h-6 ml-2" />
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-12 py-4 rounded-xl text-lg transition-all duration-300 hover:scale-[1.03]">
+                Get Started Today <ArrowRight className="w-6 h-6 ml-2" />
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
