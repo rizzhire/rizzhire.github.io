@@ -33,7 +33,7 @@ export default function JobListings() {
             >
               <CardContent className="p-6">
                 <div className="mb-4">
-                  <h3 className="text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
+                  <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
                     {job.title}
                   </h3>
                 </div>
@@ -41,25 +41,25 @@ export default function JobListings() {
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-gray-600">
                     <Briefcase className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{job.experience}</span>
+                    <span className="job-experience-container text-sm">{job.experience}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <DollarSign className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{job.salary}</span>
+                    <span className="job-salary-container text-sm">{job.salary}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <MapPin className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{job.location}</span>
+                    <span className="job-location-container text-sm">{job.location}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-gray-500 text-sm">
                     <Calendar className="h-4 w-4 mr-2" />
-                    <span>Posted On {job.postedDate}</span>
+                    <span className="job-date-container">Posted On {job.postedDate}</span>
                   </div>
                   <Button 
-                    className="bg-yellow text-black hover:bg-yellow/90 px-6 py-2 rounded-2xl text-sm font-medium"
+                    className="job-apply-button bg-yellow text-black hover:bg-yellow/90 px-6 py-2 rounded-2xl text-sm font-medium"
                   >
                     Apply Now
                   </Button>
