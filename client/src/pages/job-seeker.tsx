@@ -466,7 +466,6 @@ export default function JobSeekerPage() {
                               </div>
                               Career Details
                             </h3>
-                            <p className="text-sm text-gray-500 mt-2">Information about your career goals</p>
                           </div>
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
