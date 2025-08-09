@@ -470,6 +470,8 @@ export default function JobSeekerPage() {
         </div>
       </section>
 
+      <JobListings />
+
       {/* Job Seeker Success Stories */}
       <section className="py-20" style={{ backgroundColor: '#F2F0E8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -514,8 +516,6 @@ export default function JobSeekerPage() {
           </div>
         </div>
       </section>
-
-      <JobListings />
       <WhyChooseHireNet />
       <Contact />
     </div>
