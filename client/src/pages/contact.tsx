@@ -206,7 +206,10 @@ export default function Contact() {
               {(() => {
                 const EmailIcon = contactInfo[2].icon;
                 return (
-                  <Card className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden">
+                  <Card 
+                    className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                    onClick={() => window.location.href = 'mailto:contact@hirenet.in?subject=Inquiry from HireNET Website&body=Hello HireNET Team,%0D%0A%0D%0AI would like to inquire about your services.%0D%0A%0D%0AThank you.'}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-indigo-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
                     <CardContent className="p-0 relative z-10">
                       <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
