@@ -179,10 +179,10 @@
 
 /* Frosted dialog content styling */
 .frosted-dialog-content {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(25px) saturate(180%) brightness(110%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(110%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Apply transparent backgrounds to all child elements */
@@ -204,17 +204,17 @@
 
 /* Ultimate glass effect override - targets all possible selectors */
 [data-radix-dialog-content][style*="border-radius: 40px"] {
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(30px) !important;
-  -webkit-backdrop-filter: blur(30px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Force all dialog content to be glass */
 [role="dialog"] {
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(30px) !important;
-  -webkit-backdrop-filter: blur(30px) !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
 }
 
 /* Re-apply necessary backgrounds with transparency */
