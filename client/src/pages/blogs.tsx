@@ -246,75 +246,84 @@ export default function Blogs() {
                       {/* Background */}
                       <rect width="100%" height="100%" fill="#F2F0E8"/>
                       
-                      {/* Floating Geometric Elements */}
-                      <circle cx="50" cy="60" r="8" fill="#FCD34D"/>
-                      <circle cx="250" cy="120" r="12" fill="#FFFFFF"/>
-                      <circle cx="280" cy="300" r="6" fill="#FCD34D"/>
-                      <circle cx="30" cy="350" r="10" fill="#FFFFFF"/>
-                      
-                      {/* Main Building Complex */}
-                      <g transform="translate(80, 120)">
-                        {/* Main Building */}
-                        <rect x="0" y="60" width="140" height="180" fill="#000000" rx="8"/>
+                      {/* Background Charts and Data Elements */}
+                      <g transform="translate(40, 80)">
+                        {/* Chart/Graph Background */}
+                        <rect x="0" y="0" width="220" height="140" fill="#FFFFFF" rx="8" stroke="#000000" strokeWidth="2"/>
                         
-                        {/* Building Windows Pattern */}
-                        <g fill="#FFFFFF">
-                          <rect x="15" y="80" width="20" height="20" rx="2"/>
-                          <rect x="45" y="80" width="20" height="20" rx="2"/>
-                          <rect x="75" y="80" width="20" height="20" rx="2"/>
-                          <rect x="105" y="80" width="20" height="20" rx="2"/>
-                          
-                          <rect x="15" y="115" width="20" height="20" rx="2"/>
-                          <rect x="45" y="115" width="20" height="20" rx="2"/>
-                          <rect x="75" y="115" width="20" height="20" rx="2"/>
-                          <rect x="105" y="115" width="20" height="20" rx="2"/>
-                          
-                          <rect x="15" y="150" width="20" height="20" rx="2"/>
-                          <rect x="45" y="150" width="20" height="20" rx="2"/>
-                          <rect x="75" y="150" width="20" height="20" rx="2"/>
-                          <rect x="105" y="150" width="20" height="20" rx="2"/>
+                        {/* Chart Grid Lines */}
+                        <g stroke="#000000" strokeWidth="1" opacity="0.2">
+                          <line x1="20" y1="20" x2="200" y2="20"/>
+                          <line x1="20" y1="50" x2="200" y2="50"/>
+                          <line x1="20" y1="80" x2="200" y2="80"/>
+                          <line x1="20" y1="110" x2="200" y2="110"/>
+                          <line x1="40" y1="20" x2="40" y2="120"/>
+                          <line x1="80" y1="20" x2="80" y2="120"/>
+                          <line x1="120" y1="20" x2="120" y2="120"/>
+                          <line x1="160" y1="20" x2="160" y2="120"/>
                         </g>
                         
-                        {/* Building Entrance */}
-                        <rect x="55" y="200" width="30" height="40" fill="#FCD34D" rx="4"/>
-                        <rect x="60" y="210" width="20" height="30" fill="#FFFFFF" rx="2"/>
+                        {/* Data Bars */}
+                        <rect x="35" y="90" width="10" height="20" fill="#FCD34D"/>
+                        <rect x="75" y="70" width="10" height="40" fill="#000000"/>
+                        <rect x="115" y="50" width="10" height="60" fill="#FCD34D"/>
+                        <rect x="155" y="40" width="10" height="70" fill="#000000"/>
                         
-                        {/* Rooftop Elements */}
-                        <rect x="20" y="50" width="100" height="20" fill="#FCD34D" rx="4"/>
-                        <rect x="60" y="30" width="20" height="30" fill="#000000" rx="2"/>
+                        {/* Trend Line */}
+                        <path d="M40 100 L80 85 L120 65 L160 50" stroke="#FCD34D" strokeWidth="3" fill="none"/>
+                        <circle cx="40" cy="100" r="3" fill="#FCD34D"/>
+                        <circle cx="80" cy="85" r="3" fill="#FCD34D"/>
+                        <circle cx="120" cy="65" r="3" fill="#FCD34D"/>
+                        <circle cx="160" cy="50" r="3" fill="#FCD34D"/>
                       </g>
                       
-                      {/* Candidate Icons */}
-                      <g transform="translate(30, 180)">
-                        <circle cx="0" cy="0" r="15" fill="#000000"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#000000" rx="5"/>
-                        <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
+                      {/* Document/Report Icons */}
+                      <g transform="translate(50, 200)">
+                        <rect x="0" y="0" width="40" height="50" fill="#FFFFFF" rx="4" stroke="#000000" strokeWidth="2"/>
+                        <line x1="8" y1="12" x2="32" y2="12" stroke="#000000" strokeWidth="1"/>
+                        <line x1="8" y1="20" x2="32" y2="20" stroke="#000000" strokeWidth="1"/>
+                        <line x1="8" y1="28" x2="24" y2="28" stroke="#000000" strokeWidth="1"/>
                       </g>
                       
-                      <g transform="translate(240, 200)">
-                        <circle cx="0" cy="0" r="15" fill="#FCD34D"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#FCD34D" rx="5"/>
-                        <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
+                      <g transform="translate(210, 220)">
+                        <rect x="0" y="0" width="40" height="50" fill="#FFFFFF" rx="4" stroke="#000000" strokeWidth="2"/>
+                        <line x1="8" y1="12" x2="32" y2="12" stroke="#000000" strokeWidth="1"/>
+                        <line x1="8" y1="20" x2="32" y2="20" stroke="#000000" strokeWidth="1"/>
+                        <line x1="8" y1="28" x2="24" y2="28" stroke="#000000" strokeWidth="1"/>
                       </g>
                       
-                      <g transform="translate(40, 300)">
-                        <circle cx="0" cy="0" r="15" fill="#000000"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#000000" rx="5"/>
-                        <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
+                      {/* Magnifying Glass - Analysis Symbol */}
+                      <g transform="translate(120, 280)">
+                        <circle cx="0" cy="0" r="25" fill="#FFFFFF" stroke="#000000" strokeWidth="3"/>
+                        <circle cx="-5" cy="-5" r="12" fill="none" stroke="#FCD34D" strokeWidth="3"/>
+                        <line x1="5" y1="5" x2="18" y2="18" stroke="#000000" strokeWidth="3"/>
                       </g>
                       
-                      {/* Connection Lines */}
-                      <path d="M45 195 Q100 160 150 180" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
-                      <path d="M225 215 Q180 180 150 200" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
-                      <path d="M55 315 Q100 280 150 280" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
+                      {/* Lightbulb - Insight Symbol */}
+                      <g transform="translate(180, 160)">
+                        <circle cx="0" cy="0" r="18" fill="#FCD34D"/>
+                        <rect x="-8" y="12" width="16" height="8" fill="#000000" rx="2"/>
+                        <line x1="-12" y1="-20" x2="-8" y2="-16" stroke="#FCD34D" strokeWidth="2"/>
+                        <line x1="0" y1="-25" x2="0" y2="-20" stroke="#FCD34D" strokeWidth="2"/>
+                        <line x1="12" y1="-20" x2="8" y2="-16" stroke="#FCD34D" strokeWidth="2"/>
+                      </g>
                       
-                      {/* Success Indicators */}
-                      <circle cx="150" cy="100" r="20" fill="#FCD34D"/>
-                      <path d="M140 100 L147 107 L160 90" stroke="#FFFFFF" strokeWidth="4" fill="none"/>
+                      {/* Industry Icons */}
+                      <circle cx="60" cy="320" r="12" fill="#000000"/>
+                      <rect x="55" y="315" width="10" height="10" fill="#FFFFFF" rx="1"/>
                       
-                      {/* HireNET Logo/Badge */}
-                      <circle cx="150" cy="50" r="25" fill="#FCD34D"/>
-                      <text x="150" y="58" textAnchor="middle" fill="#000000" fontSize="12" fontWeight="bold">H</text>
+                      <circle cx="240" cy="340" r="12" fill="#FCD34D"/>
+                      <rect x="235" y="335" width="10" height="10" fill="#FFFFFF" rx="1"/>
+                      
+                      {/* Arrow Pointing to Insights */}
+                      <path d="M100 180 Q130 160 150 140" stroke="#000000" strokeWidth="2" fill="none" markerEnd="url(#arrowhead)"/>
+                      
+                      {/* Arrow Marker Definition */}
+                      <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                          <polygon points="0 0, 10 3.5, 0 7" fill="#000000"/>
+                        </marker>
+                      </defs>
                     </svg>
                     
                     {/* Text Overlay */}
