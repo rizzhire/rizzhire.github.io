@@ -67,15 +67,8 @@ export default function WhyChooseHireNet() {
             <span className="text-sm font-medium text-gray-700">Premium Career Services</span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Why Choose{" "}
-            <span className="relative">
-              <span className="text-yellow">HireNET</span>
-              <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 200 12">
-                <path d="M0,8 Q50,2 100,8 T200,8" stroke="#f59e0b" strokeWidth="3" fill="none" opacity="0.6"/>
-              </svg>
-            </span>
-            ?
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Why Choose <span className="text-yellow">HireNET</span>?
           </h2>
           
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
