@@ -121,15 +121,6 @@ export default function Industries() {
       <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
         {/* Light Background Graphics - Enhanced */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Moving Floating Circles */}
-          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/18 to-yellow-300/25 rounded-full blur-xl animate-floatMoveEnhanced"></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/16 to-cyan-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/12 to-yellow-200/18 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-gradient-to-r from-purple-200/16 to-pink-200/22 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
-          
-          {/* Additional Enhanced Elements */}
-          <div className="absolute top-1/2 left-8 w-18 h-18 bg-gradient-to-r from-emerald-200/18 to-green-200/24 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
-          <div className="absolute top-60 right-12 w-14 h-14 bg-gradient-to-r from-rose-200/16 to-red-200/22 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
           
           {/* Enhanced Moving Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 800">
