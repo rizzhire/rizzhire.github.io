@@ -164,10 +164,10 @@ export default function LearnMore() {
       <section className="relative py-20 px-4 overflow-hidden" style={{backgroundColor: '#F2F0E8'}}>
         {/* Background Graphics - Exact same as Our Journey banner */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Same floating circles as Our Journey banner */}
-          <div className="absolute top-40 left-20 w-24 h-24 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-floatMoveEnhanced"></div>
-          <div className="absolute top-20 right-32 w-32 h-32 bg-gradient-to-r from-blue-200/18 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+          {/* Heavily blurred color circles - shapes almost invisible */}
+          <div className="absolute top-40 left-20 w-32 h-32 bg-gradient-to-r from-yellow-200/12 to-yellow-300/18 rounded-full animate-floatMoveEnhanced" style={{filter: 'blur(40px)'}}></div>
+          <div className="absolute top-20 right-32 w-40 h-40 bg-gradient-to-r from-blue-200/10 to-cyan-200/16 rounded-full animate-pulseEnhanced" style={{filter: 'blur(50px)', animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-48 h-48 bg-gradient-to-r from-orange-200/8 to-yellow-200/14 rounded-full animate-floatMoveEnhanced" style={{filter: 'blur(60px)', animationDelay: '2s'}}></div>
           
           {/* Same flowing lines as Our Journey banner */}
           <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 2000 600" style={{animationDuration: '20s'}}>
