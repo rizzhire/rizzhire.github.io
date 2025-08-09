@@ -101,7 +101,14 @@ div[data-state="open"] {
 
 /* Remove the universal fix that might cause issues */
 
-/* No backdrop effects */
+/* Remove all backdrop effects completely */
+[data-radix-dialog-overlay],
+.DialogOverlay,
+div[data-state="open"] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+}
 
 /* Sacramento font specific styling */
 .sacramento-quote {
