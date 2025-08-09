@@ -221,7 +221,7 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-black" />
                 </motion.div>
                 <div>
-                  <h4 className="font-semibold">Office</h4>
+                  <h4 className="font-semibold">Head Office</h4>
                   <p className="text-gray-600 whitespace-pre-line">
                     {officeTypewriter.displayText}
                     {officeTypewriter.isTyping && (
