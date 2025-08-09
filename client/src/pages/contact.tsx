@@ -121,76 +121,96 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Locations */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                  <MapPin className="w-6 h-6 text-yellow-600" />
+            <div className="group bg-gradient-to-br from-white to-yellow-50/30 rounded-3xl p-8 border border-gray-100 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+              {/* Subtle animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="text-center relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-yellow-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Locations</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-yellow-700 transition-colors duration-300">Locations</h3>
                 
                 {/* Main Office */}
                 <div className="mb-4 pb-3 border-b border-gray-100 last:border-b-0 last:pb-0 last:mb-0">
                   <div className="flex items-center justify-center mb-2">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                    <span className="text-xs font-semibold text-gray-800 uppercase tracking-wide">Main Office</span>
+                    <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full mr-2 shadow-sm"></div>
+                    <span className="text-xs font-bold text-yellow-700 uppercase tracking-wider">Main Office</span>
                   </div>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <p className="font-medium">6/7A, AJC Bose Road, Padatik Theatre</p>
-                    <p>Kolkata-700017, West Bengal</p>
+                    <p className="font-semibold">6/7A, AJC Bose Road, Padatik Theatre</p>
+                    <p className="text-gray-600">Kolkata-700017, West Bengal</p>
                   </div>
                 </div>
                 
                 {/* Branch Office */}
                 <div>
                   <div className="flex items-center justify-center mb-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full mr-2"></div>
-                    <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Branch Office</span>
+                    <div className="w-3 h-3 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full mr-2 shadow-sm"></div>
+                    <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">Branch Office</span>
                   </div>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <p className="font-medium">4th-floor Nevidita Road, Kidzee School</p>
-                    <p>Siliguri 734003, West Bengal</p>
+                    <p className="font-semibold">4th-floor Nevidita Road, Kidzee School</p>
+                    <p className="text-gray-600">Siliguri 734003, West Bengal</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Phone */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                  <Phone className="w-6 h-6 text-yellow-600" />
+            <div className="group bg-gradient-to-br from-white to-green-50/30 rounded-3xl p-8 border border-gray-100 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="text-center relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-green-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Phone</h3>
-                <div className="space-y-1 text-sm text-gray-700">
-                  <p className="font-medium">+91 333 508 5038</p>
-                  <p className="font-medium">+91 9007906531</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">Phone</h3>
+                <div className="space-y-2 text-sm">
+                  <a href="tel:+913335085038" className="block font-semibold text-gray-700 hover:text-green-600 transition-colors duration-200 p-2 rounded-lg hover:bg-green-50">
+                    +91 333 508 5038
+                  </a>
+                  <a href="tel:+919007906531" className="block font-semibold text-gray-700 hover:text-green-600 transition-colors duration-200 p-2 rounded-lg hover:bg-green-50">
+                    +91 9007906531
+                  </a>
                 </div>
               </div>
             </div>
 
             {/* Email */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                  <Mail className="w-6 h-6 text-yellow-600" />
+            <div className="group bg-gradient-to-br from-white to-purple-50/30 rounded-3xl p-8 border border-gray-100 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="text-center relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Email</h3>
-                <div className="space-y-1 text-sm text-gray-700">
-                  <p className="font-medium">contact@hirenet.in</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">Email</h3>
+                <div className="space-y-2 text-sm">
+                  <a href="mailto:contact@hirenet.in" className="block font-semibold text-gray-700 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-purple-50">
+                    contact@hirenet.in
+                  </a>
                 </div>
               </div>
             </div>
 
             {/* Hours */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                  <Clock className="w-6 h-6 text-yellow-600" />
+            <div className="group bg-gradient-to-br from-white to-orange-50/30 rounded-3xl p-8 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="text-center relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-orange-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <Clock className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Hours</h3>
-                <div className="space-y-1 text-sm text-gray-700">
-                  <p className="font-medium">Monday - Saturday: 10:30 AM - 6:00 PM</p>
-                  <p className="font-bold">Sunday: Closed</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-orange-700 transition-colors duration-300">Hours</h3>
+                <div className="space-y-2 text-sm">
+                  <div className="p-2 rounded-lg bg-green-50 border border-green-200">
+                    <p className="font-bold text-green-700">Monday - Saturday</p>
+                    <p className="text-green-600">10:30 AM - 6:00 PM</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-red-50 border border-red-200">
+                    <p className="font-bold text-red-700">Sunday: Closed</p>
+                  </div>
                 </div>
               </div>
             </div>
