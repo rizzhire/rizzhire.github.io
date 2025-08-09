@@ -101,17 +101,10 @@ div[data-state="open"] {
 
 /* Remove the universal fix that might cause issues */
 
-/* Perfect Frosted Glass Overlay */
+/* Simple backdrop blur only */
 .frosted-overlay {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  z-index: 50 !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
 }
 
 /* Sacramento font specific styling */
