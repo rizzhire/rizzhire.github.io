@@ -3,8 +3,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function WhyChooseHireNet() {
   const { elementRef: sectionRef, isVisible } = useScrollAnimation({
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.5,
+    rootMargin: '0px 0px -200px 0px'
   });
   const features = [
     {
