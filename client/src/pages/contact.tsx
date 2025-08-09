@@ -17,6 +17,7 @@ export default function Contact() {
     service: "",
     message: ""
   });
+  const [showPhoneOptions, setShowPhoneOptions] = useState(false);
   const { toast } = useToast();
 
   const contactInfo = [
@@ -180,27 +181,66 @@ export default function Contact() {
             {/* Right Side - 3 Smaller Cards in Grid */}
             <div className="grid grid-cols-2 gap-4">
               {/* Call Us - Top Right (Full Width) */}
-              {(() => {
-                const CallIcon = contactInfo[1].icon;
-                return (
-                  <Card className="text-center p-5 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden col-span-2">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-emerald-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                    <CardContent className="p-0 relative z-10">
-                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3`}>
-                        <CallIcon className="w-6 h-6" />
+              <div className="relative col-span-2">
+                <Card 
+                  className="text-center p-5 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                  onClick={() => setShowPhoneOptions(!showPhoneOptions)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-emerald-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardContent className="p-0 relative z-10">
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3`}>
+                      <Phone className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
+                    <div className="space-y-1">
+                      {contactInfo[1].details.map((detail, idx) => (
+                        <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                           dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                        </p>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Phone Number Selection Dropdown */}
+                {showPhoneOptions && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border-2 border-green-200 z-50 overflow-hidden">
+                    <div className="p-3 bg-green-50 border-b border-green-200">
+                      <h4 className="font-semibold text-sm text-gray-800">Select Number to Call</h4>
+                    </div>
+                    <button
+                      onClick={() => {
+                        window.location.href = `tel:+91 333 508 5038`;
+                        setShowPhoneOptions(false);
+                      }}
+                      className="w-full p-4 text-left hover:bg-green-50 transition-colors duration-200 border-b border-gray-100 group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-semibold text-gray-800 group-hover:text-green-700">Main Office</p>
+                          <p className="text-sm text-gray-600">+91 333 508 5038</p>
+                        </div>
+                        <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform duration-200" />
                       </div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
-                      <div className="space-y-1">
-                        {contactInfo[1].details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        ))}
+                    </button>
+                    <button
+                      onClick={() => {
+                        window.location.href = `tel:+91 9007906531`;
+                        setShowPhoneOptions(false);
+                      }}
+                      className="w-full p-4 text-left hover:bg-green-50 transition-colors duration-200 group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-semibold text-gray-800 group-hover:text-green-700">Mobile</p>
+                          <p className="text-sm text-gray-600">+91 9007906531</p>
+                        </div>
+                        <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform duration-200" />
                       </div>
-                    </CardContent>
-                  </Card>
-                );
-              })()}
+                    </button>
+                  </div>
+                )}
+              </div>
 
               {/* Email Us - Bottom Left */}
               {(() => {
