@@ -75,19 +75,19 @@
 
 /* Frosted Glass Dialog Overlay */
 [data-radix-dialog-overlay] {
-  backdrop-filter: blur(20px) saturate(1.2);
-  background: rgba(242, 240, 232, 0.15) !important;
-  animation: overlay-fade-in 0.2s ease-out;
+  backdrop-filter: blur(12px) saturate(1.1) brightness(1.05);
+  background: rgba(245, 243, 235, 0.25) !important;
+  animation: overlay-fade-in 0.3s ease-out;
 }
 
 @keyframes overlay-fade-in {
   from {
     opacity: 0;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px) saturate(1) brightness(1);
   }
   to {
     opacity: 1;
-    backdrop-filter: blur(20px) saturate(1.2);
+    backdrop-filter: blur(12px) saturate(1.1) brightness(1.05);
   }
 }
 
