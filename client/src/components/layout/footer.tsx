@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -46,10 +47,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="/about" className="hover:text-yellow transition-colors">About Us</a></li>
-              <li><a href="/careers" className="hover:text-yellow transition-colors">Careers</a></li>
-              <li><a href="/blogs" className="hover:text-yellow transition-colors">Blog</a></li>
-              <li><a href="/contact" className="hover:text-yellow transition-colors">Contact</a></li>
+              <li><Link href="/about" className="hover:text-yellow transition-colors">About Us</Link></li>
+              <li><Link href="/careers" className="hover:text-yellow transition-colors">Careers</Link></li>
+              <li><Link href="/blogs" className="hover:text-yellow transition-colors">Blog</Link></li>
+              <li><Link href="/contact" className="hover:text-yellow transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
