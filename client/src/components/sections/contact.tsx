@@ -77,7 +77,8 @@ export default function Contact() {
   // Typewriter effects for each contact detail
   const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
   const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 1400);
-  const officeTypewriter = useTypewriter('', 60, 2000);
+  const mainOfficeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal', 60, 2000);
+  const branchOfficeTypewriter = useTypewriter('4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal', 60, 2800);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -231,7 +232,10 @@ export default function Contact() {
                     </div>
                     <div className="ml-5">
                       <p className="text-gray-600 leading-relaxed">
-                        6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal
+                        {mainOfficeTypewriter.displayText}
+                        {mainOfficeTypewriter.isTyping && (
+                          <span className="animate-pulse text-yellow">|</span>
+                        )}
                       </p>
                     </div>
                   </div>
@@ -244,7 +248,10 @@ export default function Contact() {
                     </div>
                     <div className="ml-5">
                       <p className="text-gray-600 leading-relaxed">
-                        4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal
+                        {branchOfficeTypewriter.displayText}
+                        {branchOfficeTypewriter.isTyping && (
+                          <span className="animate-pulse text-yellow">|</span>
+                        )}
                       </p>
                     </div>
                   </div>
