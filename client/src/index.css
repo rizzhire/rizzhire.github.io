@@ -101,16 +101,17 @@ div[data-state="open"] {
 
 /* Remove the universal fix that might cause issues */
 
-/* Comprehensive dialog overlay override */
-div[data-state="open"][data-radix-collection-item],
-div[role="presentation"],
-div[data-radix-dialog-overlay],
-.DialogOverlay,
-[data-overlay],
-div[style*="position: fixed"][style*="inset: 0"] {
-  background: rgba(245, 243, 235, 0.2) !important;
-  backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
-  -webkit-backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
+/* Perfect Frosted Glass Overlay */
+.frosted-overlay {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(110%) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 50 !important;
 }
 
 /* Sacramento font specific styling */
