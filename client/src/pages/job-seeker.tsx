@@ -321,7 +321,7 @@ export default function JobSeekerPage() {
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white via-cream/50 to-yellow/5 border-0 shadow-2xl">
+                <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white via-cream/50 to-yellow/5 border-0 shadow-2xl rounded-3xl">
                   <DialogHeader className="space-y-3 pb-6 border-b border-gray-100">
                     <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                       Submit Your Resume
@@ -344,7 +344,6 @@ export default function JobSeekerPage() {
                               </div>
                               Resume Upload
                             </h3>
-                            <p className="text-sm text-gray-500 mt-2">Upload your resume in PDF format</p>
                           </div>
                           
                           {uploadedFile ? (
