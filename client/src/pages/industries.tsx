@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "wouter";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -335,13 +336,15 @@ export default function Industries() {
             workforce requirements and discover how we can support your mass recruitment needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group relative bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-black font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
-              <span className="relative z-10">Discuss Your Requirements</span>
-              <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            <button className="group border-2 border-gray-300 hover:border-yellow-400 text-gray-700 hover:text-gray-900 font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:scale-[1.02] bg-white hover:bg-gray-50">
-              View Case Studies
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-50/50 to-orange-50/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Link href="/contact">
+              <button className="group relative bg-yellow hover:bg-yellow/90 text-black font-bold px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+                <span className="relative z-10">Discuss Your Requirements</span>
+                <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+            </Link>
+            <button className="group relative border-2 border-yellow hover:border-yellow/80 text-gray-900 hover:text-black font-bold px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-[1.02] bg-white hover:bg-yellow/10">
+              <span className="relative z-10">View Case Studies</span>
+              <div className="absolute inset-0 bg-yellow/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </div>
         </motion.div>
