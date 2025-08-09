@@ -246,12 +246,12 @@ export default function Blogs() {
                       {/* Background Gradient */}
                       <defs>
                         <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#fef3c7" stopOpacity="0.8"/>
-                          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.3"/>
+                          <stop offset="0%" stopColor="#F5F3EB" stopOpacity="0.8"/>
+                          <stop offset="100%" stopColor="#E8E5DB" stopOpacity="0.5"/>
                         </linearGradient>
                         <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#f59e0b"/>
-                          <stop offset="100%" stopColor="#d97706"/>
+                          <stop offset="0%" stopColor="#000000"/>
+                          <stop offset="100%" stopColor="#333333"/>
                         </linearGradient>
                       </defs>
                       
@@ -259,10 +259,10 @@ export default function Blogs() {
                       <rect width="100%" height="100%" fill="url(#bgGradient)"/>
                       
                       {/* Floating Geometric Elements */}
-                      <circle cx="50" cy="60" r="8" fill="#f59e0b" opacity="0.2"/>
-                      <circle cx="250" cy="120" r="12" fill="#d97706" opacity="0.15"/>
-                      <circle cx="280" cy="300" r="6" fill="#f59e0b" opacity="0.3"/>
-                      <circle cx="30" cy="350" r="10" fill="#d97706" opacity="0.2"/>
+                      <circle cx="50" cy="60" r="8" fill="#000000" opacity="0.1"/>
+                      <circle cx="250" cy="120" r="12" fill="#333333" opacity="0.08"/>
+                      <circle cx="280" cy="300" r="6" fill="#000000" opacity="0.15"/>
+                      <circle cx="30" cy="350" r="10" fill="#333333" opacity="0.1"/>
                       
                       {/* Main Building Complex */}
                       <g transform="translate(80, 120)">
@@ -270,7 +270,7 @@ export default function Blogs() {
                         <rect x="0" y="60" width="140" height="180" fill="url(#buildingGradient)" rx="8"/>
                         
                         {/* Building Windows Pattern */}
-                        <g fill="#fef3c7">
+                        <g fill="#FFFFFF">
                           <rect x="15" y="80" width="20" height="20" rx="2"/>
                           <rect x="45" y="80" width="20" height="20" rx="2"/>
                           <rect x="75" y="80" width="20" height="20" rx="2"/>
@@ -288,45 +288,45 @@ export default function Blogs() {
                         </g>
                         
                         {/* Building Entrance */}
-                        <rect x="55" y="200" width="30" height="40" fill="#d97706" rx="4"/>
-                        <rect x="60" y="210" width="20" height="30" fill="#fef3c7" rx="2"/>
+                        <rect x="55" y="200" width="30" height="40" fill="#333333" rx="4"/>
+                        <rect x="60" y="210" width="20" height="30" fill="#F5F3EB" rx="2"/>
                         
                         {/* Rooftop Elements */}
-                        <rect x="20" y="50" width="100" height="20" fill="#f59e0b" rx="4"/>
-                        <rect x="60" y="30" width="20" height="30" fill="#d97706" rx="2"/>
+                        <rect x="20" y="50" width="100" height="20" fill="#000000" rx="4"/>
+                        <rect x="60" y="30" width="20" height="30" fill="#333333" rx="2"/>
                       </g>
                       
                       {/* Candidate Icons */}
                       <g transform="translate(30, 180)">
-                        <circle cx="0" cy="0" r="15" fill="#d97706"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#d97706" rx="5"/>
-                        <circle cx="0" cy="-5" r="8" fill="#fef3c7"/>
+                        <circle cx="0" cy="0" r="15" fill="#333333"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#333333" rx="5"/>
+                        <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
                       <g transform="translate(240, 200)">
-                        <circle cx="0" cy="0" r="15" fill="#d97706"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#d97706" rx="5"/>
-                        <circle cx="0" cy="-5" r="8" fill="#fef3c7"/>
+                        <circle cx="0" cy="0" r="15" fill="#333333"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#333333" rx="5"/>
+                        <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
                       <g transform="translate(40, 300)">
-                        <circle cx="0" cy="0" r="15" fill="#d97706"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#d97706" rx="5"/>
-                        <circle cx="0" cy="-5" r="8" fill="#fef3c7"/>
+                        <circle cx="0" cy="0" r="15" fill="#333333"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#333333" rx="5"/>
+                        <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
                       {/* Connection Lines */}
-                      <path d="M45 195 Q100 160 150 180" stroke="#f59e0b" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
-                      <path d="M225 215 Q180 180 150 200" stroke="#f59e0b" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
-                      <path d="M55 315 Q100 280 150 280" stroke="#f59e0b" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      <path d="M45 195 Q100 160 150 180" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
+                      <path d="M225 215 Q180 180 150 200" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
+                      <path d="M55 315 Q100 280 150 280" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
                       
                       {/* Success Indicators */}
-                      <circle cx="150" cy="100" r="20" fill="#22c55e"/>
-                      <path d="M140 100 L147 107 L160 90" stroke="white" strokeWidth="4" fill="none"/>
+                      <circle cx="150" cy="100" r="20" fill="#FFFFFF"/>
+                      <path d="M140 100 L147 107 L160 90" stroke="#000000" strokeWidth="4" fill="none"/>
                       
                       {/* HireNET Logo/Badge */}
-                      <circle cx="150" cy="50" r="25" fill="#f59e0b"/>
-                      <text x="150" y="58" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">H</text>
+                      <circle cx="150" cy="50" r="25" fill="#000000"/>
+                      <text x="150" y="58" textAnchor="middle" fill="#FFFFFF" fontSize="12" fontWeight="bold">H</text>
                     </svg>
                     
                     {/* Text Overlay */}
