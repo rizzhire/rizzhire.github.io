@@ -143,9 +143,22 @@
   -webkit-backdrop-filter: blur(10px) !important;
 }
 
-/* Override any solid backgrounds in form */
-[data-radix-dialog-content] * {
+/* Force transparent backgrounds everywhere in dialog */
+[data-radix-dialog-content],
+[data-radix-dialog-content] *,
+[data-radix-dialog-content] div,
+[data-radix-dialog-content] form,
+[data-radix-dialog-content] .space-y-8,
+[data-radix-dialog-content] .space-y-4 {
+  background: transparent !important;
   background-color: transparent !important;
+}
+
+/* Force the main content area to be transparent */
+[data-radix-dialog-content] > div {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
 }
 
 /* Re-apply necessary backgrounds with transparency */
