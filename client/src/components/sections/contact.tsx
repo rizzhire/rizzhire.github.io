@@ -220,35 +220,31 @@ export default function Contact() {
                 >
                   <MapPin className="h-6 w-6 text-black" />
                 </motion.div>
-                <div className="flex-1 max-w-lg pr-8">
+                <div className="flex-1 max-w-xl pr-12">
                   <h4 className="font-semibold mb-4">Office Locations</h4>
                   
                   {/* Main Office */}
-                  <div className="mb-8">
-                    <div className="flex items-center mb-3">
+                  <div className="mb-6">
+                    <div className="flex items-center mb-2">
                       <Circle className="h-2 w-2 text-gray-400 fill-current mr-3 flex-shrink-0" />
                       <h5 className="font-semibold text-gray-800 text-sm">MAIN OFFICE</h5>
                     </div>
-                    <div className="ml-5 pr-4">
-                      <p className="text-gray-600 leading-loose text-base">
-                        6/7A, AJC Bose Road,<br/>
-                        Padatik Theatre<br/>
-                        Kolkata-700017, West Bengal
+                    <div className="ml-5">
+                      <p className="text-gray-600 leading-relaxed">
+                        6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal
                       </p>
                     </div>
                   </div>
                   
                   {/* Branch Office */}
                   <div>
-                    <div className="flex items-center mb-3">
+                    <div className="flex items-center mb-2">
                       <Circle className="h-2 w-2 text-gray-400 fill-current mr-3 flex-shrink-0" />
                       <h5 className="font-semibold text-gray-800 text-sm">BRANCH OFFICE</h5>
                     </div>
-                    <div className="ml-5 pr-4">
-                      <p className="text-gray-600 leading-loose text-base">
-                        4th-floor Nevidita Road,<br/>
-                        Kidzee School<br/>
-                        Siliguri 734003, West Bengal
+                    <div className="ml-5">
+                      <p className="text-gray-600 leading-relaxed">
+                        4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal
                       </p>
                     </div>
                   </div>
