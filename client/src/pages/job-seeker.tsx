@@ -516,7 +516,6 @@ export default function JobSeekerPage() {
       </section>
 
       <JobListings />
-      <SuccessStories />
       <WhyChooseHireNet />
       <Contact />
     </div>
