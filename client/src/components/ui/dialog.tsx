@@ -21,13 +21,13 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 backdrop-blur-[25px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 backdrop-blur-[18px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
     style={{
-      background: 'rgba(245, 243, 235, 0.1)',
-      backdropFilter: 'blur(25px) saturate(1.2) brightness(1.05)',
-      WebkitBackdropFilter: 'blur(25px) saturate(1.2) brightness(1.05)'
+      background: 'rgba(245, 243, 235, 0.3)',
+      backdropFilter: 'blur(18px) saturate(1.4) brightness(0.95) contrast(1.1)',
+      WebkitBackdropFilter: 'blur(18px) saturate(1.4) brightness(0.95) contrast(1.1)'
     }}
     {...props}
   />
