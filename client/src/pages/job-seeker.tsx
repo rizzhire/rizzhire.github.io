@@ -209,9 +209,9 @@ export default function JobSeekerPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition">
       {/* Hero Section for Job Seekers */}
-      <section className="relative py-20 cream overflow-hidden">
+      <section className="relative py-20 cream overflow-hidden animate-fade-in-up">
         {/* Enhanced Background Graphics (Same as Transform Your Workforce) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
@@ -318,15 +318,15 @@ export default function JobSeekerPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center space-y-8 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <div className="text-center space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in-up animate-delay-400">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button 
@@ -636,10 +636,12 @@ export default function JobSeekerPage() {
         </div>
       </section>
 
-      <JobListings />
+      <div className="animate-slide-up-fade animate-delay-600">
+        <JobListings />
+      </div>
 
       {/* Job Seeker Success Stories */}
-      <section className="relative py-16 pb-8 overflow-hidden" style={{ backgroundColor: '#F2F0E8' }}>
+      <section className="relative py-16 pb-8 overflow-hidden animate-slide-up-fade animate-delay-800" style={{ backgroundColor: '#F2F0E8' }}>
         {/* Enhanced Background Graphics (Same as Launch Your Global Career) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
@@ -746,9 +748,9 @@ export default function JobSeekerPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Success <span className="text-yellow">Stories</span></h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">Success <span className="text-yellow">Stories</span></h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
               Real career transformations from professionals who found their dream jobs through HireNET.
             </p>
           </div>
@@ -759,7 +761,8 @@ export default function JobSeekerPage() {
                 {jobSeekerTestimonials.map((testimonial, index) => (
                 <Card 
                   key={testimonial.id} 
-                  className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group"
+                  className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group animate-bounce-in"
+                  style={{animationDelay: `${index * 0.2}s`}}
                 >
                   <CardContent className="p-0 h-full flex flex-col">
                     <div className="flex items-center mb-4">
@@ -789,8 +792,12 @@ export default function JobSeekerPage() {
           </div>
         </div>
       </section>
-      <WhyChooseHireNet />
-      <Contact />
+      <div className="animate-slide-up-fade animate-delay-300">
+        <WhyChooseHireNet />
+      </div>
+      <div className="animate-slide-up-fade animate-delay-500">
+        <Contact />
+      </div>
     </div>
   );
 }
