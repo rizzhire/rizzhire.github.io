@@ -11,7 +11,7 @@ export default function Hero() {
   const satisfaction = useCounter({ end: 98, duration: 2000, delay: 800 });
 
   return (
-    <section id="home" className="relative min-h-screen cream overflow-hidden">
+    <section id="home" className="relative h-auto cream overflow-hidden">
       {/* Enhanced Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Enhanced Live Moving Floating Circles - More Visible */}
@@ -113,7 +113,7 @@ export default function Hero() {
         </div>
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
         <div className="text-center space-y-8 animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             Transform Your <span className="text-yellow">Workforce</span>
