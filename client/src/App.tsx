@@ -14,6 +14,7 @@ import Services from "@/pages/services";
 import Industries from "@/pages/industries";
 import Blogs from "@/pages/blogs";
 import BlogDetail from "@/pages/blog-detail";
+import LearnMore from "@/pages/learn-more";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/industries" component={Industries} />
       <Route path="/blogs" component={Blogs} />
       <Route path="/blog/:id" component={BlogDetail} />
+      <Route path="/learn-more" component={LearnMore} />
       <Route path="/contact" component={Contact} />
       <Route path="/job-seeker" component={JobSeekerPage} />
       <Route path="/admin/resumes" component={AdminResumesPage} />

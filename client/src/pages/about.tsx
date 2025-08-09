@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function About() {
 
@@ -111,8 +112,10 @@ export default function About() {
                 Our journey began with a simple belief: every organization deserves access to world-class talent, 
                 and every professional deserves opportunities that match their ambitions.
               </p>
-              <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-6 rounded-2xl">
-                Learn More <ArrowRight className="w-5 h-5 ml-2" />
+              <Button asChild className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-6 rounded-2xl">
+                <Link href="/learn-more">
+                  Learn More <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </Button>
             </div>
             
