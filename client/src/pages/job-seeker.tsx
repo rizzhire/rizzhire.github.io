@@ -322,7 +322,7 @@ export default function JobSeekerPage() {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white via-cream/50 to-yellow/5 border-0 shadow-2xl">
-                  <DialogHeader className="space-y-4 pb-6 border-b border-gray-100">
+                  <DialogHeader className="space-y-3 pb-6 border-b border-gray-100">
                     <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                       Submit Your Resume
                     </DialogTitle>
@@ -331,60 +331,69 @@ export default function JobSeekerPage() {
                     </p>
                   </DialogHeader>
                   
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                      {/* Premium File Upload Section */}
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-6">
-                          <div className="w-2 h-2 bg-yellow rounded-full"></div>
-                          <Label className="text-base font-semibold text-gray-800">Resume Upload</Label>
-                        </div>
-                        {uploadedFile ? (
-                          <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl shadow-sm">
-                            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                              <CheckCircle className="h-5 w-5 text-green-600" />
-                            </div>
-                            <div className="flex-1">
-                              <p className="font-medium text-green-800">{uploadedFile}</p>
-                              <p className="text-xs text-green-600">Successfully uploaded</p>
-                            </div>
-                          </div>
-                        ) : (
-                          <ObjectUploader
-                            maxNumberOfFiles={1}
-                            maxFileSize={5242880} // 5MB
-                            allowedFileTypes={[".pdf"]}
-                            onGetUploadParameters={handleGetUploadParameters}
-                            onComplete={handleUploadComplete}
-                            buttonClassName="w-full bg-gradient-to-br from-white to-gray-50 border-2 border-dashed border-yellow/30 hover:border-yellow/50 hover:bg-gradient-to-br hover:from-yellow/5 hover:to-yellow/10 text-gray-700 transition-all duration-300 rounded-2xl shadow-sm hover:shadow-md"
-                          >
-                            <div className="flex flex-col items-center gap-4 py-12">
-                              <div className="w-16 h-16 bg-gradient-to-br from-yellow/20 to-yellow/30 rounded-2xl flex items-center justify-center shadow-lg">
-                                <Upload className="h-8 w-8 text-yellow-600" />
+                  <div className="pt-6">
+                    <Form {...form}>
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12">
+                        
+                        {/* File Upload Section */}
+                        <div className="space-y-6">
+                          <div className="border-b border-gray-100 pb-3">
+                            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-3">
+                              <div className="w-8 h-8 bg-yellow/20 rounded-full flex items-center justify-center">
+                                <Upload className="w-4 h-4 text-yellow-600" />
                               </div>
-                              <div className="text-center space-y-2">
-                                <p className="font-semibold text-lg text-gray-800">Upload Your Resume</p>
-                                <p className="text-sm text-gray-500">Drag and drop your PDF file here, or click to browse</p>
-                                <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-4">
-                                  <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-                                  <span>PDF files only</span>
-                                  <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-                                  <span>Maximum 5MB</span>
-                                  <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+                              Resume Upload
+                            </h3>
+                            <p className="text-sm text-gray-500 mt-2">Upload your resume in PDF format</p>
+                          </div>
+                          
+                          {uploadedFile ? (
+                            <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl shadow-sm">
+                              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <CheckCircle className="h-5 w-5 text-green-600" />
+                              </div>
+                              <div className="flex-1">
+                                <p className="font-medium text-green-800">{uploadedFile}</p>
+                                <p className="text-xs text-green-600">Successfully uploaded</p>
+                              </div>
+                            </div>
+                          ) : (
+                            <ObjectUploader
+                              maxNumberOfFiles={1}
+                              maxFileSize={5242880} // 5MB
+                              allowedFileTypes={[".pdf"]}
+                              onGetUploadParameters={handleGetUploadParameters}
+                              onComplete={handleUploadComplete}
+                              buttonClassName="w-full bg-gradient-to-br from-white to-gray-50 border-2 border-dashed border-yellow/30 hover:border-yellow/50 hover:bg-gradient-to-br hover:from-yellow/5 hover:to-yellow/10 text-gray-700 transition-all duration-300 rounded-xl shadow-sm hover:shadow-md"
+                            >
+                              <div className="flex flex-col items-center gap-4 py-10">
+                                <div className="w-14 h-14 bg-gradient-to-br from-yellow/20 to-yellow/30 rounded-xl flex items-center justify-center shadow-md">
+                                  <Upload className="h-7 w-7 text-yellow-600" />
+                                </div>
+                                <div className="text-center space-y-2">
+                                  <p className="font-semibold text-gray-800">Click to upload or drag and drop</p>
+                                  <p className="text-sm text-gray-500">PDF files only • Maximum 5MB</p>
                                 </div>
                               </div>
-                            </div>
-                          </ObjectUploader>
-                        )}
-                      </div>
-
-                      {/* Personal Information Section */}
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-6">
-                          <div className="w-2 h-2 bg-yellow rounded-full"></div>
-                          <Label className="text-base font-semibold text-gray-800">Personal Information</Label>
+                            </ObjectUploader>
+                          )}
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        {/* Personal Information Section */}
+                        <div className="space-y-6">
+                          <div className="border-b border-gray-100 pb-3">
+                            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-3">
+                              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                              </div>
+                              Personal Information
+                            </h3>
+                            <p className="text-sm text-gray-500 mt-2">Tell us about yourself</p>
+                          </div>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                           control={form.control}
                           name="name"
@@ -423,76 +432,96 @@ export default function JobSeekerPage() {
                             </FormItem>
                           )}
                         />
+                          </div>
+                          
+                          <div className="grid grid-cols-1 gap-6">
+                            <FormField
+                              control={form.control}
+                              name="phone"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-sm font-medium text-gray-700">Phone Number</FormLabel>
+                                  <FormControl>
+                                    <Input 
+                                      placeholder="Enter your phone number" 
+                                      {...field} 
+                                      data-testid="input-phone" 
+                                      className="border-gray-200 focus:border-yellow focus:ring-yellow/20 rounded-xl h-12 bg-white/50 backdrop-blur-sm"
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
                         </div>
-                      </div>
 
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-sm font-medium text-gray-700">Phone Number</FormLabel>
-                            <FormControl>
-                              <Input 
-                                placeholder="Enter your phone number" 
-                                {...field} 
-                                data-testid="input-phone" 
-                                className="border-gray-200 focus:border-yellow focus:ring-yellow/20 rounded-xl h-12 bg-white/50 backdrop-blur-sm"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                        {/* Career Information Section */}
+                        <div className="space-y-6">
+                          <div className="border-b border-gray-100 pb-3">
+                            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-3">
+                              <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V4a2 2 0 00-2-2H8a2 2 0 00-2 2v2m8 0h3a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h3" />
+                                </svg>
+                              </div>
+                              Career Details
+                            </h3>
+                            <p className="text-sm text-gray-500 mt-2">Information about your career goals</p>
+                          </div>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <FormField
+                              control={form.control}
+                              name="position"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-sm font-medium text-gray-700">Desired Position</FormLabel>
+                                  <FormControl>
+                                    <Input 
+                                      placeholder="e.g. Software Engineer, Marketing Manager" 
+                                      {...field} 
+                                      data-testid="input-position" 
+                                      className="border-gray-200 focus:border-yellow focus:ring-yellow/20 rounded-xl h-12 bg-white/50 backdrop-blur-sm"
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
 
-                      <FormField
-                        control={form.control}
-                        name="position"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-sm font-medium text-gray-700">Desired Position</FormLabel>
-                            <FormControl>
-                              <Input 
-                                placeholder="e.g. Software Engineer, Marketing Manager" 
-                                {...field} 
-                                data-testid="input-position" 
-                                className="border-gray-200 focus:border-yellow focus:ring-yellow/20 rounded-xl h-12 bg-white/50 backdrop-blur-sm"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                            <FormField
+                              control={form.control}
+                              name="experience"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-sm font-medium text-gray-700">Years of Experience</FormLabel>
+                                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                                    <FormControl>
+                                      <SelectTrigger 
+                                        data-testid="select-experience"
+                                        className="border-gray-200 focus:border-yellow focus:ring-yellow/20 rounded-xl h-12 bg-white/50 backdrop-blur-sm"
+                                      >
+                                        <SelectValue placeholder="Select your experience level" />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent className="rounded-xl border-gray-200 bg-white/95 backdrop-blur-sm">
+                                      <SelectItem value="0-1" className="rounded-lg">0-1 years</SelectItem>
+                                      <SelectItem value="1-3" className="rounded-lg">1-3 years</SelectItem>
+                                      <SelectItem value="3-5" className="rounded-lg">3-5 years</SelectItem>
+                                      <SelectItem value="5-10" className="rounded-lg">5-10 years</SelectItem>
+                                      <SelectItem value="10+" className="rounded-lg">10+ years</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                        </div>
 
-                      <FormField
-                        control={form.control}
-                        name="experience"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-sm font-medium text-gray-700">Years of Experience</FormLabel>
-                            <Select onValueChange={field.onChange} value={field.value || ""}>
-                              <FormControl>
-                                <SelectTrigger 
-                                  data-testid="select-experience"
-                                  className="border-gray-200 focus:border-yellow focus:ring-yellow/20 rounded-xl h-12 bg-white/50 backdrop-blur-sm"
-                                >
-                                  <SelectValue placeholder="Select your experience level" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent className="rounded-xl border-gray-200 bg-white/95 backdrop-blur-sm">
-                                <SelectItem value="0-1" className="rounded-lg">0-1 years</SelectItem>
-                                <SelectItem value="1-3" className="rounded-lg">1-3 years</SelectItem>
-                                <SelectItem value="3-5" className="rounded-lg">3-5 years</SelectItem>
-                                <SelectItem value="5-10" className="rounded-lg">5-10 years</SelectItem>
-                                <SelectItem value="10+" className="rounded-lg">10+ years</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <div className="flex gap-4 pt-8 border-t border-gray-100 mt-8">
+                        {/* Action Buttons */}
+                        <div className="flex gap-4 pt-6 border-t border-gray-100">
                         <Button
                           type="button"
                           variant="outline"
@@ -516,10 +545,12 @@ export default function JobSeekerPage() {
                           ) : (
                             "Submit Resume"
                           )}
-                        </Button>
-                      </div>
-                    </form>
-                  </Form>
+                          </Button>
+                        </div>
+                        
+                      </form>
+                    </Form>
+                  </div>
                 </DialogContent>
               </Dialog>
               
