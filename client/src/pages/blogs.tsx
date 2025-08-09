@@ -244,7 +244,7 @@ export default function Blogs() {
                     {/* Full Container SVG Illustration */}
                     <svg className="w-full h-full absolute inset-0" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
                       {/* Background */}
-                      <rect width="100%" height="100%" fill="#F5F3EB"/>
+                      <rect width="100%" height="100%" fill="#E8E6DC"/>
                       
                       {/* Floating Geometric Elements */}
                       <circle cx="50" cy="60" r="8" fill="#FCD34D" opacity="0.7"/>
