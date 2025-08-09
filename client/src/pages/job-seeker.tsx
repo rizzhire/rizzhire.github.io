@@ -482,9 +482,16 @@ export default function JobSeekerPage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto pb-4">
-            <div className="flex gap-6 w-max">
-              {jobSeekerTestimonials.map((testimonial, index) => (
+          <div className="relative">
+            {/* Left fade gradient */}
+            <div className="absolute left-0 top-0 bottom-4 w-12 bg-gradient-to-r from-[#F2F0E8] to-transparent z-10 pointer-events-none"></div>
+            
+            {/* Right fade gradient */}
+            <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#F2F0E8] to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="overflow-x-auto pb-4 scrollbar-hide">
+              <div className="flex gap-6 w-max px-3">
+                {jobSeekerTestimonials.map((testimonial, index) => (
                 <Card 
                   key={testimonial.id} 
                   className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group"
@@ -511,7 +518,8 @@ export default function JobSeekerPage() {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
