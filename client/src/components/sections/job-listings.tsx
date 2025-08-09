@@ -1,8 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, DollarSign, Clock } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 import { jobs } from "@/lib/data";
 import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
 
@@ -19,12 +18,12 @@ export default function JobListings() {
           </p>
         </div>
 
-        <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={containerRef} className="grid md:grid-cols-2 gap-6">
           {jobs.map((job, index) => (
             <Card 
               key={job.id} 
               className={`
-                bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow
+                bg-white group hover:shadow-lg transition-all duration-500 border border-gray-200 rounded-lg
                 ${visibleItems.includes(index) 
                   ? 'animate-flip-in opacity-100' 
                   : 'opacity-0 transform rotateY-90'
@@ -34,36 +33,38 @@ export default function JobListings() {
             >
               <CardContent className="p-6">
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-yellow transition-colors">
+                  <h3 className="text-lg font-bold mb-3 text-gray-800">
                     {job.title}
                   </h3>
-                  <p className="text-gray-600 font-medium">{job.company}</p>
                 </div>
 
-                <div className="space-y-3 mb-6">
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center text-gray-600">
+                    <span className="w-4 h-4 mr-2">💼</span>
+                    <span className="text-sm">{job.experience}</span>
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <span className="w-4 h-4 mr-2">💰</span>
+                    <span className="text-sm">{job.salary}</span>
+                  </div>
                   <div className="flex items-center text-gray-600">
                     <MapPin className="h-4 w-4 mr-2" />
                     <span className="text-sm">{job.location}</span>
                   </div>
-                  <div className="flex items-center text-gray-600">
-                    <DollarSign className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{job.salary}</span>
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <Badge variant="secondary" className="text-xs">
-                      {job.type}
-                    </Badge>
-                  </div>
                 </div>
 
-                <p className="text-gray-600 mb-6 text-sm line-clamp-3">
-                  {job.description}
-                </p>
-
-                <Button className="w-full bg-yellow text-black hover:bg-yellow/90 font-semibold">
-                  View Details
-                </Button>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    <span>Posted On {job.postedDate}</span>
+                  </div>
+                  <Button 
+                    className="bg-teal-600 text-white hover:bg-teal-700 px-6 py-2 rounded text-sm font-medium"
+                    style={{ backgroundColor: '#14b8a6' }}
+                  >
+                    Apply Now
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

@@ -3,33 +3,51 @@
 export const jobs = [
   {
     id: 1,
-    title: "Senior Software Engineer",
-    company: "TechCorp",
-    location: "Dubai, UAE",
-    salary: "$80,000 - $120,000",
-    type: "Full-time",
-    description: "We are looking for a senior software engineer to join our team.",
-    requirements: ["5+ years experience", "React expertise", "Node.js knowledge"]
+    title: "BLOCK/PASTER MASON",
+    experience: "GOOD EXPERIENCE REQUIRED",
+    salary: "1100 AED",
+    location: "DUBAI",
+    postedDate: "2025-03-24"
   },
   {
     id: 2,
-    title: "Product Manager",
-    company: "InnovateCo",
-    location: "Riyadh, Saudi Arabia",
-    salary: "$70,000 - $100,000",
-    type: "Full-time",
-    description: "Lead product development and strategy.",
-    requirements: ["3+ years PM experience", "Agile methodology", "Technical background"]
+    title: "SHUTTERING CARPENTER",
+    experience: "GOOD EXPERIENCE REQUIRED",
+    salary: "1100 AED",
+    location: "DUBAI",
+    postedDate: "2025-03-24"
   },
   {
     id: 3,
-    title: "Data Scientist",
-    company: "DataFlow",
-    location: "Kuwait City, Kuwait",
-    salary: "$60,000 - $90,000",
-    type: "Contract",
-    description: "Analyze complex datasets and build ML models.",
-    requirements: ["Python/R expertise", "Machine Learning", "Statistics background"]
+    title: "LABOUR",
+    experience: "Minimum 3 to 4 years of Experience",
+    salary: "1100 AED",
+    location: "DUBAI",
+    postedDate: "2025-03-24"
+  },
+  {
+    id: 4,
+    title: "ASST. MASON / SHUTTERING CAPENTER / STEEL FIXER",
+    experience: "Minimum 3 to 4 years of Experience",
+    salary: "1200 AED",
+    location: "DUBAI",
+    postedDate: "2025-03-24"
+  },
+  {
+    id: 5,
+    title: "STEEL FIXER",
+    experience: "Minimum 3 to 4 years of Experience",
+    salary: "1000 AED",
+    location: "DUBAI",
+    postedDate: "2025-03-24"
+  },
+  {
+    id: 6,
+    title: "FURNITURE CARPENTER",
+    experience: "Minimum 3 to 4 years of Experience",
+    salary: "1200 + 350 AED",
+    location: "DUBAI",
+    postedDate: "2025-03-24"
   }
 ];
 
