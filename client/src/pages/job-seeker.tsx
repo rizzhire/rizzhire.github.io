@@ -480,35 +480,37 @@ export default function JobSeekerPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {jobSeekerTestimonials.map((testimonial, index) => (
-              <Card 
-                key={testimonial.id} 
-                className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full group"
-              >
-                <CardContent className="p-0 h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
-                      <span className="text-black font-bold text-lg">{testimonial.initials}</span>
+          <div className="overflow-x-auto pb-4">
+            <div className="flex gap-6 w-max">
+              {jobSeekerTestimonials.map((testimonial, index) => (
+                <Card 
+                  key={testimonial.id} 
+                  className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group"
+                >
+                  <CardContent className="p-0 h-full flex flex-col">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
+                        <span className="text-black font-bold text-lg">{testimonial.initials}</span>
+                      </div>
+                      <div className="flex text-yellow">
+                        {Array(testimonial.rating).fill(0).map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-current" />
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex text-yellow">
-                      {Array(testimonial.rating).fill(0).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-current" />
-                      ))}
+                    <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="text-sm mt-auto">
+                      <div className="font-bold">{testimonial.name}</div>
+                      <div className="text-gray-600">{testimonial.position}</div>
+                      <div className="text-gray-600">{testimonial.company}</div>
+                      <div className="text-gray-500 text-xs">{testimonial.location}</div>
                     </div>
-                  </div>
-                  <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="text-sm mt-auto">
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-gray-600">{testimonial.position}</div>
-                    <div className="text-gray-600">{testimonial.company}</div>
-                    <div className="text-gray-500 text-xs">{testimonial.location}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
