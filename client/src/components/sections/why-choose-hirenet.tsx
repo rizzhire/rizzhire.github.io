@@ -1,34 +1,26 @@
-import { Globe, Users, FileText, Headphones, ArrowRight, Star } from "lucide-react";
+import { Globe, Users, FileText, Headphones, Star } from "lucide-react";
 
 export default function WhyChooseHireNet() {
   const features = [
     {
       icon: Globe,
-      title: "Global Placement Network",
-      description: "Exclusive access to premium positions across 7 Middle Eastern countries with verified international employers.",
-      stat: "10,000+",
-      statLabel: "Active Positions"
+      title: "Global Placement Opportunities",
+      description: "Access to premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives."
     },
     {
       icon: Users,
-      title: "Expert Career Guidance", 
-      description: "Personalized consultation with industry veterans who understand your career aspirations and market dynamics.",
-      stat: "97%",
-      statLabel: "Success Rate"
+      title: "Personalized Career Guidance", 
+      description: "One-on-one consultation with industry experts to accelerate your career growth."
     },
     {
       icon: FileText,
-      title: "Professional Resume Craft",
-      description: "Strategic resume optimization by recruitment specialists to maximize your interview opportunities.",
-      stat: "3x",
-      statLabel: "More Interviews"
+      title: "Free Resume Review",
+      description: "Professional resume optimization to increase your chances of landing interviews."
     },
     {
       icon: Headphones,
-      title: "Priority Career Support",
-      description: "Dedicated career advisors providing continuous guidance throughout your job search journey.",
-      stat: "24/7",
-      statLabel: "Support Access"
+      title: "Priority Support",
+      description: "Dedicated support throughout your job search journey with 24/7 assistance."
     }
   ];
 
@@ -102,48 +94,24 @@ export default function WhyChooseHireNet() {
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
-              {/* Icon with sophisticated styling */}
-              <div className="relative mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow to-yellow/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-yellow/25 group-hover:shadow-yellow/40 transition-all duration-300 group-hover:scale-110">
-                  <feature.icon className="w-8 h-8 text-white stroke-[1.5]" />
-                </div>
-                {/* Subtle glow effect */}
-                <div className="absolute inset-0 w-16 h-16 bg-yellow/20 rounded-2xl mx-auto blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              {/* Statistics Badge */}
-              <div className="flex justify-center mb-4">
-                <div className="bg-gray-100 px-3 py-1 rounded-full">
-                  <span className="font-bold text-lg text-gray-800">{feature.stat}</span>
-                  <span className="text-xs text-gray-600 ml-1">{feature.statLabel}</span>
+              {/* Icon with clean styling */}
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
+                  <feature.icon className="w-8 h-8 text-black stroke-[1.5]" />
                 </div>
               </div>
               
               {/* Content */}
-              <div className="relative text-center">
-                <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-gray-900 transition-colors">
+              <div className="text-center">
+                <h3 className="text-xl font-bold mb-4 text-gray-800">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm font-light">
+                <p className="text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
-              
-              {/* Hover arrow indicator */}
-              <div className="flex justify-center mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <ArrowRight className="w-5 h-5 text-yellow transform group-hover:translate-x-1 transition-transform" />
-              </div>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action Section */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-3 bg-white/50 backdrop-blur-sm px-8 py-4 rounded-2xl border border-yellow/30 shadow-lg">
-            <span className="text-gray-700 font-medium">Ready to accelerate your career?</span>
-            <ArrowRight className="w-5 h-5 text-yellow" />
-            <span className="font-bold text-yellow">Get Started Today</span>
-          </div>
         </div>
       </div>
     </section>
