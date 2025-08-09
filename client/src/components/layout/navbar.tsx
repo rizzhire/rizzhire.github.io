@@ -25,6 +25,11 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const navigateToEmployers = () => {
+    setLocation('/employers');
+    setIsMenuOpen(false);
+  };
+
   const navigateHome = () => {
     setLocation('/');
     setIsMenuOpen(false);
@@ -103,10 +108,10 @@ export default function Navbar() {
           
           <div className="hidden md:block">
             <Button 
-              onClick={navigateToJobSeeker}
+              onClick={location === '/job-seeker' ? navigateToEmployers : navigateToJobSeeker}
               className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-colors duration-200"
             >
-              For Job Seeker
+              {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
             </Button>
           </div>
           
@@ -158,10 +163,10 @@ export default function Navbar() {
               Contact
             </button>
             <Button 
-              onClick={navigateToJobSeeker}
+              onClick={location === '/job-seeker' ? navigateToEmployers : navigateToJobSeeker}
               className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-colors duration-200 w-full"
             >
-              For Job Seeker
+              {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
             </Button>
           </div>
         )}
