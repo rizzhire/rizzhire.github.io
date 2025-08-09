@@ -152,19 +152,19 @@ export default function WhyChooseHireNet() {
         {/* Premium Feature Cards - Compact Square Masonry Layout */}
         <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
           {/* Left Side - Compact Card (Global Placement Opportunities) */}
-          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-between">
+          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center">
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
-            {/* Icon with clean styling - positioned lower */}
-            <div className="mb-4 mt-8">
+            {/* Icon with clean styling - centered */}
+            <div className="mb-6">
               <div className="w-16 h-16 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
                 <Globe className="w-8 h-8 text-black stroke-[1.5]" />
               </div>
             </div>
             
             {/* Content */}
-            <div className="text-center flex-1 flex flex-col justify-center">
+            <div className="text-center">
               <h3 className="text-xl font-bold mb-4 text-gray-800">
                 Global Placement Opportunities
               </h3>
