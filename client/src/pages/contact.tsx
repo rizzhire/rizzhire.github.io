@@ -177,7 +177,7 @@ export default function Contact() {
             <Card className="overflow-hidden rounded-2xl shadow-lg max-w-4xl mx-auto">
               <div className="relative h-96 bg-gradient-to-br from-gray-50 to-white">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.6420837392987!2d88.3502!3d22.5697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a3b69bb6dd%3A0x1234567890123456!2sAJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=6/7A%20AJC%20Bose%20Road%20Kolkata%20700017+(HireNET%20Head%20Office)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -186,6 +186,33 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="HireNET Office Locations"
                 ></iframe>
+                
+                {/* Custom Red Location Markers Overlay */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Head Office Marker */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      <div className="w-8 h-8 bg-red-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center animate-pulse">
+                        <span className="text-white font-bold text-xs">H</span>
+                      </div>
+                      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
+                        Head Office - Kolkata
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Branch Office Marker (positioned relative to head office) */}
+                  <div className="absolute top-1/4 right-1/3 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      <div className="w-8 h-8 bg-red-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center animate-pulse" style={{animationDelay: '0.5s'}}>
+                        <span className="text-white font-bold text-xs">B</span>
+                      </div>
+                      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
+                        Branch Office - Siliguri
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               {/* Direction Buttons */}
