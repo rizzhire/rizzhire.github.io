@@ -77,8 +77,7 @@ export default function Contact() {
   // Typewriter effects for each contact detail
   const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
   const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 1400);
-  const officeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre,\nKolkata-700017, West Bengal', 60, 2000);
-  const branchTypewriter = useTypewriter('4th-floor Nevidita Road, Kidzee School\nSiliguri 734003, West Bengal', 60, 2600);
+  const officeTypewriter = useTypewriter('MAIN OFFICE\n6/7A, AJC Bose Road,\nPadatik Theatre\nKolkata-700017, West Bengal\n\nBRANCH OFFICE\n4th-floor Nevidita Road,\nKidzee School\nSiliguri 734003, West Bengal', 60, 2000);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -205,7 +204,7 @@ export default function Contact() {
               </motion.div>
 
               <motion.div 
-                className="flex items-center group cursor-pointer"
+                className="flex items-start group cursor-pointer"
                 variants={itemVariants}
                 whileHover={{ 
                   x: 4,
@@ -213,7 +212,7 @@ export default function Contact() {
                 }}
               >
                 <motion.div 
-                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
+                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4 mt-1"
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
@@ -222,38 +221,10 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-black" />
                 </motion.div>
                 <div>
-                  <h4 className="font-semibold">Head Office</h4>
+                  <h4 className="font-semibold">Office Locations</h4>
                   <p className="text-gray-600 whitespace-pre-line">
                     {officeTypewriter.displayText}
                     {officeTypewriter.isTyping && (
-                      <span className="animate-pulse text-yellow">|</span>
-                    )}
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                className="flex items-center group cursor-pointer"
-                variants={itemVariants}
-                whileHover={{ 
-                  x: 4,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div 
-                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
-                  }}
-                >
-                  <MapPin className="h-6 w-6 text-black" />
-                </motion.div>
-                <div>
-                  <h4 className="font-semibold">Branch Office</h4>
-                  <p className="text-gray-600 whitespace-pre-line">
-                    {branchTypewriter.displayText}
-                    {branchTypewriter.isTyping && (
                       <span className="animate-pulse text-yellow">|</span>
                     )}
                   </p>
