@@ -149,98 +149,98 @@ export default function WhyChooseHireNet() {
           </p>
         </div>
 
-        {/* Premium Feature Cards - Masonry Layout */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-5xl mx-auto">
-          {/* Left Side - Large Card (Global Placement Opportunities) */}
-          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2">
+        {/* Premium Feature Cards - Compact Square Masonry Layout */}
+        <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
+          {/* Left Side - Compact Card (Global Placement Opportunities) */}
+          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-between">
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
             {/* Icon with clean styling */}
-            <div className="mb-6">
-              <div className="w-20 h-20 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
-                <Globe className="w-10 h-10 text-black stroke-[1.5]" />
+            <div className="mb-4">
+              <div className="w-16 h-16 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
+                <Globe className="w-8 h-8 text-black stroke-[1.5]" />
               </div>
             </div>
             
             {/* Content */}
-            <div className="text-center">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">
+            <div className="text-center flex-1 flex flex-col justify-center">
+              <h3 className="text-xl font-bold mb-4 text-gray-800">
                 Global Placement Opportunities
               </h3>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Access to premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives.
+              <p className="text-gray-600 leading-relaxed">
+                Access to premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives with guaranteed placement assistance.
               </p>
             </div>
           </div>
 
           {/* Right Side - 3 Cards in Grid Layout */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4">
             {/* Top - Full Width Card (Personalized Career Guidance) */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-5 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Icon with clean styling */}
-              <div className="mb-4">
-                <div className="w-16 h-16 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
-                  <Users className="w-8 h-8 text-black stroke-[1.5]" />
+              <div className="mb-3">
+                <div className="w-14 h-14 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
+                  <Users className="w-7 h-7 text-black stroke-[1.5]" />
                 </div>
               </div>
               
               {/* Content */}
               <div className="text-center">
-                <h3 className="text-xl font-bold mb-3 text-gray-800">
+                <h3 className="text-lg font-bold mb-2 text-gray-800">
                   Personalized Career Guidance
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  One-on-one consultation with industry experts to accelerate your career growth.
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  One-on-one consultation with industry experts to accelerate your career growth and strategic planning.
                 </p>
               </div>
             </div>
 
             {/* Bottom Left - Free Resume Review */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-5 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Icon with clean styling */}
-              <div className="mb-4">
-                <div className="w-14 h-14 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
-                  <FileText className="w-7 h-7 text-black stroke-[1.5]" />
+              <div className="mb-3">
+                <div className="w-12 h-12 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
+                  <FileText className="w-6 h-6 text-black stroke-[1.5]" />
                 </div>
               </div>
               
               {/* Content */}
-              <div className="text-center flex-1 flex flex-col">
-                <h3 className="text-lg font-bold mb-3 text-gray-800">
+              <div className="text-center flex-1 flex flex-col justify-center">
+                <h3 className="text-base font-bold mb-2 text-gray-800">
                   Free Resume Review
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm flex-1">
-                  Professional resume optimization to increase your chances of landing interviews with expert formatting and content enhancement.
+                <p className="text-gray-600 leading-relaxed text-xs">
+                  Professional resume optimization with expert formatting and ATS-friendly content enhancement.
                 </p>
               </div>
             </div>
 
             {/* Bottom Right - Priority Support */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-5 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Icon with clean styling */}
-              <div className="mb-4">
-                <div className="w-14 h-14 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
-                  <Headphones className="w-7 h-7 text-black stroke-[1.5]" />
+              <div className="mb-3">
+                <div className="w-12 h-12 bg-yellow rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
+                  <Headphones className="w-6 h-6 text-black stroke-[1.5]" />
                 </div>
               </div>
               
               {/* Content */}
-              <div className="text-center flex-1 flex flex-col">
-                <h3 className="text-lg font-bold mb-3 text-gray-800">
+              <div className="text-center flex-1 flex flex-col justify-center">
+                <h3 className="text-base font-bold mb-2 text-gray-800">
                   Priority Support
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm flex-1">
-                  Dedicated support throughout your job search journey with 24/7 assistance and personalized career consultation.
+                <p className="text-gray-600 leading-relaxed text-xs">
+                  Dedicated 24/7 support throughout your job search journey with personalized career consultation.
                 </p>
               </div>
             </div>
