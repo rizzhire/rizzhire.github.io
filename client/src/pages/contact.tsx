@@ -202,8 +202,8 @@ export default function Contact() {
               <h3 className="text-3xl font-bold text-gray-900 mb-4">Find Us on Map</h3>
             </div>
             
-            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg max-w-3xl mx-auto">
-              <div className="aspect-[3/2] rounded-2xl overflow-hidden border border-gray-200">
+            <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-lg max-w-3xl mx-auto">
+              <div className="aspect-[3/2] rounded-[1.5rem] overflow-hidden border border-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3945899999996!2d88.35046!3d22.56148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771346ae015d%3A0x1234567890abcdef!2s6%2F7A%2C%20AJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
                   width="100%"
@@ -224,7 +224,7 @@ export default function Contact() {
                   href="https://maps.google.com/?q=6/7A,+AJC+Bose+Road,+Padatik+Theatre,+Kolkata-700017,+West+Bengal,+INDIA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group"
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold py-3 px-6 rounded-[1rem] transition-all duration-300 hover:scale-105 flex items-center justify-center group"
                 >
                   <MapPin className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   View Main Office on Google Maps
@@ -234,7 +234,7 @@ export default function Contact() {
                   href="https://maps.google.com/?q=4th-floor+Nevidita+Road,+Kidzee+School,+Siliguri+734003,+West+Bengal"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group border border-gray-300"
+                  className="bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-[1rem] transition-all duration-300 hover:scale-105 flex items-center justify-center group border border-gray-300"
                 >
                   <MapPin className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   View Branch Office on Google Maps
