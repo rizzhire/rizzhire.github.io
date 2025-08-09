@@ -205,10 +205,34 @@ export default function Contact() {
               {/* Email Us - Bottom Left */}
               {(() => {
                 const EmailIcon = contactInfo[2].icon;
+                
+                const handleEmailClick = () => {
+                  const email = 'contact@hirenet.in';
+                  const subject = 'Inquiry from HireNET Website';
+                  const body = 'Hello HireNET Team,\n\nI would like to inquire about your services.\n\nThank you.';
+                  
+                  // Check if it's mobile device
+                  const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                  
+                  if (isMobile) {
+                    // For mobile: Use mailto to open native email app
+                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  } else {
+                    // For desktop: Try Gmail web interface first, fallback to mailto
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    const popup = window.open(gmailUrl, '_blank');
+                    
+                    // Fallback to mailto if popup is blocked
+                    if (!popup) {
+                      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    }
+                  }
+                };
+                
                 return (
                   <Card 
                     className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
-                    onClick={() => window.location.href = 'mailto:contact@hirenet.in?subject=Inquiry from HireNET Website&body=Hello HireNET Team,%0D%0A%0D%0AI would like to inquire about your services.%0D%0A%0D%0AThank you.'}
+                    onClick={handleEmailClick}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-indigo-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
                     <CardContent className="p-0 relative z-10">
