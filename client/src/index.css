@@ -1,3 +1,6 @@
+/* Import Sacramento font directly */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,6 +77,8 @@
 .sacramento-quote {
   font-family: 'Sacramento', cursive !important;
   font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 
 @layer utilities {
