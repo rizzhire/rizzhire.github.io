@@ -164,7 +164,7 @@ export default function WhyChooseHireNet() {
                   <Globe className="w-64 h-64 text-yellow/40 stroke-[0.5]" />
                 </div>
                 {/* Main icon with refined styling */}
-                <Globe className="relative w-64 h-64 text-yellow stroke-[0.8] drop-shadow-sm" style={{filter: 'drop-shadow(0 0 8px rgba(255, 204, 0, 0.15))'}} />
+                <Globe className="relative w-64 h-64 text-yellow stroke-[0.8]" />
               </div>
             </div>
             
@@ -194,7 +194,7 @@ export default function WhyChooseHireNet() {
                     <Users className="w-32 h-32 text-yellow/40 stroke-[0.5]" />
                   </div>
                   {/* Main icon with refined styling */}
-                  <Users className="relative w-32 h-32 text-yellow stroke-[0.8] drop-shadow-sm" style={{filter: 'drop-shadow(0 0 8px rgba(255, 204, 0, 0.15))'}} />
+                  <Users className="relative w-32 h-32 text-yellow stroke-[0.8]" />
                 </div>
               </div>
               
@@ -222,7 +222,7 @@ export default function WhyChooseHireNet() {
                     <FileText className="w-28 h-28 text-yellow/40 stroke-[0.5]" />
                   </div>
                   {/* Main icon with refined styling */}
-                  <FileText className="relative w-28 h-28 text-yellow stroke-[0.8] drop-shadow-sm" style={{filter: 'drop-shadow(0 0 8px rgba(255, 204, 0, 0.15))'}} />
+                  <FileText className="relative w-28 h-28 text-yellow stroke-[0.8]" />
                 </div>
               </div>
               
@@ -250,7 +250,7 @@ export default function WhyChooseHireNet() {
                     <Headphones className="w-28 h-28 text-yellow/40 stroke-[0.5]" />
                   </div>
                   {/* Main icon with refined styling */}
-                  <Headphones className="relative w-28 h-28 text-yellow stroke-[0.8] drop-shadow-sm" style={{filter: 'drop-shadow(0 0 8px rgba(255, 204, 0, 0.15))'}} />
+                  <Headphones className="relative w-28 h-28 text-yellow stroke-[0.8]" />
                 </div>
               </div>
               
