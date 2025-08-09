@@ -151,12 +151,7 @@ export default function Contact() {
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Ready to transform your recruitment process? Contact us today and let's discuss how we can help you find the perfect talent.
-            </p>
-          </div>
+
 
           <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
             {/* Visit Us - Large Left Card */}
