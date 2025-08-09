@@ -204,7 +204,7 @@ export default function Contact() {
             </div>
             
             <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg">
-              <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-gray-200">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3945899999996!2d88.35046!3d22.56148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771346ae015d%3A0x1234567890abcdef!2s6%2F7A%2C%20AJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017%2C%20India!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
                   width="100%"
