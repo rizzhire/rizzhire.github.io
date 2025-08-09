@@ -245,63 +245,93 @@ export default function LearnMore() {
               {/* Central Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-yellow via-yellow to-yellow/30 h-full rounded-full shadow-sm"></div>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {milestones.map((milestone, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.8 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80, scale: 0.9 }}
                     whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-80px" }}
                     transition={{ 
-                      duration: 0.6, 
-                      delay: index * 0.15,
+                      duration: 0.5, 
+                      delay: index * 0.1,
                       ease: [0.25, 0.1, 0.25, 1]
                     }}
-                    className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group`}
+                    className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group relative`}
                   >
-                    {/* Content Card */}
-                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                    {/* Milestone-specific Moving Lines */}
+                    {milestone.title.includes("Regional Expansion") && (
+                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,100 Q200,50 400,100 T800,100" stroke="#f59e0b" strokeWidth="1" fill="none" className="animate-waveFlow" style={{animationDuration: '15s'}}/>
+                      </svg>
+                    )}
+                    {milestone.title.includes("Digital Transformation") && (
+                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,80 Q150,120 300,80 T600,80" stroke="#3b82f6" strokeWidth="1" fill="none" className="animate-waveFlow" style={{animationDuration: '18s'}}/>
+                        <path d="M0,120 Q250,160 500,120 T800,120" stroke="#10b981" strokeWidth="0.8" fill="none" className="animate-waveFlowReverse" style={{animationDuration: '20s'}}/>
+                      </svg>
+                    )}
+                    {milestone.title.includes("Industry Leadership") && (
+                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,90 Q100,140 200,90 T400,90 T600,90" stroke="#8b5cf6" strokeWidth="1.2" fill="none" className="animate-waveFlow" style={{animationDuration: '16s'}}/>
+                      </svg>
+                    )}
+                    {milestone.title.includes("Innovation Hub") && (
+                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,110 Q180,70 360,110 T720,110" stroke="#f59e0b" strokeWidth="0.8" fill="none" className="animate-waveFlowReverse" style={{animationDuration: '22s'}}/>
+                        <path d="M0,60 Q120,100 240,60 T480,60" stroke="#ec4899" strokeWidth="1" fill="none" className="animate-waveFlow" style={{animationDuration: '17s'}}/>
+                      </svg>
+                    )}
+                    {milestone.title.includes("Future Vision") && (
+                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,100 Q200,140 400,100 T800,100" stroke="#06b6d4" strokeWidth="1.5" fill="none" className="animate-waveFlow" style={{animationDuration: '19s'}}/>
+                        <path d="M0,140 Q300,180 600,140" stroke="#f59e0b" strokeWidth="1" fill="none" className="animate-waveFlowReverse" style={{animationDuration: '21s'}}/>
+                      </svg>
+                    )}
+                    
+                    {/* Content Card - Compact */}
+                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                       <div className="relative">
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-3 group-hover:border-yellow/30">
-                          {/* Decorative Elements */}
-                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow rounded-full opacity-20"></div>
-                          <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-yellow/30 rounded-full"></div>
+                        <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-400 group-hover:-translate-y-2 group-hover:border-yellow/30">
+                          {/* Decorative Elements - Smaller */}
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow rounded-full opacity-20"></div>
+                          <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-yellow/30 rounded-full"></div>
                           
-                          {/* Year Badge */}
-                          <div className="inline-flex items-center mb-6">
-                            <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow via-yellow to-yellow/80 text-black font-bold text-2xl rounded-2xl shadow-lg mr-4">
+                          {/* Year Badge - Compact */}
+                          <div className="inline-flex items-center mb-4">
+                            <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow via-yellow to-yellow/80 text-black font-bold text-lg rounded-xl shadow-md mr-3">
                               {milestone.year.slice(-2)}
                             </div>
                             <div className="text-right">
-                              <div className="text-2xl font-bold text-gray-900">{milestone.year}</div>
-                              <div className="text-sm text-gray-500 uppercase tracking-wide">Milestone</div>
+                              <div className="text-xl font-bold text-gray-900">{milestone.year}</div>
+                              <div className="text-xs text-gray-500 uppercase tracking-wide">Milestone</div>
                             </div>
                           </div>
                           
-                          {/* Content */}
-                          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow transition-colors duration-300">
+                          {/* Content - Compact */}
+                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow transition-colors duration-300">
                             {milestone.title}
                           </h3>
-                          <p className="text-gray-600 leading-relaxed text-lg">
+                          <p className="text-gray-600 leading-relaxed text-base">
                             {milestone.description}
                           </p>
                           
                           {/* Gradient Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-yellow/0 via-yellow/5 to-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-yellow/0 via-yellow/3 to-yellow/8 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-2xl pointer-events-none"></div>
                         </div>
                         
-                        {/* Connecting Arrow */}
-                        <div className={`hidden md:block absolute top-1/2 ${index % 2 === 0 ? '-right-6' : '-left-6'} transform -translate-y-1/2`}>
-                          <div className={`w-8 h-0.5 bg-gradient-to-${index % 2 === 0 ? 'r' : 'l'} from-yellow to-transparent`}></div>
+                        {/* Connecting Arrow - Smaller */}
+                        <div className={`hidden md:block absolute top-1/2 ${index % 2 === 0 ? '-right-4' : '-left-4'} transform -translate-y-1/2`}>
+                          <div className={`w-6 h-0.5 bg-gradient-to-${index % 2 === 0 ? 'r' : 'l'} from-yellow to-transparent`}></div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Timeline Dot */}
+                    {/* Timeline Dot - Smaller */}
                     <div className="w-2 md:w-2/12 flex justify-center relative z-10">
                       <motion.div 
-                        className="w-6 h-6 bg-yellow rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300"
-                        whileHover={{ scale: 1.3 }}
+                        className="w-5 h-5 bg-yellow rounded-full border-3 border-white shadow-md group-hover:scale-110 transition-transform duration-300"
+                        whileHover={{ scale: 1.2 }}
                       >
                         <div className="w-full h-full bg-gradient-to-br from-yellow to-yellow/70 rounded-full"></div>
                       </motion.div>
