@@ -25,7 +25,7 @@ const DialogOverlay = React.forwardRef<
       className
     )}
     style={{
-      background: 'rgba(245, 243, 235, 0.3)',
+      background: 'rgba(245, 243, 235, 0.15)',
       backdropFilter: 'blur(18px) saturate(1.4) brightness(0.95) contrast(1.1)',
       WebkitBackdropFilter: 'blur(18px) saturate(1.4) brightness(0.95) contrast(1.1)'
     }}
