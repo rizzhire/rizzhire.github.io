@@ -163,12 +163,13 @@ export default function Contact() {
             {(() => {
               const VisitIcon = contactInfo[0].icon;
               return (
-                <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
-                  <CardContent className="p-0">
-                    <div className={`inline-flex p-4 rounded-full bg-gray-50 ${contactInfo[0].color} mb-4`}>
-                      <VisitIcon className="w-6 h-6" />
+                <Card className="text-center p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-0 shadow-lg backdrop-blur-sm relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardContent className="p-0 relative z-10">
+                    <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 ${contactInfo[0].color} mb-4 shadow-md hover:shadow-lg transition-shadow duration-300`}>
+                      <VisitIcon className="w-7 h-7" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-3 text-gray-900">{contactInfo[0].title}</h3>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900 tracking-tight">{contactInfo[0].title}</h3>
                     <div className="space-y-2">
                       {contactInfo[0].details.map((detail, idx) => (
                         <p key={idx} className="text-gray-600 text-xs leading-normal" 
@@ -187,12 +188,13 @@ export default function Contact() {
               {(() => {
                 const CallIcon = contactInfo[1].icon;
                 return (
-                  <Card className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50 col-span-2">
-                    <CardContent className="p-0">
-                      <div className={`inline-flex p-3 rounded-full bg-gray-50 ${contactInfo[1].color} mb-3`}>
+                  <Card className="text-center p-5 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-0 shadow-lg backdrop-blur-sm relative overflow-hidden col-span-2">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-emerald-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardContent className="p-0 relative z-10">
+                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3 shadow-md hover:shadow-lg transition-shadow duration-300`}>
                         <CallIcon className="w-6 h-6" />
                       </div>
-                      <h3 className="font-semibold text-lg mb-2 text-gray-900">{contactInfo[1].title}</h3>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
                       <div className="space-y-1">
                         {contactInfo[1].details.map((detail, idx) => (
                           <p key={idx} className="text-gray-600 text-xs leading-normal" 
@@ -209,12 +211,13 @@ export default function Contact() {
               {(() => {
                 const EmailIcon = contactInfo[2].icon;
                 return (
-                  <Card className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
-                    <CardContent className="p-0">
-                      <div className={`inline-flex p-3 rounded-full bg-gray-50 ${contactInfo[2].color} mb-3`}>
+                  <Card className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-0 shadow-lg backdrop-blur-sm relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-indigo-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardContent className="p-0 relative z-10">
+                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3 shadow-md hover:shadow-lg transition-shadow duration-300`}>
                         <EmailIcon className="w-6 h-6" />
                       </div>
-                      <h3 className="font-semibold text-lg mb-2 text-gray-900">{contactInfo[2].title}</h3>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
                       <div className="space-y-1">
                         {contactInfo[2].details.map((detail, idx) => (
                           <p key={idx} className="text-gray-600 text-xs leading-normal" 
@@ -231,12 +234,13 @@ export default function Contact() {
               {(() => {
                 const ClockIcon = contactInfo[3].icon;
                 return (
-                  <Card className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
-                    <CardContent className="p-0">
-                      <div className={`inline-flex p-3 rounded-full bg-gray-50 ${contactInfo[3].color} mb-3`}>
+                  <Card className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-0 shadow-lg backdrop-blur-sm relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-600/5 via-transparent to-amber-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardContent className="p-0 relative z-10">
+                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3 shadow-md hover:shadow-lg transition-shadow duration-300`}>
                         <ClockIcon className="w-6 h-6" />
                       </div>
-                      <h3 className="font-semibold text-lg mb-2 text-gray-900">{contactInfo[3].title}</h3>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[3].title}</h3>
                       <div className="space-y-1">
                         {contactInfo[3].details.map((detail, idx) => (
                           <p key={idx} className="text-gray-600 text-xs leading-normal" 
