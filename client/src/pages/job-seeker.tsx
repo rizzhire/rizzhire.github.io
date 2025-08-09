@@ -367,9 +367,6 @@ export default function JobSeekerPage() {
                               buttonClassName="w-full bg-gradient-to-br from-white to-gray-50 border-2 border-dashed border-yellow/30 hover:border-yellow/50 hover:bg-gradient-to-br hover:from-yellow/5 hover:to-yellow/10 text-gray-700 transition-all duration-300 rounded-xl shadow-sm hover:shadow-md"
                             >
                               <div className="flex flex-col items-center gap-4 py-10">
-                                <div className="w-14 h-14 bg-gradient-to-br from-yellow/20 to-yellow/30 rounded-xl flex items-center justify-center shadow-md">
-                                  <Upload className="h-7 w-7 text-yellow-600" />
-                                </div>
                                 <div className="text-center space-y-2">
                                   <p className="font-semibold text-gray-800">Click to upload or drag and drop</p>
                                   <p className="text-sm text-gray-500">PDF files only • Maximum 5MB</p>
