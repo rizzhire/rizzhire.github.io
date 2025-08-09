@@ -211,7 +211,7 @@ export default function JobSeekerPage() {
   return (
     <div className="min-h-screen page-transition">
       {/* Hero Section for Job Seekers */}
-      <section className="relative py-20 cream overflow-hidden animate-fade-in-up">
+      <section className="relative py-20 cream overflow-hidden">
         {/* Enhanced Background Graphics (Same as Transform Your Workforce) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
