@@ -259,33 +259,14 @@ export default function LearnMore() {
                     }}
                     className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group relative`}
                   >
-                    {/* Milestone-specific Moving Lines */}
-                    {milestone.title.includes("Regional Expansion") && (
-                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
-                        <path d="M0,100 Q200,50 400,100 T800,100" stroke="#f59e0b" strokeWidth="1" fill="none" className="animate-waveFlow" style={{animationDuration: '15s'}}/>
-                      </svg>
-                    )}
-                    {milestone.title.includes("Digital Transformation") && (
-                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
-                        <path d="M0,80 Q150,120 300,80 T600,80" stroke="#3b82f6" strokeWidth="1" fill="none" className="animate-waveFlow" style={{animationDuration: '18s'}}/>
-                        <path d="M0,120 Q250,160 500,120 T800,120" stroke="#10b981" strokeWidth="0.8" fill="none" className="animate-waveFlowReverse" style={{animationDuration: '20s'}}/>
-                      </svg>
-                    )}
-                    {milestone.title.includes("Industry Leadership") && (
-                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
-                        <path d="M0,90 Q100,140 200,90 T400,90 T600,90" stroke="#8b5cf6" strokeWidth="1.2" fill="none" className="animate-waveFlow" style={{animationDuration: '16s'}}/>
-                      </svg>
-                    )}
-                    {milestone.title.includes("Innovation Hub") && (
-                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
-                        <path d="M0,110 Q180,70 360,110 T720,110" stroke="#f59e0b" strokeWidth="0.8" fill="none" className="animate-waveFlowReverse" style={{animationDuration: '22s'}}/>
-                        <path d="M0,60 Q120,100 240,60 T480,60" stroke="#ec4899" strokeWidth="1" fill="none" className="animate-waveFlow" style={{animationDuration: '17s'}}/>
-                      </svg>
-                    )}
-                    {milestone.title.includes("Future Vision") && (
-                      <svg className="absolute inset-0 w-full h-full opacity-4 pointer-events-none" viewBox="0 0 800 200">
-                        <path d="M0,100 Q200,140 400,100 T800,100" stroke="#06b6d4" strokeWidth="1.5" fill="none" className="animate-waveFlow" style={{animationDuration: '19s'}}/>
-                        <path d="M0,140 Q300,180 600,140" stroke="#f59e0b" strokeWidth="1" fill="none" className="animate-waveFlowReverse" style={{animationDuration: '21s'}}/>
+                    {/* Milestone-specific Subtle Lines */}
+                    {(milestone.title.includes("Regional Expansion") || 
+                      milestone.title.includes("Digital Transformation") || 
+                      milestone.title.includes("Industry Leadership") || 
+                      milestone.title.includes("Innovation Hub") || 
+                      milestone.title.includes("Future Vision")) && (
+                      <svg className="absolute inset-0 w-full h-full opacity-2 pointer-events-none" viewBox="0 0 800 200">
+                        <path d="M0,100 Q200,80 400,100 T800,100" stroke="#f59e0b" strokeWidth="0.5" fill="none" className="animate-waveFlow" style={{animationDuration: '25s'}} opacity="0.3"/>
                       </svg>
                     )}
                     
