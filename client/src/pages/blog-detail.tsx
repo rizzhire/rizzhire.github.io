@@ -307,7 +307,7 @@ export default function BlogDetail() {
     }
   };
 
-  const blogPost = blogPosts[blogId] || blogPosts[1];
+  const blogPost = blogPosts[blogId as keyof typeof blogPosts] || blogPosts[1];
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
@@ -358,7 +358,38 @@ export default function BlogDetail() {
                   <Clock className="w-3 h-3 mr-1" />
                   <span>{blogPost.readTime}</span>
                 </div>
-                <Button variant="ghost" size="sm" className="text-gray-500 hover:text-gray-700 p-1">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="text-gray-500 hover:text-gray-700 p-1"
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: blogPost.title,
+                        text: `Check out this insightful article: ${blogPost.title}`,
+                        url: window.location.href
+                      }).catch((error) => console.log('Error sharing:', error));
+                    } else {
+                      // Fallback: Copy to clipboard
+                      navigator.clipboard.writeText(window.location.href).then(() => {
+                        // Show success feedback
+                        const button = document.activeElement as HTMLElement;
+                        const originalText = button.innerHTML;
+                        button.innerHTML = '✓ Copied!';
+                        button.style.color = '#10B981';
+                        setTimeout(() => {
+                          button.innerHTML = originalText;
+                          button.style.color = '';
+                        }, 2000);
+                      }).catch(() => {
+                        // Ultimate fallback: Open email share
+                        const subject = encodeURIComponent(`Check out: ${blogPost.title}`);
+                        const body = encodeURIComponent(`I found this interesting article and thought you might like it:\n\n${blogPost.title}\n\n${window.location.href}`);
+                        window.open(`mailto:?subject=${subject}&body=${body}`);
+                      });
+                    }
+                  }}
+                >
                   <Share2 className="w-3 h-3" />
                 </Button>
               </div>
