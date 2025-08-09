@@ -319,12 +319,280 @@ export default function JobSeekerPage() {
                   <Button 
                     className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg" 
                     data-testid="button-open-upload-dialog"
-                    onClick={() => setIsDialogOpen(true)}
                   >
                     <Upload className="mr-2 h-5 w-5" />
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
+                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden" style={{ borderRadius: '40px' }}>
+                  <div className="bg-white h-full overflow-y-auto" style={{ borderRadius: '40px' }}>
+                    <div className="p-8 space-y-8">
+                      <div className="text-center">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-3">Submit Your Resume</h2>
+                        <p className="text-gray-600">Join thousands of professionals who found their dream careers through HireNET</p>
+                      </div>
+                      
+                      <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                          
+                          {/* Resume Upload Section */}
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                              <div className="w-10 h-10 bg-yellow/20 rounded-full flex items-center justify-center">
+                                <Upload className="w-5 h-5 text-yellow-600" />
+                              </div>
+                              <h3 className="text-xl font-semibold text-gray-900">Resume Upload</h3>
+                            </div>
+                            
+                            {uploadedFile ? (
+                              <div className="flex items-center gap-3 p-6 bg-green-50 border border-green-200 rounded-2xl">
+                                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                  <CheckCircle className="h-6 w-6 text-green-600" />
+                                </div>
+                                <div>
+                                  <p className="font-semibold text-green-800">{uploadedFile}</p>
+                                  <p className="text-sm text-green-600">Successfully uploaded</p>
+                                </div>
+                              </div>
+                            ) : (
+                              <ObjectUploader
+                                maxNumberOfFiles={1}
+                                maxFileSize={5242880}
+                                onGetUploadParameters={async () => {
+                                  const response = await fetch('/api/objects/upload', {
+                                    method: 'POST',
+                                  });
+                                  const data = await response.json();
+                                  return {
+                                    method: 'PUT' as const,
+                                    url: data.uploadURL,
+                                  };
+                                }}
+                                onComplete={(result) => {
+                                  const uploadedFiles = result.successful.map(f => f.name);
+                                  if (uploadedFiles.length > 0) {
+                                    setUploadedFile(uploadedFiles[0]);
+                                    form.setValue('resume', uploadedFiles[0]);
+                                  }
+                                }}
+                                buttonClassName="w-full h-24 border-2 border-dashed border-gray-300 rounded-2xl hover:border-yellow-400 bg-gray-50 hover:bg-yellow-50/50 transition-all duration-200"
+                              >
+                                <div className="text-center space-y-2">
+                                  <div className="text-gray-600 font-medium">Click to upload or drag and drop</div>
+                                  <div className="text-sm text-gray-500">PDF files only • Maximum 5MB</div>
+                                </div>
+                              </ObjectUploader>
+                            )}
+                          </div>
+
+                          {/* Personal Information Section */}
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <User className="w-5 h-5 text-blue-600" />
+                              </div>
+                              <h3 className="text-xl font-semibold text-gray-900">Personal Information</h3>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                              <FormField
+                                control={form.control}
+                                name="fullName"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-sm font-semibold text-gray-700">Full Name *</FormLabel>
+                                    <FormControl>
+                                      <Input
+                                        placeholder="Enter your full name"
+                                        className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                                        {...field}
+                                        data-testid="input-full-name"
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              
+                              <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-sm font-semibold text-gray-700">Email Address *</FormLabel>
+                                    <FormControl>
+                                      <Input
+                                        type="email"
+                                        placeholder="Enter your email"
+                                        className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                                        {...field}
+                                        data-testid="input-email"
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                              <FormField
+                                control={form.control}
+                                name="phone"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-sm font-semibold text-gray-700">Phone Number</FormLabel>
+                                    <FormControl>
+                                      <Input
+                                        placeholder="Enter your phone number"
+                                        className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                                        {...field}
+                                        data-testid="input-phone"
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              
+                              <FormField
+                                control={form.control}
+                                name="currentLocation"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-sm font-semibold text-gray-700">Current Location</FormLabel>
+                                    <FormControl>
+                                      <Input
+                                        placeholder="City, Country"
+                                        className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                                        {...field}
+                                        data-testid="input-location"
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                            </div>
+                          </div>
+
+                          {/* Career Details Section */}
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                <Briefcase className="w-5 h-5 text-purple-600" />
+                              </div>
+                              <h3 className="text-xl font-semibold text-gray-900">Career Details</h3>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                              <FormField
+                                control={form.control}
+                                name="experience"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-sm font-semibold text-gray-700">Years of Experience</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                      <FormControl>
+                                        <SelectTrigger className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20" data-testid="select-experience">
+                                          <SelectValue placeholder="Select experience level" />
+                                        </SelectTrigger>
+                                      </FormControl>
+                                      <SelectContent>
+                                        <SelectItem value="0-1">0-1 years</SelectItem>
+                                        <SelectItem value="2-5">2-5 years</SelectItem>
+                                        <SelectItem value="6-10">6-10 years</SelectItem>
+                                        <SelectItem value="11+">11+ years</SelectItem>
+                                      </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              
+                              <FormField
+                                control={form.control}
+                                name="currentSalary"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-sm font-semibold text-gray-700">Current Salary (USD/year)</FormLabel>
+                                    <FormControl>
+                                      <Input
+                                        placeholder="e.g. 50000"
+                                        className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                                        {...field}
+                                        data-testid="input-salary"
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                            </div>
+                            
+                            <FormField
+                              control={form.control}
+                              name="industry"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-sm font-semibold text-gray-700">Industry</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20" data-testid="select-industry">
+                                        <SelectValue placeholder="Select your industry" />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="healthcare">Healthcare</SelectItem>
+                                      <SelectItem value="construction">Construction</SelectItem>
+                                      <SelectItem value="hospitality">Hospitality</SelectItem>
+                                      <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                                      <SelectItem value="retail">Retail</SelectItem>
+                                      <SelectItem value="finance">Finance</SelectItem>
+                                      <SelectItem value="education">Education</SelectItem>
+                                      <SelectItem value="other">Other</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="jobTitle"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-sm font-semibold text-gray-700">Desired Job Title</FormLabel>
+                                  <FormControl>
+                                    <Input
+                                      placeholder="e.g. Senior Nurse, Construction Supervisor"
+                                      className="h-12 border-gray-200 rounded-xl focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                                      {...field}
+                                      data-testid="input-job-title"
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+
+                          <div className="pt-6 border-t border-gray-100">
+                            <Button
+                              type="submit"
+                              disabled={isSubmitting}
+                              className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-lg"
+                              data-testid="button-submit-resume"
+                            >
+                              {isSubmitting ? 'Submitting...' : 'Submit Resume'}
+                            </Button>
+                          </div>
+                        </form>
+                      </Form>
+                    </div>
+                  </div>
+                </DialogContent>
                 <DialogContent 
                   className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-white border shadow-2xl z-50" 
                   style={{ 
