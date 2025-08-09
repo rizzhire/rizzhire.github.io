@@ -174,8 +174,8 @@ export default function Contact() {
           {/* Single Map Section */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8">Find Us on Map</h3>
-            <Card className="overflow-hidden rounded-2xl shadow-lg max-w-4xl mx-auto">
-              <div className="relative h-96 bg-gradient-to-br from-gray-50 to-white">
+            <Card className="overflow-hidden rounded-3xl shadow-lg max-w-3xl mx-auto">
+              <div className="relative h-80 bg-gradient-to-br from-gray-50 to-white">
                 <iframe
                   src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=6/7A%20AJC%20Bose%20Road%20Kolkata%20700017+(HireNET%20Head%20Office)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   width="100%"
@@ -187,7 +187,7 @@ export default function Contact() {
                   title="HireNET Office Locations"
                 ></iframe>
                 
-                {/* Custom Red Location Markers Overlay */}
+                {/* Red Location Marker Only for Head Office */}
                 <div className="absolute inset-0 pointer-events-none">
                   {/* Head Office Marker */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -200,18 +200,6 @@ export default function Contact() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Branch Office Marker (positioned relative to head office) */}
-                  <div className="absolute top-1/4 right-1/3 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative">
-                      <div className="w-8 h-8 bg-red-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center animate-pulse" style={{animationDelay: '0.5s'}}>
-                        <span className="text-white font-bold text-xs">B</span>
-                      </div>
-                      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
-                        Branch Office - Siliguri
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               
@@ -219,7 +207,7 @@ export default function Contact() {
               <div className="p-6 bg-white border-t">
                 <div className="grid md:grid-cols-2 gap-4">
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                    className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl"
                     onClick={() => window.open('https://maps.google.com/?q=6/7A,+AJC+Bose+Road,+Kolkata+700017', '_blank')}
                   >
                     <MapPin className="w-4 h-4 mr-2" />
@@ -227,7 +215,7 @@ export default function Contact() {
                   </Button>
                   
                   <Button 
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3"
+                    className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl"
                     onClick={() => window.open('https://maps.google.com/?q=Nevidita+Road,+Siliguri+734003', '_blank')}
                   >
                     <MapPin className="w-4 h-4 mr-2" />
