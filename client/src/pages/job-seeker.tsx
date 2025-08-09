@@ -332,10 +332,10 @@ export default function JobSeekerPage() {
                   </DialogHeader>
                   
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                       {/* Premium File Upload Section */}
-                      <div className="space-y-6">
-                        <div className="flex items-center gap-2">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 mb-6">
                           <div className="w-2 h-2 bg-yellow rounded-full"></div>
                           <Label className="text-base font-semibold text-gray-800">Resume Upload</Label>
                         </div>
@@ -365,7 +365,7 @@ export default function JobSeekerPage() {
                               <div className="text-center space-y-2">
                                 <p className="font-semibold text-lg text-gray-800">Upload Your Resume</p>
                                 <p className="text-sm text-gray-500">Drag and drop your PDF file here, or click to browse</p>
-                                <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-3">
+                                <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-4">
                                   <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
                                   <span>PDF files only</span>
                                   <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
@@ -380,7 +380,7 @@ export default function JobSeekerPage() {
 
                       {/* Personal Information Section */}
                       <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-4">
+                        <div className="flex items-center gap-2 mb-6">
                           <div className="w-2 h-2 bg-yellow rounded-full"></div>
                           <Label className="text-base font-semibold text-gray-800">Personal Information</Label>
                         </div>
