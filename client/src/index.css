@@ -73,22 +73,44 @@
   }
 }
 
-/* Frosted Glass Dialog Overlay */
-[data-radix-dialog-overlay] {
-  backdrop-filter: blur(12px) saturate(1.1) brightness(1.05);
-  background: rgba(245, 243, 235, 0.25) !important;
-  animation: overlay-fade-in 0.3s ease-out;
+/* Frosted Glass Dialog Overlay - Multiple Selectors for Compatibility */
+[data-radix-dialog-overlay],
+[data-state="open"][data-radix-popper-content-wrapper],
+.fixed.inset-0.z-50.bg-background\/80.backdrop-blur-sm,
+[role="dialog"] + div[data-radix-dialog-overlay] {
+  background: rgba(245, 243, 235, 0.2) !important;
+  backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
 }
 
-@keyframes overlay-fade-in {
-  from {
-    opacity: 0;
-    backdrop-filter: blur(0px) saturate(1) brightness(1);
-  }
-  to {
-    opacity: 1;
-    backdrop-filter: blur(12px) saturate(1.1) brightness(1.05);
-  }
+/* Override any default dark overlay */
+.fixed.inset-0.z-50,
+.fixed.inset-0.z-50.bg-background\/80,
+.fixed.inset-0.z-50.bg-background\/80.backdrop-blur-sm,
+.fixed.inset-0.z-50.bg-black\/80,
+div[data-state="open"].fixed.inset-0 {
+  background: rgba(245, 243, 235, 0.2) !important;
+  backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
+}
+
+/* Additional override for any dialog backdrop */
+div[data-state="open"] {
+  background: rgba(245, 243, 235, 0.2) !important;
+}
+
+/* Remove the universal fix that might cause issues */
+
+/* Comprehensive dialog overlay override */
+div[data-state="open"][data-radix-collection-item],
+div[role="presentation"],
+div[data-radix-dialog-overlay],
+.DialogOverlay,
+[data-overlay],
+div[style*="position: fixed"][style*="inset: 0"] {
+  background: rgba(245, 243, 235, 0.2) !important;
+  backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
 }
 
 /* Sacramento font specific styling */
