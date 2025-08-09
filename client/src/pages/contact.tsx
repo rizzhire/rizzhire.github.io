@@ -24,8 +24,8 @@ export default function Contact() {
       icon: MapPin,
       title: "Visit Us",
       details: [
-        { text: "• Head Office:<br/>6/7A, AJC Bose Road,<br/>Padatik Theatre<br/>Kolkata-700017, West<br/>Bengal, INDIA" },
-        { text: "• Branch Office:<br/>4th-floor Nevidita Road,<br/>Kidzee School<br/>Siliguri 734003, West<br/>Bengal, INDIA" }
+        { text: "• Head Office:<br/>6/7A, AJC Bose Road, Padatik Theatre<br/>Kolkata-700017, West Bengal, INDIA" },
+        { text: "• Branch Office:<br/>4th-floor Nevidita Road, Kidzee School<br/>Siliguri 734003, West Bengal, INDIA" }
       ],
       color: "text-blue-600"
     },
