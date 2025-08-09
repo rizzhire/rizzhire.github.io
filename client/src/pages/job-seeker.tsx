@@ -319,14 +319,14 @@ export default function JobSeekerPage() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in-up animate-delay-400">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button 
