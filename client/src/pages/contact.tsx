@@ -90,10 +90,15 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+              <Card key={index} className="bg-gradient-to-br from-white via-gray-50/50 to-white p-6 rounded-3xl border border-gray-200/60 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group backdrop-blur-sm">
                 <CardContent className="p-0 text-center">
-                  <div className="w-16 h-16 bg-gray-50 border border-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-yellow/10 group-hover:border-yellow/30 transition-all duration-300">
-                    <info.icon className="w-7 h-7 text-gray-700 group-hover:text-yellow-600 transition-colors duration-300" />
+                  <div className="relative w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 rounded-2xl opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/20 rounded-2xl"></div>
+                    <div className="absolute inset-0.5 bg-gradient-to-br from-white/30 via-transparent to-transparent rounded-2xl"></div>
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <info.icon className="w-7 h-7 text-white drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-gray-900">{info.title}</h3>
                   {info.details.map((detail, idx) => (
