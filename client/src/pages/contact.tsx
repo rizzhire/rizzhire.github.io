@@ -120,85 +120,75 @@ export default function Contact() {
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                <CardContent className="p-0 text-center relative z-10">
-                  <div className="relative mb-4">
-                    {/* Unique geometric icon container based on index */}
-                    {index === 0 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rotate-45 rounded-lg group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-2 bg-gray-50 rotate-45 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                    {index === 1 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-1 border border-gray-100 rounded-full group-hover:border-yellow-200 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                    {index === 2 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300"></div>
-                        <div className="absolute top-1 right-1 w-2 h-2 border-l-2 border-b-2 border-gray-200 group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                    {index === 3 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300" style={{transform: 'skew(-15deg)'}}></div>
-                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300" style={{transform: 'skew(-15deg)'}}></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Location */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <MapPin className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Location</h3>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p className="font-medium">6/7A, AJC Bose Road, Padatik Theatre</p>
+                  <p>Kolkata-700017, West Bengal, INDIA</p>
+                </div>
+              </div>
+            </div>
 
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600 text-xs leading-relaxed mb-1">{detail}</p>
-                  ))}
-                </CardContent>
-              </Card>
-            ))}
+            {/* Phone */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <Phone className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Phone</h3>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p className="font-medium">+91 333 508 5038</p>
+                  <p className="font-medium">+91 9007906531</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <Mail className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Email</h3>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p className="font-medium">contact@hirenet.in</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <Clock className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Hours</h3>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p className="font-medium">Monday - Saturday: 10:30 AM - 6:00 PM</p>
+                  <p>Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Find Us Section - Moved here */}
-          <div className="mt-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Find <span className="text-yellow">Us</span>
-              </h2>
-              <p className="text-xl text-gray-600">Located in the heart of Kolkata's business district</p>
-            </div>
-            
+          {/* Branch Office Section */}
+          <div className="mt-16">
             <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-12 text-center">
               <div className="w-20 h-20 bg-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <MapPin className="w-10 h-10 text-yellow" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Location</h3>
-              <p className="text-gray-600 text-lg mb-6">
-                6/7A, AJC Bose Road, Padatik Theatre<br />
-                Kolkata-700017, West Bengal, INDIA
+              <h3 className="text-2xl font-bold mb-4">Branch Office</h3>
+              <p className="text-gray-600 text-lg">
+                4th-floor Nevidita Road, Kidzee School<br />
+                Near Post Office Pradhan Nagar<br />
+                Siliguri 734003
               </p>
-              <div className="mt-8 pt-6 border-t border-yellow/20">
-                <h4 className="text-xl font-semibold mb-3 text-gray-800">Branch Office</h4>
-                <p className="text-gray-600">
-                  4th-floor Nevidita Road, Kidzee School<br />
-                  Near Post Office Pradhan Nagar<br />
-                  Siliguri 734003
-                </p>
-              </div>
             </div>
           </div>
         </div>
