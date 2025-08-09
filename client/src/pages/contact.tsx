@@ -22,15 +22,12 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Main Office - Kolkata",
-      details: ["6/7A, AJC Bose Road, Padatik Theatre", "(Near Trimurti Petrol Pump, Opp.Kia Motors)", "Kolkata-700017, West Bengal, INDIA"],
+      title: "Visit Us",
+      details: [
+        "Head Office: 6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal, INDIA",
+        "Branch Office: 4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal, INDIA"
+      ],
       color: "text-blue-600"
-    },
-    {
-      icon: MapPin,
-      title: "Branch Office - Siliguri",
-      details: ["4th-floor Nevidita Road", "Kidzee School", "Siliguri 734003, West Bengal, INDIA"],
-      color: "text-indigo-600"
     },
     {
       icon: Phone,
@@ -47,7 +44,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Saturday: 10:30 AM - 6PM", "Sunday: Closed"],
+      details: ["Mon - Saturday: 10:30 AM - 6PM", "Sunday: <span class='text-red-600 font-semibold'>Closed</span>"],
       color: "text-orange-600"
     }
   ];
@@ -153,7 +150,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
                 <CardContent className="p-0">
@@ -163,7 +160,10 @@ export default function Contact() {
                   <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
                   <div className="space-y-1">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm">{detail}</p>
+                      <p key={idx} className="text-gray-600 text-sm" 
+                         dangerouslySetInnerHTML={typeof detail === 'string' ? { __html: detail } : undefined}>
+                        {typeof detail === 'string' ? undefined : detail}
+                      </p>
                     ))}
                   </div>
                 </CardContent>
@@ -171,81 +171,44 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Interactive Map Section */}
+          {/* Single Map Section */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8">Find Us on Map</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Main Office Map */}
-              <Card className="overflow-hidden rounded-2xl shadow-lg">
-                <div className="p-4 bg-gradient-to-r from-blue-50 to-blue-100">
-                  <h4 className="font-semibold text-lg text-blue-800">Main Office - Kolkata</h4>
-                  <p className="text-blue-600 text-sm">6/7A, AJC Bose Road, Kolkata-700017</p>
-                </div>
-                <div className="relative h-64 bg-gradient-to-br from-blue-50 to-white">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.6420837392987!2d88.3502!3d22.5697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a3b69bb6dd%3A0x1234567890123456!2sAJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Main Office Kolkata Location"
-                  ></iframe>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                </div>
-              </Card>
-
-              {/* Branch Office Map */}
-              <Card className="overflow-hidden rounded-2xl shadow-lg">
-                <div className="p-4 bg-gradient-to-r from-indigo-50 to-indigo-100">
-                  <h4 className="font-semibold text-lg text-indigo-800">Branch Office - Siliguri</h4>
-                  <p className="text-indigo-600 text-sm">4th-floor Nevidita Road, Siliguri 734003</p>
-                </div>
-                <div className="relative h-64 bg-gradient-to-br from-indigo-50 to-white">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.123456789!2d88.4294!3d26.7271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441b1b1234567%3A0x1234567890123456!2sNevidita%20Road%2C%20Siliguri%2C%20West%20Bengal%20734003!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Branch Office Siliguri Location"
-                  ></iframe>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Quick Directions */}
-            <div className="mt-8 grid md:grid-cols-2 gap-6">
-              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-200">
-                <h4 className="font-semibold text-blue-800 mb-3">Main Office Directions</h4>
-                <p className="text-blue-600 text-sm mb-3">
-                  Located near Trimurti Petrol Pump, opposite Kia Motors showroom on AJC Bose Road.
-                </p>
-                <Button 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                  onClick={() => window.open('https://maps.google.com/?q=6/7A,+AJC+Bose+Road,+Kolkata+700017', '_blank')}
-                >
-                  Get Directions
-                </Button>
-              </Card>
+            <Card className="overflow-hidden rounded-2xl shadow-lg max-w-4xl mx-auto">
+              <div className="relative h-96 bg-gradient-to-br from-gray-50 to-white">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.6420837392987!2d88.3502!3d22.5697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a3b69bb6dd%3A0x1234567890123456!2sAJC%20Bose%20Road%2C%20Kolkata%2C%20West%20Bengal%20700017!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="HireNET Office Locations"
+                ></iframe>
+              </div>
               
-              <Card className="p-6 bg-gradient-to-br from-indigo-50 to-white border-indigo-200">
-                <h4 className="font-semibold text-indigo-800 mb-3">Branch Office Directions</h4>
-                <p className="text-indigo-600 text-sm mb-3">
-                  4th floor office on Nevidita Road, near Kidzee School in Siliguri.
-                </p>
-                <Button 
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white"
-                  onClick={() => window.open('https://maps.google.com/?q=Nevidita+Road,+Siliguri+734003', '_blank')}
-                >
-                  Get Directions
-                </Button>
-              </Card>
-            </div>
+              {/* Direction Buttons */}
+              <div className="p-6 bg-white border-t">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                    onClick={() => window.open('https://maps.google.com/?q=6/7A,+AJC+Bose+Road,+Kolkata+700017', '_blank')}
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Head Office Directions
+                  </Button>
+                  
+                  <Button 
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3"
+                    onClick={() => window.open('https://maps.google.com/?q=Nevidita+Road,+Siliguri+734003', '_blank')}
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Branch Office Directions
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
