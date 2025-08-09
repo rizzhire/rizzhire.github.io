@@ -227,7 +227,7 @@ export default function Contact() {
                   className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold py-3 px-6 rounded-[1.5rem] transition-all duration-300 hover:scale-105 flex items-center justify-center group"
                 >
                   <MapPin className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  View Main Office on Google Maps
+                  Main Office - Directions
                 </a>
                 
                 <a
@@ -237,7 +237,7 @@ export default function Contact() {
                   className="bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-[1.5rem] transition-all duration-300 hover:scale-105 flex items-center justify-center group border border-gray-300"
                 >
                   <MapPin className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  View Branch Office on Google Maps
+                  Branch Office - Directions
                 </a>
               </div>
               
