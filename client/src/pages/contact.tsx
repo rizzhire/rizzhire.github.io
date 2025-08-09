@@ -128,7 +128,7 @@ export default function Contact() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Location</h3>
                 <div className="space-y-1 text-sm text-gray-700">
-                  <p className="font-semibold">6/7A, AJC Bose Road, Padatik Theatre</p>
+                  <p className="font-normal">6/7A, AJC Bose Road, Padatik Theatre</p>
                   <p>Kolkata-700017, West Bengal, INDIA</p>
                 </div>
               </div>
