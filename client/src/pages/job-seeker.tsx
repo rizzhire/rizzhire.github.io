@@ -135,7 +135,7 @@ export default function JobSeekerPage() {
   });
 
   const uploadMutation = useMutation({
-    mutationFn: () => apiRequest<{ uploadURL: string }>("/api/resumes/upload", "POST"),
+    mutationFn: () => apiRequest("/api/resumes/upload", "POST"),
   });
 
   const resumeMutation = useMutation({
@@ -162,15 +162,15 @@ export default function JobSeekerPage() {
     const result = await uploadMutation.mutateAsync();
     return {
       method: "PUT" as const,
-      url: result.uploadURL,
+      url: (result as any).uploadURL,
     };
   };
 
   const handleUploadComplete = (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
-    if (result.successful.length > 0) {
+    if (result.successful && result.successful.length > 0) {
       const file = result.successful[0];
       const fileName = file.name || "resume.pdf";
-      const filePath = file.uploadURL || "";
+      const filePath = (file as any).uploadURL || "";
       
       setUploadedFile(fileName);
       form.setValue("fileName", fileName);
