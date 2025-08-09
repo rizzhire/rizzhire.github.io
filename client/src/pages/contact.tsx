@@ -107,13 +107,13 @@ export default function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-4 bg-cream">
+      <section className="py-20 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Send Us a <span className="text-yellow">Message</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Whether you're looking for your next opportunity or seeking top talent, we're here to help.
             </p>
           </div>
