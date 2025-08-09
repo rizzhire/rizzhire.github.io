@@ -200,7 +200,7 @@ export default function WhyChooseHireNet() {
             </div>
 
             {/* Bottom Left - Free Resume Review */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
@@ -212,18 +212,18 @@ export default function WhyChooseHireNet() {
               </div>
               
               {/* Content */}
-              <div className="text-center">
+              <div className="text-center flex-1 flex flex-col">
                 <h3 className="text-lg font-bold mb-3 text-gray-800">
                   Free Resume Review
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Professional resume optimization to increase your chances of landing interviews.
+                <p className="text-gray-600 leading-relaxed text-sm flex-1">
+                  Professional resume optimization to increase your chances of landing interviews with expert formatting and content enhancement.
                 </p>
               </div>
             </div>
 
             {/* Bottom Right - Priority Support */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2">
+            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
@@ -235,12 +235,12 @@ export default function WhyChooseHireNet() {
               </div>
               
               {/* Content */}
-              <div className="text-center">
+              <div className="text-center flex-1 flex flex-col">
                 <h3 className="text-lg font-bold mb-3 text-gray-800">
                   Priority Support
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Dedicated support throughout your job search journey with 24/7 assistance.
+                <p className="text-gray-600 leading-relaxed text-sm flex-1">
+                  Dedicated support throughout your job search journey with 24/7 assistance and personalized career consultation.
                 </p>
               </div>
             </div>
