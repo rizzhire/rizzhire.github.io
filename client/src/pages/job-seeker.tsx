@@ -36,83 +36,83 @@ type ResumeFormData = z.infer<typeof resumeFormSchema>;
 const jobSeekerTestimonials = [
   {
     id: 1,
-    name: "Priya Sharma",
-    position: "Senior Software Engineer",
-    company: "Emirates Digital Solutions",
-    location: "Dubai, UAE (Originally from Mumbai, India)",
-    quote: "HireNET team helped me so much! I was working in Bangalore for 4 years but wanted to move abroad. They guided me properly for Dubai market and now I got very good package in Emirates. The whole process was smooth only. Very happy with their support.",
-    rating: 5,
-    initials: "PS"
-  },
-  {
-    id: 2,
-    name: "Rajesh Kumar",
-    position: "Project Manager",
-    company: "Gulf Construction Group",
-    location: "Doha, Qatar (Originally from Delhi, India)",
-    quote: "Before HireNET I was trying for gulf jobs for 2 years but no success. They understood my profile very well and matched me with right company. Now I am in Qatar with my family and earning much better than India. Really grateful to the team.",
+    name: "Ravi Kumar",
+    position: "Chef",
+    company: "Al Manara Restaurant",
+    location: "Dubai, UAE (Originally from Punjab, India)",
+    quote: "I was cooking in small hotel in Amritsar. HireNET uncle helped me get chef job in Dubai. Now I make good money and send to family. Food work is same but salary is much better here. Very happy with HireNET support.",
     rating: 5,
     initials: "RK"
   },
   {
-    id: 3,
-    name: "Anita Patel",
-    position: "HR Manager",
-    company: "Al Raya Healthcare",
-    location: "Riyadh, Saudi Arabia (Originally from Ahmedabad, India)",
-    quote: "I was hesitant about moving to Saudi but HireNET team explained everything clearly. They helped with visa process also. Now working here for 1 year and very satisfied with work environment. My colleagues are also very cooperative. Thank you HireNET!",
+    id: 2,
+    name: "Suresh Yadav",
+    position: "Safety Officer",
+    company: "Gulf Construction Co.",
+    location: "Doha, Qatar (Originally from Bihar, India)",
+    quote: "After 12th pass I did safety course in Delhi. HireNET found me job in Qatar construction company. Good salary and accommodation free. My family is very proud. Thank you HireNET for changing my life.",
     rating: 5,
-    initials: "AP"
+    initials: "SY"
+  },
+  {
+    id: 3,
+    name: "Priya Singh",
+    position: "Receptionist",
+    company: "Dubai Medical Center",
+    location: "Dubai, UAE (Originally from Uttar Pradesh, India)",
+    quote: "I finished graduation and was working as receptionist in Lucknow clinic. HireNET helped me get job in Dubai hospital. English speaking practice and computer skills they taught me. Now earning 3 times more than India.",
+    rating: 5,
+    initials: "PS"
   },
   {
     id: 4,
-    name: "Vikram Singh",
-    position: "Mechanical Engineer",
-    company: "Bahrain Petrochemicals",
-    location: "Manama, Bahrain (Originally from Jaipur, India)",
-    quote: "HireNET is best recruitment agency I have worked with. They prepared me well for interviews and salary negotiation also they helped. Got 40% salary increase from my previous job in Pune. Living in Bahrain is also very comfortable for Indians.",
+    name: "Mohan Patel",
+    position: "Electrical Engineer",
+    company: "Bahrain Power Systems",
+    location: "Manama, Bahrain (Originally from Gujarat, India)",
+    quote: "I completed diploma in electrical from Ahmedabad. Working in small factory with less salary. HireNET showed me opportunities in Bahrain. Now working as technician in big company. Very good experience for my career.",
     rating: 5,
-    initials: "VS"
+    initials: "MP"
   },
   {
     id: 5,
-    name: "Meera Krishnan",
-    position: "Finance Analyst",
-    company: "Kuwait Investment Bank",
-    location: "Kuwait City, Kuwait (Originally from Chennai, India)",
-    quote: "When I contacted HireNET I was fresher with just 1 year experience. They believed in my potential and found me entry level position in Kuwait bank. Now after 2 years I got promotion also. Very thankful to their team for trusting me.",
+    name: "Kavita Sharma",
+    position: "HR Executive",
+    company: "Al Noor Trading",
+    location: "Kuwait City, Kuwait (Originally from Rajasthan, India)",
+    quote: "I did MBA from Jaipur but no good job in India. HireNET helped me get HR position in Kuwait trading company. They prepared me for interview and visa process. Very satisfied with new job and learning lot of things.",
     rating: 5,
-    initials: "MK"
+    initials: "KS"
   },
   {
     id: 6,
-    name: "Amit Gupta",
-    position: "Operations Manager",
-    company: "Oman Logistics Solutions",
-    location: "Muscat, Oman (Originally from Kolkata, India)",
-    quote: "I was working in small company in Kolkata with less salary. HireNET showed me opportunities in Oman which I never thought possible. They handled all documentation and even helped my wife get job here. Now we both are settled happily in Muscat.",
+    name: "Deepak Gupta",
+    position: "Digital Marketing Executive",
+    company: "Riyadh Media House",
+    location: "Riyadh, Saudi Arabia (Originally from Delhi, India)",
+    quote: "I learned digital marketing course after graduation. HireNET found me job in Saudi company. They helped with portfolio and interview preparation. Now handling social media for big clients. Very happy with career growth.",
     rating: 5,
-    initials: "AG"
+    initials: "DG"
   },
   {
     id: 7,
-    name: "Sunita Reddy",
-    position: "Marketing Executive",
-    company: "Dubai Trade Centre",
-    location: "Dubai, UAE (Originally from Hyderabad, India)",
-    quote: "HireNET team is very professional and understanding. They listened to my requirements carefully - I wanted marketing role in Dubai specifically. They found perfect match for me and even negotiated better benefits. Process was completed in just 3 months. Highly recommended!",
+    name: "Sunita Devi",
+    position: "Housekeeping Supervisor",
+    company: "Oman Grand Hotel",
+    location: "Muscat, Oman (Originally from West Bengal, India)",
+    quote: "I was working in hotel in Kolkata. HireNET helped me get supervisor job in Oman hotel. Good salary and staff accommodation provided. My children can now study in good school. Very thankful to HireNET team.",
     rating: 5,
-    initials: "SR"
+    initials: "SD"
   },
   {
     id: 8,
-    name: "Rohit Joshi",
-    position: "IT Consultant",
-    company: "Qatar Tech Solutions",
-    location: "Doha, Qatar (Originally from Pune, India)",
-    quote: "After completing my MBA I wanted to work in gulf countries. HireNET understood my goal and guided me step by step. They even provided tips for cultural adaptation in Qatar. Now working here for 18 months and very satisfied with career growth. Thank you HireNET family!",
+    name: "Ramesh Nair",
+    position: "Store Keeper",
+    company: "Emirates Logistics",
+    location: "Dubai, UAE (Originally from Kerala, India)",
+    quote: "I finished commerce degree and was working in small shop in Kochi. HireNET found me store keeper position in Dubai warehouse. Good company with overtime benefits. Planning to bring family next year. Very good opportunity for me.",
     rating: 5,
-    initials: "RJ"
+    initials: "RN"
   }
 ];
 
