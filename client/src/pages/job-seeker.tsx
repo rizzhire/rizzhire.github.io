@@ -533,7 +533,7 @@ export default function JobSeekerPage() {
                         <Button
                           type="submit"
                           disabled={resumeMutation.isPending}
-                          className="flex-1 h-12 bg-gradient-to-r from-yellow to-yellow/90 text-black hover:from-yellow/90 hover:to-yellow/80 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                          className="flex-1 h-12 bg-yellow hover:bg-yellow/90 text-black rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                           data-testid="button-submit-resume"
                         >
                           {resumeMutation.isPending ? (
