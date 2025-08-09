@@ -123,7 +123,7 @@ export default function Contact() {
             {/* Locations */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-yellow-500/25 group-hover:scale-105 transition-transform duration-300">
                   <MapPin className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Locations</h3>
@@ -157,7 +157,7 @@ export default function Contact() {
             {/* Phone */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-yellow-500/25 group-hover:scale-105 transition-transform duration-300">
                   <Phone className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Phone</h3>
@@ -175,7 +175,7 @@ export default function Contact() {
             {/* Email */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-yellow-500/25 group-hover:scale-105 transition-transform duration-300">
                   <Mail className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Email</h3>
@@ -190,16 +190,16 @@ export default function Contact() {
             {/* Hours */}
             <div className="group bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-yellow-500/25 group-hover:scale-105 transition-transform duration-300">
                   <Clock className="w-7 h-7 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-4">Hours</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="p-3 rounded-lg bg-green-50 border border-green-200">
-                    <p className="font-bold text-green-700">Monday - Saturday</p>
-                    <p className="text-green-600">10:30 AM - 6:00 PM</p>
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <p className="font-bold text-black">Monday - Saturday</p>
+                    <p className="text-black">10:30 AM - 6:00 PM</p>
                   </div>
-                  <div className="p-3 rounded-lg bg-red-50 border border-red-200">
+                  <div>
                     <p className="font-bold text-red-600">Sunday: Closed</p>
                   </div>
                 </div>
