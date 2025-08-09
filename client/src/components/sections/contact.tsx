@@ -254,7 +254,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="border-2 border-gray-200 focus:border-yellow rounded-3xl px-6 py-4"
+                    className="border-2 border-gray-200 focus:border-yellow rounded-xl px-6 py-4"
                   />
                   <Input
                     name="email"
@@ -263,7 +263,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="border-2 border-gray-200 focus:border-yellow rounded-3xl px-6 py-4"
+                    className="border-2 border-gray-200 focus:border-yellow rounded-xl px-6 py-4"
                   />
                 </div>
                 
@@ -272,7 +272,7 @@ export default function Contact() {
                   placeholder="Your Phone Number"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="border-2 border-gray-200 focus:border-yellow rounded-3xl px-6 py-4"
+                  className="border-2 border-gray-200 focus:border-yellow rounded-xl px-6 py-4"
                 />
                 
                 <Textarea
@@ -282,13 +282,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="border-2 border-gray-200 focus:border-yellow resize-none rounded-3xl px-6 py-4"
+                  className="border-2 border-gray-200 focus:border-yellow resize-none rounded-xl px-6 py-4"
                 />
                 
                 <Button 
                   type="submit"
                   size="lg" 
-                  className="w-full bg-yellow text-black hover:bg-yellow/90 font-semibold rounded-3xl py-4"
+                  className="w-full bg-yellow text-black hover:bg-yellow/90 font-semibold rounded-xl py-4"
                 >
                   Send Message
                 </Button>
