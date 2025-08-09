@@ -101,19 +101,7 @@ div[data-state="open"] {
 
 /* Remove the universal fix that might cause issues */
 
-/* Force backdrop blur to work */
-[data-radix-dialog-overlay] {
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  background: transparent !important;
-}
-
-/* Additional browser support */
-[data-state="open"][data-radix-dialog-overlay] {
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  background: none !important;
-}
+/* No backdrop effects */
 
 /* Sacramento font specific styling */
 .sacramento-quote {
