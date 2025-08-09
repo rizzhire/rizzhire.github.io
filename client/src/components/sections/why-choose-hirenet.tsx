@@ -158,7 +158,7 @@ export default function WhyChooseHireNet() {
             
             {/* Background Icon - Corner to Corner */}
             <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
-              <Globe className="w-48 h-48 text-yellow stroke-[1]" />
+              <Globe className="w-64 h-64 text-yellow stroke-[1]" />
             </div>
             
             {/* Content - Overlaid on background icon */}
