@@ -25,7 +25,7 @@ export default function WhyChooseHireNet() {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#F2F0E8' }}>
+    <section className="relative pt-8 pb-20 overflow-hidden" style={{ backgroundColor: '#F2F0E8' }}>
       {/* Enhanced Background Graphics (Same as Launch Your Global Career) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Enhanced Live Moving Floating Circles - More Visible */}

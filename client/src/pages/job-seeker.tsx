@@ -473,7 +473,7 @@ export default function JobSeekerPage() {
       <JobListings />
 
       {/* Job Seeker Success Stories */}
-      <section className="relative py-20 overflow-hidden" style={{ backgroundColor: '#F2F0E8' }}>
+      <section className="relative py-16 pb-8 overflow-hidden" style={{ backgroundColor: '#F2F0E8' }}>
         {/* Enhanced Background Graphics (Same as Launch Your Global Career) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
