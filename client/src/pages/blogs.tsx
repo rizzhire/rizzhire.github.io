@@ -247,10 +247,10 @@ export default function Blogs() {
                       <rect width="100%" height="100%" fill="#E8E6DC"/>
                       
                       {/* Floating Geometric Elements */}
-                      <circle cx="50" cy="60" r="8" fill="#FCD34D" opacity="0.7"/>
-                      <circle cx="250" cy="120" r="12" fill="#000000" opacity="0.8"/>
-                      <circle cx="280" cy="300" r="6" fill="#FCD34D" opacity="0.6"/>
-                      <circle cx="30" cy="350" r="10" fill="#FFFFFF" opacity="0.9"/>
+                      <circle cx="50" cy="60" r="8" fill="#FCD34D"/>
+                      <circle cx="250" cy="120" r="12" fill="#FFFFFF"/>
+                      <circle cx="280" cy="300" r="6" fill="#FCD34D"/>
+                      <circle cx="30" cy="350" r="10" fill="#FFFFFF"/>
                       
                       {/* Main Building Complex */}
                       <g transform="translate(80, 120)">
@@ -304,9 +304,9 @@ export default function Blogs() {
                       </g>
                       
                       {/* Connection Lines */}
-                      <path d="M45 195 Q100 160 150 180" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
-                      <path d="M225 215 Q180 180 150 200" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
-                      <path d="M55 315 Q100 280 150 280" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      <path d="M45 195 Q100 160 150 180" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
+                      <path d="M225 215 Q180 180 150 200" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
+                      <path d="M55 315 Q100 280 150 280" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
                       
                       {/* Success Indicators */}
                       <circle cx="150" cy="100" r="20" fill="#FCD34D"/>
