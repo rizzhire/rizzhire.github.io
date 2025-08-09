@@ -170,7 +170,7 @@ export default function Contact() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Hours</h3>
                 <div className="space-y-1 text-sm text-gray-700">
                   <p className="font-medium">Monday - Saturday: 10:30 AM - 6:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p className="font-bold">Sunday: Closed</p>
                 </div>
               </div>
             </div>
