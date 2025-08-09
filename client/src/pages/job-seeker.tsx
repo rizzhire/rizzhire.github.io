@@ -337,16 +337,19 @@ export default function JobSeekerPage() {
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden glass-dialog" style={{ 
+                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl glass-dialog" style={{ 
                   borderRadius: '40px',
                   background: 'rgba(255, 255, 255, 0.25) !important',
                   backdropFilter: 'blur(20px) saturate(180%) brightness(110%) !important',
                   WebkitBackdropFilter: 'blur(20px) saturate(180%) brightness(110%) !important',
                   border: '1px solid rgba(255, 255, 255, 0.3) !important',
                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
-                  zIndex: 9999
+                  zIndex: 9999,
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}>
-                  <div className="h-full overflow-y-auto" style={{ 
+                  <div className="flex-1 overflow-y-auto overflow-x-hidden dialog-scroll-container" style={{ 
                     borderRadius: '40px',
                     background: 'transparent'
                   }}>
