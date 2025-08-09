@@ -239,14 +239,66 @@ export default function Blogs() {
                     </Button>
                   </div>
                   
-                  {/* Right Feature Badge - Compact */}
-                  <div className="lg:col-span-3 bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-8">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-yellow/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <User className="w-8 h-8 text-yellow-700" />
+                  {/* Right Feature Badge - Enhanced Illustration */}
+                  <div className="lg:col-span-3 bg-gradient-to-br from-yellow/20 to-yellow/5 flex items-center justify-center p-8 relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <svg className="w-full h-full" viewBox="0 0 200 200">
+                        <defs>
+                          <pattern id="featuredPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <circle cx="20" cy="20" r="2" fill="#f59e0b" opacity="0.3"/>
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#featuredPattern)" />
+                      </svg>
+                    </div>
+                    
+                    <div className="text-center relative z-10">
+                      {/* Custom Recruitment Illustration */}
+                      <div className="w-24 h-24 mx-auto mb-4 relative">
+                        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                          {/* Background Circle */}
+                          <circle cx="50" cy="50" r="48" fill="#fef3c7" stroke="#f59e0b" strokeWidth="2"/>
+                          
+                          {/* Building/Company Icon */}
+                          <rect x="30" y="35" width="40" height="35" fill="#f59e0b" rx="2"/>
+                          <rect x="32" y="37" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="40" y="37" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="54" y="37" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="62" y="37" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="32" y="45" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="40" y="45" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="54" y="45" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="62" y="45" width="6" height="6" fill="#fef3c7"/>
+                          <rect x="40" y="53" width="20" height="17" fill="#d97706" rx="1"/>
+                          <rect x="45" y="58" width="10" height="12" fill="#fef3c7"/>
+                          
+                          {/* People Icons */}
+                          <circle cx="20" cy="25" r="4" fill="#d97706"/>
+                          <rect x="16" y="29" width="8" height="8" fill="#d97706" rx="2"/>
+                          
+                          <circle cx="80" cy="25" r="4" fill="#d97706"/>
+                          <rect x="76" y="29" width="8" height="8" fill="#d97706" rx="2"/>
+                          
+                          {/* Connection Lines */}
+                          <path d="M24 29 L46 40" stroke="#f59e0b" strokeWidth="2" strokeDasharray="2,2"/>
+                          <path d="M76 29 L54 40" stroke="#f59e0b" strokeWidth="2" strokeDasharray="2,2"/>
+                          
+                          {/* Success Indicator */}
+                          <circle cx="50" cy="20" r="6" fill="#22c55e"/>
+                          <path d="M47 20 L49 22 L53 18" stroke="white" strokeWidth="2" fill="none"/>
+                        </svg>
                       </div>
-                      <p className="text-lg font-semibold text-gray-900">Featured Insight</p>
-                      <p className="text-gray-600 text-sm">Industry Expert Analysis</p>
+                      
+                      <p className="text-lg font-semibold text-gray-900 mb-2">Featured Insight</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">Industry Expert Analysis</p>
+                      
+                      {/* Decorative Elements */}
+                      <div className="mt-4 flex justify-center space-x-2">
+                        <div className="w-2 h-2 bg-yellow/60 rounded-full"></div>
+                        <div className="w-2 h-2 bg-yellow/40 rounded-full"></div>
+                        <div className="w-2 h-2 bg-yellow/60 rounded-full"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
