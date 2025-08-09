@@ -259,15 +259,6 @@ export default function JobListings() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="text-center mt-12">
-          <Button 
-            size="lg" 
-            className="bg-yellow text-black hover:bg-yellow/90 font-semibold px-8"
-          >
-            View All Positions
-          </Button>
-        </div>
       </div>
     </section>
   );
