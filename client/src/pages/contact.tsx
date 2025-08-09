@@ -158,24 +158,97 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
-                <CardContent className="p-0">
-                  <div className={`inline-flex p-4 rounded-full bg-gray-50 ${info.color} mb-4`}>
-                    <info.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
-                  <div className="space-y-2">
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                         dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                      </p>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+            {/* Visit Us - Large Left Card */}
+            {(() => {
+              const VisitIcon = contactInfo[0].icon;
+              return (
+                <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
+                  <CardContent className="p-0">
+                    <div className={`inline-flex p-4 rounded-full bg-gray-50 ${contactInfo[0].color} mb-4`}>
+                      <VisitIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-gray-900">{contactInfo[0].title}</h3>
+                    <div className="space-y-2">
+                      {contactInfo[0].details.map((detail, idx) => (
+                        <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                           dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                        </p>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })()}
+
+            {/* Right Side - 3 Smaller Cards in Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {/* Call Us - Top Right (Full Width) */}
+              {(() => {
+                const CallIcon = contactInfo[1].icon;
+                return (
+                  <Card className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50 col-span-2">
+                    <CardContent className="p-0">
+                      <div className={`inline-flex p-3 rounded-full bg-gray-50 ${contactInfo[1].color} mb-3`}>
+                        <CallIcon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-semibold text-lg mb-2 text-gray-900">{contactInfo[1].title}</h3>
+                      <div className="space-y-1">
+                        {contactInfo[1].details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                          </p>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+
+              {/* Email Us - Bottom Left */}
+              {(() => {
+                const EmailIcon = contactInfo[2].icon;
+                return (
+                  <Card className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
+                    <CardContent className="p-0">
+                      <div className={`inline-flex p-3 rounded-full bg-gray-50 ${contactInfo[2].color} mb-3`}>
+                        <EmailIcon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-semibold text-lg mb-2 text-gray-900">{contactInfo[2].title}</h3>
+                      <div className="space-y-1">
+                        {contactInfo[2].details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                          </p>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+
+              {/* Business Hours - Bottom Right */}
+              {(() => {
+                const ClockIcon = contactInfo[3].icon;
+                return (
+                  <Card className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50/50">
+                    <CardContent className="p-0">
+                      <div className={`inline-flex p-3 rounded-full bg-gray-50 ${contactInfo[3].color} mb-3`}>
+                        <ClockIcon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-semibold text-lg mb-2 text-gray-900">{contactInfo[3].title}</h3>
+                      <div className="space-y-1">
+                        {contactInfo[3].details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                          </p>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+            </div>
           </div>
 
           {/* Single Map Section */}
