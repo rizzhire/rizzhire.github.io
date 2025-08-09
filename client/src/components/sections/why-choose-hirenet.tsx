@@ -133,7 +133,7 @@ export default function WhyChooseHireNet() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium Header Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 pt-8">
           <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full border border-yellow/20 mb-6">
             <Star className="w-4 h-4 text-yellow fill-yellow" />
             <span className="text-sm font-medium text-gray-700">Premium Career Services</span>
