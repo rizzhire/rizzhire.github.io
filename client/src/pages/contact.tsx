@@ -114,8 +114,9 @@ export default function Contact() {
                     )}
                     {index === 2 && (
                       <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300" style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}></div>
-                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300" style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}></div>
+                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300"></div>
+                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300"></div>
+                        <div className="absolute top-1 right-1 w-2 h-2 border-l-2 border-b-2 border-gray-200 group-hover:border-yellow-400 transition-colors duration-300"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                           <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
                         </div>
@@ -131,7 +132,7 @@ export default function Contact() {
                       </div>
                     )}
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900">{info.title}</h3>
+
                   {info.details.map((detail, idx) => (
                     <p key={idx} className="text-gray-600 text-sm mb-1">{detail}</p>
                   ))}
