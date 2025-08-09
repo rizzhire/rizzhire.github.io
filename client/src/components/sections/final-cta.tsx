@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Upload } from "lucide-react";
+import { Link } from "wouter";
 
 export default function FinalCTA() {
   return (
@@ -10,9 +11,11 @@ export default function FinalCTA() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Join thousands of professionals who have successfully launched their international careers with HireNET.
           </p>
-          <Button className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg mb-4">
-            <Upload className="mr-2 h-5 w-5" />
-            Upload Resume & Get Started
+          <Button asChild className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg mb-4">
+            <Link href="/contact">
+              <Upload className="mr-2 h-5 w-5" />
+              Upload Resume & Get Started
+            </Link>
           </Button>
           <p className="text-gray-500">Free consultation included. No hidden fees.</p>
         </div>
