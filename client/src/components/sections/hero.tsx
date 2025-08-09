@@ -128,7 +128,7 @@ export default function Hero() {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 mb-0 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+        <div className="mt-20 mb-0 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
           <div className="grid grid-cols-5 gap-8 max-w-6xl mx-auto px-4">
             <div className="text-center">
               <div 
