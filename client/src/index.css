@@ -185,14 +185,21 @@
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-.frosted-dialog-content * {
+/* Apply transparent backgrounds to all child elements */
+.frosted-dialog-content *,
+.frosted-dialog-content > div,
+.frosted-dialog-content .bg-white,
+.frosted-dialog-content .bg-background,
+.frosted-dialog-content .bg-card {
   background: transparent !important;
   background-color: transparent !important;
 }
 
-.frosted-dialog-content .bg-white,
-.frosted-dialog-content .bg-background {
-  background: transparent !important;
+/* Force Radix UI dialog content to be transparent */
+[data-radix-dialog-content].frosted-dialog-content {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
 }
 
 /* Re-apply necessary backgrounds with transparency */
