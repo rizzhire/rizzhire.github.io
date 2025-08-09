@@ -118,7 +118,7 @@ export default function Services() {
         </div>
 
         {/* Service Cards - 3 Column Grid Layout */}
-        <div className="grid md:grid-cols-3 gap-8 mt-8">
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
           {services.map((service, index) => (
             <Card 
               key={index}
