@@ -90,10 +90,10 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white p-6 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                 <CardContent className="p-0 text-center">
-                  <div className={`w-16 h-16 ${info.color.replace('text-', 'bg-').replace('-600', '-100')} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <info.icon className={`w-8 h-8 ${info.color}`} />
+                  <div className="w-16 h-16 bg-gray-50 border border-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-yellow/10 group-hover:border-yellow/30 transition-all duration-300">
+                    <info.icon className="w-7 h-7 text-gray-700 group-hover:text-yellow-600 transition-colors duration-300" />
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-gray-900">{info.title}</h3>
                   {info.details.map((detail, idx) => (
