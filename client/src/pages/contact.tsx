@@ -86,8 +86,65 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 bg-white relative overflow-hidden">
+        {/* Light Background Graphics */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Animated Wave Patterns */}
+          <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlow" viewBox="0 0 1000 600" style={{animationDuration: '25s'}}>
+            <defs>
+              <linearGradient id="contactWaveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.08"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="contactWaveGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#6b7280" stopOpacity="0.06"/>
+                <stop offset="100%" stopColor="#6b7280" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,300 Q250,150 500,300 T1000,300" stroke="url(#contactWaveGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,200 Q300,350 600,200 T1000,200" stroke="url(#contactWaveGradient2)" strokeWidth="1.5" fill="none"/>
+          </svg>
+          
+          {/* Floating Geometric Elements */}
+          <svg className="absolute inset-0 w-full h-full opacity-4" viewBox="0 0 1000 600">
+            <defs>
+              <linearGradient id="contactFloatingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            {/* Animated Traveling Elements */}
+            <g className="animate-floatMoveEnhanced">
+              <circle cx="100" cy="150" r="3" fill="url(#contactFloatingGradient)"/>
+              <rect x="850" y="250" width="4" height="4" fill="url(#contactFloatingGradient)" rx="1"/>
+            </g>
+            
+            <g className="animate-pulseEnhanced" style={{animationDelay: '2s'}}>
+              <circle cx="200" cy="400" r="2" fill="url(#contactFloatingGradient)"/>
+              <rect x="750" y="100" width="3" height="3" fill="url(#contactFloatingGradient)" rx="1"/>
+            </g>
+            
+            <g className="animate-rotateEnhanced" style={{animationDelay: '4s'}}>
+              <circle cx="900" cy="350" r="2.5" fill="url(#contactFloatingGradient)"/>
+              <rect x="50" y="450" width="3" height="3" fill="url(#contactFloatingGradient)" rx="1"/>
+            </g>
+          </svg>
+          
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-2">
+            <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
+              <pattern id="contactGridPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="0.5" fill="#f59e0b" opacity="0.06"/>
+                <rect x="29" y="0" width="0.5" height="60" fill="#6b7280" opacity="0.03"/>
+                <rect x="0" y="29" width="60" height="0.5" fill="#6b7280" opacity="0.03"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#contactGridPattern)" />
+            </svg>
+          </div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactInfo.map((info, index) => (
               <Card key={index} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
