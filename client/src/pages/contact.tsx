@@ -85,92 +85,79 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section className="py-20 px-4 bg-white relative overflow-hidden">
-        {/* Subtle Animated Background */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Floating Geometric Elements */}
-          <div className="absolute top-20 left-10 w-16 h-16 bg-yellow-100/30 rounded-full animate-float" style={{animationDuration: '8s'}}></div>
-          <div className="absolute top-40 right-20 w-12 h-12 bg-gray-100/40 rotate-45 animate-float" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
-          <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-yellow-50/50 rounded-full animate-float" style={{animationDuration: '12s', animationDelay: '4s'}}></div>
-          <div className="absolute bottom-20 right-1/3 w-8 h-8 bg-gray-50/60 rotate-45 animate-float" style={{animationDuration: '9s', animationDelay: '1s'}}></div>
-          
-          {/* Subtle Wave Pattern */}
-          <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1000 600">
-            <defs>
-              <linearGradient id="subtleWave" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.06"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="M0,300 Q250,250 500,300 T1000,300" stroke="url(#subtleWave)" strokeWidth="1" fill="none" className="animate-pulse" style={{animationDuration: '8s'}}/>
-          </svg>
-          
-          {/* Light Grid Pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <svg width="100" height="100" viewBox="0 0 100 100" className="w-full h-full">
-              <pattern id="lightGrid" width="100" height="100" patternUnits="userSpaceOnUse">
-                <circle cx="50" cy="50" r="0.8" fill="#f59e0b" opacity="0.08"/>
-                <line x1="0" y1="50" x2="100" y2="50" stroke="#6b7280" strokeWidth="0.2" opacity="0.04"/>
-                <line x1="50" y1="0" x2="50" y2="100" stroke="#6b7280" strokeWidth="0.2" opacity="0.04"/>
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#lightGrid)" />
-            </svg>
+      {/* Contact Section - Redesigned */}
+      <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <div className="w-8 h-1 bg-gray-800 rounded-full"></div>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact our friendly team</h2>
+            <p className="text-gray-600 text-lg">Let us know how we can help.</p>
           </div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                <CardContent className="p-0 text-center relative z-10">
-                  <div className="relative mb-4">
-                    {/* Unique geometric icon container based on index */}
-                    {index === 0 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rotate-45 rounded-lg group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-2 bg-gray-50 rotate-45 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                    {index === 1 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-1 border border-gray-100 rounded-full group-hover:border-yellow-200 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                    {index === 2 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300"></div>
-                        <div className="absolute top-1 right-1 w-2 h-2 border-l-2 border-b-2 border-gray-200 group-hover:border-yellow-400 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                    {index === 3 && (
-                      <div className="relative w-12 h-12 mx-auto">
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-lg group-hover:border-yellow-400 transition-colors duration-300" style={{transform: 'skew(-15deg)'}}></div>
-                        <div className="absolute inset-2 bg-gray-50 rounded-sm group-hover:bg-yellow-50 transition-colors duration-300" style={{transform: 'skew(-15deg)'}}></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <info.icon className="w-5 h-5 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    )}
-                  </div>
+          
+          {/* Contact Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Visit Us */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <MapPin className="w-6 h-6 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Visit us</h3>
+                <p className="text-gray-600 mb-4">Visit our office HQ.</p>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p className="font-medium">6/7A, AJC Bose Road, Padatik Theatre</p>
+                  <p>(Near Trimurti Petrol Pump, Opp Kia Motors)</p>
+                  <p>Kolkata-700017, West Bengal, INDIA</p>
+                </div>
+              </div>
+            </div>
 
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600 text-xs leading-relaxed mb-1">{detail}</p>
-                  ))}
-                </CardContent>
-              </Card>
-            ))}
+            {/* Call Us */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <Phone className="w-6 h-6 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Call us</h3>
+                <p className="text-gray-600 mb-4">Mon-Sat from 10:30 AM to 6 PM.</p>
+                <div className="space-y-2">
+                  <p className="text-gray-900 font-medium">+91 333 508 5038</p>
+                  <p className="text-gray-900 font-medium">+91 9007906531</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Us */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <Mail className="w-6 h-6 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Email us</h3>
+                <p className="text-gray-600 mb-4">We're here to help.</p>
+                <p className="text-gray-900 font-medium underline cursor-pointer hover:text-yellow-600 transition-colors">
+                  contact@hirenet.in
+                </p>
+              </div>
+            </div>
+
+            {/* Business Hours */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <Clock className="w-6 h-6 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Office Hours</h3>
+                <p className="text-gray-600 mb-4">Our office working hours.</p>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p className="font-medium">Monday - Saturday: 10:30 AM - 6:00 PM</p>
+                  <p>Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
