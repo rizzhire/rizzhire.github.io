@@ -93,12 +93,6 @@ export default function Navbar() {
                 About
               </button>
               <button 
-                onClick={navigateToBlogs}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-              >
-                Blogs
-              </button>
-              <button 
                 onClick={navigateToContact}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
               >
