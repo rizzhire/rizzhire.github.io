@@ -243,31 +243,19 @@ export default function Blogs() {
                   <div className="lg:col-span-3 bg-gradient-to-br from-yellow/20 to-yellow/5 relative overflow-hidden">
                     {/* Full Container SVG Illustration */}
                     <svg className="w-full h-full absolute inset-0" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
-                      {/* Background Gradient */}
-                      <defs>
-                        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#F5F3EB" stopOpacity="0.8"/>
-                          <stop offset="100%" stopColor="#E8E5DB" stopOpacity="0.5"/>
-                        </linearGradient>
-                        <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#000000"/>
-                          <stop offset="100%" stopColor="#333333"/>
-                        </linearGradient>
-                      </defs>
-                      
                       {/* Background */}
-                      <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+                      <rect width="100%" height="100%" fill="#FFFFFF"/>
                       
                       {/* Floating Geometric Elements */}
                       <circle cx="50" cy="60" r="8" fill="#000000" opacity="0.1"/>
-                      <circle cx="250" cy="120" r="12" fill="#333333" opacity="0.08"/>
+                      <circle cx="250" cy="120" r="12" fill="#000000" opacity="0.08"/>
                       <circle cx="280" cy="300" r="6" fill="#000000" opacity="0.15"/>
-                      <circle cx="30" cy="350" r="10" fill="#333333" opacity="0.1"/>
+                      <circle cx="30" cy="350" r="10" fill="#000000" opacity="0.1"/>
                       
                       {/* Main Building Complex */}
                       <g transform="translate(80, 120)">
                         {/* Main Building */}
-                        <rect x="0" y="60" width="140" height="180" fill="url(#buildingGradient)" rx="8"/>
+                        <rect x="0" y="60" width="140" height="180" fill="#000000" rx="8"/>
                         
                         {/* Building Windows Pattern */}
                         <g fill="#FFFFFF">
@@ -288,30 +276,30 @@ export default function Blogs() {
                         </g>
                         
                         {/* Building Entrance */}
-                        <rect x="55" y="200" width="30" height="40" fill="#333333" rx="4"/>
-                        <rect x="60" y="210" width="20" height="30" fill="#F5F3EB" rx="2"/>
+                        <rect x="55" y="200" width="30" height="40" fill="#000000" rx="4"/>
+                        <rect x="60" y="210" width="20" height="30" fill="#FFFFFF" rx="2"/>
                         
                         {/* Rooftop Elements */}
                         <rect x="20" y="50" width="100" height="20" fill="#000000" rx="4"/>
-                        <rect x="60" y="30" width="20" height="30" fill="#333333" rx="2"/>
+                        <rect x="60" y="30" width="20" height="30" fill="#000000" rx="2"/>
                       </g>
                       
                       {/* Candidate Icons */}
                       <g transform="translate(30, 180)">
-                        <circle cx="0" cy="0" r="15" fill="#333333"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#333333" rx="5"/>
+                        <circle cx="0" cy="0" r="15" fill="#000000"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#000000" rx="5"/>
                         <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
                       <g transform="translate(240, 200)">
-                        <circle cx="0" cy="0" r="15" fill="#333333"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#333333" rx="5"/>
+                        <circle cx="0" cy="0" r="15" fill="#000000"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#000000" rx="5"/>
                         <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
                       <g transform="translate(40, 300)">
-                        <circle cx="0" cy="0" r="15" fill="#333333"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#333333" rx="5"/>
+                        <circle cx="0" cy="0" r="15" fill="#000000"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#000000" rx="5"/>
                         <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
@@ -321,7 +309,7 @@ export default function Blogs() {
                       <path d="M55 315 Q100 280 150 280" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
                       
                       {/* Success Indicators */}
-                      <circle cx="150" cy="100" r="20" fill="#FFFFFF"/>
+                      <circle cx="150" cy="100" r="20" fill="#FFFFFF" stroke="#000000" strokeWidth="2"/>
                       <path d="M140 100 L147 107 L160 90" stroke="#000000" strokeWidth="4" fill="none"/>
                       
                       {/* HireNET Logo/Badge */}
