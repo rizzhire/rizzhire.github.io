@@ -337,9 +337,18 @@ export default function JobSeekerPage() {
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden frosted-dialog-content" style={{ borderRadius: '40px' }}>
-                  <div className="h-full overflow-y-auto" style={{ borderRadius: '40px' }}>
-                    <div className="p-8 space-y-8">
+                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden" style={{ 
+                  borderRadius: '40px',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(30px)',
+                  WebkitBackdropFilter: 'blur(30px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                }}>
+                  <div className="h-full overflow-y-auto" style={{ 
+                    borderRadius: '40px',
+                    background: 'transparent'
+                  }}>
+                    <div className="p-8 space-y-8" style={{ background: 'transparent' }}>
                       <div className="text-center">
                         <h2 className="text-3xl font-bold text-gray-900 mb-3">Submit Your Resume</h2>
                         <p className="text-gray-600">Join thousands of professionals who found their dream careers through HireNET</p>
@@ -358,7 +367,7 @@ export default function JobSeekerPage() {
                             </div>
                             
                             {uploadedFile ? (
-                              <div className="flex items-center gap-3 p-6 bg-green-50 border border-green-200 rounded-2xl">
+                              <div className="flex items-center gap-3 p-6 border border-green-200 rounded-2xl" style={{ background: 'transparent' }}>
                                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                                   <CheckCircle className="h-6 w-6 text-green-600" />
                                 </div>
@@ -390,7 +399,7 @@ export default function JobSeekerPage() {
                                     }
                                   }
                                 }}
-                                buttonClassName="w-full h-24 border-2 border-dashed border-gray-300 rounded-2xl hover:border-yellow-400 bg-gray-50 hover:bg-yellow-50/50 transition-all duration-200"
+                                buttonClassName="w-full h-24 border-2 border-dashed border-gray-300 rounded-2xl hover:border-yellow-400 hover:bg-yellow-50/50 transition-all duration-200"
                               >
                                 <div className="text-center space-y-2">
                                   <div className="text-gray-600 font-medium">Click to upload or drag and drop</div>
