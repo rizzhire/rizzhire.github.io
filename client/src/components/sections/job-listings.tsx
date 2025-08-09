@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, Briefcase, DollarSign } from "lucide-react";
 import { jobs } from "@/lib/data";
 import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
 
@@ -23,7 +23,7 @@ export default function JobListings() {
             <Card 
               key={job.id} 
               className={`
-                bg-white group hover:shadow-lg transition-all duration-500 border border-gray-200 rounded-lg
+                bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl
                 ${visibleItems.includes(index) 
                   ? 'animate-flip-in opacity-100' 
                   : 'opacity-0 transform rotateY-90'
@@ -33,18 +33,18 @@ export default function JobListings() {
             >
               <CardContent className="p-6">
                 <div className="mb-4">
-                  <h3 className="text-lg font-bold mb-3 text-gray-800">
+                  <h3 className="text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
                     {job.title}
                   </h3>
                 </div>
 
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-gray-600">
-                    <span className="w-4 h-4 mr-2">💼</span>
+                    <Briefcase className="h-4 w-4 mr-2" />
                     <span className="text-sm">{job.experience}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
-                    <span className="w-4 h-4 mr-2">💰</span>
+                    <DollarSign className="h-4 w-4 mr-2" />
                     <span className="text-sm">{job.salary}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
@@ -59,8 +59,7 @@ export default function JobListings() {
                     <span>Posted On {job.postedDate}</span>
                   </div>
                   <Button 
-                    className="bg-teal-600 text-white hover:bg-teal-700 px-6 py-2 rounded text-sm font-medium"
-                    style={{ backgroundColor: '#14b8a6' }}
+                    className="bg-yellow text-black hover:bg-yellow/90 px-6 py-2 rounded-2xl text-sm font-medium"
                   >
                     Apply Now
                   </Button>

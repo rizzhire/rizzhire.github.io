@@ -7,7 +7,7 @@ export const jobs = [
     experience: "GOOD EXPERIENCE REQUIRED",
     salary: "1100 AED",
     location: "DUBAI",
-    postedDate: "2025-03-24"
+    postedDate: "2025-01-15"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const jobs = [
     experience: "GOOD EXPERIENCE REQUIRED",
     salary: "1100 AED",
     location: "DUBAI",
-    postedDate: "2025-03-24"
+    postedDate: "2025-01-12"
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const jobs = [
     experience: "Minimum 3 to 4 years of Experience",
     salary: "1100 AED",
     location: "DUBAI",
-    postedDate: "2025-03-24"
+    postedDate: "2025-01-18"
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const jobs = [
     experience: "Minimum 3 to 4 years of Experience",
     salary: "1200 AED",
     location: "DUBAI",
-    postedDate: "2025-03-24"
+    postedDate: "2025-01-10"
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ export const jobs = [
     experience: "Minimum 3 to 4 years of Experience",
     salary: "1000 AED",
     location: "DUBAI",
-    postedDate: "2025-03-24"
+    postedDate: "2025-01-20"
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ export const jobs = [
     experience: "Minimum 3 to 4 years of Experience",
     salary: "1200 + 350 AED",
     location: "DUBAI",
-    postedDate: "2025-03-24"
+    postedDate: "2025-01-08"
   }
 ];
 
