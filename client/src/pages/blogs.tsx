@@ -240,7 +240,7 @@ export default function Blogs() {
                   </div>
                   
                   {/* Right Feature Badge - Full Container Illustration */}
-                  <div className="lg:col-span-3 bg-gradient-to-br from-yellow/20 to-yellow/5 relative overflow-hidden">
+                  <div className="lg:col-span-3 relative overflow-hidden" style={{backgroundColor: '#E8E6DC'}}>
                     {/* Full Container SVG Illustration */}
                     <svg className="w-full h-full absolute inset-0" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
                       {/* Background */}
