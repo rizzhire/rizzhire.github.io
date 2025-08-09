@@ -158,7 +158,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-3 mb-16 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
             {/* Visit Us - Large Left Card */}
             {(() => {
               const VisitIcon = contactInfo[0].icon;
@@ -182,7 +182,7 @@ export default function Contact() {
             })()}
 
             {/* Right Side - 3 Smaller Cards in Grid */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {/* Call Us - Top Right (Full Width) */}
               {(() => {
                 const CallIcon = contactInfo[1].icon;
