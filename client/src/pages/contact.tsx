@@ -24,14 +24,8 @@ export default function Contact() {
       icon: MapPin,
       title: "Visit Us",
       details: [
-        {
-          subheading: "Head Office:",
-          items: ["6/7A, AJC Bose Road, Padatik Theatre", "Kolkata-700017, West Bengal, INDIA"]
-        },
-        {
-          subheading: "Branch Office:",
-          items: ["4th-floor Nevidita Road, Kidzee School", "Siliguri 734003, West Bengal, INDIA"]
-        }
+        { text: "• Head Office:<br/>6/7A, AJC Bose Road, Padatik Theatre<br/>Kolkata-700017, West Bengal, INDIA" },
+        { text: "• Branch Office:<br/>4th-floor Nevidita Road, Kidzee School<br/>Siliguri 734003, West Bengal, INDIA" }
       ],
       color: "text-blue-600"
     },
@@ -174,25 +168,9 @@ export default function Contact() {
                   <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
                   <div className="space-y-3">
                     {info.details.map((detail, idx) => (
-                      <div key={idx}>
-                        {typeof detail === 'object' && detail.subheading ? (
-                          <div className="text-left">
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">{detail.subheading}</h4>
-                            <ul className="space-y-0.5">
-                              {detail.items.map((item, itemIdx) => (
-                                <li key={itemIdx} className="text-gray-600 text-xs flex items-start">
-                                  <span className="text-gray-400 mr-1.5 mt-1">•</span>
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ) : (
-                          <p className="text-gray-600 text-sm" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        )}
-                      </div>
+                      <p key={idx} className="text-gray-600 text-sm text-left" 
+                         dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                      </p>
                     ))}
                   </div>
                 </CardContent>
