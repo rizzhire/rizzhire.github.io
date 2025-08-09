@@ -168,7 +168,7 @@ export default function Contact() {
                   <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
                   <div className="space-y-3">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm text-left" 
+                      <p key={idx} className="text-gray-600 text-sm" 
                          dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
                       </p>
                     ))}
