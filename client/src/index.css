@@ -73,40 +73,19 @@
   }
 }
 
-/* Frosted Glass Dialog Overlay - Multiple Selectors for Compatibility */
-[data-radix-dialog-overlay],
-[data-state="open"][data-radix-popper-content-wrapper],
-.fixed.inset-0.z-50.bg-background\/80.backdrop-blur-sm,
-[role="dialog"] + div[data-radix-dialog-overlay] {
-  background: rgba(245, 243, 235, 0.2) !important;
-  backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
-  -webkit-backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
-}
-
-/* Override any default dark overlay */
-.fixed.inset-0.z-50,
-.fixed.inset-0.z-50.bg-background\/80,
-.fixed.inset-0.z-50.bg-background\/80.backdrop-blur-sm,
-.fixed.inset-0.z-50.bg-black\/80,
-div[data-state="open"].fixed.inset-0 {
-  background: rgba(245, 243, 235, 0.2) !important;
-  backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
-  -webkit-backdrop-filter: blur(15px) saturate(1.1) brightness(1.1) !important;
-}
-
-/* Additional override for any dialog backdrop */
-div[data-state="open"] {
-  background: rgba(245, 243, 235, 0.2) !important;
-}
+/* Remove all blur effects completely */
 
 /* Remove the universal fix that might cause issues */
 
-/* Remove frosted effect but keep transparent background */
+/* Completely transparent overlay - no effects */
 [data-radix-dialog-overlay],
-.DialogOverlay {
+.DialogOverlay,
+.fixed.inset-0.z-50,
+div[data-state="open"] {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Sacramento font specific styling */
