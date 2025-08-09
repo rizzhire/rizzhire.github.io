@@ -103,10 +103,15 @@ export default function Services() {
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Live Moving Floating Circles */}
-          <div className="absolute top-20 left-10 w-28 h-28 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-floatMove"></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-r from-blue-200/20 to-cyan-200/30 rounded-full blur-lg animate-pulse-slow"></div>
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl animate-rotate"></div>
+          {/* Floating Circles (Same as Get in Touch) */}
+          <div className="absolute top-20 left-10 w-48 h-48 bg-gradient-to-r from-yellow-200/30 to-yellow-300/40 rounded-full blur-3xl animate-floatMove"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-200/25 to-cyan-200/35 rounded-full blur-2xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-36 h-36 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-40 right-1/3 w-32 h-32 bg-gradient-to-r from-green-200/25 to-emerald-200/35 rounded-full blur-xl animate-bounce-slow" style={{animationDelay: '3s'}}></div>
+          
+          {/* Additional Floating Circles */}
+          <div className="absolute bottom-40 left-1/3 w-28 h-28 bg-gradient-to-br from-yellow-300/20 to-orange-300/30 rounded-full blur-xl animate-spin-slow"></div>
+          <div className="absolute top-32 right-1/4 w-24 h-24 bg-gradient-to-tl from-indigo-300/25 to-purple-300/35 rounded-full blur-xl animate-pulse"></div>
           
           {/* Live Moving Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 400">
@@ -190,10 +195,10 @@ export default function Services() {
             </svg>
           </div>
           
-          {/* Live Moving Floating Elements */}
-          <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/4 to-orange-300/6 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
-          <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/4 to-cyan-300/6 rounded-full blur-md animate-pulse-slow"></div>
-          <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/4 to-pink-300/6 rounded-full blur-sm animate-rotate" style={{animationDelay: '2s'}}></div>
+          {/* Floating Circles (Same as Get in Touch) */}
+          <div className="absolute top-32 left-20 w-48 h-48 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-full blur-3xl animate-floatMove"></div>
+          <div className="absolute bottom-40 right-32 w-40 h-40 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-2xl animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-10 w-36 h-36 bg-gradient-to-r from-purple-300/8 to-pink-300/12 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto">
