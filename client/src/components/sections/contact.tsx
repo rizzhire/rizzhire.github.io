@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,62 @@ export default function Contact() {
   const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation();
   const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: -60,
+      scale: 0.8,
+      rotateY: -20
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      rotateY: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 120,
+        damping: 18
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: 60,
+      scale: 0.9,
+      rotateY: 20
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      rotateY: 0,
+      transition: {
+        duration: 0.9,
+        delay: 0.3,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
   return (
     <section id="contact" className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -50,61 +107,108 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div 
+          <motion.div 
             ref={infoRef}
-            className={`
-              transition-all duration-700 ease-out
-              ${infoVisible 
-                ? 'animate-slide-in-left opacity-100' 
-                : 'opacity-0 transform -translate-x-8'
-              }
-            `}
+            initial="hidden"
+            animate={infoVisible ? "visible" : "hidden"}
+            variants={containerVariants}
+            className="perspective-1000"
           >
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+            <motion.h3 
+              className="text-2xl font-bold mb-6"
+              variants={itemVariants}
+            >
+              Contact Information
+            </motion.h3>
             
             <div className="space-y-6">
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4">
+              <motion.div 
+                className="flex items-center group cursor-pointer"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.02,
+                  x: 8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5,
+                    boxShadow: "0 8px 25px rgba(245, 215, 66, 0.4)"
+                  }}
+                >
                   <Mail className="h-6 w-6 text-black" />
-                </div>
+                </motion.div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
                   <p className="text-gray-600">contact@hirenet.in</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4">
+              <motion.div 
+                className="flex items-center group cursor-pointer"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.02,
+                  x: 8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5,
+                    boxShadow: "0 8px 25px rgba(245, 215, 66, 0.4)"
+                  }}
+                >
                   <Phone className="h-6 w-6 text-black" />
-                </div>
+                </motion.div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
                   <p className="text-gray-600">+91 333 508 5038</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4">
+              <motion.div 
+                className="flex items-center group cursor-pointer"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.02,
+                  x: 8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5,
+                    boxShadow: "0 8px 25px rgba(245, 215, 66, 0.4)"
+                  }}
+                >
                   <MapPin className="h-6 w-6 text-black" />
-                </div>
+                </motion.div>
                 <div>
                   <h4 className="font-semibold">Office</h4>
                   <p className="text-gray-600">Dubai International Financial Centre<br />Dubai, United Arab Emirates</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <Card 
+          <motion.div
             ref={formRef}
-            className={`
-              border-2 border-gray-100 transition-all duration-700 ease-out
-              ${formVisible 
-                ? 'animate-slide-in-right opacity-100' 
-                : 'opacity-0 transform translate-x-8'
-              }
-            `}
+            initial="hidden"
+            animate={formVisible ? "visible" : "hidden"}
+            variants={cardVariants}
+            className="perspective-1000"
           >
+            <Card 
+              className="border-2 border-gray-100 overflow-hidden"
+            >
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
               
@@ -156,7 +260,8 @@ export default function Contact() {
                 </Button>
               </form>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </section>
