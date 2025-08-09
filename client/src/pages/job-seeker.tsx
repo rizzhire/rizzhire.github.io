@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { ObjectUploader } from "@/components/ObjectUploader";
-import { Upload, CheckCircle } from "lucide-react";
+import { Upload, CheckCircle, Star } from "lucide-react";
 import JobListings from "@/components/sections/job-listings";
 import SuccessStories from "@/components/sections/success-stories";
 import WhyChooseHireNet from "@/components/sections/why-choose-hirenet";
@@ -30,6 +31,90 @@ const resumeFormSchema = insertResumeSchema.extend({
 });
 
 type ResumeFormData = z.infer<typeof resumeFormSchema>;
+
+// Job Seeker Success Stories Data
+const jobSeekerTestimonials = [
+  {
+    id: 1,
+    name: "Priya Sharma",
+    position: "Senior Software Engineer",
+    company: "Emirates Digital Solutions",
+    location: "Dubai, UAE (Originally from Mumbai, India)",
+    quote: "HireNET team helped me so much! I was working in Bangalore for 4 years but wanted to move abroad. They guided me properly for Dubai market and now I got very good package in Emirates. The whole process was smooth only. Very happy with their support.",
+    rating: 5,
+    initials: "PS"
+  },
+  {
+    id: 2,
+    name: "Rajesh Kumar",
+    position: "Project Manager",
+    company: "Gulf Construction Group",
+    location: "Doha, Qatar (Originally from Delhi, India)",
+    quote: "Before HireNET I was trying for gulf jobs for 2 years but no success. They understood my profile very well and matched me with right company. Now I am in Qatar with my family and earning much better than India. Really grateful to the team.",
+    rating: 5,
+    initials: "RK"
+  },
+  {
+    id: 3,
+    name: "Anita Patel",
+    position: "HR Manager",
+    company: "Al Raya Healthcare",
+    location: "Riyadh, Saudi Arabia (Originally from Ahmedabad, India)",
+    quote: "I was hesitant about moving to Saudi but HireNET team explained everything clearly. They helped with visa process also. Now working here for 1 year and very satisfied with work environment. My colleagues are also very cooperative. Thank you HireNET!",
+    rating: 5,
+    initials: "AP"
+  },
+  {
+    id: 4,
+    name: "Vikram Singh",
+    position: "Mechanical Engineer",
+    company: "Bahrain Petrochemicals",
+    location: "Manama, Bahrain (Originally from Jaipur, India)",
+    quote: "HireNET is best recruitment agency I have worked with. They prepared me well for interviews and salary negotiation also they helped. Got 40% salary increase from my previous job in Pune. Living in Bahrain is also very comfortable for Indians.",
+    rating: 5,
+    initials: "VS"
+  },
+  {
+    id: 5,
+    name: "Meera Krishnan",
+    position: "Finance Analyst",
+    company: "Kuwait Investment Bank",
+    location: "Kuwait City, Kuwait (Originally from Chennai, India)",
+    quote: "When I contacted HireNET I was fresher with just 1 year experience. They believed in my potential and found me entry level position in Kuwait bank. Now after 2 years I got promotion also. Very thankful to their team for trusting me.",
+    rating: 5,
+    initials: "MK"
+  },
+  {
+    id: 6,
+    name: "Amit Gupta",
+    position: "Operations Manager",
+    company: "Oman Logistics Solutions",
+    location: "Muscat, Oman (Originally from Kolkata, India)",
+    quote: "I was working in small company in Kolkata with less salary. HireNET showed me opportunities in Oman which I never thought possible. They handled all documentation and even helped my wife get job here. Now we both are settled happily in Muscat.",
+    rating: 5,
+    initials: "AG"
+  },
+  {
+    id: 7,
+    name: "Sunita Reddy",
+    position: "Marketing Executive",
+    company: "Dubai Trade Centre",
+    location: "Dubai, UAE (Originally from Hyderabad, India)",
+    quote: "HireNET team is very professional and understanding. They listened to my requirements carefully - I wanted marketing role in Dubai specifically. They found perfect match for me and even negotiated better benefits. Process was completed in just 3 months. Highly recommended!",
+    rating: 5,
+    initials: "SR"
+  },
+  {
+    id: 8,
+    name: "Rohit Joshi",
+    position: "IT Consultant",
+    company: "Qatar Tech Solutions",
+    location: "Doha, Qatar (Originally from Pune, India)",
+    quote: "After completing my MBA I wanted to work in gulf countries. HireNET understood my goal and guided me step by step. They even provided tips for cultural adaptation in Qatar. Now working here for 18 months and very satisfied with career growth. Thank you HireNET family!",
+    rating: 5,
+    initials: "RJ"
+  }
+];
 
 export default function JobSeekerPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -381,6 +466,49 @@ export default function JobSeekerPage() {
               
               <p className="text-gray-500 text-sm">Free resume review and optimization included</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Job Seeker Success Stories */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Success <span className="text-yellow">Stories</span></h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real career transformations from professionals who found their dream jobs through HireNET.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {jobSeekerTestimonials.map((testimonial, index) => (
+              <Card 
+                key={testimonial.id} 
+                className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full group"
+              >
+                <CardContent className="p-0 h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
+                      <span className="text-black font-bold text-lg">{testimonial.initials}</span>
+                    </div>
+                    <div className="flex text-yellow">
+                      {Array(testimonial.rating).fill(0).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                  <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div className="text-sm mt-auto">
+                    <div className="font-bold">{testimonial.name}</div>
+                    <div className="text-gray-600">{testimonial.position}</div>
+                    <div className="text-gray-600">{testimonial.company}</div>
+                    <div className="text-gray-500 text-xs">{testimonial.location}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
