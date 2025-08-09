@@ -40,7 +40,7 @@ const jobSeekerTestimonials = [
     position: "Chef",
     company: "Al Manara Restaurant",
     location: "Dubai, UAE (Originally from Punjab, India)",
-    quote: "I was cooking in small hotel in Amritsar. HireNET uncle helped me get chef job in Dubai. Now I make good money and send to family. Food work is same but salary is much better here. Very happy with HireNET support.",
+    quote: "HireNET team help me very much. Small hotel in Amritsar giving me only 15000 rupees. Now in Dubai getting good salary, can send money to family. Food cooking same but here better opportunity. Thank you HireNET.",
     rating: 5,
     initials: "RK"
   },
@@ -50,7 +50,7 @@ const jobSeekerTestimonials = [
     position: "Safety Officer",
     company: "Gulf Construction Co.",
     location: "Doha, Qatar (Originally from Bihar, India)",
-    quote: "After 12th pass I did safety course in Delhi. HireNET found me job in Qatar construction company. Good salary and accommodation free. My family is very proud. Thank you HireNET for changing my life.",
+    quote: "After 12th I did safety course in Delhi. HireNET find me job in Qatar construction. Free room and food also getting. Family very proud of me. Thank you HireNET for changing life.",
     rating: 5,
     initials: "SY"
   },
@@ -60,7 +60,7 @@ const jobSeekerTestimonials = [
     position: "Receptionist",
     company: "Dubai Medical Center",
     location: "Dubai, UAE (Originally from Uttar Pradesh, India)",
-    quote: "I finished graduation and was working as receptionist in Lucknow clinic. HireNET helped me get job in Dubai hospital. English speaking practice and computer skills they taught me. Now earning 3 times more than India.",
+    quote: "HireNET provided excellent support throughout my job search process. They helped improve my English communication skills and prepared me for interviews. The receptionist position at Dubai Medical Center has given me valuable international experience and much better compensation than my previous role in Lucknow.",
     rating: 5,
     initials: "PS"
   },
@@ -70,7 +70,7 @@ const jobSeekerTestimonials = [
     position: "Electrical Engineer",
     company: "Bahrain Power Systems",
     location: "Manama, Bahrain (Originally from Gujarat, India)",
-    quote: "I completed diploma in electrical from Ahmedabad. Working in small factory with less salary. HireNET showed me opportunities in Bahrain. Now working as technician in big company. Very good experience for my career.",
+    quote: "Small factory in Ahmedabad giving very less salary after diploma. HireNET show me opportunity in Bahrain. Now working as technician in big company, learning new things. Good for career growth.",
     rating: 5,
     initials: "MP"
   },
@@ -80,7 +80,7 @@ const jobSeekerTestimonials = [
     position: "HR Executive",
     company: "Al Noor Trading",
     location: "Kuwait City, Kuwait (Originally from Rajasthan, India)",
-    quote: "I did MBA from Jaipur but no good job in India. HireNET helped me get HR position in Kuwait trading company. They prepared me for interview and visa process. Very satisfied with new job and learning lot of things.",
+    quote: "Despite having an MBA from Jaipur, I struggled to find suitable opportunities in India. HireNET's professional approach and thorough preparation helped me secure this HR executive position. They provided valuable guidance on visa procedures and cultural adaptation. I'm extremely satisfied with my career progression in Kuwait.",
     rating: 5,
     initials: "KS"
   },
@@ -90,7 +90,7 @@ const jobSeekerTestimonials = [
     position: "Digital Marketing Executive",
     company: "Riyadh Media House",
     location: "Riyadh, Saudi Arabia (Originally from Delhi, India)",
-    quote: "I learned digital marketing course after graduation. HireNET found me job in Saudi company. They helped with portfolio and interview preparation. Now handling social media for big clients. Very happy with career growth.",
+    quote: "HireNET's team understood my digital marketing background and connected me with the right opportunities. They helped build my portfolio and provided excellent interview coaching. Working with major Saudi clients has significantly enhanced my professional skills and opened new career paths in the Middle East market.",
     rating: 5,
     initials: "DG"
   },
@@ -100,7 +100,7 @@ const jobSeekerTestimonials = [
     position: "Housekeeping Supervisor",
     company: "Oman Grand Hotel",
     location: "Muscat, Oman (Originally from West Bengal, India)",
-    quote: "I was working in hotel in Kolkata. HireNET helped me get supervisor job in Oman hotel. Good salary and staff accommodation provided. My children can now study in good school. Very thankful to HireNET team.",
+    quote: "Hotel work in Kolkata giving me very less money. HireNET help me get supervisor job in Oman. Good salary, room free, children can study in good school. Very happy with HireNET team support.",
     rating: 5,
     initials: "SD"
   },
@@ -110,7 +110,7 @@ const jobSeekerTestimonials = [
     position: "Store Keeper",
     company: "Emirates Logistics",
     location: "Dubai, UAE (Originally from Kerala, India)",
-    quote: "I finished commerce degree and was working in small shop in Kochi. HireNET found me store keeper position in Dubai warehouse. Good company with overtime benefits. Planning to bring family next year. Very good opportunity for me.",
+    quote: "After commerce degree, small shop in Kochi not giving good money. HireNET find store keeper work in Dubai warehouse. Company very good, overtime pay also getting. Next year bringing family to Dubai.",
     rating: 5,
     initials: "RN"
   }
