@@ -157,8 +157,8 @@ export default function WhyChooseHireNet() {
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
             {/* Background Icon - Corner to Corner */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-15 transition-opacity duration-300 group-hover:opacity-25">
-              <Globe className="w-40 h-40 text-yellow stroke-[0.8]" />
+            <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+              <Globe className="w-48 h-48 text-yellow stroke-[1]" />
             </div>
             
             {/* Content - Overlaid on background icon */}
@@ -180,8 +180,8 @@ export default function WhyChooseHireNet() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-15 transition-opacity duration-300 group-hover:opacity-25">
-                <Users className="w-28 h-28 text-yellow stroke-[0.8]" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+                <Users className="w-32 h-32 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
@@ -201,8 +201,8 @@ export default function WhyChooseHireNet() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-15 transition-opacity duration-300 group-hover:opacity-25">
-                <FileText className="w-24 h-24 text-yellow stroke-[0.8]" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+                <FileText className="w-28 h-28 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
@@ -222,8 +222,8 @@ export default function WhyChooseHireNet() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-15 transition-opacity duration-300 group-hover:opacity-25">
-                <Headphones className="w-24 h-24 text-yellow stroke-[0.8]" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+                <Headphones className="w-28 h-28 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
