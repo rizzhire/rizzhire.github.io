@@ -177,7 +177,7 @@ export default function Contact() {
             <Card className="overflow-hidden rounded-3xl shadow-lg max-w-3xl mx-auto">
               <div className="relative h-80 bg-gradient-to-br from-gray-50 to-white">
                 <iframe
-                  src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=6/7A%20AJC%20Bose%20Road%20Kolkata%20700017+(HireNET%20Head%20Office)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=6/7A%20AJC%20Bose%20Road%20Kolkata%20700017+(HireNET%20Head%20Office)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
