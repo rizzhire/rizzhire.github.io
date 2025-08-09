@@ -1,6 +1,11 @@
 import { Globe, Users, FileText, Headphones, Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function WhyChooseHireNet() {
+  const { elementRef: sectionRef, isVisible } = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  });
   const features = [
     {
       icon: Globe,
@@ -133,17 +138,17 @@ export default function WhyChooseHireNet() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium Header Section */}
-        <div className="text-center mb-20 pt-8">
-          <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full border border-yellow/20 mb-6 animate-fade-in-up">
+        <div ref={sectionRef} className="text-center mb-20 pt-8">
+          <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full border border-yellow/20 mb-6">
             <Star className="w-4 h-4 text-yellow fill-yellow" />
             <span className="text-sm font-medium text-gray-700">Premium Career Services</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up animate-delay-200">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose <span className="text-yellow">HireNET</span>?
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up animate-delay-400">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             Experience the difference with our comprehensive career acceleration platform, 
             designed for ambitious professionals seeking exceptional opportunities in the Middle East.
           </p>
@@ -152,7 +157,7 @@ export default function WhyChooseHireNet() {
         {/* Premium Feature Cards - Square Masonry Layout */}
         <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
           {/* Left Side - Square Card (Global Placement Opportunities) */}
-          <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center overflow-hidden aspect-square animate-pop-in animate-delay-600">
+          <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center overflow-hidden aspect-square ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.2s' : '0s' }}>
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
@@ -175,7 +180,7 @@ export default function WhyChooseHireNet() {
           {/* Right Side - Square Grid Layout */}
           <div className="grid grid-cols-2 gap-3 aspect-square">
             {/* Top - Full Width Card (Personalized Career Guidance) */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2 overflow-hidden flex flex-col justify-center animate-pop-in animate-delay-700">
+            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2 overflow-hidden flex flex-col justify-center ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.4s' : '0s' }}>
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
@@ -196,7 +201,7 @@ export default function WhyChooseHireNet() {
             </div>
 
             {/* Bottom Left - Free Resume Review */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden animate-pop-in animate-delay-800">
+            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.6s' : '0s' }}>
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
@@ -217,7 +222,7 @@ export default function WhyChooseHireNet() {
             </div>
 
             {/* Bottom Right - Priority Support */}
-            <div className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden animate-pop-in animate-delay-900">
+            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.8s' : '0s' }}>
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               

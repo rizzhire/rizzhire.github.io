@@ -21,6 +21,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import type { UploadResult } from "@uppy/core";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const resumeFormSchema = insertResumeSchema.extend({
   fullName: z.string().min(1, "Full name is required"),
@@ -125,6 +126,12 @@ export default function JobSeekerPage() {
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  
+  // Scroll animations for different sections
+  const { elementRef: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
 
   const form = useForm<ResumeFormData>({
     resolver: zodResolver(resumeFormSchema),
@@ -748,9 +755,9 @@ export default function JobSeekerPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">Success <span className="text-yellow">Stories</span></h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+          <div ref={testimonialsRef} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Success <span className="text-yellow">Stories</span></h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real career transformations from professionals who found their dream jobs through HireNET.
             </p>
           </div>
@@ -761,8 +768,8 @@ export default function JobSeekerPage() {
                 {jobSeekerTestimonials.map((testimonial, index) => (
                 <Card 
                   key={testimonial.id} 
-                  className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group animate-pop-in"
-                  style={{animationDelay: `${index * 0.15}s`}}
+                  className={`bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group ${testimonialsVisible ? 'animate-pop-in' : 'opacity-0'}`}
+                  style={{animationDelay: testimonialsVisible ? `${index * 0.15}s` : '0s'}}
                 >
                   <CardContent className="p-0 h-full flex flex-col">
                     <div className="flex items-center mb-4">
