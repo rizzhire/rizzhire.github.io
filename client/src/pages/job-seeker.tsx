@@ -325,7 +325,16 @@ export default function JobSeekerPage() {
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-white border shadow-2xl" style={{ borderRadius: '50px' }}>
+                <DialogContent 
+                  className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-white border shadow-2xl" 
+                  style={{ 
+                    borderRadius: '40px',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)',
+                    WebkitFontSmoothing: 'antialiased',
+                    MozOsxFontSmoothing: 'grayscale'
+                  }}
+                >
                   <DialogHeader className="space-y-3 pb-6 border-b border-gray-100 mt-4 pr-8">
                     <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                       Submit Your Resume
