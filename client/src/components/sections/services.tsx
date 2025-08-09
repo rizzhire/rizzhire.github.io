@@ -108,7 +108,7 @@ export default function Services() {
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8 mt-4">
+        <div className="text-center mb-8 mt-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-yellow">Services</span>
           </h2>
