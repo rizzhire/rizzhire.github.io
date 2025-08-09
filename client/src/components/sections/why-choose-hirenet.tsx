@@ -157,15 +157,8 @@ export default function WhyChooseHireNet() {
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
             {/* Background Icon - Corner to Corner */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-all duration-500 group-hover:opacity-40 group-hover:scale-105">
-              <div className="relative">
-                {/* Subtle glow effect */}
-                <div className="absolute inset-0 blur-sm">
-                  <Globe className="w-64 h-64 text-yellow/40 stroke-[0.5]" />
-                </div>
-                {/* Main icon with refined styling */}
-                <Globe className="relative w-64 h-64 text-yellow stroke-[0.8]" />
-              </div>
+            <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+              <Globe className="w-64 h-64 text-yellow stroke-[1]" />
             </div>
             
             {/* Content - Overlaid on background icon */}
@@ -187,15 +180,8 @@ export default function WhyChooseHireNet() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-all duration-500 group-hover:opacity-40 group-hover:scale-105">
-                <div className="relative">
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 blur-sm">
-                    <Users className="w-32 h-32 text-yellow/40 stroke-[0.5]" />
-                  </div>
-                  {/* Main icon with refined styling */}
-                  <Users className="relative w-32 h-32 text-yellow stroke-[0.8]" />
-                </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+                <Users className="w-32 h-32 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
@@ -215,15 +201,8 @@ export default function WhyChooseHireNet() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-all duration-500 group-hover:opacity-40 group-hover:scale-105">
-                <div className="relative">
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 blur-sm">
-                    <FileText className="w-28 h-28 text-yellow/40 stroke-[0.5]" />
-                  </div>
-                  {/* Main icon with refined styling */}
-                  <FileText className="relative w-28 h-28 text-yellow stroke-[0.8]" />
-                </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+                <FileText className="w-28 h-28 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
@@ -243,15 +222,8 @@ export default function WhyChooseHireNet() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
               {/* Background Icon - Corner to Corner */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-all duration-500 group-hover:opacity-40 group-hover:scale-105">
-                <div className="relative">
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 blur-sm">
-                    <Headphones className="w-28 h-28 text-yellow/40 stroke-[0.5]" />
-                  </div>
-                  {/* Main icon with refined styling */}
-                  <Headphones className="relative w-28 h-28 text-yellow stroke-[0.8]" />
-                </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-300 group-hover:opacity-40">
+                <Headphones className="w-28 h-28 text-yellow stroke-[1]" />
               </div>
               
               {/* Content - Overlaid on background icon */}
