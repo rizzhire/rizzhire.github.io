@@ -337,8 +337,8 @@ export default function JobSeekerPage() {
                     Upload Your Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden" style={{ borderRadius: '40px' }}>
-                  <div className="bg-white h-full overflow-y-auto" style={{ borderRadius: '40px' }}>
+                <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl overflow-hidden backdrop-blur-3xl bg-white/10" style={{ borderRadius: '40px' }}>
+                  <div className="bg-white/95 backdrop-blur-xl h-full overflow-y-auto border border-white/20" style={{ borderRadius: '40px' }}>
                     <div className="p-8 space-y-8">
                       <div className="text-center">
                         <h2 className="text-3xl font-bold text-gray-900 mb-3">Submit Your Resume</h2>
