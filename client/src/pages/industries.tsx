@@ -27,7 +27,7 @@ export default function Industries() {
         "High retention rate for senior technical positions",
         "Specialized in desert and offshore operations"
       ],
-      gradient: "from-slate-900 via-slate-700 to-slate-900",
+      gradient: "from-blue-600/5 via-transparent to-cyan-600/5",
       accentColor: "from-blue-400 to-cyan-300"
     },
     {
@@ -39,7 +39,7 @@ export default function Industries() {
         "Strong network of civil, mechanical, and electrical engineers",
         "Specialized in green building and sustainable construction"
       ],
-      gradient: "from-gray-900 via-gray-700 to-gray-900",
+      gradient: "from-orange-600/5 via-transparent to-yellow-600/5",
       accentColor: "from-orange-400 to-yellow-300"
     },
     {
@@ -50,7 +50,7 @@ export default function Industries() {
         "Specialization in cardiology, oncology, and emergency medicine",
         "Multilingual healthcare professionals with cultural awareness"
       ],
-      gradient: "from-zinc-900 via-zinc-700 to-zinc-900",
+      gradient: "from-emerald-600/5 via-transparent to-teal-600/5",
       accentColor: "from-emerald-400 to-teal-300"
     },
     {
@@ -61,7 +61,7 @@ export default function Industries() {
         "Strong network in UAE, Saudi Arabia, and Qatar tourism sectors",
         "Multilingual candidates with cultural awareness training"
       ],
-      gradient: "from-neutral-900 via-neutral-700 to-neutral-900",
+      gradient: "from-purple-600/5 via-transparent to-pink-600/5",
       accentColor: "from-purple-400 to-pink-300"
     }
   ];
@@ -217,9 +217,9 @@ export default function Industries() {
                 variants={fadeInUp}
                 className="group"
               >
-                <div className="relative overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 rounded-3xl group-hover:border-gray-200">
-                  {/* Enhanced Background Effects */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${industry.gradient} opacity-0 group-hover:opacity-3 transition-opacity duration-700`}></div>
+                <div className="relative overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-gray-100/20 backdrop-blur-sm border-2 border-gray-200/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 rounded-3xl">
+                  {/* Enhanced Background Effects with Color Animations */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${industry.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                   
                   {/* Multiple Accent Lines */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${industry.accentColor} opacity-70`}></div>
