@@ -161,67 +161,97 @@ export default function LearnMore() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 px-4" style={{backgroundColor: '#F2F0E8'}}>
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 px-4" style={{backgroundColor: '#F2F0E8'}}>
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
+            <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
                 Our <span className="text-yellow">Evolution</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Key milestones that shaped our journey to industry leadership
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-5 gap-6">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: index * 0.1,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }}
-                  whileHover={{ 
-                    y: -8, 
-                    transition: { duration: 0.2 } 
-                  }}
-                  className="group"
-                >
-                  <div className="relative">
-                    {/* Connecting Line */}
-                    {index < milestones.length - 1 && (
-                      <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-yellow via-yellow/50 to-transparent z-0"></div>
-                    )}
-                    
-                    <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group-hover:bg-white group-hover:border-yellow/30">
-                      {/* Year Badge */}
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow to-yellow/80 text-black font-bold text-lg rounded-xl mb-4 shadow-md">
-                        {milestone.year.slice(-2)}
+            <div className="relative">
+              {/* Central Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-yellow via-yellow to-yellow/30 h-full rounded-full shadow-sm"></div>
+              
+              <div className="space-y-8">
+                {milestones.map((milestone, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.8 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: index * 0.15,
+                      ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                    className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group`}
+                  >
+                    {/* Content Card */}
+                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                      <div className="relative">
+                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-3 group-hover:border-yellow/30">
+                          {/* Decorative Elements */}
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow rounded-full opacity-20"></div>
+                          <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-yellow/30 rounded-full"></div>
+                          
+                          {/* Year Badge */}
+                          <div className="inline-flex items-center mb-6">
+                            <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow via-yellow to-yellow/80 text-black font-bold text-2xl rounded-2xl shadow-lg mr-4">
+                              {milestone.year.slice(-2)}
+                            </div>
+                            <div className="text-right">
+                              <div className="text-2xl font-bold text-gray-900">{milestone.year}</div>
+                              <div className="text-sm text-gray-500 uppercase tracking-wide">Milestone</div>
+                            </div>
+                          </div>
+                          
+                          {/* Content */}
+                          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow transition-colors duration-300">
+                            {milestone.title}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-lg">
+                            {milestone.description}
+                          </p>
+                          
+                          {/* Gradient Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-yellow/0 via-yellow/5 to-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+                        </div>
+                        
+                        {/* Connecting Arrow */}
+                        <div className={`hidden md:block absolute top-1/2 ${index % 2 === 0 ? '-right-6' : '-left-6'} transform -translate-y-1/2`}>
+                          <div className={`w-8 h-0.5 bg-gradient-to-${index % 2 === 0 ? 'r' : 'l'} from-yellow to-transparent`}></div>
+                        </div>
                       </div>
-                      
-                      {/* Content */}
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-yellow transition-colors duration-300">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {milestone.description}
-                      </p>
-                      
-                      {/* Hover Accent */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                    
+                    {/* Timeline Dot */}
+                    <div className="w-2 md:w-2/12 flex justify-center relative z-10">
+                      <motion.div 
+                        className="w-6 h-6 bg-yellow rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300"
+                        whileHover={{ scale: 1.3 }}
+                      >
+                        <div className="w-full h-full bg-gradient-to-br from-yellow to-yellow/70 rounded-full"></div>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Spacer */}
+                    <div className="w-full md:w-5/12"></div>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Timeline End Cap */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow rounded-full border-2 border-white shadow-lg"></div>
             </div>
           </motion.div>
         </div>
