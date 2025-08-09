@@ -86,8 +86,40 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 bg-white relative overflow-hidden">
+        {/* Subtle Animated Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Floating Geometric Elements */}
+          <div className="absolute top-20 left-10 w-16 h-16 bg-yellow-100/30 rounded-full animate-float" style={{animationDuration: '8s'}}></div>
+          <div className="absolute top-40 right-20 w-12 h-12 bg-gray-100/40 rotate-45 animate-float" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
+          <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-yellow-50/50 rounded-full animate-float" style={{animationDuration: '12s', animationDelay: '4s'}}></div>
+          <div className="absolute bottom-20 right-1/3 w-8 h-8 bg-gray-50/60 rotate-45 animate-float" style={{animationDuration: '9s', animationDelay: '1s'}}></div>
+          
+          {/* Subtle Wave Pattern */}
+          <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1000 600">
+            <defs>
+              <linearGradient id="subtleWave" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.06"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,300 Q250,250 500,300 T1000,300" stroke="url(#subtleWave)" strokeWidth="1" fill="none" className="animate-pulse" style={{animationDuration: '8s'}}/>
+          </svg>
+          
+          {/* Light Grid Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <svg width="100" height="100" viewBox="0 0 100 100" className="w-full h-full">
+              <pattern id="lightGrid" width="100" height="100" patternUnits="userSpaceOnUse">
+                <circle cx="50" cy="50" r="0.8" fill="#f59e0b" opacity="0.08"/>
+                <line x1="0" y1="50" x2="100" y2="50" stroke="#6b7280" strokeWidth="0.2" opacity="0.04"/>
+                <line x1="50" y1="0" x2="50" y2="100" stroke="#6b7280" strokeWidth="0.2" opacity="0.04"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#lightGrid)" />
+            </svg>
+          </div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactInfo.map((info, index) => (
               <Card key={index} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
