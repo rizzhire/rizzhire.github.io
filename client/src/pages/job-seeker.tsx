@@ -769,7 +769,7 @@ export default function JobSeekerPage() {
                 <Card 
                   key={testimonial.id} 
                   className={`bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group ${testimonialsVisible ? 'animate-pop-in' : 'opacity-0'}`}
-                  style={{animationDelay: testimonialsVisible ? `${index * 0.15}s` : '0s'}}
+                  style={{animationDelay: testimonialsVisible ? `${index * 0.3}s` : '0s'}}
                 >
                   <CardContent className="p-0 h-full flex flex-col">
                     <div className="flex items-center mb-4">
