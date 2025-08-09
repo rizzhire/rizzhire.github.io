@@ -59,17 +59,7 @@ export default function Services() {
         <div className="absolute bottom-20 left-40 w-18 h-18 bg-gradient-to-r from-indigo-300/5 to-blue-300/7 rounded-lg rotate-30 blur-md animate-pulse-slow" style={{animationDelay: '4s'}}></div>
         <div className="absolute top-80 right-1/4 w-8 h-8 bg-gradient-to-r from-teal-300/5 to-cyan-300/7 rounded-full blur-sm animate-rotate" style={{animationDelay: '1s'}}></div>
         
-        {/* Live Moving Wave Pattern */}
-        <svg className="absolute bottom-0 left-0 w-full h-16 opacity-3 animate-waveFlow" viewBox="0 0 1200 100">
-          <defs>
-            <linearGradient id="servicesWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.1"/>
-              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
-            </linearGradient>
-          </defs>
-          <path d="M0,50 Q300,30 600,50 T1200,50" stroke="url(#servicesWaveGradient)" strokeWidth="1" fill="none"/>
-        </svg>
+
         
         {/* Wavy Abstract Traveling Lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
