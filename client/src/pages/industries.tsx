@@ -290,8 +290,6 @@ export default function Industries() {
         
         {/* CTA Background Graphics */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-16 right-16 w-24 h-24 bg-gradient-to-r from-yellow-200/20 to-orange-200/30 rounded-full blur-xl"></div>
-          <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-r from-blue-200/15 to-cyan-200/25 rounded-full blur-2xl"></div>
           
           {/* Decorative Lines */}
           <svg className="absolute bottom-0 left-0 w-full h-32 opacity-10" viewBox="0 0 1200 200">
