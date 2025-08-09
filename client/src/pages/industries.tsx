@@ -200,15 +200,7 @@ export default function Industries() {
             />
           </svg>
           
-          {/* Very Light Dots Pattern */}
-          <div className="absolute inset-0 opacity-2">
-            <svg width="40" height="40" viewBox="0 0 40 40" className="w-full h-full">
-              <pattern id="industriesDotsPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                <circle cx="20" cy="20" r="1" fill="#f59e0b" opacity="0.08"/>
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#industriesDotsPattern)" />
-            </svg>
-          </div>
+
         </div>
         
         <div className="relative max-w-5xl mx-auto">
@@ -275,7 +267,6 @@ export default function Industries() {
 
                     {/* Enhanced Bottom Effects */}
                     <div className={`absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r ${industry.accentColor} opacity-30 group-hover:opacity-50 transition-opacity duration-500`}></div>
-                    <div className={`absolute bottom-6 right-6 w-6 h-6 bg-gradient-to-r ${industry.accentColor} opacity-5 rounded-full group-hover:scale-150 group-hover:opacity-10 transition-all duration-500`}></div>
                   </div>
                 </div>
               </motion.div>
