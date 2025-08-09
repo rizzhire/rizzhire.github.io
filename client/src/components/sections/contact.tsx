@@ -182,7 +182,7 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-600 font-mono">
+                  <p className="text-gray-600">
                     {emailTypewriter.displayText}
                     {emailTypewriter.isTyping && (
                       <span className="animate-pulse text-yellow">|</span>
@@ -212,7 +212,7 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-gray-600 font-mono">
+                  <p className="text-gray-600">
                     {phoneTypewriter.displayText}
                     {phoneTypewriter.isTyping && (
                       <span className="animate-pulse text-yellow">|</span>
@@ -242,7 +242,7 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Office</h4>
-                  <p className="text-gray-600 font-mono whitespace-pre-line">
+                  <p className="text-gray-600 whitespace-pre-line">
                     {officeTypewriter.displayText}
                     {officeTypewriter.isTyping && (
                       <span className="animate-pulse text-yellow">|</span>
