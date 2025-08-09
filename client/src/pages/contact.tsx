@@ -24,8 +24,8 @@ export default function Contact() {
       icon: MapPin,
       title: "Visit Us",
       details: [
-        { text: "• Head Office:<br/>6/7A, AJC Bose Road, Padatik Theatre<br/>Kolkata-700017, West Bengal, INDIA" },
-        { text: "• Branch Office:<br/>4th-floor Nevidita Road, Kidzee School<br/>Siliguri 734003, West Bengal, INDIA" }
+        { text: "• Head Office:<br/>6/7A, AJC Bose Road,<br/>Padatik Theatre<br/>Kolkata-700017, West<br/>Bengal, INDIA" },
+        { text: "• Branch Office:<br/>4th-floor Nevidita Road,<br/>Kidzee School<br/>Siliguri 734003, West<br/>Bengal, INDIA" }
       ],
       color: "text-blue-600"
     },
@@ -166,9 +166,9 @@ export default function Contact() {
                     <info.icon className="w-6 h-6" />
                   </div>
                   <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm" 
+                      <p key={idx} className="text-gray-600 text-sm leading-relaxed" 
                          dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
                       </p>
                     ))}
