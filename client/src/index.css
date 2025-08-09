@@ -101,13 +101,12 @@ div[data-state="open"] {
 
 /* Remove the universal fix that might cause issues */
 
-/* Remove all backdrop effects completely */
+/* Remove frosted effect but keep transparent background */
 [data-radix-dialog-overlay],
-.DialogOverlay,
-div[data-state="open"] {
+.DialogOverlay {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: transparent !important;
 }
 
 /* Sacramento font specific styling */
