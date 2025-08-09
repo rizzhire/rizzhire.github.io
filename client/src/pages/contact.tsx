@@ -84,14 +84,14 @@ export default function Contact() {
         {/* Enhanced Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Floating Circles */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-200/30 to-yellow-300/40 rounded-full blur-xl animate-floatMove"></div>
-          <div className="absolute bottom-20 right-20 w-28 h-28 bg-gradient-to-r from-blue-200/25 to-cyan-200/35 rounded-full blur-lg animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-lg animate-rotate" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-40 right-1/3 w-20 h-20 bg-gradient-to-r from-green-200/25 to-emerald-200/35 rounded-full blur-md animate-bounce-slow" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-20 left-10 w-48 h-48 bg-gradient-to-r from-yellow-200/30 to-yellow-300/40 rounded-full blur-3xl animate-floatMove"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-200/25 to-cyan-200/35 rounded-full blur-2xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-36 h-36 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-40 right-1/3 w-32 h-32 bg-gradient-to-r from-green-200/25 to-emerald-200/35 rounded-full blur-xl animate-bounce-slow" style={{animationDelay: '3s'}}></div>
           
           {/* Additional Floating Circles */}
-          <div className="absolute bottom-40 left-1/3 w-16 h-16 bg-gradient-to-br from-yellow-300/20 to-orange-300/30 rounded-full blur-sm animate-spin-slow"></div>
-          <div className="absolute top-32 right-1/4 w-12 h-12 bg-gradient-to-tl from-indigo-300/25 to-purple-300/35 rounded-full blur-sm animate-pulse"></div>
+          <div className="absolute bottom-40 left-1/3 w-28 h-28 bg-gradient-to-br from-yellow-300/20 to-orange-300/30 rounded-full blur-xl animate-spin-slow"></div>
+          <div className="absolute top-32 right-1/4 w-24 h-24 bg-gradient-to-tl from-indigo-300/25 to-purple-300/35 rounded-full blur-xl animate-pulse"></div>
           
           {/* Wave Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 400">
@@ -133,9 +133,9 @@ export default function Contact() {
       <section className="py-16 px-4 bg-white relative overflow-hidden">
         {/* Background Graphics for Contact Section */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-full blur-lg animate-floatMove"></div>
-          <div className="absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-md animate-rotate"></div>
-          <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-r from-purple-300/8 to-pink-300/12 rounded-full blur-sm animate-pulse-slow"></div>
+          <div className="absolute top-20 right-10 w-48 h-48 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-full blur-3xl animate-floatMove"></div>
+          <div className="absolute bottom-32 left-16 w-40 h-40 bg-gradient-to-r from-blue-300/10 to-cyan-300/15 rounded-full blur-2xl animate-rotate"></div>
+          <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-gradient-to-r from-purple-300/8 to-pink-300/12 rounded-full blur-2xl animate-pulse-slow"></div>
           
           {/* Decorative Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 800 600">
