@@ -241,7 +241,7 @@ export default function Contact() {
             className="perspective-1000"
           >
             <Card 
-              className="border-2 border-gray-100 overflow-hidden"
+              className="border-2 border-gray-100 overflow-hidden rounded-3xl"
             >
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
