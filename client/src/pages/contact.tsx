@@ -87,59 +87,52 @@ export default function Contact() {
 
       {/* Contact Info Cards */}
       <section className="py-20 px-4 bg-white relative overflow-hidden">
-        {/* Light Background Graphics */}
+        {/* Advanced Animated Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Animated Wave Patterns */}
-          <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlow" viewBox="0 0 1000 600" style={{animationDuration: '25s'}}>
+          {/* Moving Floating Circles */}
+          <div className="absolute top-16 left-16 w-20 h-20 bg-gradient-to-r from-yellow-200/15 to-yellow-300/25 rounded-full blur-xl animate-bounce" style={{animationDuration: '6s', animationDelay: '0s'}}></div>
+          <div className="absolute top-32 right-24 w-16 h-16 bg-gradient-to-r from-blue-200/12 to-cyan-200/20 rounded-full blur-lg animate-pulse" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
+          <div className="absolute bottom-24 left-1/4 w-24 h-24 bg-gradient-to-r from-orange-200/10 to-yellow-200/18 rounded-full blur-2xl animate-bounce" style={{animationDuration: '8s', animationDelay: '2s'}}></div>
+          <div className="absolute bottom-16 right-1/3 w-18 h-18 bg-gradient-to-r from-purple-200/14 to-pink-200/22 rounded-full blur-xl animate-pulse" style={{animationDuration: '5s', animationDelay: '3s'}}></div>
+          
+          {/* Animated Wave Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 1000 600">
             <defs>
-              <linearGradient id="contactWaveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.08"/>
+              <linearGradient id="contactWave1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                 <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
               </linearGradient>
-              <linearGradient id="contactWaveGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#6b7280" stopOpacity="0.06"/>
-                <stop offset="100%" stopColor="#6b7280" stopOpacity="0"/>
+              <linearGradient id="contactWave2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
               </linearGradient>
             </defs>
-            <path d="M0,300 Q250,150 500,300 T1000,300" stroke="url(#contactWaveGradient1)" strokeWidth="2" fill="none"/>
-            <path d="M0,200 Q300,350 600,200 T1000,200" stroke="url(#contactWaveGradient2)" strokeWidth="1.5" fill="none"/>
+            <path d="M-100,300 Q150,150 400,300 T800,300 T1200,300" stroke="url(#contactWave1)" strokeWidth="2" fill="none" className="animate-pulse" style={{animationDuration: '6s'}}/>
+            <path d="M1100,200 Q850,350 550,200 T150,200 T-250,200" stroke="url(#contactWave2)" strokeWidth="1.5" fill="none" className="animate-pulse" style={{animationDuration: '8s', animationDelay: '2s'}}/>
           </svg>
           
-          {/* Floating Geometric Elements */}
-          <svg className="absolute inset-0 w-full h-full opacity-4" viewBox="0 0 1000 600">
-            <defs>
-              <linearGradient id="contactFloatingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12"/>
-                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
-              </linearGradient>
-            </defs>
-            
-            {/* Animated Traveling Elements */}
-            <g className="animate-floatMoveEnhanced">
-              <circle cx="100" cy="150" r="3" fill="url(#contactFloatingGradient)"/>
-              <rect x="850" y="250" width="4" height="4" fill="url(#contactFloatingGradient)" rx="1"/>
-            </g>
-            
-            <g className="animate-pulseEnhanced" style={{animationDelay: '2s'}}>
-              <circle cx="200" cy="400" r="2" fill="url(#contactFloatingGradient)"/>
-              <rect x="750" y="100" width="3" height="3" fill="url(#contactFloatingGradient)" rx="1"/>
-            </g>
-            
-            <g className="animate-rotateEnhanced" style={{animationDelay: '4s'}}>
-              <circle cx="900" cy="350" r="2.5" fill="url(#contactFloatingGradient)"/>
-              <rect x="50" y="450" width="3" height="3" fill="url(#contactFloatingGradient)" rx="1"/>
+          {/* Moving Geometric Shapes */}
+          <div className="absolute top-20 left-1/3 w-4 h-4 bg-yellow-300/20 rotate-45 animate-spin" style={{animationDuration: '10s'}}></div>
+          <div className="absolute bottom-32 right-1/4 w-3 h-3 bg-blue-300/18 rounded-full animate-bounce" style={{animationDuration: '7s', animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-20 w-5 h-5 bg-gray-300/15 clip-path-triangle animate-pulse" style={{animationDuration: '5s', animationDelay: '3s'}}></div>
+          <div className="absolute top-40 right-16 w-6 h-1 bg-yellow-400/25 animate-pulse" style={{animationDuration: '4s', animationDelay: '2s'}}></div>
+          
+          {/* Floating Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-6" viewBox="0 0 1000 600">
+            <g className="animate-pulse" style={{animationDuration: '12s'}}>
+              <line x1="0" y1="100" x2="200" y2="150" stroke="#f59e0b" strokeWidth="1" opacity="0.2"/>
+              <line x1="800" y1="250" x2="1000" y2="200" stroke="#3b82f6" strokeWidth="1" opacity="0.18"/>
+              <line x1="200" y1="450" x2="400" y2="400" stroke="#f59e0b" strokeWidth="1" opacity="0.16"/>
             </g>
           </svg>
           
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-2">
-            <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
-              <pattern id="contactGridPattern" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="30" cy="30" r="0.5" fill="#f59e0b" opacity="0.06"/>
-                <rect x="29" y="0" width="0.5" height="60" fill="#6b7280" opacity="0.03"/>
-                <rect x="0" y="29" width="60" height="0.5" fill="#6b7280" opacity="0.03"/>
+          {/* Subtle Dot Grid */}
+          <div className="absolute inset-0 opacity-4">
+            <svg width="80" height="80" viewBox="0 0 80 80" className="w-full h-full">
+              <pattern id="contactDots" width="80" height="80" patternUnits="userSpaceOnUse">
+                <circle cx="40" cy="40" r="1" fill="#f59e0b" opacity="0.1"/>
               </pattern>
-              <rect width="100%" height="100%" fill="url(#contactGridPattern)" />
+              <rect width="100%" height="100%" fill="url(#contactDots)" />
             </svg>
           </div>
         </div>
