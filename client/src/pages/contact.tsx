@@ -89,9 +89,9 @@ export default function Contact() {
           <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-purple-200/20 to-pink-200/30 rounded-full blur-lg animate-rotate" style={{animationDelay: '2s'}}></div>
           <div className="absolute top-40 right-1/3 w-20 h-20 bg-gradient-to-r from-green-200/25 to-emerald-200/35 rounded-full blur-md animate-bounce-slow" style={{animationDelay: '3s'}}></div>
           
-          {/* Geometric Shapes */}
-          <div className="absolute bottom-40 left-1/3 w-16 h-16 bg-gradient-to-br from-yellow-300/20 to-orange-300/30 transform rotate-45 blur-sm animate-spin-slow"></div>
-          <div className="absolute top-32 right-1/4 w-12 h-12 bg-gradient-to-tl from-indigo-300/25 to-purple-300/35 rounded-lg rotate-12 blur-sm animate-pulse"></div>
+          {/* Additional Floating Circles */}
+          <div className="absolute bottom-40 left-1/3 w-16 h-16 bg-gradient-to-br from-yellow-300/20 to-orange-300/30 rounded-full blur-sm animate-spin-slow"></div>
+          <div className="absolute top-32 right-1/4 w-12 h-12 bg-gradient-to-tl from-indigo-300/25 to-purple-300/35 rounded-full blur-sm animate-pulse"></div>
           
           {/* Wave Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 400">
