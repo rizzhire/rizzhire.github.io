@@ -166,9 +166,9 @@ export default function Contact() {
                     <info.icon className="w-6 h-6" />
                   </div>
                   <h3 className="font-semibold text-lg mb-3 text-gray-900">{info.title}</h3>
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm leading-relaxed" 
+                      <p key={idx} className="text-gray-600 text-xs leading-normal" 
                          dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
                       </p>
                     ))}
