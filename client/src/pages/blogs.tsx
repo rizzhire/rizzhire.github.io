@@ -244,13 +244,13 @@ export default function Blogs() {
                     {/* Full Container SVG Illustration */}
                     <svg className="w-full h-full absolute inset-0" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
                       {/* Background */}
-                      <rect width="100%" height="100%" fill="#FFFFFF"/>
+                      <rect width="100%" height="100%" fill="#F5F3EB"/>
                       
                       {/* Floating Geometric Elements */}
-                      <circle cx="50" cy="60" r="8" fill="#000000" opacity="0.1"/>
-                      <circle cx="250" cy="120" r="12" fill="#000000" opacity="0.08"/>
-                      <circle cx="280" cy="300" r="6" fill="#000000" opacity="0.15"/>
-                      <circle cx="30" cy="350" r="10" fill="#000000" opacity="0.1"/>
+                      <circle cx="50" cy="60" r="8" fill="#FCD34D" opacity="0.7"/>
+                      <circle cx="250" cy="120" r="12" fill="#000000" opacity="0.8"/>
+                      <circle cx="280" cy="300" r="6" fill="#FCD34D" opacity="0.6"/>
+                      <circle cx="30" cy="350" r="10" fill="#FFFFFF" opacity="0.9"/>
                       
                       {/* Main Building Complex */}
                       <g transform="translate(80, 120)">
@@ -276,11 +276,11 @@ export default function Blogs() {
                         </g>
                         
                         {/* Building Entrance */}
-                        <rect x="55" y="200" width="30" height="40" fill="#000000" rx="4"/>
+                        <rect x="55" y="200" width="30" height="40" fill="#FCD34D" rx="4"/>
                         <rect x="60" y="210" width="20" height="30" fill="#FFFFFF" rx="2"/>
                         
                         {/* Rooftop Elements */}
-                        <rect x="20" y="50" width="100" height="20" fill="#000000" rx="4"/>
+                        <rect x="20" y="50" width="100" height="20" fill="#FCD34D" rx="4"/>
                         <rect x="60" y="30" width="20" height="30" fill="#000000" rx="2"/>
                       </g>
                       
@@ -292,8 +292,8 @@ export default function Blogs() {
                       </g>
                       
                       <g transform="translate(240, 200)">
-                        <circle cx="0" cy="0" r="15" fill="#000000"/>
-                        <rect x="-10" y="10" width="20" height="25" fill="#000000" rx="5"/>
+                        <circle cx="0" cy="0" r="15" fill="#FCD34D"/>
+                        <rect x="-10" y="10" width="20" height="25" fill="#FCD34D" rx="5"/>
                         <circle cx="0" cy="-5" r="8" fill="#FFFFFF"/>
                       </g>
                       
@@ -304,17 +304,17 @@ export default function Blogs() {
                       </g>
                       
                       {/* Connection Lines */}
-                      <path d="M45 195 Q100 160 150 180" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
-                      <path d="M225 215 Q180 180 150 200" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
-                      <path d="M55 315 Q100 280 150 280" stroke="#000000" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.6"/>
+                      <path d="M45 195 Q100 160 150 180" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      <path d="M225 215 Q180 180 150 200" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
+                      <path d="M55 315 Q100 280 150 280" stroke="#FCD34D" strokeWidth="3" fill="none" strokeDasharray="5,3" opacity="0.8"/>
                       
                       {/* Success Indicators */}
-                      <circle cx="150" cy="100" r="20" fill="#FFFFFF" stroke="#000000" strokeWidth="2"/>
-                      <path d="M140 100 L147 107 L160 90" stroke="#000000" strokeWidth="4" fill="none"/>
+                      <circle cx="150" cy="100" r="20" fill="#FCD34D"/>
+                      <path d="M140 100 L147 107 L160 90" stroke="#FFFFFF" strokeWidth="4" fill="none"/>
                       
                       {/* HireNET Logo/Badge */}
-                      <circle cx="150" cy="50" r="25" fill="#000000"/>
-                      <text x="150" y="58" textAnchor="middle" fill="#FFFFFF" fontSize="12" fontWeight="bold">H</text>
+                      <circle cx="150" cy="50" r="25" fill="#FCD34D"/>
+                      <text x="150" y="58" textAnchor="middle" fill="#000000" fontSize="12" fontWeight="bold">H</text>
                     </svg>
                     
                     {/* Text Overlay */}
