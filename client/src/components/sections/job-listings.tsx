@@ -10,7 +10,7 @@ export default function JobListings() {
   const { containerRef, visibleItems } = useStaggeredAnimation(jobs.length, 100);
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white via-gray-50/30 to-white">
+    <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Latest Opportunities</h2>
@@ -24,7 +24,7 @@ export default function JobListings() {
             <Card 
               key={job.id} 
               className={`
-                group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow
+                bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow
                 ${visibleItems.includes(index) 
                   ? 'animate-flip-in opacity-100' 
                   : 'opacity-0 transform rotateY-90'
