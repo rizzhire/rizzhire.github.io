@@ -37,7 +37,7 @@ export default function JobListings() {
                 </div>
                 <div className="flex items-center text-gray-600">
                   <DollarSign className="h-4 w-4 mr-2" />
-                  <span className="job-salary-container text-sm">1200 AED</span>
+                  <span className="job-salary-container text-sm">100 AED</span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <MapPin className="h-4 w-4 mr-2" />
