@@ -358,21 +358,23 @@ export default function JobSeekerPage() {
                               </div>
                             </div>
                           ) : (
-                            <ObjectUploader
-                              maxNumberOfFiles={1}
-                              maxFileSize={5242880} // 5MB
-                              allowedFileTypes={[".pdf"]}
-                              onGetUploadParameters={handleGetUploadParameters}
-                              onComplete={handleUploadComplete}
-                              buttonClassName="w-full bg-gradient-to-br from-white to-gray-50 border-2 border-dashed border-yellow/30 hover:border-yellow/50 hover:bg-gradient-to-br hover:from-yellow/5 hover:to-yellow/10 text-gray-700 transition-all duration-300 rounded-xl shadow-sm hover:shadow-md"
-                            >
-                              <div className="flex flex-col items-center gap-4 py-10">
-                                <div className="text-center space-y-2">
-                                  <p className="font-semibold text-gray-800">Click to upload or drag and drop</p>
-                                  <p className="text-sm text-gray-500">PDF files only • Maximum 5MB</p>
+                            <div className="space-y-3">
+                              <ObjectUploader
+                                maxNumberOfFiles={1}
+                                maxFileSize={5242880} // 5MB
+                                allowedFileTypes={[".pdf"]}
+                                onGetUploadParameters={handleGetUploadParameters}
+                                onComplete={handleUploadComplete}
+                                buttonClassName="w-full bg-gradient-to-br from-white to-gray-50 border-2 border-dashed border-yellow/30 hover:border-yellow/50 hover:bg-gradient-to-br hover:from-yellow/5 hover:to-yellow/10 text-gray-700 transition-all duration-300 rounded-xl shadow-sm hover:shadow-md"
+                              >
+                                <div className="flex flex-col items-center gap-4 py-10">
+                                  <div className="text-center">
+                                    <p className="font-semibold text-gray-800">Click to upload or drag and drop</p>
+                                  </div>
                                 </div>
-                              </div>
-                            </ObjectUploader>
+                              </ObjectUploader>
+                              <p className="text-center text-sm text-gray-500">PDF files only • Maximum 5MB</p>
+                            </div>
                           )}
                         </div>
 
