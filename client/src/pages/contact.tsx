@@ -118,7 +118,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <Card className="bg-white p-8 md:p-12 rounded-[2rem] border-0 shadow-lg">
+          <Card className="bg-white p-8 md:p-12 rounded-[3rem] border-0 shadow-lg">
             <CardContent className="p-0">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
