@@ -121,7 +121,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Location */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300 font-normal">
               <div className="text-center">
                 <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
                   <MapPin className="w-6 h-6 text-yellow-600" />
