@@ -120,16 +120,36 @@ export default function Contact() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Location */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300 font-normal">
+            {/* Locations */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
               <div className="text-center">
                 <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
                   <MapPin className="w-6 h-6 text-yellow-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Location</h3>
-                <div className="space-y-1 text-sm text-gray-700">
-                  <p className="font-normal">6/7A, AJC Bose Road, Padatik Theatre</p>
-                  <p>Kolkata-700017, West Bengal, INDIA</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Locations</h3>
+                
+                {/* Main Office */}
+                <div className="mb-4 pb-3 border-b border-gray-100 last:border-b-0 last:pb-0 last:mb-0">
+                  <div className="flex items-center justify-center mb-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+                    <span className="text-xs font-semibold text-gray-800 uppercase tracking-wide">Main Office</span>
+                  </div>
+                  <div className="space-y-1 text-sm text-gray-700">
+                    <p className="font-medium">6/7A, AJC Bose Road, Padatik Theatre</p>
+                    <p>Kolkata-700017, West Bengal</p>
+                  </div>
+                </div>
+                
+                {/* Branch Office */}
+                <div>
+                  <div className="flex items-center justify-center mb-2">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full mr-2"></div>
+                    <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Branch Office</span>
+                  </div>
+                  <div className="space-y-1 text-sm text-gray-700">
+                    <p className="font-medium">4th-floor Nevidita Road, Kidzee School</p>
+                    <p>Siliguri 734003, West Bengal</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,20 +196,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Branch Office Section */}
-          <div className="mt-16">
-            <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-12 text-center">
-              <div className="w-20 h-20 bg-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <MapPin className="w-10 h-10 text-yellow" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Branch Office</h3>
-              <p className="text-gray-600 text-lg">
-                4th-floor Nevidita Road, Kidzee School<br />
-                Near Post Office Pradhan Nagar<br />
-                Siliguri 734003
-              </p>
-            </div>
-          </div>
+
         </div>
       </section>
       {/* Contact Form */}
