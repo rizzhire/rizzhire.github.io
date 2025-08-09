@@ -43,6 +43,18 @@ export const contacts = pgTable("contacts", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const resumes = pgTable("resumes", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone"),
+  position: text("position"),
+  experience: text("experience"),
+  fileName: text("file_name").notNull(),
+  filePath: text("file_path").notNull(),
+  uploadedAt: timestamp("uploaded_at").defaultNow(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -61,6 +73,11 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
   createdAt: true,
 });
 
+export const insertResumeSchema = createInsertSchema(resumes).omit({
+  id: true,
+  uploadedAt: true,
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type Job = typeof jobs.$inferSelect;
@@ -69,3 +86,5 @@ export type Testimonial = typeof testimonials.$inferSelect;
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 export type Contact = typeof contacts.$inferSelect;
 export type InsertContact = z.infer<typeof insertContactSchema>;
+export type Resume = typeof resumes.$inferSelect;
+export type InsertResume = z.infer<typeof insertResumeSchema>;

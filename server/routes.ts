@@ -1,8 +1,9 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContactSchema } from "@shared/schema";
+import { insertContactSchema, insertResumeSchema } from "@shared/schema";
 import { z } from "zod";
+import { ObjectStorageService } from "./objectStorage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all jobs
@@ -47,6 +48,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(contacts);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch contacts" });
+    }
+  });
+
+  // Get upload URL for resume
+  app.post("/api/resumes/upload", async (req, res) => {
+    try {
+      const objectStorageService = new ObjectStorageService();
+      const uploadURL = await objectStorageService.getObjectEntityUploadURL();
+      res.json({ uploadURL });
+    } catch (error) {
+      console.error("Error getting upload URL:", error);
+      res.status(500).json({ message: "Failed to get upload URL" });
+    }
+  });
+
+  // Create resume entry after upload
+  app.post("/api/resumes", async (req, res) => {
+    try {
+      const validatedData = insertResumeSchema.parse(req.body);
+      const resume = await storage.createResume(validatedData);
+      res.status(201).json(resume);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid resume data", errors: error.errors });
+      } else {
+        console.error("Error creating resume:", error);
+        res.status(500).json({ message: "Failed to create resume" });
+      }
+    }
+  });
+
+  // Get all resumes (for admin purposes)
+  app.get("/api/resumes", async (req, res) => {
+    try {
+      const resumes = await storage.getAllResumes();
+      res.json(resumes);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch resumes" });
     }
   });
 

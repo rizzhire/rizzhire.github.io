@@ -3,6 +3,7 @@ import {
   jobs, 
   testimonials, 
   contacts,
+  resumes,
   type User, 
   type InsertUser,
   type Job,
@@ -10,7 +11,9 @@ import {
   type Testimonial,
   type InsertTestimonial,
   type Contact,
-  type InsertContact
+  type InsertContact,
+  type Resume,
+  type InsertResume
 } from "@shared/schema";
 
 export interface IStorage {
@@ -28,6 +31,9 @@ export interface IStorage {
   
   createContact(contact: InsertContact): Promise<Contact>;
   getAllContacts(): Promise<Contact[]>;
+  
+  createResume(resume: InsertResume): Promise<Resume>;
+  getAllResumes(): Promise<Resume[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -35,20 +41,24 @@ export class MemStorage implements IStorage {
   private jobs: Map<number, Job>;
   private testimonials: Map<number, Testimonial>;
   private contacts: Map<number, Contact>;
+  private resumes: Map<number, Resume>;
   private currentUserId: number;
   private currentJobId: number;
   private currentTestimonialId: number;
   private currentContactId: number;
+  private currentResumeId: number;
 
   constructor() {
     this.users = new Map();
     this.jobs = new Map();
     this.testimonials = new Map();
     this.contacts = new Map();
+    this.resumes = new Map();
     this.currentUserId = 1;
     this.currentJobId = 1;
     this.currentTestimonialId = 1;
     this.currentContactId = 1;
+    this.currentResumeId = 1;
     
     // Initialize with sample data
     this.initializeData();
@@ -212,6 +222,20 @@ export class MemStorage implements IStorage {
 
   async getAllContacts(): Promise<Contact[]> {
     return Array.from(this.contacts.values());
+  }
+
+  async createResume(resume: InsertResume): Promise<Resume> {
+    const newResume: Resume = {
+      id: this.currentResumeId++,
+      ...resume,
+      uploadedAt: new Date(),
+    };
+    this.resumes.set(newResume.id, newResume);
+    return newResume;
+  }
+
+  async getAllResumes(): Promise<Resume[]> {
+    return Array.from(this.resumes.values());
   }
 }
 

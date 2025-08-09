@@ -1,15 +1,119 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Upload } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { ObjectUploader } from "@/components/ObjectUploader";
+import { Upload, CheckCircle } from "lucide-react";
 import JobListings from "@/components/sections/job-listings";
 import SuccessStories from "@/components/sections/success-stories";
 import WhyChooseHireNet from "@/components/sections/why-choose-hirenet";
 import Contact from "@/components/sections/contact";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertResumeSchema } from "@shared/schema";
+import { z } from "zod";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+import type { UploadResult } from "@uppy/core";
+
+const resumeFormSchema = insertResumeSchema.extend({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Valid email is required"),
+  phone: z.string().optional(),
+  position: z.string().optional(),
+  experience: z.string().optional(),
+});
+
+type ResumeFormData = z.infer<typeof resumeFormSchema>;
 
 export default function JobSeekerPage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [uploadedFile, setUploadedFile] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  const form = useForm<ResumeFormData>({
+    resolver: zodResolver(resumeFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      position: "",
+      experience: "",
+      fileName: "",
+      filePath: "",
+    },
+  });
+
+  const uploadMutation = useMutation({
+    mutationFn: () => apiRequest<{ uploadURL: string }>("/api/resumes/upload", "POST"),
+  });
+
+  const resumeMutation = useMutation({
+    mutationFn: (data: ResumeFormData) => apiRequest("/api/resumes", "POST", data),
+    onSuccess: () => {
+      toast({
+        title: "Success!",
+        description: "Your resume has been uploaded successfully.",
+      });
+      setIsDialogOpen(false);
+      form.reset();
+      setUploadedFile(null);
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to submit resume. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleGetUploadParameters = async () => {
+    const result = await uploadMutation.mutateAsync();
+    return {
+      method: "PUT" as const,
+      url: result.uploadURL,
+    };
+  };
+
+  const handleUploadComplete = (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
+    if (result.successful.length > 0) {
+      const file = result.successful[0];
+      const fileName = file.name || "resume.pdf";
+      const filePath = file.uploadURL || "";
+      
+      setUploadedFile(fileName);
+      form.setValue("fileName", fileName);
+      form.setValue("filePath", filePath);
+      
+      toast({
+        title: "File uploaded!",
+        description: "Please fill in your details to complete the submission.",
+      });
+    }
+  };
+
+  const onSubmit = (data: ResumeFormData) => {
+    if (!data.filePath) {
+      toast({
+        title: "Error",
+        description: "Please upload a resume file first.",
+        variant: "destructive",
+      });
+      return;
+    }
+    resumeMutation.mutate(data);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section for Job Seekers */}
-      <section className="relative min-h-screen cream overflow-hidden">
+      <section className="relative py-20 cream overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 bg-yellow rounded-full animate-float"></div>
@@ -17,7 +121,7 @@ export default function JobSeekerPage() {
           <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-yellow rounded-full animate-float" style={{animationDelay: '2s'}}></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center space-y-8 animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Launch Your <span className="text-yellow">Global Career</span>
@@ -27,10 +131,156 @@ export default function JobSeekerPage() {
               Your next career opportunity awaits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-              <Button className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg btn-hover ripple">
-                <Upload className="mr-2 h-5 w-5" />
-                Upload Your Resume
-              </Button>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg btn-hover ripple" data-testid="button-open-upload-dialog">
+                    <Upload className="mr-2 h-5 w-5" />
+                    Upload Your Resume
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>Submit Your Resume</DialogTitle>
+                  </DialogHeader>
+                  
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      {/* File Upload Section */}
+                      <div className="space-y-4">
+                        <Label className="text-base font-medium">Resume File (PDF only)</Label>
+                        {uploadedFile ? (
+                          <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-sm text-green-700">{uploadedFile}</span>
+                          </div>
+                        ) : (
+                          <ObjectUploader
+                            maxNumberOfFiles={1}
+                            maxFileSize={5242880} // 5MB
+                            allowedFileTypes={[".pdf"]}
+                            onGetUploadParameters={handleGetUploadParameters}
+                            onComplete={handleUploadComplete}
+                            buttonClassName="w-full bg-gray-100 border border-dashed border-gray-300 hover:bg-gray-50 text-gray-700"
+                          >
+                            <div className="flex flex-col items-center gap-2 py-8">
+                              <Upload className="h-8 w-8 text-gray-400" />
+                              <div className="text-center">
+                                <p className="font-medium">Upload your resume</p>
+                                <p className="text-sm text-gray-500">PDF files only, max 5MB</p>
+                              </div>
+                            </div>
+                          </ObjectUploader>
+                        )}
+                      </div>
+
+                      {/* Personal Information */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Full Name *</FormLabel>
+                              <FormControl>
+                                <Input placeholder="Enter your full name" {...field} data-testid="input-name" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Email Address *</FormLabel>
+                              <FormControl>
+                                <Input type="email" placeholder="Enter your email" {...field} data-testid="input-email" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Phone Number</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Enter your phone number" {...field} data-testid="input-phone" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="position"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Desired Position</FormLabel>
+                            <FormControl>
+                              <Input placeholder="e.g. Software Engineer, Marketing Manager" {...field} data-testid="input-position" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="experience"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Years of Experience</FormLabel>
+                            <Select onValueChange={field.onChange} value={field.value || ""}>
+                              <FormControl>
+                                <SelectTrigger data-testid="select-experience">
+                                  <SelectValue placeholder="Select your experience level" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="0-1">0-1 years</SelectItem>
+                                <SelectItem value="1-3">1-3 years</SelectItem>
+                                <SelectItem value="3-5">3-5 years</SelectItem>
+                                <SelectItem value="5-10">5-10 years</SelectItem>
+                                <SelectItem value="10+">10+ years</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <div className="flex gap-3 pt-4">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => setIsDialogOpen(false)}
+                          className="flex-1"
+                          data-testid="button-cancel"
+                        >
+                          Cancel
+                        </Button>
+                        <Button
+                          type="submit"
+                          disabled={resumeMutation.isPending}
+                          className="flex-1 bg-yellow text-black hover:bg-yellow/90"
+                          data-testid="button-submit-resume"
+                        >
+                          {resumeMutation.isPending ? "Submitting..." : "Submit Resume"}
+                        </Button>
+                      </div>
+                    </form>
+                  </Form>
+                </DialogContent>
+              </Dialog>
+              
               <p className="text-gray-500 text-sm">Free resume review and optimization included</p>
             </div>
           </div>
