@@ -240,11 +240,11 @@ export default function Blogs() {
                   </div>
                   
                   {/* Right Feature Badge - Full Container Illustration */}
-                  <div className="lg:col-span-3 relative overflow-hidden" style={{backgroundColor: '#E8E6DC'}}>
+                  <div className="lg:col-span-3 relative overflow-hidden" style={{backgroundColor: '#F2F0E8'}}>
                     {/* Full Container SVG Illustration */}
                     <svg className="w-full h-full absolute inset-0" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
                       {/* Background */}
-                      <rect width="100%" height="100%" fill="#E8E6DC"/>
+                      <rect width="100%" height="100%" fill="#F2F0E8"/>
                       
                       {/* Floating Geometric Elements */}
                       <circle cx="50" cy="60" r="8" fill="#FCD34D"/>
