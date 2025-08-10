@@ -51,7 +51,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative cream pt-0 pb-20 overflow-hidden">
+    <section id="services" className="relative cream pt-0 pb-12 overflow-hidden">
       {/* Enhanced Live Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large Enhanced Live Moving Floating Circles */}
