@@ -98,6 +98,9 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **CTA Section Animations**: Implemented coordinated scroll-triggered animations for call-to-action content
 - **Content Preservation**: Maintained all original service content, graphics, and background elements while adding animations
 - **Banner Optimization**: Reduced excessive padding from pt-32/pb-20 to pt-24/pb-12, optimized heading and text sizes for compact layout
+- **Individual Tile Animations**: Replaced CSS transitions with Framer Motion whileInView for precise scroll-triggered animations
+- **Clean Animation Style**: Implemented minimal fade-up animations (opacity 0→1, y movement, subtle scale 0.9→1) with proper viewport detection
+- **Scroll Trigger Optimization**: Applied negative bottom margins (-300px Services, -150px home) to ensure animations only trigger during actual scrolling, not on page load
 
 ### Why Choose HireNET Animation Speed Optimization (August 10, 2025)
 - **Faster Animation Timing**: Reduced animation delays from 0.3s-1.2s to 0.1s-0.4s for quicker card appearances
