@@ -3,7 +3,7 @@ import ConsultationButton from "@/components/ui/consultation-button";
 import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import indianEmblemImage from "@assets/generated_images/Indian_Government_Lion_Emblem_6218bf33.png";
+import indianEmblemImage from "@assets/generated_images/Detailed_Indian_Government_Emblem_0ab86ce1.png";
 
 export default function Hero() {
   const placements = useCounter({ end: 18, duration: 2500 });
@@ -205,13 +205,13 @@ export default function Hero() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                {/* Indian Government Emblem */}
+                {/* Indian Government Emblem - Full Height */}
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl flex items-center justify-center border border-yellow/20">
+                  <div className="w-28 h-40 md:w-36 md:h-48 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl flex items-center justify-center border border-yellow/20 p-4">
                     <img 
                       src={indianEmblemImage} 
                       alt="Government of India Emblem" 
-                      className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
