@@ -176,16 +176,16 @@ export default function Services() {
         
         <div 
           className="relative max-w-6xl mx-auto text-center"
-          ref={heroAnimation.ref}
+          ref={heroAnimation.elementRef}
         >
           <h1 
             className={`fluid-text-5xl font-bold mb-6 text-gray-900 transition-all duration-[1200ms] ${
-              heroAnimation.inView || pageLoaded 
+              heroAnimation.isVisible || pageLoaded 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
             }`}
             style={{ 
-              transitionDelay: (heroAnimation.inView || pageLoaded) ? '0ms' : '0ms',
+              transitionDelay: (heroAnimation.isVisible || pageLoaded) ? '0ms' : '0ms',
               transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
@@ -193,12 +193,12 @@ export default function Services() {
           </h1>
           <p 
             className={`fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed transition-all duration-[1200ms] ${
-              heroAnimation.inView || pageLoaded 
+              heroAnimation.isVisible || pageLoaded 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
             }`}
             style={{ 
-              transitionDelay: (heroAnimation.inView || pageLoaded) ? '200ms' : '0ms',
+              transitionDelay: (heroAnimation.isVisible || pageLoaded) ? '200ms' : '0ms',
               transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
@@ -228,18 +228,18 @@ export default function Services() {
           <div className="absolute top-1/2 left-10 w-36 h-36 bg-gradient-to-r from-purple-300/8 to-pink-300/12 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto" ref={servicesAnimation.ref}>
+        <div className="relative max-w-7xl mx-auto" ref={servicesAnimation.elementRef}>
           <div className="grid gap-16">
             {services.map((service, index) => (
               <div 
                 key={index} 
                 className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-[1200ms] ${
-                  servicesAnimation.inView 
+                  servicesAnimation.isVisible 
                     ? 'opacity-100 translate-y-0 scale-100' 
-                    : 'opacity-0 translate-y-12 scale-95'
+                    : 'opacity-100 translate-y-0 scale-100'
                 }`}
                 style={{ 
-                  transitionDelay: servicesAnimation.inView ? `${index * 300}ms` : '0ms',
+                  transitionDelay: servicesAnimation.isVisible ? `${index * 300}ms` : '0ms',
                   transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                 }}
               >
@@ -290,16 +290,16 @@ export default function Services() {
       <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div 
           className="max-w-4xl mx-auto text-center"
-          ref={ctaAnimation.ref}
+          ref={ctaAnimation.elementRef}
         >
           <h2 
             className={`fluid-text-4xl font-bold mb-6 text-gray-900 transition-all duration-[1200ms] ${
-              ctaAnimation.inView 
+              ctaAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
             }`}
             style={{ 
-              transitionDelay: ctaAnimation.inView ? '0ms' : '0ms',
+              transitionDelay: ctaAnimation.isVisible ? '0ms' : '0ms',
               transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
@@ -307,12 +307,12 @@ export default function Services() {
           </h2>
           <p 
             className={`fluid-text-xl text-gray-600 mb-8 leading-relaxed transition-all duration-[1200ms] ${
-              ctaAnimation.inView 
+              ctaAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
             }`}
             style={{ 
-              transitionDelay: ctaAnimation.inView ? '200ms' : '0ms',
+              transitionDelay: ctaAnimation.isVisible ? '200ms' : '0ms',
               transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
@@ -320,12 +320,12 @@ export default function Services() {
           </p>
           <div 
             className={`transition-all duration-[1200ms] ${
-              ctaAnimation.inView 
+              ctaAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
             }`}
             style={{ 
-              transitionDelay: ctaAnimation.inView ? '400ms' : '0ms',
+              transitionDelay: ctaAnimation.isVisible ? '400ms' : '0ms',
               transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
