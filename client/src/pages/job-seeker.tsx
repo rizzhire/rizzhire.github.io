@@ -332,8 +332,8 @@ export default function JobSeekerPage() {
           </div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center space-y-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
@@ -341,7 +341,7 @@ export default function JobSeekerPage() {
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button 
@@ -652,7 +652,7 @@ export default function JobSeekerPage() {
       </section>
 
       {/* Government Certification Section */}
-      <section className="-mt-8 pb-4 cream">
+      <section className="-mt-12 pb-4 cream">
         <div 
           ref={certificationAnimation.elementRef}
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
