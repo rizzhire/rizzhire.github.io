@@ -49,20 +49,29 @@ export default function Services() {
       {/* Enhanced Live Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large Enhanced Live Moving Floating Circles */}
-        <div className="absolute top-20 left-16 w-32 h-32 bg-gradient-to-r from-yellow-200/15 to-yellow-300/25 rounded-full blur-xl animate-floatMoveEnhanced"></div>
+        <div className="absolute top-32 right-32 w-48 h-48 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-2xl animate-floatMoveEnhanced"></div>
         <div className="absolute bottom-32 right-20 w-40 h-40 bg-gradient-to-r from-blue-200/12 to-cyan-200/22 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
         <div className="absolute top-1/2 left-8 w-28 h-28 bg-gradient-to-r from-purple-200/14 to-pink-200/24 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-16 right-1/4 w-36 h-36 bg-gradient-to-r from-orange-200/13 to-yellow-200/23 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute bottom-20 right-1/3 w-52 h-52 bg-gradient-to-r from-orange-200/18 to-yellow-200/28 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '1.5s'}}></div>
         
         {/* Medium Floating Elements */}
-        <div className="absolute top-60 left-1/3 w-24 h-24 bg-gradient-to-r from-rose-200/12 to-red-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-60 right-1/4 w-32 h-32 bg-gradient-to-r from-yellow-200/15 to-amber-200/25 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
         <div className="absolute bottom-16 left-1/5 w-20 h-20 bg-gradient-to-r from-indigo-200/11 to-blue-200/21 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
-        <div className="absolute top-80 right-1/5 w-16 h-16 bg-gradient-to-r from-amber-200/10 to-orange-200/20 rounded-full blur-sm animate-rotateEnhanced" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-80 right-1/6 w-24 h-24 bg-gradient-to-r from-amber-200/15 to-yellow-200/25 rounded-full blur-lg animate-rotateEnhanced" style={{animationDelay: '1s'}}></div>
         <div className="absolute bottom-40 left-2/5 w-22 h-22 bg-gradient-to-r from-violet-200/12 to-purple-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '5s'}}></div>
         
+        {/* Behind Services Tiles Graphics */}
+        <div className="absolute top-96 left-1/4 w-36 h-36 bg-gradient-to-r from-yellow-200/12 to-orange-200/22 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute top-96 right-1/4 w-40 h-40 bg-gradient-to-r from-blue-200/10 to-cyan-200/20 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '3.5s'}}></div>
+        <div className="absolute top-80 left-1/2 w-28 h-28 bg-gradient-to-r from-purple-200/11 to-pink-200/21 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '4.5s'}}></div>
+        
         {/* Small Accent Elements */}
-        <div className="absolute top-40 right-1/3 w-14 h-14 bg-gradient-to-r from-sky-200/10 to-blue-200/20 rounded-full blur-sm animate-floatMoveEnhanced" style={{animationDelay: '2.5s'}}></div>
-        <div className="absolute bottom-60 right-12 w-18 h-18 bg-gradient-to-r from-emerald-200/9 to-green-200/19 rounded-full blur-md animate-rotateEnhanced" style={{animationDelay: '3.5s'}}></div>
+        <div className="absolute top-40 right-1/5 w-20 h-20 bg-gradient-to-r from-yellow-200/12 to-amber-200/22 rounded-full blur-lg animate-floatMoveEnhanced" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute bottom-60 right-16 w-24 h-24 bg-gradient-to-r from-orange-200/11 to-yellow-200/21 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '3.5s'}}></div>
+        
+        {/* Additional Service Tile Background Elements */}
+        <div className="absolute top-72 left-1/6 w-20 h-20 bg-gradient-to-r from-amber-200/8 to-yellow-200/18 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '6s'}}></div>
+        <div className="absolute top-88 right-1/8 w-16 h-16 bg-gradient-to-r from-yellow-200/9 to-orange-200/19 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '7s'}}></div>
         
 
         
