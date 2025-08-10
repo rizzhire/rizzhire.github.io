@@ -193,6 +193,22 @@ export default function About() {
           <div className="absolute top-2/3 left-1/2 w-40 h-40 bg-gradient-to-br from-amber-200/10 via-orange-200/15 to-yellow-200/12 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '5s'}}></div>
           <div className="absolute top-20 right-1/3 w-36 h-36 bg-gradient-to-br from-fuchsia-200/11 via-purple-200/16 to-indigo-200/13 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '3.5s'}}></div>
           
+          {/* Additional Colorful Graphics - Coral, Magenta, Lavender, Peach */}
+          <div className="absolute top-40 left-1/4 w-48 h-48 bg-gradient-to-br from-coral-200/8 via-salmon-200/13 to-pink-200/10 rounded-full blur-4xl animate-rotateEnhanced" style={{animationDelay: '6s'}}></div>
+          <div className="absolute bottom-40 right-1/3 w-52 h-52 bg-gradient-to-br from-magenta-200/9 via-fuchsia-200/14 to-violet-200/11 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '7s'}}></div>
+          <div className="absolute top-60 right-1/4 w-44 h-44 bg-gradient-to-br from-lavender-200/7 via-purple-200/12 to-indigo-200/9 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '4.5s'}}></div>
+          <div className="absolute bottom-24 left-1/3 w-56 h-56 bg-gradient-to-br from-peach-200/8 via-orange-200/13 to-amber-200/10 rounded-full blur-4xl animate-rotateEnhanced" style={{animationDelay: '6.5s'}}></div>
+          
+          {/* Warm Tone Graphics - Crimson, Gold, Bronze */}
+          <div className="absolute top-24 left-2/3 w-38 h-38 bg-gradient-to-br from-red-200/7 via-rose-200/12 to-pink-200/9 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '5.5s'}}></div>
+          <div className="absolute bottom-60 left-1/4 w-42 h-42 bg-gradient-to-br from-yellow-200/8 via-amber-200/13 to-orange-200/10 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '7.5s'}}></div>
+          <div className="absolute top-56 right-8 w-34 h-34 bg-gradient-to-br from-orange-300/6 via-red-200/11 to-rose-200/8 rounded-full blur-2xl animate-rotateEnhanced" style={{animationDelay: '8s'}}></div>
+          
+          {/* Cool Tone Graphics - Slate, Steel, Silver */}
+          <div className="absolute bottom-8 left-2/3 w-46 h-46 bg-gradient-to-br from-slate-200/7 via-gray-200/12 to-blue-200/9 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '4.8s'}}></div>
+          <div className="absolute top-72 left-8 w-40 h-40 bg-gradient-to-br from-blue-300/6 via-indigo-200/11 to-purple-200/8 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '6.2s'}}></div>
+          <div className="absolute bottom-48 right-4 w-38 h-38 bg-gradient-to-br from-cyan-200/7 via-sky-200/12 to-blue-200/9 rounded-full blur-2xl animate-rotateEnhanced" style={{animationDelay: '5.8s'}}></div>
+          
 
           
           {/* Enhanced Moving Geometric Lines */}
