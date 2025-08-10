@@ -128,7 +128,7 @@ export default function Hero() {
           
           <div 
             ref={buttonAnimation.elementRef}
-            className={`flex justify-center items-center pt-4 transition-all duration-[1800ms] ease-out delay-500 ${
+            className={`flex justify-center items-center pt-2 transition-all duration-[1800ms] ease-out delay-500 ${
               buttonAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
