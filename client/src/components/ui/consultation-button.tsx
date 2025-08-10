@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface ConsultationButtonProps {
@@ -10,7 +10,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
-  // Scroll animations for entrance effects
+  // Separate scroll animations for text and arrow
   const { elementRef: textRef, isVisible: textVisible } = useScrollAnimation({
     threshold: 0.1,
     rootMargin: '0px 0px -200px 0px'
@@ -35,7 +35,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
       {/* Main button with water drop detachment effect */}
       <div className="relative flex items-center">
         
-        {/* Main button body */}
+        {/* Main button body with text animation */}
         <div 
           ref={textRef}
           className={`
@@ -43,19 +43,14 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             bg-black text-white font-semibold text-lg
             px-8 py-4 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
-            transform transition-all duration-500 ease-out
+            transform transition-all duration-[1500ms] ease-out
             ${textVisible 
-              ? 'opacity-100 translate-y-0 rotate-0 scale-100' 
-              : 'opacity-0 translate-y-8 -rotate-3 scale-110'
+              ? 'opacity-100 translate-x-0 scale-100' 
+              : 'opacity-0 -translate-x-12 scale-95'
             }
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
             ${isClicked ? 'scale-98' : ''}
-          `}
-          style={{
-            transitionDelay: textVisible ? '0ms' : '0ms',
-            transitionDuration: textVisible ? '2000ms' : '100ms',
-            transitionTimingFunction: textVisible ? 'cubic-bezier(0.34,1.56,0.64,1)' : 'ease-out'
-          }}>
+          `}>
           
           {/* Animated shine sweep */}
           <div className={`
@@ -77,34 +72,31 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           </div>
         </div>
         
-        {/* Water drop arrow - detaches on hover */}
+        {/* Water drop arrow with separate animation - detaches on hover */}
         <div 
           ref={arrowRef}
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            shadow-lg transition-all duration-500 ease-out
+            shadow-lg transition-all duration-[1500ms] ease-out
             ${arrowVisible 
-              ? 'opacity-100 translate-x-0 translate-y-0 scale-100 rotate-0' 
-              : 'opacity-0 translate-x-20 -translate-y-12 scale-50 rotate-360'
+              ? 'opacity-100 translate-x-0 scale-100' 
+              : 'opacity-0 translate-x-12 scale-75 rotate-180'
             }
             ${isHovered 
               ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40' 
               : '-ml-6'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
-          `}
-          style={{
-            transitionDelay: arrowVisible ? '600ms' : '0ms',
-            transitionDuration: arrowVisible ? '2500ms' : '100ms',
-            transitionTimingFunction: arrowVisible ? 'cubic-bezier(0.68,-0.55,0.265,1.55)' : 'ease-out'
+          `} style={{
+            transitionDelay: arrowVisible ? '200ms' : '0ms'
           }}>
           
           {/* Water drop connection bridge */}
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2
             w-6 h-1 bg-black
-            transform transition-all duration-300 ease-out origin-left
+            transform transition-all duration-500 ease-out origin-left
             ${isHovered 
               ? 'scale-x-0 opacity-0' 
               : 'scale-x-100 opacity-100'
@@ -115,11 +107,12 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2
             w-4 h-6 bg-black
-            transform transition-all duration-300 ease-out
+            transform transition-all duration-500 ease-out
             ${isHovered 
               ? 'scale-0 opacity-0 rotate-45' 
               : 'scale-100 opacity-100'
             }
+            clip-path-tear-drop
           `} style={{
             clipPath: isHovered ? 'circle(0% at 50% 50%)' : 'ellipse(50% 70% at 80% 50%)'
           }} />
@@ -127,16 +120,10 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           {/* Arrow icon */}
           <ArrowUpRight className={`
             w-5 h-5 text-white relative z-10
-            transition-all duration-1000ms ease-out
-            ${arrowVisible 
-              ? 'rotate-0 scale-100' 
-              : 'rotate-[720deg] scale-0'
-            }
+            transition-all duration-300 ease-out
             ${isHovered ? 'rotate-12 scale-110' : ''}
             ${isClicked ? 'rotate-45 scale-125' : ''}
-          `} style={{
-            transitionDelay: arrowVisible ? '1000ms' : '0ms'
-          }} />
+          `} />
           
           {/* Ripple effect on detachment */}
           {isHovered && (
