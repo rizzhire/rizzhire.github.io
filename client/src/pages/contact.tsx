@@ -145,7 +145,7 @@ export default function Contact() {
               delay: 0.4,
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
-          >Ready to take the next step in your career journey? Click any of the box below and Let's discuss how we can help you</motion.p>
+          >Ready to work along with us? Then click any of the box below and let's discuss how we can help you. Waiting for you knock eagerly...!!!</motion.p>
         </div>
       </section>
       {/* Contact Information */}
