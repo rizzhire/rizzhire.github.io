@@ -3,6 +3,7 @@ import ConsultationButton from "@/components/ui/consultation-button";
 import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import indianEmblemImage from "@assets/generated_images/Indian_Government_Lion_Emblem_6218bf33.png";
 
 export default function Hero() {
   const placements = useCounter({ end: 18, duration: 2500 });
@@ -194,6 +195,53 @@ export default function Hero() {
               </div>
               <div className="text-gray-600 text-sm font-medium leading-tight">
                 Success<br/>Rate
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Government Certification Section */}
+        <div className="mt-16 pt-12 border-t border-gray-200/50">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                {/* Indian Government Emblem */}
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl flex items-center justify-center border border-yellow/20">
+                    <img 
+                      src={indianEmblemImage} 
+                      alt="Government of India Emblem" 
+                      className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* Certification Text */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                    Approved By <span className="text-yellow">Government Of India</span>
+                  </h3>
+                  <p className="text-lg md:text-xl text-gray-700 font-medium mb-3">
+                    Ministry of External Affairs
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Officially recognized recruitment agency authorized to facilitate international employment 
+                    opportunities for Indian professionals across the Middle East region.
+                  </p>
+                </div>
+
+                {/* Verification Badge */}
+                <div className="flex-shrink-0">
+                  <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-semibold text-gray-800">Verified</span>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">
+                      Government Approved
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
