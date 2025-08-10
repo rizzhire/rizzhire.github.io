@@ -198,7 +198,7 @@ export default function Services() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div 
-          className="text-center mb-8 mt-8"
+          className="text-center mb-8 mt-12"
           ref={headerAnimation.elementRef}
         >
           <h2 
