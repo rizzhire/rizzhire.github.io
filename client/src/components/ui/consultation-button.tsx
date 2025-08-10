@@ -37,24 +37,21 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         
         {/* Main button body with unique typewriter reveal animation */}
         <div 
-          ref={textRef}
           className={`
             relative overflow-hidden
             bg-black text-white font-semibold text-lg
             px-8 py-4 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
-            transform
-            ${isHovered ? 'scale-105 -translate-y-1 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out'}
+            transform transition-all duration-500 ease-out
+            ${isHovered ? 'scale-105 -translate-y-1' : ''}
             ${isClicked ? 'scale-98' : ''}
           `}
           style={{
             opacity: textVisible ? 1 : 0,
-            transform: textVisible 
-              ? 'translateY(0px) rotate(0deg) scale(1)' 
-              : 'translateY(32px) rotate(-3deg) scale(1.1)',
-            transition: textVisible 
-              ? 'opacity 2s cubic-bezier(0.34,1.56,0.64,1), transform 2s cubic-bezier(0.34,1.56,0.64,1)' 
-              : 'opacity 0.1s ease-out, transform 0.1s ease-out'
+            ...(textVisible ? {} : {
+              transform: 'translateY(32px) rotate(-3deg) scale(1.1)',
+              transition: 'opacity 2s cubic-bezier(0.34,1.56,0.64,1), transform 2s cubic-bezier(0.34,1.56,0.64,1)'
+            })
           }}>
           
           {/* Animated shine sweep */}
@@ -79,25 +76,22 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         
         {/* Water drop arrow with unique magnetic pull animation - detaches on hover */}
         <div 
-          ref={arrowRef}
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            shadow-lg
+            shadow-lg transition-all duration-500 ease-out
             ${isHovered 
-              ? '-ml-2 translate-x-6 -translate-y-1 scale-110 shadow-xl shadow-black/40 transition-all duration-500 ease-out' 
-              : '-ml-6 transition-all duration-500 ease-out'
+              ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40' 
+              : '-ml-6'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
           `} 
           style={{
             opacity: arrowVisible ? 1 : 0,
-            transform: arrowVisible 
-              ? 'translateX(0px) translateY(0px) scale(1) rotate(0deg)' 
-              : 'translateX(80px) translateY(-48px) scale(0.5) rotate(360deg)',
-            transition: arrowVisible 
-              ? 'opacity 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms, transform 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms' 
-              : 'opacity 0.1s ease-out, transform 0.1s ease-out'
+            ...(arrowVisible ? {} : {
+              transform: 'translateX(80px) translateY(-48px) scale(0.5) rotate(360deg)',
+              transition: 'opacity 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms, transform 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms'
+            })
           }}>
           
           {/* Water drop connection bridge */}
@@ -127,14 +121,15 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           {/* Arrow icon with spin-in animation */}
           <ArrowUpRight className={`
             w-5 h-5 text-white relative z-10
-            transition-all duration-300 ease-out
+            transition-all duration-1000ms ease-out
+            ${arrowVisible 
+              ? 'rotate-0 scale-100' 
+              : 'rotate-[720deg] scale-0'
+            }
             ${isHovered ? 'rotate-12 scale-110' : ''}
             ${isClicked ? 'rotate-45 scale-125' : ''}
           `} style={{
-            transform: arrowVisible ? 'rotate(0deg) scale(1)' : 'rotate(720deg) scale(0)',
-            transition: arrowVisible 
-              ? 'transform 1s ease-out 1000ms' 
-              : 'transform 0.1s ease-out'
+            transitionDelay: arrowVisible ? '1000ms' : '0ms'
           }} />
           
           {/* Ripple effect on detachment */}
