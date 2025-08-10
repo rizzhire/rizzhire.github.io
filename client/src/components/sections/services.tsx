@@ -202,7 +202,7 @@ export default function Services() {
           ref={headerAnimation.elementRef}
         >
           <h2 
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 transition-all duration-[1200ms] ${
+            className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-[1200ms] ${
               headerAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
@@ -215,7 +215,7 @@ export default function Services() {
             Our <span className="text-yellow">Services</span>
           </h2>
           <p 
-            className={`text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] ${
+            className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] ${
               headerAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
