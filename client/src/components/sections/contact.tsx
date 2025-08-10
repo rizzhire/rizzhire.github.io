@@ -132,10 +132,32 @@ export default function Contact() {
     <section id="contact" className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
+            Get In Touch
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.4, 
+              delay: 0.4,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
             Ready to take the next step in your career journey? Let's discuss how we can help you achieve your goals.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
