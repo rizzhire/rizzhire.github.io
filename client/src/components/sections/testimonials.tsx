@@ -69,7 +69,7 @@ export default function Testimonials() {
         </div>
 
         <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+          <div className="flex gap-6 pb-4 pt-4" style={{ width: 'max-content' }}>
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="w-80 flex-shrink-0">
                 <TestimonialCard testimonial={testimonial} />
