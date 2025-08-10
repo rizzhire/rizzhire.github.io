@@ -81,7 +81,7 @@ export default function Contact() {
   };
 
   // Typewriter effects for each contact detail - all start at the same time
-  const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
+  const emailTypewriter = useTypewriter('business@hirenet.in\ncontact@hirenet.in', 80, 800);
   const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 800);
   const mainOfficeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal', 60, 800);
   const branchOfficeTypewriter = useTypewriter('4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal', 60, 800);
@@ -195,7 +195,7 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 whitespace-pre-line">
                     {emailTypewriter.displayText}
                     {emailTypewriter.isTyping && (
                       <span className="animate-pulse text-yellow">|</span>
