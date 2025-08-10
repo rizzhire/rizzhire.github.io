@@ -652,7 +652,7 @@ export default function JobSeekerPage() {
       </section>
 
       {/* Government Certification Section */}
-      <section className="-mt-16 pb-4 cream">
+      <section className="-mt-16 pb-16 cream">
         <div 
           ref={certificationAnimation.elementRef}
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
