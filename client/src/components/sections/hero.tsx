@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import ConsultationButton from "@/components/ui/consultation-button";
 import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Hero() {
   const placements = useCounter({ end: 18, duration: 2500 });
@@ -9,6 +10,20 @@ export default function Hero() {
   const companies = useCounter({ end: 500, duration: 1800, delay: 400 });
   const countries = useCounter({ end: 7, duration: 1600, delay: 600 });
   const satisfaction = useCounter({ end: 98, duration: 2000, delay: 800 });
+
+  // Scroll animations for hero content using Contact section gold standard
+  const headingAnimation = useScrollAnimation({ 
+    threshold: 0.2, 
+    rootMargin: '0px 0px -300px 0px' 
+  });
+  const descriptionAnimation = useScrollAnimation({ 
+    threshold: 0.2, 
+    rootMargin: '0px 0px -300px 0px' 
+  });
+  const buttonAnimation = useScrollAnimation({ 
+    threshold: 0.2, 
+    rootMargin: '0px 0px -300px 0px' 
+  });
 
   return (
     <section id="home" className="relative h-auto cream overflow-hidden">
@@ -77,14 +92,41 @@ export default function Hero() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
         <div className="text-center space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight opacity-100 visible">
-            Transform Your <span className="text-yellow">Workforce</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed opacity-100 visible">
-            Elite recruitment solutions connecting exceptional talent with 
-            industry-leading organizations across the Middle East and beyond.
-          </p>
-          <div className="flex justify-center items-center pt-8 opacity-100 visible">
+          <div 
+            ref={headingAnimation.elementRef}
+            className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+              headingAnimation.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              Transform Your <span className="text-yellow">Workforce</span>
+            </h1>
+          </div>
+          
+          <div 
+            ref={descriptionAnimation.elementRef}
+            className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] delay-200 ${
+              descriptionAnimation.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Elite recruitment solutions connecting exceptional talent with 
+              industry-leading organizations across the Middle East and beyond.
+            </p>
+          </div>
+          
+          <div 
+            ref={buttonAnimation.elementRef}
+            className={`flex justify-center items-center pt-8 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] delay-400 ${
+              buttonAnimation.isVisible 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-8 scale-95'
+            }`}
+          >
             <ConsultationButton className="" />
           </div>
         </div>
