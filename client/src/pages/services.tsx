@@ -234,11 +234,12 @@ export default function Services() {
               <motion.div 
                 key={index} 
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                animate={index === 0 && pageLoaded ? { opacity: 1, y: 0, scale: 1 } : undefined}
+                whileInView={index > 0 ? { opacity: 1, y: 0, scale: 1 } : undefined}
+                viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -150px 0px" } : undefined}
                 transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.3, 
+                  duration: index === 0 ? 0.6 : 0.8, 
+                  delay: index === 0 ? 0.4 : (index - 1) * 0.4, 
                   ease: [0.25, 0.46, 0.45, 0.94],
                   type: "spring",
                   stiffness: 100,
@@ -251,22 +252,24 @@ export default function Services() {
                   <motion.div 
                     className={`bg-gradient-to-br ${service.color} rounded-3xl p-8 h-full`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30, scale: 0.9 }}
-                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+                    animate={index === 0 && pageLoaded ? { opacity: 1, x: 0, scale: 1 } : undefined}
+                    whileInView={index > 0 ? { opacity: 1, x: 0, scale: 1 } : undefined}
+                    viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -100px 0px" } : undefined}
                     transition={{ 
                       duration: 0.6, 
-                      delay: index * 0.3 + 0.2,
+                      delay: index === 0 ? 0.6 : (index - 1) * 0.4 + 0.2,
                       ease: [0.25, 0.46, 0.45, 0.94]
                     }}
                   >
                     <motion.div 
                       className="flex items-center mb-6"
                       initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                      animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
+                      whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
+                      viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
                       transition={{ 
                         duration: 0.5, 
-                        delay: index * 0.3 + 0.4,
+                        delay: index === 0 ? 0.8 : (index - 1) * 0.4 + 0.4,
                         ease: "easeOut"
                       }}
                     >
@@ -278,11 +281,12 @@ export default function Services() {
                     <motion.p 
                       className="text-lg text-gray-700 leading-relaxed"
                       initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                      animate={index === 0 && pageLoaded ? { opacity: 1 } : undefined}
+                      whileInView={index > 0 ? { opacity: 1 } : undefined}
+                      viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
                       transition={{ 
                         duration: 0.4, 
-                        delay: index * 0.3 + 0.6,
+                        delay: index === 0 ? 1.0 : (index - 1) * 0.4 + 0.6,
                         ease: "easeOut"
                       }}
                     >
@@ -294,22 +298,24 @@ export default function Services() {
                 <div className={`order-${index % 2 === 0 ? '2' : '1'} space-y-8`}>
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+                    animate={index === 0 && pageLoaded ? { opacity: 1, x: 0 } : undefined}
+                    whileInView={index > 0 ? { opacity: 1, x: 0 } : undefined}
+                    viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -100px 0px" } : undefined}
                     transition={{ 
                       duration: 0.6, 
-                      delay: index * 0.3 + 0.3,
+                      delay: index === 0 ? 0.7 : (index - 1) * 0.4 + 0.3,
                       ease: [0.25, 0.46, 0.45, 0.94]
                     }}
                   >
                     <motion.h3 
                       className="fluid-text-2xl font-semibold mb-6 text-gray-900"
                       initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                      animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
+                      whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
+                      viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
                       transition={{ 
                         duration: 0.5, 
-                        delay: index * 0.3 + 0.5,
+                        delay: index === 0 ? 0.9 : (index - 1) * 0.4 + 0.5,
                         ease: "easeOut"
                       }}
                     >
@@ -319,11 +325,12 @@ export default function Services() {
                       <motion.p 
                         className="text-gray-700 leading-relaxed text-lg"
                         initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                        animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
+                        whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
+                        viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
                         transition={{ 
                           duration: 0.4, 
-                          delay: index * 0.3 + 0.7,
+                          delay: index === 0 ? 1.1 : (index - 1) * 0.4 + 0.7,
                           ease: "easeOut"
                         }}
                       >
@@ -332,11 +339,12 @@ export default function Services() {
                       <motion.p 
                         className="text-gray-700 leading-relaxed text-lg"
                         initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                        animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
+                        whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
+                        viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
                         transition={{ 
                           duration: 0.4, 
-                          delay: index * 0.3 + 0.9,
+                          delay: index === 0 ? 1.3 : (index - 1) * 0.4 + 0.9,
                           ease: "easeOut"
                         }}
                       >
@@ -345,11 +353,12 @@ export default function Services() {
                       <motion.div 
                         className="bg-yellow/10 border-l-4 border-yellow p-6 rounded-r-lg"
                         initial={{ opacity: 0, scale: 0.95, x: -20 }}
-                        whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                        animate={index === 0 && pageLoaded ? { opacity: 1, scale: 1, x: 0 } : undefined}
+                        whileInView={index > 0 ? { opacity: 1, scale: 1, x: 0 } : undefined}
+                        viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
                         transition={{ 
                           duration: 0.5, 
-                          delay: index * 0.3 + 1.1,
+                          delay: index === 0 ? 1.5 : (index - 1) * 0.4 + 1.1,
                           ease: [0.25, 0.46, 0.45, 0.94],
                           type: "spring",
                           stiffness: 100,
