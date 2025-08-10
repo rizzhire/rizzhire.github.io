@@ -145,12 +145,9 @@ export default function Contact() {
               delay: 0.4,
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
-          >
-            Ready to take the next step in your career journey? Let's discuss how we can help you achieve your goals.
-          </motion.p>
+          >Ready to take the next step in your career journey? Click any of the box below and Let's discuss how we can help you</motion.p>
         </div>
       </section>
-
       {/* Contact Information */}
       <section className="py-16 px-4 bg-white relative overflow-hidden">
         {/* Background Graphics for Contact Section */}
@@ -415,7 +412,6 @@ export default function Contact() {
           </motion.div>
         </div>
       </section>
-
       {/* Contact Form */}
       <section className="py-20 px-4 relative overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         {/* Form Background Graphics */}
