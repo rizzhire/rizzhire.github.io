@@ -207,11 +207,11 @@ export default function Hero() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 {/* Indian Government Emblem - Full Height */}
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-56 md:w-28 md:h-64 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl flex items-stretch border border-yellow/20 overflow-hidden">
+                  <div className="w-24 h-56 md:w-28 md:h-64 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl border border-yellow/20 overflow-hidden">
                     <img 
                       src={indianEmblemImage} 
                       alt="Government of India Emblem" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center scale-110"
                     />
                   </div>
                 </div>
