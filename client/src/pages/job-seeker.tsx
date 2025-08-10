@@ -239,7 +239,7 @@ export default function JobSeekerPage() {
   return (
     <div className="min-h-screen page-transition">
       {/* Hero Section for Job Seekers */}
-      <section className="relative py-4 sm:py-8 md:py-12 lg:py-16 cream overflow-hidden">
+      <section className="relative py-2 sm:py-6 md:py-10 lg:py-14 cream overflow-hidden">
         {/* Enhanced Background Graphics (Same as Transform Your Workforce) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
