@@ -173,7 +173,7 @@ export default function About() {
         </div>
       </section>
       {/* Values Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      <section className="relative py-12 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
         {/* Exact Background Graphics from Industries Page */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           
@@ -259,7 +259,7 @@ export default function About() {
         
         <div className="relative max-w-6xl mx-auto">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
