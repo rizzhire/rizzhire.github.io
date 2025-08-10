@@ -128,7 +128,7 @@ export default function Hero() {
           
           <div 
             ref={buttonAnimation.elementRef}
-            className={`flex justify-center items-center pt-8 transition-all duration-[1800ms] ease-out delay-500 ${
+            className={`flex justify-center items-center pt-4 transition-all duration-[1800ms] ease-out delay-500 ${
               buttonAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
@@ -139,7 +139,7 @@ export default function Hero() {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 mb-0">
+        <div className="mt-12 mb-0">
           <div className="grid grid-cols-5 gap-2 sm:gap-4 md:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
             <div className="text-center">
               <div 
