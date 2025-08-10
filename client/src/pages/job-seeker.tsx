@@ -345,12 +345,12 @@ export default function JobSeekerPage() {
           </div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-4">
-          <div className="text-center space-y-3 sm:space-y-4 md:space-y-6">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight px-2 pt-4 sm:pt-0">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-4">
+          <div className="text-center space-y-5 sm:space-y-4 md:space-y-6">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight px-2 pt-2 sm:pt-0">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
@@ -358,7 +358,7 @@ export default function JobSeekerPage() {
             {/* Government Certification Section - Moved here */}
             <div 
               ref={certificationAnimation.elementRef}
-              className="max-w-4xl mx-auto px-2 sm:px-4 pt-2 sm:pt-4"
+              className="max-w-4xl mx-auto px-2 sm:px-4 pt-4 sm:pt-4"
             >
               <motion.div 
                 initial={{ 
@@ -439,13 +439,13 @@ export default function JobSeekerPage() {
                     }}
                     className="flex-1 text-center sm:text-left"
                   >
-                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1">
+                    <h3 className="text-lg sm:text-lg md:text-xl font-bold text-gray-900 mb-1">
                       Approved By <span className="text-yellow">Government Of India</span>
                     </h3>
-                    <p className="text-sm sm:text-md md:text-lg text-gray-700 font-medium mb-2">
+                    <p className="text-base sm:text-md md:text-lg text-gray-700 font-medium mb-2">
                       Ministry of External Affairs
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-sm text-gray-600 leading-relaxed">
                       Officially recognized recruitment agency authorized to facilitate international employment 
                       opportunities for Indian professionals across the Middle East region.
                     </p>
@@ -489,9 +489,9 @@ export default function JobSeekerPage() {
               </motion.div>
             </div>
 
-            <div className="flex flex-col gap-3 sm:gap-4 justify-center items-center pt-4 sm:pt-6 md:pt-8">
+            <div className="flex flex-col gap-4 sm:gap-4 justify-center items-center pt-6 sm:pt-6 md:pt-8">
               {/* Buttons Row */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4 sm:px-0">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center w-full px-4 sm:px-0">
                 <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                   <DialogTrigger asChild>
                     <Button 
@@ -830,7 +830,7 @@ export default function JobSeekerPage() {
               </div>
               
               {/* Free resume review text below buttons */}
-              <p className="text-gray-500 text-xs sm:text-sm">Free resume review and optimization included</p>
+              <p className="text-gray-500 text-sm sm:text-sm">Free resume review and optimization included</p>
             </div>
           </div>
         </div>
