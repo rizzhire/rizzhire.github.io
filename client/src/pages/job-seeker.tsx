@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { ObjectUploader } from "@/components/ObjectUploader";
-import { Upload, CheckCircle, Star, User, Briefcase } from "lucide-react";
+import { Upload, CheckCircle, Star, User, Briefcase, Phone } from "lucide-react";
 import JobListings from "@/components/sections/job-listings";
 import SuccessStories from "@/components/sections/success-stories";
 import WhyChooseHireNet from "@/components/sections/why-choose-hirenet";
@@ -127,7 +127,20 @@ export default function JobSeekerPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPhoneSelectorOpen, setIsPhoneSelectorOpen] = useState(false);
   const { toast } = useToast();
+  
+  // Phone numbers for 1 On 1 Call
+  const phoneNumbers = [
+    { number: "+913335085038", label: "Primary Support" },
+    { number: "+919477119466", label: "Secondary Support" }
+  ];
+  
+  // Function to initiate phone call
+  const handlePhoneCall = (phoneNumber: string) => {
+    window.location.href = `tel:${phoneNumber}`;
+    setIsPhoneSelectorOpen(false);
+  };
   
   // Scroll animations for different sections
   const { elementRef: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation({
@@ -476,17 +489,19 @@ export default function JobSeekerPage() {
               </motion.div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogTrigger asChild>
-                  <Button 
-                    className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg" 
-                    data-testid="button-open-upload-dialog"
-                  >
-                    <Upload className="mr-2 h-5 w-5" />
-                    Upload Your Resume
-                  </Button>
-                </DialogTrigger>
+            <div className="flex flex-col gap-4 justify-center items-center pt-8">
+              {/* Buttons Row */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg" 
+                      data-testid="button-open-upload-dialog"
+                    >
+                      <Upload className="mr-2 h-5 w-5" />
+                      Upload Your Resume
+                    </Button>
+                  </DialogTrigger>
                 <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl glass-dialog" style={{ 
                   borderRadius: '40px',
                   background: 'rgba(255, 255, 255, 0.25) !important',
@@ -780,6 +795,44 @@ export default function JobSeekerPage() {
                 </DialogContent>
               </Dialog>
               
+              {/* 1 On 1 Call Button */}
+              <Dialog open={isPhoneSelectorOpen} onOpenChange={setIsPhoneSelectorOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    className="bg-white text-black border-2 border-yellow px-8 py-4 rounded-full font-semibold hover:bg-yellow hover:border-yellow transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg" 
+                    data-testid="button-1on1-call"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    1 On 1 Call
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Select Phone Number</DialogTitle>
+                    <DialogDescription>
+                      Choose a number to call for 1-on-1 consultation
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    {phoneNumbers.map((phone, index) => (
+                      <Button
+                        key={index}
+                        onClick={() => handlePhoneCall(phone.number)}
+                        className="w-full justify-start text-left p-4 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow"
+                        data-testid={`button-call-${phone.number}`}
+                      >
+                        <div className="flex flex-col items-start">
+                          <span className="font-semibold">{phone.label}</span>
+                          <span className="text-sm text-gray-600">{phone.number}</span>
+                        </div>
+                      </Button>
+                    ))}
+                  </div>
+                </DialogContent>
+              </Dialog>
+              </div>
+              
+              {/* Free resume review text below buttons */}
               <p className="text-gray-500 text-sm">Free resume review and optimization included</p>
             </div>
           </div>
