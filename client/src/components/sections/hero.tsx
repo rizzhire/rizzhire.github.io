@@ -11,18 +11,18 @@ export default function Hero() {
   const countries = useCounter({ end: 7, duration: 1600, delay: 600 });
   const satisfaction = useCounter({ end: 98, duration: 2000, delay: 800 });
 
-  // Scroll animations for hero content using Contact section gold standard
+  // Scroll animations for hero content - slower and smoother timing
   const headingAnimation = useScrollAnimation({ 
-    threshold: 0.2, 
-    rootMargin: '0px 0px -300px 0px' 
+    threshold: 0.1, 
+    rootMargin: '0px 0px -200px 0px' 
   });
   const descriptionAnimation = useScrollAnimation({ 
-    threshold: 0.2, 
-    rootMargin: '0px 0px -300px 0px' 
+    threshold: 0.1, 
+    rootMargin: '0px 0px -200px 0px' 
   });
   const buttonAnimation = useScrollAnimation({ 
-    threshold: 0.2, 
-    rootMargin: '0px 0px -300px 0px' 
+    threshold: 0.1, 
+    rootMargin: '0px 0px -200px 0px' 
   });
 
   return (
@@ -94,10 +94,10 @@ export default function Hero() {
         <div className="text-center space-y-8">
           <div 
             ref={headingAnimation.elementRef}
-            className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+            className={`transition-all duration-[1800ms] ease-out ${
               headingAnimation.isVisible 
                 ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-8'
+                : 'opacity-0 translate-y-12'
             }`}
           >
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -107,10 +107,10 @@ export default function Hero() {
           
           <div 
             ref={descriptionAnimation.elementRef}
-            className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] delay-200 ${
+            className={`transition-all duration-[1800ms] ease-out delay-300 ${
               descriptionAnimation.isVisible 
                 ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-8'
+                : 'opacity-0 translate-y-12'
             }`}
           >
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -121,10 +121,10 @@ export default function Hero() {
           
           <div 
             ref={buttonAnimation.elementRef}
-            className={`flex justify-center items-center pt-8 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] delay-400 ${
+            className={`flex justify-center items-center pt-8 transition-all duration-[1800ms] ease-out delay-500 ${
               buttonAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
-                : 'opacity-0 translate-y-8 scale-95'
+                : 'opacity-0 translate-y-12 scale-95'
             }`}
           >
             <ConsultationButton className="" />
