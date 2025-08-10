@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 export default function WhyChooseHireNet() {
   const { elementRef: sectionRef, isVisible } = useScrollAnimation({
-    threshold: 0.8,
-    rootMargin: '0px 0px -300px 0px'
+    threshold: 0.3,
+    rootMargin: '0px 0px -150px 0px'
   });
   const features = [
     {
@@ -158,7 +158,7 @@ export default function WhyChooseHireNet() {
         {/* Premium Feature Cards - Square Masonry Layout */}
         <div ref={sectionRef} className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
           {/* Left Side - Square Card (Global Placement Opportunities) */}
-          <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center overflow-hidden aspect-square ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.1s' : '0s' }}>
+          <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-300 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-1 flex flex-col justify-center items-center overflow-hidden aspect-square ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ willChange: 'transform, opacity', transitionDelay: isVisible ? '0.05s' : '0s', transitionDuration: '0.3s', transitionTimingFunction: 'ease-out' }}>
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
             
@@ -181,7 +181,7 @@ export default function WhyChooseHireNet() {
           {/* Right Side - Square Grid Layout */}
           <div className="grid grid-cols-2 gap-3 aspect-square">
             {/* Top - Full Width Card (Personalized Career Guidance) */}
-            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 col-span-2 overflow-hidden flex flex-col justify-center ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.2s' : '0s' }}>
+            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-300 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-1 col-span-2 overflow-hidden flex flex-col justify-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ willChange: 'transform, opacity', transitionDelay: isVisible ? '0.1s' : '0s', transitionDuration: '0.3s', transitionTimingFunction: 'ease-out' }}>
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
@@ -202,7 +202,7 @@ export default function WhyChooseHireNet() {
             </div>
 
             {/* Bottom Left - Free Resume Review */}
-            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.3s' : '0s' }}>
+            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-300 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-1 flex flex-col justify-center overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ willChange: 'transform, opacity', transitionDelay: isVisible ? '0.15s' : '0s', transitionDuration: '0.3s', transitionTimingFunction: 'ease-out' }}>
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               
@@ -223,7 +223,7 @@ export default function WhyChooseHireNet() {
             </div>
 
             {/* Bottom Right - Priority Support */}
-            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center overflow-hidden ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.4s' : '0s' }}>
+            <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-4 border border-white/50 hover:border-yellow/30 transition-all duration-300 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-1 flex flex-col justify-center overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ willChange: 'transform, opacity', transitionDelay: isVisible ? '0.2s' : '0s', transitionDuration: '0.3s', transitionTimingFunction: 'ease-out' }}>
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
               

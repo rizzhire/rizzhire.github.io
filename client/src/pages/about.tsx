@@ -102,30 +102,19 @@ export default function About() {
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <motion.h1 
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 15
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
           >
             About <span className="text-yellow">HireNET</span>
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-              delay: 0.2
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             Transforming careers and businesses through strategic talent acquisition across the Middle East and beyond.
           </motion.p>
@@ -141,16 +130,11 @@ export default function About() {
         <div className="relative max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
-              transition={{ 
-                duration: 0.8, 
-                ease: [0.25, 0.46, 0.45, 0.94],
-                type: "spring",
-                stiffness: 100,
-                damping: 15
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              style={{ willChange: 'transform, opacity' }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="text-yellow">Story</span>
@@ -172,17 +156,11 @@ export default function About() {
             
             <motion.div 
               className="relative"
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
-              transition={{ 
-                duration: 0.8, 
-                ease: [0.25, 0.46, 0.45, 0.94],
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                delay: 0.2
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+              style={{ willChange: 'transform, opacity' }}
             >
               <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-8 relative overflow-hidden">
                 <div className="absolute top-4 right-4 w-20 h-20 bg-yellow/30 rounded-full"></div>
@@ -202,16 +180,11 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 15
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="text-yellow">Values</span>
@@ -225,17 +198,11 @@ export default function About() {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
-                transition={{ 
-                  duration: 0.8, 
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15,
-                  delay: index * 0.1
-                }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: index * 0.05 }}
+                style={{ willChange: 'transform, opacity' }}
               >
                 <Card className="bg-white p-8 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-0">

@@ -7,15 +7,15 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import React from "react";
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }
+  transition: { duration: 0.3, ease: "easeOut" }
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.05
     }
   }
 };
@@ -179,27 +179,27 @@ export default function Services() {
           ref={heroAnimation.elementRef}
         >
           <h1 
-            className={`fluid-text-4xl lg:fluid-text-5xl font-bold mb-4 text-gray-900 transition-all duration-[1200ms] ${
+            className={`fluid-text-4xl lg:fluid-text-5xl font-bold mb-4 text-gray-900 transition-all duration-300 ease-out ${
               heroAnimation.isVisible || pageLoaded 
-                ? 'opacity-100 translate-y-0 scale-100' 
-                : 'opacity-0 translate-y-12 scale-95'
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-4'
             }`}
             style={{ 
-              transitionDelay: (heroAnimation.isVisible || pageLoaded) ? '0ms' : '0ms',
-              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+              willChange: 'transform, opacity',
+              transitionDelay: (heroAnimation.isVisible || pageLoaded) ? '0ms' : '0ms'
             }}
           >
             Our <span className="text-yellow">Services</span>
           </h1>
           <p 
-            className={`fluid-text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed transition-all duration-[1200ms] ${
+            className={`fluid-text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed transition-all duration-300 ease-out ${
               heroAnimation.isVisible || pageLoaded 
-                ? 'opacity-100 translate-y-0 scale-100' 
-                : 'opacity-0 translate-y-12 scale-95'
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-4'
             }`}
             style={{ 
-              transitionDelay: (heroAnimation.isVisible || pageLoaded) ? '200ms' : '0ms',
-              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+              willChange: 'transform, opacity',
+              transitionDelay: (heroAnimation.isVisible || pageLoaded) ? '100ms' : '0ms'
             }}
           >
             Comprehensive recruitment and consulting solutions designed to drive your organization's success 
@@ -233,30 +233,12 @@ export default function Services() {
             {services.map((service, index) => (
               <motion.div 
                 key={index} 
-                initial={{ 
-                  opacity: 0, 
-                  y: 40,
-                  scale: 0.95
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1
-                }}
-                viewport={{ 
-                  once: true, 
-                  amount: 0.1,
-                  margin: "0px 0px -300px 0px"
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.1,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+                transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }}
                 className="grid lg:grid-cols-2 gap-12 items-center"
+                style={{ willChange: 'transform, opacity' }}
               >
                 <div className={`order-${index % 2 === 0 ? '1' : '2'}`}>
                   <div className={`bg-gradient-to-br ${service.color} rounded-3xl p-8 h-full`}>
