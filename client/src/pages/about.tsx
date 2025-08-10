@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 export default function About() {
 
@@ -82,12 +83,35 @@ export default function About() {
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+          >
             About <span className="text-yellow">HireNET</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.2
+            }}
+          >
             Transforming careers and businesses through strategic talent acquisition across the Middle East and beyond.
-          </p>
+          </motion.p>
         </div>
       </section>
       {/* Our Story Section */}
@@ -99,7 +123,18 @@ export default function About() {
         
         <div className="relative max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+              transition={{ 
+                duration: 0.8, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="text-yellow">Story</span>
               </h2>
@@ -116,9 +151,22 @@ export default function About() {
                   Learn More <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
-            </div>
+            </motion.div>
             
-            <div className="relative">
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+              transition={{ 
+                duration: 0.8, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.2
+              }}
+            >
               <div className="bg-gradient-to-br from-yellow/20 to-cream rounded-3xl p-8 relative overflow-hidden">
                 <div className="absolute top-4 right-4 w-20 h-20 bg-yellow/30 rounded-full"></div>
                 <div className="absolute bottom-4 left-4 w-16 h-16 bg-yellow/20 rounded-full"></div>
@@ -128,30 +176,57 @@ export default function About() {
                   <div className="text-gray-600">Started our journey from UAE</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
       {/* Values Section */}
       <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="text-yellow">Values</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               The principles that guide every decision we make and every relationship we build.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="bg-white p-8 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-0">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                transition={{ 
+                  duration: 0.8, 
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15,
+                  delay: index * 0.1
+                }}
+              >
+                <Card className="bg-white p-8 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-0">
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{value.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -159,21 +234,59 @@ export default function About() {
       {/* Mission Section */}
       <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-8 text-gray-900"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+          >
             Our <span className="text-yellow">Mission</span>
-          </h2>
-          <p className="text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-gray-600">
+          </motion.h2>
+          <motion.p 
+            className="text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-gray-600"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.2
+            }}
+          >
             To be the catalyst for career transformation and organizational growth by connecting 
             exceptional talent with visionary companies across the Middle East and beyond.
-          </p>
+          </motion.p>
           
-          <div className="bg-gradient-to-r from-yellow/10 to-transparent rounded-3xl p-8 max-w-4xl mx-auto">
+          <motion.div 
+            className="bg-gradient-to-r from-yellow/10 to-transparent rounded-3xl p-8 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.4
+            }}
+          >
             <p className="text-gray-600 sacramento-quote font-normal text-[26px]" style={{fontSize: '22px', letterSpacing: '0.5px'}}>
               "We believe that the right person in the right role can transform not just careers, 
               but entire organizations. Our mission is to make those transformative connections happen."
             </p>
             <div className="text-yellow font-semibold mt-6">- HireNET Leadership Team</div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
