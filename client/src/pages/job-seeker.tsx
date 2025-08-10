@@ -678,9 +678,9 @@ export default function JobSeekerPage() {
               stiffness: 100,
               damping: 15
             }}
-            className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
+            className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
           >
-            <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
+            <div className="flex flex-col md:flex-row items-center gap-8 min-h-[250px]">
               {/* Indian Government Emblem - Full Height */}
               <motion.div 
                 initial={{ 
