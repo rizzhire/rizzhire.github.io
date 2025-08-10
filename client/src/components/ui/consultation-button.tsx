@@ -65,9 +65,9 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            transition-all duration-200 ease-out
+            transition-all duration-300 ease-in-out
             ${isHovered 
-              ? '-ml-2 translate-x-8 translate-y-2 scale-110' 
+              ? '-ml-2 translate-x-6 translate-y-1 scale-105' 
               : '-ml-6'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
@@ -77,7 +77,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2
             w-6 h-1 bg-black
-            transform transition-all duration-150 ease-out origin-left
+            transform transition-all duration-400 ease-in-out origin-left
             ${isHovered 
               ? 'scale-x-0 opacity-0' 
               : 'scale-x-100 opacity-100'
@@ -88,9 +88,9 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2
             w-4 h-6 bg-black
-            transform transition-all duration-150 ease-out
+            transform transition-all duration-350 ease-in-out
             ${isHovered 
-              ? 'scale-0 opacity-0 rotate-45' 
+              ? 'scale-0 opacity-0 rotate-12' 
               : 'scale-100 opacity-100'
             }
           `} style={{
@@ -100,8 +100,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           {/* Arrow icon */}
           <ArrowUpRight className={`
             w-5 h-5 text-white relative z-10
-            transition-all duration-300 ease-out
-            ${isHovered ? 'rotate-12 scale-110' : ''}
+            transition-all duration-300 ease-in-out
+            ${isHovered ? 'rotate-6 scale-105' : ''}
             ${isClicked ? 'rotate-45 scale-125' : ''}
           `} />
           
