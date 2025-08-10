@@ -26,8 +26,8 @@ export default function Hero() {
     rootMargin: '0px 0px -200px 0px' 
   });
   const certificationAnimation = useScrollAnimation({ 
-    threshold: 0.1, 
-    rootMargin: '-50px' 
+    threshold: 0.05, 
+    rootMargin: '50px' 
   });
 
   return (
@@ -217,7 +217,7 @@ export default function Hero() {
                   : 'opacity-0 translate-y-2 scale-[0.99]'
               }`}
               style={{
-                transitionDelay: certificationAnimation.isVisible ? '400ms' : '0ms'
+                transitionDelay: certificationAnimation.isVisible ? '200ms' : '0ms'
               }}
             >
               <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
@@ -232,7 +232,7 @@ export default function Hero() {
                         : 'opacity-0 -translate-x-1.5 scale-[0.98]'
                     }`}
                     style={{
-                      transitionDelay: certificationAnimation.isVisible ? '800ms' : '0ms'
+                      transitionDelay: certificationAnimation.isVisible ? '400ms' : '0ms'
                     }}
                   />
                 </div>
@@ -245,7 +245,7 @@ export default function Hero() {
                       : 'opacity-0 translate-x-1.5'
                   }`}
                   style={{
-                    transitionDelay: certificationAnimation.isVisible ? '1200ms' : '0ms'
+                    transitionDelay: certificationAnimation.isVisible ? '600ms' : '0ms'
                   }}
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -268,7 +268,7 @@ export default function Hero() {
                       : 'opacity-0 translate-x-2 scale-[0.98]'
                   }`}
                   style={{
-                    transitionDelay: certificationAnimation.isVisible ? '1600ms' : '0ms'
+                    transitionDelay: certificationAnimation.isVisible ? '800ms' : '0ms'
                   }}
                 >
                   <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer">
