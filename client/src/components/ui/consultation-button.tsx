@@ -85,8 +85,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             flex items-center justify-center
             shadow-lg
             ${isHovered 
-              ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40 transition-all duration-300 ease-out' 
-              : '-ml-6 transition-all duration-300 ease-out'
+              ? '-ml-2 translate-x-6 -translate-y-1 scale-110 shadow-xl shadow-black/40 transition-all duration-500 ease-out' 
+              : '-ml-6 transition-all duration-500 ease-out'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
           `} 
@@ -104,7 +104,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2
             w-6 h-1 bg-black
-            transform transition-all duration-500 ease-out origin-left
+            transform transition-all duration-300 ease-out origin-left
             ${isHovered 
               ? 'scale-x-0 opacity-0' 
               : 'scale-x-100 opacity-100'
@@ -115,12 +115,11 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2
             w-4 h-6 bg-black
-            transform transition-all duration-500 ease-out
+            transform transition-all duration-300 ease-out
             ${isHovered 
               ? 'scale-0 opacity-0 rotate-45' 
               : 'scale-100 opacity-100'
             }
-            clip-path-tear-drop
           `} style={{
             clipPath: isHovered ? 'circle(0% at 50% 50%)' : 'ellipse(50% 70% at 80% 50%)'
           }} />
