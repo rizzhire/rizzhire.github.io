@@ -224,9 +224,9 @@ export default function Hero() {
             
             {/* More Colorful Elements for Empty Spaces */}
             <div className="absolute top-4 left-1/3 w-36 h-36 bg-gradient-to-r from-indigo-200/15 to-violet-200/25 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
-            <div className="absolute bottom-16 right-16 w-32 h-32 bg-gradient-to-r from-teal-200/18 to-cyan-200/28 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+
             <div className="absolute top-32 right-1/4 w-24 h-24 bg-gradient-to-r from-amber-200/15 to-orange-200/25 rounded-full blur-lg animate-floatMoveEnhanced" style={{animationDelay: '3.5s'}}></div>
-            <div className="absolute bottom-24 left-12 w-20 h-20 bg-gradient-to-r from-lime-200/20 to-emerald-200/30 rounded-full blur-md animate-pulseEnhanced" style={{animationDelay: '4.2s'}}></div>
+
             <div className="absolute top-40 left-1/2 w-18 h-18 bg-gradient-to-r from-fuchsia-200/18 to-purple-200/28 rounded-full blur-lg animate-rotateEnhanced" style={{animationDelay: '5s'}}></div>
             <div className="absolute bottom-32 right-1/5 w-22 h-22 bg-gradient-to-r from-sky-200/15 to-blue-200/25 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '6s'}}></div>
             
