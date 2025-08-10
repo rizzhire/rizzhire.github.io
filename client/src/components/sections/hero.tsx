@@ -209,7 +209,7 @@ export default function Hero() {
         {/* Government Certification Section */}
         <div 
           ref={certificationAnimation.elementRef}
-          className="mt-16 pt-12 relative overflow-hidden"
+          className="mt-16 pt-12 pb-8 relative overflow-hidden"
         >
           {/* Certificate Background Graphics */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
