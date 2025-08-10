@@ -27,13 +27,11 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
     {
       category: "For Employers",
       email: "business@hirenet.in",
-      description: "Business inquiries, partnerships, and employer services",
       icon: Briefcase
     },
     {
       category: "For Job Seekers",
       email: "contact@hirenet.in", 
-      description: "Career guidance, job applications, and general support",
       icon: GraduationCap
     }
   ];
@@ -253,17 +251,16 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
                         <Button
                           key={index}
                           onClick={() => handleEmailSelect(option.email)}
-                          className="w-full justify-start text-left p-6 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow rounded-2xl"
+                          className="w-full justify-start text-left p-4 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow rounded-2xl"
                           data-testid={`button-email-${option.category.toLowerCase().replace(' ', '-')}`}
                         >
-                          <div className="flex items-start space-x-4">
+                          <div className="flex items-center space-x-3">
                             <div className="w-10 h-10 bg-yellow rounded-xl flex items-center justify-center flex-shrink-0">
                               <IconComponent className="w-5 h-5 text-black" />
                             </div>
                             <div className="flex-1 text-left">
                               <div className="font-semibold text-lg mb-1">{option.category}</div>
-                              <div className="font-medium text-base text-gray-800 mb-2">{option.email}</div>
-                              <div className="text-sm text-gray-600">{option.description}</div>
+                              <div className="font-medium text-base text-gray-800">{option.email}</div>
                             </div>
                           </div>
                         </Button>
