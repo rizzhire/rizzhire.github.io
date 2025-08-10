@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -19,7 +19,12 @@ export default function Contact() {
     message: ""
   });
   const [showPhoneOptions, setShowPhoneOptions] = useState(false);
+  const [pageLoaded, setPageLoaded] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    setPageLoaded(true);
+  }, []);
 
   const contactInfo = [
     {
@@ -160,21 +165,34 @@ export default function Contact() {
             {(() => {
               const VisitIcon = contactInfo[0].icon;
               return (
-                <Card className="text-center p-6 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-blue/10 transition-all duration-300 cursor-pointer group">
-                  <CardContent className="p-0 relative z-10">
-                    <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 ${contactInfo[0].color} mb-4`}>
-                      <VisitIcon className="w-7 h-7" />
-                    </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900 tracking-tight">{contactInfo[0].title}</h3>
-                    <div className="space-y-2">
-                      {contactInfo[0].details.map((detail, idx) => (
-                        <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                           dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                        </p>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                  animate={pageLoaded ? { opacity: 1, scale: 1, y: 0 } : undefined}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 0.2, 
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                >
+                  <Card className="text-center p-6 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-blue/10 transition-all duration-300 cursor-pointer group">
+                    <CardContent className="p-0 relative z-10">
+                      <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 ${contactInfo[0].color} mb-4`}>
+                        <VisitIcon className="w-7 h-7" />
+                      </div>
+                      <h3 className="font-bold text-xl mb-3 text-gray-900 tracking-tight">{contactInfo[0].title}</h3>
+                      <div className="space-y-2">
+                        {contactInfo[0].details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                          </p>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               );
             })()}
 
@@ -182,24 +200,37 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-4">
               {/* Call Us - Top Right (Full Width) */}
               <div className="relative col-span-2">
-                <Card 
-                  className="text-center p-5 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-green/10 transition-all duration-300 group"
-                  onClick={() => setShowPhoneOptions(!showPhoneOptions)}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                  animate={pageLoaded ? { opacity: 1, scale: 1, y: 0 } : undefined}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 0.4, 
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
                 >
-                  <CardContent className="p-0 relative z-10">
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3`}>
-                      <Phone className="w-6 h-6" />
-                    </div>
-                    <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
-                    <div className="space-y-1">
-                      {contactInfo[1].details.map((detail, idx) => (
-                        <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                           dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                        </p>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                  <Card 
+                    className="text-center p-5 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-green/10 transition-all duration-300 group"
+                    onClick={() => setShowPhoneOptions(!showPhoneOptions)}
+                  >
+                    <CardContent className="p-0 relative z-10">
+                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3`}>
+                        <Phone className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
+                      <div className="space-y-1">
+                        {contactInfo[1].details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                          </p>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
                 
                 {/* Phone Number Selection Dropdown */}
                 {showPhoneOptions && (
@@ -269,24 +300,37 @@ export default function Contact() {
                 };
                 
                 return (
-                  <Card 
-                    className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-purple/10 transition-all duration-300 group"
-                    onClick={handleEmailClick}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                    animate={pageLoaded ? { opacity: 1, scale: 1, y: 0 } : undefined}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: 0.6, 
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
+                    }}
                   >
-                    <CardContent className="p-0 relative z-10">
-                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
-                        <EmailIcon className="w-6 h-6" />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
-                      <div className="space-y-1">
-                        {contactInfo[2].details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                    <Card 
+                      className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-purple/10 transition-all duration-300 group"
+                      onClick={handleEmailClick}
+                    >
+                      <CardContent className="p-0 relative z-10">
+                        <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
+                          <EmailIcon className="w-6 h-6" />
+                        </div>
+                        <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
+                        <div className="space-y-1">
+                          {contactInfo[2].details.map((detail, idx) => (
+                            <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                               dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                            </p>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 );
               })()}
 
@@ -294,21 +338,34 @@ export default function Contact() {
               {(() => {
                 const ClockIcon = contactInfo[3].icon;
                 return (
-                  <Card className="text-center p-4 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/10 transition-all duration-300 cursor-pointer group">
-                    <CardContent className="p-0 relative z-10">
-                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3`}>
-                        <ClockIcon className="w-6 h-6" />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[3].title}</h3>
-                      <div className="space-y-1">
-                        {contactInfo[3].details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                    animate={pageLoaded ? { opacity: 1, scale: 1, y: 0 } : undefined}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: 0.8, 
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
+                    }}
+                  >
+                    <Card className="text-center p-4 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/10 transition-all duration-300 cursor-pointer group">
+                      <CardContent className="p-0 relative z-10">
+                        <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3`}>
+                          <ClockIcon className="w-6 h-6" />
+                        </div>
+                        <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[3].title}</h3>
+                        <div className="space-y-1">
+                          {contactInfo[3].details.map((detail, idx) => (
+                            <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                               dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                            </p>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 );
               })()}
             </div>
