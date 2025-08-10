@@ -792,20 +792,9 @@ export default function JobSeekerPage() {
       <JobListings />
 
       {/* Job Seeker Success Stories */}
-      <motion.section 
+      <section 
         className="relative py-16 pb-8 overflow-hidden" 
         style={{ backgroundColor: '#F2F0E8' }}
-        initial={{ opacity: 0, y: 40, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
-        transition={{ 
-          duration: 0.8, 
-          delay: 0.2,
-          ease: [0.25, 0.46, 0.45, 0.94],
-          type: "spring",
-          stiffness: 100,
-          damping: 15
-        }}
       >
         {/* Enhanced Background Graphics (Same as Launch Your Global Career) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -913,23 +902,37 @@ export default function JobSeekerPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <div 
             ref={testimonialsRef} 
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
-            transition={{ 
-              duration: 0.6, 
-              delay: 0.3,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Success <span className="text-yellow">Stories</span></h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+              transition={{ 
+                duration: 0.5, 
+                delay: 0.2,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            >
+              Success <span className="text-yellow">Stories</span>
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+              transition={{ 
+                duration: 0.4, 
+                delay: 0.4,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            >
               Real career transformations from professionals who found their dream jobs through HireNET.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
 
           <motion.div 
             className="relative overflow-hidden"
@@ -987,7 +990,7 @@ export default function JobSeekerPage() {
             </div>
           </motion.div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Why Choose HireNET */}
       <motion.div
