@@ -209,7 +209,7 @@ export default function Hero() {
         {/* Government Certification Section */}
         <div 
           ref={certificationAnimation.elementRef}
-          className="mt-16 pt-12 pb-8 relative overflow-hidden w-full -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8"
+          className="mt-16 pt-12 pb-8 relative overflow-hidden w-screen -ml-[50vw] left-1/2"
         >
           {/* Certificate Background Graphics */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -316,7 +316,7 @@ export default function Hero() {
             </div>
           </div>
           
-          <div className="max-w-4xl mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div 
               initial={{ 
                 opacity: 0, 
