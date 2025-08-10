@@ -139,7 +139,7 @@ export default function Hero() {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-12 mb-0">
+        <div className="mt-8 mb-0">
           <div className="grid grid-cols-5 gap-2 sm:gap-4 md:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
             <div className="text-center">
               <div 
