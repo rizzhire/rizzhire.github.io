@@ -122,35 +122,12 @@ export default function Contact() {
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 15
-            }}
-          >
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             Get In <span className="text-yellow">Touch</span>
-          </motion.h1>
-          <motion.p 
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-              delay: 0.2
-            }}
-          >
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Ready to transform your career or find the perfect talent? Let's start a conversation.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -178,25 +155,12 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto relative z-10">
 
 
-          <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
-            {/* Visit Us - Large Left Card */}
+          <div className="grid grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
+            {/* Visit Us - Top Left */}
             {(() => {
               const VisitIcon = contactInfo[0].icon;
               return (
-                <motion.div
-                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    ease: [0.25, 0.46, 0.45, 0.94],
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 15,
-                    delay: 0.4
-                  }}
-                >
-                  <Card className="text-center p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                <Card className="text-center p-6 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden">
                   <CardContent className="p-0 relative z-10">
                     <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 ${contactInfo[0].color} mb-4`}>
                       <VisitIcon className="w-7 h-7" />
@@ -211,38 +175,109 @@ export default function Contact() {
                     </div>
                   </CardContent>
                 </Card>
-                </motion.div>
               );
             })()}
 
-            {/* Right Side - 3 Smaller Cards in Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Call Us - Top Right (Full Width) */}
-              <motion.div 
-                className="relative col-span-2"
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ 
-                  duration: 0.8, 
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15,
-                  delay: 0.5
-                }}
+            {/* Call Us - Top Right */}
+            <div className="relative">
+              <Card 
+                className="text-center p-5 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                onClick={() => setShowPhoneOptions(!showPhoneOptions)}
               >
-                <Card 
-                  className="text-center p-5 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
-                  onClick={() => setShowPhoneOptions(!showPhoneOptions)}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-emerald-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                  <CardContent className="p-0 relative z-10">
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3`}>
-                      <Phone className="w-6 h-6" />
+                <CardContent className="p-0 relative z-10">
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 ${contactInfo[1].color} mb-3`}>
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
+                  <div className="space-y-1">
+                    {contactInfo[1].details.map((detail, idx) => (
+                      <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                         dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                      </p>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Phone Number Selection Dropdown */}
+              {showPhoneOptions && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border-2 border-green-200 z-50 overflow-hidden">
+                  <div className="p-3 bg-green-50 border-b border-green-200">
+                    <h4 className="font-semibold text-sm text-gray-800">Select Number to Call</h4>
+                  </div>
+                  <button
+                    onClick={() => {
+                      window.location.href = `tel:+91 333 508 5038`;
+                      setShowPhoneOptions(false);
+                    }}
+                    className="w-full p-4 text-left hover:bg-green-50 transition-colors duration-200 border-b border-gray-100 group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-gray-800 group-hover:text-green-700">Main Office</p>
+                        <p className="text-sm text-gray-600">+91 333 508 5038</p>
+                      </div>
+                      <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform duration-200" />
                     </div>
-                    <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[1].title}</h3>
+                  </button>
+                  <button
+                    onClick={() => {
+                      window.location.href = `tel:+91 9007906531`;
+                      setShowPhoneOptions(false);
+                    }}
+                    className="w-full p-4 text-left hover:bg-green-50 transition-colors duration-200 group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-gray-800 group-hover:text-green-700">Mobile</p>
+                        <p className="text-sm text-gray-600">+91 9007906531</p>
+                      </div>
+                      <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform duration-200" />
+                    </div>
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Email Us - Bottom Left */}
+            {(() => {
+              const EmailIcon = contactInfo[2].icon;
+              
+              const handleEmailClick = () => {
+                const email = 'contact@hirenet.in';
+                const subject = 'Inquiry from HireNET Website';
+                const body = 'Hello HireNET Team,\n\nI would like to inquire about your services.\n\nThank you.';
+                
+                // Check if it's mobile device
+                const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                
+                if (isMobile) {
+                  // For mobile: Use mailto to open native email app
+                  window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                } else {
+                  // For desktop: Try Gmail web interface first, fallback to mailto
+                  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  const popup = window.open(gmailUrl, '_blank');
+                  
+                  // Fallback to mailto if popup is blocked
+                  if (!popup) {
+                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  }
+                }
+              };
+              
+              return (
+                <Card 
+                  className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                  onClick={handleEmailClick}
+                >
+                  <CardContent className="p-0 relative z-10">
+                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
+                      <EmailIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
                     <div className="space-y-1">
-                      {contactInfo[1].details.map((detail, idx) => (
+                      {contactInfo[2].details.map((detail, idx) => (
                         <p key={idx} className="text-gray-600 text-xs leading-normal" 
                            dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
                         </p>
@@ -250,146 +285,30 @@ export default function Contact() {
                     </div>
                   </CardContent>
                 </Card>
-                
-                {/* Phone Number Selection Dropdown */}
-                {showPhoneOptions && (
-                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border-2 border-green-200 z-50 overflow-hidden">
-                    <div className="p-3 bg-green-50 border-b border-green-200">
-                      <h4 className="font-semibold text-sm text-gray-800">Select Number to Call</h4>
+              );
+            })()}
+
+            {/* Business Hours - Bottom Right */}
+            {(() => {
+              const ClockIcon = contactInfo[3].icon;
+              return (
+                <Card className="text-center p-4 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden">
+                  <CardContent className="p-0 relative z-10">
+                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3`}>
+                      <ClockIcon className="w-6 h-6" />
                     </div>
-                    <button
-                      onClick={() => {
-                        window.location.href = `tel:+91 333 508 5038`;
-                        setShowPhoneOptions(false);
-                      }}
-                      className="w-full p-4 text-left hover:bg-green-50 transition-colors duration-200 border-b border-gray-100 group"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-semibold text-gray-800 group-hover:text-green-700">Main Office</p>
-                          <p className="text-sm text-gray-600">+91 333 508 5038</p>
-                        </div>
-                        <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform duration-200" />
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => {
-                        window.location.href = `tel:+91 9007906531`;
-                        setShowPhoneOptions(false);
-                      }}
-                      className="w-full p-4 text-left hover:bg-green-50 transition-colors duration-200 group"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-semibold text-gray-800 group-hover:text-green-700">Mobile</p>
-                          <p className="text-sm text-gray-600">+91 9007906531</p>
-                        </div>
-                        <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform duration-200" />
-                      </div>
-                    </button>
-                  </div>
-                )}
-              </motion.div>
-
-              {/* Email Us - Bottom Left */}
-              {(() => {
-                const EmailIcon = contactInfo[2].icon;
-                
-                const handleEmailClick = () => {
-                  const email = 'contact@hirenet.in';
-                  const subject = 'Inquiry from HireNET Website';
-                  const body = 'Hello HireNET Team,\n\nI would like to inquire about your services.\n\nThank you.';
-                  
-                  // Check if it's mobile device
-                  const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                  
-                  if (isMobile) {
-                    // For mobile: Use mailto to open native email app
-                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                  } else {
-                    // For desktop: Try Gmail web interface first, fallback to mailto
-                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    const popup = window.open(gmailUrl, '_blank');
-                    
-                    // Fallback to mailto if popup is blocked
-                    if (!popup) {
-                      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    }
-                  }
-                };
-                
-                return (
-                  <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 15,
-                      delay: 0.6
-                    }}
-                  >
-                    <Card 
-                      className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
-                      onClick={handleEmailClick}
-                    >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-indigo-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                    <CardContent className="p-0 relative z-10">
-                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
-                        <EmailIcon className="w-6 h-6" />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
-                      <div className="space-y-1">
-                        {contactInfo[2].details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                  </motion.div>
-                );
-              })()}
-
-              {/* Business Hours - Bottom Right */}
-              {(() => {
-                const ClockIcon = contactInfo[3].icon;
-                return (
-                  <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 15,
-                      delay: 0.7
-                    }}
-                  >
-                    <Card className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-600/5 via-transparent to-amber-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                    <CardContent className="p-0 relative z-10">
-                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3`}>
-                        <ClockIcon className="w-6 h-6" />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[3].title}</h3>
-                      <div className="space-y-1">
-                        {contactInfo[3].details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                  </motion.div>
-                );
-              })()}
-            </div>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[3].title}</h3>
+                    <div className="space-y-1">
+                      {contactInfo[3].details.map((detail, idx) => (
+                        <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                           dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                        </p>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })()}
           </div>
 
           {/* Single Map Section */}
