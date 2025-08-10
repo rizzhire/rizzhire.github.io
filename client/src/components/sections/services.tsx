@@ -1,6 +1,7 @@
 import { Users, TrendingUp, UserCheck, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
 
 export default function Services() {
   // Initialize scroll animations using gold standard timing
@@ -234,18 +235,32 @@ export default function Services() {
           ref={servicesAnimation.elementRef}
         >
           {services.map((service, index) => (
-            <Card 
+            <motion.div
               key={index}
-              className={`${service.bgColor} p-6 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-[1200ms] hover:-translate-y-2 group ${
-                servicesAnimation.isVisible 
-                  ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-16 scale-95'
-              }`}
-              style={{ 
-                transitionDelay: servicesAnimation.isVisible ? `${index * 300}ms` : '0ms',
-                transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+              initial={{ 
+                opacity: 0, 
+                y: 60,
+                scale: 0.7,
+                rotateY: -30
+              }}
+              animate={servicesAnimation.isVisible ? {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotateY: 0
+              } : {}}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15
               }}
             >
+              <Card 
+                className={`${service.bgColor} p-6 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group`}
+              >
               <CardContent className="p-0">
                 <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
                   <service.icon className="h-6 w-6 text-gray-700" />
@@ -266,6 +281,7 @@ export default function Services() {
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           ))}
         </div>
       </div>
