@@ -33,8 +33,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         <div 
           className={`
             relative overflow-hidden
-            bg-black text-white font-semibold text-lg
-            px-8 py-4 rounded-full
+            bg-black text-white font-semibold text-lg max-md:text-base
+            px-8 py-4 max-md:px-6 max-md:py-3 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
             transform transition-all duration-500 ease-out
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
@@ -64,7 +64,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
         {/* Water drop arrow - detaches on hover */}
         <div 
           className={`
-            relative bg-black w-12 h-12 rounded-full
+            relative bg-black w-12 h-12 max-md:w-10 max-md:h-10 rounded-full
             flex items-center justify-center
             transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
             ${isHovered 
