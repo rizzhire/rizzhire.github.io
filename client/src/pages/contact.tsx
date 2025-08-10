@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -121,12 +122,35 @@ export default function Contact() {
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+          >
             Get In <span className="text-yellow">Touch</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.2
+            }}
+          >
             Ready to transform your career or find the perfect talent? Let's start a conversation.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -159,7 +183,19 @@ export default function Contact() {
             {(() => {
               const VisitIcon = contactInfo[0].icon;
               return (
-                <Card className="text-center p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden">
+                <motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: 0.4
+                  }}
+                >
+                  <Card className="text-center p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
                   <CardContent className="p-0 relative z-10">
                     <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 ${contactInfo[0].color} mb-4`}>
@@ -175,13 +211,26 @@ export default function Contact() {
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
               );
             })()}
 
             {/* Right Side - 3 Smaller Cards in Grid */}
             <div className="grid grid-cols-2 gap-4">
               {/* Call Us - Top Right (Full Width) */}
-              <div className="relative col-span-2">
+              <motion.div 
+                className="relative col-span-2"
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15,
+                  delay: 0.5
+                }}
+              >
                 <Card 
                   className="text-center p-5 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
                   onClick={() => setShowPhoneOptions(!showPhoneOptions)}
@@ -240,7 +289,7 @@ export default function Contact() {
                     </button>
                   </div>
                 )}
-              </div>
+              </motion.div>
 
               {/* Email Us - Bottom Left */}
               {(() => {
@@ -270,10 +319,22 @@ export default function Contact() {
                 };
                 
                 return (
-                  <Card 
-                    className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
-                    onClick={handleEmailClick}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15,
+                      delay: 0.6
+                    }}
                   >
+                    <Card 
+                      className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                      onClick={handleEmailClick}
+                    >
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-indigo-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
                     <CardContent className="p-0 relative z-10">
                       <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
@@ -289,6 +350,7 @@ export default function Contact() {
                       </div>
                     </CardContent>
                   </Card>
+                  </motion.div>
                 );
               })()}
 
@@ -296,7 +358,19 @@ export default function Contact() {
               {(() => {
                 const ClockIcon = contactInfo[3].icon;
                 return (
-                  <Card className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15,
+                      delay: 0.7
+                    }}
+                  >
+                    <Card className="text-center p-4 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-600/5 via-transparent to-amber-600/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
                     <CardContent className="p-0 relative z-10">
                       <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3`}>
@@ -312,13 +386,26 @@ export default function Contact() {
                       </div>
                     </CardContent>
                   </Card>
+                  </motion.div>
                 );
               })()}
             </div>
           </div>
 
           {/* Single Map Section */}
-          <div className="mt-16">
+          <motion.div 
+            className="mt-16"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+          >
             <h3 className="text-2xl font-bold text-center mb-8">Find Us on Map</h3>
             <Card className="overflow-hidden rounded-3xl shadow-lg max-w-3xl mx-auto">
               <div className="relative h-80 bg-gradient-to-br from-gray-50 to-white">
@@ -350,7 +437,20 @@ export default function Contact() {
               </div>
               
               {/* Direction Buttons */}
-              <div className="p-6 bg-white border-t">
+              <motion.div 
+                className="p-6 bg-white border-t"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                transition={{ 
+                  duration: 0.8, 
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15,
+                  delay: 0.2
+                }}
+              >
                 <div className="grid md:grid-cols-2 gap-4">
                   <Button 
                     className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl"
@@ -368,9 +468,9 @@ export default function Contact() {
                     Branch Office Directions
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -396,14 +496,39 @@ export default function Contact() {
         </div>
         
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Send Us a Message</h2>
             <p className="text-gray-600 text-lg">
               Fill out the form below and we'll get back to you as soon as possible.
             </p>
-          </div>
+          </motion.div>
 
-          <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 shadow-xl rounded-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.2
+            }}
+          >
+            <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 shadow-xl rounded-3xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -494,6 +619,7 @@ export default function Contact() {
               </Button>
             </form>
           </Card>
+          </motion.div>
         </div>
       </section>
     </div>
