@@ -46,38 +46,106 @@ export default function Services() {
 
   return (
     <section id="services" className="relative cream pt-0 pb-20 overflow-hidden">
-      {/* Light Background Graphics */}
+      {/* Enhanced Live Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Enhanced Live Moving Floating Elements */}
-        <div className="absolute top-32 left-20 w-16 h-16 bg-gradient-to-r from-yellow-300/6 to-orange-300/8 rounded-lg rotate-12 blur-sm animate-floatMove"></div>
-        <div className="absolute bottom-40 right-32 w-20 h-20 bg-gradient-to-r from-blue-300/6 to-cyan-300/8 rounded-full blur-md animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-purple-300/6 to-pink-300/8 rounded-full blur-sm animate-floatMove" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-20 right-16 w-14 h-14 bg-gradient-to-r from-green-300/6 to-emerald-300/8 rounded-lg rotate-45 blur-sm animate-rotate"></div>
+        {/* Large Enhanced Live Moving Floating Circles */}
+        <div className="absolute top-20 left-16 w-32 h-32 bg-gradient-to-r from-yellow-200/15 to-yellow-300/25 rounded-full blur-xl animate-floatMoveEnhanced"></div>
+        <div className="absolute bottom-32 right-20 w-40 h-40 bg-gradient-to-r from-blue-200/12 to-cyan-200/22 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-8 w-28 h-28 bg-gradient-to-r from-purple-200/14 to-pink-200/24 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-16 right-1/4 w-36 h-36 bg-gradient-to-r from-orange-200/13 to-yellow-200/23 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '1.5s'}}></div>
         
-        {/* Additional Floating Elements */}
-        <div className="absolute top-60 left-1/3 w-10 h-10 bg-gradient-to-r from-rose-300/5 to-red-300/7 rounded-full blur-sm animate-floatMove" style={{animationDelay: '3s'}}></div>
-        <div className="absolute bottom-20 left-40 w-18 h-18 bg-gradient-to-r from-indigo-300/5 to-blue-300/7 rounded-lg rotate-30 blur-md animate-pulse-slow" style={{animationDelay: '4s'}}></div>
-        <div className="absolute top-80 right-1/4 w-8 h-8 bg-gradient-to-r from-teal-300/5 to-cyan-300/7 rounded-full blur-sm animate-rotate" style={{animationDelay: '1s'}}></div>
+        {/* Medium Floating Elements */}
+        <div className="absolute top-60 left-1/3 w-24 h-24 bg-gradient-to-r from-rose-200/12 to-red-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-16 left-1/5 w-20 h-20 bg-gradient-to-r from-indigo-200/11 to-blue-200/21 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-80 right-1/5 w-16 h-16 bg-gradient-to-r from-amber-200/10 to-orange-200/20 rounded-full blur-sm animate-rotateEnhanced" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-40 left-2/5 w-22 h-22 bg-gradient-to-r from-violet-200/12 to-purple-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '5s'}}></div>
+        
+        {/* Small Accent Elements */}
+        <div className="absolute top-40 right-1/3 w-14 h-14 bg-gradient-to-r from-sky-200/10 to-blue-200/20 rounded-full blur-sm animate-floatMoveEnhanced" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute bottom-60 right-12 w-18 h-18 bg-gradient-to-r from-emerald-200/9 to-green-200/19 rounded-full blur-md animate-rotateEnhanced" style={{animationDelay: '3.5s'}}></div>
         
 
         
-        {/* Wavy Abstract Traveling Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400">
+        {/* Enhanced Moving Geometric Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 500">
+          <defs>
+            <linearGradient id="servicesGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="servicesGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,250 Q250,130 500,250 T1000,250" stroke="url(#servicesGradient1)" strokeWidth="2" fill="none"/>
+          <path d="M0,150 Q300,350 600,150 T1000,150" stroke="url(#servicesGradient2)" strokeWidth="1.5" fill="none"/>
+        </svg>
+        
+        {/* Enhanced Wavy Abstract Traveling Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 500">
           <defs>
             <linearGradient id="servicesWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fbbf24" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#fbbf24" stopOpacity="0.12"/>
-              <stop offset="100%" stopColor="#fbbf24" stopOpacity="0"/>
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
             </linearGradient>
             <linearGradient id="servicesWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
-              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.1"/>
-              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0"/>
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="servicesWavy3" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="servicesWavy4" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#f97316" stopOpacity="0.11"/>
+              <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
             </linearGradient>
           </defs>
           
-
+          <path 
+            d="M-100,80 C-20,75 80,90 250,85 C420,82 580,78 750,76 C850,74 920,73 1000,75" 
+            stroke="url(#servicesWavy1)" 
+            strokeWidth="1.5" 
+            fill="none"
+            className="animate-wavyTravel1"
+          />
+          <path 
+            d="M-100,320 C40,315 160,330 320,325 C480,322 640,318 800,316 C900,314 970,313 1100,315" 
+            stroke="url(#servicesWavy2)" 
+            strokeWidth="1.8" 
+            fill="none"
+            className="animate-wavyTravel2"
+          />
+          <path 
+            d="M-150,180 C-50,175 70,190 230,185 C390,182 550,178 710,176 C810,174 880,173 1050,175" 
+            stroke="url(#servicesWavy3)" 
+            strokeWidth="1.3" 
+            fill="none"
+            className="animate-wavyTravel3"
+          />
+          <path 
+            d="M-120,420 C20,415 140,430 300,425 C460,422 620,418 780,416 C880,414 950,413 1080,415" 
+            stroke="url(#servicesWavy4)" 
+            strokeWidth="1.6" 
+            fill="none"
+            className="animate-wavyTravel4"
+          />
         </svg>
+        
+        {/* Enhanced Dynamic Dots Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-16 left-16 w-2 h-2 bg-yellow-400 rounded-full animate-ping" style={{animationDelay: '0s'}}></div>
+          <div className="absolute top-32 right-24 w-2 h-2 bg-blue-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-32 left-32 w-2 h-2 bg-purple-400 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-16 right-16 w-2 h-2 bg-orange-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-rose-400 rounded-full animate-ping" style={{animationDelay: '4s'}}></div>
+          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-emerald-400 rounded-full animate-ping" style={{animationDelay: '5s'}}></div>
+        </div>
       </div>
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
