@@ -175,29 +175,25 @@ export default function About() {
       {/* Values Section */}
       <section className="relative py-12 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
         {/* Exact Background Graphics from Industries Page */}
-        <div className="absolute -inset-32 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           
-          {/* Moving Colorful Floating Elements - Extended Beyond Edges */}
-          <div className="absolute -top-16 -left-16 w-56 h-56 bg-gradient-to-br from-yellow-200/35 via-yellow-300/45 to-amber-200/40 rounded-full blur-3xl animate-floatMoveEnhanced"></div>
-          <div className="absolute -top-8 -right-20 w-48 h-48 bg-gradient-to-br from-blue-200/30 via-cyan-200/40 to-sky-200/35 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-          <div className="absolute -bottom-20 -left-12 w-64 h-64 bg-gradient-to-br from-orange-200/28 via-yellow-200/38 to-peach-200/33 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
-          <div className="absolute -bottom-16 -right-24 w-52 h-52 bg-gradient-to-br from-purple-200/32 via-pink-200/42 to-rose-200/37 rounded-full blur-3xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
+          {/* Moving Colorful Floating Elements - Softer Blending */}
+          <div className="absolute top-8 left-4 w-56 h-56 bg-gradient-to-br from-yellow-200/15 via-yellow-300/20 to-amber-200/18 rounded-full blur-4xl animate-floatMoveEnhanced"></div>
+          <div className="absolute top-16 right-8 w-48 h-48 bg-gradient-to-br from-blue-200/12 via-cyan-200/18 to-sky-200/15 rounded-full blur-4xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-12 left-8 w-64 h-64 bg-gradient-to-br from-orange-200/10 via-yellow-200/16 to-peach-200/13 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-16 right-12 w-52 h-52 bg-gradient-to-br from-purple-200/14 via-pink-200/19 to-rose-200/16 rounded-full blur-4xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
           
           {/* Additional Large Floating Elements */}
-          <div className="absolute top-1/2 -left-20 w-44 h-44 bg-gradient-to-br from-emerald-200/33 via-green-200/43 to-lime-200/38 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
-          <div className="absolute top-40 -right-16 w-60 h-60 bg-gradient-to-br from-rose-200/29 via-red-200/39 to-pink-200/34 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
-          <div className="absolute -top-12 left-1/3 w-50 h-50 bg-gradient-to-br from-indigo-200/27 via-violet-200/37 to-purple-200/32 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
-          <div className="absolute -bottom-8 right-16 w-56 h-56 bg-gradient-to-br from-teal-200/31 via-cyan-200/41 to-blue-200/36 rounded-full blur-3xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+          <div className="absolute top-1/2 left-0 w-44 h-44 bg-gradient-to-br from-emerald-200/13 via-green-200/18 to-lime-200/15 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-32 right-0 w-60 h-60 bg-gradient-to-br from-rose-200/11 via-red-200/17 to-pink-200/14 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+          <div className="absolute top-4 left-1/3 w-50 h-50 bg-gradient-to-br from-indigo-200/12 via-violet-200/17 to-purple-200/14 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
+          <div className="absolute bottom-4 right-1/4 w-56 h-56 bg-gradient-to-br from-teal-200/13 via-cyan-200/18 to-blue-200/15 rounded-full blur-4xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
           
           {/* Extra Ambient Elements for Better Coverage */}
-          <div className="absolute top-2/3 left-1/2 w-40 h-40 bg-gradient-to-br from-amber-200/25 via-orange-200/35 to-yellow-200/30 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '5s'}}></div>
-          <div className="absolute -top-4 right-1/4 w-36 h-36 bg-gradient-to-br from-fuchsia-200/28 via-purple-200/38 to-indigo-200/33 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '3.5s'}}></div>
+          <div className="absolute top-2/3 left-1/2 w-40 h-40 bg-gradient-to-br from-amber-200/10 via-orange-200/15 to-yellow-200/12 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '5s'}}></div>
+          <div className="absolute top-20 right-1/3 w-36 h-36 bg-gradient-to-br from-fuchsia-200/11 via-purple-200/16 to-indigo-200/13 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '3.5s'}}></div>
           
-          {/* Edge Fade-out Gradients for Smooth Finishing */}
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/60 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/60 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white/40 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white/40 to-transparent pointer-events-none"></div>
+
           
           {/* Enhanced Moving Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 800">
