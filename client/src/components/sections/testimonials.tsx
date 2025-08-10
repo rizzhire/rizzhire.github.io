@@ -58,7 +58,7 @@ export default function Testimonials() {
         </svg>
       </div>
       
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow">
             Testimonials
@@ -68,10 +68,14 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="w-80 flex-shrink-0">
+                <TestimonialCard testimonial={testimonial} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
