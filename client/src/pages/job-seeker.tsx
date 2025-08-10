@@ -350,7 +350,7 @@ export default function JobSeekerPage() {
             <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight px-2 pt-2 sm:pt-0">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
-            <p className="text-lg sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:mobile-description-base">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
@@ -967,7 +967,7 @@ export default function JobSeekerPage() {
               Success <span className="text-yellow">Stories</span>
             </motion.h2>
             <motion.p 
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto max-md:text-sm"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}

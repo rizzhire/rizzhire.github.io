@@ -87,7 +87,7 @@ export default function Countries() {
           variants={fadeInUp}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Countries We <span className="text-yellow">Serve</span></h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto max-md:text-sm">
             Expanding opportunities across strategic markets in the Middle East and Indian Ocean region.
           </p>
         </motion.div>

@@ -63,7 +63,7 @@ export default function Testimonials() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow">
             Testimonials
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed max-md:text-sm">
             Trusted by <span className="font-semibold text-gray-700">leading organizations</span> across the Middle East for our exceptional recruitment solutions and dedicated service excellence.
           </p>
         </div>

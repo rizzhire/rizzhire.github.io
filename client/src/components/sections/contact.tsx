@@ -153,7 +153,7 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
             Get In Touch
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-600 max-w-3xl mx-auto max-md:mobile-description-lg"
+            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto max-md:text-sm"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
