@@ -3,7 +3,7 @@ import ConsultationButton from "@/components/ui/consultation-button";
 import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import indianEmblemImage from "@assets/generated_images/Golden_Official_Indian_Emblem_b33dfa48.png";
+import indianEmblemImage from "@assets/emblem-of-india-logo-png_seeklogo-311715_1754816803273.png";
 
 export default function Hero() {
   const placements = useCounter({ end: 18, duration: 2500 });
@@ -207,11 +207,11 @@ export default function Hero() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 {/* Indian Government Emblem - Full Height */}
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-56 md:w-28 md:h-64 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl border border-yellow/20 overflow-hidden">
+                  <div className="w-24 h-56 md:w-28 md:h-64 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl border border-yellow/20 flex items-center justify-center p-2">
                     <img 
                       src={indianEmblemImage} 
                       alt="Government of India Emblem" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
                     />
                   </div>
                 </div>
