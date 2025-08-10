@@ -970,7 +970,7 @@ export default function JobSeekerPage() {
                   }}
                 >
                   <Card 
-                    className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group"
+                    className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] h-[400px] group"
                   >
                   <CardContent className="p-0 h-full flex flex-col">
                     <div className="flex items-center mb-4">
