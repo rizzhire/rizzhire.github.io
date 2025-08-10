@@ -55,7 +55,7 @@ export default function Services() {
         <div className="absolute bottom-20 right-1/3 w-52 h-52 bg-gradient-to-r from-orange-200/18 to-yellow-200/28 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '1.5s'}}></div>
         
         {/* Medium Floating Elements */}
-        <div className="absolute top-60 right-1/4 w-32 h-32 bg-gradient-to-r from-yellow-200/15 to-amber-200/25 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-60 right-1/4 w-32 h-32 bg-gradient-to-r from-yellow-200/10 to-amber-200/18 rounded-full blur-xl animate-floatMoveEnhanced" style={{animationDelay: '3s'}}></div>
         <div className="absolute bottom-16 left-1/5 w-20 h-20 bg-gradient-to-r from-indigo-200/11 to-blue-200/21 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
         <div className="absolute top-80 right-1/6 w-24 h-24 bg-gradient-to-r from-amber-200/15 to-yellow-200/25 rounded-full blur-lg animate-rotateEnhanced" style={{animationDelay: '1s'}}></div>
         <div className="absolute bottom-40 left-2/5 w-22 h-22 bg-gradient-to-r from-violet-200/12 to-purple-200/22 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '5s'}}></div>
