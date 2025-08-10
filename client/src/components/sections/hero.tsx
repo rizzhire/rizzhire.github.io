@@ -148,7 +148,7 @@ export default function Hero() {
               >
                 {placements.count}k
               </div>
-              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight max-md:mobile-description-sm">
                 Successful<br/>Placements
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function Hero() {
                 {database.count}k
                 <Plus className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
-              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight max-md:mobile-description-sm">
                 Database
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function Hero() {
                 {companies.count}
                 <Plus className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
-              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight max-md:mobile-description-sm">
                 Partnered<br/>Companies
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function Hero() {
                 {countries.count}
                 <Plus className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
-              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight max-md:mobile-description-sm">
                 Countries<br/>Served
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function Hero() {
               >
                 {satisfaction.count}%
               </div>
-              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight max-md:mobile-description-sm">
                 Success<br/>Rate
               </div>
             </div>
