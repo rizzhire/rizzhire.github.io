@@ -109,7 +109,7 @@ export default function Industries() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 tracking-tight">
               Industries We <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 bg-clip-text text-transparent">Serve</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light max-md:mobile-description-lg">
               Specialized workforce solutions across the Middle East's most critical sectors. 
               Ground-level talent acquisition for mass recruitment and operational excellence.
             </p>

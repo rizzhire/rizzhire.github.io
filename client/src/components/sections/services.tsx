@@ -215,7 +215,7 @@ export default function Services() {
             Our <span className="text-yellow">Services</span>
           </h2>
           <p 
-            className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] ${
+            className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] max-md:mobile-description-lg ${
               headerAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
@@ -268,7 +268,7 @@ export default function Services() {
                 <h3 className="text-xl font-bold mb-4 text-gray-900 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+                <p className="text-gray-600 mb-6 text-sm leading-relaxed max-md:mobile-description-sm">
                   {service.description}
                 </p>
                 <div className="space-y-2">

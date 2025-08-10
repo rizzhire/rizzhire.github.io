@@ -153,7 +153,7 @@ export default function Blogs() {
             Industry <span className="text-yellow">Insights</span>
           </motion.h1>
           <motion.p 
-            className="fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8"
+            className="fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8 max-md:mobile-description-lg"
             variants={fadeInUp}
           >
             Expert analysis, market trends, and strategic insights from Middle East recruitment leaders

@@ -155,6 +155,27 @@
     line-height: 1.5rem;
   }
   
+  /* Mobile-optimized description text sizes - reduce by 25% from desktop */
+  .mobile-description-sm {
+    font-size: 0.875rem !important; /* 14px instead of text-base 16px */
+    line-height: 1.25rem !important;
+  }
+  
+  .mobile-description-base {
+    font-size: 1rem !important; /* 16px instead of text-lg 18px */
+    line-height: 1.5rem !important;
+  }
+  
+  .mobile-description-lg {
+    font-size: 1.125rem !important; /* 18px instead of text-xl 20px */
+    line-height: 1.75rem !important;
+  }
+  
+  .mobile-description-xl {
+    font-size: 1.25rem !important; /* 20px instead of text-2xl 24px */
+    line-height: 1.75rem !important;
+  }
+  
   /* Mobile grid optimizations */
   .mobile-grid-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -179,6 +200,22 @@
   .ultra-mobile-container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+  
+  /* Ultra-mobile description text sizes - further reduced for very small screens */
+  .ultra-mobile-description-xs {
+    font-size: 0.75rem !important; /* 12px for very small screens */
+    line-height: 1rem !important;
+  }
+  
+  .ultra-mobile-description-sm {
+    font-size: 0.875rem !important; /* 14px for very small screens */
+    line-height: 1.25rem !important;
+  }
+  
+  .ultra-mobile-description-base {
+    font-size: 1rem !important; /* 16px for very small screens */
+    line-height: 1.375rem !important;
   }
 }
 

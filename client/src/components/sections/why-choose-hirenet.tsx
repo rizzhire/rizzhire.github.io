@@ -161,7 +161,7 @@ export default function WhyChooseHireNet() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+            className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light max-md:mobile-description-lg"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
@@ -193,7 +193,7 @@ export default function WhyChooseHireNet() {
               <h3 className="text-lg font-bold mb-3 text-gray-800">
                 Global Placement Opportunities
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <p className="text-gray-600 leading-relaxed text-sm max-md:mobile-description-sm">
                 Premium job positions across UAE, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain, and Maldives with guaranteed placement assistance.
               </p>
             </div>

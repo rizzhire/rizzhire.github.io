@@ -86,7 +86,7 @@ export default function LearnMore() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 tracking-tight">
               Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 bg-clip-text text-transparent">Journey</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light max-md:mobile-description-lg">
               Discover the story behind the Middle East's premier recruitment consultancy. 
               From humble beginnings to industry leadership, our commitment to excellence drives everything we do.
             </p>

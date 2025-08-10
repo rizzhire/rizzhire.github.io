@@ -36,7 +36,7 @@ export default function JobListings() {
             Latest Opportunities
           </motion.h2>
           <motion.p 
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 max-md:mobile-description-base"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}

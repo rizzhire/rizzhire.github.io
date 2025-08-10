@@ -118,7 +118,7 @@ export default function Employers() {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Transform Your <span className="text-yellow">Workforce</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed max-md:mobile-description-lg">
               Partner with HireNET to access premium talent across the Middle East. 
               Build exceptional teams with our comprehensive recruitment solutions.
             </p>

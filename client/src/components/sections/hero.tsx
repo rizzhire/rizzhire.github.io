@@ -120,7 +120,7 @@ export default function Hero() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed max-md:mobile-description-lg">
               Elite recruitment solutions connecting exceptional talent with 
               industry-leading organizations across the Middle East and beyond.
             </p>

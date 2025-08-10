@@ -160,7 +160,7 @@ export default function Contact() {
             Get In <span className="text-yellow">Touch</span>
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed max-md:mobile-description-lg"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}

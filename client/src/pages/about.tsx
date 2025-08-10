@@ -110,7 +110,7 @@ export default function About() {
             About <span className="text-yellow">HireNET</span>
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed max-md:mobile-description-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
