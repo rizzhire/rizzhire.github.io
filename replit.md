@@ -112,4 +112,4 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Three-Column Layout**: Emblem, certification text, and verification badge
 - **Ministry Details**: Included Ministry of External Affairs without license number as requested
 - **Responsive Design**: Mobile-optimized layout with proper spacing and visual hierarchy
-- **Ultra-Slow Animations**: Implemented exactly matching flags section timing (800ms duration, cubic-bezier(0.25,0.46,0.45,0.94) easing) with proper movement distances and staggered delays (100ms, 200ms, 300ms, 400ms) for consistent animation speed across the site
+- **Exact Flags Animation**: Implemented identical Framer Motion animation system used by flags section (0.8s duration, [0.25, 0.46, 0.45, 0.94] easing, spring physics with stiffness 100 and damping 15, same initial/animate states with opacity 0→1, y 60→0, scale 0.7→1, rotateY -30→0) for perfect animation consistency

@@ -4,6 +4,7 @@ import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import indianEmblemImage from "@assets/emblem-of-india-logo-png_seeklogo-311715_1754816803273.png";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const placements = useCounter({ end: 18, duration: 2500 });
@@ -211,43 +212,84 @@ export default function Hero() {
           className="mt-16 pt-12 border-t border-gray-200/50"
         >
           <div className="max-w-4xl mx-auto">
-            <div 
-              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-                certificationAnimation.isVisible 
-                  ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-8 scale-95'
-              }`}
-              style={{
-                transitionDelay: certificationAnimation.isVisible ? '100ms' : '0ms'
+            <motion.div 
+              initial={{ 
+                opacity: 0, 
+                y: 60,
+                scale: 0.7,
+                rotateY: -30
               }}
+              animate={certificationAnimation.isVisible ? {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotateY: 0
+              } : {}}
+              transition={{
+                duration: 0.8,
+                delay: 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
             >
               <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
                 {/* Indian Government Emblem - Full Height */}
-                <div className="flex-shrink-0 h-full flex items-center">
+                <motion.div 
+                  initial={{ 
+                    opacity: 0, 
+                    y: 60,
+                    scale: 0.7,
+                    rotateY: -30
+                  }}
+                  animate={certificationAnimation.isVisible ? {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    rotateY: 0
+                  } : {}}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.2,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  className="flex-shrink-0 h-full flex items-center"
+                >
                   <img 
                     src={indianEmblemImage} 
                     alt="Government of India Emblem" 
-                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-                      certificationAnimation.isVisible 
-                        ? 'opacity-100 translate-x-0 scale-100' 
-                        : 'opacity-0 -translate-x-4 scale-95'
-                    }`}
-                    style={{
-                      transitionDelay: certificationAnimation.isVisible ? '200ms' : '0ms'
-                    }}
+                    className="h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
                   />
-                </div>
+                </motion.div>
 
                 {/* Certification Text */}
-                <div 
-                  className={`flex-1 text-center md:text-left transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-                    certificationAnimation.isVisible 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-6'
-                  }`}
-                  style={{
-                    transitionDelay: certificationAnimation.isVisible ? '300ms' : '0ms'
+                <motion.div 
+                  initial={{ 
+                    opacity: 0, 
+                    y: 60,
+                    scale: 0.7,
+                    rotateY: -30
                   }}
+                  animate={certificationAnimation.isVisible ? {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    rotateY: 0
+                  } : {}}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.3,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  className="flex-1 text-center md:text-left"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                     Approved By <span className="text-yellow">Government Of India</span>
@@ -259,18 +301,31 @@ export default function Hero() {
                     Officially recognized recruitment agency authorized to facilitate international employment 
                     opportunities for Indian professionals across the Middle East region.
                   </p>
-                </div>
+                </motion.div>
 
                 {/* Verification Badge */}
-                <div 
-                  className={`flex-shrink-0 transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-                    certificationAnimation.isVisible 
-                      ? 'opacity-100 translate-x-0 scale-100' 
-                      : 'opacity-0 translate-x-4 scale-95'
-                  }`}
-                  style={{
-                    transitionDelay: certificationAnimation.isVisible ? '400ms' : '0ms'
+                <motion.div 
+                  initial={{ 
+                    opacity: 0, 
+                    y: 60,
+                    scale: 0.7,
+                    rotateY: -30
                   }}
+                  animate={certificationAnimation.isVisible ? {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    rotateY: 0
+                  } : {}}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.4,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  className="flex-shrink-0"
                 >
                   <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
@@ -281,9 +336,9 @@ export default function Hero() {
                       Government Approved
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
