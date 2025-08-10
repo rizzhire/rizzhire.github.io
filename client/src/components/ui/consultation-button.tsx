@@ -34,7 +34,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative overflow-hidden
             bg-black text-white font-semibold text-lg max-md:text-base
-            px-8 py-4 max-md:px-6 max-md:py-3 rounded-full
+            px-8 py-4 max-md:px-7 max-md:py-3 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
             transform transition-all duration-500 ease-out
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
@@ -51,7 +51,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           `} />
           
           {/* Button text */}
-          <div className="relative z-10">
+          <div className="relative z-10 whitespace-nowrap">
             <span className={`
               transition-all duration-300 ease-out
               ${isHovered ? 'tracking-wide' : ''}
