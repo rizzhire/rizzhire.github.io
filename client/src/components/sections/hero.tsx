@@ -209,8 +209,13 @@ export default function Hero() {
         {/* Government Certification Section */}
         <div 
           ref={certificationAnimation.elementRef}
-          className="relative mt-16 pt-12 border-t border-gray-200/50 overflow-hidden"
+          className="relative mt-16 pt-12 overflow-hidden"
         >
+          {/* Smooth Gradient Blending */}
+          <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream/95 to-cream"></div>
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-cream to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cream to-transparent"></div>
+          
           {/* Enhanced Background Graphics - Same as Industries We Serve */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Enhanced Live Moving Floating Circles - More Visible */}
@@ -323,7 +328,9 @@ export default function Hero() {
               <circle cx="550" cy="480" r="2.3" fill="url(#certificateDotGradient)" className="animate-pulseEnhanced" style={{animationDelay: '4.5s'}}/>
             </svg>
           </div>
-          <div className="max-w-4xl mx-auto">
+          
+          {/* Content Container */}
+          <div className="relative z-10 max-w-4xl mx-auto">
             <motion.div 
               initial={{ 
                 opacity: 0, 
@@ -345,7 +352,7 @@ export default function Hero() {
                 stiffness: 100,
                 damping: 15
               }}
-              className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
+              className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/30 shadow-xl hover:shadow-2xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/95 cursor-pointer relative z-20"
             >
               <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
                 {/* Indian Government Emblem - Full Height */}
