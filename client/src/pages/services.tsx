@@ -238,7 +238,7 @@ export default function Services() {
                 whileInView={index > 0 ? { opacity: 1, y: 0, scale: 1 } : undefined}
                 viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -150px 0px" } : undefined}
                 transition={{ 
-                  duration: index === 0 ? 0.6 : 0.8, 
+                  duration: index === 0 ? 0.8 : 0.8, 
                   delay: index === 0 ? 0.4 : (index - 1) * 0.4, 
                   ease: [0.25, 0.46, 0.45, 0.94],
                   type: "spring",
@@ -249,129 +249,39 @@ export default function Services() {
                 style={{ willChange: 'transform, opacity' }}
               >
                 <div className={`order-${index % 2 === 0 ? '1' : '2'}`}>
-                  <motion.div 
-                    className={`bg-gradient-to-br ${service.color} rounded-3xl p-8 h-full`}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30, scale: 0.9 }}
-                    animate={index === 0 && pageLoaded ? { opacity: 1, x: 0, scale: 1 } : undefined}
-                    whileInView={index > 0 ? { opacity: 1, x: 0, scale: 1 } : undefined}
-                    viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -100px 0px" } : undefined}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: index === 0 ? 0.6 : (index - 1) * 0.4 + 0.2,
-                      ease: [0.25, 0.46, 0.45, 0.94]
-                    }}
-                  >
-                    <motion.div 
-                      className="flex items-center mb-6"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
-                      whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
-                      viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
-                      transition={{ 
-                        duration: 0.5, 
-                        delay: index === 0 ? 0.8 : (index - 1) * 0.4 + 0.4,
-                        ease: "easeOut"
-                      }}
-                    >
+                  <div className={`bg-gradient-to-br ${service.color} rounded-3xl p-8 h-full`}>
+                    <div className="flex items-center mb-6">
                       <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mr-4">
                         <service.icon className={`w-8 h-8 ${service.iconColor}`} />
                       </div>
                       <h2 className="fluid-text-3xl font-bold text-gray-900">{service.title}</h2>
-                    </motion.div>
-                    <motion.p 
-                      className="text-lg text-gray-700 leading-relaxed"
-                      initial={{ opacity: 0 }}
-                      animate={index === 0 && pageLoaded ? { opacity: 1 } : undefined}
-                      whileInView={index > 0 ? { opacity: 1 } : undefined}
-                      viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
-                      transition={{ 
-                        duration: 0.4, 
-                        delay: index === 0 ? 1.0 : (index - 1) * 0.4 + 0.6,
-                        ease: "easeOut"
-                      }}
-                    >
+                    </div>
+                    <p className="text-lg text-gray-700 leading-relaxed">
                       {service.description}
-                    </motion.p>
-                  </motion.div>
+                    </p>
+                  </div>
                 </div>
                 
                 <div className={`order-${index % 2 === 0 ? '2' : '1'} space-y-8`}>
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-                    animate={index === 0 && pageLoaded ? { opacity: 1, x: 0 } : undefined}
-                    whileInView={index > 0 ? { opacity: 1, x: 0 } : undefined}
-                    viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -100px 0px" } : undefined}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: index === 0 ? 0.7 : (index - 1) * 0.4 + 0.3,
-                      ease: [0.25, 0.46, 0.45, 0.94]
-                    }}
-                  >
-                    <motion.h3 
-                      className="fluid-text-2xl font-semibold mb-6 text-gray-900"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
-                      whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
-                      viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
-                      transition={{ 
-                        duration: 0.5, 
-                        delay: index === 0 ? 0.9 : (index - 1) * 0.4 + 0.5,
-                        ease: "easeOut"
-                      }}
-                    >
+                  <div>
+                    <h3 className="fluid-text-2xl font-semibold mb-6 text-gray-900">
                       Our Approach
-                    </motion.h3>
+                    </h3>
                     <div className="space-y-6">
-                      <motion.p 
-                        className="text-gray-700 leading-relaxed text-lg"
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
-                        whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
-                        viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
-                        transition={{ 
-                          duration: 0.4, 
-                          delay: index === 0 ? 1.1 : (index - 1) * 0.4 + 0.7,
-                          ease: "easeOut"
-                        }}
-                      >
+                      <p className="text-gray-700 leading-relaxed text-lg">
                         {service.detailedDescription}
-                      </motion.p>
-                      <motion.p 
-                        className="text-gray-700 leading-relaxed text-lg"
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={index === 0 && pageLoaded ? { opacity: 1, y: 0 } : undefined}
-                        whileInView={index > 0 ? { opacity: 1, y: 0 } : undefined}
-                        viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
-                        transition={{ 
-                          duration: 0.4, 
-                          delay: index === 0 ? 1.3 : (index - 1) * 0.4 + 0.9,
-                          ease: "easeOut"
-                        }}
-                      >
+                      </p>
+                      <p className="text-gray-700 leading-relaxed text-lg">
                         {service.approach}
-                      </motion.p>
-                      <motion.div 
-                        className="bg-yellow/10 border-l-4 border-yellow p-6 rounded-r-lg"
-                        initial={{ opacity: 0, scale: 0.95, x: -20 }}
-                        animate={index === 0 && pageLoaded ? { opacity: 1, scale: 1, x: 0 } : undefined}
-                        whileInView={index > 0 ? { opacity: 1, scale: 1, x: 0 } : undefined}
-                        viewport={index > 0 ? { once: true, amount: 0.1, margin: "0px 0px -50px 0px" } : undefined}
-                        transition={{ 
-                          duration: 0.5, 
-                          delay: index === 0 ? 1.5 : (index - 1) * 0.4 + 1.1,
-                          ease: [0.25, 0.46, 0.45, 0.94],
-                          type: "spring",
-                          stiffness: 100,
-                          damping: 15
-                        }}
-                      >
+                      </p>
+                      <div className="bg-yellow/10 border-l-4 border-yellow p-6 rounded-r-lg">
                         <h4 className="font-semibold text-gray-900 mb-2">Expected Outcomes</h4>
                         <p className="text-gray-700 leading-relaxed">
                           {service.outcomes}
                         </p>
-                      </motion.div>
+                      </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
             ))}
