@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { useState, useEffect } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState } from "react";
 
 interface ConsultationButtonProps {
   className?: string;
@@ -10,15 +9,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
-  // Separate scroll animations for text and arrow
-  const { elementRef: textRef, isVisible: textVisible } = useScrollAnimation({
-    threshold: 0.1,
-    rootMargin: '0px 0px -200px 0px'
-  });
-  const { elementRef: arrowRef, isVisible: arrowVisible } = useScrollAnimation({
-    threshold: 0.1,
-    rootMargin: '0px 0px -200px 0px'
-  });
+  // No scroll animations - keeping original button behavior
 
   const handleClick = () => {
     setIsClicked(true);
@@ -35,19 +26,14 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
       {/* Main button with water drop detachment effect */}
       <div className="relative flex items-center">
         
-        {/* Main button body with text animation */}
+        {/* Main button body */}
         <div 
-          ref={textRef}
           className={`
             relative overflow-hidden
             bg-black text-white font-semibold text-lg
             px-8 py-4 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
-            transform transition-all duration-[1500ms] ease-out
-            ${textVisible 
-              ? 'opacity-100 translate-x-0 scale-100' 
-              : 'opacity-0 -translate-x-12 scale-95'
-            }
+            transform transition-all duration-500 ease-out
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
             ${isClicked ? 'scale-98' : ''}
           `}>
@@ -72,31 +58,24 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           </div>
         </div>
         
-        {/* Water drop arrow with separate animation - detaches on hover */}
+        {/* Water drop arrow - detaches on hover */}
         <div 
-          ref={arrowRef}
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            shadow-lg transition-all duration-[1500ms] ease-out
-            ${arrowVisible 
-              ? 'opacity-100 translate-x-0 scale-100' 
-              : 'opacity-0 translate-x-12 scale-75 rotate-180'
-            }
+            shadow-lg transition-all duration-500 ease-out
             ${isHovered 
               ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40' 
               : '-ml-6'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
-          `} style={{
-            transitionDelay: arrowVisible ? '200ms' : '0ms'
-          }}>
+          `}>
           
           {/* Water drop connection bridge */}
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2
             w-6 h-1 bg-black
-            transform transition-all duration-500 ease-out origin-left
+            transform transition-all duration-300 ease-out origin-left
             ${isHovered 
               ? 'scale-x-0 opacity-0' 
               : 'scale-x-100 opacity-100'
@@ -107,12 +86,11 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2
             w-4 h-6 bg-black
-            transform transition-all duration-500 ease-out
+            transform transition-all duration-300 ease-out
             ${isHovered 
               ? 'scale-0 opacity-0 rotate-45' 
               : 'scale-100 opacity-100'
             }
-            clip-path-tear-drop
           `} style={{
             clipPath: isHovered ? 'circle(0% at 50% 50%)' : 'ellipse(50% 70% at 80% 50%)'
           }} />
