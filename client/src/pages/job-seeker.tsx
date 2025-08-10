@@ -476,7 +476,7 @@ export default function JobSeekerPage() {
               </motion.div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button 
