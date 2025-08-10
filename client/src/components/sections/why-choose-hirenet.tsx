@@ -1,5 +1,6 @@
 import { Globe, Users, FileText, Headphones, Star } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
 
 export default function WhyChooseHireNet() {
   const { elementRef: sectionRef, isVisible } = useScrollAnimation({
