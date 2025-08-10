@@ -43,8 +43,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             bg-black text-white font-semibold text-lg
             px-8 py-4 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
-            transform transition-all duration-500 ease-out
-            ${isHovered ? 'scale-105 -translate-y-1' : ''}
+            transform
+            ${isHovered ? 'scale-105 -translate-y-1 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out'}
             ${isClicked ? 'scale-98' : ''}
           `}
           style={{
@@ -83,10 +83,10 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            shadow-lg transition-all duration-500 ease-out
+            shadow-lg
             ${isHovered 
-              ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40' 
-              : '-ml-6'
+              ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40 transition-all duration-300 ease-out' 
+              : '-ml-6 transition-all duration-300 ease-out'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
           `} 
