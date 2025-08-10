@@ -65,7 +65,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             flex items-center justify-center
             shadow-lg transition-all duration-500 ease-out
             ${isHovered 
-              ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-sm' 
+              ? '-ml-2 translate-x-8 translate-y-2 scale-110' 
               : '-ml-6'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
