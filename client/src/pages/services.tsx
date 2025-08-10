@@ -235,22 +235,18 @@ export default function Services() {
                 key={index} 
                 initial={{ 
                   opacity: 0, 
-                  y: 80,
-                  x: -50,
-                  scale: 0.8,
-                  rotate: -5
+                  y: 40,
+                  scale: 0.95
                 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  x: 0,
-                  scale: 1,
-                  rotate: 0
+                  scale: 1
                 }}
                 viewport={{ 
                   once: true, 
-                  amount: 0.2,
-                  margin: "0px 0px -200px 0px"
+                  amount: 0.1,
+                  margin: "0px 0px -300px 0px"
                 }}
                 transition={{
                   duration: 0.8,
