@@ -63,7 +63,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            shadow-lg transition-all duration-500 ease-out
+            transition-all duration-500 ease-out
             ${isHovered 
               ? '-ml-2 translate-x-8 translate-y-2 scale-110' 
               : '-ml-6'
