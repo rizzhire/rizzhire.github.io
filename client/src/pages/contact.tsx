@@ -146,7 +146,7 @@ export default function Contact() {
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
           >
-            Ready to transform your career or find the perfect talent? Let's start a conversation.
+            Ready to take the next step in your career journey? Let's discuss how we can help you achieve your goals.
           </motion.p>
         </div>
       </section>
