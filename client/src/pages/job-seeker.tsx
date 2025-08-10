@@ -476,12 +476,9 @@ export default function JobSeekerPage() {
                     className="flex-shrink-0"
                   >
                     <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-3 py-2 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-300 cursor-pointer">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 text-center">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-xs font-semibold text-gray-800">Verified</span>
-                      </div>
-                      <div className="text-xs text-gray-600 mt-1">
-                        Government Approved
+                        <span className="text-xs font-semibold text-gray-800">Verified • Government Approved</span>
                       </div>
                     </div>
                   </motion.div>
