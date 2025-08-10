@@ -123,8 +123,63 @@
   height: auto !important;
   min-width: 2.5rem !important;
   min-height: 2.5rem !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Mobile Optimization Utilities */
+@media (max-width: 768px) {
+  /* Ensure touch-friendly tap targets */
+  .mobile-tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improved mobile spacing */
+  .mobile-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mobile-optimized text sizes */
+  .mobile-heading-xl {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+  
+  .mobile-heading-lg {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  
+  .mobile-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  /* Mobile grid optimizations */
+  .mobile-grid-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .mobile-space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .mobile-space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ultra-mobile optimizations */
+  .ultra-mobile-heading {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+  
+  .ultra-mobile-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 .uppy-Dashboard-close:hover {

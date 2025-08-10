@@ -1,0 +1,49 @@
+he desktop version of my website is ready. Now, I need you to optimize it for mobile screens to achieve a clean, clutter-free, and fully responsive design while maintaining the same visual hierarchy and user experience as the desktop layout.
+
+Here’s exactly what I need:
+
+Element Visibility & Scaling:
+
+Keep all key UI components (such as the "Manpower Supply Services" box, major headings, CTA buttons, job listing tiles, and the “Approved by Government of India” certificate section) fully visible without cropping or overflow.
+
+The structure of the major tiles/cards (like job listings) should remain the same—just proportionally scaled down for smaller screens. No text should wrap awkwardly or overlap icons.
+
+Certificate Section Optimization (Reference: Image 2):
+
+The certificate and its surrounding text should appear fully on one mobile screen, with the section above and below it also partially visible for continuity—similar to the desktop version.
+
+Ensure text and image are responsive and scale proportionally, not just resized.
+
+Vertical Space Efficiency:
+
+Instead of simply stacking all content vertically (which increases scroll fatigue), arrange the layout so that I can see more content at once on mobile (for example, show two job cards per screen height if possible).
+
+Job Tiles/Card Layout:
+
+Currently, desktop shows them side-by-side; on mobile, each should stack vertically but maintain balanced margins and padding so the UI still feels structured.
+
+Keep card shadows, borders, and icon alignments intact.
+
+Testimonials Section:
+
+On desktop, it may show multiple slides; for mobile, reduce to 1 visible testimonial per screen but allow smooth horizontal swipe or vertical scroll for navigation.
+
+Maintain typography sizes for readability while adjusting spacing for mobile comfort.
+
+General Mobile UX Enhancements:
+
+Avoid content overflow and horizontal scrolling at all costs.
+
+Ensure touch-friendly tap targets for buttons (minimum 44px height).
+
+Optimize images for mobile resolution to reduce load time without losing quality.
+
+Technical Requirements:
+
+Use CSS media queries for breakpoints around 768px and 480px.
+
+Ensure flexbox/grid layouts reflow properly without breaking alignment.
+
+Test across different devices (iOS Safari, Android Chrome) to ensure consistent rendering.
+
+Final goal: A polished, responsive mobile version that retains the same professional look and feel as the desktop, but fits the natural reading and scrolling behavior of mobile users.

@@ -239,7 +239,7 @@ export default function JobSeekerPage() {
   return (
     <div className="min-h-screen page-transition">
       {/* Hero Section for Job Seekers */}
-      <section className="relative py-20 cream overflow-hidden">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 cream overflow-hidden">
         {/* Enhanced Background Graphics (Same as Transform Your Workforce) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
@@ -346,11 +346,11 @@ export default function JobSeekerPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <div className="text-center space-y-4 sm:space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
@@ -358,7 +358,7 @@ export default function JobSeekerPage() {
             {/* Government Certification Section - Moved here */}
             <div 
               ref={certificationAnimation.elementRef}
-              className="max-w-4xl mx-auto px-4 pt-4"
+              className="max-w-4xl mx-auto px-2 sm:px-4 pt-4"
             >
               <motion.div 
                 initial={{ 
@@ -381,9 +381,9 @@ export default function JobSeekerPage() {
                   stiffness: 100,
                   damping: 15
                 }}
-                className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
+                className="bg-white/80 backdrop-blur-sm rounded-3xl p-4 sm:p-6 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
               >
-                <div className="flex flex-col md:flex-row items-center gap-6 min-h-[160px]">
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 min-h-[120px] sm:min-h-[160px]">
                   {/* Indian Government Emblem */}
                   <motion.div 
                     initial={{ 
@@ -411,7 +411,7 @@ export default function JobSeekerPage() {
                     <img 
                       src={indianEmblemImage} 
                       alt="Government of India Emblem" 
-                      className="h-32 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
+                      className="h-20 sm:h-24 md:h-32 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
                     />
                   </motion.div>
 
@@ -437,15 +437,15 @@ export default function JobSeekerPage() {
                       stiffness: 100,
                       damping: 15
                     }}
-                    className="flex-1 text-center md:text-left"
+                    className="flex-1 text-center sm:text-left"
                   >
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-1">
                       Approved By <span className="text-yellow">Government Of India</span>
                     </h3>
-                    <p className="text-md md:text-lg text-gray-700 font-medium mb-2">
+                    <p className="text-sm sm:text-md md:text-lg text-gray-700 font-medium mb-2">
                       Ministry of External Affairs
                     </p>
-                    <p className="text-xs text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       Officially recognized recruitment agency authorized to facilitate international employment 
                       opportunities for Indian professionals across the Middle East region.
                     </p>
@@ -489,17 +489,17 @@ export default function JobSeekerPage() {
               </motion.div>
             </div>
 
-            <div className="flex flex-col gap-4 justify-center items-center pt-8">
+            <div className="flex flex-col gap-4 justify-center items-center pt-6 sm:pt-8">
               {/* Buttons Row */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4 sm:px-0">
                 <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                   <DialogTrigger asChild>
                     <Button 
-                      className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg" 
+                      className="bg-yellow text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg mobile-tap-target w-full sm:w-auto" 
                       data-testid="button-open-upload-dialog"
                     >
-                      <Upload className="mr-2 h-5 w-5" />
-                      Upload Your Resume
+                      <Upload className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
+                      <span className="text-sm sm:text-base">Upload Your Resume</span>
                     </Button>
                   </DialogTrigger>
                 <DialogContent className="max-w-none w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] max-h-[90vh] p-0 border-none shadow-2xl glass-dialog" style={{ 
@@ -799,11 +799,11 @@ export default function JobSeekerPage() {
               <Dialog open={isPhoneSelectorOpen} onOpenChange={setIsPhoneSelectorOpen}>
                 <DialogTrigger asChild>
                   <Button 
-                    className="bg-white text-black border-2 border-yellow px-8 py-4 rounded-full font-semibold hover:bg-yellow hover:border-yellow transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg" 
+                    className="bg-white text-black border-2 border-yellow px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-yellow hover:border-yellow transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg mobile-tap-target w-full sm:w-auto" 
                     data-testid="button-1on1-call"
                   >
-                    <Phone className="mr-2 h-5 w-5" />
-                    1 On 1 Call
+                    <Phone className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
+                    <span className="text-sm sm:text-base">1 On 1 Call</span>
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-md" style={{ borderRadius: '40px' }}>
