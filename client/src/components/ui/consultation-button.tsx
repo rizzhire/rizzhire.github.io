@@ -47,11 +47,13 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             ${isClicked ? 'scale-98' : ''}
           `}
           style={{
-            opacity: textVisible ? 1 : 0,
-            ...(textVisible ? {} : {
-              transform: 'translateY(32px) rotate(-3deg) scale(1.1)',
-              transition: 'opacity 2s cubic-bezier(0.34,1.56,0.64,1), transform 2s cubic-bezier(0.34,1.56,0.64,1)'
-            })
+            opacity: 1,
+            transform: textVisible 
+              ? 'translateY(0px) rotate(0deg) scale(1)' 
+              : 'translateY(32px) rotate(-3deg) scale(1.1)',
+            transition: textVisible 
+              ? 'transform 2s cubic-bezier(0.34,1.56,0.64,1)' 
+              : 'transform 0.1s ease-out'
           }}>
           
           {/* Animated shine sweep */}
@@ -87,11 +89,13 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             ${isClicked ? 'scale-125 translate-y-4' : ''}
           `} 
           style={{
-            opacity: arrowVisible ? 1 : 0,
-            ...(arrowVisible ? {} : {
-              transform: 'translateX(80px) translateY(-48px) scale(0.5) rotate(360deg)',
-              transition: 'opacity 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms, transform 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms'
-            })
+            opacity: 1,
+            transform: arrowVisible 
+              ? 'translateX(0px) translateY(0px) scale(1) rotate(0deg)' 
+              : 'translateX(80px) translateY(-48px) scale(0.5) rotate(360deg)',
+            transition: arrowVisible 
+              ? 'transform 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms' 
+              : 'transform 0.1s ease-out'
           }}>
           
           {/* Water drop connection bridge */}
