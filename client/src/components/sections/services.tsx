@@ -82,13 +82,8 @@ export default function Services() {
               <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
               <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
             </linearGradient>
-            <linearGradient id="servicesGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12"/>
-              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
-            </linearGradient>
           </defs>
           <path d="M0,250 Q250,130 500,250 T1000,250" stroke="url(#servicesGradient1)" strokeWidth="2" fill="none"/>
-          <path d="M0,150 Q300,350 600,150 T1000,150" stroke="url(#servicesGradient2)" strokeWidth="1.5" fill="none"/>
         </svg>
         
         {/* Enhanced Wavy Abstract Traveling Lines */}
@@ -99,11 +94,7 @@ export default function Services() {
               <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
               <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
             </linearGradient>
-            <linearGradient id="servicesWavy2" x1="100%" y1="50%" x2="0%" y2="50%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
-              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
-            </linearGradient>
+
             <linearGradient id="servicesWavy3" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
               <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
@@ -123,13 +114,7 @@ export default function Services() {
             fill="none"
             className="animate-wavyTravel1"
           />
-          <path 
-            d="M-100,320 C40,315 160,330 320,325 C480,322 640,318 800,316 C900,314 970,313 1100,315" 
-            stroke="url(#servicesWavy2)" 
-            strokeWidth="1.8" 
-            fill="none"
-            className="animate-wavyTravel2"
-          />
+
           <path 
             d="M-150,180 C-50,175 70,190 230,185 C390,182 550,178 710,176 C810,174 880,173 1050,175" 
             stroke="url(#servicesWavy3)" 
