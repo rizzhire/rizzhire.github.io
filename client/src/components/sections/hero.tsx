@@ -204,16 +204,14 @@ export default function Hero() {
         <div className="mt-16 pt-12 border-t border-gray-200/50">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg">
-              <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
                 {/* Indian Government Emblem - Full Height */}
-                <div className="flex-shrink-0">
-                  <div className="w-24 h-56 md:w-28 md:h-64 bg-gradient-to-br from-yellow/10 to-yellow/20 rounded-2xl border border-yellow/20 flex items-center justify-center p-2">
-                    <img 
-                      src={indianEmblemImage} 
-                      alt="Government of India Emblem" 
-                      className="w-full h-full object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
-                    />
-                  </div>
+                <div className="flex-shrink-0 h-full flex items-center">
+                  <img 
+                    src={indianEmblemImage} 
+                    alt="Government of India Emblem" 
+                    className="h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
+                  />
                 </div>
 
                 {/* Certification Text */}
