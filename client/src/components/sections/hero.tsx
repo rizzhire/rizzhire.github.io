@@ -209,7 +209,7 @@ export default function Hero() {
         {/* Government Certification Section */}
         <div 
           ref={certificationAnimation.elementRef}
-          className="max-w-4xl mx-auto px-2 sm:px-4 pt-4 sm:pt-4 mt-16"
+          className="max-w-4xl mx-auto px-2 sm:px-4 pt-4 sm:pt-4 mt-8"
         >
           <motion.div 
             initial={{ 
