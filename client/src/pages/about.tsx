@@ -201,10 +201,12 @@ export default function About() {
                 transition={{ duration: 0.3, ease: "easeOut", delay: index * 0.05 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <Card className="bg-white p-3 rounded-xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 aspect-square flex items-center justify-center">
-                  <CardContent className="p-0 text-center">
-                    <h3 className="text-base font-bold mb-1 text-gray-900">{value.title}</h3>
-                    <p className="text-gray-600 leading-tight text-[10px]">{value.description}</p>
+                <Card className="bg-white p-3 rounded-xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col">
+                  <CardContent className="p-0 flex flex-col h-full">
+                    <h3 className="text-sm font-bold text-gray-900 text-center mb-2">{value.title}</h3>
+                    <div className="flex-1 flex items-center justify-center">
+                      <p className="text-gray-600 leading-tight text-xs text-center">{value.description}</p>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
