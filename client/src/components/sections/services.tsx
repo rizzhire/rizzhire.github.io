@@ -215,7 +215,7 @@ export default function Services() {
             Our <span className="text-yellow">Services</span>
           </h2>
           <p 
-            className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] max-md:mobile-description-lg ${
+            className={`text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] max-md:text-sm ${
               headerAnimation.isVisible 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
