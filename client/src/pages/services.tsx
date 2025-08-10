@@ -115,7 +115,7 @@ export default function Services() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
+      <section className="relative pt-16 pb-12 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Floating Circles (Same as Get in Touch) */}
