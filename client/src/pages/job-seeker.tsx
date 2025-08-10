@@ -480,7 +480,7 @@ export default function JobSeekerPage() {
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button 
-                    className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg" 
+                    className="bg-yellow text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow/90 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95 shadow-lg" 
                     data-testid="button-open-upload-dialog"
                   >
                     <Upload className="mr-2 h-5 w-5" />

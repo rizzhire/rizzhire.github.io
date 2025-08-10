@@ -249,7 +249,7 @@ export default function WhyChooseHireNet() {
         <div className="text-center mb-300">
           <Button
             size="lg"
-            className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow/25"
+            className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-yellow/25 transform active:scale-95"
           >
             Start Your Career Journey
           </Button>

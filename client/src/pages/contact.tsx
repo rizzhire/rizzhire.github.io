@@ -160,7 +160,7 @@ export default function Contact() {
             {(() => {
               const VisitIcon = contactInfo[0].icon;
               return (
-                <Card className="text-center p-6 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden">
+                <Card className="text-center p-6 bg-gradient-to-br from-white via-blue-50/30 to-blue-100/20 border-2 border-blue-200/50 backdrop-blur-sm relative overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-blue/10 transition-all duration-300 cursor-pointer group">
                   <CardContent className="p-0 relative z-10">
                     <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 ${contactInfo[0].color} mb-4`}>
                       <VisitIcon className="w-7 h-7" />
@@ -183,7 +183,7 @@ export default function Contact() {
               {/* Call Us - Top Right (Full Width) */}
               <div className="relative col-span-2">
                 <Card 
-                  className="text-center p-5 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                  className="text-center p-5 bg-gradient-to-br from-white via-green-50/30 to-green-100/20 border-2 border-green-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-green/10 transition-all duration-300 group"
                   onClick={() => setShowPhoneOptions(!showPhoneOptions)}
                 >
                   <CardContent className="p-0 relative z-10">
@@ -270,7 +270,7 @@ export default function Contact() {
                 
                 return (
                   <Card 
-                    className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer"
+                    className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-purple/10 transition-all duration-300 group"
                     onClick={handleEmailClick}
                   >
                     <CardContent className="p-0 relative z-10">
@@ -294,7 +294,7 @@ export default function Contact() {
               {(() => {
                 const ClockIcon = contactInfo[3].icon;
                 return (
-                  <Card className="text-center p-4 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden">
+                  <Card className="text-center p-4 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20 border-2 border-orange-200/50 backdrop-blur-sm relative overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/10 transition-all duration-300 cursor-pointer group">
                     <CardContent className="p-0 relative z-10">
                       <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 ${contactInfo[3].color} mb-3`}>
                         <ClockIcon className="w-6 h-6" />
@@ -375,7 +375,7 @@ export default function Contact() {
               >
                 <div className="grid md:grid-cols-2 gap-4">
                   <Button 
-                    className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl"
+                    className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transition-all duration-300 transform active:scale-95"
                     onClick={() => window.open('https://maps.google.com/?q=6/7A,+AJC+Bose+Road,+Kolkata+700017', '_blank')}
                   >
                     <MapPin className="w-4 h-4 mr-2" />
@@ -383,7 +383,7 @@ export default function Contact() {
                   </Button>
                   
                   <Button 
-                    className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl"
+                    className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-3 rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transition-all duration-300 transform active:scale-95"
                     onClick={() => window.open('https://maps.google.com/?q=Nevidita+Road,+Siliguri+734003', '_blank')}
                   >
                     <MapPin className="w-4 h-4 mr-2" />
@@ -534,7 +534,7 @@ export default function Contact() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-6 rounded-xl text-lg transition-all duration-300 hover:shadow-lg"
+                className="w-full bg-yellow hover:bg-yellow/90 text-black font-semibold py-6 rounded-xl text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:shadow-yellow/20 transform active:scale-95"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message

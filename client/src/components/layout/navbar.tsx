@@ -106,7 +106,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Button 
               onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
-              className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-colors duration-200"
+              className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transform active:scale-95"
             >
               {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
             </Button>
@@ -161,7 +161,7 @@ export default function Navbar() {
             </button>
             <Button 
               onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
-              className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-colors duration-200 w-full"
+              className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transform active:scale-95 w-full"
             >
               {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
             </Button>
