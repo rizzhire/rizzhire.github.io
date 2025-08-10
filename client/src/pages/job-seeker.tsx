@@ -789,20 +789,7 @@ export default function JobSeekerPage() {
 
 
       {/* Latest Opportunities */}
-      <motion.div
-        initial={{ opacity: 0, y: 40, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
-        transition={{ 
-          duration: 0.8, 
-          ease: [0.25, 0.46, 0.45, 0.94],
-          type: "spring",
-          stiffness: 100,
-          damping: 15
-        }}
-      >
-        <JobListings />
-      </motion.div>
+      <JobListings />
 
       {/* Job Seeker Success Stories */}
       <motion.section 

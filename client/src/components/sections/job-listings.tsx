@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, Briefcase, DollarSign } from "lucide-react";
 import { jobs } from "@/lib/data";
 import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
+import { motion } from "framer-motion";
 
 export default function JobListings() {
   const { containerRef, visibleItems } = useStaggeredAnimation(jobs.length, 100);
@@ -11,18 +12,59 @@ export default function JobListings() {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Latest Opportunities</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+          transition={{ 
+            duration: 0.6, 
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }}
+        >
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
+            Latest Opportunities
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.4, 
+              delay: 0.4,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
             Discover your next career move with our curated selection of premium positions across the Middle East.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div ref={containerRef} className="grid md:grid-cols-2 gap-6">
           {/* Job 1 - Block/Paster Mason */}
-          <Card 
-            className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl animate-flip-in opacity-100"
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
+            <Card 
+              className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl"
+            >
             <CardContent className="p-6">
               <div className="mb-4">
                 <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
@@ -57,12 +99,23 @@ export default function JobListings() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Job 2 - Shuttering Carpenter */}
-          <Card 
-            className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl animate-flip-in opacity-100"
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
+            <Card 
+              className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl"
+            >
             <CardContent className="p-6">
               <div className="mb-4">
                 <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
@@ -97,12 +150,23 @@ export default function JobListings() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Job 3 - Labour */}
-          <Card 
-            className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl animate-flip-in opacity-100"
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 1.0,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
+            <Card 
+              className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl"
+            >
             <CardContent className="p-6">
               <div className="mb-4">
                 <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
@@ -137,12 +201,23 @@ export default function JobListings() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Job 4 - Assistant Mason */}
-          <Card 
-            className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl animate-flip-in opacity-100"
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 1.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
+            <Card 
+              className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl"
+            >
             <CardContent className="p-6">
               <div className="mb-4">
                 <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
@@ -177,12 +252,23 @@ export default function JobListings() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Job 5 - Steel Fixer */}
-          <Card 
-            className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl animate-flip-in opacity-100"
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 1.4,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
+            <Card 
+              className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl"
+            >
             <CardContent className="p-6">
               <div className="mb-4">
                 <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
@@ -217,12 +303,23 @@ export default function JobListings() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Job 6 - Furniture Carpenter */}
-          <Card 
-            className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl animate-flip-in opacity-100"
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 1.6,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
+            <Card 
+              className="bg-white group hover:shadow-lg transition-all duration-500 border-2 hover:border-yellow rounded-3xl"
+            >
             <CardContent className="p-6">
               <div className="mb-4">
                 <h3 className="job-title-container text-lg font-bold mb-3 text-gray-800 group-hover:text-yellow transition-colors">
@@ -257,7 +354,8 @@ export default function JobListings() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </section>
