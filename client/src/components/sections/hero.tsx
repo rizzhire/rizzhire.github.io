@@ -212,10 +212,10 @@ export default function Hero() {
         >
           <div className="max-w-4xl mx-auto">
             <div 
-              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[2800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
                 certificationAnimation.isVisible 
                   ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-8 scale-95'
+                  : 'opacity-0 translate-y-2 scale-[0.985]'
               }`}
               style={{
                 transitionDelay: certificationAnimation.isVisible ? '100ms' : '0ms'
@@ -227,10 +227,10 @@ export default function Hero() {
                   <img 
                     src={indianEmblemImage} 
                     alt="Government of India Emblem" 
-                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[2800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
                       certificationAnimation.isVisible 
                         ? 'opacity-100 translate-x-0 scale-100' 
-                        : 'opacity-0 -translate-x-4 scale-95'
+                        : 'opacity-0 -translate-x-1 scale-[0.99]'
                     }`}
                     style={{
                       transitionDelay: certificationAnimation.isVisible ? '200ms' : '0ms'
@@ -240,10 +240,10 @@ export default function Hero() {
 
                 {/* Certification Text */}
                 <div 
-                  className={`flex-1 text-center md:text-left transition-all duration-[2800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  className={`flex-1 text-center md:text-left transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
                     certificationAnimation.isVisible 
                       ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-6'
+                      : 'opacity-0 translate-y-2'
                   }`}
                   style={{
                     transitionDelay: certificationAnimation.isVisible ? '300ms' : '0ms'
@@ -263,10 +263,10 @@ export default function Hero() {
 
                 {/* Verification Badge */}
                 <div 
-                  className={`flex-shrink-0 transition-all duration-[2800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  className={`flex-shrink-0 transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
                     certificationAnimation.isVisible 
                       ? 'opacity-100 translate-x-0 scale-100' 
-                      : 'opacity-0 translate-x-4 scale-95'
+                      : 'opacity-0 translate-x-1 scale-[0.99]'
                   }`}
                   style={{
                     transitionDelay: certificationAnimation.isVisible ? '400ms' : '0ms'
