@@ -173,8 +173,91 @@ export default function About() {
         </div>
       </section>
       {/* Values Section */}
-      <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        {/* Exact Background Graphics from Industries Page */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          
+          {/* Enhanced Moving Geometric Lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 800">
+            <defs>
+              <linearGradient id="valuesMainGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,400 Q250,200 500,400 T1000,400" stroke="url(#valuesMainGradient1)" strokeWidth="2" fill="none"/>
+            <path d="M0,300 Q300,500 600,300 T1000,300" stroke="url(#valuesMainGradient1)" strokeWidth="1.5" fill="none"/>
+          </svg>
+          
+          {/* Wavy Abstract Traveling Lines - Same as Industries */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 800">
+            <defs>
+              <linearGradient id="valuesSectionWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.13"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="valuesSectionWavy2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.11"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="valuesSectionWavy3" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.12"/>
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="valuesSectionWavy4" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#f97316" stopOpacity="0.10"/>
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            {/* Smooth Wavy Path 1: Flowing diagonal wave */}
+            <path 
+              d="M-150,200 C-50,190 50,220 200,210 C350,200 500,240 650,230 C800,225 900,235 1150,280" 
+              stroke="url(#valuesSectionWavy1)" 
+              strokeWidth="1.4" 
+              fill="none"
+              className="animate-wavyTravel1"
+              style={{animationDelay: '5s'}}
+            />
+            
+            {/* Smooth Wavy Path 2: Elegant S-curve */}
+            <path 
+              d="M1150,350 C1050,340 950,370 800,360 C650,350 500,390 350,380 C200,375 100,385 -150,420" 
+              stroke="url(#valuesSectionWavy2)" 
+              strokeWidth="1.1" 
+              fill="none"
+              className="animate-wavyTravel2"
+              style={{animationDelay: '9s'}}
+            />
+            
+            {/* Smooth Wavy Path 3: Curved bottom flow */}
+            <path 
+              d="M1150,580 C1000,570 900,520 700,530 C500,540 350,500 200,510 C100,515 25,505 -150,480" 
+              stroke="url(#valuesSectionWavy3)" 
+              strokeWidth="1.3" 
+              fill="none"
+              className="animate-wavyTravel3"
+              style={{animationDelay: '13s'}}
+            />
+            
+            {/* Smooth Wavy Path 4: Gentle middle wave */}
+            <path 
+              d="M-150,450 C-50,440 50,480 200,470 C350,460 500,490 650,480 C800,475 900,485 1150,495" 
+              stroke="url(#valuesSectionWavy4)" 
+              strokeWidth="1.0" 
+              fill="none"
+              className="animate-wavyTravel4"
+              style={{animationDelay: '17s'}}
+            />
+          </svg>
+          
+        </div>
+        
+        <div className="relative max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
