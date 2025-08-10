@@ -788,12 +788,38 @@ export default function JobSeekerPage() {
 
 
 
-      <div className="animate-slide-up-fade animate-delay-600">
+      {/* Latest Opportunities */}
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+        transition={{ 
+          duration: 0.8, 
+          ease: [0.25, 0.46, 0.45, 0.94],
+          type: "spring",
+          stiffness: 100,
+          damping: 15
+        }}
+      >
         <JobListings />
-      </div>
+      </motion.div>
 
       {/* Job Seeker Success Stories */}
-      <section className="relative py-16 pb-8 overflow-hidden animate-slide-up-fade animate-delay-800" style={{ backgroundColor: '#F2F0E8' }}>
+      <motion.section 
+        className="relative py-16 pb-8 overflow-hidden" 
+        style={{ backgroundColor: '#F2F0E8' }}
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+        transition={{ 
+          duration: 0.8, 
+          delay: 0.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          type: "spring",
+          stiffness: 100,
+          damping: 15
+        }}
+      >
         {/* Enhanced Background Graphics (Same as Launch Your Global Career) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Enhanced Live Moving Floating Circles - More Visible */}
@@ -900,22 +926,52 @@ export default function JobSeekerPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={testimonialsRef} className="text-center mb-16">
+          <motion.div 
+            ref={testimonialsRef} 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+            transition={{ 
+              duration: 0.6, 
+              delay: 0.3,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Success <span className="text-yellow">Stories</span></h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real career transformations from professionals who found their dream jobs through HireNET.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="relative overflow-hidden">
+          <motion.div 
+            className="relative overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+            transition={{ 
+              duration: 0.6, 
+              delay: 0.5,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
             <div className="overflow-x-auto pb-4 scrollbar-hide testimonials-container">
               <div className="flex gap-6 w-max px-12 py-2">
                 {jobSeekerTestimonials.map((testimonial, index) => (
-                <Card 
-                  key={testimonial.id} 
-                  className={`bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group ${testimonialsVisible ? 'animate-pop-in' : 'opacity-0'}`}
-                  style={{animationDelay: testimonialsVisible ? `${index * 0.3}s` : '0s'}}
+                <motion.div
+                  key={testimonial.id}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.6 + (index * 0.1),
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
                 >
+                  <Card 
+                    className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] group"
+                  >
                   <CardContent className="p-0 h-full flex flex-col">
                     <div className="flex items-center mb-4">
                       <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
@@ -937,19 +993,34 @@ export default function JobSeekerPage() {
                       <div className="text-gray-500 text-xs">{testimonial.location}</div>
                     </div>
                   </CardContent>
-                </Card>
+                  </Card>
+                </motion.div>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
-      <div className="animate-slide-up-fade animate-delay-300">
+      </motion.section>
+
+      {/* Why Choose HireNET */}
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+        transition={{ 
+          duration: 0.8, 
+          delay: 0.4,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          type: "spring",
+          stiffness: 100,
+          damping: 15
+        }}
+      >
         <WhyChooseHireNet />
-      </div>
-      <div className="animate-slide-up-fade animate-delay-500">
-        <Contact />
-      </div>
+      </motion.div>
+
+      {/* Contact Section */}
+      <Contact />
     </div>
   );
 }
