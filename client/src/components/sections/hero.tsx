@@ -213,51 +213,65 @@ export default function Hero() {
         >
           {/* Certificate Background Graphics */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {/* Live Moving Floating Circles */}
-            <div className="absolute top-8 left-8 w-20 h-20 bg-gradient-to-r from-yellow-200/15 to-yellow-300/25 rounded-full blur-lg animate-floatMoveEnhanced"></div>
-            <div className="absolute top-16 right-12 w-16 h-16 bg-gradient-to-r from-blue-200/12 to-cyan-200/22 rounded-full blur-md animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-            <div className="absolute bottom-12 left-1/4 w-24 h-24 bg-gradient-to-r from-orange-200/10 to-yellow-200/20 rounded-full blur-xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
-            <div className="absolute bottom-8 right-1/3 w-18 h-18 bg-gradient-to-r from-purple-200/12 to-pink-200/22 rounded-full blur-lg animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
+            {/* Enhanced Live Moving Floating Circles - More Visible */}
+            <div className="absolute top-8 left-8 w-32 h-32 bg-gradient-to-r from-yellow-200/20 to-yellow-300/30 rounded-full blur-xl animate-floatMoveEnhanced"></div>
+            <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-blue-200/18 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+            <div className="absolute bottom-12 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/15 to-yellow-200/25 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-8 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/18 to-pink-200/28 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
             
-            {/* Additional Floating Elements */}
-            <div className="absolute top-1/2 left-4 w-14 h-14 bg-gradient-to-r from-emerald-200/15 to-green-200/25 rounded-full blur-md animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
-            <div className="absolute top-20 right-8 w-12 h-12 bg-gradient-to-r from-rose-200/12 to-red-200/22 rounded-full blur-sm animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+            {/* Additional Enhanced Floating Elements */}
+            <div className="absolute top-1/2 left-4 w-20 h-20 bg-gradient-to-r from-emerald-200/20 to-green-200/30 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+            <div className="absolute top-20 right-8 w-16 h-16 bg-gradient-to-r from-rose-200/18 to-red-200/28 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
             
-            {/* More Colorful Elements */}
-            <div className="absolute top-4 left-1/3 w-22 h-22 bg-gradient-to-r from-indigo-200/10 to-violet-200/20 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
-            <div className="absolute bottom-16 right-16 w-20 h-20 bg-gradient-to-r from-teal-200/12 to-cyan-200/22 rounded-full blur-md animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+            {/* More Colorful Elements for Empty Spaces */}
+            <div className="absolute top-4 left-1/3 w-36 h-36 bg-gradient-to-r from-indigo-200/15 to-violet-200/25 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
+            <div className="absolute bottom-16 right-16 w-32 h-32 bg-gradient-to-r from-teal-200/18 to-cyan-200/28 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+            <div className="absolute top-32 right-1/4 w-24 h-24 bg-gradient-to-r from-amber-200/15 to-orange-200/25 rounded-full blur-lg animate-floatMoveEnhanced" style={{animationDelay: '3.5s'}}></div>
+            <div className="absolute bottom-24 left-12 w-20 h-20 bg-gradient-to-r from-lime-200/20 to-emerald-200/30 rounded-full blur-md animate-pulseEnhanced" style={{animationDelay: '4.2s'}}></div>
+            <div className="absolute top-40 left-1/2 w-18 h-18 bg-gradient-to-r from-fuchsia-200/18 to-purple-200/28 rounded-full blur-lg animate-rotateEnhanced" style={{animationDelay: '5s'}}></div>
+            <div className="absolute bottom-32 right-1/5 w-22 h-22 bg-gradient-to-r from-sky-200/15 to-blue-200/25 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '6s'}}></div>
             
-            {/* Moving Geometric Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-6 animate-waveFlow" viewBox="0 0 800 400">
+            {/* Enhanced Moving Geometric Lines */}
+            <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 800 400">
               <defs>
                 <linearGradient id="certificateGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.10"/>
+                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15"/>
                   <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
                 </linearGradient>
               </defs>
-              <path d="M0,200 Q200,80 400,200 T800,200" stroke="url(#certificateGradient1)" strokeWidth="1.5" fill="none"/>
-              <path d="M0,120 Q240,280 480,120 T800,120" stroke="url(#certificateGradient1)" strokeWidth="1" fill="none"/>
+              <path d="M0,200 Q200,80 400,200 T800,200" stroke="url(#certificateGradient1)" strokeWidth="2" fill="none"/>
+              <path d="M0,120 Q240,280 480,120 T800,120" stroke="url(#certificateGradient1)" strokeWidth="1.5" fill="none"/>
             </svg>
             
-            {/* Wavy Traveling Lines */}
+            {/* Enhanced Wavy Abstract Traveling Lines */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 400">
               <defs>
                 <linearGradient id="certificateWavy1" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
-                  <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.12"/>
+                  <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.15"/>
                   <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
                 </linearGradient>
                 <linearGradient id="certificateWavy2" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#3b82f6" stopOpacity="0"/>
-                  <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.08"/>
+                  <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.12"/>
                   <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+                </linearGradient>
+                <linearGradient id="certificateWavy3" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+                  <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.13"/>
+                  <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+                </linearGradient>
+                <linearGradient id="certificateWavy4" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" stopColor="#f97316" stopOpacity="0"/>
+                  <stop offset="50%" stopColor="#f97316" stopOpacity="0.11"/>
+                  <stop offset="100%" stopColor="#f97316" stopOpacity="0"/>
                 </linearGradient>
               </defs>
               
               <path 
                 d="M-100,60 C-20,55 60,70 200,65 C340,62 480,58 580,56 C680,54 720,53 800,55" 
                 stroke="url(#certificateWavy1)" 
-                strokeWidth="1" 
+                strokeWidth="1.5" 
                 fill="none"
                 className="animate-wavyTravel1"
                 style={{animationDelay: '1s'}}
@@ -266,18 +280,36 @@ export default function Hero() {
               <path 
                 d="M800,140 C720,145 640,125 400,130 C160,135 80,150 20,152 C-20,153 -60,154 -100,152" 
                 stroke="url(#certificateWavy2)" 
-                strokeWidth="0.8" 
+                strokeWidth="1.2" 
                 fill="none"
                 className="animate-wavyTravel2"
                 style={{animationDelay: '3s'}}
               />
+              
+              <path 
+                d="M-100,280 C-20,275 60,290 200,285 C340,282 480,278 580,276 C680,274 720,273 800,275" 
+                stroke="url(#certificateWavy3)" 
+                strokeWidth="1.3" 
+                fill="none"
+                className="animate-wavyTravel3"
+                style={{animationDelay: '5s'}}
+              />
+              
+              <path 
+                d="M800,340 C720,345 640,325 400,330 C160,335 80,350 20,352 C-20,353 -60,354 -100,352" 
+                stroke="url(#certificateWavy4)" 
+                strokeWidth="1.0" 
+                fill="none"
+                className="animate-wavyTravel4"
+                style={{animationDelay: '7s'}}
+              />
             </svg>
             
-            {/* Light Dots Pattern */}
-            <div className="absolute inset-0 opacity-1">
-              <svg width="30" height="30" viewBox="0 0 30 30" className="w-full h-full">
-                <pattern id="certificateDotsPattern" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <circle cx="15" cy="15" r="0.8" fill="#f59e0b" opacity="0.08"/>
+            {/* Enhanced Light Dots Pattern */}
+            <div className="absolute inset-0 opacity-2">
+              <svg width="35" height="35" viewBox="0 0 35 35" className="w-full h-full">
+                <pattern id="certificateDotsPattern" width="35" height="35" patternUnits="userSpaceOnUse">
+                  <circle cx="17.5" cy="17.5" r="1" fill="#f59e0b" opacity="0.1"/>
                 </pattern>
                 <rect width="100%" height="100%" fill="url(#certificateDotsPattern)" />
               </svg>
