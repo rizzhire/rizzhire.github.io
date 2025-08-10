@@ -806,7 +806,7 @@ export default function JobSeekerPage() {
                     1 On 1 Call
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-md rounded-3xl">
+                <DialogContent className="max-w-md" style={{ borderRadius: '40px' }}>
                   <DialogHeader>
                     <DialogTitle>Select Phone Number</DialogTitle>
                     <DialogDescription>
