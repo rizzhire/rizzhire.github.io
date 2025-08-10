@@ -132,8 +132,8 @@ export default function JobSeekerPage() {
   
   // Phone numbers for 1 On 1 Call
   const phoneNumbers = [
-    { number: "+913335085038", label: "Primary Support" },
-    { number: "+919477119466", label: "Secondary Support" }
+    { number: "+913335085038" },
+    { number: "+919477119466" }
   ];
   
   // Function to initiate phone call
@@ -818,13 +818,10 @@ export default function JobSeekerPage() {
                       <Button
                         key={index}
                         onClick={() => handlePhoneCall(phone.number)}
-                        className="w-full justify-start text-left p-4 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow"
+                        className="w-full justify-center text-center p-4 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow"
                         data-testid={`button-call-${phone.number}`}
                       >
-                        <div className="flex flex-col items-start">
-                          <span className="font-semibold">{phone.label}</span>
-                          <span className="text-sm text-gray-600">{phone.number}</span>
-                        </div>
+                        <span className="font-semibold text-lg">{phone.number}</span>
                       </Button>
                     ))}
                   </div>
