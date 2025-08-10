@@ -80,7 +80,7 @@ export default function Countries() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-16 mt-4"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
