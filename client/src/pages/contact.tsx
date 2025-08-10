@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock, Send, Briefcase, GraduationCap } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Building2, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 
@@ -27,12 +27,12 @@ export default function Contact() {
     {
       category: "For Employers",
       email: "business@hirenet.in",
-      icon: Briefcase
+      icon: Building2
     },
     {
-      category: "For Candidates", 
+      category: "For Job Seekers", 
       email: "contact@hirenet.in",
-      icon: GraduationCap
+      icon: Users
     }
   ];
 

@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
-import { Mail, Phone, MapPin, Circle, Briefcase, GraduationCap } from "lucide-react";
+import { Mail, Phone, MapPin, Circle, Building2, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
@@ -27,12 +27,12 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
     {
       category: "For Employers",
       email: "business@hirenet.in",
-      icon: Briefcase
+      icon: Building2
     },
     {
       category: "For Job Seekers",
       email: "contact@hirenet.in", 
-      icon: GraduationCap
+      icon: Users
     }
   ];
 
