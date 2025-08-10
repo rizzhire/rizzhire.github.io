@@ -191,7 +191,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -201,10 +201,10 @@ export default function About() {
                 transition={{ duration: 0.3, ease: "easeOut", delay: index * 0.05 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <Card className="bg-white p-8 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="p-0">
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{value.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <Card className="bg-white p-6 rounded-3xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 aspect-square flex items-center justify-center">
+                  <CardContent className="p-0 text-center">
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">{value.title}</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">{value.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
