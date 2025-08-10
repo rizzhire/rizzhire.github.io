@@ -212,7 +212,7 @@ export default function Hero() {
         >
           <div className="max-w-4xl mx-auto">
             <div 
-              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[4500ms] ease-[cubic-bezier(0.02,0.5,0.05,0.95)] ${
+              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[4500ms] ease-[cubic-bezier(0.005,0.1,0.01,0.99)] ${
                 certificationAnimation.isVisible 
                   ? 'opacity-100 translate-y-0 scale-100' 
                   : 'opacity-0 translate-y-0.5 scale-[0.995]'
@@ -227,7 +227,7 @@ export default function Hero() {
                   <img 
                     src={indianEmblemImage} 
                     alt="Government of India Emblem" 
-                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[4500ms] ease-[cubic-bezier(0.02,0.5,0.05,0.95)] ${
+                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[4500ms] ease-[cubic-bezier(0.005,0.1,0.01,0.99)] ${
                       certificationAnimation.isVisible 
                         ? 'opacity-100 translate-x-0 scale-100' 
                         : 'opacity-0 -translate-x-0.5 scale-[0.998]'
@@ -240,7 +240,7 @@ export default function Hero() {
 
                 {/* Certification Text */}
                 <div 
-                  className={`flex-1 text-center md:text-left transition-all duration-[4500ms] ease-[cubic-bezier(0.02,0.5,0.05,0.95)] ${
+                  className={`flex-1 text-center md:text-left transition-all duration-[4500ms] ease-[cubic-bezier(0.005,0.1,0.01,0.99)] ${
                     certificationAnimation.isVisible 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-0.5'
@@ -263,7 +263,7 @@ export default function Hero() {
 
                 {/* Verification Badge */}
                 <div 
-                  className={`flex-shrink-0 transition-all duration-[4500ms] ease-[cubic-bezier(0.02,0.5,0.05,0.95)] ${
+                  className={`flex-shrink-0 transition-all duration-[4500ms] ease-[cubic-bezier(0.005,0.1,0.01,0.99)] ${
                     certificationAnimation.isVisible 
                       ? 'opacity-100 translate-x-0 scale-100' 
                       : 'opacity-0 translate-x-0.5 scale-[0.998]'

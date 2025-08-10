@@ -112,4 +112,4 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Three-Column Layout**: Emblem, certification text, and verification badge
 - **Ministry Details**: Included Ministry of External Affairs without license number as requested
 - **Responsive Design**: Mobile-optimized layout with proper spacing and visual hierarchy
-- **Ultra-Slow Animations**: Implemented extremely gentle 4.5s duration animations with minimal movement (0.5px) and ultra-gradual easing curve cubic-bezier(0.02,0.5,0.05,0.95) for the smoothest, most gradual entrance effects possible
+- **Ultra-Slow Animations**: Implemented extremely gentle 4.5s duration animations with minimal movement (0.5px) and ultra-gradual easing curve cubic-bezier(0.005,0.1,0.01,0.99) for the smoothest, most imperceptible entrance effects that start extremely slowly and build momentum gradually
