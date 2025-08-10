@@ -76,16 +76,16 @@ export default function Hero() {
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
-        <div className="text-center space-y-8 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+        <div className="text-center space-y-8">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight opacity-100 visible">
             Transform Your <span className="text-yellow">Workforce</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed opacity-100 visible">
             Elite recruitment solutions connecting exceptional talent with 
             industry-leading organizations across the Middle East and beyond.
           </p>
-          <div className="flex justify-center items-center pt-8">
-            <ConsultationButton className="animate-fade-in-up" />
+          <div className="flex justify-center items-center pt-8 opacity-100 visible">
+            <ConsultationButton className="" />
           </div>
         </div>
 
