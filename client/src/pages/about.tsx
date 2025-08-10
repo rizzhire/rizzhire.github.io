@@ -177,17 +177,21 @@ export default function About() {
         {/* Exact Background Graphics from Industries Page */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           
-          {/* Moving Colorful Floating Elements */}
-          <div className="absolute top-16 left-12 w-32 h-32 bg-gradient-to-r from-yellow-200/30 to-yellow-300/40 rounded-full blur-2xl animate-floatMoveEnhanced"></div>
-          <div className="absolute top-32 right-16 w-24 h-24 bg-gradient-to-r from-blue-200/25 to-cyan-200/35 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/22 to-yellow-200/32 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/25 to-pink-200/35 rounded-full blur-2xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
+          {/* Moving Colorful Floating Elements - Larger & Better Blended */}
+          <div className="absolute top-10 left-8 w-56 h-56 bg-gradient-to-br from-yellow-200/35 via-yellow-300/45 to-amber-200/40 rounded-full blur-3xl animate-floatMoveEnhanced"></div>
+          <div className="absolute top-20 right-12 w-48 h-48 bg-gradient-to-br from-blue-200/30 via-cyan-200/40 to-sky-200/35 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-16 left-1/4 w-64 h-64 bg-gradient-to-br from-orange-200/28 via-yellow-200/38 to-peach-200/33 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-24 right-1/3 w-52 h-52 bg-gradient-to-br from-purple-200/32 via-pink-200/42 to-rose-200/37 rounded-full blur-3xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
           
-          {/* Additional Floating Elements */}
-          <div className="absolute top-1/2 left-8 w-20 h-20 bg-gradient-to-r from-emerald-200/28 to-green-200/38 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
-          <div className="absolute top-48 right-12 w-36 h-36 bg-gradient-to-r from-rose-200/24 to-red-200/34 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
-          <div className="absolute top-24 left-1/3 w-28 h-28 bg-gradient-to-r from-indigo-200/22 to-violet-200/32 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
-          <div className="absolute bottom-40 right-20 w-32 h-32 bg-gradient-to-r from-teal-200/26 to-cyan-200/36 rounded-full blur-2xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+          {/* Additional Large Floating Elements */}
+          <div className="absolute top-1/2 left-4 w-44 h-44 bg-gradient-to-br from-emerald-200/33 via-green-200/43 to-lime-200/38 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-40 right-8 w-60 h-60 bg-gradient-to-br from-rose-200/29 via-red-200/39 to-pink-200/34 rounded-full blur-4xl animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+          <div className="absolute top-16 left-1/3 w-50 h-50 bg-gradient-to-br from-indigo-200/27 via-violet-200/37 to-purple-200/32 rounded-full blur-3xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
+          <div className="absolute bottom-32 right-16 w-56 h-56 bg-gradient-to-br from-teal-200/31 via-cyan-200/41 to-blue-200/36 rounded-full blur-3xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+          
+          {/* Extra Ambient Elements for Better Coverage */}
+          <div className="absolute top-2/3 left-1/2 w-40 h-40 bg-gradient-to-br from-amber-200/25 via-orange-200/35 to-yellow-200/30 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '5s'}}></div>
+          <div className="absolute top-8 right-1/4 w-36 h-36 bg-gradient-to-br from-fuchsia-200/28 via-purple-200/38 to-indigo-200/33 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '3.5s'}}></div>
           
           {/* Enhanced Moving Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 800">
