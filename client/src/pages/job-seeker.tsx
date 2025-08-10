@@ -806,7 +806,7 @@ export default function JobSeekerPage() {
                     1 On 1 Call
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-md">
+                <DialogContent className="max-w-md rounded-3xl">
                   <DialogHeader>
                     <DialogTitle>Select Phone Number</DialogTitle>
                     <DialogDescription>
@@ -818,7 +818,7 @@ export default function JobSeekerPage() {
                       <Button
                         key={index}
                         onClick={() => handlePhoneCall(phone.number)}
-                        className="w-full justify-center text-center p-4 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow"
+                        className="w-full justify-center text-center p-4 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow rounded-2xl"
                         data-testid={`button-call-${phone.number}`}
                       >
                         <span className="font-semibold text-lg">{phone.number}</span>

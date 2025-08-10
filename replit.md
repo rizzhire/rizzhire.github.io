@@ -90,6 +90,14 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Hover Timing**: Kept 500ms transition duration for smooth water drop detachment
 - **Visual Polish**: Eliminated black glow while preserving all functional hover animations
 
+### 1 On 1 Call Button Implementation (August 10, 2025)
+- **Button Placement**: Added "1 On 1 Call" button beside Upload Resume button on Job Seeker page
+- **Phone Number Selector**: Implemented dialog with two phone numbers (+913335085038, +919477119466)
+- **Mobile Dialer Integration**: Clicking phone numbers opens device's native dialer with number pre-filled
+- **Layout Reorganization**: Moved "Free resume review and optimization included" text below button row
+- **Clean Design**: Removed label text, showing only phone numbers in rounded dialog boxes
+- **Professional Styling**: Applied rounded-3xl to dialog container and rounded-2xl to phone number buttons
+
 ### Services Page Animation Enhancement (August 10, 2025)
 - **Sophisticated Scroll Animations**: Implemented gold standard timing across all Services page sections
 - **Page Load Animations**: Added smooth entrance effects when navigating to the page
