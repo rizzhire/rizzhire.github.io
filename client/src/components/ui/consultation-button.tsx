@@ -43,14 +43,19 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             bg-black text-white font-semibold text-lg
             px-8 py-4 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
-            transform transition-all duration-[2000ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]
-            ${textVisible 
-              ? 'opacity-100 translate-y-0 rotate-0 scale-100' 
-              : 'opacity-0 translate-y-8 -rotate-3 scale-110'
-            }
+            transform transition-all duration-500 ease-out
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
             ${isClicked ? 'scale-98' : ''}
-          `}>
+          `}
+          style={{
+            opacity: textVisible ? 1 : 0,
+            transform: textVisible 
+              ? 'translateY(0px) rotate(0deg) scale(1)' 
+              : 'translateY(32px) rotate(-3deg) scale(1.1)',
+            transition: textVisible 
+              ? 'opacity 2s cubic-bezier(0.34,1.56,0.64,1), transform 2s cubic-bezier(0.34,1.56,0.64,1)' 
+              : 'opacity 0.1s ease-out, transform 0.1s ease-out'
+          }}>
           
           {/* Animated shine sweep */}
           <div className={`
@@ -78,18 +83,21 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            shadow-lg transition-all duration-[2500ms] ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]
-            ${arrowVisible 
-              ? 'opacity-100 translate-x-0 translate-y-0 scale-100 rotate-0' 
-              : 'opacity-0 translate-x-20 -translate-y-12 scale-50 rotate-360'
-            }
+            shadow-lg transition-all duration-500 ease-out
             ${isHovered 
               ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40' 
               : '-ml-6'
             }
             ${isClicked ? 'scale-125 translate-y-4' : ''}
-          `} style={{
-            transitionDelay: arrowVisible ? '600ms' : '0ms'
+          `} 
+          style={{
+            opacity: arrowVisible ? 1 : 0,
+            transform: arrowVisible 
+              ? 'translateX(0px) translateY(0px) scale(1) rotate(0deg)' 
+              : 'translateX(80px) translateY(-48px) scale(0.5) rotate(360deg)',
+            transition: arrowVisible 
+              ? 'opacity 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms, transform 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms' 
+              : 'opacity 0.1s ease-out, transform 0.1s ease-out'
           }}>
           
           {/* Water drop connection bridge */}
@@ -120,15 +128,14 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           {/* Arrow icon with spin-in animation */}
           <ArrowUpRight className={`
             w-5 h-5 text-white relative z-10
-            transition-all duration-[1000ms] ease-out
-            ${arrowVisible 
-              ? 'rotate-0 scale-100' 
-              : 'rotate-[720deg] scale-0'
-            }
+            transition-all duration-300 ease-out
             ${isHovered ? 'rotate-12 scale-110' : ''}
             ${isClicked ? 'rotate-45 scale-125' : ''}
           `} style={{
-            transitionDelay: arrowVisible ? '1000ms' : '0ms'
+            transform: arrowVisible ? 'rotate(0deg) scale(1)' : 'rotate(720deg) scale(0)',
+            transition: arrowVisible 
+              ? 'transform 1s ease-out 1000ms' 
+              : 'transform 0.1s ease-out'
           }} />
           
           {/* Ripple effect on detachment */}
