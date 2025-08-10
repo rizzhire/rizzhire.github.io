@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Users, TrendingUp, UserCheck, ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import React from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -19,6 +21,19 @@ const staggerContainer = {
 };
 
 export default function Services() {
+  // Initialize scroll animations using gold standard timing
+  const heroAnimation = useScrollAnimation();
+  const servicesAnimation = useScrollAnimation();
+  const ctaAnimation = useScrollAnimation();
+  
+  // Page load animation state
+  const [pageLoaded, setPageLoaded] = React.useState(false);
+  
+  React.useEffect(() => {
+    // Trigger page load animations after a brief delay
+    const timer = setTimeout(() => setPageLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
   const services = [
     {
       icon: Users,
@@ -159,26 +174,38 @@ export default function Services() {
           </svg>
         </div>
         
-        <motion.div 
+        <div 
           className="relative max-w-6xl mx-auto text-center"
-          initial="initial"
-          animate="animate"
-          variants={staggerContainer}
+          ref={heroAnimation.ref}
         >
-          <motion.h1 
-            className="fluid-text-5xl font-bold mb-6 text-gray-900"
-            variants={fadeInUp}
+          <h1 
+            className={`fluid-text-5xl font-bold mb-6 text-gray-900 transition-all duration-[1200ms] ${
+              heroAnimation.inView || pageLoaded 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: (heroAnimation.inView || pageLoaded) ? '0ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
           >
             Our <span className="text-yellow">Services</span>
-          </motion.h1>
-          <motion.p 
-            className="fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            variants={fadeInUp}
+          </h1>
+          <p 
+            className={`fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed transition-all duration-[1200ms] ${
+              heroAnimation.inView || pageLoaded 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: (heroAnimation.inView || pageLoaded) ? '200ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
           >
             Comprehensive recruitment and consulting solutions designed to drive your organization's success 
             through strategic talent acquisition and business optimization.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </section>
 
       {/* Detailed Services Section */}
@@ -201,19 +228,20 @@ export default function Services() {
           <div className="absolute top-1/2 left-10 w-36 h-36 bg-gradient-to-r from-purple-300/8 to-pink-300/12 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto">
-          <motion.div 
-            className="grid gap-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
+        <div className="relative max-w-7xl mx-auto" ref={servicesAnimation.ref}>
+          <div className="grid gap-16">
             {services.map((service, index) => (
-              <motion.div 
+              <div 
                 key={index} 
-                className="grid lg:grid-cols-2 gap-12 items-center"
-                variants={fadeInUp}
+                className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-[1200ms] ${
+                  servicesAnimation.inView 
+                    ? 'opacity-100 translate-y-0 scale-100' 
+                    : 'opacity-0 translate-y-12 scale-95'
+                }`}
+                style={{ 
+                  transitionDelay: servicesAnimation.inView ? `${index * 300}ms` : '0ms',
+                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }}
               >
                 <div className={`order-${index % 2 === 0 ? '1' : '2'}`}>
                   <div className={`bg-gradient-to-br ${service.color} rounded-3xl p-8 h-full`}>
@@ -248,9 +276,9 @@ export default function Services() {
                   
 
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -260,33 +288,54 @@ export default function Services() {
 
       {/* Call to Action */}
       <section className="py-20 px-4" style={{backgroundColor: '#F5F3EB'}}>
-        <motion.div 
+        <div 
           className="max-w-4xl mx-auto text-center"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerContainer}
+          ref={ctaAnimation.ref}
         >
-          <motion.h2 
-            className="fluid-text-4xl font-bold mb-6 text-gray-900"
-            variants={fadeInUp}
+          <h2 
+            className={`fluid-text-4xl font-bold mb-6 text-gray-900 transition-all duration-[1200ms] ${
+              ctaAnimation.inView 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: ctaAnimation.inView ? '0ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
           >
             Ready to <span className="text-yellow">Transform</span> Your Business?
-          </motion.h2>
-          <motion.p 
-            className="fluid-text-xl text-gray-600 mb-8 leading-relaxed"
-            variants={fadeInUp}
+          </h2>
+          <p 
+            className={`fluid-text-xl text-gray-600 mb-8 leading-relaxed transition-all duration-[1200ms] ${
+              ctaAnimation.inView 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: ctaAnimation.inView ? '200ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
           >
             Partner with HireNET to unlock your organization's full potential through strategic talent solutions.
-          </motion.p>
-          <motion.div variants={fadeInUp}>
+          </p>
+          <div 
+            className={`transition-all duration-[1200ms] ${
+              ctaAnimation.inView 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: ctaAnimation.inView ? '400ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
+          >
             <Link href="/contact">
               <Button className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-12 py-4 rounded-xl text-lg transition-all duration-300 hover:scale-[1.03]">
                 Get Started Today <ArrowRight className="w-6 h-6 ml-2" />
               </Button>
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   );
