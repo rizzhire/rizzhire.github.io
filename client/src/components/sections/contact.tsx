@@ -80,11 +80,11 @@ export default function Contact() {
     return { displayText, isTyping };
   };
 
-  // Typewriter effects for each contact detail
+  // Typewriter effects for each contact detail - all start at the same time
   const emailTypewriter = useTypewriter('contact@hirenet.in', 80, 800);
-  const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 1400);
-  const mainOfficeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal', 60, 2000);
-  const branchOfficeTypewriter = useTypewriter('4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal', 60, 2800);
+  const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 800);
+  const mainOfficeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal', 60, 800);
+  const branchOfficeTypewriter = useTypewriter('4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal', 60, 800);
 
   const containerVariants = {
     hidden: { opacity: 0 },
