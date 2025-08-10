@@ -22,7 +22,7 @@ export default function Countries() {
   const { containerRef, visibleItems } = useStaggeredAnimation(countries.length, 80);
 
   return (
-    <section id="countries" className="relative py-20 cream overflow-hidden">
+    <section id="countries" className="relative py-12 cream overflow-hidden">
       {/* Light Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating Elements */}
