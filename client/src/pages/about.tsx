@@ -204,8 +204,8 @@ export default function About() {
                 <Card className="bg-white p-3 rounded-xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col">
                   <CardContent className="p-0 flex flex-col h-full">
                     <h3 className="text-4xl font-bold text-gray-900 text-center mb-2 leading-none">{value.title}</h3>
-                    <div className="flex-1 flex items-center justify-center">
-                      <p className="text-gray-600 leading-tight text-xs text-center">{value.description}</p>
+                    <div className="flex-1 flex items-center justify-center px-1">
+                      <p className="text-gray-600 leading-tight text-sm text-center">{value.description}</p>
                     </div>
                   </CardContent>
                 </Card>
