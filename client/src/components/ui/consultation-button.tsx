@@ -34,7 +34,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative overflow-hidden
             bg-black text-white font-semibold text-base max-md:text-sm
-            px-6 py-3 max-md:px-5 max-md:py-2.5 rounded-full
+            px-7 py-3 max-md:px-6 max-md:py-2.5 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
             transform transition-all duration-500 ease-out
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
