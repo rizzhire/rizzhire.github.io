@@ -115,7 +115,7 @@ export default function Services() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F5F3EB'}}>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
+      <section className="relative pt-24 pb-12 px-4 overflow-hidden" style={{backgroundColor: '#F5F3EB'}}>
         {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Floating Circles (Same as Get in Touch) */}
@@ -179,7 +179,7 @@ export default function Services() {
           ref={heroAnimation.elementRef}
         >
           <h1 
-            className={`fluid-text-5xl font-bold mb-6 text-gray-900 transition-all duration-[1200ms] ${
+            className={`fluid-text-4xl lg:fluid-text-5xl font-bold mb-4 text-gray-900 transition-all duration-[1200ms] ${
               heroAnimation.isVisible || pageLoaded 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
@@ -192,7 +192,7 @@ export default function Services() {
             Our <span className="text-yellow">Services</span>
           </h1>
           <p 
-            className={`fluid-text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed transition-all duration-[1200ms] ${
+            className={`fluid-text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed transition-all duration-[1200ms] ${
               heroAnimation.isVisible || pageLoaded 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 translate-y-12 scale-95'
