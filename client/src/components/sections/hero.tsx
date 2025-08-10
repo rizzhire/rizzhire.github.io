@@ -140,15 +140,15 @@ export default function Hero() {
 
         {/* Stats Section */}
         <div className="mt-20 mb-0">
-          <div className="grid grid-cols-5 gap-8 max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-5 gap-2 sm:gap-4 md:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
             <div className="text-center">
               <div 
                 ref={placements.ref}
-                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none"
+                className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow mb-1 sm:mb-2 md:mb-3 leading-none"
               >
                 {placements.count}k
               </div>
-              <div className="text-gray-600 text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
                 Successful<br/>Placements
               </div>
             </div>
@@ -156,12 +156,12 @@ export default function Hero() {
             <div className="text-center">
               <div 
                 ref={database.ref}
-                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
+                className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow mb-1 sm:mb-2 md:mb-3 leading-none flex items-center justify-center gap-1"
               >
                 {database.count}k
-                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                <Plus className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.5s', opacity: database.count >= 35 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
-              <div className="text-gray-600 text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
                 Database
               </div>
             </div>
@@ -169,12 +169,12 @@ export default function Hero() {
             <div className="text-center">
               <div 
                 ref={companies.ref}
-                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
+                className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow mb-1 sm:mb-2 md:mb-3 leading-none flex items-center justify-center gap-1"
               >
                 {companies.count}
-                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                <Plus className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.7s', opacity: companies.count >= 500 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
-              <div className="text-gray-600 text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
                 Partnered<br/>Companies
               </div>
             </div>
@@ -182,12 +182,12 @@ export default function Hero() {
             <div className="text-center">
               <div 
                 ref={countries.ref}
-                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none flex items-center justify-center gap-1"
+                className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow mb-1 sm:mb-2 md:mb-3 leading-none flex items-center justify-center gap-1"
               >
                 {countries.count}
-                <Plus className="w-6 h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
+                <Plus className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 animate-bounce" style={{animationDelay: '2.9s', opacity: countries.count >= 7 ? 1 : 0, transition: 'opacity 0.3s'}} />
               </div>
-              <div className="text-gray-600 text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
                 Countries<br/>Served
               </div>
             </div>
@@ -195,11 +195,11 @@ export default function Hero() {
             <div className="text-center">
               <div 
                 ref={satisfaction.ref}
-                className="text-4xl md:text-5xl font-bold text-yellow mb-3 leading-none"
+                className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow mb-1 sm:mb-2 md:mb-3 leading-none"
               >
                 {satisfaction.count}%
               </div>
-              <div className="text-gray-600 text-sm font-medium leading-tight">
+              <div className="text-gray-600 text-xs sm:text-sm font-medium leading-tight">
                 Success<br/>Rate
               </div>
             </div>
