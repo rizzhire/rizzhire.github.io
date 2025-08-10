@@ -201,11 +201,11 @@ export default function About() {
                 transition={{ duration: 0.3, ease: "easeOut", delay: index * 0.05 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <Card className="bg-white p-3 rounded-xl border-0 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col">
+                <Card className="bg-gradient-to-br from-gray-50 to-white p-4 rounded-3xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 aspect-square flex flex-col backdrop-blur-sm">
                   <CardContent className="p-0 flex flex-col h-full">
-                    <h3 className="text-4xl font-bold text-gray-900 text-center mb-2 leading-none">{value.title}</h3>
-                    <div className="flex-1 flex items-center justify-center px-1">
-                      <p className="text-gray-600 leading-tight text-lg text-center">{value.description}</p>
+                    <h3 className="text-4xl font-bold text-gray-800 text-center mb-3 leading-none tracking-tight">{value.title}</h3>
+                    <div className="flex-1 flex items-center justify-center px-2">
+                      <p className="text-gray-600 leading-snug text-lg text-center font-medium">{value.description}</p>
                     </div>
                   </CardContent>
                 </Card>
