@@ -38,12 +38,12 @@ export default function Contact() {
   };
 
   const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation({
-    threshold: 0.8,
-    rootMargin: '0px 0px -300px 0px'
+    threshold: 0.3,
+    rootMargin: '0px 0px -150px 0px'
   });
   const { elementRef: infoRef, isVisible: infoVisible } = useScrollAnimation({
-    threshold: 0.8,
-    rootMargin: '0px 0px -300px 0px'
+    threshold: 0.3,
+    rootMargin: '0px 0px -150px 0px'
   });
 
   // Typewriter hook
