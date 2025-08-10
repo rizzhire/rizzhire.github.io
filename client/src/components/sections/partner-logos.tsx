@@ -38,7 +38,7 @@ export default function PartnerLogos() {
 
   const getLogoSpacing = (currentLogo: string, nextLogo: string) => {
     // Base spacing
-    const baseSpacing = 32;
+    const baseSpacing = 20;
     
     // Special spacing adjustments based on logo combinations
     if (currentLogo === 'Nayara Energy' && nextLogo === 'Etisalat') {
@@ -140,7 +140,7 @@ export default function PartnerLogos() {
   }, [isUserScrolling]);
 
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section className="py-12 bg-gradient-to-r from-gray-50 via-white to-gray-50 overflow-hidden">
       <div 
         ref={titleRef}
         className={`
@@ -179,7 +179,7 @@ export default function PartnerLogos() {
               <div 
                 key={index} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-64 h-24' : 'w-48 h-16'
+                  partner.name === 'DP World' ? 'w-40 h-16' : 'w-32 h-12'
                 }`}
                 style={{
                   marginRight: index < partners.length - 1 
@@ -191,7 +191,7 @@ export default function PartnerLogos() {
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'w-full h-full scale-[4.0]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[2.5]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
@@ -218,7 +218,7 @@ export default function PartnerLogos() {
               <div 
                 key={`duplicate-${index}`} 
                 className={`flex items-center justify-center cursor-pointer transition-all duration-300 group ${
-                  partner.name === 'DP World' ? 'w-64 h-24' : 'w-48 h-16'
+                  partner.name === 'DP World' ? 'w-40 h-16' : 'w-32 h-12'
                 }`}
                 style={{
                   marginRight: index < partners.length - 1 
@@ -230,7 +230,7 @@ export default function PartnerLogos() {
                   src={partner.image}
                   alt={partner.name}
                   className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                    partner.name === 'DP World' ? 'w-full h-full scale-[4.0]' : 'max-w-full max-h-full'
+                    partner.name === 'DP World' ? 'w-full h-full scale-[2.5]' : 'max-w-full max-h-full'
                   }`}
                   style={{
                     filter: getLogoFilter(partner.name, false),
