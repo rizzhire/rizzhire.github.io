@@ -3,7 +3,7 @@ import ConsultationButton from "@/components/ui/consultation-button";
 import { Upload, ArrowRight, Plus } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import indianEmblemImage from "@assets/generated_images/Indian_Emblem_Without_Lotus_445807e3.png";
+import indianEmblemImage from "@assets/emblem-of-india-logo-png_seeklogo-311715_1754816803273.png";
 
 export default function Hero() {
   const placements = useCounter({ end: 18, duration: 2500 });
@@ -211,7 +211,7 @@ export default function Hero() {
                     <img 
                       src={indianEmblemImage} 
                       alt="Government of India Emblem" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
                     />
                   </div>
                 </div>
