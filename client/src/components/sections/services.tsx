@@ -131,6 +131,53 @@ export default function Services() {
           />
         </svg>
         
+        {/* Yellow Traveling Lines Behind Services Tiles */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 600">
+          <defs>
+            <linearGradient id="servicesTileYellow1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+              <stop offset="30%" stopColor="#f59e0b" stopOpacity="0.18"/>
+              <stop offset="70%" stopColor="#fbbf24" stopOpacity="0.15"/>
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="servicesTileYellow2" x1="100%" y1="0%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="#fbbf24" stopOpacity="0"/>
+              <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.16"/>
+              <stop offset="75%" stopColor="#fbbf24" stopOpacity="0.14"/>
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="servicesTileYellow3" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0"/>
+              <stop offset="40%" stopColor="#fbbf24" stopOpacity="0.17"/>
+              <stop offset="60%" stopColor="#f59e0b" stopOpacity="0.13"/>
+              <stop offset="100%" stopColor="#fbbf24" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+          
+          {/* Horizontal lines behind service tiles */}
+          <path 
+            d="M100,350 C250,345 400,355 550,350 C700,345 850,355 900,350" 
+            stroke="url(#servicesTileYellow1)" 
+            strokeWidth="2" 
+            fill="none"
+            className="animate-wavyTravel1"
+          />
+          <path 
+            d="M50,420 C200,415 350,425 500,420 C650,415 800,425 950,420" 
+            stroke="url(#servicesTileYellow2)" 
+            strokeWidth="1.8" 
+            fill="none"
+            className="animate-wavyTravel3"
+          />
+          <path 
+            d="M150,480 C300,475 450,485 600,480 C750,475 850,485 950,480" 
+            stroke="url(#servicesTileYellow3)" 
+            strokeWidth="1.5" 
+            fill="none"
+            className="animate-wavyTravel4"
+          />
+        </svg>
+
         {/* Enhanced Dynamic Dots Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-16 left-16 w-2 h-2 bg-yellow-400 rounded-full animate-ping" style={{animationDelay: '0s'}}></div>
