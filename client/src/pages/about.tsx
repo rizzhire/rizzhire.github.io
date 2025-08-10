@@ -203,6 +203,43 @@ export default function About() {
             />
           </svg>
           
+          {/* Additional Graphics from Get In Touch Banner */}
+          
+          {/* Floating Circles */}
+          <div className="absolute top-20 left-10 w-48 h-48 bg-gradient-to-r from-yellow-200/15 to-yellow-300/20 rounded-full blur-3xl animate-floatMove"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-200/12 to-cyan-200/17 rounded-full blur-2xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-36 h-36 bg-gradient-to-r from-purple-200/10 to-pink-200/15 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-40 right-1/3 w-32 h-32 bg-gradient-to-r from-emerald-200/12 to-teal-200/17 rounded-full blur-xl animate-bounce-slow" style={{animationDelay: '3s'}}></div>
+          
+          {/* Additional Floating Circles */}
+          <div className="absolute bottom-40 left-1/3 w-28 h-28 bg-gradient-to-br from-yellow-300/10 to-orange-300/15 rounded-full blur-xl animate-spin-slow"></div>
+          <div className="absolute top-32 right-1/4 w-24 h-24 bg-gradient-to-tl from-indigo-300/12 to-purple-300/17 rounded-full blur-xl animate-pulse"></div>
+          
+          {/* Wave Lines from Contact Banner */}
+          <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="storyContactGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="storyContactGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,200 Q250,100 500,200 T1000,200" stroke="url(#storyContactGradient1)" strokeWidth="2" fill="none" className="animate-waveFlow"/>
+            <path d="M0,250 Q300,150 600,250 T1000,250" stroke="url(#storyContactGradient2)" strokeWidth="1.5" fill="none" className="animate-waveFlow" style={{animationDelay: '2s'}}/>
+          </svg>
+          
+          {/* Dotted Pattern */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-3">
+            <div className="grid grid-cols-20 gap-8 h-full">
+              {Array.from({length: 100}).map((_, i) => (
+                <div key={i} className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{animationDelay: `${i * 0.1}s`}}></div>
+              ))}
+            </div>
+          </div>
+          
         </div>
         
         <div className="relative max-w-6xl mx-auto">
