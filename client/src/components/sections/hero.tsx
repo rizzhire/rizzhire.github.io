@@ -209,7 +209,7 @@ export default function Hero() {
         {/* Government Certification Section */}
         <div 
           ref={certificationAnimation.elementRef}
-          className="mt-16 pt-12 border-t border-gray-200/50"
+          className="mt-16 pt-12"
         >
           <div className="max-w-4xl mx-auto">
             <motion.div 
