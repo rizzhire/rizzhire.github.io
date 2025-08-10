@@ -22,6 +22,8 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import type { UploadResult } from "@uppy/core";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
+import indianEmblemImage from "@assets/emblem-of-india-logo-png_seeklogo-311715_1754816803273.png";
 
 const resumeFormSchema = insertResumeSchema.extend({
   fullName: z.string().min(1, "Full name is required"),
@@ -131,6 +133,12 @@ export default function JobSeekerPage() {
   const { elementRef: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation({
     threshold: 0.8,
     rootMargin: '0px 0px -300px 0px'
+  });
+  
+  // Certification animation hook
+  const certificationAnimation = useScrollAnimation({ 
+    threshold: 0.1, 
+    rootMargin: '0px 0px -100px 0px' 
   });
 
   const form = useForm<ResumeFormData>({
@@ -640,6 +648,142 @@ export default function JobSeekerPage() {
               <p className="text-gray-500 text-sm">Free resume review and optimization included</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Government Certification Section */}
+      <section className="py-16 cream">
+        <div 
+          ref={certificationAnimation.elementRef}
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <motion.div 
+            initial={{ 
+              opacity: 0, 
+              y: 60,
+              scale: 0.7,
+              rotateY: -30
+            }}
+            animate={certificationAnimation.isVisible ? {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotateY: 0
+            } : {}}
+            transition={{
+              duration: 0.8,
+              delay: 0.1,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
+            className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer"
+          >
+            <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
+              {/* Indian Government Emblem - Full Height */}
+              <motion.div 
+                initial={{ 
+                  opacity: 0, 
+                  y: 60,
+                  scale: 0.7,
+                  rotateY: -30
+                }}
+                animate={certificationAnimation.isVisible ? {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  rotateY: 0
+                } : {}}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.2,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                className="flex-shrink-0 h-full flex items-center"
+              >
+                <img 
+                  src={indianEmblemImage} 
+                  alt="Government of India Emblem" 
+                  className="h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
+                />
+              </motion.div>
+
+              {/* Certification Text */}
+              <motion.div 
+                initial={{ 
+                  opacity: 0, 
+                  y: 60,
+                  scale: 0.7,
+                  rotateY: -30
+                }}
+                animate={certificationAnimation.isVisible ? {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  rotateY: 0
+                } : {}}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.3,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                className="flex-1 text-center md:text-left"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Approved By <span className="text-yellow">Government Of India</span>
+                </h3>
+                <p className="text-lg md:text-xl text-gray-700 font-medium mb-3">
+                  Ministry of External Affairs
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Officially recognized recruitment agency authorized to facilitate international employment 
+                  opportunities for Indian professionals across the Middle East region.
+                </p>
+              </motion.div>
+
+              {/* Verification Badge */}
+              <motion.div 
+                initial={{ 
+                  opacity: 0, 
+                  y: 60,
+                  scale: 0.7,
+                  rotateY: -30
+                }}
+                animate={certificationAnimation.isVisible ? {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  rotateY: 0
+                } : {}}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.4,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                className="flex-shrink-0"
+              >
+                <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-300 cursor-pointer">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-semibold text-gray-800">Verified</span>
+                  </div>
+                  <div className="text-xs text-gray-600 mt-1">
+                    Government Approved
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

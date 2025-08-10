@@ -113,3 +113,4 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Ministry Details**: Included Ministry of External Affairs without license number as requested
 - **Responsive Design**: Mobile-optimized layout with proper spacing and visual hierarchy
 - **Exact Flags Animation**: Implemented identical Framer Motion animation system used by flags section (0.8s duration, [0.25, 0.46, 0.45, 0.94] easing, spring physics with stiffness 100 and damping 15, same initial/animate states with opacity 0→1, y 60→0, scale 0.7→1, rotateY -30→0) for perfect animation consistency
+- **Job Seeker Page Certification**: Added identical government certification section to Job Seeker page with exact same styling, animation system, and positioning after resume upload button for consistent user experience across all pages
