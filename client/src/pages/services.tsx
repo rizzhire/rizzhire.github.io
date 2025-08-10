@@ -228,7 +228,7 @@ export default function Services() {
           <div className="absolute top-1/2 left-10 w-36 h-36 bg-gradient-to-r from-purple-300/8 to-pink-300/12 rounded-full blur-2xl animate-rotate" style={{animationDelay: '2s'}}></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto" ref={servicesAnimation.elementRef}>
+        <div className="relative max-w-7xl mx-auto">
           <div className="grid gap-16">
             {services.map((service, index) => (
               <motion.div 
@@ -239,15 +239,20 @@ export default function Services() {
                   scale: 0.7,
                   rotateY: -30
                 }}
-                animate={servicesAnimation.isVisible ? {
+                whileInView={{
                   opacity: 1,
                   y: 0,
                   scale: 1,
                   rotateY: 0
-                } : {}}
+                }}
+                viewport={{ 
+                  once: true, 
+                  amount: 0.3,
+                  margin: "-100px"
+                }}
                 transition={{
                   duration: 0.8,
-                  delay: index * 0.3,
+                  delay: 0.1,
                   ease: [0.25, 0.46, 0.45, 0.94],
                   type: "spring",
                   stiffness: 100,

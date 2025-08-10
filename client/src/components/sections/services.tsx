@@ -230,10 +230,7 @@ export default function Services() {
         </div>
 
         {/* Service Cards - 3 Column Grid Layout */}
-        <div 
-          className="grid md:grid-cols-3 gap-8 mt-16"
-          ref={servicesAnimation.elementRef}
-        >
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -243,12 +240,17 @@ export default function Services() {
                 scale: 0.7,
                 rotateY: -30
               }}
-              animate={servicesAnimation.isVisible ? {
+              whileInView={{
                 opacity: 1,
                 y: 0,
                 scale: 1,
                 rotateY: 0
-              } : {}}
+              }}
+              viewport={{ 
+                once: true, 
+                amount: 0.3,
+                margin: "-50px"
+              }}
               transition={{
                 duration: 0.8,
                 delay: index * 0.1,
