@@ -289,7 +289,8 @@ export default function About() {
         </div>
       </section>
       {/* Values Section */}
-      <section className="relative py-8 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden border-t border-gray-200/30">
+      <section className="relative py-8 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gray-300/60"></div>
         {/* Exact Background Graphics from Industries Page */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           
