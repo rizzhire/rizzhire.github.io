@@ -247,8 +247,8 @@ export default function Services() {
                 }}
                 viewport={{ 
                   once: true, 
-                  amount: 0.3,
-                  margin: "-100px"
+                  amount: 0.2,
+                  margin: "0px 0px -200px 0px"
                 }}
                 transition={{
                   duration: 0.8,
