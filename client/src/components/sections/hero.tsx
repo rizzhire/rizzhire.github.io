@@ -98,7 +98,7 @@ export default function Hero() {
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
-        <div className="text-center space-y-8">
+        <div className="text-center space-y-6">
           <div 
             ref={headingAnimation.elementRef}
             className={`transition-all duration-[1800ms] ease-out ${
