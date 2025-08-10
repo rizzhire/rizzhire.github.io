@@ -212,13 +212,13 @@ export default function Hero() {
         >
           <div className="max-w-4xl mx-auto">
             <div 
-              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
+              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-[4500ms] ease-[cubic-bezier(0.1,0.9,0.2,1)] ${
                 certificationAnimation.isVisible 
                   ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-2 scale-[0.985]'
+                  : 'opacity-0 translate-y-0.5 scale-[0.995]'
               }`}
               style={{
-                transitionDelay: certificationAnimation.isVisible ? '100ms' : '0ms'
+                transitionDelay: certificationAnimation.isVisible ? '200ms' : '0ms'
               }}
             >
               <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
@@ -227,26 +227,26 @@ export default function Hero() {
                   <img 
                     src={indianEmblemImage} 
                     alt="Government of India Emblem" 
-                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
+                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[4500ms] ease-[cubic-bezier(0.1,0.9,0.2,1)] ${
                       certificationAnimation.isVisible 
                         ? 'opacity-100 translate-x-0 scale-100' 
-                        : 'opacity-0 -translate-x-1 scale-[0.99]'
+                        : 'opacity-0 -translate-x-0.5 scale-[0.998]'
                     }`}
                     style={{
-                      transitionDelay: certificationAnimation.isVisible ? '200ms' : '0ms'
+                      transitionDelay: certificationAnimation.isVisible ? '500ms' : '0ms'
                     }}
                   />
                 </div>
 
                 {/* Certification Text */}
                 <div 
-                  className={`flex-1 text-center md:text-left transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
+                  className={`flex-1 text-center md:text-left transition-all duration-[4500ms] ease-[cubic-bezier(0.1,0.9,0.2,1)] ${
                     certificationAnimation.isVisible 
                       ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-2'
+                      : 'opacity-0 translate-y-0.5'
                   }`}
                   style={{
-                    transitionDelay: certificationAnimation.isVisible ? '300ms' : '0ms'
+                    transitionDelay: certificationAnimation.isVisible ? '800ms' : '0ms'
                   }}
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -263,13 +263,13 @@ export default function Hero() {
 
                 {/* Verification Badge */}
                 <div 
-                  className={`flex-shrink-0 transition-all duration-[2800ms] ease-[cubic-bezier(0.05,0.7,0.1,1)] ${
+                  className={`flex-shrink-0 transition-all duration-[4500ms] ease-[cubic-bezier(0.1,0.9,0.2,1)] ${
                     certificationAnimation.isVisible 
                       ? 'opacity-100 translate-x-0 scale-100' 
-                      : 'opacity-0 translate-x-1 scale-[0.99]'
+                      : 'opacity-0 translate-x-0.5 scale-[0.998]'
                   }`}
                   style={{
-                    transitionDelay: certificationAnimation.isVisible ? '400ms' : '0ms'
+                    transitionDelay: certificationAnimation.isVisible ? '1100ms' : '0ms'
                   }}
                 >
                   <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-300 cursor-pointer">
