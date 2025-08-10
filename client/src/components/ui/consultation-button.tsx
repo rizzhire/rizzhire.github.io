@@ -44,16 +44,18 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             px-8 py-4 rounded-full
             shadow-lg hover:shadow-2xl hover:shadow-black/50
             transform transition-all duration-500 ease-out
-            ${textVisible 
-              ? 'opacity-100 translate-y-0 rotate-0 scale-100' 
-              : 'opacity-0 translate-y-8 -rotate-3 scale-110'
-            }
+
             ${isHovered ? 'scale-105 -translate-y-1' : ''}
             ${isClicked ? 'scale-98' : ''}
           `}
           style={{
-            transitionDuration: textVisible ? '2s' : '0.1s',
-            transitionTimingFunction: textVisible ? 'cubic-bezier(0.34,1.56,0.64,1)' : 'ease-out'
+            opacity: textVisible ? 1 : 0,
+            transform: textVisible 
+              ? 'translateY(0px) rotate(0deg) scale(1)' 
+              : 'translateY(32px) rotate(-3deg) scale(1.1)',
+            transition: textVisible 
+              ? 'opacity 2s cubic-bezier(0.34,1.56,0.64,1), transform 2s cubic-bezier(0.34,1.56,0.64,1)' 
+              : 'opacity 0.1s, transform 0.1s'
           }}>
           
           {/* Animated shine sweep */}
@@ -83,10 +85,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
             shadow-lg transition-all duration-500 ease-out
-            ${arrowVisible 
-              ? 'opacity-100 translate-x-0 translate-y-0 scale-100 rotate-0' 
-              : 'opacity-0 translate-x-20 -translate-y-12 scale-50 rotate-360'
-            }
+
             ${isHovered 
               ? '-ml-2 translate-x-8 translate-y-2 scale-110 shadow-black/40' 
               : '-ml-6'
@@ -94,9 +93,13 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
             ${isClicked ? 'scale-125 translate-y-4' : ''}
           `}
           style={{
-            transitionDelay: arrowVisible ? '600ms' : '0ms',
-            transitionDuration: arrowVisible ? '2.5s' : '0.1s',
-            transitionTimingFunction: arrowVisible ? 'cubic-bezier(0.68,-0.55,0.265,1.55)' : 'ease-out'
+            opacity: arrowVisible ? 1 : 0,
+            transform: arrowVisible 
+              ? 'translateX(0px) translateY(0px) scale(1) rotate(0deg)' 
+              : 'translateX(80px) translateY(-48px) scale(0.5) rotate(360deg)',
+            transition: arrowVisible 
+              ? 'opacity 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms, transform 2.5s cubic-bezier(0.68,-0.55,0.265,1.55) 600ms' 
+              : 'opacity 0.1s, transform 0.1s'
           }}>
           
           {/* Water drop connection bridge */}
