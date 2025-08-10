@@ -97,6 +97,13 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Layout Reorganization**: Moved "Free resume review and optimization included" text below button row
 - **Clean Design**: Removed label text, showing only phone numbers in rounded dialog boxes
 - **Professional Styling**: Applied rounded-3xl to dialog container and rounded-2xl to phone number buttons
+- **Enhanced Styling**: Upgraded dialog to ultra-rounded 40px border radius for maximum visual appeal
+
+### Contact Email Configuration Update (August 10, 2025)
+- **Page-Specific Email Display**: Implemented emailMode prop in Contact component for different email configurations
+- **Job Seeker Page**: Shows only "contact@hirenet.in" in Get in Touch section
+- **Homepage**: Shows both "business@hirenet.in" and "contact@hirenet.in" in Get in Touch section (preserved existing setup)
+- **Dynamic Content**: Contact component now accepts emailMode prop ('single' or 'both') to control email display
 
 ### Services Page Animation Enhancement (August 10, 2025)
 - **Sophisticated Scroll Animations**: Implemented gold standard timing across all Services page sections

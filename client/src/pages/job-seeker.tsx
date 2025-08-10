@@ -1046,7 +1046,7 @@ export default function JobSeekerPage() {
       <WhyChooseHireNet />
 
       {/* Contact Section */}
-      <Contact />
+      <Contact emailMode="single" />
     </div>
   );
 }

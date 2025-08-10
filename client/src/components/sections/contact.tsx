@@ -8,7 +8,11 @@ import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 
-export default function Contact() {
+interface ContactProps {
+  emailMode?: 'single' | 'both';
+}
+
+export default function Contact({ emailMode = 'both' }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -81,7 +85,8 @@ export default function Contact() {
   };
 
   // Typewriter effects for each contact detail - all start at the same time
-  const emailTypewriter = useTypewriter('business@hirenet.in\ncontact@hirenet.in', 80, 800);
+  const emailText = emailMode === 'single' ? 'contact@hirenet.in' : 'business@hirenet.in\ncontact@hirenet.in';
+  const emailTypewriter = useTypewriter(emailText, 80, 800);
   const phoneTypewriter = useTypewriter('+91 333 508 5038', 100, 800);
   const mainOfficeTypewriter = useTypewriter('6/7A, AJC Bose Road, Padatik Theatre, Kolkata-700017, West Bengal', 60, 800);
   const branchOfficeTypewriter = useTypewriter('4th-floor Nevidita Road, Kidzee School, Siliguri 734003, West Bengal', 60, 800);
