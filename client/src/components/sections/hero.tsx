@@ -367,7 +367,7 @@ export default function Hero() {
                   <img 
                     src={indianEmblemImage} 
                     alt="Government of India Emblem" 
-                    className="h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
+                    className="h-20 sm:h-24 md:h-32 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
                   />
                 </motion.div>
 
