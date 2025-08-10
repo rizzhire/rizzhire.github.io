@@ -532,7 +532,7 @@ export default function JobSeekerPage() {
                           
                           {/* Resume Upload Section */}
                           <div className="space-y-4">
-                            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                            <div className="flex items-center gap-3 pb-3 sm:border-b border-gray-100">
                               <div className="w-10 h-10 bg-yellow/20 rounded-full flex items-center justify-center">
                                 <Upload className="w-5 h-5 text-yellow-600" />
                               </div>
@@ -584,7 +584,7 @@ export default function JobSeekerPage() {
 
                           {/* Personal Information Section */}
                           <div className="space-y-4">
-                            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                            <div className="flex items-center gap-3 pb-3 sm:border-b border-gray-100">
                               <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                                 <User className="w-5 h-5 text-blue-600" />
                               </div>
@@ -675,7 +675,7 @@ export default function JobSeekerPage() {
 
                           {/* Career Details Section */}
                           <div className="space-y-4">
-                            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                            <div className="flex items-center gap-3 pb-3 sm:border-b border-gray-100">
                               <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
                                 <Briefcase className="w-5 h-5 text-purple-600" />
                               </div>
@@ -775,7 +775,7 @@ export default function JobSeekerPage() {
                             />
                           </div>
 
-                          <div className="pt-6 border-t border-gray-100">
+                          <div className="pt-6 sm:border-t border-gray-100">
                             <Button
                               type="submit"
                               disabled={isSubmitting}
