@@ -177,6 +177,18 @@ export default function About() {
         {/* Exact Background Graphics from Industries Page */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           
+          {/* Moving Colorful Floating Elements */}
+          <div className="absolute top-16 left-12 w-32 h-32 bg-gradient-to-r from-yellow-200/30 to-yellow-300/40 rounded-full blur-2xl animate-floatMoveEnhanced"></div>
+          <div className="absolute top-32 right-16 w-24 h-24 bg-gradient-to-r from-blue-200/25 to-cyan-200/35 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/22 to-yellow-200/32 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/25 to-pink-200/35 rounded-full blur-2xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
+          
+          {/* Additional Floating Elements */}
+          <div className="absolute top-1/2 left-8 w-20 h-20 bg-gradient-to-r from-emerald-200/28 to-green-200/38 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-48 right-12 w-36 h-36 bg-gradient-to-r from-rose-200/24 to-red-200/34 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
+          <div className="absolute top-24 left-1/3 w-28 h-28 bg-gradient-to-r from-indigo-200/22 to-violet-200/32 rounded-full blur-xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
+          <div className="absolute bottom-40 right-20 w-32 h-32 bg-gradient-to-r from-teal-200/26 to-cyan-200/36 rounded-full blur-2xl animate-rotateEnhanced" style={{animationDelay: '1.8s'}}></div>
+          
           {/* Enhanced Moving Geometric Lines */}
           <svg className="absolute inset-0 w-full h-full opacity-8 animate-waveFlow" viewBox="0 0 1000 800">
             <defs>
