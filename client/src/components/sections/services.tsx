@@ -1,7 +1,12 @@
 import { Users, TrendingUp, UserCheck, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Services() {
+  // Initialize scroll animations using gold standard timing
+  const headerAnimation = useScrollAnimation();
+  const servicesAnimation = useScrollAnimation();
+  
   const services = [
     {
       icon: Users,
@@ -191,21 +196,55 @@ export default function Services() {
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8 mt-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div 
+          className="text-center mb-8 mt-20"
+          ref={headerAnimation.elementRef}
+        >
+          <h2 
+            className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-[1200ms] ${
+              headerAnimation.isVisible 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: headerAnimation.isVisible ? '0ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
+          >
             Our <span className="text-yellow">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p 
+            className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 transition-all duration-[1200ms] ${
+              headerAnimation.isVisible 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            }`}
+            style={{ 
+              transitionDelay: headerAnimation.isVisible ? '200ms' : '0ms',
+              transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }}
+          >
             Comprehensive workforce solutions designed to accelerate your business growth and operational excellence.
           </p>
         </div>
 
         {/* Service Cards - 3 Column Grid Layout */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+        <div 
+          className="grid md:grid-cols-3 gap-8 mt-16"
+          ref={servicesAnimation.elementRef}
+        >
           {services.map((service, index) => (
             <Card 
               key={index}
-              className={`${service.bgColor} p-6 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group`}
+              className={`${service.bgColor} p-6 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-[1200ms] hover:-translate-y-2 group ${
+                servicesAnimation.isVisible 
+                  ? 'opacity-100 translate-y-0 scale-100' 
+                  : 'opacity-0 translate-y-16 scale-95'
+              }`}
+              style={{ 
+                transitionDelay: servicesAnimation.isVisible ? `${index * 300}ms` : '0ms',
+                transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+              }}
             >
               <CardContent className="p-0">
                 <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-6`}>
