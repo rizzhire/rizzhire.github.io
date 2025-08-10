@@ -147,7 +147,7 @@ export default function WhyChooseHireNet() {
           </div>
           
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
@@ -161,7 +161,7 @@ export default function WhyChooseHireNet() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}

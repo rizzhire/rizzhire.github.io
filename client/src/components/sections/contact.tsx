@@ -140,7 +140,7 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
@@ -153,7 +153,7 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
             Get In Touch
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
@@ -176,7 +176,7 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
             className="perspective-1000"
           >
             <motion.h3 
-              className="text-2xl font-bold mb-6"
+              className="text-lg sm:text-xl md:text-2xl font-bold mb-6"
               variants={itemVariants}
             >
               Contact Information
@@ -306,7 +306,7 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
               className="border-2 border-gray-100 overflow-hidden rounded-3xl"
             >
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-6">Send us a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">

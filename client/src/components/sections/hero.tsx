@@ -107,7 +107,7 @@ export default function Hero() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
               Transform Your <span className="text-yellow">Workforce</span>
             </h1>
           </div>
@@ -120,7 +120,7 @@ export default function Hero() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Elite recruitment solutions connecting exceptional talent with 
               industry-leading organizations across the Middle East and beyond.
             </p>

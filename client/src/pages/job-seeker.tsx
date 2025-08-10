@@ -347,10 +347,10 @@ export default function JobSeekerPage() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-4">
           <div className="text-center space-y-5 sm:space-y-4 md:space-y-6">
-            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight px-2 pt-2 sm:pt-0">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight px-2 pt-2 sm:pt-0">
               Launch Your <span className="text-yellow">Global Career</span>
             </h1>
-            <p className="text-lg sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Connect with premium employers across the Middle East and beyond. 
               Your next career opportunity awaits.
             </p>
