@@ -214,9 +214,9 @@ export default function Hero() {
           {/* Certificate Background Graphics */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Enhanced Live Moving Floating Circles - More Visible */}
-            <div className="absolute top-8 right-1/4 w-48 h-48 bg-gradient-to-r from-yellow-200/25 to-yellow-300/35 rounded-full blur-2xl animate-floatMoveEnhanced"></div>
+            <div className="absolute top-16 right-1/3 w-48 h-48 bg-gradient-to-r from-yellow-200/25 to-yellow-300/35 rounded-full blur-2xl animate-floatMoveEnhanced"></div>
             <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-blue-200/18 to-cyan-200/28 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '1s'}}></div>
-            <div className="absolute bottom-12 left-1/5 w-56 h-56 bg-gradient-to-r from-orange-200/18 to-yellow-200/30 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-20 left-1/4 w-52 h-52 bg-gradient-to-r from-orange-200/18 to-yellow-200/30 rounded-full blur-3xl animate-floatMoveEnhanced" style={{animationDelay: '2s'}}></div>
             <div className="absolute bottom-8 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/18 to-pink-200/28 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
             
             {/* Additional Enhanced Floating Elements */}
@@ -225,7 +225,7 @@ export default function Hero() {
             {/* More Colorful Elements for Empty Spaces */}
             <div className="absolute top-4 left-1/3 w-36 h-36 bg-gradient-to-r from-indigo-200/15 to-violet-200/25 rounded-full blur-2xl animate-pulseEnhanced" style={{animationDelay: '2.5s'}}></div>
 
-            <div className="absolute top-32 left-1/3 w-40 h-40 bg-gradient-to-r from-amber-200/20 to-yellow-200/30 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '3.5s'}}></div>
+            <div className="absolute top-40 left-2/5 w-40 h-40 bg-gradient-to-r from-amber-200/20 to-yellow-200/30 rounded-full blur-2xl animate-floatMoveEnhanced" style={{animationDelay: '3.5s'}}></div>
 
             <div className="absolute top-40 left-1/2 w-18 h-18 bg-gradient-to-r from-fuchsia-200/18 to-purple-200/28 rounded-full blur-lg animate-rotateEnhanced" style={{animationDelay: '5s'}}></div>
             <div className="absolute bottom-32 right-1/5 w-22 h-22 bg-gradient-to-r from-sky-200/15 to-blue-200/25 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '6s'}}></div>
