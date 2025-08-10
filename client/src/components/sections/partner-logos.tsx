@@ -140,7 +140,7 @@ export default function PartnerLogos() {
   }, [isUserScrolling]);
 
   return (
-    <section className="py-12 bg-gradient-to-r from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section className="py-8 bg-gradient-to-r from-gray-50 via-white to-gray-50 overflow-hidden">
       <div 
         ref={titleRef}
         className={`
