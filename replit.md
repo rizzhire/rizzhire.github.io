@@ -111,6 +111,9 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Gmail Integration**: Clicking email options opens Gmail composer with pre-filled recipient, subject, and template
 - **Professional Design**: Ultra-rounded dialog (40px border radius) with descriptive text and category icons
 - **Enhanced User Experience**: Clear category descriptions help users choose appropriate contact method
+- **Contact Page Integration**: Added same email selector functionality to "Email Us" card on Contact page
+- **Consistent UX**: Email dialog on Contact page matches phone selector design with categorized options
+- **Employer/Candidate Separation**: Clear distinction between business inquiries and candidate support emails
 
 ### Services Page Animation Enhancement (August 10, 2025)
 - **Sophisticated Scroll Animations**: Implemented gold standard timing across all Services page sections

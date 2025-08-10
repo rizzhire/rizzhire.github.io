@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Briefcase, GraduationCap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 
@@ -19,7 +20,32 @@ export default function Contact() {
     message: ""
   });
   const [showPhoneOptions, setShowPhoneOptions] = useState(false);
+  const [isEmailDialogOpen, setIsEmailDialogOpen] = useState(false);
   const { toast } = useToast();
+
+  const emailOptions = [
+    {
+      category: "For Employers",
+      email: "business@hirenet.in",
+      description: "Business inquiries, partnerships, and employer services",
+      icon: Briefcase
+    },
+    {
+      category: "For Candidates", 
+      email: "contact@hirenet.in",
+      description: "Career guidance, job applications, and general support",
+      icon: GraduationCap
+    }
+  ];
+
+  const handleEmailSelect = (email: string) => {
+    const subject = "Inquiry from HireNET Website - Contact Page";
+    const body = "Hello HireNET Team,\n\nI would like to inquire about your services.\n\nBest regards,";
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.open(gmailLink, '_blank');
+    setIsEmailDialogOpen(false);
+  };
 
   const contactInfo = [
     {
@@ -262,48 +288,61 @@ export default function Contact() {
               {(() => {
                 const EmailIcon = contactInfo[2].icon;
                 
-                const handleEmailClick = () => {
-                  const email = 'contact@hirenet.in';
-                  const subject = 'Inquiry from HireNET Website';
-                  const body = 'Hello HireNET Team,\n\nI would like to inquire about your services.\n\nThank you.';
-                  
-                  // Check if it's mobile device
-                  const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                  
-                  if (isMobile) {
-                    // For mobile: Use mailto to open native email app
-                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                  } else {
-                    // For desktop: Try Gmail web interface first, fallback to mailto
-                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    const popup = window.open(gmailUrl, '_blank');
-                    
-                    // Fallback to mailto if popup is blocked
-                    if (!popup) {
-                      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    }
-                  }
-                };
-                
                 return (
-                  <Card 
-                    className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-purple/10 transition-all duration-300 group"
-                    onClick={handleEmailClick}
-                  >
-                    <CardContent className="p-0 relative z-10">
-                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
-                        <EmailIcon className="w-6 h-6" />
+                  <Dialog open={isEmailDialogOpen} onOpenChange={setIsEmailDialogOpen}>
+                    <DialogTrigger asChild>
+                      <Card 
+                        className="text-center p-4 bg-gradient-to-br from-white via-purple-50/30 to-purple-100/20 border-2 border-purple-200/50 backdrop-blur-sm relative overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-purple/10 transition-all duration-300 group"
+                        onClick={() => setIsEmailDialogOpen(true)}
+                      >
+                        <CardContent className="p-0 relative z-10">
+                          <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 ${contactInfo[2].color} mb-3`}>
+                            <EmailIcon className="w-6 h-6" />
+                          </div>
+                          <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
+                          <div className="space-y-1">
+                            {contactInfo[2].details.map((detail, idx) => (
+                              <p key={idx} className="text-gray-600 text-xs leading-normal" 
+                                 dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
+                              </p>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </DialogTrigger>
+                    <DialogContent style={{ borderRadius: '40px' }} className="max-w-md">
+                      <DialogHeader>
+                        <DialogTitle>Select Email Category</DialogTitle>
+                        <DialogDescription>
+                          Choose the appropriate email for your inquiry
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="space-y-4">
+                        {emailOptions.map((option, index) => {
+                          const IconComponent = option.icon;
+                          return (
+                            <Button
+                              key={index}
+                              onClick={() => handleEmailSelect(option.email)}
+                              className="w-full justify-start text-left p-6 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow rounded-2xl"
+                              data-testid={`button-email-${option.category.toLowerCase().replace(' ', '-')}`}
+                            >
+                              <div className="flex items-start space-x-4">
+                                <div className="w-10 h-10 bg-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+                                  <IconComponent className="w-5 h-5 text-black" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                  <div className="font-semibold text-lg mb-1">{option.category}</div>
+                                  <div className="font-medium text-base text-gray-800 mb-2">{option.email}</div>
+                                  <div className="text-sm text-gray-600">{option.description}</div>
+                                </div>
+                              </div>
+                            </Button>
+                          );
+                        })}
                       </div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 tracking-tight">{contactInfo[2].title}</h3>
-                      <div className="space-y-1">
-                        {contactInfo[2].details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 text-xs leading-normal" 
-                             dangerouslySetInnerHTML={{ __html: detail.text || '' }}>
-                          </p>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                    </DialogContent>
+                  </Dialog>
                 );
               })()}
 
