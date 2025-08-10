@@ -220,7 +220,6 @@ export default function Hero() {
             <div className="absolute bottom-8 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-200/18 to-pink-200/28 rounded-full blur-xl animate-rotateEnhanced" style={{animationDelay: '1.5s'}}></div>
             
             {/* Additional Enhanced Floating Elements */}
-            <div className="absolute bottom-20 right-20 w-20 h-20 bg-gradient-to-r from-emerald-200/20 to-green-200/30 rounded-full blur-lg animate-pulseEnhanced" style={{animationDelay: '3s'}}></div>
             <div className="absolute top-20 right-8 w-16 h-16 bg-gradient-to-r from-rose-200/18 to-red-200/28 rounded-full blur-md animate-floatMoveEnhanced" style={{animationDelay: '4s'}}></div>
             
             {/* More Colorful Elements for Empty Spaces */}
