@@ -3,8 +3,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function About() {
+  const [isQuoteVisible, setIsQuoteVisible] = useState(false);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  const quoteText = "We believe that the right person in the right role can transform not just careers, but entire organizations. Our mission is to make those transformative connections happen.";
+
+  useEffect(() => {
+    if (isQuoteVisible && displayedText.length < quoteText.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText(quoteText.slice(0, displayedText.length + 1));
+      }, 30); // Typing speed
+      return () => clearTimeout(timer);
+    } else if (displayedText.length === quoteText.length && !isTypingComplete) {
+      setTimeout(() => setIsTypingComplete(true), 500); // Wait before showing attribution
+    }
+  }, [isQuoteVisible, displayedText, quoteText, isTypingComplete]);
 
   const values = [
     {
@@ -270,22 +287,39 @@ export default function About() {
           <motion.div 
             className="bg-gradient-to-r from-yellow/10 to-transparent rounded-3xl p-8 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-              delay: 0.4
+            whileInView={{ 
+              opacity: 1, 
+              y: 0, 
+              scale: 1,
+              transition: {
+                duration: 0.8, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.4
+              }
             }}
+            onViewportEnter={() => setIsQuoteVisible(true)}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
           >
             <p className="text-gray-600 sacramento-quote font-normal text-[26px]" style={{fontSize: '22px', letterSpacing: '0.5px'}}>
-              "We believe that the right person in the right role can transform not just careers, 
-              but entire organizations. Our mission is to make those transformative connections happen."
+              "{displayedText}<span className="animate-pulse">|</span>"
             </p>
-            <div className="text-yellow font-semibold mt-6">- HireNET Leadership Team</div>
+            <motion.div 
+              className="text-yellow font-semibold mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isTypingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ 
+                duration: 0.6, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+            >
+              - HireNET Leadership Team
+            </motion.div>
           </motion.div>
         </div>
       </section>
