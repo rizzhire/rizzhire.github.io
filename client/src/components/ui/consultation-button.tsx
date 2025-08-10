@@ -65,7 +65,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           className={`
             relative bg-black w-12 h-12 rounded-full
             flex items-center justify-center
-            transition-all duration-500 ease-out
+            transition-all duration-200 ease-out
             ${isHovered 
               ? '-ml-2 translate-x-8 translate-y-2 scale-110' 
               : '-ml-6'
@@ -77,7 +77,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2
             w-6 h-1 bg-black
-            transform transition-all duration-300 ease-out origin-left
+            transform transition-all duration-150 ease-out origin-left
             ${isHovered 
               ? 'scale-x-0 opacity-0' 
               : 'scale-x-100 opacity-100'
@@ -88,7 +88,7 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
           <div className={`
             absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2
             w-4 h-6 bg-black
-            transform transition-all duration-300 ease-out
+            transform transition-all duration-150 ease-out
             ${isHovered 
               ? 'scale-0 opacity-0 rotate-45' 
               : 'scale-100 opacity-100'
