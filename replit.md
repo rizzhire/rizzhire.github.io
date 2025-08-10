@@ -105,6 +105,13 @@ The application employs a full-stack architecture built with React, Express.js, 
 - **Homepage**: Shows both "business@hirenet.in" and "contact@hirenet.in" in Get in Touch section (preserved existing setup)
 - **Dynamic Content**: Contact component now accepts emailMode prop ('single' or 'both') to control email display
 
+### Email Selector Dialog Implementation (August 10, 2025)
+- **Interactive Email Section**: Email section now opens dialog selector on click (similar to phone selector)
+- **Categorized Email Options**: Two categories - "For Employers" (business@hirenet.in) and "For Job Seekers" (contact@hirenet.in)
+- **Gmail Integration**: Clicking email options opens Gmail composer with pre-filled recipient, subject, and template
+- **Professional Design**: Ultra-rounded dialog (40px border radius) with descriptive text and category icons
+- **Enhanced User Experience**: Clear category descriptions help users choose appropriate contact method
+
 ### Services Page Animation Enhancement (August 10, 2025)
 - **Sophisticated Scroll Animations**: Implemented gold standard timing across all Services page sections
 - **Page Load Animations**: Added smooth entrance effects when navigating to the page

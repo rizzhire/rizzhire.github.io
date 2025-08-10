@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Circle } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
+import { Mail, Phone, MapPin, Circle, Briefcase, GraduationCap } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
@@ -19,6 +20,32 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
     phone: '',
     message: ''
   });
+
+  const [isEmailDialogOpen, setIsEmailDialogOpen] = useState(false);
+
+  const emailOptions = [
+    {
+      category: "For Employers",
+      email: "business@hirenet.in",
+      description: "Business inquiries, partnerships, and employer services",
+      icon: Briefcase
+    },
+    {
+      category: "For Job Seekers",
+      email: "contact@hirenet.in", 
+      description: "Career guidance, job applications, and general support",
+      icon: GraduationCap
+    }
+  ];
+
+  const handleEmailSelect = (email: string) => {
+    const subject = "Inquiry from HireNET Website";
+    const body = "Hello HireNET Team,\n\nI would like to inquire about your services.\n\nBest regards,";
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.open(gmailLink, '_blank');
+    setIsEmailDialogOpen(false);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,33 +208,70 @@ export default function Contact({ emailMode = 'both' }: ContactProps) {
             </motion.h3>
             
             <div className="space-y-6">
-              <motion.div 
-                className="flex items-center group cursor-pointer"
-                variants={itemVariants}
-                whileHover={{ 
-                  x: 4,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div 
-                  className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
-                  }}
-                >
-                  <Mail className="h-6 w-6 text-black" />
-                </motion.div>
-                <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-600 whitespace-pre-line">
-                    {emailTypewriter.displayText}
-                    {emailTypewriter.isTyping && (
-                      <span className="animate-pulse text-yellow">|</span>
-                    )}
-                  </p>
-                </div>
-              </motion.div>
+              <Dialog open={isEmailDialogOpen} onOpenChange={setIsEmailDialogOpen}>
+                <DialogTrigger asChild>
+                  <motion.div 
+                    className="flex items-center group cursor-pointer"
+                    variants={itemVariants}
+                    whileHover={{ 
+                      x: 4,
+                      transition: { duration: 0.2 }
+                    }}
+                    onClick={() => setIsEmailDialogOpen(true)}
+                  >
+                    <motion.div 
+                      className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center mr-4"
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: "0 4px 15px rgba(245, 215, 66, 0.3)"
+                      }}
+                    >
+                      <Mail className="h-6 w-6 text-black" />
+                    </motion.div>
+                    <div>
+                      <h4 className="font-semibold">Email</h4>
+                      <p className="text-gray-600 whitespace-pre-line">
+                        {emailTypewriter.displayText}
+                        {emailTypewriter.isTyping && (
+                          <span className="animate-pulse text-yellow">|</span>
+                        )}
+                      </p>
+                    </div>
+                  </motion.div>
+                </DialogTrigger>
+                <DialogContent style={{ borderRadius: '40px' }} className="max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Select Email Category</DialogTitle>
+                    <DialogDescription>
+                      Choose the appropriate email for your inquiry
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    {emailOptions.map((option, index) => {
+                      const IconComponent = option.icon;
+                      return (
+                        <Button
+                          key={index}
+                          onClick={() => handleEmailSelect(option.email)}
+                          className="w-full justify-start text-left p-6 h-auto bg-gray-50 hover:bg-yellow/20 text-black border border-gray-200 hover:border-yellow rounded-2xl"
+                          data-testid={`button-email-${option.category.toLowerCase().replace(' ', '-')}`}
+                        >
+                          <div className="flex items-start space-x-4">
+                            <div className="w-10 h-10 bg-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+                              <IconComponent className="w-5 h-5 text-black" />
+                            </div>
+                            <div className="flex-1 text-left">
+                              <div className="font-semibold text-lg mb-1">{option.category}</div>
+                              <div className="font-medium text-base text-gray-800 mb-2">{option.email}</div>
+                              <div className="text-sm text-gray-600">{option.description}</div>
+                            </div>
+                          </div>
+                        </Button>
+                      );
+                    })}
+                  </div>
+                </DialogContent>
+              </Dialog>
 
               <motion.div 
                 className="flex items-center group cursor-pointer"
