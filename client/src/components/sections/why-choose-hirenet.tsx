@@ -138,7 +138,7 @@ export default function WhyChooseHireNet() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium Header Section */}
-        <div ref={sectionRef} className="text-center mb-20 pt-8">
+        <div className="text-center mb-20 pt-8">
           <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full border border-yellow/20 mb-6">
             <Star className="w-4 h-4 text-yellow fill-yellow" />
             <span className="text-sm font-medium text-gray-700">Premium Career Services</span>
@@ -155,7 +155,7 @@ export default function WhyChooseHireNet() {
         </div>
 
         {/* Premium Feature Cards - Square Masonry Layout */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
+        <div ref={sectionRef} className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
           {/* Left Side - Square Card (Global Placement Opportunities) */}
           <div className={`group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-yellow/10 hover:-translate-y-2 flex flex-col justify-center items-center overflow-hidden aspect-square ${isVisible ? 'animate-pop-in' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '0.3s' : '0s' }}>
             {/* Subtle gradient overlay */}
@@ -242,6 +242,16 @@ export default function WhyChooseHireNet() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Call to Action Button */}
+        <div className="text-center mb-300">
+          <Button
+            size="lg"
+            className="bg-yellow hover:bg-yellow/90 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow/25"
+          >
+            Start Your Career Journey
+          </Button>
         </div>
       </div>
     </section>
