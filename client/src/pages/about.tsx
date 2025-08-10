@@ -191,7 +191,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-2 max-w-lg mx-auto">
+          <div className="grid grid-cols-2 gap-2 max-w-md mx-auto">
             {values.map((value, index) => (
               <motion.div
                 key={index}
