@@ -3,7 +3,7 @@ import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="relative py-20 px-4 bg-cream overflow-hidden">
+    <section className="relative py-12 px-4 bg-cream overflow-hidden">
       {/* Light Background Graphics */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Live Moving Floating Circles */}
