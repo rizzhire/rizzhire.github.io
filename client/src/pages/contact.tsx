@@ -44,7 +44,7 @@ export default function Contact() {
       icon: Mail,
       title: "Email Us",
       details: [
-        { text: "contact@hirenet.in" }
+        { text: "business@hirenet.in\ncontact@hirenet.in" }
       ],
       color: "text-purple-600"
     },
