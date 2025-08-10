@@ -122,12 +122,32 @@ export default function Contact() {
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
             Get In <span className="text-yellow">Touch</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+            transition={{ 
+              duration: 0.4, 
+              delay: 0.4,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
             Ready to transform your career or find the perfect talent? Let's start a conversation.
-          </p>
+          </motion.p>
         </div>
       </section>
 
