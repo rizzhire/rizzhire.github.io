@@ -14,6 +14,8 @@ export default function ConsultationButton({ className = "" }: ConsultationButto
   const handleClick = () => {
     setIsClicked(true);
     setTimeout(() => setIsClicked(false), 600);
+    // Redirect to Calendly
+    window.open('https://calendly.com/contact-hirenet', '_blank');
   };
 
   return (
