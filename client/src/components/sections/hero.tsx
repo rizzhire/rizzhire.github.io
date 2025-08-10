@@ -25,10 +25,7 @@ export default function Hero() {
     threshold: 0.1, 
     rootMargin: '0px 0px -200px 0px' 
   });
-  const certificationAnimation = useScrollAnimation({ 
-    threshold: 0.05, 
-    rootMargin: '50px' 
-  });
+
 
   return (
     <section id="home" className="relative h-auto cream overflow-hidden">
@@ -205,49 +202,21 @@ export default function Hero() {
         </div>
 
         {/* Government Certification Section */}
-        <div 
-          ref={certificationAnimation.elementRef}
-          className="mt-16 pt-12 border-t border-gray-200/50"
-        >
+        <div className="mt-16 pt-12 border-t border-gray-200/50">
           <div className="max-w-4xl mx-auto">
-            <div 
-              className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg transition-all duration-[3500ms] ease-[cubic-bezier(0.08,0.82,0.17,1)] hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer ${
-                certificationAnimation.isVisible 
-                  ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-2 scale-[0.99]'
-              }`}
-              style={{
-                transitionDelay: certificationAnimation.isVisible ? '200ms' : '0ms'
-              }}
-            >
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 shadow-lg hover:shadow-xl hover:scale-[1.005] hover:-translate-y-0.5 hover:bg-white/90 cursor-pointer transition-all duration-300">
               <div className="flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
                 {/* Indian Government Emblem - Full Height */}
                 <div className="flex-shrink-0 h-full flex items-center">
                   <img 
                     src={indianEmblemImage} 
                     alt="Government of India Emblem" 
-                    className={`h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1] transition-all duration-[3500ms] ease-[cubic-bezier(0.08,0.82,0.17,1)] ${
-                      certificationAnimation.isVisible 
-                        ? 'opacity-100 translate-x-0 scale-100' 
-                        : 'opacity-0 -translate-x-1.5 scale-[0.98]'
-                    }`}
-                    style={{
-                      transitionDelay: certificationAnimation.isVisible ? '400ms' : '0ms'
-                    }}
+                    className="h-48 w-auto object-contain filter sepia-[.8] hue-rotate-[40deg] saturate-[1.8] brightness-[1.1]"
                   />
                 </div>
 
                 {/* Certification Text */}
-                <div 
-                  className={`flex-1 text-center md:text-left transition-all duration-[3500ms] ease-[cubic-bezier(0.08,0.82,0.17,1)] ${
-                    certificationAnimation.isVisible 
-                      ? 'opacity-100 translate-x-0' 
-                      : 'opacity-0 translate-x-1.5'
-                  }`}
-                  style={{
-                    transitionDelay: certificationAnimation.isVisible ? '600ms' : '0ms'
-                  }}
-                >
+                <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                     Approved By <span className="text-yellow">Government Of India</span>
                   </h3>
@@ -261,17 +230,8 @@ export default function Hero() {
                 </div>
 
                 {/* Verification Badge */}
-                <div 
-                  className={`flex-shrink-0 transition-all duration-[3500ms] ease-[cubic-bezier(0.08,0.82,0.17,1)] ${
-                    certificationAnimation.isVisible 
-                      ? 'opacity-100 translate-x-0 scale-100' 
-                      : 'opacity-0 translate-x-2 scale-[0.98]'
-                  }`}
-                  style={{
-                    transitionDelay: certificationAnimation.isVisible ? '800ms' : '0ms'
-                  }}
-                >
-                  <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-1000 ease-[cubic-bezier(0.08,0.82,0.17,1)] cursor-pointer">
+                <div className="flex-shrink-0">
+                  <div className="bg-gradient-to-r from-yellow/20 to-yellow/30 rounded-2xl px-4 py-3 border border-yellow/30 hover:from-yellow/30 hover:to-yellow/40 hover:scale-[1.01] transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                       <span className="text-sm font-semibold text-gray-800">Verified</span>
