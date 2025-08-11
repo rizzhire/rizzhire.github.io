@@ -10,7 +10,7 @@ export default function SuccessStories() {
     queryKey: ['/api/testimonials'],
   });
 
-  const { containerRef, visibleItems } = useStaggeredAnimation(testimonials?.length || 3, 100);
+  const { containerRef, visibleItems } = useStaggeredAnimation(testimonials?.length || 3, 50);
 
   return (
     <section className="py-20 cream">

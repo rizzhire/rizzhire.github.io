@@ -68,8 +68,8 @@ export function useStaggeredAnimation(itemCount: number, delay: number = 100) {
         }
       },
       {
-        threshold: 0.05,
-        rootMargin: '0px 0px 300px 0px'
+        threshold: 0.01,
+        rootMargin: '0px 0px 400px 0px'
       }
     );
 
