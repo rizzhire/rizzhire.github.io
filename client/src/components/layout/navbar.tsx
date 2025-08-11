@@ -63,7 +63,7 @@ export default function Navbar() {
         {/* Desktop Layout */}
         <div className="hidden md:flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
-            <div className="text-white font-bold text-2xl">HireNET</div>
+            <div className="text-white font-bold text-3xl">HireNET</div>
             <div className="flex space-x-6">
               <button 
                 onClick={navigateHome}
@@ -125,7 +125,7 @@ export default function Navbar() {
           </button>
           
           {/* Center: Logo */}
-          <div className="text-white font-bold text-2xl absolute left-1/2 transform -translate-x-1/2">
+          <div className="text-white font-bold text-3xl absolute left-1/2 transform -translate-x-1/2">
             HireNET
           </div>
           
