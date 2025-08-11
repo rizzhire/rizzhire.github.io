@@ -223,15 +223,15 @@ export default function LearnMore() {
                     )}
                     
                     {/* Content Card - Compact */}
-                    <div className={`w-full md:w-7/12 ${index % 2 === 0 ? 'pr-3 md:pr-4' : 'pl-3 md:pl-4'}`}>
+                    <div className={`w-full md:w-9/12 ${index % 2 === 0 ? 'pr-2 md:pr-3' : 'pl-2 md:pl-3'}`}>
                       <div className="relative">
-                        <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-400 group-hover:-translate-y-2 group-hover:border-yellow/30">
+                        <div className="bg-white rounded-2xl p-4 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-400 group-hover:-translate-y-2 group-hover:border-yellow/30">
                           {/* Decorative Elements - Smaller */}
                           <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow rounded-full opacity-20"></div>
                           <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-yellow/30 rounded-full"></div>
                           
                           {/* Year Badge - Compact */}
-                          <div className="inline-flex items-center mb-4">
+                          <div className="inline-flex items-center mb-3">
                             <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow via-yellow to-yellow/80 text-black font-bold text-lg rounded-xl shadow-md mr-3">
                               {milestone.year.slice(-2)}
                             </div>
@@ -242,10 +242,10 @@ export default function LearnMore() {
                           </div>
                           
                           {/* Content - Compact */}
-                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow transition-colors duration-300">
+                          <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-yellow transition-colors duration-300">
                             {milestone.title}
                           </h3>
-                          <p className="text-gray-600 leading-relaxed text-base">
+                          <p className="text-gray-600 leading-relaxed text-sm">
                             {milestone.description}
                           </p>
                           
@@ -271,7 +271,7 @@ export default function LearnMore() {
                     </div>
                     
                     {/* Spacer */}
-                    <div className="w-full md:w-4/12"></div>
+                    <div className="w-full md:w-2/12"></div>
                   </motion.div>
                 ))}
               </div>
