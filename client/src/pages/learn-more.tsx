@@ -117,15 +117,7 @@ export default function LearnMore() {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Bridging <span className="text-yellow">Talent</span> & <span className="text-yellow">Opportunity</span>
-              </h2>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
-                Founded with a vision to bridge the gap between exceptional talent and leading organizations, 
-                HireNET has evolved into the Middle East's premier recruitment consultancy.
-              </p>
-            </motion.div>
+
 
             <motion.div variants={fadeInUp} className="max-w-5xl mx-auto">
               <h3 className="text-3xl font-bold mb-8 text-gray-900">Our Mission</h3>
