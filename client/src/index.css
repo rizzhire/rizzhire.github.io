@@ -662,7 +662,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   /* Photo-swipe style testimonial slider */
   .testimonial-slider-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     height: 400px;
     margin: 0 auto;
     position: relative;
@@ -717,7 +717,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   @media (max-width: 768px) {
     .testimonial-slider-container {
       width: 100%;
-      max-width: 320px;
+      max-width: 500px;
       height: 380px;
     }
     
@@ -737,7 +737,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   @media (max-width: 480px) {
     .testimonial-slider-container {
       width: 100%;
-      max-width: 280px;
+      max-width: 350px;
       height: 360px;
     }
     
