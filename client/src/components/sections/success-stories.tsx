@@ -97,6 +97,39 @@ export default function SuccessStories() {
           </p>
         </div>
 
+        {/* Desktop: Three Cards in Row */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.slice(0, 3).map((testimonial, index) => (
+              <Card key={testimonial.id} className="bg-white p-6 rounded-3xl border-0 h-auto">
+                <CardContent className="p-0">
+                  {/* Avatar placeholder */}
+                  <div className="flex items-start mb-4">
+                    <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-white font-semibold">{testimonial.initials}</span>
+                    </div>
+                    <div className="flex text-yellow">
+                      {Array(testimonial.rating).fill(0).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <blockquote className="text-gray-700 mb-6 italic text-sm leading-relaxed">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div>
+                    <div className="font-bold text-gray-900 text-base">{testimonial.name}</div>
+                    <div className="text-gray-600 text-sm">{testimonial.position}</div>
+                    <div className="text-gray-600 text-sm">{testimonial.company}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Mobile: Touch Swipe Carousel */}
         <div className="md:hidden">
           <div 
@@ -136,43 +169,6 @@ export default function SuccessStories() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Desktop: Horizontal Scroll Layout */}
-        <div className="hidden md:block py-8">
-          <div 
-            className="flex gap-8 overflow-x-auto pb-4"
-            style={{ 
-              scrollbarWidth: 'thin',
-              scrollbarColor: '#f59e0b #f3f4f6'
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={testimonial.id} 
-                className="flex-shrink-0 w-80"
-              >
-                <Card className="bg-white p-8 rounded-3xl border-0 h-80">
-                  <CardContent className="p-0">
-                    <div className="flex text-yellow mb-4">
-                      {Array(testimonial.rating).fill(0).map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current" />
-                      ))}
-                    </div>
-                    <blockquote className="text-gray-700 mb-4 italic text-lg">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div>
-                      <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-                      <div className="text-gray-600 font-medium">{testimonial.position}</div>
-                      <div className="text-gray-600">{testimonial.company}</div>
-                      <div className="text-gray-500 text-sm">{testimonial.location}</div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
           </div>
         </div>
 
