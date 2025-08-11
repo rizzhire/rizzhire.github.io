@@ -650,6 +650,14 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       transparent 100%
     );
   }
+  
+  /* Remove mask/blur edges on mobile screens */
+  @media (max-width: 768px) {
+    .testimonials-container {
+      -webkit-mask: none;
+      mask: none;
+    }
+  }
 
   /* Responsive Typography */
   .fluid-text-xl {
