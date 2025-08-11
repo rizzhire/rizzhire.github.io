@@ -22,7 +22,7 @@ export default function SuccessStories() {
     const observerOptions = {
       root: scrollContainer,
       rootMargin: '0px',
-      threshold: 0.5
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -51,7 +51,7 @@ export default function SuccessStories() {
     return {
       transform: `scale(${scale})`,
       opacity,
-      transition: 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease-out'
+      transition: 'transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-out'
     };
   }, [currentIndex]);
 
