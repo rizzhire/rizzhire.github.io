@@ -107,7 +107,7 @@ export default function Navbar() {
           <div>
             <Button 
               onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
-              className="bg-yellow text-black px-6 py-1.5 rounded-xl font-medium hover:bg-yellow/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transform active:scale-95"
+              className="bg-yellow text-black px-6 py-1 rounded-xl font-bold hover:bg-yellow/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transform active:scale-95"
             >
               {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
             </Button>
@@ -132,7 +132,7 @@ export default function Navbar() {
           {/* Right: For Job Seeker Button */}
           <Button 
             onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
-            className="bg-yellow text-black px-2 py-0.5 rounded-xl font-medium hover:bg-yellow/90 transition-all duration-300 text-xs"
+            className="bg-yellow text-black px-2 py-0 rounded-xl font-bold hover:bg-yellow/90 transition-all duration-300 text-xs"
           >
             {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
           </Button>
