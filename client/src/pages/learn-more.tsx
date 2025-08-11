@@ -209,7 +209,7 @@ export default function LearnMore() {
                       delay: index * 0.1,
                       ease: [0.25, 0.1, 0.25, 1]
                     }}
-                    className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group relative`}
+                    className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} group relative`}
                   >
                     {/* Milestone-specific Subtle Lines */}
                     {(milestone.title.includes("Regional Expansion") || 
@@ -223,7 +223,7 @@ export default function LearnMore() {
                     )}
                     
                     {/* Content Card - Compact */}
-                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'pr-4 md:pr-8' : 'pl-4 md:pl-8'}`}>
                       <div className="relative">
                         <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-400 group-hover:-translate-y-2 group-hover:border-yellow/30">
                           {/* Decorative Elements - Smaller */}
