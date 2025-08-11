@@ -1006,26 +1006,26 @@ export default function JobSeekerPage() {
             <div className="testimonial-slider" id="testimonialSlider">
               {jobSeekerTestimonials.map((testimonial, index) => (
                 <div key={testimonial.id} className="testimonial-slide" data-slide={index}>
-                  <Card className="testimonial-card bg-white p-6 rounded-3xl border-0 shadow-lg w-[350px] h-[400px]">
-                    <CardContent className="p-0 h-full flex flex-col justify-between">
-                      <div className="flex items-center mb-3">
-                        <div className="w-10 h-10 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
-                          <span className="text-black font-bold text-sm">{testimonial.initials}</span>
+                  <Card className="testimonial-card bg-white p-8 rounded-3xl border-0 shadow-lg w-[350px] h-[400px]">
+                    <CardContent className="p-0 h-full flex flex-col">
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
+                          <span className="text-black font-bold text-lg">{testimonial.initials}</span>
                         </div>
                         <div className="flex text-yellow">
                           {Array(testimonial.rating).fill(0).map((_, i) => (
-                            <Star key={i} className="h-3 w-3 fill-current" />
+                            <Star key={i} className="h-4 w-4 fill-current" />
                           ))}
                         </div>
                       </div>
-                      <blockquote className="text-gray-700 italic text-xs leading-relaxed flex-1 overflow-hidden mb-3">
-                        "{testimonial.quote.length > 180 ? testimonial.quote.substring(0, 180) + '...' : testimonial.quote}"
+                      <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
+                        "{testimonial.quote}"
                       </blockquote>
-                      <div className="text-xs space-y-1">
-                        <div className="font-bold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm mt-auto">
+                        <div className="font-bold">{testimonial.name}</div>
                         <div className="text-gray-600">{testimonial.position}</div>
                         <div className="text-gray-600">{testimonial.company}</div>
-                        <div className="text-gray-500 text-[10px]">{testimonial.location}</div>
+                        <div className="text-gray-500 text-xs">{testimonial.location}</div>
                       </div>
                     </CardContent>
                   </Card>

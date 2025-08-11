@@ -707,9 +707,6 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     width: 100%;
     height: 100%;
     pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
   }
   
   .testimonial-slide.active .testimonial-card {
@@ -733,7 +730,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     .testimonial-card {
       width: 320px !important;
       height: 380px !important;
-      padding: 1.25rem !important;
+      padding: 1.5rem !important;
     }
   }
   
