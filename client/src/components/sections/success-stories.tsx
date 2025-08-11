@@ -150,44 +150,61 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        {/* Single Slide Container - ONLY ONE SLIDE VISIBLE */}
-        <div className="flex justify-center items-center py-8">
+        {/* Horizontal Testimonials Container */}
+        <div 
+          ref={containerRef}
+          className="overflow-hidden w-full py-8"
+        >
           <div 
-            ref={containerRef}
-            className="w-80 h-80 cursor-pointer select-none"
-            key={currentIndex} // Force re-render on slide change
+            className="flex w-full"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+              width: `${testimonials.length * 100}%`
+            }}
           >
             {isLoading ? (
-              <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full">
-                <CardContent className="p-0">
-                  <Skeleton className="w-20 h-6 mb-6" />
-                  <Skeleton className="h-4 w-full mb-2" />
-                  <Skeleton className="h-4 w-3/4 mb-6" />
-                  <Skeleton className="h-6 w-1/2 mb-2" />
-                  <Skeleton className="h-4 w-3/4 mb-1" />
-                  <Skeleton className="h-4 w-1/2 mb-1" />
-                  <Skeleton className="h-4 w-2/3" />
-                </CardContent>
-              </Card>
+              Array(3).fill(0).map((_, index) => (
+                <div key={index} className="w-full flex justify-center px-4" style={{ width: `${100 / testimonials.length}%` }}>
+                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
+                    <CardContent className="p-0">
+                      <Skeleton className="w-20 h-6 mb-6" />
+                      <Skeleton className="h-4 w-full mb-2" />
+                      <Skeleton className="h-4 w-3/4 mb-6" />
+                      <Skeleton className="h-6 w-1/2 mb-2" />
+                      <Skeleton className="h-4 w-3/4 mb-1" />
+                      <Skeleton className="h-4 w-1/2 mb-1" />
+                      <Skeleton className="h-4 w-2/3" />
+                    </CardContent>
+                  </Card>
+                </div>
+              ))
             ) : (
-              <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full flex flex-col justify-between transform transition-all duration-200 hover:scale-105">
-                <CardContent className="p-0 flex flex-col h-full">
-                  <div className="flex text-yellow mb-4">
-                    {Array(currentTestimonial.rating).fill(0).map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
-                    "{currentTestimonial.quote}"
-                  </blockquote>
-                  <div className="mt-auto">
-                    <div className="font-bold text-yellow text-lg">{currentTestimonial.name}</div>
-                    <div className="text-gray-600 font-medium">{currentTestimonial.position}</div>
-                    <div className="text-gray-600">{currentTestimonial.company}</div>
-                    <div className="text-gray-500 text-sm">{currentTestimonial.location}</div>
-                  </div>
-                </CardContent>
-              </Card>
+              testimonials.map((testimonial, index) => (
+                <div 
+                  key={testimonial.id} 
+                  className="w-full flex justify-center px-4"
+                  style={{ width: `${100 / testimonials.length}%` }}
+                >
+                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between">
+                    <CardContent className="p-0 flex flex-col h-full">
+                      <div className="flex text-yellow mb-4">
+                        {Array(testimonial.rating).fill(0).map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-current" />
+                        ))}
+                      </div>
+                      <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div className="mt-auto">
+                        <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
+                        <div className="text-gray-600 font-medium">{testimonial.position}</div>
+                        <div className="text-gray-600">{testimonial.company}</div>
+                        <div className="text-gray-500 text-sm">{testimonial.location}</div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))
             )}
           </div>
         </div>
