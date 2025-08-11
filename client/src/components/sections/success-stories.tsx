@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import type { Testimonial } from "@shared/schema";
 
 export default function SuccessStories() {
@@ -10,65 +10,94 @@ export default function SuccessStories() {
     queryKey: ['/api/testimonials'],
   });
 
-  const [currentIndex, setCurrentIndex] = useState(1); // Start with middle card
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // IntersectionObserver to track which card is in center
+  // Handle scroll events to detect slide changes
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer || !testimonials) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const observerOptions = {
-      root: scrollContainer,
-      rootMargin: '0px',
-      threshold: 0.1
+    const handleScroll = () => {
+      if (isTransitioning) return;
+      
+      const scrollLeft = container.scrollLeft;
+      const slideWidth = container.offsetWidth;
+      const newIndex = Math.round(scrollLeft / slideWidth);
+      
+      if (newIndex !== currentIndex) {
+        setIsTransitioning(true);
+        setCurrentIndex(newIndex);
+        
+        setTimeout(() => {
+          setIsTransitioning(false);
+        }, 400);
+      }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const cardIndex = cardRefs.current.findIndex(ref => ref === entry.target);
-          if (cardIndex !== -1) {
-            setCurrentIndex(cardIndex);
-          }
-        }
-      });
-    }, observerOptions);
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [currentIndex, isTransitioning]);
 
-    cardRefs.current.forEach(card => {
-      if (card) observer.observe(card);
-    });
-
-    return () => observer.disconnect();
-  }, [testimonials]);
-
-  const getCardStyle = useCallback((index: number) => {
-    const distance = Math.abs(index - currentIndex);
+  const renderTestimonialCard = (testimonial: Testimonial, index: number) => {
+    const isActive = index === currentIndex;
+    const isPrev = index === currentIndex - 1;
+    const isNext = index === currentIndex + 1;
     
-    if (distance === 0) {
-      // Current card: full size and visible
-      return {
-        transform: 'scale(1)',
+    let cardStyle = {};
+    
+    if (isActive) {
+      cardStyle = {
+        transform: 'scale(1) translateX(0)',
         opacity: 1,
-        transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out'
+        zIndex: 10
       };
-    } else if (distance === 1) {
-      // Adjacent cards: small and transitioning
-      return {
-        transform: 'scale(0.7)',
-        opacity: 0.4,
-        transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out'
+    } else if (isPrev) {
+      cardStyle = {
+        transform: 'scale(0.6) translateX(-50px)',
+        opacity: 0.2,
+        zIndex: 5
+      };
+    } else if (isNext) {
+      cardStyle = {
+        transform: 'scale(0.6) translateX(50px)',
+        opacity: 0.2,
+        zIndex: 5
       };
     } else {
-      // Far cards: hidden
-      return {
-        transform: 'scale(0.5)',
+      cardStyle = {
+        transform: 'scale(0.3)',
         opacity: 0,
-        transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out'
+        zIndex: 1
       };
     }
-  }, [currentIndex]);
+
+    return (
+      <Card 
+        key={testimonial.id}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between transition-all duration-400 ease-out"
+        style={cardStyle}
+      >
+        <CardContent className="p-0 flex flex-col h-full">
+          <div className="flex text-yellow mb-4">
+            {Array(testimonial.rating).fill(0).map((_, i) => (
+              <Star key={i} className="h-5 w-5 fill-current" />
+            ))}
+          </div>
+          <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
+            "{testimonial.quote}"
+          </blockquote>
+          <div className="mt-auto">
+            <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
+            <div className="text-gray-600 font-medium">{testimonial.position}</div>
+            <div className="text-gray-600">{testimonial.company}</div>
+            <div className="text-gray-500 text-sm">{testimonial.location}</div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
 
   return (
     <section className="py-20 cream">
@@ -80,10 +109,11 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="relative w-full h-96 flex justify-center items-center overflow-hidden">
+        <div className="relative w-full h-96 overflow-hidden">
+          {/* Hidden scroll container for snap behavior */}
           <div 
-            ref={scrollContainerRef}
-            className="flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden w-full"
+            ref={containerRef}
+            className="absolute inset-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -92,51 +122,39 @@ export default function SuccessStories() {
           >
             {isLoading ? (
               Array(3).fill(0).map((_, index) => (
-                <div key={index} className="flex-none w-full snap-center flex justify-center">
-                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
-                    <CardContent className="p-0">
-                      <Skeleton className="w-20 h-6 mb-6" />
-                      <Skeleton className="h-4 w-full mb-2" />
-                      <Skeleton className="h-4 w-3/4 mb-6" />
-                      <Skeleton className="h-6 w-1/2 mb-2" />
-                      <Skeleton className="h-4 w-3/4 mb-1" />
-                      <Skeleton className="h-4 w-1/2 mb-1" />
-                      <Skeleton className="h-4 w-2/3" />
-                    </CardContent>
-                  </Card>
-                </div>
+                <div 
+                  key={index} 
+                  className="inline-block w-full h-full snap-center"
+                  style={{ scrollSnapAlign: 'center' }}
+                />
               ))
             ) : (
-              testimonials?.map((testimonial, index) => (
+              testimonials?.map((_, index) => (
                 <div 
-                  key={testimonial.id} 
-                  className="flex-none w-full snap-center flex justify-center"
+                  key={index} 
+                  className="inline-block w-full h-full snap-center"
                   style={{ scrollSnapAlign: 'center' }}
-                >
-                  <Card 
-                    ref={(el) => cardRefs.current[index] = el}
-                    className="bg-white p-8 rounded-3xl border-0 card-hover w-80 h-80 flex flex-col justify-between"
-                    style={getCardStyle(index)}
-                  >
-                    <CardContent className="p-0 flex flex-col h-full">
-                      <div className="flex text-yellow mb-4">
-                        {Array(testimonial.rating).fill(0).map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-current" />
-                        ))}
-                      </div>
-                      <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
-                        "{testimonial.quote}"
-                      </blockquote>
-                      <div className="mt-auto">
-                        <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-                        <div className="text-gray-600 font-medium">{testimonial.position}</div>
-                        <div className="text-gray-600">{testimonial.company}</div>
-                        <div className="text-gray-500 text-sm">{testimonial.location}</div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                />
               ))
+            )}
+          </div>
+
+          {/* Visible testimonial cards */}
+          <div className="relative w-full h-full">
+            {isLoading ? (
+              <Card className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80">
+                <CardContent className="p-0">
+                  <Skeleton className="w-20 h-6 mb-6" />
+                  <Skeleton className="h-4 w-full mb-2" />
+                  <Skeleton className="h-4 w-3/4 mb-6" />
+                  <Skeleton className="h-6 w-1/2 mb-2" />
+                  <Skeleton className="h-4 w-3/4 mb-1" />
+                  <Skeleton className="h-4 w-1/2 mb-1" />
+                  <Skeleton className="h-4 w-2/3" />
+                </CardContent>
+              </Card>
+            ) : (
+              testimonials?.map((testimonial, index) => renderTestimonialCard(testimonial, index))
             )}
           </div>
         </div>
