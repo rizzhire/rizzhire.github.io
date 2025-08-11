@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
@@ -197,7 +197,48 @@ export default function JobSeekerPage() {
     },
   });
 
+  // Testimonial slider functionality
+  useEffect(() => {
+    const slider = document.getElementById('testimonialSlider');
+    if (!slider) return;
 
+    const updateActiveSlide = () => {
+      const slides = slider.querySelectorAll('.testimonial-slide');
+      const scrollLeft = slider.scrollLeft;
+      const slideWidth = slides[0]?.offsetWidth || 350;
+      const currentIndex = Math.round(scrollLeft / slideWidth);
+
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentIndex);
+      });
+    };
+
+    // Set initial active slide
+    const initTimer = setTimeout(() => updateActiveSlide(), 100);
+
+    // Handle scroll events
+    slider.addEventListener('scroll', updateActiveSlide);
+
+    // Handle mouse wheel for desktop
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const slideWidth = slider.offsetWidth;
+      const scrollAmount = e.deltaY > 0 ? slideWidth : -slideWidth;
+      
+      slider.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    };
+
+    slider.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      clearTimeout(initTimer);
+      slider.removeEventListener('scroll', updateActiveSlide);
+      slider.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   const handleGetUploadParameters = async () => {
     const result = await uploadMutation.mutateAsync();
@@ -961,39 +1002,35 @@ export default function JobSeekerPage() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden">
-            <div className="overflow-x-auto pb-4 scrollbar-hide testimonials-container">
-              <div className="flex gap-6 w-max px-12 py-2">
-                {jobSeekerTestimonials.map((testimonial, index) => (
-                <div key={testimonial.id}>
-                  <Card 
-                    className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] h-[400px] group"
-                  >
-                  <CardContent className="p-0 h-full flex flex-col">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
-                        <span className="text-black font-bold text-lg">{testimonial.initials}</span>
+          <div className="testimonial-slider-container">
+            <div className="testimonial-slider" id="testimonialSlider">
+              {jobSeekerTestimonials.map((testimonial, index) => (
+                <div key={testimonial.id} className="testimonial-slide" data-slide={index}>
+                  <Card className="testimonial-card bg-white p-8 rounded-3xl border-0 shadow-lg w-[350px] h-[400px]">
+                    <CardContent className="p-0 h-full flex flex-col">
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 mr-3 overflow-hidden rounded-2xl border-2 border-yellow/20 bg-yellow flex items-center justify-center">
+                          <span className="text-black font-bold text-lg">{testimonial.initials}</span>
+                        </div>
+                        <div className="flex text-yellow">
+                          {Array(testimonial.rating).fill(0).map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-current" />
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex text-yellow">
-                        {Array(testimonial.rating).fill(0).map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-current" />
-                        ))}
+                      <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div className="text-sm mt-auto">
+                        <div className="font-bold">{testimonial.name}</div>
+                        <div className="text-gray-600">{testimonial.position}</div>
+                        <div className="text-gray-600">{testimonial.company}</div>
+                        <div className="text-gray-500 text-xs">{testimonial.location}</div>
                       </div>
-                    </div>
-                    <blockquote className="text-gray-700 mb-4 italic text-sm flex-1">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div className="text-sm mt-auto">
-                      <div className="font-bold">{testimonial.name}</div>
-                      <div className="text-gray-600">{testimonial.position}</div>
-                      <div className="text-gray-600">{testimonial.company}</div>
-                      <div className="text-gray-500 text-xs">{testimonial.location}</div>
-                    </div>
-                  </CardContent>
+                    </CardContent>
                   </Card>
                 </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -1007,3 +1044,4 @@ export default function JobSeekerPage() {
     </div>
   );
 }
+

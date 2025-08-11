@@ -658,6 +658,98 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       mask: none;
     }
   }
+  
+  /* Photo-swipe style testimonial slider */
+  .testimonial-slider-container {
+    width: 350px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .testimonial-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .testimonial-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .testimonial-slide {
+    flex: 0 0 350px;
+    width: 350px;
+    height: 400px;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  
+  .testimonial-slide.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .testimonial-card {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .testimonial-slide.active .testimonial-card {
+    pointer-events: auto;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .testimonial-slider-container {
+      width: 320px;
+      height: 380px;
+    }
+    
+    .testimonial-slide {
+      flex: 0 0 320px;
+      width: 320px;
+      height: 380px;
+    }
+    
+    .testimonial-card {
+      width: 320px !important;
+      height: 380px !important;
+      padding: 1.5rem !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-slider-container {
+      width: 280px;
+      height: 360px;
+    }
+    
+    .testimonial-slide {
+      flex: 0 0 280px;
+      width: 280px;
+      height: 360px;
+    }
+    
+    .testimonial-card {
+      width: 280px !important;
+      height: 360px !important;
+      padding: 1rem !important;
+    }
+  }
 
   /* Responsive Typography */
   .fluid-text-xl {
