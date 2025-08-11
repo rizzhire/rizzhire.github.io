@@ -45,7 +45,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 cream overflow-hidden">
+      <section className="relative py-12 px-4 cream overflow-hidden">
         {/* Enhanced Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Live Moving Floating Circles */}
