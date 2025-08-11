@@ -110,7 +110,7 @@ export default function About() {
             About <span className="text-yellow">HireNET</span>
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed max-md:mobile-description-lg"
+            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
@@ -255,8 +255,8 @@ export default function About() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="text-yellow">Story</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">Vision of 3 Co-Founders Mr Rizwan Khan, Mr Fidous Hussain and Mr Ali Hussain to bridge the gap between exceptional talent and leading organizations, HireNET has evolved into the Middle East's premier recruitment consultancy.</p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-6">Vision of 3 Co-Founders Mr Rizwan Khan, Mr Fidous Hussain and Mr Ali Hussain to bridge the gap between exceptional talent and leading organizations, HireNET has evolved into the Middle East's premier recruitment consultancy.</p>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-8">
                 Our journey began with a simple belief: every organization deserves access to world-class talent, 
                 and every professional deserves opportunities that match their ambitions.
               </p>
@@ -426,7 +426,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="text-yellow">Values</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
               The principles that guide every decision we make and every relationship we build.
             </p>
           </motion.div>
@@ -473,7 +473,7 @@ export default function About() {
             Our <span className="text-yellow">Mission</span>
           </motion.h2>
           <motion.p 
-            className="text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-gray-600"
+            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-12"
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.1, margin: "0px 0px -200px 0px" }}
