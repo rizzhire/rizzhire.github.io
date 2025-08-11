@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import type { Testimonial } from "@shared/schema";
 
 export default function SuccessStories() {
@@ -10,35 +10,50 @@ export default function SuccessStories() {
     queryKey: ['/api/testimonials'],
   });
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start with middle card
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  // IntersectionObserver to track which card is in center
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
+    if (!scrollContainer || !testimonials) return;
 
-    const handleScroll = () => {
-      const scrollLeft = scrollContainer.scrollLeft;
-      const cardWidth = scrollContainer.offsetWidth;
-      const newIndex = Math.round(scrollLeft / cardWidth);
-      setCurrentIndex(newIndex);
+    const observerOptions = {
+      root: scrollContainer,
+      rootMargin: '0px',
+      threshold: 0.5
     };
 
-    scrollContainer.addEventListener('scroll', handleScroll);
-    return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, []);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const cardIndex = cardRefs.current.findIndex(ref => ref === entry.target);
+          if (cardIndex !== -1) {
+            setCurrentIndex(cardIndex);
+          }
+        }
+      });
+    }, observerOptions);
 
-  const getCardStyle = (index: number) => {
+    cardRefs.current.forEach(card => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, [testimonials]);
+
+  const getCardStyle = useCallback((index: number) => {
     const distance = Math.abs(index - currentIndex);
-    const scale = distance === 0 ? 1 : Math.max(0.8, 1 - distance * 0.2);
-    const opacity = distance === 0 ? 1 : Math.max(0.4, 1 - distance * 0.3);
+    const scale = distance === 0 ? 1 : Math.max(0.75, 1 - distance * 0.25);
+    const opacity = distance === 0 ? 1 : Math.max(0.3, 1 - distance * 0.35);
     
     return {
       transform: `scale(${scale})`,
       opacity,
-      transition: 'all 0.3s ease-out'
+      transition: 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease-out'
     };
-  };
+  }, [currentIndex]);
 
   return (
     <section className="py-20 cream">
@@ -52,17 +67,17 @@ export default function SuccessStories() {
 
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 scrollbar-hide"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 px-8 [&::-webkit-scrollbar]:hidden"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
-            WebkitScrollbarWidth: 'none'
+            scrollSnapType: 'x mandatory'
           }}
         >
           {isLoading ? (
             Array(3).fill(0).map((_, index) => (
-              <div key={index} className="flex-none w-full max-w-lg snap-center">
-                <Card className="bg-white p-8 rounded-3xl border-0 mx-auto w-full">
+              <div key={index} className="flex-none w-[85vw] sm:w-96 snap-center">
+                <Card className="bg-white p-8 rounded-3xl border-0 mx-auto w-full h-80">
                   <CardContent className="p-0">
                     <Skeleton className="w-20 h-6 mb-6" />
                     <Skeleton className="h-4 w-full mb-2" />
@@ -77,23 +92,28 @@ export default function SuccessStories() {
             ))
           ) : (
             testimonials?.map((testimonial, index) => (
-              <div key={testimonial.id} className="flex-none w-full max-w-lg snap-center">
+              <div 
+                key={testimonial.id} 
+                className="flex-none w-[85vw] sm:w-96 snap-center flex justify-center"
+                style={{ scrollSnapAlign: 'center' }}
+              >
                 <Card 
-                  className="bg-white p-8 rounded-3xl border-0 card-hover mx-auto w-full"
+                  ref={(el) => cardRefs.current[index] = el}
+                  className="bg-white p-8 rounded-3xl border-0 card-hover w-full h-80 flex flex-col justify-between"
                   style={getCardStyle(index)}
                 >
-                  <CardContent className="p-0">
-                    <div className="flex text-yellow mb-6">
+                  <CardContent className="p-0 flex flex-col h-full">
+                    <div className="flex text-yellow mb-4">
                       {Array(testimonial.rating).fill(0).map((_, i) => (
                         <Star key={i} className="h-5 w-5 fill-current" />
                       ))}
                     </div>
-                    <blockquote className="text-gray-700 mb-6 italic text-lg">
+                    <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
                       "{testimonial.quote}"
                     </blockquote>
-                    <div>
+                    <div className="mt-auto">
                       <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-                      <div className="text-gray-600">{testimonial.position}</div>
+                      <div className="text-gray-600 font-medium">{testimonial.position}</div>
                       <div className="text-gray-600">{testimonial.company}</div>
                       <div className="text-gray-500 text-sm">{testimonial.location}</div>
                     </div>
@@ -119,11 +139,7 @@ export default function SuccessStories() {
         )}
       </div>
 
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+
     </section>
   );
 }
