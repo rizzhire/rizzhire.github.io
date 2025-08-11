@@ -49,7 +49,7 @@ export default function SuccessStories() {
                     : 'opacity-0 transform translate-y-8'
                   }
                 `}
-                style={{ animationDelay: `${index * 200}ms` }}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
                 <CardContent className="p-0">
                   <div className="flex text-yellow mb-6">

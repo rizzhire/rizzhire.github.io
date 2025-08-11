@@ -59,17 +59,14 @@ export function useStaggeredAnimation(itemCount: number, delay: number = 100) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Staggered animation - reveal items one by one
-          for (let i = 0; i < itemCount; i++) {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, i]);
-            }, i * delay);
-          }
+          // Show all items immediately with minimal delays
+          const allItems = Array.from({ length: itemCount }, (_, i) => i);
+          setVisibleItems(allItems);
         }
       },
       {
         threshold: 0.01,
-        rootMargin: '0px 0px 400px 0px'
+        rootMargin: '0px 0px 500px 0px'
       }
     );
 
