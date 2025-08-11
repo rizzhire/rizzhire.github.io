@@ -42,42 +42,21 @@ export default function SuccessStories() {
 
   const renderTestimonialCard = (testimonial: Testimonial, index: number) => {
     const isActive = index === currentIndex;
-    const isPrev = index === currentIndex - 1;
-    const isNext = index === currentIndex + 1;
     
-    let cardStyle = {};
-    
-    if (isActive) {
-      cardStyle = {
-        transform: 'scale(1) translateX(0)',
-        opacity: 1,
-        zIndex: 10
-      };
-    } else if (isPrev) {
-      cardStyle = {
-        transform: 'scale(0.6) translateX(-50px)',
-        opacity: 0.2,
-        zIndex: 5
-      };
-    } else if (isNext) {
-      cardStyle = {
-        transform: 'scale(0.6) translateX(50px)',
-        opacity: 0.2,
-        zIndex: 5
-      };
-    } else {
-      cardStyle = {
-        transform: 'scale(0.3)',
-        opacity: 0,
-        zIndex: 1
-      };
+    // Only render the active card - hide all others completely
+    if (!isActive) {
+      return null;
     }
 
     return (
       <Card 
         key={testimonial.id}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between transition-all duration-400 ease-out"
-        style={cardStyle}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between transition-all duration-300 ease-out"
+        style={{
+          transform: 'scale(1)',
+          opacity: 1,
+          zIndex: 10
+        }}
       >
         <CardContent className="p-0 flex flex-col h-full">
           <div className="flex text-yellow mb-4">
@@ -109,11 +88,11 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="relative w-full h-96 overflow-hidden">
-          {/* Hidden scroll container for snap behavior */}
+        <div className="relative w-full h-96 flex justify-center items-center">
+          {/* Hidden scroll container for swipe detection */}
           <div 
             ref={containerRef}
-            className="absolute inset-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+            className="absolute inset-0 overflow-x-auto snap-x snap-mandatory opacity-0 pointer-events-auto [&::-webkit-scrollbar]:hidden"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -139,7 +118,7 @@ export default function SuccessStories() {
             )}
           </div>
 
-          {/* Visible testimonial cards */}
+          {/* Single visible testimonial card */}
           <div className="relative w-full h-full">
             {isLoading ? (
               <Card className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80">
@@ -154,7 +133,7 @@ export default function SuccessStories() {
                 </CardContent>
               </Card>
             ) : (
-              testimonials?.map((testimonial, index) => renderTestimonialCard(testimonial, index))
+              testimonials && testimonials[currentIndex] && renderTestimonialCard(testimonials[currentIndex], currentIndex)
             )}
           </div>
         </div>
