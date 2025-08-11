@@ -97,21 +97,55 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        {/* Desktop: Horizontal Scroll, Mobile: Touch Swipe */}
-        <div 
-          ref={containerRef}
-          className="w-full py-8 md:overflow-x-auto md:overflow-y-hidden overflow-hidden md:scrollbar-thin md:scrollbar-track-transparent md:scrollbar-thumb-yellow"
-          style={{ 
-            scrollbarWidth: 'thin',
-            scrollbarColor: '#f59e0b transparent'
-          }}
-        >
+        {/* Mobile: Touch Swipe Carousel */}
+        <div className="md:hidden">
           <div 
-            className="flex gap-6 md:gap-8 md:px-4"
-            style={{
-              transform: window.innerWidth <= 768 ? `translateX(-${currentIndex * 340}px)` : 'none',
-              transition: window.innerWidth <= 768 ? 'transform 0.3s ease' : 'none',
-              width: window.innerWidth > 768 ? 'max-content' : 'auto'
+            ref={containerRef}
+            className="w-full py-8 overflow-hidden"
+          >
+            <div 
+              className="flex"
+              style={{
+                transform: `translateX(-${currentIndex * 340}px)`,
+                transition: 'transform 0.3s ease'
+              }}
+            >
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={testimonial.id} 
+                  className="flex-shrink-0 w-80 px-2"
+                >
+                  <Card className="bg-white p-8 rounded-3xl border-0 h-80">
+                    <CardContent className="p-0">
+                      <div className="flex text-yellow mb-4">
+                        {Array(testimonial.rating).fill(0).map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-current" />
+                        ))}
+                      </div>
+                      <blockquote className="text-gray-700 mb-4 italic text-lg">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div>
+                        <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
+                        <div className="text-gray-600 font-medium">{testimonial.position}</div>
+                        <div className="text-gray-600">{testimonial.company}</div>
+                        <div className="text-gray-500 text-sm">{testimonial.location}</div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop: Horizontal Scroll Layout */}
+        <div className="hidden md:block py-8">
+          <div 
+            className="flex gap-8 overflow-x-auto pb-4"
+            style={{ 
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#f59e0b #f3f4f6'
             }}
           >
             {testimonials.map((testimonial, index) => (
@@ -138,7 +172,7 @@ export default function SuccessStories() {
                   </CardContent>
                 </Card>
               </div>
-            ))
+            ))}
           </div>
         </div>
 
