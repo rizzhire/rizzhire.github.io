@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import type { Testimonial } from "@shared/schema";
 
@@ -11,67 +12,63 @@ export default function SuccessStories() {
   });
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const startX = useRef(0);
-  const currentX = useRef(0);
-  const isDragging = useRef(false);
 
-  // Handle touch/mouse events for swiping
+  const nextSlide = () => {
+    if (!testimonials || currentIndex >= testimonials.length - 1) return;
+    setSlideDirection('left');
+    setCurrentIndex(currentIndex + 1);
+    setTimeout(() => setSlideDirection(null), 300);
+  };
+
+  const prevSlide = () => {
+    if (currentIndex <= 0) return;
+    setSlideDirection('right');
+    setCurrentIndex(currentIndex - 1);
+    setTimeout(() => setSlideDirection(null), 300);
+  };
+
+  // Touch/swipe handling
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !testimonials) return;
 
-    const handleStart = (clientX: number) => {
-      startX.current = clientX;
-      isDragging.current = true;
-      setIsAnimating(false);
+    let startX = 0;
+    let currentX = 0;
+    let isMoving = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      isMoving = true;
     };
 
-    const handleMove = (clientX: number) => {
-      if (!isDragging.current) return;
-      currentX.current = clientX - startX.current;
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isMoving) return;
+      currentX = e.touches[0].clientX;
     };
 
-    const handleEnd = () => {
-      if (!isDragging.current) return;
-      isDragging.current = false;
-
+    const handleTouchEnd = () => {
+      if (!isMoving) return;
+      isMoving = false;
+      
+      const diffX = startX - currentX;
       const threshold = 50;
-      if (Math.abs(currentX.current) > threshold) {
-        const direction = currentX.current > 0 ? -1 : 1;
-        const newIndex = Math.max(0, Math.min(testimonials.length - 1, currentIndex + direction));
-        
-        if (newIndex !== currentIndex) {
-          setIsAnimating(true);
-          setCurrentIndex(newIndex);
-          setTimeout(() => setIsAnimating(false), 300);
+
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0 && currentIndex < testimonials.length - 1) {
+          nextSlide();
+        } else if (diffX < 0 && currentIndex > 0) {
+          prevSlide();
         }
       }
-      currentX.current = 0;
     };
 
-    // Mouse events
-    const handleMouseDown = (e: MouseEvent) => handleStart(e.clientX);
-    const handleMouseMove = (e: MouseEvent) => handleMove(e.clientX);
-    const handleMouseUp = () => handleEnd();
-
-    // Touch events
-    const handleTouchStart = (e: TouchEvent) => handleStart(e.touches[0].clientX);
-    const handleTouchMove = (e: TouchEvent) => handleMove(e.touches[0].clientX);
-    const handleTouchEnd = () => handleEnd();
-
-    container.addEventListener('mousedown', handleMouseDown);
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseup', handleMouseUp);
-    container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('touchmove', handleTouchMove);
+    container.addEventListener('touchstart', handleTouchStart, { passive: true });
+    container.addEventListener('touchmove', handleTouchMove, { passive: true });
     container.addEventListener('touchend', handleTouchEnd);
 
     return () => {
-      container.removeEventListener('mousedown', handleMouseDown);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseup', handleMouseUp);
       container.removeEventListener('touchstart', handleTouchStart);
       container.removeEventListener('touchmove', handleTouchMove);
       container.removeEventListener('touchend', handleTouchEnd);
@@ -114,9 +111,32 @@ export default function SuccessStories() {
 
         <div 
           ref={containerRef}
-          className="relative w-full h-96 flex justify-center items-center cursor-grab active:cursor-grabbing select-none"
+          className="relative w-full h-96 flex justify-center items-center"
           style={{ touchAction: 'pan-y' }}
         >
+          {/* Navigation Buttons */}
+          {testimonials && testimonials.length > 1 && (
+            <>
+              <Button
+                onClick={prevSlide}
+                disabled={currentIndex === 0}
+                className="absolute left-4 z-20 bg-white hover:bg-gray-50 text-gray-600 rounded-full w-10 h-10 p-0 shadow-lg disabled:opacity-50"
+                size="sm"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                onClick={nextSlide}
+                disabled={currentIndex >= testimonials.length - 1}
+                className="absolute right-4 z-20 bg-white hover:bg-gray-50 text-gray-600 rounded-full w-10 h-10 p-0 shadow-lg disabled:opacity-50"
+                size="sm"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </>
+          )}
+
+          {/* Testimonial Card */}
           {isLoading ? (
             <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
               <CardContent className="p-0">
@@ -131,10 +151,12 @@ export default function SuccessStories() {
             </Card>
           ) : testimonials && testimonials.length > 0 ? (
             <div 
-              className="transition-transform duration-300 ease-out"
+              className="transition-all duration-300 ease-out"
               style={{
-                transform: isAnimating ? 'scale(0.95)' : 'scale(1)',
-                opacity: isAnimating ? 0.8 : 1
+                transform: slideDirection === 'left' ? 'translateX(-100px) scale(0.9)' : 
+                          slideDirection === 'right' ? 'translateX(100px) scale(0.9)' : 
+                          'translateX(0) scale(1)',
+                opacity: slideDirection ? 0.6 : 1
               }}
             >
               {renderCard(testimonials[currentIndex], currentIndex)}
