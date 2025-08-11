@@ -27,31 +27,42 @@ export default function SuccessStories() {
         const distance = Math.abs(slideCenter - scrollerCenter);
         const maxDistance = scrollerRect.width / 2;
         
-        // Calculate scale and opacity based on distance from center
-        const normalizedDistance = Math.min(distance / maxDistance, 1);
-        const scale = 1 - normalizedDistance * 0.3; // Scale from 1 to 0.7
-        const opacity = 1 - normalizedDistance * 0.6; // Opacity from 1 to 0.4
+        // Calculate scale and opacity based on distance from center - much more sensitive
+        const normalizedDistance = Math.min(distance / (maxDistance * 0.3), 1);
+        const scale = 1 - normalizedDistance * 0.4; // Scale from 1 to 0.6
+        const opacity = 1 - normalizedDistance * 0.8; // Opacity from 1 to 0.2
         
         (slide as HTMLElement).style.transform = `scale(${scale})`;
         (slide as HTMLElement).style.opacity = opacity.toString();
       });
     };
 
-    // Update on scroll
-    scroller.addEventListener('scroll', updateSlideStates, { passive: true });
+    // Update on scroll with throttling for performance
+    let ticking = false;
+    const throttledUpdate = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateSlideStates();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    scroller.addEventListener('scroll', throttledUpdate, { passive: true });
     
     // Initial update
     updateSlideStates();
 
     return () => {
-      scroller.removeEventListener('scroll', updateSlideStates);
+      scroller.removeEventListener('scroll', throttledUpdate);
     };
   }, [testimonials]);
 
   const renderCard = (testimonial: Testimonial, index: number) => (
     <div 
       key={testimonial.id}
-      className="slide flex-shrink-0 w-80 h-80 mx-4 transition-all duration-300 ease-out"
+      className="slide flex-shrink-0 w-80 h-80 mx-2 transition-all duration-150 ease-out"
       style={{ scrollSnapAlign: 'center' }}
     >
       <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full flex flex-col justify-between">
