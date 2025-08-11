@@ -120,7 +120,6 @@ export default function LearnMore() {
 
 
             <motion.div variants={fadeInUp} className="max-w-5xl mx-auto">
-              <h3 className="text-3xl font-bold mb-8 text-gray-900">Our Mission</h3>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
                   Our journey began with a simple belief: every organization deserves access to world-class talent, 
