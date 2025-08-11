@@ -11,72 +11,96 @@ export default function SuccessStories() {
   });
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const startX = useRef(0);
+  const currentX = useRef(0);
+  const isDragging = useRef(false);
 
-  // Handle scroll events to detect slide changes
+  // Handle touch/mouse events for swiping
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || !testimonials) return;
 
-    const handleScroll = () => {
-      if (isTransitioning) return;
-      
-      const scrollLeft = container.scrollLeft;
-      const slideWidth = container.offsetWidth;
-      const newIndex = Math.round(scrollLeft / slideWidth);
-      
-      if (newIndex !== currentIndex) {
-        setIsTransitioning(true);
-        setCurrentIndex(newIndex);
-        
-        setTimeout(() => {
-          setIsTransitioning(false);
-        }, 400);
-      }
+    const handleStart = (clientX: number) => {
+      startX.current = clientX;
+      isDragging.current = true;
+      setIsAnimating(false);
     };
 
-    container.addEventListener('scroll', handleScroll);
-    return () => container.removeEventListener('scroll', handleScroll);
-  }, [currentIndex, isTransitioning]);
+    const handleMove = (clientX: number) => {
+      if (!isDragging.current) return;
+      currentX.current = clientX - startX.current;
+    };
 
-  const renderTestimonialCard = (testimonial: Testimonial, index: number) => {
-    const isActive = index === currentIndex;
-    
-    // Only render the active card - hide all others completely
-    if (!isActive) {
-      return null;
-    }
+    const handleEnd = () => {
+      if (!isDragging.current) return;
+      isDragging.current = false;
 
-    return (
-      <Card 
-        key={testimonial.id}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between transition-all duration-300 ease-out"
-        style={{
-          transform: 'scale(1)',
-          opacity: 1,
-          zIndex: 10
-        }}
-      >
-        <CardContent className="p-0 flex flex-col h-full">
-          <div className="flex text-yellow mb-4">
-            {Array(testimonial.rating).fill(0).map((_, i) => (
-              <Star key={i} className="h-5 w-5 fill-current" />
-            ))}
-          </div>
-          <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
-            "{testimonial.quote}"
-          </blockquote>
-          <div className="mt-auto">
-            <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-            <div className="text-gray-600 font-medium">{testimonial.position}</div>
-            <div className="text-gray-600">{testimonial.company}</div>
-            <div className="text-gray-500 text-sm">{testimonial.location}</div>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  };
+      const threshold = 50;
+      if (Math.abs(currentX.current) > threshold) {
+        const direction = currentX.current > 0 ? -1 : 1;
+        const newIndex = Math.max(0, Math.min(testimonials.length - 1, currentIndex + direction));
+        
+        if (newIndex !== currentIndex) {
+          setIsAnimating(true);
+          setCurrentIndex(newIndex);
+          setTimeout(() => setIsAnimating(false), 300);
+        }
+      }
+      currentX.current = 0;
+    };
+
+    // Mouse events
+    const handleMouseDown = (e: MouseEvent) => handleStart(e.clientX);
+    const handleMouseMove = (e: MouseEvent) => handleMove(e.clientX);
+    const handleMouseUp = () => handleEnd();
+
+    // Touch events
+    const handleTouchStart = (e: TouchEvent) => handleStart(e.touches[0].clientX);
+    const handleTouchMove = (e: TouchEvent) => handleMove(e.touches[0].clientX);
+    const handleTouchEnd = () => handleEnd();
+
+    container.addEventListener('mousedown', handleMouseDown);
+    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseup', handleMouseUp);
+    container.addEventListener('touchstart', handleTouchStart);
+    container.addEventListener('touchmove', handleTouchMove);
+    container.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      container.removeEventListener('mousedown', handleMouseDown);
+      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mouseup', handleMouseUp);
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [currentIndex, testimonials]);
+
+  const renderCard = (testimonial: Testimonial, index: number) => (
+    <Card 
+      key={testimonial.id}
+      className="bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between"
+    >
+      <CardContent className="p-0 flex flex-col h-full">
+        <div className="flex text-yellow mb-4">
+          {Array(testimonial.rating).fill(0).map((_, i) => (
+            <Star key={i} className="h-5 w-5 fill-current" />
+          ))}
+        </div>
+        <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
+          "{testimonial.quote}"
+        </blockquote>
+        <div className="mt-auto">
+          <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
+          <div className="text-gray-600 font-medium">{testimonial.position}</div>
+          <div className="text-gray-600">{testimonial.company}</div>
+          <div className="text-gray-500 text-sm">{testimonial.location}</div>
+        </div>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <section className="py-20 cream">
@@ -88,54 +112,34 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="relative w-full h-96 flex justify-center items-center">
-          {/* Hidden scroll container for swipe detection */}
-          <div 
-            ref={containerRef}
-            className="absolute inset-0 overflow-x-auto snap-x snap-mandatory opacity-0 pointer-events-auto [&::-webkit-scrollbar]:hidden"
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              scrollSnapType: 'x mandatory'
-            }}
-          >
-            {isLoading ? (
-              Array(3).fill(0).map((_, index) => (
-                <div 
-                  key={index} 
-                  className="inline-block w-full h-full snap-center"
-                  style={{ scrollSnapAlign: 'center' }}
-                />
-              ))
-            ) : (
-              testimonials?.map((_, index) => (
-                <div 
-                  key={index} 
-                  className="inline-block w-full h-full snap-center"
-                  style={{ scrollSnapAlign: 'center' }}
-                />
-              ))
-            )}
-          </div>
-
-          {/* Single visible testimonial card */}
-          <div className="relative w-full h-full">
-            {isLoading ? (
-              <Card className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl border-0 w-80 h-80">
-                <CardContent className="p-0">
-                  <Skeleton className="w-20 h-6 mb-6" />
-                  <Skeleton className="h-4 w-full mb-2" />
-                  <Skeleton className="h-4 w-3/4 mb-6" />
-                  <Skeleton className="h-6 w-1/2 mb-2" />
-                  <Skeleton className="h-4 w-3/4 mb-1" />
-                  <Skeleton className="h-4 w-1/2 mb-1" />
-                  <Skeleton className="h-4 w-2/3" />
-                </CardContent>
-              </Card>
-            ) : (
-              testimonials && testimonials[currentIndex] && renderTestimonialCard(testimonials[currentIndex], currentIndex)
-            )}
-          </div>
+        <div 
+          ref={containerRef}
+          className="relative w-full h-96 flex justify-center items-center cursor-grab active:cursor-grabbing select-none"
+          style={{ touchAction: 'pan-y' }}
+        >
+          {isLoading ? (
+            <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
+              <CardContent className="p-0">
+                <Skeleton className="w-20 h-6 mb-6" />
+                <Skeleton className="h-4 w-full mb-2" />
+                <Skeleton className="h-4 w-3/4 mb-6" />
+                <Skeleton className="h-6 w-1/2 mb-2" />
+                <Skeleton className="h-4 w-3/4 mb-1" />
+                <Skeleton className="h-4 w-1/2 mb-1" />
+                <Skeleton className="h-4 w-2/3" />
+              </CardContent>
+            </Card>
+          ) : testimonials && testimonials.length > 0 ? (
+            <div 
+              className="transition-transform duration-300 ease-out"
+              style={{
+                transform: isAnimating ? 'scale(0.95)' : 'scale(1)',
+                opacity: isAnimating ? 0.8 : 1
+              }}
+            >
+              {renderCard(testimonials[currentIndex], currentIndex)}
+            </div>
+          ) : null}
         </div>
 
         {/* Progress indicator */}
