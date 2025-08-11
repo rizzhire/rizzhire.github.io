@@ -1004,7 +1004,7 @@ export default function JobSeekerPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Success <span className="text-yellow">Stories</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto max-md:text-sm">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
               Real career transformations from professionals who found their dream jobs through HireNET.
             </p>
           </div>
