@@ -56,6 +56,7 @@ export default function SuccessStories() {
 
     let startX = 0;
 
+    // Touch events for mobile only
     const handleTouchStart = (e: TouchEvent) => {
       startX = e.touches[0].clientX;
     };
@@ -73,8 +74,12 @@ export default function SuccessStories() {
       }
     };
 
-    container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('touchend', handleTouchEnd);
+    // Add touch events for mobile screens only
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    if (mediaQuery.matches) {
+      container.addEventListener('touchstart', handleTouchStart);
+      container.addEventListener('touchend', handleTouchEnd);
+    }
 
     return () => {
       container.removeEventListener('touchstart', handleTouchStart);
@@ -92,25 +97,29 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        {/* Horizontal Testimonials Container */}
+        {/* Desktop: Horizontal Scroll, Mobile: Touch Swipe */}
         <div 
           ref={containerRef}
-          className="w-full py-8"
-          style={{ overflow: 'hidden' }}
+          className="w-full py-8 md:overflow-x-auto md:overflow-y-hidden overflow-hidden md:scrollbar-thin md:scrollbar-track-transparent md:scrollbar-thumb-yellow"
+          style={{ 
+            scrollbarWidth: 'thin',
+            scrollbarColor: '#f59e0b transparent'
+          }}
         >
           <div 
-            className="flex"
+            className="flex gap-6 md:gap-8 md:px-4"
             style={{
-              transform: `translateX(-${currentIndex * 320}px)`,
-              transition: 'none'
+              transform: window.innerWidth <= 768 ? `translateX(-${currentIndex * 340}px)` : 'none',
+              transition: window.innerWidth <= 768 ? 'transform 0.3s ease' : 'none',
+              width: window.innerWidth > 768 ? 'max-content' : 'auto'
             }}
           >
             {testimonials.map((testimonial, index) => (
               <div 
                 key={testimonial.id} 
-                style={{ width: '320px', flexShrink: 0 }}
+                className="flex-shrink-0 w-80"
               >
-                <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 mx-auto">
+                <Card className="bg-white p-8 rounded-3xl border-0 h-80">
                   <CardContent className="p-0">
                     <div className="flex text-yellow mb-4">
                       {Array(testimonial.rating).fill(0).map((_, i) => (
@@ -130,13 +139,12 @@ export default function SuccessStories() {
                 </Card>
               </div>
             ))
-            )}
           </div>
         </div>
 
-        {/* Progress indicator */}
+        {/* Progress indicator - only show on mobile */}
         {testimonials && testimonials.length > 0 && (
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-8 space-x-2 md:hidden">
             {testimonials.map((_, index) => (
               <div 
                 key={index}
