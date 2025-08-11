@@ -678,6 +678,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    padding: 0 calc(50% - 210px);
   }
   
   .testimonial-slider::-webkit-scrollbar {
@@ -721,6 +722,10 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       height: 460px;
     }
     
+    .testimonial-slider {
+      padding: 0 calc(50% - 180px);
+    }
+    
     .testimonial-slide {
       flex: 0 0 360px;
       width: 360px;
@@ -739,6 +744,10 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       width: 100%;
       max-width: 350px;
       height: 440px;
+    }
+    
+    .testimonial-slider {
+      padding: 0 calc(50% - 160px);
     }
     
     .testimonial-slide {

@@ -205,16 +205,23 @@ export default function JobSeekerPage() {
     const updateActiveSlide = () => {
       const slides = slider.querySelectorAll('.testimonial-slide');
       const scrollLeft = slider.scrollLeft;
-      const slideWidth = slides[0]?.offsetWidth || 350;
-      const currentIndex = Math.round(scrollLeft / slideWidth);
+      const slideWidth = slides[0]?.offsetWidth || 420;
+      const containerPadding = parseFloat(getComputedStyle(slider).paddingLeft) || 0;
+      const currentIndex = Math.round((scrollLeft - containerPadding) / slideWidth);
 
       slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === currentIndex);
       });
     };
 
-    // Set initial active slide
-    const initTimer = setTimeout(() => updateActiveSlide(), 100);
+    // Set initial active slide and ensure first slide is active
+    const initTimer = setTimeout(() => {
+      const firstSlide = slider.querySelector('.testimonial-slide');
+      if (firstSlide) {
+        firstSlide.classList.add('active');
+      }
+      updateActiveSlide();
+    }, 100);
 
     // Handle scroll events
     slider.addEventListener('scroll', updateActiveSlide);
