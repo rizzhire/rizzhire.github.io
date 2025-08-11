@@ -95,22 +95,25 @@ export default function SuccessStories() {
         {/* Horizontal Testimonials Container */}
         <div 
           ref={containerRef}
-          className="w-full py-8"
+          className="w-full py-8 px-4"
           style={{ overflow: 'hidden' }}
         >
           <div 
             className="flex"
             style={{
-              transform: `translateX(-${currentIndex * 320}px)`,
-              transition: 'none'
+              transform: `translateX(-${currentIndex * 340}px)`,
+              transition: 'transform 0.3s ease-in-out',
+              paddingLeft: '20px',
+              paddingRight: '20px'
             }}
           >
             {testimonials.map((testimonial, index) => (
               <div 
                 key={testimonial.id} 
-                style={{ width: '320px', flexShrink: 0 }}
+                style={{ width: '340px', flexShrink: 0 }}
+                className="px-2"
               >
-                <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 mx-auto">
+                <Card className="bg-white p-8 rounded-3xl border-0 w-full h-80 shadow-lg">
                   <CardContent className="p-0">
                     <div className="flex text-yellow mb-4">
                       {Array(testimonial.rating).fill(0).map((_, i) => (
@@ -129,8 +132,7 @@ export default function SuccessStories() {
                   </CardContent>
                 </Card>
               </div>
-            ))
-            )}
+            ))}
           </div>
         </div>
 
