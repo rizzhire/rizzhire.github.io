@@ -663,7 +663,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   .testimonial-slider-container {
     width: 100%;
     max-width: 1200px;
-    height: 400px;
+    height: 500px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -718,7 +718,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     .testimonial-slider-container {
       width: 100%;
       max-width: 500px;
-      height: 380px;
+      height: 460px;
     }
     
     .testimonial-slide {
@@ -738,7 +738,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     .testimonial-slider-container {
       width: 100%;
       max-width: 350px;
-      height: 360px;
+      height: 440px;
     }
     
     .testimonial-slide {
