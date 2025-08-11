@@ -121,7 +121,7 @@ export default function About() {
         </div>
       </section>
       {/* Our Story Section */}
-      <section className="relative pt-12 pb-20 px-4 bg-white overflow-hidden">
+      <section className="relative pt-8 pb-20 px-4 bg-white overflow-hidden">
         {/* Exact Background Graphics from Industries Banner */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           
