@@ -1002,8 +1002,9 @@ export default function JobSeekerPage() {
             </p>
           </div>
 
-          <div className="testimonial-slider-container">
-            <div className="testimonial-slider" id="testimonialSlider">
+          <div className="testimonial-slider-wrapper">
+            <div className="testimonial-slider-container">
+              <div className="testimonial-slider" id="testimonialSlider">
               {jobSeekerTestimonials.map((testimonial, index) => (
                 <div key={testimonial.id} className="testimonial-slide" data-slide={index}>
                   <Card className="testimonial-card bg-white p-8 rounded-3xl border-0 shadow-lg w-[350px] h-[400px]">
@@ -1031,6 +1032,7 @@ export default function JobSeekerPage() {
                   </Card>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>

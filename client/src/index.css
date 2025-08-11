@@ -660,13 +660,19 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   }
   
   /* Photo-swipe style testimonial slider */
+  .testimonial-slider-wrapper {
+    width: 100%;
+    padding: 40px 0;
+    overflow: visible;
+  }
+  
   .testimonial-slider-container {
     width: 350px;
-    height: 480px;
+    height: 450px;
     margin: 0 auto;
     position: relative;
     overflow: visible;
-    padding: 20px 0 60px 0;
+    padding: 25px 0;
   }
   
   .testimonial-slider {
@@ -679,6 +685,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    margin-top: 0;
   }
   
   .testimonial-slider::-webkit-scrollbar {
@@ -697,7 +704,8 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
                 opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: scale(0.8);
     opacity: 0.4;
-    padding: 20px 0 60px 0;
+    padding: 0;
+    margin-top: 0;
   }
   
   .testimonial-slide.active {
@@ -717,11 +725,14 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   
   /* Mobile responsive adjustments */
   @media (max-width: 768px) {
+    .testimonial-slider-wrapper {
+      padding: 30px 0;
+    }
+    
     .testimonial-slider-container {
       width: 320px;
-      height: 460px;
-      overflow: visible;
-      padding: 20px 0 60px 0;
+      height: 420px;
+      padding: 20px 0;
     }
     
     .testimonial-slider {
@@ -734,7 +745,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       width: 320px;
       height: 380px;
       align-items: center;
-      padding: 20px 0 60px 0;
+      padding: 0;
     }
     
     .testimonial-card {
@@ -745,11 +756,14 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   }
   
   @media (max-width: 480px) {
+    .testimonial-slider-wrapper {
+      padding: 20px 0;
+    }
+    
     .testimonial-slider-container {
       width: 280px;
-      height: 440px;
-      overflow: visible;
-      padding: 20px 0 60px 0;
+      height: 400px;
+      padding: 15px 0;
     }
     
     .testimonial-slider {
@@ -762,7 +776,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       width: 280px;
       height: 360px;
       align-items: center;
-      padding: 20px 0 60px 0;
+      padding: 0;
     }
     
     .testimonial-card {
