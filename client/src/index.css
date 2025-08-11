@@ -662,17 +662,18 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   /* Photo-swipe style testimonial slider */
   .testimonial-slider-container {
     width: 350px;
-    height: 480px;
+    height: 400px;
     margin: 0 auto;
     position: relative;
-    overflow: visible;
-    padding: 20px 0 60px 0;
+    overflow: hidden;
+    transform: translateY(-20px);
+    padding: 40px 0;
   }
   
   .testimonial-slider {
     display: flex;
     width: 100%;
-    height: 400px;
+    height: 100%;
     overflow-x: auto;
     overflow-y: visible;
     scroll-behavior: smooth;
@@ -688,7 +689,7 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   .testimonial-slide {
     flex: 0 0 350px;
     width: 350px;
-    height: 400px;
+    height: 100%;
     scroll-snap-align: center;
     display: flex;
     align-items: center;
@@ -697,7 +698,6 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
                 opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: scale(0.8);
     opacity: 0.4;
-    padding: 20px 0 60px 0;
   }
   
   .testimonial-slide.active {
@@ -719,22 +719,22 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   @media (max-width: 768px) {
     .testimonial-slider-container {
       width: 320px;
-      height: 460px;
-      overflow: visible;
-      padding: 20px 0 60px 0;
+      height: 380px;
+      transform: translateY(-20px);
+      padding: 40px 0;
+      overflow: hidden;
     }
     
     .testimonial-slider {
-      height: 380px;
+      height: 100%;
       overflow-y: visible;
     }
     
     .testimonial-slide {
       flex: 0 0 320px;
       width: 320px;
-      height: 380px;
+      height: 100%;
       align-items: center;
-      padding: 20px 0 60px 0;
     }
     
     .testimonial-card {
@@ -747,22 +747,22 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   @media (max-width: 480px) {
     .testimonial-slider-container {
       width: 280px;
-      height: 440px;
-      overflow: visible;
-      padding: 20px 0 60px 0;
+      height: 360px;
+      transform: translateY(-20px);
+      padding: 40px 0;
+      overflow: hidden;
     }
     
     .testimonial-slider {
-      height: 360px;
+      height: 100%;
       overflow-y: visible;
     }
     
     .testimonial-slide {
       flex: 0 0 280px;
       width: 280px;
-      height: 360px;
+      height: 100%;
       align-items: center;
-      padding: 20px 0 60px 0;
     }
     
     .testimonial-card {
