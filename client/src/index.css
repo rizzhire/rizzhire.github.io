@@ -662,17 +662,17 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   /* Photo-swipe style testimonial slider */
   .testimonial-slider-wrapper {
     width: 100%;
-    padding: 60px 40px;
+    padding: 100px 80px;
     overflow: visible;
   }
   
   .testimonial-slider-container {
     width: 350px;
-    height: 500px;
+    height: 600px;
     margin: 0 auto;
     position: relative;
     overflow: visible;
-    padding: 50px 25px;
+    padding: 100px 50px;
   }
   
   .testimonial-slider {
@@ -726,13 +726,13 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   /* Mobile responsive adjustments */
   @media (max-width: 768px) {
     .testimonial-slider-wrapper {
-      padding: 50px 30px;
+      padding: 80px 60px;
     }
     
     .testimonial-slider-container {
       width: 320px;
-      height: 470px;
-      padding: 40px 20px;
+      height: 550px;
+      padding: 80px 40px;
     }
     
     .testimonial-slider {
@@ -757,13 +757,13 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   
   @media (max-width: 480px) {
     .testimonial-slider-wrapper {
-      padding: 40px 20px;
+      padding: 70px 50px;
     }
     
     .testimonial-slider-container {
       width: 280px;
-      height: 450px;
-      padding: 35px 15px;
+      height: 520px;
+      padding: 70px 35px;
     }
     
     .testimonial-slider {
