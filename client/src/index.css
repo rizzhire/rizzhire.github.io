@@ -663,21 +663,25 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   .testimonial-slider-container {
     width: 100%;
     max-width: 800px;
-    height: 400px;
+    height: 450px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    padding: 25px 0;
   }
   
   .testimonial-slider {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 400px;
     overflow-x: auto;
+    overflow-y: visible;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    padding: 0 25px;
+    margin: 0 -25px;
   }
   
   .testimonial-slider::-webkit-scrollbar {
@@ -718,7 +722,8 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     .testimonial-slider-container {
       width: 100%;
       max-width: 320px;
-      height: 380px;
+      height: 430px;
+      padding: 25px 0;
     }
     
     .testimonial-slide {
@@ -738,7 +743,8 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     .testimonial-slider-container {
       width: 100%;
       max-width: 280px;
-      height: 360px;
+      height: 410px;
+      padding: 25px 0;
     }
     
     .testimonial-slide {
