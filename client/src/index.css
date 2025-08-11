@@ -661,7 +661,8 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   
   /* Photo-swipe style testimonial slider */
   .testimonial-slider-container {
-    width: 350px;
+    width: 100%;
+    max-width: 800px;
     height: 400px;
     margin: 0 auto;
     position: relative;
@@ -715,7 +716,8 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   /* Mobile responsive adjustments */
   @media (max-width: 768px) {
     .testimonial-slider-container {
-      width: 320px;
+      width: 100%;
+      max-width: 320px;
       height: 380px;
     }
     
@@ -734,7 +736,8 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
   
   @media (max-width: 480px) {
     .testimonial-slider-container {
-      width: 280px;
+      width: 100%;
+      max-width: 280px;
       height: 360px;
     }
     
