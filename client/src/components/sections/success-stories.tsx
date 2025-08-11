@@ -153,19 +153,20 @@ export default function SuccessStories() {
         {/* Horizontal Testimonials Container */}
         <div 
           ref={containerRef}
-          className="overflow-hidden w-full py-8"
+          className="w-full py-8"
+          style={{ overflow: 'hidden' }}
         >
           <div 
-            className="flex w-full"
+            className="flex"
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-              width: `${testimonials.length * 100}%`
+              transform: `translateX(-${currentIndex * 320}px)`,
+              transition: 'none'
             }}
           >
             {isLoading ? (
               Array(3).fill(0).map((_, index) => (
-                <div key={index} className="w-full flex justify-center px-4" style={{ width: `${100 / testimonials.length}%` }}>
-                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
+                <div key={index} className="flex-shrink-0" style={{ width: '320px' }}>
+                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 mx-auto">
                     <CardContent className="p-0">
                       <Skeleton className="w-20 h-6 mb-6" />
                       <Skeleton className="h-4 w-full mb-2" />
@@ -182,10 +183,10 @@ export default function SuccessStories() {
               testimonials.map((testimonial, index) => (
                 <div 
                   key={testimonial.id} 
-                  className="w-full flex justify-center px-4"
-                  style={{ width: `${100 / testimonials.length}%` }}
+                  className="flex-shrink-0"
+                  style={{ width: '320px' }}
                 >
-                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between">
+                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between mx-auto">
                     <CardContent className="p-0 flex flex-col h-full">
                       <div className="flex text-yellow mb-4">
                         {Array(testimonial.rating).fill(0).map((_, i) => (
