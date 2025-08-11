@@ -91,7 +91,7 @@ export default function LearnMore() {
         </div>
       </section>
       {/* Our Story Section */}
-      <section className="relative py-20 px-4 bg-white overflow-hidden">
+      <section className="relative py-12 px-4 bg-white overflow-hidden">
         {/* Light Background Graphics */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 right-32 w-16 h-16 bg-gradient-to-r from-yellow-300/10 to-orange-300/15 rounded-lg rotate-12 blur-sm"></div>
