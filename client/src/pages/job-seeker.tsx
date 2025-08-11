@@ -953,59 +953,19 @@ export default function JobSeekerPage() {
             ref={testimonialsRef} 
             className="text-center mb-16"
           >
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
-              transition={{ 
-                duration: 0.5, 
-                delay: 0.2,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-            >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Success <span className="text-yellow">Stories</span>
-            </motion.h2>
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto max-md:text-sm"
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
-              transition={{ 
-                duration: 0.4, 
-                delay: 0.4,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-            >
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto max-md:text-sm">
               Real career transformations from professionals who found their dream jobs through HireNET.
-            </motion.p>
+            </p>
           </div>
 
-          <motion.div 
-            className="relative overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
-            transition={{ 
-              duration: 0.6, 
-              delay: 0.5,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-          >
+          <div className="relative overflow-hidden">
             <div className="overflow-x-auto pb-4 scrollbar-hide testimonials-container">
               <div className="flex gap-6 w-max px-12 py-2">
                 {jobSeekerTestimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.id}
-                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.6 + (index * 0.1),
-                    ease: [0.25, 0.46, 0.45, 0.94]
-                  }}
-                >
+                <div key={testimonial.id}>
                   <Card 
                     className="bg-white p-8 rounded-3xl border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-[350px] h-[400px] group"
                   >
@@ -1031,11 +991,11 @@ export default function JobSeekerPage() {
                     </div>
                   </CardContent>
                   </Card>
-                </motion.div>
+                </div>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
