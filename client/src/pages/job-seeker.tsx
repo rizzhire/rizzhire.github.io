@@ -888,7 +888,7 @@ export default function JobSeekerPage() {
 
       {/* Job Seeker Success Stories */}
       <section 
-        className="relative py-16 pb-8 overflow-hidden" 
+        className="relative py-8 pb-4 overflow-hidden" 
         style={{ backgroundColor: '#F2F0E8' }}
       >
         {/* Enhanced Background Graphics (Same as Launch Your Global Career) */}
@@ -999,7 +999,7 @@ export default function JobSeekerPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={testimonialsRef} 
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Success <span className="text-yellow">Stories</span>
