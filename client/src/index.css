@@ -678,9 +678,6 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 calc(50% - 210px);
   }
   
   .testimonial-slider::-webkit-scrollbar {
@@ -722,10 +719,6 @@ div[class*="uppy-Dashboard-dropFilesHereHint"],
       width: 100%;
       max-width: 500px;
       height: 460px;
-    }
-    
-    .testimonial-slider {
-      padding: 0 calc(50% - 180px);
     }
     
     .testimonial-slide {
