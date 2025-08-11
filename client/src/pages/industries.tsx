@@ -109,7 +109,7 @@ export default function Industries() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 tracking-tight">
               Industries We <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 bg-clip-text text-transparent">Serve</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light max-md:mobile-description-lg">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
               Specialized workforce solutions across the Middle East's most critical sectors. 
               Ground-level talent acquisition for mass recruitment and operational excellence.
             </p>
@@ -306,7 +306,7 @@ export default function Industries() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 tracking-tight">
             Don't See Your <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">Industry?</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 mb-12 leading-relaxed font-light max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-12">
             Our expertise extends beyond these core sectors. Contact us to discuss your specific 
             workforce requirements and discover how we can support your mass recruitment needs.
           </p>
