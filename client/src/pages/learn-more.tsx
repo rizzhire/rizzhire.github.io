@@ -86,14 +86,10 @@ export default function LearnMore() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 tracking-tight">
               Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 bg-clip-text text-transparent">Journey</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
-              Discover the story behind the Middle East's premier recruitment consultancy. 
-              From humble beginnings to industry leadership, our commitment to excellence drives everything we do.
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">Discover the story behind the Middle East's premier recruitment firm. From humble beginnings to industry leadership, our commitment to excellence drives everything we do.</p>
           </motion.div>
         </div>
       </section>
-
       {/* Our Story Section */}
       <section className="relative py-20 px-4 bg-white overflow-hidden">
         {/* Light Background Graphics */}
@@ -159,7 +155,6 @@ export default function LearnMore() {
           </motion.div>
         </div>
       </section>
-
       {/* Timeline Section */}
       <section className="relative py-20 px-4 overflow-hidden" style={{backgroundColor: '#F2F0E8'}}>
         {/* Background Graphics - Exact same as Our Journey banner */}
@@ -287,9 +282,6 @@ export default function LearnMore() {
           </motion.div>
         </div>
       </section>
-
-
-
       {/* CTA Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
