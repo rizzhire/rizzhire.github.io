@@ -61,109 +61,84 @@ export default function SuccessStories() {
   const testimonials = apiTestimonials || sampleTestimonials;
   const isLoading = apiLoading && !testimonials.length;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const startXRef = useRef(0);
+  const currentXRef = useRef(0);
 
-  // Touch handling for swipe
+  // Handle swipe navigation
+  const nextSlide = () => {
+    if (currentIndex < testimonials.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || !testimonials?.length) return;
-
-    let startX = 0;
-    let startY = 0;
-    let currentX = 0;
-    let isScrolling = false;
+    if (!container) return;
 
     const handleTouchStart = (e: TouchEvent) => {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      isScrolling = false;
+      startXRef.current = e.touches[0].clientX;
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (!startX || !startY) return;
-      
-      currentX = e.touches[0].clientX;
-      const diffX = Math.abs(currentX - startX);
-      const diffY = Math.abs(e.touches[0].clientY - startY);
+      e.preventDefault(); // Prevent scroll
+    };
 
-      // Determine if it's horizontal swipe
-      if (diffX > diffY && diffX > 10) {
-        isScrolling = true;
-        e.preventDefault();
+    const handleTouchEnd = (e: TouchEvent) => {
+      currentXRef.current = e.changedTouches[0].clientX;
+      const deltaX = startXRef.current - currentXRef.current;
+      
+      // Swipe threshold
+      if (Math.abs(deltaX) > 30) {
+        if (deltaX > 0) {
+          nextSlide(); // Swiped left -> next
+        } else {
+          prevSlide(); // Swiped right -> previous
+        }
       }
     };
 
-    const handleTouchEnd = () => {
-      if (!isScrolling) return;
+    // Also handle mouse events for desktop
+    const handleMouseDown = (e: MouseEvent) => {
+      startXRef.current = e.clientX;
+    };
 
-      const diff = startX - currentX;
-      const threshold = 50;
-
-      if (Math.abs(diff) > threshold && !isTransitioning) {
-        if (diff > 0 && currentIndex < testimonials.length - 1) {
-          // Swipe left - next slide
-          setIsTransitioning(true);
-          setCurrentIndex(currentIndex + 1);
-          setTimeout(() => setIsTransitioning(false), 300);
-        } else if (diff < 0 && currentIndex > 0) {
-          // Swipe right - previous slide
-          setIsTransitioning(true);
-          setCurrentIndex(currentIndex - 1);
-          setTimeout(() => setIsTransitioning(false), 300);
+    const handleMouseUp = (e: MouseEvent) => {
+      currentXRef.current = e.clientX;
+      const deltaX = startXRef.current - currentXRef.current;
+      
+      if (Math.abs(deltaX) > 50) {
+        if (deltaX > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
         }
       }
-
-      startX = 0;
-      startY = 0;
-      currentX = 0;
-      isScrolling = false;
     };
 
     container.addEventListener('touchstart', handleTouchStart, { passive: true });
     container.addEventListener('touchmove', handleTouchMove, { passive: false });
-    container.addEventListener('touchend', handleTouchEnd);
+    container.addEventListener('touchend', handleTouchEnd, { passive: true });
+    container.addEventListener('mousedown', handleMouseDown);
+    container.addEventListener('mouseup', handleMouseUp);
 
     return () => {
       container.removeEventListener('touchstart', handleTouchStart);
       container.removeEventListener('touchmove', handleTouchMove);
       container.removeEventListener('touchend', handleTouchEnd);
+      container.removeEventListener('mousedown', handleMouseDown);
+      container.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [currentIndex, testimonials, isTransitioning]);
+  }, [currentIndex, testimonials]);
 
-  const renderCurrentSlide = () => {
-    if (!testimonials || testimonials.length === 0) return null;
-    
-    const testimonial = testimonials[currentIndex];
-    return (
-      <div 
-        className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-out"
-        style={{
-          transform: isTransitioning ? 'scale(0.9)' : 'scale(1)',
-          opacity: isTransitioning ? 0.7 : 1
-        }}
-      >
-        <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between">
-          <CardContent className="p-0 flex flex-col h-full">
-            <div className="flex text-yellow mb-4">
-              {Array(testimonial.rating).fill(0).map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-current" />
-              ))}
-            </div>
-            <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
-              "{testimonial.quote}"
-            </blockquote>
-            <div className="mt-auto">
-              <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-              <div className="text-gray-600 font-medium">{testimonial.position}</div>
-              <div className="text-gray-600">{testimonial.company}</div>
-              <div className="text-gray-500 text-sm">{testimonial.location}</div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  };
+  if (!testimonials || testimonials.length === 0) return null;
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
     <section className="py-20 cream">
@@ -175,28 +150,44 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="relative w-full h-96 flex items-center justify-center">
-          {/* Single Slide Display */}
+        {/* Single Slide Container - ONLY ONE SLIDE VISIBLE */}
+        <div className="flex justify-center items-center py-8">
           <div 
             ref={containerRef}
-            className="relative w-full h-full touch-pan-y"
+            className="w-80 h-80 cursor-pointer select-none"
+            key={currentIndex} // Force re-render on slide change
           >
             {isLoading ? (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
-                  <CardContent className="p-0">
-                    <Skeleton className="w-20 h-6 mb-6" />
-                    <Skeleton className="h-4 w-full mb-2" />
-                    <Skeleton className="h-4 w-3/4 mb-6" />
-                    <Skeleton className="h-6 w-1/2 mb-2" />
-                    <Skeleton className="h-4 w-3/4 mb-1" />
-                    <Skeleton className="h-4 w-1/2 mb-1" />
-                    <Skeleton className="h-4 w-2/3" />
-                  </CardContent>
-                </Card>
-              </div>
+              <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full">
+                <CardContent className="p-0">
+                  <Skeleton className="w-20 h-6 mb-6" />
+                  <Skeleton className="h-4 w-full mb-2" />
+                  <Skeleton className="h-4 w-3/4 mb-6" />
+                  <Skeleton className="h-6 w-1/2 mb-2" />
+                  <Skeleton className="h-4 w-3/4 mb-1" />
+                  <Skeleton className="h-4 w-1/2 mb-1" />
+                  <Skeleton className="h-4 w-2/3" />
+                </CardContent>
+              </Card>
             ) : (
-              renderCurrentSlide()
+              <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full flex flex-col justify-between transform transition-all duration-200 hover:scale-105">
+                <CardContent className="p-0 flex flex-col h-full">
+                  <div className="flex text-yellow mb-4">
+                    {Array(currentTestimonial.rating).fill(0).map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-current" />
+                    ))}
+                  </div>
+                  <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
+                    "{currentTestimonial.quote}"
+                  </blockquote>
+                  <div className="mt-auto">
+                    <div className="font-bold text-yellow text-lg">{currentTestimonial.name}</div>
+                    <div className="text-gray-600 font-medium">{currentTestimonial.position}</div>
+                    <div className="text-gray-600">{currentTestimonial.company}</div>
+                    <div className="text-gray-500 text-sm">{currentTestimonial.location}</div>
+                  </div>
+                </CardContent>
+              </Card>
             )}
           </div>
         </div>
