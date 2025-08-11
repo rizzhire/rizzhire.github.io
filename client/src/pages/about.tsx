@@ -255,8 +255,8 @@ export default function About() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="text-yellow">Story</span>
               </h2>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-6">Vision of 3 Co-Founders Mr Rizwan Khan, Mr Fidous Hussain and Mr Ali Hussain to bridge the gap between exceptional talent and leading organizations, HireNET has evolved into the Middle East's premier recruitment consultancy.</p>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-8">
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">Vision of 3 Co-Founders Mr Rizwan Khan, Mr Fidous Hussain and Mr Ali Hussain to bridge the gap between exceptional talent and leading organizations, HireNET has evolved into the Middle East's premier recruitment consultancy.</p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Our journey began with a simple belief: every organization deserves access to world-class talent, 
                 and every professional deserves opportunities that match their ambitions.
               </p>
