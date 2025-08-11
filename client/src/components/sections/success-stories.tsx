@@ -45,14 +45,29 @@ export default function SuccessStories() {
 
   const getCardStyle = useCallback((index: number) => {
     const distance = Math.abs(index - currentIndex);
-    const scale = distance === 0 ? 1 : Math.max(0.75, 1 - distance * 0.25);
-    const opacity = distance === 0 ? 1 : Math.max(0.3, 1 - distance * 0.35);
     
-    return {
-      transform: `scale(${scale})`,
-      opacity,
-      transition: 'transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-out'
-    };
+    if (distance === 0) {
+      // Current card: full size and visible
+      return {
+        transform: 'scale(1)',
+        opacity: 1,
+        transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out'
+      };
+    } else if (distance === 1) {
+      // Adjacent cards: small and transitioning
+      return {
+        transform: 'scale(0.7)',
+        opacity: 0.4,
+        transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out'
+      };
+    } else {
+      // Far cards: hidden
+      return {
+        transform: 'scale(0.5)',
+        opacity: 0,
+        transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out'
+      };
+    }
   }, [currentIndex]);
 
   return (
@@ -65,63 +80,65 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div 
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 px-8 [&::-webkit-scrollbar]:hidden"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            scrollSnapType: 'x mandatory'
-          }}
-        >
-          {isLoading ? (
-            Array(3).fill(0).map((_, index) => (
-              <div key={index} className="flex-none w-[85vw] sm:w-96 snap-center">
-                <Card className="bg-white p-8 rounded-3xl border-0 mx-auto w-full h-80">
-                  <CardContent className="p-0">
-                    <Skeleton className="w-20 h-6 mb-6" />
-                    <Skeleton className="h-4 w-full mb-2" />
-                    <Skeleton className="h-4 w-3/4 mb-6" />
-                    <Skeleton className="h-6 w-1/2 mb-2" />
-                    <Skeleton className="h-4 w-3/4 mb-1" />
-                    <Skeleton className="h-4 w-1/2 mb-1" />
-                    <Skeleton className="h-4 w-2/3" />
-                  </CardContent>
-                </Card>
-              </div>
-            ))
-          ) : (
-            testimonials?.map((testimonial, index) => (
-              <div 
-                key={testimonial.id} 
-                className="flex-none w-[85vw] sm:w-96 snap-center flex justify-center"
-                style={{ scrollSnapAlign: 'center' }}
-              >
-                <Card 
-                  ref={(el) => cardRefs.current[index] = el}
-                  className="bg-white p-8 rounded-3xl border-0 card-hover w-full h-80 flex flex-col justify-between"
-                  style={getCardStyle(index)}
+        <div className="relative w-full h-96 flex justify-center items-center overflow-hidden">
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden w-full"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              scrollSnapType: 'x mandatory'
+            }}
+          >
+            {isLoading ? (
+              Array(3).fill(0).map((_, index) => (
+                <div key={index} className="flex-none w-full snap-center flex justify-center">
+                  <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
+                    <CardContent className="p-0">
+                      <Skeleton className="w-20 h-6 mb-6" />
+                      <Skeleton className="h-4 w-full mb-2" />
+                      <Skeleton className="h-4 w-3/4 mb-6" />
+                      <Skeleton className="h-6 w-1/2 mb-2" />
+                      <Skeleton className="h-4 w-3/4 mb-1" />
+                      <Skeleton className="h-4 w-1/2 mb-1" />
+                      <Skeleton className="h-4 w-2/3" />
+                    </CardContent>
+                  </Card>
+                </div>
+              ))
+            ) : (
+              testimonials?.map((testimonial, index) => (
+                <div 
+                  key={testimonial.id} 
+                  className="flex-none w-full snap-center flex justify-center"
+                  style={{ scrollSnapAlign: 'center' }}
                 >
-                  <CardContent className="p-0 flex flex-col h-full">
-                    <div className="flex text-yellow mb-4">
-                      {Array(testimonial.rating).fill(0).map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current" />
-                      ))}
-                    </div>
-                    <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div className="mt-auto">
-                      <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-                      <div className="text-gray-600 font-medium">{testimonial.position}</div>
-                      <div className="text-gray-600">{testimonial.company}</div>
-                      <div className="text-gray-500 text-sm">{testimonial.location}</div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))
-          )}
+                  <Card 
+                    ref={(el) => cardRefs.current[index] = el}
+                    className="bg-white p-8 rounded-3xl border-0 card-hover w-80 h-80 flex flex-col justify-between"
+                    style={getCardStyle(index)}
+                  >
+                    <CardContent className="p-0 flex flex-col h-full">
+                      <div className="flex text-yellow mb-4">
+                        {Array(testimonial.rating).fill(0).map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-current" />
+                        ))}
+                      </div>
+                      <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div className="mt-auto">
+                        <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
+                        <div className="text-gray-600 font-medium">{testimonial.position}</div>
+                        <div className="text-gray-600">{testimonial.company}</div>
+                        <div className="text-gray-500 text-sm">{testimonial.location}</div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))
+            )}
+          </div>
         </div>
 
         {/* Progress indicator */}
