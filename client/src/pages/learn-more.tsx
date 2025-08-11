@@ -86,7 +86,7 @@ export default function LearnMore() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 tracking-tight">
               Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 bg-clip-text text-transparent">Journey</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light max-md:mobile-description-lg">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
               Discover the story behind the Middle East's premier recruitment consultancy. 
               From humble beginnings to industry leadership, our commitment to excellence drives everything we do.
             </p>
@@ -125,7 +125,7 @@ export default function LearnMore() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
                 Bridging <span className="text-yellow">Talent</span> & <span className="text-yellow">Opportunity</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
                 Founded with a vision to bridge the gap between exceptional talent and leading organizations, 
                 HireNET has evolved into the Middle East's premier recruitment consultancy.
               </p>
@@ -193,7 +193,7 @@ export default function LearnMore() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
                 Our <span className="text-yellow">Evolution</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm">
                 Key milestones that shaped our journey to industry leadership
               </p>
             </motion.div>
@@ -302,7 +302,7 @@ export default function LearnMore() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Ready to Start Your <span className="text-yellow">Journey</span>?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 max-md:text-sm mb-8">
               Whether you're seeking exceptional talent or exploring new career opportunities, 
               we're here to make meaningful connections that drive success.
             </p>
