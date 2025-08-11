@@ -1,9 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { Testimonial } from "@shared/schema";
 
 export default function SuccessStories() {
@@ -11,92 +10,69 @@ export default function SuccessStories() {
     queryKey: ['/api/testimonials'],
   });
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
-  const nextSlide = () => {
-    if (!testimonials || currentIndex >= testimonials.length - 1) return;
-    setSlideDirection('left');
-    setCurrentIndex(currentIndex + 1);
-    setTimeout(() => setSlideDirection(null), 300);
-  };
-
-  const prevSlide = () => {
-    if (currentIndex <= 0) return;
-    setSlideDirection('right');
-    setCurrentIndex(currentIndex - 1);
-    setTimeout(() => setSlideDirection(null), 300);
-  };
-
-  // Touch/swipe handling
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container || !testimonials) return;
+    const scroller = scrollerRef.current;
+    if (!scroller || !testimonials) return;
 
-    let startX = 0;
-    let currentX = 0;
-    let isMoving = false;
+    const updateSlideStates = () => {
+      const slides = scroller.querySelectorAll('.slide');
+      const scrollerRect = scroller.getBoundingClientRect();
+      const scrollerCenter = scrollerRect.left + scrollerRect.width / 2;
 
-    const handleTouchStart = (e: TouchEvent) => {
-      startX = e.touches[0].clientX;
-      isMoving = true;
+      slides.forEach((slide) => {
+        const slideRect = slide.getBoundingClientRect();
+        const slideCenter = slideRect.left + slideRect.width / 2;
+        const distance = Math.abs(slideCenter - scrollerCenter);
+        const maxDistance = scrollerRect.width / 2;
+        
+        // Calculate scale and opacity based on distance from center
+        const normalizedDistance = Math.min(distance / maxDistance, 1);
+        const scale = 1 - normalizedDistance * 0.3; // Scale from 1 to 0.7
+        const opacity = 1 - normalizedDistance * 0.6; // Opacity from 1 to 0.4
+        
+        (slide as HTMLElement).style.transform = `scale(${scale})`;
+        (slide as HTMLElement).style.opacity = opacity.toString();
+      });
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isMoving) return;
-      currentX = e.touches[0].clientX;
-    };
-
-    const handleTouchEnd = () => {
-      if (!isMoving) return;
-      isMoving = false;
-      
-      const diffX = startX - currentX;
-      const threshold = 50;
-
-      if (Math.abs(diffX) > threshold) {
-        if (diffX > 0 && currentIndex < testimonials.length - 1) {
-          nextSlide();
-        } else if (diffX < 0 && currentIndex > 0) {
-          prevSlide();
-        }
-      }
-    };
-
-    container.addEventListener('touchstart', handleTouchStart, { passive: true });
-    container.addEventListener('touchmove', handleTouchMove, { passive: true });
-    container.addEventListener('touchend', handleTouchEnd);
+    // Update on scroll
+    scroller.addEventListener('scroll', updateSlideStates, { passive: true });
+    
+    // Initial update
+    updateSlideStates();
 
     return () => {
-      container.removeEventListener('touchstart', handleTouchStart);
-      container.removeEventListener('touchmove', handleTouchMove);
-      container.removeEventListener('touchend', handleTouchEnd);
+      scroller.removeEventListener('scroll', updateSlideStates);
     };
-  }, [currentIndex, testimonials]);
+  }, [testimonials]);
 
   const renderCard = (testimonial: Testimonial, index: number) => (
-    <Card 
+    <div 
       key={testimonial.id}
-      className="bg-white p-8 rounded-3xl border-0 w-80 h-80 flex flex-col justify-between"
+      className="slide flex-shrink-0 w-80 h-80 mx-4 transition-all duration-300 ease-out"
+      style={{ scrollSnapAlign: 'center' }}
     >
-      <CardContent className="p-0 flex flex-col h-full">
-        <div className="flex text-yellow mb-4">
-          {Array(testimonial.rating).fill(0).map((_, i) => (
-            <Star key={i} className="h-5 w-5 fill-current" />
-          ))}
-        </div>
-        <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
-          "{testimonial.quote}"
-        </blockquote>
-        <div className="mt-auto">
-          <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
-          <div className="text-gray-600 font-medium">{testimonial.position}</div>
-          <div className="text-gray-600">{testimonial.company}</div>
-          <div className="text-gray-500 text-sm">{testimonial.location}</div>
-        </div>
-      </CardContent>
-    </Card>
+      <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full flex flex-col justify-between">
+        <CardContent className="p-0 flex flex-col h-full">
+          <div className="flex text-yellow mb-4">
+            {Array(testimonial.rating).fill(0).map((_, i) => (
+              <Star key={i} className="h-5 w-5 fill-current" />
+            ))}
+          </div>
+          <blockquote className="text-gray-700 mb-4 italic text-lg flex-grow">
+            "{testimonial.quote}"
+          </blockquote>
+          <div className="mt-auto">
+            <div className="font-bold text-yellow text-lg">{testimonial.name}</div>
+            <div className="text-gray-600 font-medium">{testimonial.position}</div>
+            <div className="text-gray-600">{testimonial.company}</div>
+            <div className="text-gray-500 text-sm">{testimonial.location}</div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 
   return (
@@ -109,59 +85,37 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div 
-          ref={containerRef}
-          className="relative w-full h-96 flex justify-center items-center"
-          style={{ touchAction: 'pan-y' }}
-        >
-          {/* Navigation Buttons */}
-          {testimonials && testimonials.length > 1 && (
-            <>
-              <Button
-                onClick={prevSlide}
-                disabled={currentIndex === 0}
-                className="absolute left-4 z-20 bg-white hover:bg-gray-50 text-gray-600 rounded-full w-10 h-10 p-0 shadow-lg disabled:opacity-50"
-                size="sm"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
-              <Button
-                onClick={nextSlide}
-                disabled={currentIndex >= testimonials.length - 1}
-                className="absolute right-4 z-20 bg-white hover:bg-gray-50 text-gray-600 rounded-full w-10 h-10 p-0 shadow-lg disabled:opacity-50"
-                size="sm"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
-            </>
-          )}
-
-          {/* Testimonial Card */}
-          {isLoading ? (
-            <Card className="bg-white p-8 rounded-3xl border-0 w-80 h-80">
-              <CardContent className="p-0">
-                <Skeleton className="w-20 h-6 mb-6" />
-                <Skeleton className="h-4 w-full mb-2" />
-                <Skeleton className="h-4 w-3/4 mb-6" />
-                <Skeleton className="h-6 w-1/2 mb-2" />
-                <Skeleton className="h-4 w-3/4 mb-1" />
-                <Skeleton className="h-4 w-1/2 mb-1" />
-                <Skeleton className="h-4 w-2/3" />
-              </CardContent>
-            </Card>
-          ) : testimonials && testimonials.length > 0 ? (
-            <div 
-              className="transition-all duration-300 ease-out"
-              style={{
-                transform: slideDirection === 'left' ? 'translateX(-100px) scale(0.9)' : 
-                          slideDirection === 'right' ? 'translateX(100px) scale(0.9)' : 
-                          'translateX(0) scale(1)',
-                opacity: slideDirection ? 0.6 : 1
-              }}
-            >
-              {renderCard(testimonials[currentIndex], currentIndex)}
-            </div>
-          ) : null}
+        <div className="relative w-full">
+          {/* Horizontal Scroll Container */}
+          <div
+            ref={scrollerRef}
+            className="flex overflow-x-auto py-8 px-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              scrollBehavior: 'smooth'
+            }}
+          >
+            {isLoading ? (
+              Array(3).fill(0).map((_, index) => (
+                <div key={index} className="flex-shrink-0 w-80 h-80 mx-4" style={{ scrollSnapAlign: 'center' }}>
+                  <Card className="bg-white p-8 rounded-3xl border-0 w-full h-full">
+                    <CardContent className="p-0">
+                      <Skeleton className="w-20 h-6 mb-6" />
+                      <Skeleton className="h-4 w-full mb-2" />
+                      <Skeleton className="h-4 w-3/4 mb-6" />
+                      <Skeleton className="h-6 w-1/2 mb-2" />
+                      <Skeleton className="h-4 w-3/4 mb-1" />
+                      <Skeleton className="h-4 w-1/2 mb-1" />
+                      <Skeleton className="h-4 w-2/3" />
+                    </CardContent>
+                  </Card>
+                </div>
+              ))
+            ) : (
+              testimonials?.map((testimonial, index) => renderCard(testimonial, index))
+            )}
+          </div>
         </div>
 
         {/* Progress indicator */}
