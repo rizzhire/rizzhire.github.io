@@ -223,7 +223,7 @@ export default function LearnMore() {
                     )}
                     
                     {/* Content Card - Compact */}
-                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'pr-4 md:pr-8' : 'pl-4 md:pl-8'}`}>
+                    <div className={`w-full md:w-6/12 ${index % 2 === 0 ? 'pr-4 md:pr-6' : 'pl-4 md:pl-6'}`}>
                       <div className="relative">
                         <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-400 group-hover:-translate-y-2 group-hover:border-yellow/30">
                           {/* Decorative Elements - Smaller */}
@@ -261,7 +261,7 @@ export default function LearnMore() {
                     </div>
                     
                     {/* Timeline Dot - Smaller */}
-                    <div className="w-2 md:w-2/12 flex justify-center relative z-10">
+                    <div className="w-2 md:w-1/12 flex justify-center relative z-10">
                       <motion.div 
                         className="w-5 h-5 bg-yellow rounded-full border-3 border-white shadow-md group-hover:scale-110 transition-transform duration-300"
                         whileHover={{ scale: 1.2 }}
