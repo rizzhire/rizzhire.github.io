@@ -144,37 +144,37 @@ export default function Navbar() {
             <div className="px-4 py-6 space-y-3">
               <button 
                 onClick={navigateHome}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
+                className="w-full text-left px-4 py-3 bg-white rounded-xl shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
               >
                 Home
               </button>
               <button 
                 onClick={navigateToServices}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
+                className="w-full text-left px-4 py-3 bg-white rounded-xl shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
               >
                 Services
               </button>
               <button 
                 onClick={navigateToIndustries}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
+                className="w-full text-left px-4 py-3 bg-white rounded-xl shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
               >
                 Industries We Serve
               </button>
               <button 
                 onClick={navigateToAbout}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
+                className="w-full text-left px-4 py-3 bg-white rounded-xl shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
               >
                 About
               </button>
               <button 
                 onClick={navigateToBlogs}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
+                className="w-full text-left px-4 py-3 bg-white rounded-xl shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
               >
                 Blogs
               </button>
               <button 
                 onClick={navigateToContact}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
+                className="w-full text-left px-4 py-3 bg-white rounded-xl shadow-sm text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-200"
               >
                 Contact
               </button>
