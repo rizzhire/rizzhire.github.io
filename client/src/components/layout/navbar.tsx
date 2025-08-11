@@ -60,10 +60,11 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black navbar-slide-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
             <div className="text-white font-bold text-xl">HireNET</div>
-            <div className="hidden md:flex space-x-6">
+            <div className="flex space-x-6">
               <button 
                 onClick={navigateHome}
                 className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -103,7 +104,7 @@ export default function Navbar() {
             </div>
           </div>
           
-          <div className="hidden md:block">
+          <div>
             <Button 
               onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
               className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transform active:scale-95"
@@ -111,13 +112,30 @@ export default function Navbar() {
               {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
             </Button>
           </div>
-          
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden flex justify-between items-center h-16">
+          {/* Left: Hamburger Menu */}
           <button 
-            className="md:hidden text-white"
+            className="text-white flex items-center justify-center w-10 h-10"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
+          
+          {/* Center: Logo */}
+          <div className="text-white font-bold text-xl absolute left-1/2 transform -translate-x-1/2">
+            HireNET
+          </div>
+          
+          {/* Right: For Job Seeker Button */}
+          <Button 
+            onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
+            className="bg-yellow text-black px-4 py-1 rounded-full font-medium hover:bg-yellow/90 transition-all duration-300 text-sm"
+          >
+            {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
+          </Button>
         </div>
         
         {/* Mobile Menu */}
@@ -159,12 +177,6 @@ export default function Navbar() {
             >
               Contact
             </button>
-            <Button 
-              onClick={location === '/job-seeker' ? navigateHome : navigateToJobSeeker}
-              className="bg-yellow text-black px-6 py-2 rounded-full font-medium hover:bg-yellow/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow/20 transform active:scale-95 w-full"
-            >
-              {location === '/job-seeker' ? 'For Employers' : 'For Job Seeker'}
-            </Button>
           </div>
         )}
       </div>
