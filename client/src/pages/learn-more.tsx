@@ -54,7 +54,7 @@ export default function LearnMore() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#F2F0E8'}}>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-4 overflow-hidden" style={{backgroundColor: '#F2F0E8'}}>
+      <section className="relative pt-16 pb-12 px-4 overflow-hidden" style={{backgroundColor: '#F2F0E8'}}>
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/20 via-transparent to-yellow-200/15"></div>
         
         {/* Light Background Graphics */}
