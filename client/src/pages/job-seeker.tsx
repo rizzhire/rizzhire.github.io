@@ -233,63 +233,10 @@ export default function JobSeekerPage() {
 
     slider.addEventListener('wheel', handleWheel, { passive: false });
 
-    // Touch/swipe support for mobile
-    let startX = 0;
-    let startY = 0;
-    let isDragging = false;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      isDragging = true;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging) return;
-      
-      const currentX = e.touches[0].clientX;
-      const currentY = e.touches[0].clientY;
-      const diffX = Math.abs(currentX - startX);
-      const diffY = Math.abs(currentY - startY);
-
-      // If horizontal swipe is more significant than vertical, prevent default scrolling
-      if (diffX > diffY && diffX > 10) {
-        e.preventDefault();
-      }
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!isDragging) return;
-      isDragging = false;
-
-      const endX = e.changedTouches[0].clientX;
-      const endY = e.changedTouches[0].clientY;
-      const diffX = startX - endX;
-      const diffY = Math.abs(startY - endY);
-
-      // Only trigger swipe if horizontal movement is more significant than vertical
-      if (Math.abs(diffX) > diffY && Math.abs(diffX) > 50) {
-        const slideWidth = slider.offsetWidth;
-        const scrollAmount = diffX > 0 ? slideWidth : -slideWidth;
-        
-        slider.scrollBy({
-          left: scrollAmount,
-          behavior: 'smooth'
-        });
-      }
-    };
-
-    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
-    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
-    slider.addEventListener('touchend', handleTouchEnd, { passive: true });
-
     return () => {
       clearTimeout(initTimer);
       slider.removeEventListener('scroll', updateActiveSlide);
       slider.removeEventListener('wheel', handleWheel);
-      slider.removeEventListener('touchstart', handleTouchStart);
-      slider.removeEventListener('touchmove', handleTouchMove);
-      slider.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 
