@@ -6,10 +6,60 @@ import { useEffect, useRef } from "react";
 import type { Testimonial } from "@shared/schema";
 
 export default function SuccessStories() {
-  const { data: testimonials, isLoading } = useQuery<Testimonial[]>({
+  const { data: apiTestimonials, isLoading: apiLoading } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
   });
 
+  // Sample testimonials data for immediate display
+  const sampleTestimonials: Testimonial[] = [
+    {
+      id: 1,
+      name: "Sarah Ahmed",
+      position: "Marketing Director",
+      company: "Dubai Holdings",
+      location: "Dubai, UAE",
+      quote: "HireNET transformed my career. Their team understood my goals and connected me with the perfect opportunity. The process was seamless and professional.",
+      rating: 5,
+      initials: "SA",
+      photo: null
+    },
+    {
+      id: 2,
+      name: "Khalid Al-Rashid",
+      position: "Senior Engineer",
+      company: "ARAMCO",
+      location: "Riyadh, Saudi Arabia", 
+      quote: "Outstanding service! They matched me with a role that perfectly aligned with my skills and career aspirations. Highly recommended for professionals in the Gulf.",
+      rating: 5,
+      initials: "KA",
+      photo: null
+    },
+    {
+      id: 3,
+      name: "Fatima Hassan",
+      position: "Finance Manager",
+      company: "Qatar National Bank",
+      location: "Doha, Qatar",
+      quote: "Professional, efficient, and results-driven. HireNET helped me secure my dream job in record time. Their industry expertise is unmatched.",
+      rating: 5,
+      initials: "FH", 
+      photo: null
+    },
+    {
+      id: 4,
+      name: "Omar Mansouri",
+      position: "Operations Head",
+      company: "Emirates Group",
+      location: "Abu Dhabi, UAE",
+      quote: "The best recruitment experience I've ever had. They took care of everything from application to negotiation. Truly exceptional service.",
+      rating: 5,
+      initials: "OM",
+      photo: null
+    }
+  ];
+
+  const testimonials = apiTestimonials || sampleTestimonials;
+  const isLoading = apiLoading && !testimonials.length;
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
