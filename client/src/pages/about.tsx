@@ -445,7 +445,7 @@ export default function About() {
                   <CardContent className="p-0 flex flex-col h-full">
                     <h3 className="text-3xl font-bold text-gray-900 text-center mb-3 leading-tight tracking-tight">{value.title}</h3>
                     <div className="flex-1 flex items-center justify-center px-1">
-                      <p className="text-gray-700 leading-snug text-sm text-center font-normal">{value.description}</p>
+                      <p className="text-gray-700 leading-snug text-xs text-center font-normal">{value.description}</p>
                     </div>
                   </CardContent>
                 </Card>
